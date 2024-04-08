@@ -3,10 +3,60 @@
     "main": {
       "type": "hello-world",
       "settings": {
+        "heading": "",
+        "instruction_1": "",
+        "instruction_2": ""
+      }
+    },
+    "stats_YTn8zH": {
+      "type": "stats",
+      "blocks": {
+        "counter_block_THbmKX": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "44 million",
+            "heading_size": "4xl",
+            "counter_content": "<p>Transactions every 24 hours<\/p>"
+          }
+        },
+        "counter_block_Hx8CwH": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "4000 lakh",
+            "heading_size": "4xl",
+            "counter_content": "<p>Transactions every 24 hours<\/p>"
+          }
+        },
+        "counter_block_C3yXYi": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "2 Billion",
+            "heading_size": "4xl",
+            "counter_content": "<p>Transactions every 24 hours<\/p>"
+          }
+        },
+        "counter_block_AnLNCg": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "100 Thousand",
+            "heading_size": "4xl",
+            "counter_content": "<p>Transactions every 24 hours<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "counter_block_THbmKX",
+        "counter_block_Hx8CwH",
+        "counter_block_C3yXYi",
+        "counter_block_AnLNCg"
+      ],
+      "settings": {
+        "section_bg": "#ff80b5"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "stats_YTn8zH"
   ]
 }
