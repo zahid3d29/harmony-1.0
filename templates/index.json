@@ -1,0 +1,486 @@
+{
+  "sections": {
+    "main": {
+      "type": "hello-world",
+      "blocks": {
+        "3186bfda-2b68-40dd-bdc4-fa6868f87a8b": {
+          "type": "card-block",
+          "settings": {
+            "heading": "Documentation",
+            "description": "Find in-depth infos about harmony features and how to use it.",
+            "link": "https:\/\/github.com\/blanklob\/harmony#documentation"
+          }
+        },
+        "a22569eb-f893-42d9-8751-b40c8df557f3": {
+          "type": "card-block",
+          "settings": {
+            "heading": "Chat",
+            "description": "Come say hey to our amazing Discord community 💚",
+            "link": "https:\/\/help.blanklob.com?utm_source=create-harmony&amp;utm_medium=basic-example&amp;utm_campaign=create-harmony"
+          }
+        },
+        "cfe4f931-6e00-4854-8052-8600ec0e4208": {
+          "type": "card-block",
+          "settings": {
+            "heading": "Sections",
+            "description": "Explore a galaxy of paid and community-built theme sections.",
+            "link": ""
+          }
+        },
+        "642a61a2-0152-4cd4-8009-8ae93bbed1af": {
+          "type": "card-block",
+          "settings": {
+            "heading": "Aurora",
+            "description": "Instantly build a production-ready Shopify storefronts.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "3186bfda-2b68-40dd-bdc4-fa6868f87a8b",
+        "a22569eb-f893-42d9-8751-b40c8df557f3",
+        "cfe4f931-6e00-4854-8052-8600ec0e4208",
+        "642a61a2-0152-4cd4-8009-8ae93bbed1af"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Welcome to harmony ✨",
+        "instruction_1": "Currently there is no products in your store. To get started <strong>create your first product<\/strong> and set its price and quantity.",
+        "instruction_2": "<strong>Code Challenge: <\/strong>Tweak this button so when we add to cart, it shows a spinner. Check the src\/components directory!"
+      }
+    },
+    "nf_theme_header_gHR3GA": {
+      "type": "NFTheme__Header",
+      "settings": {
+        "heading": ""
+      }
+    },
+    "nf_theme_banner_WUYhCD": {
+      "type": "NFTheme__Banner",
+      "blocks": {
+        "carousel_slide_nW6nfi": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/white-bowl-surrounded-by-herbs-chilis-and-lime-slices.jpg",
+            "slide_img_mob": "shopify:\/\/shop_images\/close-up-of-a-person-arm-wearing-a-smartwatch.jpg",
+            "slide_heading": "I am slide Heading Big",
+            "heading_size": "6xl",
+            "slide_content": "<p>I am slider content like paragraph<\/p>",
+            "btn_1_label": "Button Left",
+            "btn_1_url": "shopify:\/\/pages\/custom-collection",
+            "btn_2_label": "Button Right",
+            "btn_2_url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "carousel_slide_wgTiHh": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/fashionable-man-in-hat.jpg",
+            "slide_img_mob": "shopify:\/\/shop_images\/white-bowl-surrounded-by-herbs-chilis-and-lime-slices.jpg",
+            "slide_heading": "I am slide 2 Heading Big",
+            "heading_size": "6xl",
+            "slide_content": "<p>I am slide 2 content like paragraph<\/p>",
+            "btn_1_label": "Button Left",
+            "btn_1_url": "shopify:\/\/products\/bangle-bracelet-with-feathers",
+            "btn_2_label": "Button Right",
+            "btn_2_url": "shopify:\/\/products\/leather-anchor"
+          }
+        }
+      },
+      "block_order": [
+        "carousel_slide_nW6nfi",
+        "carousel_slide_wgTiHh"
+      ],
+      "settings": {
+        "brand_heading": "Our Partners"
+      }
+    },
+    "nf_theme_brand_YLeajk": {
+      "type": "NFTheme__Brand",
+      "blocks": {
+        "carousel_slide_6MKP4F": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/neural-fushion-logo.png",
+            "url": ""
+          }
+        },
+        "carousel_slide_R8TJkE": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/vegetarian.jpg",
+            "url": ""
+          }
+        },
+        "carousel_slide_xHQ86R": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/Website_Logos_ecocene_small_6d484770-3f61-458e-a726-fef7cff540e0.jpg",
+            "url": ""
+          }
+        },
+        "carousel_slide_tJYitM": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/gluten-free.png",
+            "url": ""
+          }
+        },
+        "carousel_slide_phPcCw": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/footer-logo.webp",
+            "url": ""
+          }
+        },
+        "carousel_slide_CFVcy9": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/Die_Zeit-Logo-Bremen_svg_140x67_d7822fbb-9102-4d54-a358-675275e63a15.webp",
+            "url": ""
+          }
+        },
+        "carousel_slide_WDD6pT": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/Kamupak_logo-03_small_e9fdc5e7-3575-4257-8cec-28dd697cc23f.jpg",
+            "url": ""
+          }
+        },
+        "carousel_slide_Cf6giB": {
+          "type": "carousel-slide",
+          "settings": {
+            "slide_img": "shopify:\/\/shop_images\/1950.png",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "carousel_slide_6MKP4F",
+        "carousel_slide_R8TJkE",
+        "carousel_slide_xHQ86R",
+        "carousel_slide_tJYitM",
+        "carousel_slide_phPcCw",
+        "carousel_slide_CFVcy9",
+        "carousel_slide_WDD6pT",
+        "carousel_slide_Cf6giB"
+      ],
+      "settings": {
+        "brand_heading": "Our Partners",
+        "heading_size": "6xl",
+        "desktop_slide_perview": "5",
+        "mobile_slide_perview": "2"
+      }
+    },
+    "nf_theme_cta_CVNnmD": {
+      "type": "NFTheme__cta",
+      "settings": {
+        "section_bg": "#0e2700",
+        "cta_img": "shopify:\/\/shop_images\/person-in-grey-suit-and-facemask-holds-a-young-baby.jpg",
+        "cta_heading": "Call to Action",
+        "heading_size": "5xl",
+        "cta_content": "<p>Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.<\/p>",
+        "btn_1_txt": "Button Left Label",
+        "btn_1_url": "shopify:\/\/pages\/contact",
+        "btn_2_txt": "Button Right Label",
+        "btn_2_url": "shopify:\/\/pages\/about"
+      }
+    },
+    "nf_theme_team_section_TmLN4r": {
+      "type": "NFTheme__team-section",
+      "blocks": {
+        "team_block_GT8HVc": {
+          "type": "team-block",
+          "settings": {
+            "team_member_img": "shopify:\/\/shop_images\/photo-1494790108377-be9c29b29330.png",
+            "team_member": "John Doe",
+            "team_member_bio": "Co-Founder \/ CEO"
+          }
+        },
+        "team_block_EX63xH": {
+          "type": "team-block",
+          "settings": {
+            "team_member_img": "shopify:\/\/shop_images\/photo-1519244703995-f4e0f30006d5.png",
+            "team_member": "Michael Foster",
+            "team_member_bio": "Co-Founder \/ CTO"
+          }
+        },
+        "team_block_i7D9rP": {
+          "type": "team-block",
+          "settings": {
+            "team_member_img": "shopify:\/\/shop_images\/photo-1506794778202-cad84cf45f1d.png",
+            "team_member": "Dries Vincent",
+            "team_member_bio": "Business Relations"
+          }
+        },
+        "team_block_U8h9b3": {
+          "type": "team-block",
+          "settings": {
+            "team_member_img": "shopify:\/\/shop_images\/photo-1517841905240-472988babdf9.png",
+            "team_member": "Lindsay Walton",
+            "team_member_bio": "Front-end Developer"
+          }
+        },
+        "team_block_VgG68P": {
+          "type": "team-block",
+          "settings": {
+            "team_member_img": "shopify:\/\/shop_images\/photo-1438761681033-6461ffad8d80.png",
+            "team_member": "Courtney Henry",
+            "team_member_bio": "<strong>Designer<\/strong>"
+          }
+        },
+        "team_block_EQTmDH": {
+          "type": "team-block",
+          "settings": {
+            "team_member_img": "shopify:\/\/shop_images\/photo-1472099645785-5658abf4ff4e.png",
+            "team_member": "Tom Cook",
+            "team_member_bio": "<strong>Director of Product<\/strong>"
+          }
+        }
+      },
+      "block_order": [
+        "team_block_GT8HVc",
+        "team_block_EX63xH",
+        "team_block_i7D9rP",
+        "team_block_U8h9b3",
+        "team_block_VgG68P",
+        "team_block_EQTmDH"
+      ],
+      "settings": {
+        "sec_bg": "#ededed",
+        "sec_heading": "Meet our leadership",
+        "heading_size": "5xl",
+        "sec_subheading": "<p>Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper suspendisse.<\/p>"
+      }
+    },
+    "nf_theme_stats_UU9aCN": {
+      "type": "NFTheme__stats",
+      "blocks": {
+        "counter_block_iG6pBD": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "44 million",
+            "heading_size": "5xl",
+            "counter_content": "<p>Transactions every 24 hours<\/p>"
+          }
+        },
+        "counter_block_AFDG4R": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "$119 trillion",
+            "heading_size": "5xl",
+            "counter_content": "<p>Assets under holding<\/p>"
+          }
+        },
+        "counter_block_wMEFDA": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "46,000",
+            "heading_size": "5xl",
+            "counter_content": "<p>New users annually<\/p>"
+          }
+        },
+        "counter_block_nex44g": {
+          "type": "counter-block",
+          "settings": {
+            "counter_txt": "146,000",
+            "heading_size": "5xl",
+            "counter_content": "<p>Peoples Visit usy<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "counter_block_iG6pBD",
+        "counter_block_AFDG4R",
+        "counter_block_wMEFDA",
+        "counter_block_nex44g"
+      ],
+      "settings": {
+        "section_bg": "#f5f5f5"
+      }
+    },
+    "nf_theme_testimonial_Aq6JUN": {
+      "type": "NFTheme__Testimonial",
+      "blocks": {
+        "testimonial_block_8A3CfG": {
+          "type": "testimonial-block",
+          "settings": {
+            "author_company_logo": "shopify:\/\/shop_images\/footer-logo.webp",
+            "author_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.<\/p>",
+            "author_pic": "shopify:\/\/shop_images\/photo-1517841905240-472988babdf9.png",
+            "author_name": "Judith Black",
+            "author_position": "CEO of Workcation"
+          }
+        },
+        "testimonial_block_AtjHWe": {
+          "type": "testimonial-block",
+          "settings": {
+            "author_company_logo": "shopify:\/\/shop_images\/ringo-logo_small_03d441e4-320f-442f-a0f2-8796fd7c1038.jpg",
+            "author_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.<\/p>",
+            "author_pic": "shopify:\/\/shop_images\/photo-1472099645785-5658abf4ff4e.png",
+            "author_name": "Team coock",
+            "author_position": "CEO of Workstation"
+          }
+        },
+        "testimonial_block_hY4UtN": {
+          "type": "testimonial-block",
+          "settings": {
+            "author_company_logo": "shopify:\/\/shop_images\/Website_Logos_ecocene_small_6d484770-3f61-458e-a726-fef7cff540e0.jpg",
+            "author_content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.<\/p>",
+            "author_pic": "shopify:\/\/shop_images\/photo-1494790108377-be9c29b29330.png",
+            "author_name": "Moina Apa",
+            "author_position": "CEO of Workcation"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_block_8A3CfG",
+        "testimonial_block_AtjHWe",
+        "testimonial_block_hY4UtN"
+      ],
+      "settings": {
+        "heading": "",
+        "instruction_1": "",
+        "instruction_2": ""
+      }
+    },
+    "nf_theme_promo_Cn3Ka8": {
+      "type": "NFTheme__Promo",
+      "settings": {
+        "sec_heading": "Theme Promo Section",
+        "heading_size": "5xl",
+        "sec_subheading": "<p>This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.<\/p>",
+        "btn_txt": "Shop Now",
+        "btn_url": "",
+        "promo-img_one": "shopify:\/\/shop_images\/close-up-of-a-person-arm-wearing-a-smartwatch.jpg",
+        "promo-img_two": "shopify:\/\/shop_images\/person-tilts-their-head-up-and-looks-at-the-camera.jpg",
+        "promo-img_three": "shopify:\/\/shop_images\/woman-tilts-her-head-back-and-smiles-outdoors.jpg",
+        "promo-img_four": "shopify:\/\/shop_images\/purchased-favorite-coffee.jpg",
+        "promo-img_five": "shopify:\/\/shop_images\/model-in-neutral-colors-by-window.jpg",
+        "promo-img_six": "shopify:\/\/shop_images\/fashionable-man-in-hat.jpg",
+        "promo-img_seven": "shopify:\/\/shop_images\/man-poses-in-light-colored-overcoat.jpg"
+      }
+    },
+    "nf_theme_feature_section_CByFEH": {
+      "type": "NFTheme__feature-section",
+      "blocks": {
+        "featured_block_VzfHVW": {
+          "type": "featured-block",
+          "settings": {
+            "featured_list_icon": "shopify:\/\/shop_images\/twitter.svg",
+            "featured_title": "<strong>Push to deploy.<\/strong>",
+            "featured_content": "<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.<\/p>"
+          }
+        },
+        "featured_block_wAJC8T": {
+          "type": "featured-block",
+          "settings": {
+            "featured_title": "<strong>SSL certificates.<\/strong>",
+            "featured_content": "<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.<\/p>"
+          }
+        },
+        "featured_block_iyXzah": {
+          "type": "featured-block",
+          "settings": {
+            "featured_title": "<strong>Database backups.<\/strong>",
+            "featured_content": "<p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "featured_block_VzfHVW",
+        "featured_block_wAJC8T",
+        "featured_block_iyXzah"
+      ],
+      "settings": {
+        "subheading": "Deploy faster",
+        "heading": "Featured Section",
+        "content": "<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.<\/p>",
+        "featured_big_img": "shopify:\/\/shop_images\/close-up-of-a-person-arm-wearing-a-smartwatch.jpg"
+      }
+    },
+    "nf_theme_newsletter_pCrFGM": {
+      "type": "NFTheme__newsletter",
+      "settings": {
+        "section_bg_1": "#dd1d1d",
+        "section_bg_2": "#f209b0",
+        "newsletter_heading": "Newsletter",
+        "heading_size": "5xl",
+        "newsletter_content": "<p>Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.<\/p>",
+        "submit_btn_txt": "Button Label"
+      }
+    },
+    "section_test_JkLrUW": {
+      "type": "section-test",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-7f9d8694-f77a-4953-8dc7-a0116b68e6a0"
+      }
+    },
+    "nf_theme_footer_QDefbc": {
+      "type": "NFTheme__Footer",
+      "blocks": {
+        "block_one_wLBK4Q": {
+          "type": "block-one",
+          "settings": {
+            "footer_logo": "shopify:\/\/shop_images\/neural-fushion-logo.png",
+            "company_info_short": "<p>You can use these fields to capture custom blocks of HTML content, such as a video embed.<\/p><p>For example, the following setting generates the following output:<\/p><p><\/p>",
+            "btn_txt": "learn more",
+            "btn_url": "shopify:\/\/pages\/about"
+          }
+        },
+        "block_two_PqhK3A": {
+          "type": "block-two",
+          "settings": {
+            "menu_1_enable": true,
+            "nav_1_label": "Clothing",
+            "menu_1": "main-menu",
+            "menu_2_enable": true,
+            "nav_2_label": "Accessories",
+            "menu_2": "footer-menu-2",
+            "menu_3_enable": true,
+            "nav_3_label": "Brands",
+            "menu_3": "mega-menu-2"
+          }
+        },
+        "block_three_amTWPn": {
+          "type": "block-three",
+          "settings": {
+            "newsletter_label": "Newsletter"
+          }
+        },
+        "block_four_BakJGx": {
+          "type": "block-four",
+          "settings": {
+            "payment_icon": "shopify:\/\/shop_images\/ezgif-3-a430a2df60-removebg-preview.png",
+            "footer_copyright_txt": "All <em>rights reserved by<\/em> <strong>NeuralFushion<\/strong> 2024"
+          }
+        }
+      },
+      "block_order": [
+        "block_one_wLBK4Q",
+        "block_two_PqhK3A",
+        "block_three_amTWPn",
+        "block_four_BakJGx"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "nf_theme_header_gHR3GA",
+    "nf_theme_banner_WUYhCD",
+    "nf_theme_brand_YLeajk",
+    "nf_theme_cta_CVNnmD",
+    "nf_theme_team_section_TmLN4r",
+    "nf_theme_stats_UU9aCN",
+    "nf_theme_testimonial_Aq6JUN",
+    "nf_theme_promo_Cn3Ka8",
+    "nf_theme_feature_section_CByFEH",
+    "nf_theme_newsletter_pCrFGM",
+    "section_test_JkLrUW",
+    "nf_theme_footer_QDefbc"
+  ]
+}
