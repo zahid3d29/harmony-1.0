@@ -1,1 +1,129 @@
 
+<section id="section--{{ section.id }}" style="background: {{ section.settings.section_bg }};">
+    <div class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+              {% for block in section.blocks %}
+              <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                  <dt class="text-base leading-7 text-gray-600 animate__animated animate__fadeInDown animate__slow">{{ block.settings.counter_content }}</dt>
+                  <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 
+                  {% if block.settings.heading_size == 'xl' %} 
+                    lg:text-xl 
+                    {% elsif block.settings.heading_size == '2xl' %}
+                    lg:text-2xl
+                    {% elsif block.settings.heading_size == '3xl' %}
+                    lg:text-3xl  
+                    {% elsif block.settings.heading_size == '4xl' %}
+                    lg:text-4xl 
+                    {% elsif block.settings.heading_size == '5xl' %}
+                    lg:text-5xl
+                    {% elsif block.settings.heading_size == '6xl' %}
+                    lg:text-6xl
+                    {% elsif block.settings.heading_size == '7xl' %}
+                    lg:text-7xl
+                    {% elsif block.settings.heading_size == '8xl' %}
+                    lg:text-8xl
+                    {% elsif block.settings.heading_size == '9xl' %}
+                    lg:text-9xl
+                    {% else %}  
+                    lg:text-lg  
+                  {% endif %}
+                  animate__animated animate__fadeInDown animate__slow">{{ block.settings.counter_txt }}</dd>
+              </div>
+              {% endfor %}
+            </dl>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+      "name": "NFTheme Stats",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Style"
+        },
+        {
+          "type": "color",
+          "id": "section_bg",
+          "label": "Backgrouund",
+          "default": "#ff80b5"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "Counter Block",
+          "type": "counter-block",
+          "limit": 4,
+          "settings": [
+            {
+              "type": "text",
+              "id": "counter_txt",
+              "label": "Counter Title",
+              "default": "44 million"
+            },
+            {
+              "type": "select",
+              "id": "heading_size",
+              "label": "Title Size",
+              "options": [
+                {
+                  "value": "lg",
+                  "label": "Lg"
+                },
+                {
+                  "value": "xl",
+                  "label": "XL"
+                },
+                {
+                  "value": "2xl",
+                  "label": "2Xl"
+                },
+                {
+                  "value": "3xl",
+                  "label": "3Xl"
+                },
+                {
+                  "value": "4xl",
+                  "label": "4Xl"
+                },
+                {
+                  "value": "5xl",
+                  "label": "5Xl"
+                },
+                {
+                  "value": "6xl",
+                  "label": "6Xl"
+                },
+                {
+                  "value": "7xl",
+                  "label": "7Xl"
+                },
+                {
+                  "value": "8xl",
+                  "label": "8Xl"
+                },
+                {
+                  "value": "9xl",
+                  "label": "9XL"
+                }
+              ],
+              "default": "3xl"
+            },
+            {
+              "type": "richtext",
+              "id": "counter_content",
+              "label": "Counter Content",
+              "default": "<p>Transactions every 24 hours</p>"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "NFTheme Stats"
+        }
+      ]
+    }
+{% endschema %}
