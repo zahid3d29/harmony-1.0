@@ -15,10 +15,16 @@
         "heading": "Secion Heading",
         "show_heeading": true
       }
+    },
+    "focal_FRdfRG": {
+      "type": "focal",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "product_featured_VNX4rc"
+    "product_featured_VNX4rc",
+    "focal_FRdfRG"
   ]
 }

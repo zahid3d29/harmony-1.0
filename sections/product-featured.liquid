@@ -1,67 +1,65 @@
 <style>
 
-.productFeaturedTab {
-  overflow: hidden;
-  background-color: #ffffff;
-}
+    .productFeaturedTab {
+        overflow: hidden;
+        background-color: #ffffff;
+    }
 
-/* Style the buttons inside the productFeaturedTab */
-.productFeaturedTab button {
-  cursor: pointer;;
-  transition: 0.3s;
-}
+    /* Style the buttons inside the productFeaturedTab */
+    .productFeaturedTab button {
+        cursor: pointer;;
+        transition: 0.3s;
+    }
 
-/* Change background color of buttons on hover */
-.productFeaturedTab button:hover {
-    border-bottom: 3px solid #000000;
-}
+    /* Change background color of buttons on hover */
+    .productFeaturedTab button:hover {
+        border-bottom: 1px solid #000000;
+    }
 
-/* Create an active/current productFeaturedTablink class */
-.productFeaturedTab button.active {
-  border-bottom: 3px solid #000000;
-}
+    /* Create an active/current productFeaturedTablink class */
+    .productFeaturedTab button.active {
+        border-bottom: 1px solid #000000;
+    }
 
-/* Style the productFeaturedTab content */
-.productFeaturedTabcontent {
-  display: none;
-  animation: fadeEffect 2s; 
-}
+    /* Style the productFeaturedTab content */
+    .productFeaturedTabcontent {
+        display: none;
+        animation: fadeEffect 2s; 
+    }
 
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
 </style>
 
 <section id="harmony--{{ section.id }}">
     <div class="bg-white">
-        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div class="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8">
             <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24 mb-6">
                 <h1 class="text-4xl font-bold tracking-tight text-gray-900">Shop All</h1>
                 <div class="flex items-center">
-
                     <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" id="headlessui-tabs-tab-6" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="" aria-controls="headlessui-tabs-panel-8">
-                        <span class="sr-only lg:not-sr-only lg:mr-5 text-slate-600"><i class="fa fa-chevron-left"></i></span>
-                        <span class="sr-only lg:not-sr-only lg:mx-2 text-slate-600">
-                            <i class="fa fa-circle"></i>
+                        <span class="lg:mr-5 text-slate-600"><i class="fa fa-chevron-left"></i></span>
+                        <span class="mx-2 lg:mx-2 text-slate-600">
+                            <i class="text-xs fa fa-circle"></i>
                         </span>
-                        <span class="sr-only lg:not-sr-only lg:mx-2 text-slate-600">
-                            <i class="fa fa-circle"></i>
+                        <span class="mx-2 lg:mx-2 text-slate-600">
+                            <i class="text-sm fa fa-circle"></i>
                         </span>
-                        <span class="sr-only lg:not-sr-only lg:mx-2 text-slate-600">
-                            <i class="fa fa-circle"></i>
+                        <span class="mx-2 lg:mx-2 text-slate-600">
+                            <i class="text-xs fa fa-circle"></i>
                         </span>
-                        <span class="sr-only lg:not-sr-only lg:ml-5 text-slate-600"><i class="fa fa-chevron-right"></i></span>
+                        <span class="lg:ml-5 text-slate-600"><i class="fa fa-chevron-right"></i></span>
                     </button>
-
                 </div>
             </div>
             <div class="mx-auto">
                 <div class="productFeaturedTab grid border mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-                    <button class="productFeaturedTablinks block h-[4rem] border-r-4 border-grey-500" onclick="openCity(event, 'All')" id="defaultOpen">All</button>
-                    <button class="productFeaturedTablinks block h-[4rem] border-r-4 border-grey-500" onclick="openCity(event, 'Face')">Face</button>
-                    <button class="productFeaturedTablinks block h-[4rem] border-r-4 border-grey-500" onclick="openCity(event, 'Body')">Body</button>
-                    <button class="productFeaturedTablinks block h-[4rem] border-0 border-transparent" onclick="openCity(event, 'Hair')">Hair</button>
+                    <button class="productFeaturedTablinks block h-[4rem] my-1 lg:my-0 bg-zinc-300 md:bg-transparent border-0 lg:border-r-4 border-grey-500" onclick="openCity(event, 'All')" id="defaultOpen">All</button>
+                    <button class="productFeaturedTablinks block h-[4rem] my-1 lg:my-0 bg-zinc-300 md:bg-transparent border-0 lg:border-r-4 border-grey-500" onclick="openCity(event, 'Face')">Face</button>
+                    <button class="productFeaturedTablinks block h-[4rem] my-1 lg:my-0 bg-zinc-300 md:bg-transparent border-0 lg:border-r-4 border-grey-500" onclick="openCity(event, 'Body')">Body</button>
+                    <button class="productFeaturedTablinks block h-[4rem] my-1 lg:my-0 bg-zinc-300 md:bg-transparent border-0 border-transparent" onclick="openCity(event, 'Hair')">Hair</button>
                 </div>
                   
                 <div id="All" class="productFeaturedTabcontent grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
@@ -72,12 +70,12 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small inline text-gray-900 px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
                                 
-                                <p class="mt-1 text-xs font-small text-right text-gray-900">
+                                <p class="mt-2 text-xs font-small text-right text-gray-900">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -96,7 +94,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -118,7 +116,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -143,7 +141,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -165,7 +163,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -187,7 +185,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -214,7 +212,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -236,7 +234,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -261,7 +259,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -285,7 +283,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
@@ -307,7 +305,7 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-3/5">
                                 <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
-                                <p class="mt-1 text-xs font-small text-gray-900">Category</p>
+                                <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
                             </div>
                             <div class="w-2/5">
                                 <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
