@@ -1,12 +1,9 @@
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "disabled": true,
+    "testimonial_GDLbBA": {
+      "type": "testimonial",
       "settings": {
-        "heading": "",
-        "instruction_1": "",
-        "instruction_2": ""
+        "heading": ""
       }
     },
     "product_featured_VNX4rc": {
@@ -23,7 +20,7 @@
     }
   },
   "order": [
-    "main",
+    "testimonial_GDLbBA",
     "product_featured_VNX4rc",
     "focal_FRdfRG"
   ]
