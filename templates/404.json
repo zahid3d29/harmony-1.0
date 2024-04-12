@@ -6,6 +6,12 @@
         "heading": ""
       }
     },
+    "featured_category_Kcackd": {
+      "type": "featured-category",
+      "settings": {
+        "heading": ""
+      }
+    },
     "testimonial_GDLbBA": {
       "type": "testimonial",
       "settings": {
@@ -29,6 +35,7 @@
   },
   "order": [
     "swiss_ABMJhw",
+    "featured_category_Kcackd",
     "testimonial_GDLbBA",
     "product_featured_VNX4rc",
     "focal_FRdfRG"

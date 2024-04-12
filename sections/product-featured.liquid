@@ -319,7 +319,6 @@
                     </a>
                 </div>
             </div>  
-
         </div>
     </div>
 </section>
@@ -355,17 +354,17 @@
 
 <script>
     function openCity(evt, productFeaturedCatName) {
-    var i, productFeaturedTabcontent, productFeaturedTablinks;
-    productFeaturedTabcontent = document.getElementsByClassName("productFeaturedTabcontent");
-    for (i = 0; i < productFeaturedTabcontent.length; i++) {
-        productFeaturedTabcontent[i].style.display = "none";
-    }
-    productFeaturedTablinks = document.getElementsByClassName("productFeaturedTablinks");
-    for (i = 0; i < productFeaturedTablinks.length; i++) {
-        productFeaturedTablinks[i].className = productFeaturedTablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(productFeaturedCatName).style.display = "grid";
-    evt.currentTarget.className += " active";
+        var i, productFeaturedTabcontent, productFeaturedTablinks;
+        productFeaturedTabcontent = document.getElementsByClassName("productFeaturedTabcontent");
+        for (i = 0; i < productFeaturedTabcontent.length; i++) {
+            productFeaturedTabcontent[i].style.display = "none";
+        }
+        productFeaturedTablinks = document.getElementsByClassName("productFeaturedTablinks");
+        for (i = 0; i < productFeaturedTablinks.length; i++) {
+            productFeaturedTablinks[i].className = productFeaturedTablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(productFeaturedCatName).style.display = "grid";
+        evt.currentTarget.className += " active";
     }
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();

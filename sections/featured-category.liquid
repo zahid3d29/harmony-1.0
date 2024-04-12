@@ -1,0 +1,143 @@
+    <style>
+        /* Style the tab */
+        .tab {
+            float: left;
+            width: 30%;
+            /* border: 1px solid #ccc; */
+            /* background-color: #f1f1f1; */
+            height: 300px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            /* background-color: inherit; */
+            display: block;
+            color: rgb(184, 181, 181);
+            padding: 0px 15px;
+            margin-bottom: 25px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-bottom: 1px solid #e6e6e6;
+            font-size: 50px;
+            padding-left: 28px;
+            transition: 0.7s;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-bottom: 1px solid #e6e6e6;
+            font-size: 50px;
+            padding-left: 12px;
+            transition: 0.5s;
+        }
+        .tab button.active::before {
+            content: "\2212";
+            font-size: 60px;
+            font-weight: 100;
+            line-height: 1.8;
+            color: #e6e6e6;
+            margin-left: -17px;
+        }
+        /* Style the tab content */
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            width: 70%;
+            border-left: 1px solid #e6e6e6;
+            display: none;
+            height: 300px;
+        }
+
+        /* Clear floats after the tab */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+<section id="harmony--{{ section.id }}">
+    <div class="bg-[#ffffff] py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-4 lg:px-8 grid grid-cols-1 lg:flex lg:justify-between">
+            <div class="tab">
+                <button class="tablinks" onmouseover="openCity(event, 'Face')" id="defaultOpen">Face</button>
+                <button class="tablinks" onmouseover="openCity(event, 'Body')">Body</button>
+                <button class="tablinks" onmouseover="openCity(event, 'Hair')">Hair</button>
+                <button class="tablinks" onmouseover="openCity(event, 'ShopAll')">Shop All</button>
+            </div>
+        
+            <div id="Face" class="tabcontent">
+                <h3>Face</h3>
+                <p>Face is the capital city of England.</p>
+            </div>
+        
+            <div id="Body" class="tabcontent">
+                <h3>Body</h3>
+                <p>Body is the capital of France.</p> 
+            </div>
+        
+            <div id="Hair" class="tabcontent">
+                <h3>Hair</h3>
+                <p>Hair is the capital of Japan.</p>
+            </div>
+        
+            <div id="ShopAll" class="tabcontent">
+                <h3>Shop All</h3>
+                <p>ShopAll is the capital of Japan.</p>
+            </div>
+        
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").dispatchEvent(new Event('mouseover'));
+    </script>
+   
+
+    {% schema %}
+        {
+            "name": "Featured Category",
+            "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            }
+            ],
+            "presets": [
+                {
+                    "name": "Featured Category"
+                }
+            ]
+        }
+    {% endschema %}
