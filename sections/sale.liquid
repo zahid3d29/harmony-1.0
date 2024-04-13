@@ -1,0 +1,61 @@
+
+<section id="harmony--{{ section.id }}">
+    <div class="grid grid-cols-1 lg:grid-cols-2 relative">
+        <h2 class="marquee-text text-9xl text-gray-50 absolute right-10 top-60 font-bold">Limited Sale</h2>
+        <div class="bg-gray-100 grid grid-cols-1 py-24 px-20">
+            <div class="text-left">
+                <a href="#" class="group">
+                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <div class="bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-img_1.png?v=1713031830')] hover:bg-[url('https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg')] bg-cover"></div>
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div class="w-3/5">
+                            <h3 class="mt-2 text-xs text-gray-700">Daily Defense Sunscreen Lotion</h3>
+                            <p class="mt-2 text-xs font-small text-gray-900 inline px-2 py-sm border border-black rounded-full">Category</p>
+                        </div>
+                        <div class="w-2/5">
+                            <h3 class="mt-2 text-xs text-right text-gray-700">$45.00</h3>
+                            <p class="mt-1 text-xs font-small text-right text-gray-900">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <span class="text-right text-xs">(23)</span>
+                            </p>
+                        </div>    
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-gray-300 flex items-start justify-center p-8 h-full w-full bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830')]  bg-cover">
+            <div class="text-center max-w-2xl">
+                <p class="text-base text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+{% schema %}
+    {
+      "name": "Sale",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Sale",
+          "category": "Harmony Sections"
+        }
+      ]
+    }
+{% endschema %}

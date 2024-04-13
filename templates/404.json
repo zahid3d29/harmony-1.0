@@ -1,5 +1,59 @@
 {
   "sections": {
+    "brand_mqeftJ": {
+      "type": "brand",
+      "blocks": {
+        "block_6wGgGX": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gluten-free.png",
+            "alt": "Brand Logo"
+          }
+        },
+        "block_WMEjQe": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vegetarian.jpg",
+            "alt": "Brand Logo"
+          }
+        },
+        "block_x6m3JH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dairy-free.png",
+            "alt": "Brand Logo"
+          }
+        },
+        "block_VxhBca": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Xolivi.png",
+            "alt": "Brand Logo"
+          }
+        },
+        "block_KYC784": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Website_Logos_Pyxo_small_5c108e2d-f0fb-4c71-951e-4474b7ca2a07.jpg",
+            "alt": "Brand Logo"
+          }
+        }
+      },
+      "block_order": [
+        "block_6wGgGX",
+        "block_WMEjQe",
+        "block_x6m3JH",
+        "block_VxhBca",
+        "block_KYC784"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Our Brand",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "swiss_ABMJhw": {
       "type": "swiss",
       "settings": {
@@ -8,22 +62,16 @@
     },
     "featured_category_Kcackd": {
       "type": "featured-category",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
     },
     "testimonial_GDLbBA": {
       "type": "testimonial",
-      "settings": {
-        "heading": ""
-      }
-    },
-    "product_featured_VNX4rc": {
-      "type": "product-featured",
       "disabled": true,
       "settings": {
-        "heading": "Secion Heading",
-        "show_heeading": true
+        "heading": ""
       }
     },
     "focal_FRdfRG": {
@@ -31,13 +79,20 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "sale_C3mei3": {
+      "type": "sale",
+      "settings": {
+        "heading": ""
+      }
     }
   },
   "order": [
+    "brand_mqeftJ",
     "swiss_ABMJhw",
     "featured_category_Kcackd",
     "testimonial_GDLbBA",
-    "product_featured_VNX4rc",
-    "focal_FRdfRG"
+    "focal_FRdfRG",
+    "sale_C3mei3"
   ]
 }
