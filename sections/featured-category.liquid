@@ -1,16 +1,13 @@
     <style>
         /* Style the tab */
-        .tab {
+        /* .tab {
             float: left;
             width: 30%;
-            /* border: 1px solid #ccc; */
-            /* background-color: #f1f1f1; */
-            height: 300px;
-        }
+            height: 500px;
+        } */
 
         /* Style the buttons inside the tab */
         .tab button {
-            /* background-color: inherit; */
             display: block;
             color: rgb(184, 181, 181);
             padding: 0px 15px;
@@ -51,54 +48,65 @@
             margin-left: -17px;
         }
         /* Style the tab content */
-        .tabcontent {
+        /* .categoryContent {
             float: left;
             padding: 0px 12px;
             width: 70%;
             border-left: 1px solid #e6e6e6;
             display: none;
-            height: 300px;
-        }
+            height: 500px;
+        } */
 
         /* Clear floats after the tab */
-        .clearfix::after {
+        /* .clearfix::after {
             content: "";
             clear: both;
             display: table;
-        }
+        } */
     </style>
 
 <section id="harmony--{{ section.id }}">
-    <div class="bg-[#ffffff] py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-4 lg:px-8 grid grid-cols-1 lg:flex lg:justify-between">
+    <div class="bg-[#ffffff] py-5 sm:py-5">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-5 px-4 py-5 sm:px-6 sm:py-5 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+
+          <div>
             <div class="tab">
-                <button class="tablinks" onmouseover="openCity(event, 'Face')" id="defaultOpen">Face</button>
-                <button class="tablinks" onmouseover="openCity(event, 'Body')">Body</button>
-                <button class="tablinks" onmouseover="openCity(event, 'Hair')">Hair</button>
-                <button class="tablinks" onmouseover="openCity(event, 'ShopAll')">Shop All</button>
+                <button class="categoryLinks" onmouseover="openCategory(event, 'Face')" id="defaultCatsOpen">Face</button>
+                <button class="categoryLinks" onmouseover="openCategory(event, 'Body')">Body</button>
+                <button class="categoryLinks" onmouseover="openCategory(event, 'Hair')">Hair</button>
+                <button class="categoryLinks" onmouseover="openCategory(event, 'ShopAll')">Shop All</button>
+            </div>
+          </div>
+          <div>
+            <div id="Face" class="categoryContent grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
             </div>
         
-            <div id="Face" class="tabcontent">
-                <h3>Face</h3>
-                <p>Face is the capital city of England.</p>
+            <div id="Body" class="categoryContent grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
             </div>
         
-            <div id="Body" class="tabcontent">
-                <h3>Body</h3>
-                <p>Body is the capital of France.</p> 
+            <div id="Hair" class="categoryContent grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
             </div>
         
-            <div id="Hair" class="tabcontent">
-                <h3>Hair</h3>
-                <p>Hair is the capital of Japan.</p>
+            <div id="ShopAll" class="categoryContent grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
+                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__slower">
             </div>
-        
-            <div id="ShopAll" class="tabcontent">
-                <h3>Shop All</h3>
-                <p>ShopAll is the capital of Japan.</p>
-            </div>
-        
-            <div class="clearfix"></div>
+          </div>
+       
         </div>
     </div>
 </section>
@@ -106,21 +114,21 @@
 
 
     <script>
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        function openCategory(evt, categoryName) {
+            var i, categoryContent, categoryLinks;
+            categoryContent = document.getElementsByClassName("categoryContent");
+            for (i = 0; i < categoryContent.length; i++) {
+                categoryContent[i].style.display = "none";
             }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            categoryLinks = document.getElementsByClassName("categoryLinks");
+            for (i = 0; i < categoryLinks.length; i++) {
+                categoryLinks[i].className = categoryLinks[i].className.replace(" active", "");
             }
-            document.getElementById(cityName).style.display = "block";
+            document.getElementById(categoryName).style.display = "grid";
             evt.currentTarget.className += " active";
         }
         // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").dispatchEvent(new Event('mouseover'));
+        document.getElementById("defaultCatsOpen").dispatchEvent(new Event('mouseover'));
     </script>
    
 
