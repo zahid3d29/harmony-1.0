@@ -1,8 +1,19 @@
 {
   "current": {
-    "content_for_index": [
-
-    ]
+    "zhd_color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#0e2700",
+          "background_gradient": "",
+          "text": "#f0f2f4",
+          "heading": "#c5fc81",
+          "button": "#543c6e",
+          "button_label": "#f5f5f5",
+          "secondary_button": "#dd1d1d",
+          "secondary_button_label": "#f5f5f5"
+        }
+      }
+    }
   },
   "presets": {
     "Default": {
