@@ -56,6 +56,7 @@
     },
     "swiss_ABMJhw": {
       "type": "swiss",
+      "disabled": true,
       "settings": {
         "heading": ""
       }

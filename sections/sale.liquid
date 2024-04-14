@@ -1,7 +1,10 @@
 
-<section id="harmony--{{ section.id }}">
+
+
+<section id="marquee">
     <div class="grid grid-cols-1 lg:grid-cols-2 relative">
-        <h2 class="marquee-text text-8xl text-gray-50 absolute right-10 top-60 font-700">Limited Sale</h2>
+        <marquee class="z-10 marquee-text text-8xl text-gray-800 absolute right-10 lg:top-[18rem] font-700">Limited Sale &nbsp; Limited Sale &nbsp; Limited Sale &nbsp; Limited Sale</marquee>
+
         <div class="bg-gray-100 grid grid-cols-1 py-24 px-20">
             <div class="text-left">
                 <a href="#" class="group">
@@ -29,9 +32,32 @@
             </div>
         </div>
         
-        <div class="bg-[#E8E7E3] flex items-start justify-center p-8 h-full w-full bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830')]  bg-cover">
-            <div class="text-center max-w-1xl">
+        <div class="bg-[#E8E7E3] grid grid-rows-2 grid-flow-col gap-4 p-8 h-full w-full bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830')]  bg-cover">
+            <div class="row-start-1 text-center px-[1rem] max-w-1xl lg:px-[6rem]">
                 <p class="text-base text-gray-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+
+            <div class="row-start-3">
+                <div class="mx-auto max-w-7xl px-6 lg:px-10 lg:py-14">
+                    <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                            <dt class="text-base leading-7 text-gray-100">Days</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">17</dd>
+                        </div>
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                            <dt class="text-base leading-7 text-gray-100">Hours</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">01</dd>
+                        </div>
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                            <dt class="text-base leading-7 text-gray-100">Minutes</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">42</dd>
+                        </div>
+                        <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                            <dt class="text-base leading-7 text-gray-100">Seconds</dt>
+                            <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">14</dd>
+                        </div>
+                    </dl>
+                </div>
             </div>
         </div>
 
