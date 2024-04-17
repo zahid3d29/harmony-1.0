@@ -132,6 +132,12 @@
         "btn_url": "shopify:\/\/pages\/about"
       }
     },
+    "reveal_JJ7fw6": {
+      "type": "reveal",
+      "settings": {
+        "heading": ""
+      }
+    },
     "footer_CANxjp": {
       "type": "footer",
       "settings": {
@@ -145,6 +151,7 @@
     "sales_783xMN",
     "product_featured_WF6tYG",
     "testimonials_GtL8fm",
+    "reveal_JJ7fw6",
     "footer_CANxjp"
   ]
 }

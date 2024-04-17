@@ -3,7 +3,7 @@
     {% if section.settings.heading != blank %}
       <marquee class="z-10 marquee-text text-4xl lg:text-8xl bg-gray-100 lg:bg-transparent text-gray-300 absolute right-0 top-0 lg:top-[18rem] font-700">
         &nbsp;{{ section.settings.heading }} &nbsp; {{ section.settings.heading }} &nbsp;
-        {{ section.settings.heading -}}
+        {{ section.settings.heading }}
       </marquee>
     {% endif %}
     <div class="bg-gray-100 grid grid-cols-1 py-20 px-10 lg:py-24 lg:px-20">
@@ -137,12 +137,12 @@
 
 {% schema %}
 {
-  "name": "Sale",
+  "name": "sales",
   "settings": [
     {
       "type": "text",
       "id": "heading",
-      "label": "Floating Text"
+      "label": "Heading"
     },
     {
       "type":"textarea",
@@ -177,7 +177,7 @@
   ],
   "presets": [
     {
-      "name": "Sale",
+      "name": "sales",
       "category": "Harmony Sections"
     }
   ],

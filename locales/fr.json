@@ -1,2 +1,7 @@
 {
+  "sales": {
+    "name": "Section FR name",
+    "success": "Thanks for subscribing",
+    "button_label": "Subscribe"
+  }
 }
