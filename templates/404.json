@@ -1,99 +1,150 @@
 {
   "sections": {
-    "brand_mqeftJ": {
-      "type": "brand",
-      "blocks": {
-        "block_6wGgGX": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/gluten-free.png",
-            "alt": "Brand Logo"
-          }
-        },
-        "block_WMEjQe": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/vegetarian.jpg",
-            "alt": "Brand Logo"
-          }
-        },
-        "block_x6m3JH": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/dairy-free.png",
-            "alt": "Brand Logo"
-          }
-        },
-        "block_VxhBca": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Xolivi.png",
-            "alt": "Brand Logo"
-          }
-        },
-        "block_KYC784": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Website_Logos_Pyxo_small_5c108e2d-f0fb-4c71-951e-4474b7ca2a07.jpg",
-            "alt": "Brand Logo"
-          }
-        }
-      },
-      "block_order": [
-        "block_6wGgGX",
-        "block_WMEjQe",
-        "block_x6m3JH",
-        "block_VxhBca",
-        "block_KYC784"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Our Brand",
-        "color_scheme": "",
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
-    "swiss_ABMJhw": {
-      "type": "swiss",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
-    "featured_category_Kcackd": {
-      "type": "featured-category",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
-    "testimonial_GDLbBA": {
-      "type": "testimonial",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
     "focal_FRdfRG": {
       "type": "focal",
       "disabled": true,
       "settings": {
       }
     },
-    "sale_C3mei3": {
-      "type": "sale",
+    "featured_collection_MATT7C": {
+      "type": "featured-collection",
+      "blocks": {
+        "block_6K77hd": {
+          "type": "block",
+          "settings": {
+            "collection": "books"
+          }
+        },
+        "block_7r3tqy": {
+          "type": "block",
+          "settings": {
+            "collection": "cream"
+          }
+        },
+        "block_iLjxAc": {
+          "type": "block",
+          "settings": {
+            "collection": "t-shirts"
+          }
+        },
+        "block_Tzbd78": {
+          "type": "block",
+          "settings": {
+            "collection": "gold"
+          }
+        }
+      },
+      "block_order": [
+        "block_6K77hd",
+        "block_7r3tqy",
+        "block_iLjxAc",
+        "block_Tzbd78"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Section Featured Collection",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "sales_783xMN": {
+      "type": "sales",
+      "blocks": {
+        "product_H3bCAQ": {
+          "type": "product",
+          "settings": {
+            "s_product": "pizzabox-extend"
+          }
+        }
+      },
+      "block_order": [
+        "product_H3bCAQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Limited Time Sale Offer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "day": 4,
+        "hour": 14,
+        "min": 20,
+        "sec": 50
+      }
+    },
+    "product_featured_WF6tYG": {
+      "type": "product_featured",
+      "blocks": {
+        "block_NmdRA3": {
+          "type": "block",
+          "settings": {
+            "collection": "books"
+          }
+        },
+        "block_PWAXam": {
+          "type": "block",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "block_TTyirx": {
+          "type": "block",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "block_FKPEUH": {
+          "type": "block",
+          "settings": {
+            "collection": "jwellary"
+          }
+        }
+      },
+      "block_order": [
+        "block_NmdRA3",
+        "block_PWAXam",
+        "block_TTyirx",
+        "block_FKPEUH"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Section Featured Products",
+        "show_heeading": true
+      }
+    },
+    "testimonials_GtL8fm": {
+      "type": "testimonials",
+      "blocks": {
+        "review_gEzVPK": {
+          "type": "review",
+          "settings": {
+            "review_heading": "What do they say about us?",
+            "review_text": "It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!"
+          }
+        }
+      },
+      "block_order": [
+        "review_gEzVPK"
+      ],
+      "disabled": true,
+      "settings": {
+        "rating": 4.8,
+        "verify": "From Verified Buyers",
+        "num_r": 45,
+        "btn_label": "Read more Testimonials",
+        "btn_url": "shopify:\/\/pages\/about"
+      }
+    },
+    "footer_CANxjp": {
+      "type": "footer",
       "settings": {
         "heading": ""
       }
     }
   },
   "order": [
-    "brand_mqeftJ",
-    "swiss_ABMJhw",
-    "featured_category_Kcackd",
-    "testimonial_GDLbBA",
     "focal_FRdfRG",
-    "sale_C3mei3"
+    "featured_collection_MATT7C",
+    "sales_783xMN",
+    "product_featured_WF6tYG",
+    "testimonials_GtL8fm",
+    "footer_CANxjp"
   ]
 }

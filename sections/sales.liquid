@@ -1,0 +1,198 @@
+<section id="marquee">
+  <div class="grid grid-cols-1 lg:grid-cols-2 relative">
+    {% if section.settings.heading != blank %}
+      <marquee class="z-10 marquee-text text-4xl lg:text-8xl bg-gray-100 lg:bg-transparent text-gray-300 absolute right-0 top-0 lg:top-[18rem] font-700">
+        &nbsp;{{ section.settings.heading }} &nbsp; {{ section.settings.heading }} &nbsp;
+        {{ section.settings.heading -}}
+      </marquee>
+    {% endif %}
+    <div class="bg-gray-100 grid grid-cols-1 py-20 px-10 lg:py-24 lg:px-20">
+      {% for block in section.blocks %}
+        {% if 'product' %}
+          {% assign sale_product = block.settings.s_product %}
+          <div class="product-col text-left">
+            <a href="#" class="group">
+              <div class="aspect-h-1 aspect-w-1 lg:aspect-h-7 lg:aspect-w-10 sm:overflow-hidden sm:rounded-lg">
+                <div
+                  class="bg-[url('{{ sale_product.featured_image | img_url: 'master' }}')] hover:bg-[url('{{ sale_product.media[1] | img_url: 'master' }}')] bg-contain bg-center bg-no-repeat"
+                ></div>
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div class="w-3/5">
+                  <h3 class="my-2 text-xs text-gray-700">{{ sale_product.title }}</h3>
+                  {% for collection in sale_product.collections limit: 3 %}
+                    <p class="mt-2 text-xs font-small text-gray-900 inline px-3 py-1 border border-black rounded-full">
+                      {{ collection.title }}
+                    </p>
+                  {% endfor %}
+                </div>
+                <div class="w-2/5">
+                  <h3 class="my-2 text-xs text-right text-gray-700">{{ sale_product.price | money }}</h3>
+                  <p class="mt-1 text-xs font-small text-right text-gray-900">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <span class="text-right text-xs">(23)</span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+        {% if forloop.index >= 2 %}
+          <div class="grid grid-col-1 pt-10 pb-0">
+            <button
+              class="w-full items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3"
+              id="headlessui-tabs-tab-6"
+              role="tab"
+              type="button"
+              aria-selected="false"
+              tabindex="-1"
+              aria-controls="headlessui-tabs-panel-8"
+            >
+              <span class="lg:mr-5 text-slate-700"
+                ><i class="text-xs pr-3 pl-2 py-2 bg-gray-200 border-1 rounded-full fa fa-chevron-left"></i
+              ></span>
+              <span class="mx-2 lg:mx-2 text-slate-200">
+                <i class="text-xs fa fa-circle"></i>
+              </span>
+              <span class="mx-2 lg:mx-2 text-slate-700">
+                <i class="text-sm fa fa-circle"></i>
+              </span>
+              <span class="mx-2 lg:mx-2 text-slate-200">
+                <i class="text-xs fa fa-circle"></i>
+              </span>
+              <span class="lg:ml-5 text-white"
+                ><i class="text-xs pr-2 pl-3 py-2 bg-gray-800 border-1 rounded-full fa fa-chevron-right"></i
+              ></span>
+            </button>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="bg-[#E8E7E3] grid grid-rows-2 grid-flow-col gap-4 p-8 h-full w-full bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830')]  bg-cover">
+      {% if section.settings.description != blank %}
+        <div class="row-start-1 text-center px-[1rem] max-w-1xl lg:px-[6rem]">
+          <p class="text-base text-gray-200">
+            {{ section.settings.description }}
+          </p>
+        </div>
+      {% endif %}
+      <div class="row-start-3">
+        <div class="mx-auto max-w-7xl px-6 lg:px-10 lg:py-14">
+          <dl class="grid grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt class="text-base leading-7 text-gray-100">Days</dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">
+                {% assign day = section.settings.day %}
+                {% if day < 10 %}
+                  {% assign day = day | prepend: '0' %}
+                {% endif %}
+
+                {{ day }}
+              </dd>
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt class="text-base leading-7 text-gray-100">Hours</dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">
+                {% assign hour = section.settings.hour %}
+                {% if hour < 10 %}
+                  {% assign hour = hour | prepend: '0' %}
+                {% endif %}
+
+                {{ hour }}
+              </dd>
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt class="text-base leading-7 text-gray-100">Minutes</dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">
+                {% assign min = section.settings.min %}
+                {% if min < 10 %}
+                  {% assign min = min | prepend: '0' %}
+                {% endif %}
+
+                {{ min }}
+              </dd>
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt class="text-base leading-7 text-gray-100">Seconds</dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-200 sm:text-5xl">
+                {% assign sec = section.settings.sec %}
+                {% if sec < 10 %}
+                  {% assign sec = sec | prepend: '0' %}
+                {% endif %}
+
+                {{ sec }}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Sale",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Floating Text"
+    },
+    {
+      "type":"textarea",
+      "label":"Description",
+      "id":"description",
+      "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "type": "number",
+      "id":"day",
+      "label": "Days",
+      "default":0
+    },
+    {
+      "type": "number",
+      "id":"hour",
+      "label": "Hours",
+      "default":0
+    },
+    {
+      "type": "number",
+      "id":"min",
+      "label": "Minutes",
+      "default":0
+    },
+    {
+      "type": "number",
+      "id":"sec",
+      "label": "Seconds",
+      "default":0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sale",
+      "category": "Harmony Sections"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"product",
+      "name":"Product",
+      "settings":[
+        {
+          "type":"product",
+          "label":"Product",
+          "id":"s_product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

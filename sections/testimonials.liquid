@@ -1,0 +1,136 @@
+<section id="harmony--{{ section.id }}">
+  <div class="bg-[#2E4532] py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8 grid grid-cols-1 lg:flex lg:justify-between">
+      <div class="w-full lg:w-1/2">
+        {% for block in section.blocks %}
+          {% if 'review' %}
+            <h2 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+              {{ block.settings.review_heading }}
+            </h2>
+            <p class="mt-2 mb-6 text-md leading-6 text-gray-300">
+              {{ block.settings.review_text }}
+            </p>
+          {% endif %}
+        {% endfor %}
+        <div class="flex items-center my-2">
+          <button
+            class="flex items-center rounded-md py-[0.43rem] pl-0 pr-0 lg:pl-2 lg:pr-2 text-sm font-semibold lg:pr-3"
+            id="headlessui-tabs-tab-6"
+            role="tab"
+            type="button"
+            aria-selected="false"
+            tabindex="-1"
+            data-headlessui-state=""
+            aria-controls="headlessui-tabs-panel-8"
+          >
+            <span class="lg:mr-5 text-slate-800">
+              <i class="text-xs pr-3 pl-2 py-2 bg-gray-200 border-1 rounded-full fa fa-chevron-left"></i>
+            </span>
+            <span class="mx-2 lg:mx-2 text-slate-200">
+              <i class="text-sm fa fa-circle"></i>
+            </span>
+            <span class="mx-2 lg:mx-2 text-slate-600">
+              <i class="text-xs fa fa-circle"></i>
+            </span>
+            <span class="mx-2 lg:mx-2 text-slate-600">
+              <i class="text-xs fa fa-circle"></i>
+            </span>
+            <span class="lg:ml-5 text-white"
+              ><i class="text-xs pr-2 pl-3 py-2 bg-gray-800 border-1 rounded-full fa fa-chevron-right"></i
+            ></span>
+          </button>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/4 text-left lg:text-center py-6">
+        {% if section.settings.verify != blank %}
+          <p class="mt-2 text-xs font-small text-gray-100 inline px-2 py-sm border border-black rounded-full">
+            {{ section.settings.verify }}
+          </p>
+        {% endif %}
+        <div class="mt-1 mb-4 flex justify-start lg:justify-center">
+          {% if section.settings.rating != 0 %}
+            <div class="mr-3">
+              <p class="text-xl font-medium text-gray-100">
+                <i class="fa fa-star"></i>
+                <span class="text-2xl">{{ section.settings.rating }}</span>
+              </p>
+            </div>
+          {% endif %}
+          {% if section.settings.num_r != blank and section.settings.num_r != 0 %}
+            <div class="ml-1">
+              <p class="text-base pt-1 text-gray-100">Based on {{ section.settings.num_r }} Reviews</p>
+            </div>
+          {% endif %}
+        </div>
+        {% if section.settings.btn_label != blank %}
+          <a href="{{ section.settings.btn_url }}" class="mt-6 text-lg text-gray-100 font-bold inline px-0 lg:px-2">
+            {{- section.settings.btn_label -}}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "settings": [
+    {
+      "type": "range",
+      "id": "rating",
+      "label": "Rating",
+      "default":4.9,
+      "min": 0,
+      "max": 5,
+      "step": 0.1
+    },
+    {
+      "type":"text",
+      "id":"verify",
+      "label":"Tag",
+      "default": "From Verified Buyers"
+    },
+        {
+          "type":"number",
+          "label":"Number of Reviews",
+          "id":"num_r"
+        },
+    {
+      "type": "text",
+      "label":"Button Label",
+      "id":"btn_label",
+      "default":"Read more Testimonials"
+    },
+    {
+      "type": "url",
+      "label":"Button URL",
+      "id":"btn_url"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"review",
+      "name":"Review",
+      "settings": [
+        {
+          "type":"text",
+          "label":"Review Heading",
+          "id":"review_heading"
+        },
+        {
+          "type":"textarea",
+          "label":"Review Text",
+          "id":"review_text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial",
+      "category": "Harmony Sections"
+    }
+  ]
+}
+{% endschema %}
