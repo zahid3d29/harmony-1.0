@@ -1,0 +1,243 @@
+<style>
+    /* Style the faq__tab */
+    .faq__tab {
+        overflow: hidden;
+        /* border: 1px solid #ccc;
+        background-color: #f1f1f1; */
+    }
+
+    /* Style the buttons inside the faq__tab */
+    .faq__tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 30px;
+        padding: 5px 20px;
+        transition: 0.3s;
+        font-size: 14px;
+    }
+
+    /* Change background color of buttons on hover */
+    .faq__tab button:hover {
+        background-color: #373738;
+        color: #fff;
+    }
+
+    /* Create an faqTabActive/current faq__tablink class */
+    .faq__tab button.faqTabActive {
+        background-color: #373738;
+        color: #fff;
+    }
+
+    /* Style the faq__tab content */
+    .faq__tabcontent {
+        display: none;
+        padding: 6px 0px;
+        /* border: 1px solid #ccc;
+        border-top: none; */
+    }
+
+    /* Style the close button */
+    .faq__tab-topright {
+        float: right;
+        cursor: pointer;
+        font-size: 28px;
+    }
+
+    .faq__tab-topright:hover {color: red;}
+
+
+/* faqAccordion style   */
+
+    .faqAccordion {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 18px 0px;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+    .accTabActive, .faqAccordion:hover {
+        background-color: #fdfdfd;
+    }
+    .faqAccordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    .accTabActive:after {
+        content: "\2212";
+    }
+    .faqPanel {
+        padding: 0 10px 0px 0px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+</style>
+
+<section id="harmony--{{ section.id }}">
+    <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-7xl lg:mx-0 grid grid-cols-3">
+            <div class="heading text-center md:text-left content-center col-span-3 md:col-span-1">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Read FAQ's</h2>
+            </div>
+            <div class="faq__tab flex justify-center md:justify-end md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
+                <button class="faq__tablinks" onclick="openFaq(event, 'Shipping')" id="defaultOpen">Shipping</button>
+                <button class="faq__tablinks" onclick="openFaq(event, 'Payment')">Payment</button>
+                <button class="faq__tablinks" onclick="openFaq(event, 'Pre-Sale')">Pre-Sale</button>
+            </div>
+          </div>
+          <div class="mx-auto mt-0 md:mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-2 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
+            <div class="faq-faqAccordion">
+                <div id="Shipping" class="faq__tabcontent">
+                    {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
+                    <button class="faqAccordion font-bold">Are your products suitable for all skin types?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    
+                    <button class="faqAccordion font-bold">How do I know which products are right for my skin?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    
+                    <button class="faqAccordion font-bold">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+
+                    <button class="faqAccordion font-bold">What is your return policy?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+
+                    <button class="faqAccordion font-bold">Can I contact your customer support for additional assistance?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+
+                    <button class="faqAccordion font-bold">How can I stay updated on your latest products and promotions?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+
+                <div id="Payment" class="faq__tabcontent">
+                    {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
+                    <button class="faqAccordion font-bold">What is your return policy?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+
+                    <button class="faqAccordion font-bold">Can I contact your customer support for additional assistance?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+
+                    <button class="faqAccordion font-bold">How can I stay updated on your latest products and promotions?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+
+                <div id="Pre-Sale" class="faq__tabcontent">
+                    {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
+                    <button class="faqAccordion font-bold">Are your products suitable for all skin types?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    
+                    <button class="faqAccordion font-bold">How do I know which products are right for my skin?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                    
+                    <button class="faqAccordion font-bold">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+
+                    <button class="faqAccordion font-bold">What is your return policy?</button>
+                    <div class="faqPanel">
+                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="send__msg mx-auto inline-block text-center border border-gray-300 rounded-full px-3 py-2">
+                <p>Still have a question? <a href="#" class="underline">Send private message</a></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+{% comment %} script for faqAccordion  {% endcomment %}
+<script>
+    var faqAcc = document.getElementsByClassName("faqAccordion");
+    var i;
+
+    for (i = 0; i < faqAcc.length; i++) {
+        faqAcc[i].addEventListener("click", function() {
+            this.classList.toggle("accTabActive");
+            var faqPanel = this.nextElementSibling;
+            if (faqPanel.style.maxHeight) {
+                faqPanel.style.maxHeight = null;
+            } else {
+                faqPanel.style.maxHeight = faqPanel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+
+{% comment %} script for tabs  {% endcomment %}
+<script>
+    function openFaq(faq__evt, tabName) {
+        var i, faq__tabcontent, faq__tablinks;
+        faq__tabcontent = document.getElementsByClassName("faq__tabcontent");
+        for (i = 0; i < faq__tabcontent.length; i++) {
+            faq__tabcontent[i].style.display = "none";
+        }
+        faq__tablinks = document.getElementsByClassName("faq__tablinks");
+        for (i = 0; i < faq__tablinks.length; i++) {
+            faq__tablinks[i].className = faq__tablinks[i].className.replace(" faqTabActive", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        faq__evt.currentTarget.className += " faqTabActive";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+{% schema %}
+{
+    "name": "FAQ",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }
+    ],
+    "presets": [
+        {
+            "name": "FAQ",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}

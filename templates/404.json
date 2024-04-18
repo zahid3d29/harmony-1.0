@@ -132,14 +132,22 @@
         "btn_url": "shopify:\/\/pages\/about"
       }
     },
+    "faq_fdKzd7": {
+      "type": "faq",
+      "settings": {
+        "heading": ""
+      }
+    },
     "reveal_JJ7fw6": {
       "type": "reveal",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
     },
     "footer_CANxjp": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -151,6 +159,7 @@
     "sales_783xMN",
     "product_featured_WF6tYG",
     "testimonials_GtL8fm",
+    "faq_fdKzd7",
     "reveal_JJ7fw6",
     "footer_CANxjp"
   ]

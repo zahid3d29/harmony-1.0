@@ -70,15 +70,15 @@
                             <div class="h-full w-full bg-[url('{{ product.featured_media | image_url : width: 360 }}')] hover:bg-[url('{{ product.media[1] | image_url  : width: 360 }}')] bg-cover w-48 h-48"></div>
                         </div>
                         <div class="mt-4 flex justify-between">
-                            <div class="w-3/5">
-                                <h3 class="mt-2 text-xs text-gray-700">{{ product.title }}</h3>
+                            <div class="w-4/5">
+                                <h3 class="mt-2 mb-2 pb-2 text-xs text-gray-700 border-b border-gray-300">{{ product.title }}</h3>
                                 <!-- <p class="mt-2 text-xs font-small inline text-gray-900 px-2 py-sm border border-black rounded-full">Category</p> -->
                               {% for collection in product.collections limit: 3 %}
                                 <p class="mt-2 text-xs font-small inline text-gray-900 px-2 py-sm border border-black rounded-full collection-title">{{ collection.title }}</p>
-                                {% endfor %}
+                              {% endfor %}
                             </div>
                             <div class="w-2/5">
-                                <h3 class="mt-2 text-xs text-right text-gray-700">{{ product.price | money }}</h3>
+                                <h3 class="mt-2 mb-2 pb-2 text-xs text-right text-gray-700 border-b border-gray-300">{{ product.price | money }}</h3>
                                 <p class="mt-2 text-xs font-small text-right text-gray-900">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
