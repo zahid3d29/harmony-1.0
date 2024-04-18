@@ -1,7 +1,14 @@
 {
   "sections": {
+    "announcement_bar_fNP9LL": {
+      "type": "announcement-bar",
+      "settings": {
+        "heading": ""
+      }
+    },
     "gdpr_DDyBqp": {
       "type": "GDPR",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -140,6 +147,7 @@
     },
     "faq_fdKzd7": {
       "type": "faq",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -160,6 +168,7 @@
     }
   },
   "order": [
+    "announcement_bar_fNP9LL",
     "gdpr_DDyBqp",
     "focal_FRdfRG",
     "featured_collection_MATT7C",
