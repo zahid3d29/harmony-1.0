@@ -1,5 +1,11 @@
 {
   "sections": {
+    "gdpr_DDyBqp": {
+      "type": "GDPR",
+      "settings": {
+        "heading": ""
+      }
+    },
     "focal_FRdfRG": {
       "type": "focal",
       "disabled": true,
@@ -154,6 +160,7 @@
     }
   },
   "order": [
+    "gdpr_DDyBqp",
     "focal_FRdfRG",
     "featured_collection_MATT7C",
     "sales_783xMN",
