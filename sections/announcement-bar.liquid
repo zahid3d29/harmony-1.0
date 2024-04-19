@@ -1,37 +1,35 @@
-<section id="harmony--{{ section.id }}">
-    <div class="bg-[#D0BAAC]">
-      <div class="mx-auto max-w-7xl px-2 lg:px-4">
-        <dl class="grid grid-cols-1 sm:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-6 lg:gap-y-16 text-center lg:grid-cols-4">
-          <div class="relative flex items-center justify-center lg:justify-start gap-x-4 order-1">
-              <div class="grid grid-cols-2 gap-x-2 lg:grid-cols-2">
-                  <div class="mt-0">
-                    <select id="country" name="country" autocomplete="country-name" class="block w-full border-0 bg-transparent py-1.5 text-gray-900 ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs text-[14px] leading-[20px]">
-                      <option>English</option>
-                      <option>Canada</option>
-                      <option>Mexico</option>
-                    </select>
-                  </div>
-                  <div class="mt-0">
-                    <select id="currency" name="currency" autocomplete="currency-name" class="block w-md border-0 bg-transparent py-1.5 text-gray-900 ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs text-[14px] leading-[20px]">
-                      <option>USD</option>
-                      <option>BGP</option>
-                      <option>TK</option>
-                    </select>
-                  </div>
+<section id="harmony--{{ section.id }}" class="bg-[#D0BAAC]">
+  <div class="mx-auto max-w-7xl px-4">
+    <dl class="grid grid-cols-1 sm:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-6 lg:gap-y-16 text-center lg:grid-cols-4">
+      <div class="relative flex items-center justify-center lg:justify-start gap-x-4 order-1">
+          <div class="grid grid-cols-2 gap-x-2 lg:grid-cols-2">
+              <div class="mt-0">
+                <select id="country" name="country" autocomplete="country-name" class="block w-full border-0 bg-transparent py-1.5 text-gray-900 ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs text-[14px] leading-[20px]">
+                  <option>English</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                </select>
+              </div>
+              <div class="mt-0">
+                <select id="currency" name="currency" autocomplete="currency-name" class="block w-md border-0 bg-transparent py-1.5 text-gray-900 ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs text-[14px] leading-[20px]">
+                  <option>USD</option>
+                  <option>BGP</option>
+                  <option>TK</option>
+                </select>
               </div>
           </div>
-          <div class="relative flex items-center justify-center gap-x-4 lg:col-span-2 order-3 sm:order-2">
-            <div class="slide-txt sm:text-[14px] sm:leading-[20px]">
-                <i class="fa fa-arrow-left px-2"></i> Enjoy free shipping for your first order! <i class="fa fa-arrow-right px-2"></i>
-            </div>
-          </div>
-          <div class="relative flex items-center justify-center lg:justify-end gap-x-4 lg:gap-x-4 mx-3 lg:mx-0 order-2 sm:order-2">
-              <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/instagram.svg?v=1713455635" alt="apple-pay" class="h-[16px] w-[16px]" width="16" height="16">
-              <span class="text-gray-900 sm:text-[14px] sm:leading-[20px]">Follow us on IG</span>
-          </div>
-        </dl>
       </div>
-    </div>
+      <div class="relative flex items-center justify-center gap-x-4 lg:col-span-2 order-3 sm:order-2">
+        <div class="slide-txt sm:text-[14px] sm:leading-[20px]">
+            <i class="fa fa-arrow-left px-2"></i> Enjoy free shipping for your first order! <i class="fa fa-arrow-right px-2"></i>
+        </div>
+      </div>
+      <div class="relative flex items-center justify-center lg:justify-end gap-x-4 lg:gap-x-4 mx-3 lg:mx-0 order-2 sm:order-2">
+          <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/instagram.svg?v=1713455635" alt="apple-pay" class="h-[16px] w-[16px]" width="16" height="16">
+          <span class="text-gray-900 sm:text-[14px] sm:leading-[20px]">Follow us on IG</span>
+      </div>
+    </dl>
+  </div>
 </section>
 
 
@@ -39,21 +37,21 @@
 
 
 {% schema %}
-    {
-        "name": "Announcement bar",
-        "settings": [
-            {
-                "type": "text",
-                "id": "heading",
-                "label": "Heading"
-            }
-        ],
-        "presets": [
-            {
-                "name": "Announcement bar",
-                "category": "Harmony Sections"
-            }
-        ]
-    }
+  {
+      "name": "Announcement bar",
+      "settings": [
+          {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading"
+          }
+      ],
+      "presets": [
+          {
+              "name": "Announcement bar",
+              "category": "Harmony Sections"
+          }
+      ]
+  }
 {% endschema %}
     
