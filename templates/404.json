@@ -14,7 +14,6 @@
     },
     "focal_FRdfRG": {
       "type": "focal",
-      "disabled": true,
       "settings": {
       }
     },
@@ -52,7 +51,6 @@
         "block_iLjxAc",
         "block_Tzbd78"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Section Featured Collection",
         "color_scheme": "scheme-1"
@@ -71,7 +69,6 @@
       "block_order": [
         "product_H3bCAQ"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Limited Time Sale Offer",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -115,7 +112,6 @@
         "block_TTyirx",
         "block_FKPEUH"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Section Featured Products",
         "show_heeading": true
@@ -135,7 +131,6 @@
       "block_order": [
         "review_gEzVPK"
       ],
-      "disabled": true,
       "settings": {
         "rating": 4.8,
         "verify": "From Verified Buyers",
@@ -146,7 +141,6 @@
     },
     "faq_fdKzd7": {
       "type": "faq",
-      "disabled": true,
       "settings": {
         "heading": ""
       }
