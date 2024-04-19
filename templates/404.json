@@ -12,12 +12,6 @@
         "heading": ""
       }
     },
-    "gdpr_DDyBqp": {
-      "type": "GDPR",
-      "settings": {
-        "heading": ""
-      }
-    },
     "focal_FRdfRG": {
       "type": "focal",
       "disabled": true,
@@ -163,9 +157,14 @@
         "heading": ""
       }
     },
+    "gdpr_DDyBqp": {
+      "type": "GDPR",
+      "settings": {
+        "heading": ""
+      }
+    },
     "footer_CANxjp": {
       "type": "footer",
-      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -174,7 +173,6 @@
   "order": [
     "announcement_bar_fNP9LL",
     "home_banner_PRj3kW",
-    "gdpr_DDyBqp",
     "focal_FRdfRG",
     "featured_collection_MATT7C",
     "sales_783xMN",
@@ -182,6 +180,7 @@
     "testimonials_GtL8fm",
     "faq_fdKzd7",
     "reveal_JJ7fw6",
+    "gdpr_DDyBqp",
     "footer_CANxjp"
   ]
 }
