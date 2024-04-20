@@ -1,7 +1,7 @@
 <section id="marquee">
   <div class="grid grid-cols-1 lg:grid-cols-2 relative">
     {% if section.settings.heading != blank %}
-      <marquee class="z-10 marquee-text text-4xl lg:text-8xl bg-gray-100 lg:bg-transparent text-gray-300 absolute right-0 top-0 lg:top-[18rem] font-700">
+      <marquee class="z-10 marquee-text text-4xl lg:text-8xl bg-transparent lg:bg-transparent translate-y-[1850%] lg:translate-y-[250%] text-gray-300 absolute right-0 font-700">
         &nbsp;{{ section.settings.heading }} &nbsp; {{ section.settings.heading }} &nbsp;
         {{ section.settings.heading }}
       </marquee>
@@ -28,14 +28,27 @@
                 </div>
                 <div class="w-2/5">
                   <h3 class="my-2 text-xs text-right text-gray-700">{{ sale_product.price | money }}</h3>
-                  <p class="mt-1 text-xs font-small text-right text-gray-900">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <span class="text-right text-xs">(23)</span>
-                  </p>
+                  <div class="flex items-center justify-end">
+                    <div class="flex items-center justify-end">
+                      <svg class="text-gray-900 w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;text-gray-900&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                      </svg>
+                      <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                      </svg>
+                      <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                      </svg>
+                      <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                      </svg>
+                      <svg class="text-gray-200 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <span class="sr-only">3.9 out of 5 stars</span>
+                    <span class="ml-3 text-sm font-medium text-gray-900 hover:text-gray-500">22</span>
+                  </div>
                 </div>
               </div>
             </a>
@@ -91,7 +104,6 @@
                 {% if day < 10 %}
                   {% assign day = day | prepend: '0' %}
                 {% endif %}
-
                 {{ day }}
               </dd>
             </div>
@@ -113,7 +125,6 @@
                 {% if min < 10 %}
                   {% assign min = min | prepend: '0' %}
                 {% endif %}
-
                 {{ min }}
               </dd>
             </div>
@@ -124,7 +135,6 @@
                 {% if sec < 10 %}
                   {% assign sec = sec | prepend: '0' %}
                 {% endif %}
-
                 {{ sec }}
               </dd>
             </div>

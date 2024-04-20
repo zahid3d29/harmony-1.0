@@ -93,13 +93,13 @@
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Read FAQ's</h2>
             </div>
             <div class="faq__tab flex justify-center md:justify-end md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
-                <button class="faq__tablinks" onclick="openFaq(event, 'Shipping')" id="defaultOpen">Shipping</button>
+                <button class="faq__tablinks" onclick="openFaq(event, 'Shipping')" id="faqTabDefaultOpen">Shipping</button>
                 <button class="faq__tablinks" onclick="openFaq(event, 'Payment')">Payment</button>
                 <button class="faq__tablinks" onclick="openFaq(event, 'Pre-Sale')">Pre-Sale</button>
             </div>
           </div>
           <div class="mx-auto mt-0 md:mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-2 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
-            <div class="faq-faqAccordion">
+            <div class="faq-faqAccordion min-h-[25rem]">
                 <div id="Shipping" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
                     {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
                     <button class="faqAccordion font-bold">Are your products suitable for all skin types?</button>
@@ -238,6 +238,6 @@
         faq__evt.currentTarget.className += " faqTabActive";
     }
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+    // Get the element with id="faqTabDefaultOpen" and click on it
+    document.getElementById("faqTabDefaultOpen").click();
 </script>
