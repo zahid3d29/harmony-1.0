@@ -1,42 +1,27 @@
 {% style %}
     .outline-title {
-        font-family: sans-serif;
         text-shadow: 1px 1px 0 #959595, -1px -1px 0 #959595, 1px -1px 0 #959595, -1px 1px 0 #959595, 1px 1px 0 #959595;
-    }
-    .overlay-left {
-        display: block;
-        width: 20%;
-        height: 100%;
-        background: #fff;
-        opacity: 0.8;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 10;
-    }
-    .overlay-right {
-        display: block;
-        width: 20%;
-        height: 100%;
-        background: #fff;
-        opacity: 0.8;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 10;
     }
 {% endstyle %} 
 
 <section id="harmony--{{ section.id }}" class="relative">
-    <div class="overlay-left"></div>
-    <div class="outline-title text-[#fff] bg-[#fff] opacity-70 pb-2 text-[142px] leading-[140px] font-bold text-center mt-8">
-        <marquee direction="right" scrollamount="30"> No Chemicals <span class="inline-block mx-2"><img src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/not-circle.png?v=1713638870" alt="not-sign-img"></span>No Paraben</marquee>
+    <div class="overlay-left block w-[20%] h-[100%] bg-white opacity-70 absolute left-0 top-0 z-10"></div>
+    <div class="outline-title text-[#fff] bg-[#fff] opacity-70 pb-2 text-[100px] lg: text-[142px] leading-[140px] font-bold text-center mt-8">
+        <marquee direction="right" scrollamount="30"> 
+            No Chemicals <span class="inline-block mx-2">
+            <img src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/not-circle.png?v=1713638870" alt="not-sign-img">
+            </span>No Paraben
+        </marquee>
     </div>
     <div class="block w-full border border-[#707070]-400"></div>
-    <div class="outline-title text-[#303327] pb-2 text-[142px] leading-[140px] font-500 text-center mt-8">
-        <marquee direction="left" scrollamount="30">Committed to <span class="inline-block mx-2"><img src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/emoji.png?v=1713640687" alt="not-sign-img"></span>Cruelty-free</marquee>
+    <div class="outline-title text-[#303327] pb-2 text-[100px] lg:text-[142px] leading-[140px] font-500 text-center mt-8">
+        <marquee direction="left" scrollamount="30">
+            Committed to <span class="inline-block mx-2">
+                <img src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/emoji.png?v=1713640687" alt="not-sign-img">
+            </span>Cruelty-free
+        </marquee>
     </div>
-    <div class="overlay-right"></div>
+    <div class="overlay-right block w-[20%] h-[100%] bg-white opacity-70 absolute right-0 top-0 z-10"></div>
 </section>
 
 

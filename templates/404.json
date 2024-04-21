@@ -6,11 +6,11 @@
         "heading": ""
       }
     },
-    "home_banner_PRj3kW": {
-      "type": "home-banner",
+    "hero_cp7Nnr": {
+      "type": "hero",
       "disabled": true,
       "settings": {
-        "heading": ""
+        "banner_heading": "Your path to radiant skin."
       }
     },
     "focal_FRdfRG": {
@@ -166,15 +166,30 @@
         "heading": ""
       }
     },
-    "footer_CANxjp": {
-      "type": "footer",
+    "marquee_EEqW9d": {
+      "type": "marquee",
       "disabled": true,
       "settings": {
         "heading": ""
       }
     },
-    "marquee_EEqW9d": {
-      "type": "marquee",
+    "swiss_cciQWT": {
+      "type": "swiss",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "sub_text": ""
+      }
+    },
+    "newsletter_pop_89fWAC": {
+      "type": "newsletter-pop",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
+      }
+    },
+    "footer_CANxjp": {
+      "type": "footer",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -182,7 +197,7 @@
   },
   "order": [
     "announcement_bar_fNP9LL",
-    "home_banner_PRj3kW",
+    "hero_cp7Nnr",
     "focal_FRdfRG",
     "featured_collection_MATT7C",
     "sales_783xMN",
@@ -191,7 +206,9 @@
     "faq_fdKzd7",
     "reveal_JJ7fw6",
     "gdpr_DDyBqp",
-    "footer_CANxjp",
-    "marquee_EEqW9d"
+    "marquee_EEqW9d",
+    "swiss_cciQWT",
+    "newsletter_pop_89fWAC",
+    "footer_CANxjp"
   ]
 }
