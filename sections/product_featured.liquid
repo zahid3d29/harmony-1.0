@@ -75,7 +75,7 @@
                 </div>
 
 
-              {% for block in section.blocks %}
+                {% for block in section.blocks %}
                 <div id="pd_{{ block.settings.collection.handle }}" class="productFeaturedTabcontent grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8" {% if forloop.index == 1 %}style="display:grid"{% endif %} >
 
                   {%- for product in block.settings.collection.products limit: 6 -%}
@@ -86,7 +86,6 @@
                         <div class="mt-4 flex justify-between">
                             <div class="w-4/5">
                                 <h3 class="mt-2 mb-2 pb-2 text-xs text-gray-700 border-b border-gray-300">{{ product.title }}</h3>
-                                <!-- <p class="mt-2 text-xs font-small inline text-gray-900 px-2 py-sm border border-black rounded-full">Category</p> -->
                               {% for collection in product.collections limit: 3 %}
                                 <p class="mt-2 text-[10px] inline text-gray-900 px-2 py-0.5 border border-black rounded-full collection-title">{{ collection.title }}</p>
                               {% endfor %}
@@ -119,8 +118,8 @@
                     </a>
                     {% endfor %}
                 </div>
-              {% endfor %}
-           
+                {% endfor %}
+
             </div>              
         </div>
     </div>

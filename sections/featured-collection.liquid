@@ -26,7 +26,7 @@
 </style>
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
 <section id="harmony--{{ section.id }}">
-    <div class="bg-[#ffffff] py-5 sm:py-5">
+    <div class="bg-[#ffffff] py-5 sm:py-5 min-h-[500px]">
         <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-5 px-4 py-5 sm:px-6 sm:py-5 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div>
                 <div class="ftCats_tab">
@@ -35,11 +35,16 @@
                     {% endfor %}
                 </div>
             </div>
-            <div>
+            <div class="flex flex-nowrap gap-x-0 gap-y-0 justify-left items-center">
                {% for block in section.blocks %}
-                <div id="{{ block.settings.collection.handle }}" class="categoryContent grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                <div id="{{ block.settings.collection.handle }}" class="categoryContent grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4 lg:gap-6">
                      {%- for product in block.settings.collection.products limit: 4 -%}
-                        <img src="{{ product.featured_media | image_url }}" alt="{{ product.featured_media.alt }}" class="rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
+                        <div class="bg-[url('{{ product.featured_media | image_url }}')] bg-scroll bg-center bg-no-repeat bg-cover h-[300px] w-[250px] rounded-lg bg-transparent animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
+                       
+                         </div>
+                        {% comment %}
+                        <img src="{{ product.featured_media | image_url }}" alt="{{ product.featured_media.alt }}" class="max-h-[100%] w-[100%] rounded-lg bg-gray-100 animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
+                     {% endcomment %}
                     {% endfor %}
                 </div>
                  {% endfor %}
