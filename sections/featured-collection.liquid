@@ -31,7 +31,7 @@
             <div>
                 <div class="ftCats_tab">
                   {% for block in section.blocks %}
-                        <button class="categoryLinks block text-gray-400 px-15 py-0 w-full border-none outline-none text-left cursor-pointer text-lg hover:text-black hover:font-bold hover:border-b-2 hover:border-gray-300" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
+                        <button class="categoryLinks block text-gray-400 px-15 py-0 w-full border-none outline-none text-left cursor-pointer text-[50px] border-b-2 border-gray-300 hover:text-black hover:font-bold hover:border-b-2 hover:border-gray-300" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
                     {% endfor %}
                 </div>
             </div>
