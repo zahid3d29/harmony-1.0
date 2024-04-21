@@ -39,7 +39,7 @@
                {% for block in section.blocks %}
                 <div id="{{ block.settings.collection.handle }}" class="categoryContent grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4 lg:gap-6">
                      {%- for product in block.settings.collection.products limit: 4 -%}
-                        <div class="bg-[url('{{ product.featured_media | image_url }}')] bg-scroll bg-center bg-no-repeat bg-cover h-[300px] w-[250px] rounded-lg bg-transparent animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
+                        <div class="bg-[url('{{ product.featured_media | image_url }}')] bg-scroll bg-center bg-no-repeat bg-contain border border-gray-300 h-[300px] w-[250px] rounded-lg bg-transparent animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
                        
                          </div>
                         {% comment %}
