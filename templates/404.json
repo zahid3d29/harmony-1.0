@@ -19,6 +19,45 @@
       "settings": {
       }
     },
+    "product_featured_WF6tYG": {
+      "type": "product_featured",
+      "blocks": {
+        "block_NmdRA3": {
+          "type": "block",
+          "settings": {
+            "collection": "books"
+          }
+        },
+        "block_PWAXam": {
+          "type": "block",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "block_TTyirx": {
+          "type": "block",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "block_FKPEUH": {
+          "type": "block",
+          "settings": {
+            "collection": "jwellary"
+          }
+        }
+      },
+      "block_order": [
+        "block_NmdRA3",
+        "block_PWAXam",
+        "block_TTyirx",
+        "block_FKPEUH"
+      ],
+      "settings": {
+        "heading": "Section Featured Products",
+        "show_heeading": true
+      }
+    },
     "featured_collection_MATT7C": {
       "type": "featured-collection",
       "blocks": {
@@ -79,46 +118,6 @@
         "hour": 14,
         "min": 20,
         "sec": 50
-      }
-    },
-    "product_featured_WF6tYG": {
-      "type": "product_featured",
-      "blocks": {
-        "block_NmdRA3": {
-          "type": "block",
-          "settings": {
-            "collection": "books"
-          }
-        },
-        "block_PWAXam": {
-          "type": "block",
-          "settings": {
-            "collection": "gold"
-          }
-        },
-        "block_TTyirx": {
-          "type": "block",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "block_FKPEUH": {
-          "type": "block",
-          "settings": {
-            "collection": "jwellary"
-          }
-        }
-      },
-      "block_order": [
-        "block_NmdRA3",
-        "block_PWAXam",
-        "block_TTyirx",
-        "block_FKPEUH"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Section Featured Products",
-        "show_heeading": true
       }
     },
     "testimonials_GtL8fm": {
@@ -198,9 +197,9 @@
     "announcement_bar_fNP9LL",
     "hero_cp7Nnr",
     "focal_FRdfRG",
+    "product_featured_WF6tYG",
     "featured_collection_MATT7C",
     "sales_783xMN",
-    "product_featured_WF6tYG",
     "testimonials_GtL8fm",
     "faq_fdKzd7",
     "reveal_JJ7fw6",
