@@ -15,7 +15,19 @@
         from {opacity: 0;}
         to {opacity: 1;}
     }
+    #product__overlay{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0%;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+    }
     #product__grid-wrapper:hover #product__overlay{
         height: 100%;
         transition: .5s ease;
@@ -71,7 +83,7 @@
                 <div class="group">
                     <div id="product__grid-wrapper" class="relative block w-full h-80 overflow-hidden bg-transparent sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 sm:h-[500px] animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
                         <img src="{{ product.featured_media | image_url }}" alt="{{ product.title  }}" class="h-full w-full object-cover object-center">
-                        <div id="product__overlay" class="absolute bottom-0 left-0 right-0 h-[0] bg-[#e8e7e3]">
+                        <div id="product__overlay" >
                             Hello world
                         </div>
                     </div>
