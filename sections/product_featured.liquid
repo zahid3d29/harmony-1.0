@@ -36,11 +36,11 @@
 <section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
     <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
         <div class="flex items-center lg:items-baseline justify-between pb-8 pt-8 lg:pt-24 mb-8">
-            <h1 class="text-2xl lg:text-7xl lg:max-w-3xl font-bold tracking-tight text-gray-900">{{ section.settings.heading }}</h1>
+            <h1 class="text-2xl lg:text-[50px] lg:leading-[56px] text-[#000000] font-semibold lg:max-w-3xl tracking-tight">{{ section.settings.heading }}</h1>
             <div class="flex items-center">
-                <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3" id="headlessui-tabs-tab-6" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="headlessui-tabs-panel-8">
-                    <span class="lg:mr-2 text-gray-700">
-                        <a href="#" class="relative inline-flex items-center rounded-full px-2 py-2 text-gray-900 hover:text-gray-900 ring-1 ring-inset ring-gray-300 bg-gray-100 hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0">
+                <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3" id="headlessui-tabs-tab-6" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="headlessui-tabs-panel-8">
+                    <span class="lg:mr-2">
+                        <a href="#" class="relative inline-flex items-center rounded-full text-[17px] leading-[35px] text-[#000000] px-2 py-2 hover:text-gray-900 ring-1 ring-inset ring-gray-300 bg-gray-100 hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0">
                             <span class="sr-only">Previous</span>
                             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
@@ -70,7 +70,7 @@
         <div class="mx-auto">
             <div class="productFeaturedTab overflow:hidden bg-white-900 grid lg:border-t lg:border-b border-[#7070704d] mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
                 {% for block in section.blocks %}
-                    <button class="productFeaturedTablinks block font-medium h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 border-[#7070704d] cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultOpen"{% endif %}>{{ block.settings.collection.title }}</button>
+                    <button class="productFeaturedTablinks block text-[17px] leading-[35px] text-[#000000] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 border-[#7070704d] cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultOpen"{% endif %}>{{ block.settings.collection.title }}</button>
                 {% endfor %}
             </div>
 
@@ -97,14 +97,14 @@
                     <div class="mt-4 flex justify-between">
                         <div class="w-4/5">
                         <a href="{{ product.url }}" class="block">
-                            <h3 class="mt-2 mb-3 pb-2 text-[16px] font-medium text-gray-700 border-b border-[#7070704d]">{{ product.title }}</h3>
+                            <h3 class="mt-2 mb-3 pb-2 text-[16px] leading-[21px] text-[#000000] font-medium border-b border-[#7070704d]">{{ product.title }}</h3>
                         </a>
                             {% for collection in product.collections limit: 1 %}
-                                <p class="mt-2 text-[14px] font-medium inline-block text-gray-900 px-2 py-0.5 border border-gray-900 rounded-full collection-title">{{ collection.title }}</p>
+                                <p class="text-[14px] leading-[19px] text-[#000000] inline-block px-2 py-0.5 border border-black rounded-full collection-title">{{ collection.title }}</p>
                             {% endfor %}
                         </div>
                         <div class="w-2/5">
-                            <h3 class="mt-2 mb-3 pb-3 text-[13px] font-medium text-right text-gray-700 border-b border-[#7070704d]">{{ product.price | money }}</h3>
+                            <h3 class="mt-2 mb-3 pb-3 text-[13px] leading-[17px] text-[#000000] text-right border-b border-[#7070704d]">{{ product.price | money }}</h3>
                             <div class="flex items-center justify-end">
                                 <div class="flex items-center justify-end text-[13px]">
                                     <svg class="text-gray-900 w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;text-gray-900&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -124,7 +124,7 @@
                                     </svg>
                                 </div>
                                 <span class="sr-only">3.9 out of 5 stars</span>
-                                <span class="ml-3 text-[13px] font-medium text-gray-900 hover:text-gray-500">22</span>
+                                <span class="ml-3 text-[13px] leading-[17px] text-[#000000] hover:text-gray-500">22</span>
                             </div>
                         </div>    
                     </div>

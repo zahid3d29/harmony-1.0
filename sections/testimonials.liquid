@@ -4,10 +4,10 @@
       <div class="w-full lg:w-1/2">
         {% for block in section.blocks %}
           {% if 'review' %}
-            <h2 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+            <h2 class="text-[37px] leading-[56px] font-bold tracking-tight text-[#fffaf3]">
               {{ block.settings.review_heading }}
             </h2>
-            <p class="mt-2 mb-6 text-md leading-6 text-gray-300">
+            <p class="text-[18px] leading-[22px] text-[#aeb4af] mt-2 mb-6">
               {{ block.settings.review_text }}
             </p>
           {% endif %}
@@ -53,7 +53,7 @@
       </div>
       <div class="w-full lg:w-1/4 text-left lg:text-center py-6">
         {% if section.settings.verify != blank %}
-          <p class="mt-2 text-xs font-small text-gray-100 inline px-2 py-sm border border-black rounded-full">
+          <p class="mt-2 text-[14px] leading-[19px] text-[#f7f4ed] inline-block px-2 py-1.5 mb-2 border border-[#f7f4ed] rounded-full">
             {{ section.settings.verify }}
           </p>
         {% endif %}
@@ -64,18 +64,18 @@
                 <svg class="inline-flex text-gray-100 w-5 mt-[-11px] flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                 </svg>
-                <span class="text-2xl">{{ section.settings.rating }}</span>
+                <span class="text-[24px] leading-[29px] text-[#f7f4ed]">{{ section.settings.rating }}</span>
               </p>
             </div>
           {% endif %}
           {% if section.settings.num_r != blank and section.settings.num_r != 0 %}
             <div class="ml-1">
-              <p class="text-base pt-1 text-gray-100">Based on {{ section.settings.num_r }} Reviews</p>
+              <p class="text-[14px] leading-[19px] text-[#f7f4ed] pt-1">Based on {{ section.settings.num_r }} Reviews</p>
             </div>
           {% endif %}
         </div>
         {% if section.settings.btn_label != blank %}
-          <a href="{{ section.settings.btn_url }}" class="mt-6 text-lg text-gray-100 font-bold inline px-0 lg:px-2">
+          <a href="{{ section.settings.btn_url }}" class="mt-6 text-[17px] leading-[13px] text-[#fffaf4] font-semibold inline px-0 lg:px-2">
             {{- section.settings.btn_label -}}
           </a>
         {% endif %}

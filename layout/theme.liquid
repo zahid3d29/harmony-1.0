@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="adastra">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
-    {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio@0.4.2/src/index.min.js"></script> {% endcomment %}
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    {% comment %} <script src="//cdn.tailwindcss.com"></script> {% endcomment %}
+    {% comment %} <script src="//cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio@0.4.2/src/index.min.js"></script> {% endcomment %}
+    <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
 
     <link rel="canonical" href="{{ canonical_url }}">
@@ -31,12 +31,12 @@
     {% unless settings.type_heading.system? and settings.type_body.system? %}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {% endunless %}
-
-    {% liquid
-      render 'colors'
-      render 'typography'
-    %}
-
+    {% comment %}
+      {% liquid
+        render 'colors'
+        render 'typography'
+      %}
+    {% endcomment %}
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
@@ -45,11 +45,13 @@
     <!-- shopify/apps -->
     {{ content_for_header }}
 
+    {% comment %}
     {% liquid
       # Always add entrypoint below content_for_header
       render 'adastra' with 'base.css'
       render 'adastra' with 'index.js'
     %}
+    {% endcomment %}
 
     {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
   </head>

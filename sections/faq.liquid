@@ -48,14 +48,12 @@
 /* faqAccordion style   */
 
     .faqAccordion {
-        color: #444;
         cursor: pointer;
         padding: 18px 0px;
         width: 100%;
         border-bottom: 1px solid #eee;
         text-align: left;
         outline: none;
-        font-size: 15px;
         transition: 0.4s;
     }
     .accTabActive, .faqAccordion:hover {
@@ -85,89 +83,89 @@
         <div class="mx-auto max-w-7xl px-6 md:px-10">
           <div class="mx-auto grid grid-cols-3">
             <div class="heading text-center md:text-left content-center col-span-3 md:col-span-1">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Read FAQ's</h2>
+                <h2 class="tracking-tight text-[50px] leading-[56px] text-[#000000] font-semibold sm:text-4xl">Read FAQ's</h2>
             </div>
             <div class="faq__tab flex justify-center md:justify-end md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
-                <button class="faq__tablinks" onclick="openFaq(event, 'Shipping')" id="faqTabDefaultOpen">Shipping</button>
-                <button class="faq__tablinks" onclick="openFaq(event, 'Payment')">Payment</button>
-                <button class="faq__tablinks" onclick="openFaq(event, 'Pre-Sale')">Pre-Sale</button>
+                <button class="faq__tablinks text-[14px] leading-[19px] text-[#000000] font-semibold" onclick="openFaq(event, 'Shipping')" id="faqTabDefaultOpen">Shipping</button>
+                <button class="faq__tablinks text-[14px] leading-[19px] text-[#000000] font-semibold" onclick="openFaq(event, 'Payment')">Payment</button>
+                <button class="faq__tablinks text-[14px] leading-[19px] text-[#000000] font-semibold" onclick="openFaq(event, 'Pre-Sale')">Pre-Sale</button>
             </div>
           </div>
           <div class="mx-auto mt-0 md:mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-2 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
             <div class="faq-faqAccordion min-h-[25rem]">
                 <div id="Shipping" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">What is your return policy?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">What is your return policy?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                 </div>
 
                 <div id="Payment" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">What is your return policy?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">What is your return policy?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                 </div>
 
                 <div id="Pre-Sale" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold bg-[#FFFAF4]">What is your return policy?</button>
+                    <button class="faqAccordion text-[20px] leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4]">What is your return policy?</button>
                     <div class="faqPanel">
-                      <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                 </div>
             </div>
-            <div class="send__msg mx-auto inline-block text-center border border-gray-300 rounded-full px-3 py-2">
+            <div class="send__msg mx-auto text-[14px] leading-[19px] text-[#000000] inline-block text-center border border-gray-300 rounded-full px-3 py-2">
                 <p>Still have a question? <a href="#" class="underline">Send private message</a></p>
             </div>
           </div>

@@ -7,12 +7,10 @@
 
     /* Create an active/current "ftCats_tab button" class */
     section#harmony--{{ section.id }} .ftCats_tab button.active {
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-size: 50px;
         padding-left: 60px;
         border-bottom: 1px solid #e6e6e6;
         transition: 0.5s;
+        opacity: 1;
     }
     section#harmony--{{ section.id }} .ftCats_tab button.active::before {
         content: "\2212";
@@ -42,7 +40,7 @@
         <div class="flex flex-nowrap gap-x-0 gap-y-0 justify-start items-center">
             <div class="ftCats_tab">
                 {% for block in section.blocks %}
-                    <button class="categoryLinks block text-gray-400 px-15 py-0 w-full border-b border-[#e6e6e6] outline-none text-left cursor-pointer text-[26px] lg:text-[40px] hover:text-black hover:font-bold hover:border-b-2 hover:border-gray-300" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
+                    <button class="categoryLinks block px-15 py-0 w-full border-b border-[#e6e6e6] outline-none text-left cursor-pointer text-[26px] lg:text-[50px] lg:leading-[96px] text-[#000000] opacity-30 font-semibold hover:text-black hover:font-semibold hover:border-b-2 hover:border-gray-300" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
                 {% endfor %}
             </div>
         </div>
