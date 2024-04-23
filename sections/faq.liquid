@@ -2,8 +2,6 @@
     /* Style the faq__tab */
     .faq__tab {
         overflow: hidden;
-        /* border: 1px solid #ccc;
-        background-color: #f1f1f1; */
     }
 
     /* Style the buttons inside the faq__tab */
@@ -35,8 +33,6 @@
     .faq__tabcontent {
         display: none;
         padding: 6px 0px;
-        /* border: 1px solid #ccc;
-        border-top: none; */
     }
 
     /* Style the close button */
@@ -52,7 +48,6 @@
 /* faqAccordion style   */
 
     .faqAccordion {
-        background-color: #fff;
         color: #444;
         cursor: pointer;
         padding: 18px 0px;
@@ -64,7 +59,7 @@
         transition: 0.4s;
     }
     .accTabActive, .faqAccordion:hover {
-        background-color: #fdfdfd;
+        background-color: #FFFAF4;
     }
     .faqAccordion:after {
         content: '\002B';
@@ -78,17 +73,17 @@
     }
     .faqPanel {
         padding: 0 10px 0px 0px;
-        background-color: white;
+        background-color: #FFFAF4;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
     }
 </style>
 
-<section id="harmony--{{ section.id }}" class="#FFFAF4">
+<section id="harmony--{{ section.id }}" class="bg-[#FFFAF4]">
     <div class="py-10 md:py-24">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto max-w-7xl lg:mx-0 grid grid-cols-3">
+        <div class="mx-auto max-w-7xl px-6 md:px-10">
+          <div class="mx-auto grid grid-cols-3">
             <div class="heading text-center md:text-left content-center col-span-3 md:col-span-1">
                 <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Read FAQ's</h2>
             </div>
@@ -101,74 +96,72 @@
           <div class="mx-auto mt-0 md:mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-2 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
             <div class="faq-faqAccordion min-h-[25rem]">
                 <div id="Shipping" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
-                    {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
-                    <button class="faqAccordion font-bold">Are your products suitable for all skin types?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold">How do I know which products are right for my skin?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold">What is your return policy?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">What is your return policy?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold">Can I contact your customer support for additional assistance?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold">How can I stay updated on your latest products and promotions?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                 </div>
 
                 <div id="Payment" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
-                    {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
-                    <button class="faqAccordion font-bold">What is your return policy?</button>
+
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">What is your return policy?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold">Can I contact your customer support for additional assistance?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold">How can I stay updated on your latest products and promotions?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                 </div>
 
                 <div id="Pre-Sale" class="faq__tabcontent animate__animated animate__fadeIn animate__slower">
-                    {% comment %} <span onclick="this.parentElement.style.display='none'" class="faq__tab-topright">&times</span> {% endcomment %}
-                    <button class="faqAccordion font-bold">Are your products suitable for all skin types?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold">How do I know which products are right for my skin?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
                     
-                    <button class="faqAccordion font-bold">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>
 
-                    <button class="faqAccordion font-bold">What is your return policy?</button>
+                    <button class="faqAccordion font-bold bg-[#FFFAF4]">What is your return policy?</button>
                     <div class="faqPanel">
                       <div class="block py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                     </div>

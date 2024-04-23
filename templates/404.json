@@ -114,16 +114,16 @@
     "product_featured_WF6tYG": {
       "type": "product_featured",
       "blocks": {
-        "block_NmdRA3": {
-          "type": "block",
-          "settings": {
-            "collection": "books"
-          }
-        },
         "block_PWAXam": {
           "type": "block",
           "settings": {
             "collection": "gold"
+          }
+        },
+        "block_NmdRA3": {
+          "type": "block",
+          "settings": {
+            "collection": "books"
           }
         },
         "block_TTyirx": {
@@ -140,8 +140,8 @@
         }
       },
       "block_order": [
-        "block_NmdRA3",
         "block_PWAXam",
+        "block_NmdRA3",
         "block_TTyirx",
         "block_FKPEUH"
       ],
@@ -174,7 +174,7 @@
         "product_H3bCAQ": {
           "type": "product",
           "settings": {
-            "s_product": "pizzabox-extend"
+            "s_product": "bangle-bracelet"
           }
         }
       },
