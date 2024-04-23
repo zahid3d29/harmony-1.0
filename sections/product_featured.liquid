@@ -17,20 +17,18 @@
     }
     #product__overlay{
         position: absolute;
+        bottom: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        background-color: #E8E7E3;
+        overflow: hidden;
         width: 100%;
-        height: 0%;
-        background-color: red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 0;
+        transition: .5s ease;
 
     }
     #product__grid-wrapper:hover #product__overlay{
         height: 100%;
-        transition: .5s ease;
     }
 
 </style>
@@ -83,8 +81,18 @@
                 <div class="group">
                     <div id="product__grid-wrapper" class="relative block w-full h-80 overflow-hidden bg-transparent sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 sm:h-[500px] animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
                         <img src="{{ product.featured_media | image_url }}" alt="{{ product.title  }}" class="h-full w-full object-cover object-center">
-                        <div id="product__overlay" >
-                            Hello world
+                        <div id="product__overlay">
+                            <div class="flex h-full max-w-xl flex-col items-start justify-between">
+                                <div class="flex items-center justify-center gap-x-4 text-xs">
+                                    <span datetime="2020-02-12" class="absolute left-3 top-3 inline-block items-start text-gray-600 bg-[#D0BAAC] py-1 px-2 font-bold">Limited edition</span>
+                                    <button class="absolute right-2 top-3 text-sm font-semibold h-[35px] w-[35px] block border border-gray-900 hover:bg-[#D0BAAC] rounded-full px-1 pt-[5px]" id="headlessui-tabs-tab-111" role="tab" type="button" aria-selected="true" tabindex="0" data-headlessui-state="selected" aria-controls="headlessui-tabs-panel-113">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+                                        </svg>
+                                    <span class="sr-only lg:not-sr-only lg:ml-2 text-slate-900"></span></button>
+                                </div>
+                                <button type="submit" class="w-[85%] mx-auto flex w-full items-center justify-center border border-transparent bg-[#373738] px-4 py-4 mb-4 text-base font-medium text-[#f7f4ed] hover:text-gray-900 hover:bg-[#D0BAAC]">Quick View</button>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-4 flex justify-between">
