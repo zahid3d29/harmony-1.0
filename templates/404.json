@@ -163,6 +163,7 @@
     },
     "marquee_EEqW9d": {
       "type": "marquee",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
