@@ -1,0 +1,140 @@
+{
+  "sections": {
+    "all": {
+      "animation": {
+        "content": "Animations",
+        "image_behavior": {
+          "options__1": {
+            "label": "Aucun"
+          },
+          "options__2": {
+            "label": "Mouvement ambiant"
+          },
+          "options__3": {
+            "label": "Position de fond fixe"
+          },
+          "options__4": {
+            "label": "Zoom lors du défilement"
+          },
+          "label": "Comportement de l'image"
+        }
+      },
+      "padding": {
+        "section_padding_heading": "Rembourrage de la section",
+        "padding_top": "Rembourrage supérieur",
+        "padding_bottom": "Rembourrage inférieur"
+      },
+      "spacing": "Espacement",
+      "colors": {
+        "label": "Schéma de couleurs",
+        "has_cards_info": "Pour changer le schéma de couleur des cartes, mettez à jour les paramètres de votre thème."
+      },
+      "heading_size": {
+        "label": "Taille de l'en-tête",
+        "options__1": {
+          "label": "Petite"
+        },
+        "options__2": {
+          "label": "Moyenne"
+        },
+        "options__3": {
+          "label": "Grande"
+        },
+        "options__4": {
+          "label": "Très grande"
+        }
+      },
+      "image_shape": {
+        "options__1": {
+          "label": "Défaut"
+        },
+        "options__2": {
+          "label": "Arc"
+        },
+        "options__3": {
+          "label": "Blob"
+        },
+        "options__4": {
+          "label": "Chevron gauche"
+        },
+        "options__5": {
+          "label": "Chevron droit"
+        },
+        "options__6": {
+          "label": "Diamant"
+        },
+        "options__7": {
+          "label": "Parallélogramme"
+        },
+        "options__8": {
+          "label": "Rond"
+        },
+        "label": "Forme de l'image",
+        "info": "Les cartes au style standard n'ont pas de bordures lorsque la forme de l'image est active."
+      }
+    },
+    "announcement-bar": {
+      "name": "Barre d'annonce",
+      "settings": {
+        "auto_rotate": {
+          "label": "Faire pivoter automatiquement les annonces"
+        },
+        "change_slides_speed": {
+          "label": "Changer toutes les"
+        },
+        "header__1": {
+          "content": "Icônes des médias sociaux",
+          "info": "Pour afficher vos comptes de médias sociaux, liez-les dans vos [paramètres de thème](\/editor?context=theme&category=social%20media)."
+        },
+        "header__2": {
+          "content": "Annonces"
+        },
+        "show_social": {
+          "label": "Afficher les icônes sur le bureau"
+        },
+        "header__3": {
+          "content": "Sélecteur de pays\/région",
+          "info": "Pour ajouter un pays\/région, accédez à vos [paramètres de marché.](\/admin\/settings\/markets)"
+        },
+        "enable_country_selector": {
+          "label": "Activer le sélecteur de pays\/région"
+        },
+        "header__4": {
+          "content": "Sélecteur de langue",
+          "info": "Pour ajouter une langue, accédez à vos [paramètres de langue.](\/admin\/settings\/languages)"
+        },
+        "enable_language_selector": {
+          "label": "Activer le sélecteur de langue"
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Annonce",
+          "settings": {
+            "text": {
+              "label": "Texte"
+            },
+            "text_alignment": {
+              "label": "Alignement du texte",
+              "options__1": {
+                "label": "Gauche"
+              },
+              "options__2": {
+                "label": "Centre"
+              },
+              "options__3": {
+                "label": "Droite"
+              }
+            },
+            "link": {
+              "label": "Lien"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Barre d'annonce"
+      }
+    }
+  }
+}

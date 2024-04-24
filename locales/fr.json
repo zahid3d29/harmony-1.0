@@ -1,7 +1,100 @@
 {
-  "sales": {
-    "name": "Section FR name",
-    "success": "Thanks for subscribing",
-    "button_label": "Subscribe"
+  "general": {
+    "social": {
+      "links": {
+        "twitter": "Twitter",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
+        "tiktok": "TikTok"
+      }
+    },
+    "continue_shopping": "Continuer vos achats"
+  },
+  "accessibility": {
+    "skip_to_text": "Passer au contenu",
+    "loading": "Chargement",
+    "close": "Fermer",
+    "link_messages": {
+      "new_window": "Ouvre dans une nouvelle fenêtre."
+    }
+  },
+  "products": {
+    "product": {
+      "quantity": {
+        "label": "Quantité",
+        "input_label": "Quantité pour {{ product }}",
+        "increase": "Augmenter la quantité pour {{ product }}",
+        "decrease": "Diminuer la quantité pour {{ product }}"
+      },
+      "price": {
+        "regular_price": "Prix régulier",
+        "sale_price": "Prix en solde",
+        "from_price_html": "À partir de {{ min_price }}",
+        "unit_price": "Prix unitaire"
+      },
+      "add_to_cart": "Ajouter au panier",
+      "sold_out": "Épuisé",
+      "unavailable": "Indisponible",
+      "product_variants": "Variantes du produit"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "404 Page non trouvée",
+      "subtext": "La page que vous avez demandée n'existe pas."
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Voici votre carte-cadeau de {{ value }} pour {{ shop }} !",
+      "subtext": "Votre carte-cadeau",
+      "gift_card_code": "Code de la carte-cadeau",
+      "shop_link": "Continuer vos achats",
+      "remaining_html": "Restant {{ balance }}",
+      "add_to_apple_wallet": "Ajouter à Apple Wallet",
+      "qr_image_alt": "Code QR — scanner pour utiliser la carte-cadeau",
+      "copy_code": "Copier le code",
+      "expired": "Expiré",
+      "copy_code_success": "Code copié avec succès",
+      "print_gift_card": "Imprimer"
+    }
+  },
+  "colors": {
+    "name": "Couleurs",
+    "settings": {
+      "background": {
+        "label": "Arrière-plan"
+      },
+      "background_gradient": {
+        "label": "Dégradé de fond",
+        "info": "Le dégradé de fond remplace l'arrière-plan lorsque possible."
+      },
+      "text": {
+        "label": "Texte"
+      },
+      "button_background": {
+        "label": "Fond de bouton solide"
+      },
+      "button_label": {
+        "label": "Étiquette de bouton solide"
+      },
+      "secondary_button_label": {
+        "label": "Bouton de contour"
+      },
+      "shadow": {
+        "label": "Ombre"
+      }
+    }
+  },
+  "sections": {
+    "announcements": {
+      "announcement": "Annonce",
+      "announcement_bar": "Barre d'annonce"
+    }
   }
 }
