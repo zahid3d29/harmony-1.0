@@ -1,10 +1,10 @@
 <section id="harmony--{{ section.id }}">
-  <div class="bg-[#2E4532] py-24 sm:py-32">
+  <div class="bg-[#2E4532] py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-6 md:px-10 grid grid-cols-1 lg:flex lg:justify-between">
       <div class="w-full lg:w-1/2">
         {% for block in section.blocks %}
           {% if 'review' %}
-            <h2 class="text-[37px] leading-[56px] font-bold tracking-tight text-[#fffaf3]">
+            <h2 class="text-[27px] leading-[36px] lg:text-[37px] lg:leading-[56px] font-bold tracking-tight text-[#fffaf3]">
               {{ block.settings.review_heading }}
             </h2>
             <p class="text-[18px] leading-[22px] text-[#aeb4af] mt-2 mb-6">

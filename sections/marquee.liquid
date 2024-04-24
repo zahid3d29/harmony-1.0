@@ -2,26 +2,33 @@
     .outline-title {
         text-shadow: 1px 1px 0 #959595, -1px -1px 0 #959595, 1px -1px 0 #959595, -1px 1px 0 #959595, 1px 1px 0 #959595;
     }
+    .outline-title-top {
+        text-shadow:
+        -1px -1px 0 #959595,  
+            1px -1px 0 #959595,
+            -1px 1px 0 #959595,
+            1px 1px 0 #959595;
+    }
 {% endstyle %} 
 
-<section id="harmony--{{ section.id }}" class="[#FFFAF4] relative">
-    <div class="overlay-left block w-[20%] h-[100%] bg-white opacity-70 absolute left-0 top-0 z-10"></div>
-    <div class="outline-title text-[#fff] bg-[#fff] opacity-70 pb-2 text-[100px] lg: text-[142px] leading-[140px] font-bold text-center mt-8">
-        <marquee direction="right" scrollamount="30"> 
+<section id="harmony--{{ section.id }}" class="bg-[#FFFAF4] relative py-8 lg:py-24">
+    <div class="overlay-left block w-[20%] h-[100%] lg:bg-gradient-to-r from-[#00000024] absolute top-0 left-0 z-10"></div>
+    <div class="outline-title-top text-[#f9f9f9] opacity-70 lg:mb-8 text-[70px] lg:text-[142px] lg:leading-[140px] font-bold text-center">
+        <marquee direction="right" scrollamount="10"> 
             No Chemicals <span class="inline-block mx-2">
-            <img src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/not-circle.png?v=1713638870" alt="not-sign-img">
+            <img class="w-[60px] lg:w-full" src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/not-circle.png?v=1713638870" alt="not-sign-img">
             </span>No Paraben
         </marquee>
     </div>
     <div class="block w-full border border-[#707070]-400"></div>
-    <div class="outline-title text-[#303327] pb-2 text-[100px] lg:text-[142px] leading-[140px] font-500 text-center mt-8">
-        <marquee direction="left" scrollamount="30">
+    <div class="outline-title-bottom text-[#303327] lg:mt-8 text-[70px] lg:text-[142px] lg:leading-[140px] font-semibold text-center">
+        <marquee direction="left" scrollamount="10">
             Committed to <span class="inline-block mx-2">
-                <img src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/emoji.png?v=1713640687" alt="not-sign-img">
+                <img class="w-[60px] lg:w-full" src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/emoji.png?v=1713640687" alt="not-sign-img">
             </span>Cruelty-free
         </marquee>
     </div>
-    <div class="overlay-right block w-[20%] h-[100%] bg-white opacity-70 absolute right-0 top-0 z-10"></div>
+    <div class="overlay-right block w-[20%] h-[100%] lg:bg-gradient-to-l from-[#00000024] absolute bottom-0 right-0 z-10"></div>
 </section>
 
 
