@@ -94,7 +94,8 @@
   "sections": {
     "announcements": {
       "announcement": "Annonce",
-      "announcement_bar": "Barre d'annonce de ted bed"
+      "announcement_bar": "Barre d'annonce de ted bed",
+      "fathreofannouncement": "Father of announcement bar"
     }
   }
 }
