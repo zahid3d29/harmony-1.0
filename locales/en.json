@@ -93,8 +93,9 @@
   },
   "sections": {
     "announcements": {
-      "announcement": "Announcement",
-      "announcement_bar": "Announcement bar"
+      "announcement": "Annonce",
+      "announcement-bar": "Barre d'annonce",
+      "fathreofannouncement": "Father of announcement bar"
     }
   }
 }
