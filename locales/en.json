@@ -93,9 +93,9 @@
   },
   "sections": {
     "announcements": {
-      "announcement": "Annonce",
-      "announcement-bar": "Barre d'annonce",
-      "fathreofannouncement": "Father of announcement bar"
+      "announcement": "Annonce en",
+      "announcement-bar": "Barre d'annonce en",
+      "fathreofannouncement": "Father of announcement bar en"
     }
   }
 }
