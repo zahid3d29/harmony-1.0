@@ -2,8 +2,25 @@
   "sections": {
     "announcement_bar_fNP9LL": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_TBTQiM": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_TBTQiM"
+      ],
       "settings": {
-        "heading": ""
+        "color_scheme": "",
+        "show_social": true,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": true,
+        "enable_language_selector": true
       }
     },
     "hero_cp7Nnr": {
