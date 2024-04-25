@@ -25,14 +25,12 @@
     },
     "hero_cp7Nnr": {
       "type": "hero",
-      "disabled": true,
       "settings": {
         "banner_heading": "Your path to radiant skin."
       }
     },
     "gdpr_DDyBqp": {
       "type": "GDPR",
-      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -51,7 +49,6 @@
       "block_order": [
         "review_gEzVPK"
       ],
-      "disabled": true,
       "settings": {
         "rating": 4.8,
         "verify": "From Verified Buyers",
@@ -87,7 +84,6 @@
         "benifit_RqA8dk",
         "benifit_kYEcHY"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Why Swiss?",
         "sub_text": "Learn more about our commitment to high quality products."
@@ -127,7 +123,6 @@
         "block_iLjxAc",
         "block_6K77hd"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Section Featured Collection",
         "color_scheme": "scheme-1"
@@ -167,7 +162,6 @@
         "block_TTyirx",
         "block_FKPEUH"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Shop All",
         "show_heeading": true
@@ -175,14 +169,12 @@
     },
     "reveal_JJ7fw6": {
       "type": "reveal",
-      "disabled": true,
       "settings": {
         "heading": ""
       }
     },
     "focal_FRdfRG": {
       "type": "focal",
-      "disabled": true,
       "settings": {
       }
     },
@@ -206,7 +198,6 @@
       "block_order": [
         "product_H3bCAQ"
       ],
-      "disabled": true,
       "settings": {
         "heading": "Limited Time Sale Offer",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -218,7 +209,6 @@
     },
     "faq_fdKzd7": {
       "type": "faq",
-      "disabled": true,
       "settings": {
         "heading": ""
       }
