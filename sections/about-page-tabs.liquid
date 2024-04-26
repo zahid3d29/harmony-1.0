@@ -6,7 +6,7 @@
     }
 
     /* Style the productFeaturedTab content */
-    .productFeaturedTabcontent {
+    .aboutTabcontent {
         display: none;
         animation: fadeEffect 2s; 
     }
@@ -34,103 +34,63 @@
 </style>
 
 <section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
-    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
-        <div class="flex items-center lg:items-baseline justify-between pb-8 pt-8 lg:pt-24 mb-8">
-            <h2 class="text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px] text-[#000000] font-semibold lg:max-w-3xl tracking-tight">{{ section.settings.heading }}</h2>
-            <div class="flex items-center">
-                <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3" id="headlessui-tabs-tab-6" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="headlessui-tabs-panel-8">
-                    <span class="lg:mr-2">
-                        <a href="#" class="relative inline-flex items-center rounded-full text-[17px] leading-[35px] text-[#000000] px-2 py-2 hover:text-gray-900 ring-1 ring-inset ring-gray-300 bg-gray-100 hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0">
-                            <span class="sr-only">Previous</span>
-                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </span>
-                    <span class="mx-2 lg:mx-2">
-                        <div class="h-1.5 w-1.5 rounded-full bg-black"></div>
-                    </span>
-                    <span class="mx-2 lg:mx-2">
-                        <div class="h-1.5 w-1.5 rounded-full bg-gray-300"></div>
-                    </span>
-                    <span class="mx-2 lg:mx-2">
-                        <div class="h-1.5 w-1.5 rounded-full bg-gray-300"></div>
-                    </span>
-                    <span class="lg:ml-2 text-gray-700">
-                        <a href="#" class="relative inline-flex items-center rounded-full px-2 py-2 text-gray-700 hover:text-gray-900 bg-[#7070704d] hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                            <span class="sr-only">Next</span>
-                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </span>
-                </button>
+    <div class="mx-auto max-w-screen-2xl px-0 py-10 sm:px-0 sm:py-8 lg:px-0">
+        <div class="flex flex-col md:flex-row max-w-7xl mx-auto items-center mx-auto lg:items-center justify-start md:justify-between px-4 md:px-10 pb-8 pt-8 lg:pt-8 mb-88">
+            <h1 class="page__heading text-[24px] leading-1 md:text-[36px] md:leading-1 lg:text-[60px] lg:leading-1 text-[#000000] font-semibold max-w-sm tracking-tight px-4 mb-6 md:mb-0">{{ section.settings.heading }}</h1>
+            <div class="flex items-center justify-start md:justify-end">
+                <div class="max-w-sm px-4 lg:px-8">
+                    <span class="page__title inline text-[14px] leading-[19px] text-[#000000] font-normal border border-black rounded-full px-2 py-2">About us</span>
+                    <div class="page__description mt-6 text-[20px] leading-[22px] text-[#000000] font-normal">
+                        Swiss was born from a passion for skincare and a belief in the transformative power of self-care. Founded by Daniel Moss in 1981, our brand has grown from a small idea to a thriving skincare community.
+                    </div>
+                </div>
             </div>
         </div>
         <div class="mx-auto">
-            <div class="productFeaturedTab overflow:hidden bg-white-900 grid lg:border-t lg:border-b border-[#7070704d] mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+            <div class="productFeaturedTab overflow:hidden bg-white-900 grid lg:border-t lg:border-b border-[#7070704d] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 lg:px-24">
                 {% for block in section.blocks %}
-                    <button class="productFeaturedTablinks block text-[17px] leading-[35px] text-[#000000] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 border-[#7070704d] cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultOpen"{% endif %}>{{ block.settings.collection.title }}</button>
+                    <button class="aboutTablinks block text-[17px] leading-[35px] text-[#000000] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 border-[#7070704d] cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openaboutTab(event, 'pd_{{ block.settings.heading }}')" {% if forloop.index == 1 %} id="aboutTabDefaultOpen"{% endif %}>{{ block.settings.heading }}</button>
                 {% endfor %}
             </div>
 
             {% for block in section.blocks %}
-            <div id="pd_{{ block.settings.collection.handle }}" class="productFeaturedTabcontent grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8" {% if forloop.index == 1 %}style="display:grid"{% endif %} >
-                {%- for product in block.settings.collection.products limit: 6 -%}
-                <div class="group">
-                    <div id="product__grid-wrapper" class="relative block w-full h-80 overflow-hidden bg-transparent sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 sm:h-[440px] animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
-                        <img src="{{ product.featured_media | image_url }}" alt="{{ product.title  }}" class="h-full w-full object-cover object-center">
-                        <div id="product__overlay">
-                            <div class="flex h-full max-w-xl flex-col items-start justify-between">
-                                <div class="flex items-center justify-center gap-x-4 text-xs">
-                                    <span datetime="2020-02-12" class="absolute left-3 top-3 inline-block items-start text-gray-600 bg-[#D0BAAC] py-1 px-2 font-bold">Limited edition</span>
-                                    <button class="absolute right-2 top-3 text-sm font-semibold h-[35px] w-[35px] block border border-gray-900 hover:bg-[#D0BAAC] rounded-full px-1 pt-[5px]" id="headlessui-tabs-tab-111" role="tab" type="button" aria-selected="true" tabindex="0" data-headlessui-state="selected" aria-controls="headlessui-tabs-panel-113">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
-                                        </svg>
-                                    <span class="sr-only lg:not-sr-only lg:ml-2 text-gray-900"></span></button>
+                {%- case block.type -%}
+                {%- when 'block-1' -%}
+                    <div id="pd_{{ block.settings.heading }}" class="aboutTabcontent page_content-main py-8 lg:py-24">
+                        <div class="mx-auto w-full">
+                            <div class="flex mx-auto flex-col flex-col-reverse md:flex-row max-w-7xl justify-between px-6 md:px-10">
+                                <div class="flex py-8 md:py-0 md:pr-8 md:pt-4">
+                                    <div class="lg:max-w-lg md:max-w-md">
+                                        <span class="inline text-[14px] leading-[19px] text-[#000000] font-normal border border-black rounded-full px-2 py-2">Who are we?</span>
+                                        <h2 class="text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px] font-semibold text-[#000000] mt-4 tracking-tight">Delivering the highest<br>quality products.</h2>
+                                        <div class="mt-6 text-[14px] leading-[19px] text-[#000000] font-normal">
+                                            Swiss was born from a passion for skincare and a belief in the transformative power of self-care. Founded by Daniel Moss in 1981, our brand has grown from a small idea to a thriving skincare community.
+                                            <br><br>
+                                            Swiss has always been fascinated by the science of skincare. With a background in fashion and health, they embarked on a mission to create products that combine cutting-edge research with the finest natural ingredients. Their dedication to excellence and authenticity drives our brand to this day.
+                                            <br><br>
+                                            Swiss has always been fascinated by the science of skincare. With a background in fashion and health, they embarked on a mission to create products that combine cutting-edge research with the finest natural ingredients. Their dedication to excellence and authenticity drives our brand to this day.
+                                            <br><br>
+                                            We are committed to delivering the highest quality skincare products. Each formula is carefully crafted, rigorously tested, and backed by scientific research. We believe in transparency. We’re open about our ingredients, our processes, and our results, so you can trust what you’re putting on your skin. 
+                                            <br><br>
+                                            Sustainability: We’re dedicated to minimizing our environmental footprint. From eco-friendly packaging to responsible sourcing, we’re working towards a more sustainable future.
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="submit" class="mx-auto flex w-[85%] items-center justify-center border border-transparent bg-[#373738] px-4 py-4 mb-4 text-base font-medium text-[#f7f4ed] hover:text-gray-900 hover:bg-[#D0BAAC]">Quick View</button>
+
+                                <div class="flex items-center md:justify-center relative py-8 mb-12 md:py-0 md:mb-0">
+                                    <div class="md:pr-12">
+                                        <div class="h-[24rem] w-[16rem] md:h-[20rem] md:w-[15rem] lg:h-[25rem] lg:w-[20rem] overflow-hidden">
+                                            <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/about-img-big.png?v=1714023341" alt="" class="h-full w-full object-cover object-center">
+                                        </div>
+                                        <div class="absolute bottom-[-3rem] right-[3rem] h-[10rem] w-[8rem] md:bottom-[0rem] md:right-[0rem] md:h-[10rem] md:w-[7rem] lg:bottom-[3rem] lg:right-[1.5rem] lg:h-[15rem] lg:w-[10rem] overflow-hidden">
+                                            <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/about-img-small.png?v=1714023341" alt="" class="h-full w-full object-cover object-center">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4 flex justify-between">
-                        <div class="w-4/5">
-                        <a href="{{ product.url }}" class="block">
-                            <h3 class="mt-2 mb-3 pb-2 text-[16px] leading-[21px] text-[#000000] font-medium border-b border-[#7070704d]">{{ product.title }}</h3>
-                        </a>
-                            {% for collection in product.collections limit: 1 %}
-                                <p class="text-[14px] leading-[19px] text-[#000000] inline-block px-2 py-0.5 border border-black rounded-full collection-title">{{ collection.title }}</p>
-                            {% endfor %}
-                        </div>
-                        <div class="w-2/5">
-                            <h3 class="mt-2 mb-3 pb-3 text-[13px] leading-[17px] text-[#000000] text-right border-b border-[#7070704d]">{{ product.price | money }}</h3>
-                            <div class="flex items-center justify-end">
-                                <div class="flex items-center justify-end text-[13px]">
-                                    <svg class="text-gray-900 w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;text-gray-900&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <svg class="text-gray-200 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <span class="sr-only">3.9 out of 5 stars</span>
-                                <span class="ml-3 text-[13px] leading-[17px] text-[#000000] hover:text-gray-500">22</span>
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+                {% endcase %}
             {% endfor %}
         </div>              
     </div>
@@ -156,19 +116,60 @@
             "default": true
         }
     ],
-     "blocks":[
-         {
-          "type":"block",
-          "name": "Collection",
+    "blocks":[
+        {
+          "type":"block-1",
+          "name": "Who we are",
+          "limit": 1,
           "settings": [
-             {
-              "type": "collection",
-              "id": "collection",
-              "label": "Collection"
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Who we are?"
+            }
+          ]
+        },
+        {
+          "type":"block-2",
+          "name": "Our Philosophy",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Our Philosophy"
+            }
+          ]
+        },
+        {
+          "type":"block-3",
+          "name": "Message from",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Message from"
+            }
+          ]
+        },
+        {
+          "type":"block-4",
+          "name": "Our Commitments",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Our Commitments"
             }
           ]
         }
-      ],
+    ],
     "presets": [
         {
             "name": "About Tabs",
@@ -180,19 +181,19 @@
 
 
 <script>
-    function openFtCats(evt, productFeaturedCatName) {
-        var i, productFeaturedTabcontent, productFeaturedTablinks;
-        productFeaturedTabcontent = document.getElementsByClassName("productFeaturedTabcontent");
-        for (i = 0; i < productFeaturedTabcontent.length; i++) {
-            productFeaturedTabcontent[i].style.display = "none";
+    function openaboutTab(evt, aboutTabName) {
+        var i, aboutTabcontent, aboutTablinks;
+        aboutTabcontent = document.getElementsByClassName("aboutTabcontent");
+        for (i = 0; i < aboutTabcontent.length; i++) {
+            aboutTabcontent[i].style.display = "none";
         }
-        productFeaturedTablinks = document.getElementsByClassName("productFeaturedTablinks");
-        for (i = 0; i < productFeaturedTablinks.length; i++) {
-            productFeaturedTablinks[i].className = productFeaturedTablinks[i].className.replace(" active", "");
+        aboutTablinks = document.getElementsByClassName("aboutTablinks");
+        for (i = 0; i < aboutTablinks.length; i++) {
+            aboutTablinks[i].className = aboutTablinks[i].className.replace(" active", "");
         }
-        document.getElementById(productFeaturedCatName).style.display = "grid";
+        document.getElementById(aboutTabName).style.display = "grid";
         evt.currentTarget.className += " active";
     }
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+    // Get the element with id="aboutTabDefaultOpen" and click on it
+    document.getElementById("aboutTabDefaultOpen").click();
 </script>

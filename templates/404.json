@@ -32,9 +32,59 @@
     },
     "hero_cp7Nnr": {
       "type": "hero",
-      "disabled": true,
       "settings": {
-        "banner_heading": "Your path to radiant skin."
+        "banner_heading": ""
+      }
+    },
+    "about_page_tabs_CwWCba": {
+      "type": "about-page-tabs",
+      "blocks": {
+        "block_1_AzjtpD": {
+          "type": "block-1",
+          "settings": {
+            "heading": "Who we are?"
+          }
+        },
+        "block_2_VygDC6": {
+          "type": "block-2",
+          "settings": {
+            "heading": "Our Philosophy"
+          }
+        },
+        "block_3_hUQjDc": {
+          "type": "block-3",
+          "settings": {
+            "heading": "Message from"
+          }
+        },
+        "block_4_ACCX7W": {
+          "type": "block-4",
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_1_AzjtpD",
+        "block_2_VygDC6",
+        "block_3_hUQjDc",
+        "block_4_ACCX7W"
+      ],
+      "settings": {
+        "heading": "Our philosophy",
+        "show_heeading": true
+      }
+    },
+    "author_block_CPx4jV": {
+      "type": "author-block",
+      "settings": {
+        "heading": "Heading"
+      }
+    },
+    "about_features_bzhctF": {
+      "type": "about-features",
+      "settings": {
+        "heading": "Heading"
       }
     },
     "gdpr_DDyBqp": {
@@ -249,6 +299,9 @@
     "announcement_bar_old_3r4gUH",
     "announcement_bar_fNP9LL",
     "hero_cp7Nnr",
+    "about_page_tabs_CwWCba",
+    "author_block_CPx4jV",
+    "about_features_bzhctF",
     "gdpr_DDyBqp",
     "testimonials_GtL8fm",
     "swiss_cciQWT",

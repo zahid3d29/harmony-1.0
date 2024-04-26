@@ -96,9 +96,9 @@
                     </div>
                     <div class="mt-4 flex justify-between">
                         <div class="w-4/5">
-                        <a href="{{ product.url }}" class="block">
-                            <h3 class="mt-2 mb-3 pb-2 text-[16px] leading-[21px] text-[#000000] font-medium border-b border-[#7070704d]">{{ product.title }}</h3>
-                        </a>
+                            <a href="{{ product.url }}" class="block">
+                                <h3 class="mt-2 mb-3 pb-2 text-[16px] leading-[21px] text-[#000000] font-medium border-b border-[#7070704d]">{{ product.title }}</h3>
+                            </a>
                             {% for collection in product.collections limit: 1 %}
                                 <p class="text-[14px] leading-[19px] text-[#000000] inline-block px-2 py-0.5 border border-black rounded-full collection-title">{{ collection.title }}</p>
                             {% endfor %}
@@ -158,11 +158,11 @@
         }
     ],
      "blocks":[
-         {
+        {
           "type":"block",
           "name": "Collection",
           "settings": [
-             {
+            {
               "type": "collection",
               "id": "collection",
               "label": "Collection"
