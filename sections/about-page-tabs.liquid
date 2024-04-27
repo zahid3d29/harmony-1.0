@@ -12,17 +12,7 @@
 
 <section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
     <div class="mx-auto max-w-screen-2xl px-0 py-10 sm:px-0 sm:py-8 lg:px-0">
-        <div class="flex flex-col md:flex-row max-w-7xl mx-auto items-start justify-start md:justify-between px-4 md:px-10 pb-8 pt-8 lg:pt-8 mb-88">
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] text-[#000000] font-normal max-w-sm tracking-tight px-4 mb-6 md:mb-0">{{ section.settings.heading }}</h1>
-            <div class="flex items-center justify-start md:justify-end">
-                <div class="max-w-sm px-4 lg:px-8">
-                    <span class="page__title inline text-[14px] leading-[19px] text-[#000000] font-normal border border-[#000000] rounded-full px-2 py-2">About us</span>
-                    <div class="page__description mt-6 text-[20px] leading-[22px] text-[#000000] font-normal">
-                        Swiss was born from a passion for skincare and a belief in the transformative power of self-care. Founded by Daniel Moss in 1981, our brand has grown from a small idea to a thriving skincare community.
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% render 'page-header' %}
         <div class="mx-auto">
             <div class="productFeaturedTab overflow:hidden bg-white-900 grid lg:border-t lg:border-b border-[#7070704d] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 lg:px-24">
                 {% for block in section.blocks %}
@@ -39,8 +29,8 @@
                                 <div class="flex py-8 md:py-0 md:pr-8 md:pt-4">
                                     <div class="lg:max-w-lg md:max-w-md">
                                         <span class="inline text-[14px] leading-[19px] text-[#000000] font-normal border border-black rounded-full px-2">Who are we?</span>
-                                        <h2 class="text-[27px] leading-[34px] md:text-[36px] md:leading-[42px] lg:text-[50px] lg:leading-[56px] font-semibold text-[#000000] mt-4 tracking-tight ">Delivering the highest<br>quality products.</h2>
-                                        <div class="mt-6 text-[14px] leading-[19px] text-[#000000] font-normal">
+                                        <h2 class="text-[27px] leading-[34px] md:text-[36px] md:leading-[42px] lg:text-[50px] lg:leading-[56px] font-semibold text-[#000000] tracking-tight mt-[22px]">Delivering the highest<br>quality products.</h2>
+                                        <div class="text-[14px] leading-[19px] text-[#000000] font-normal mt-[36px]">
                                             Swiss was born from a passion for skincare and a belief in the transformative power of self-care. Founded by Daniel Moss in 1981, our brand has grown from a small idea to a thriving skincare community.
                                             <br><br>
                                             Swiss has always been fascinated by the science of skincare. With a background in fashion and health, they embarked on a mission to create products that combine cutting-edge research with the finest natural ingredients. Their dedication to excellence and authenticity drives our brand to this day.
