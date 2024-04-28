@@ -2,6 +2,7 @@
   "sections": {
     "announcement_bar_old_3r4gUH": {
       "type": "announcement-bar-old",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
@@ -34,6 +35,12 @@
       "type": "hero",
       "settings": {
         "banner_heading": ""
+      }
+    },
+    "contact_form_WXKXKK": {
+      "type": "contact-form",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
       }
     },
     "about_page_tabs_CwWCba": {
@@ -70,6 +77,7 @@
         "block_3_hUQjDc",
         "block_4_ACCX7W"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Our philosophy",
         "show_heeading": true
@@ -77,12 +85,14 @@
     },
     "author_block_CPx4jV": {
       "type": "author-block",
+      "disabled": true,
       "settings": {
         "heading": "Heading"
       }
     },
     "about_features_bzhctF": {
       "type": "about-features",
+      "disabled": true,
       "settings": {
         "heading": "Heading"
       }
@@ -299,6 +309,7 @@
     "announcement_bar_old_3r4gUH",
     "announcement_bar_fNP9LL",
     "hero_cp7Nnr",
+    "contact_form_WXKXKK",
     "about_page_tabs_CwWCba",
     "author_block_CPx4jV",
     "about_features_bzhctF",
