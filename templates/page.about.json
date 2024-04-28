@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+      }
+    },
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "page-header"
+  ]
+}
