@@ -1,12 +1,18 @@
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "hero": {
+      "type": "hero",
+      "settings": {
+      }
+    },
+    "page-header": {
+      "type": "page-header",
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "hero",
+    "page-header"
   ]
 }

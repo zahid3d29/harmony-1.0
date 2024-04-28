@@ -1,0 +1,45 @@
+<section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
+    {% render "page-header" %}
+</section>
+
+
+
+
+{% schema %}
+{
+    "name": "Page How",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Section Heading",
+            "default": "Section Heading"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_heeading",
+            "label": "Show Heading",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "page_title",
+            "label": "Page Title",
+            "default": "About us"
+        },
+        {
+            "type": "text",
+            "id": "page_desc",
+            "label": "Page Short Description",
+            "default": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.</p>"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Page How",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
+          

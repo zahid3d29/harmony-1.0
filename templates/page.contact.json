@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "banner_heading": ""
+      }
+    },
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "heading": "Have a question?",
+        "show_heeading": true,
+        "page_title": "Contact us",
+        "page_desc": "Have questions or feedback about your shopping? We’re here to here answer any question you may have."
+      }
+    },
+    "page_contact_form_nHnx9D": {
+      "type": "page-contact-form",
+      "settings": {
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "page_title": "About us",
+        "page_desc": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "page-header",
+    "page_contact_form_nHnx9D"
+  ]
+}
