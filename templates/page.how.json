@@ -5,9 +5,52 @@
       "settings": {
         "banner_heading": ""
       }
+    },
+    "page_header_PtUrdq": {
+      "type": "page-header",
+      "disabled": true,
+      "settings": {
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "page_title": "About us",
+        "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
+      }
+    },
+    "testimonials_Qw9YVL": {
+      "type": "testimonials",
+      "blocks": {
+        "review_xadqPj": {
+          "type": "review",
+          "settings": {
+            "review_heading": "Hear from them",
+            "review_text": "It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!"
+          }
+        }
+      },
+      "block_order": [
+        "review_xadqPj"
+      ],
+      "settings": {
+        "rating": 4.9,
+        "verify": "From Verified Buyers",
+        "btn_label": "Read more Testimonials",
+        "btn_url": ""
+      }
+    },
+    "page_how_AVCDdT": {
+      "type": "page-how",
+      "settings": {
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "page_title": "About us",
+        "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "page_header_PtUrdq",
+    "testimonials_Qw9YVL",
+    "page_how_AVCDdT"
   ]
 }

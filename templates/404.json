@@ -244,13 +244,42 @@
         "heading": ""
       }
     },
+    "testimonials_nYVkUY": {
+      "type": "testimonials",
+      "blocks": {
+        "review_KqDAwa": {
+          "type": "review",
+          "settings": {
+            "review_heading": "Hear from them",
+            "review_text": "It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!"
+          }
+        }
+      },
+      "block_order": [
+        "review_KqDAwa"
+      ],
+      "disabled": true,
+      "settings": {
+        "rating": 4.9,
+        "verify": "Verified Buyers",
+        "btn_label": "Read more Testimonials",
+        "btn_url": ""
+      }
+    },
     "page_how_Hrk6iN": {
       "type": "page-how",
+      "disabled": true,
       "settings": {
         "heading": "How to use it?",
         "show_heeading": true,
         "page_title": "eASY TO USE",
         "page_desc": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care.<\/p>"
+      }
+    },
+    "blog_page_JLRnGB": {
+      "type": "blog-page",
+      "settings": {
+        "heading": "Section Heading"
       }
     }
   },
@@ -270,6 +299,8 @@
     "faq_fdKzd7",
     "newsletter_pop_89fWAC",
     "footer_CANxjp",
-    "page_how_Hrk6iN"
+    "testimonials_nYVkUY",
+    "page_how_Hrk6iN",
+    "blog_page_JLRnGB"
   ]
 }

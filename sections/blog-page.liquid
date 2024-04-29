@@ -1,0 +1,89 @@
+<section id="harmony--{{ section.id }}">
+    <div class="overflow-hidden bg-white py-6 sm:py-8">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="articles__list mx-auto flex justify-between items-start border-b border-gray-300 py-[44px]">
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <article class="flex max-w-sm flex-col items-start justify-between">
+                    <span class="author__label inline-block text-[14px] leading-[19px] text-[#000000] font-normal border border-[#000000] rounded-full px-2 py-1.5">
+                        Category
+                    </span>
+                    <div class="group relative">
+                      <h3 class="text-[45px] leading-[47px] text-[#000000] font-semibold mt-[19px]">
+                        <a href="#">
+                          <span class="absolute inset-0"></span>
+                          The Ultimate Guide to Building a Daily Skincare Routine
+                        </a>
+                      </h3>
+                      <div class="text-[14px] leading-[19px] text-[#000000] font-normal mt-[19px] ">
+                        Radiant, healthy skin is a timeless aspiration that transcends generations and cultures. It’s not merely about vanity but also a reflection of our overall well-being. The journey to achieving radiant skin is both an art and a science. In this blog post, misconceptions, and offer practical tips for achieving and maintaining your skin’s natural glow.
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-x-4 text-xs mt-[98px]">
+                      <time datetime="2020-03-10" class="text-gray-500">Mar 10, 2020</time>
+                      <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">by Jonathan x</a>
+                    </div>
+                </article>
+              </div>
+            </div>
+            <picture>
+                <source media="(min-width:768px)" width="450px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/newsletter-img.png?v=1713693079">
+                <source media="(min-width:640px)" width="350px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-feature-03-detail-03.jpg?v=1713857762">
+                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-img-right.png?v=1713369269" width="400px" height="auto" alt="Flowers">
+            </picture>
+          </div>
+          <div class="articles__list mx-auto flex justify-between items-start  border-b border-gray-300 py-[44px]">
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <article class="flex max-w-sm flex-col items-start justify-between">
+                    <span class="author__label inline-block text-[14px] leading-[19px] text-[#000000] font-normal border border-[#000000] rounded-full px-2 py-1.5">
+                        Category
+                    </span>
+                    <div class="group relative">
+                      <h3 class="text-[45px] leading-[47px] text-[#000000] font-semibold mt-[19px]">
+                        <a href="#">
+                          <span class="absolute inset-0"></span>
+                          The Ultimate Guide to Building a Daily Skincare Routine
+                        </a>
+                      </h3>
+                      <div class="text-[14px] leading-[19px] text-[#000000] font-normal mt-[19px] ">
+                        Radiant, healthy skin is a timeless aspiration that transcends generations and cultures. It’s not merely about vanity but also a reflection of our overall well-being. The journey to achieving radiant skin is both an art and a science. In this blog post, misconceptions, and offer practical tips for achieving and maintaining your skin’s natural glow.
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-x-4 text-xs mt-[98px]">
+                      <time datetime="2020-03-10" class="text-gray-500">Mar 10, 2020</time>
+                      <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">by Jonathan x</a>
+                    </div>
+                </article>
+              </div>
+            </div>
+            <picture>
+                <source media="(min-width:768px)" width="450px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/newsletter-img.png?v=1713693079">
+                <source media="(min-width:640px)" width="350px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-feature-03-detail-03.jpg?v=1713857762">
+                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-img-right.png?v=1713369269" width="400px" height="auto" alt="Flowers">
+            </picture>
+          </div>
+        </div>
+    </div>
+      
+</section>
+
+{% schema %}
+{
+    "name": "Blog List",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Section Heading",
+            "default": "Section Heading"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Blog List",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
