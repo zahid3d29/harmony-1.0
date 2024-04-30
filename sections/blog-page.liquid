@@ -1,7 +1,7 @@
 <section id="harmony--{{ section.id }}">
-    <div class="overflow-hidden bg-white py-6 sm:py-8">
+    <div class="overflow-hidden bg-[#FFFAF$] py-6 sm:py-8">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="articles__list mx-auto flex justify-between items-start border-b border-gray-300 py-[44px]">
+          <div class="article__list mx-auto flex justify-between items-start border-b border-gray-300 py-[44px]">
             <div class="lg:pr-8 lg:pt-4">
               <div class="lg:max-w-lg">
                 <article class="flex max-w-sm flex-col items-start justify-between">
@@ -32,7 +32,7 @@
                 <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-img-right.png?v=1713369269" width="400px" height="auto" alt="Flowers">
             </picture>
           </div>
-          <div class="articles__list mx-auto flex justify-between items-start  border-b border-gray-300 py-[44px]">
+          <div class="article__list mx-auto flex justify-between items-start  border-b border-gray-300 py-[44px]">
             <div class="lg:pr-8 lg:pt-4">
               <div class="lg:max-w-lg">
                 <article class="flex max-w-sm flex-col items-start justify-between">
@@ -58,11 +58,57 @@
               </div>
             </div>
             <picture>
-                <source media="(min-width:768px)" width="450px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/newsletter-img.png?v=1713693079">
-                <source media="(min-width:640px)" width="350px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-feature-03-detail-03.jpg?v=1713857762">
-                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-img-right.png?v=1713369269" width="400px" height="auto" alt="Flowers">
+                <source media="(min-width:768px)" width="450px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Image.png?v=1714467557">
+                <source media="(min-width:640px)" width="350px" height="auto" srcset="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Image.png?v=1714467557">
+                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Image.png?v=1714467557" width="400px" height="auto" alt="Flowers">
             </picture>
           </div>
+
+          {% comment %} Blog post pagination  {% endcomment %}
+          <div class="flex items-center justify-between py-[44px]">
+            <div class="flex flex-1 justify-between sm:hidden">
+              <a href="#" class="relative inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+              <a href="#" class="relative ml-3 inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+            </div>
+            <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+              <div class="article__pagination">
+                <nav class="isolate inline-flex space-x-4 rounded-full" aria-label="Pagination">
+                  <a href="#" class="relative inline-flex items-center rounded-full px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                    <span class="sr-only">Previous</span>
+                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="#" aria-current="page" class="relative z-10 rounded-full inline-flex items-center bg-black px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">1</a>
+                  <a href="#" class="relative rounded-full inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">2</a>
+                  <a href="#" class="relative rounded-full hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">3</a>
+                  <span class="relative rounded-full inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">...</span>
+                  <a href="#" class="relative rounded-full hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex">8</a>
+                  <a href="#" class="relative rounded-full inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">9</a>
+                  <a href="#" class="relative rounded-full inline-flex items-center px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">10</a>
+                  <a href="#" class="relative rounded-full inline-flex items-center px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                    <span class="sr-only">Next</span>
+                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </nav>
+              </div>
+              <div class="article__paginate-result">
+                <p class="text-sm text-gray-700">
+                  Showing
+                  <span class="font-medium">1</span>
+                  to
+                  <span class="font-medium">10</span>
+                  of
+                  <span class="font-medium">97</span>
+                  results
+                </p>
+              </div>
+            </div>
+          </div>
+          
+
         </div>
     </div>
       
