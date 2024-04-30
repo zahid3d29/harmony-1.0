@@ -2,26 +2,30 @@
 <section id="harmony--{{ section.id }}">
     <div class="newsletter__section bg-[#FFFAF4] relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-                <div class="max-w-md">
-                    <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Mail.png?v=1713695102" alt="newsletter-image" class="object-cover object-center">
-                    <h2 class="text-2xl font-bold text-gray-900 sm:pr-12 mb-2">Subscibe and save money.</h2>
-                    <p class="max-w-[90%] text-base text-gray-900 mb-4">Subscribe to our newsletter and be the first to know about promotions, new product launches, and skincare tips.</p>
+            <div class="mx-auto flex justify-between border border-gray-200 px-[41px] py-[35px]">
+                <div class="grid grid-cols-2 w-[50rem] justify-center items-center">
+                    <div class="content">
+                        <h2 class="text-[35px] leading-[35px] text-[#000000] font-normal">Subscibe and save money.</h2>
+                        <div class="max-w-[90%] text-[14px] leading-[19px] text-[#000000] mt-[13px] font-normal">Subscribe to our newsletter and be the first to know about promotions, new product launches, and skincare tips.</div>
+                    </div>
+                    <div class="image">
+                        <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Mail.png?v=1713695102" alt="newsletter-image" class="object-cover object-center">
+                    </div>
                 </div>
-                <div class="flex flex-col items-start justify-center lg:max-w-md">
+                <div class="flex flex-col w-[30rem] items-start justify-center">
                     <div class="flex w-full max-w-md">
                         <label for="email-address" class="sr-only px-0">Email address</label>
-                        <input id="email-address" name="email" type="email" autocomplete="email" required="required" class="min-w-0 flex-auto border-0 border-b border-b-gray-200 bg-transparent px-0 py-2 text-[#000000] focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200 sm:text-sm sm:leading-6" placeholder="Enter your email address">
+                        <input id="email-address" name="email" type="email" autocomplete="email" required="required" class="min-w-0 flex-auto border-0 border-b border-b-gray-200 text-[14px] leading-[19px] text-[#000000] font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Enter your email address">
                         <button type="submit" class="flex-none">
                             <span class="text-gray-100 border border-gray-200 rounded-full px-2.5 py-2 bg-gray-900 hover:bg-gray-100 hover:text-gray-900 transition" aria-hidden="true">→</span>
                         </button>
                     </div>
                     <div class="relative flex mt-[33px]">
-                        <div class="flex h-6 items-center">
+                        <div class="flex items-center">
                             <input id="tearms" name="tearms" type="checkbox" class="h-4 w-4 mr-2 rounded border-gray-300 text-black focus:ring-black">
                         </div>
-                        <div class="text-sm leading-6">
-                            <label for="tearms" class="font-normal text-gray-900">I agree to the tearms and services</label>
+                        <div class="flex items-center">
+                            <label for="tearms" class="text-[14px] leading-[19px] text-[#000000] font-normal">I agree to the tearms and services</label>
                         </div>
                     </div>
                 </div>
@@ -51,4 +55,4 @@
         }
     ]
 }
-  {% endschema %}
+{% endschema %}
