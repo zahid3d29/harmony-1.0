@@ -281,6 +281,12 @@
       "settings": {
         "heading": "Section Heading"
       }
+    },
+    "newsletter_section_BiNdyU": {
+      "type": "newsletter-section",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
+      }
     }
   },
   "order": [
@@ -301,6 +307,7 @@
     "footer_CANxjp",
     "testimonials_nYVkUY",
     "page_how_Hrk6iN",
-    "blog_page_JLRnGB"
+    "blog_page_JLRnGB",
+    "newsletter_section_BiNdyU"
   ]
 }
