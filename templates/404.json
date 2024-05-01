@@ -33,8 +33,15 @@
     },
     "hero_cp7Nnr": {
       "type": "hero",
+      "disabled": true,
       "settings": {
         "banner_heading": ""
+      }
+    },
+    "mega_menu_QRWX77": {
+      "type": "mega-menu",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
       }
     },
     "gdpr_DDyBqp": {
@@ -285,12 +292,14 @@
     },
     "article_page_Ywnm6F": {
       "type": "article-page",
+      "disabled": true,
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
       }
     },
     "newsletter_section_BiNdyU": {
       "type": "newsletter-section",
+      "disabled": true,
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
       }
@@ -300,6 +309,7 @@
     "announcement_bar_old_3r4gUH",
     "announcement_bar_fNP9LL",
     "hero_cp7Nnr",
+    "mega_menu_QRWX77",
     "gdpr_DDyBqp",
     "testimonials_GtL8fm",
     "swiss_cciQWT",
