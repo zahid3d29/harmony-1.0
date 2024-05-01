@@ -278,8 +278,15 @@
     },
     "blog_page_JLRnGB": {
       "type": "blog-page",
+      "disabled": true,
       "settings": {
         "heading": "Section Heading"
+      }
+    },
+    "article_page_Ywnm6F": {
+      "type": "article-page",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
       }
     },
     "newsletter_section_BiNdyU": {
@@ -308,6 +315,7 @@
     "testimonials_nYVkUY",
     "page_how_Hrk6iN",
     "blog_page_JLRnGB",
+    "article_page_Ywnm6F",
     "newsletter_section_BiNdyU"
   ]
 }

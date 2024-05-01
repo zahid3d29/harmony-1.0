@@ -1,0 +1,82 @@
+
+
+<section id="harmony--{{ section.id }}">
+    <div class="overflow-hidden bg-[#FFFAF4] py-6 sm:py-8">
+        <div class="mx-auto max-w-screen">
+            <div class="mx-auto max-w-7xl">
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="article__share bg-gray-600">01</div>
+                    <div class="article__header col-span-2">
+                        <div class="article__header max-w-7xl">
+                            <div class="back__to-prev">
+                                <a href="#">Open roles <span aria-hidden="true">→</span></a>
+                            </div>
+                            <div class="mt-[31px]">
+                                <h2 class="text-[45px] leading-[47px] text-[#000000] font-normal">The Ultimate Guide to Building a Daily Skincare Routine</h2>
+                                <div class="flex flex-row items-center justify-start mt-[58px]">
+                                    <div class="basis-1/5 article-category text-[14px] leading-[19px] text-[#000000] font-normal">
+                                        <a href="#">Beauty Trends</a>
+                                    </div>
+                                    <div class="basis-1/2 border-t border-gray-500 mr-4"></div>
+                                    <div class="basis-1/4 article_date_time text-[14px] leading-[19px] text-[#000000] font-normal">
+                                        2 hours ago by Maria
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block w-full border border-gray-200 my-[49px]"></div>
+            <div class="mx-auto max-w-7xl">
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="article__share bg-gray-600">01</div>
+                    <div class="article__main col-span-2">
+                        <div class="text-[18px] leading-[25px] text-[#000000] font-normal">
+                            Radiant, healthy skin is a timeless aspiration that transcends generations and cultures. It’s not merely about vanity but also a reflection of our overall well-being. The journey to achieving radiant skin is both an art and a science. In this blog post, misconceptions, and offer practical tips for achieving and maintaining your skin’s natural glow.
+                        </div>
+                        <h3 class="text-[28px] leading-[25px] text-[#000000] font-normal mt-[37px]">The Canvas of Your Body: Understanding Your Skin</h3>
+                        <div class="text-[18px] leading-[25px] text-[#000000] font-normal mt-[37px]">
+                            Radiant, healthy skin is a timeless aspiration that transcends generations and cultures. It’s not merely about vanity but also a reflection of our overall well-being. The journey to achieving radiant skin is both an art and a science. In this blog post, misconceptions, and offer practical tips for achieving and maintaining your skin’s natural glow.
+                        </div>
+                    </div>
+                    <div class="next_prev-article">
+                        <div class="rounded-2xl bg-gray-100 py-4 text-left lg:flex lg:flex-col lg:justify-start lg:py-6">
+                            <div class="mx-auto max-w-xs px-8">
+                                <a href="#" class="group">
+                                    <p class="text-base font-semibold text-gray-600">Read next</p>
+                                    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-100 xl:aspect-h-8 xl:aspect-w-7">
+                                        <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" alt="Person using a pen to cross a task off a productivity paper card." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                    </div>
+                                    <p class="mt-1 text-lg font-medium text-gray-900">SKIN CARE TIPS</p>
+                                    <h3 class="mt-4 text-sm text-gray-700">The Ultimate Guide to Building a Skincare Routine</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "Article",
+        "settings": [
+            {
+                "type": "text",
+                "id": "banner_heading",
+                "label": "Banner Heading",
+                "default": "eASY Skin Care Routine"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Article",
+                "category": "Harmony Sections"
+            }
+        ]
+    }
+{% endschema %}
