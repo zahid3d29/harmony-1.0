@@ -2,12 +2,22 @@
 <section id="harmony--{{ section.id }}" class="login-page">
   <div class="flex min-h-full flex-col justify-center px-6 py-12">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2 class="text-[35px] leading-[35px] text-[#000000]">Login</h2>
-      <div class="text-[14px] leading-[19px] text-[#000000] mt-[16px]">Welcome back! Please enter your login details to access your account.</div>
+      <h2 class="text-[35px] leading-[35px] text-[#000000]">Register</h2>
+      <div class="text-[14px] leading-[19px] text-[#000000] mt-[16px]">Welcome back! Please enter your account details to create your account.</div>
     </div>
   
     <div class="sm:mx-auto sm:w-full sm:max-w-sm mt-[27px]">
       <form class="space-y-6" action="#" method="POST">
+        <div>
+            <div class="mt-2">
+              <input id="first_name" name="fname" type="fname" autocomplete="fname" required="required" class="w-full flex-auto border-0 border-b border-b-gray-200 text-[14px] leading-[19px] text-[#000000] font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="First Name">
+            </div>
+        </div>
+        <div>
+            <div class="mt-2">
+              <input id="last_name" name="lname" type="lname" autocomplete="lname" required="required" class="w-full flex-auto border-0 border-b border-b-gray-200 text-[14px] leading-[19px] text-[#000000] font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Last Name">
+            </div>
+        </div>
         <div>
           <div class="mt-2">
             <input id="email-address" name="email" type="email" autocomplete="email" required="required" class="w-full flex-auto border-0 border-b border-b-gray-200 text-[14px] leading-[19px] text-[#000000] font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Email address">
@@ -25,27 +35,14 @@
             </span>
           </div>
         </div>
-        <div class="flex items-center justify-between">
-          <div class="relative flex gap-x-3">
-              <div class="flex h-6 items-center">
-                <input id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-black focus:ring-black">
-              </div>
-              <div class="text-sm leading-6">
-                <label for="offers" class="text-[14px] leading-[19px] text-[#000000]">Remember me</label>
-              </div>
-          </div>
-          <div class="text-sm">
-            <a href="#" class="text-[14px] leading-[19px] text-[#000000] hover:text-gray-500">Forgot password?</a>
-          </div>
-        </div>
         <div>
-          <button type="submit" class="flex w-full h-[55px] justify-center text-[17px] leading-[21px] text-[#f7f4ed] bg-[#373738] px-3 py-3.5 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Login</button>
+          <button type="submit" class="flex w-full h-[55px] justify-center text-[17px] leading-[21px] text-[#f7f4ed] bg-[#373738] px-3 py-3.5 hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">Create</button>
         </div>
       </form>
   
       <div class="mt-10 text-center text-[14px] leading-[19px] text-[#000000]">
-        New user?
-        <a href="#" class="text-[14px] leading-[19px] text-[#000000] hover:text-gray-500 underline">Register</a>
+        Already user?
+        <a href="#" class="text-[14px] leading-[19px] text-[#000000] hover:text-gray-500 underline">Login</a>
       </div>
     </div>
   </div>
@@ -53,18 +50,18 @@
 
 {% schema %}
     {
-        "name": "Login Page",
+        "name": "Register Page",
         "settings": [
             {
                 "type": "text",
                 "id": "banner_heading",
                 "label": "Banner Heading",
-                "default": "eASY Skin Care Routine"
+                "default": "Easy Skin Care Routine"
             }
         ],
         "presets": [
             {
-                "name": "Login Page",
+                "name": "Register Page",
                 "category": "Harmony Sections"
             }
         ]

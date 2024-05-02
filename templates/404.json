@@ -307,8 +307,22 @@
     },
     "login_page_BkYjmd": {
       "type": "login-page",
+      "disabled": true,
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
+      }
+    },
+    "register_page_Ka7q4d": {
+      "type": "register-page",
+      "disabled": true,
+      "settings": {
+        "banner_heading": "Easy Skin Care Routine"
+      }
+    },
+    "offcanvas_pE67qa": {
+      "type": "offcanvas",
+      "settings": {
+        "banner_heading": "Easy Skin Care Routine"
       }
     }
   },
@@ -334,6 +348,8 @@
     "blog_page_JLRnGB",
     "article_page_Ywnm6F",
     "newsletter_section_BiNdyU",
-    "login_page_BkYjmd"
+    "login_page_BkYjmd",
+    "register_page_Ka7q4d",
+    "offcanvas_pE67qa"
   ]
 }
