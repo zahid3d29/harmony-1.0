@@ -40,6 +40,7 @@
     },
     "mega_menu_QRWX77": {
       "type": "mega-menu",
+      "disabled": true,
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
       }
@@ -303,6 +304,12 @@
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
       }
+    },
+    "login_page_BkYjmd": {
+      "type": "login-page",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
+      }
     }
   },
   "order": [
@@ -326,6 +333,7 @@
     "page_how_Hrk6iN",
     "blog_page_JLRnGB",
     "article_page_Ywnm6F",
-    "newsletter_section_BiNdyU"
+    "newsletter_section_BiNdyU",
+    "login_page_BkYjmd"
   ]
 }
