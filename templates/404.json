@@ -314,6 +314,13 @@
     },
     "cart_drawer_9mpUVf": {
       "type": "cart-drawer",
+      "disabled": true,
+      "settings": {
+        "heading": "Cart"
+      }
+    },
+    "cart_drawer_empty_3VfFLG": {
+      "type": "cart-drawer-empty",
       "settings": {
         "heading": "Cart"
       }
@@ -342,6 +349,7 @@
     "blog_page_JLRnGB",
     "article_page_Ywnm6F",
     "newsletter_section_BiNdyU",
-    "cart_drawer_9mpUVf"
+    "cart_drawer_9mpUVf",
+    "cart_drawer_empty_3VfFLG"
   ]
 }
