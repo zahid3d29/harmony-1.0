@@ -21,7 +21,6 @@
       "block_order": [
         "announcement_TBTQiM"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "",
         "show_social": true,
@@ -43,6 +42,15 @@
       "disabled": true,
       "settings": {
         "banner_heading": ""
+      }
+    },
+    "page_header_69zxJW": {
+      "type": "page-header",
+      "settings": {
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "page_title": "About us",
+        "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
       }
     },
     "mega_menu_QRWX77": {
@@ -319,8 +327,8 @@
         "heading": "Cart"
       }
     },
-    "cart_drawer_empty_3VfFLG": {
-      "type": "cart-drawer-empty",
+    "category_filter_e8xEmj": {
+      "type": "category-filter",
       "settings": {
         "heading": "Cart"
       }
@@ -331,6 +339,7 @@
     "announcement_bar_fNP9LL",
     "offcanvas_pE67qa",
     "hero_cp7Nnr",
+    "page_header_69zxJW",
     "mega_menu_QRWX77",
     "gdpr_DDyBqp",
     "testimonials_GtL8fm",
@@ -350,6 +359,6 @@
     "article_page_Ywnm6F",
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
-    "cart_drawer_empty_3VfFLG"
+    "category_filter_e8xEmj"
   ]
 }
