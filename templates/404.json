@@ -7,29 +7,6 @@
         "heading": ""
       }
     },
-    "announcement_bar_fNP9LL": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_TBTQiM": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_TBTQiM"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "show_social": true,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": true,
-        "enable_language_selector": true
-      }
-    },
     "offcanvas_pE67qa": {
       "type": "offcanvas",
       "disabled": true,
@@ -58,13 +35,6 @@
       "disabled": true,
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
-      }
-    },
-    "gdpr_DDyBqp": {
-      "type": "GDPR",
-      "disabled": true,
-      "settings": {
-        "heading": ""
       }
     },
     "testimonials_GtL8fm": {
@@ -329,6 +299,13 @@
     },
     "category_filter_e8xEmj": {
       "type": "category-filter",
+      "disabled": true,
+      "settings": {
+        "heading": "Cart"
+      }
+    },
+    "cart_GdHUMi": {
+      "type": "cart",
       "settings": {
         "heading": "Cart"
       }
@@ -336,12 +313,10 @@
   },
   "order": [
     "announcement_bar_old_3r4gUH",
-    "announcement_bar_fNP9LL",
     "offcanvas_pE67qa",
     "hero_cp7Nnr",
     "page_header_69zxJW",
     "mega_menu_QRWX77",
-    "gdpr_DDyBqp",
     "testimonials_GtL8fm",
     "swiss_cciQWT",
     "featured_collection_MATT7C",
@@ -359,6 +334,7 @@
     "article_page_Ywnm6F",
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
-    "category_filter_e8xEmj"
+    "category_filter_e8xEmj",
+    "cart_GdHUMi"
   ]
 }

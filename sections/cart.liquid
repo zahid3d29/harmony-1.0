@@ -1,0 +1,254 @@
+{% style %} 
+    /* Chrome, Safari, Edge, Opera */
+    .drawer__product-qyt input::-webkit-outer-spin-button,
+    .drawer__product-qyt input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    .drawer__product-qyt input[type=number] {
+        -moz-appearance: textfield;
+    }
+{% endstyle %} 
+
+<section id="harmony--{{ section.id }}" class="bg-[#FFFAF4]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-x-auto">
+            <table class="w-full">
+                <thead class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal uppercase opacity-80 bg-[#FFFAF4]">
+                    <tr>
+                        <th scope="col" class="text-left border border-l-0 px-6 py-[27px]">
+                            Product name
+                        </th>
+                        <th scope="col" class="border border-l-0 px-6 py-3">
+                            Price
+                        </th>
+                        <th scope="col" class="border border-l-0 px-6 py-3">
+                            Quantity
+                        </th>
+                        <th scope="col" class="border border-l-0 px-6 py-3">
+                            Total
+                        </th>
+                        <th scope="col" class="border border-r-0 px-6 py-3">
+                            Remove
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <th scope="row" class="text-left pl-0 pr-6 py-4 whitespace-nowrap">
+                            <div class="flex">
+                                <div class="h-[102px] w-[87px] flex-shrink-0 overflow-hidden border border-gray-200">
+                                    <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-feature-03-detail-02.jpg?v=1713857738" width="87" height="102" alt="product-image" class="h-full w-full object-cover object-center">
+                                </div>
+                                <div class="ml-4 flex flex-1 flex-col">
+                                    <div>
+                                        <div class="flex justify-between">
+                                            <h3 class="text-[16px] leading-[35px] text-[#000000] font-semibold">
+                                                <a href="#">Throwback Hip Bag</a>
+                                            </h3>
+                                        </div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Weight:</dt><dd class="inline font-semibold px-1">500gm</dd></div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Size:</dt><dd class="inline font-semibold px-1">XL</dd></div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Color:</dt><dd class="inline font-semibold px-1">Brown Blue</dd></div>
+                                    </div>
+                                </div>                         
+                            </div>
+                        </th>
+                        <td class="text-center px-6 py-4">
+                            $100
+                        </td>
+                        <td class="text-center px-6 py-4">
+                            <div class="flex flex-1 items-end justify-between text-sm">
+                                <div class="flex">                                               
+                                    <form class="drawer__product-qyt max-w-xs mx-auto">
+                                        <div class="relative flex items-center -mb-2">
+                                            <button type="button" onclick="countDown('counterinput1')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                              </svg>                                              
+                                            </button>
+                                            <input type="number" id="counterinput1" value="1" class="max-w-[3rem] px-0 pt-2 pb-2 text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center">
+                                            <button type="button" onclick="countUp('counterinput1')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                              </svg>                                              
+                                            </button>
+                                        </div>
+                                    </form>                                                        
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                            $999
+                        </td>
+                        <td class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                            <a href="#" class="flex justify-center items-center font-medium text-gray-500 hover:underline">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <th scope="row" class="text-left pl-0 pr-6 py-4 whitespace-nowrap">
+                            <div class="flex">
+                                <div class="h-[102px] w-[87px] flex-shrink-0 overflow-hidden border border-gray-200">
+                                    <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/about-img-small.png?v=1714023341" width="87" height="102" alt="product-image" class="h-full w-full object-cover object-center">
+                                </div>
+                                <div class="ml-4 flex flex-1 flex-col">
+                                    <div>
+                                        <div class="flex justify-between">
+                                            <h3 class="text-[16px] leading-[35px] text-[#000000] font-semibold">
+                                                <a href="#">Throwback Hip Bag</a>
+                                            </h3>
+                                        </div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Weight:</dt><dd class="inline font-semibold px-1">500gm</dd></div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Size:</dt><dd class="inline font-semibold px-1">XL</dd></div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Color:</dt><dd class="inline font-semibold px-1">Brown Blue</dd></div>
+                                    </div>
+                                </div>                         
+                            </div>
+                        </th>
+                        <td class="text-center px-6 py-4">
+                            $100
+                        </td>
+                        <td class="text-center px-6 py-4">
+                            <div class="flex flex-1 items-end justify-between text-sm">
+                                <div class="flex">                                               
+                                    <form class="drawer__product-qyt max-w-xs mx-auto">
+                                        <div class="relative flex items-center -mb-2">
+                                            <button type="button" onclick="countDown('counterinput2')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                            </svg>
+                                          </button>
+                                            <input type="number" id="counterinput2" value="1" class="max-w-[3rem] px-0 pt-2 pb-2 text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center">
+                                            <button type="button" onclick="countUp('counterinput2')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                            </svg>
+                                            </button>
+                                        </div>
+                                    </form>                                                        
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                            $999
+                        </td>
+                        <td class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                            <a href="#" class="flex justify-center items-center font-medium text-gray-500 hover:underline">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>                                
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <th scope="row" class="text-left pl-0 pr-6 py-4 whitespace-nowrap">
+                            <div class="flex">
+                                <div class="h-[102px] w-[87px] flex-shrink-0 overflow-hidden border border-gray-200">
+                                    <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Image_3.png?v=1714467557" width="87" height="102" alt="product-image" class="h-full w-full object-cover object-center">
+                                </div>
+                                <div class="ml-4 flex flex-1 flex-col">
+                                    <div>
+                                        <div class="flex justify-between">
+                                            <h3 class="text-[16px] leading-[35px] text-[#000000] font-semibold">
+                                                <a href="#">Throwback Hip Bag</a>
+                                            </h3>
+                                        </div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Weight:</dt><dd class="inline font-semibold px-1">500gm</dd></div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Size:</dt><dd class="inline font-semibold px-1">XL</dd></div>
+                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1"><dt class="inline font-normal">Color:</dt><dd class="inline font-semibold px-1">Brown Blue</dd></div>
+                                    </div>
+                                </div>                         
+                            </div>
+                        </th>
+                        <td class="text-center px-6 py-4">
+                            $100
+                        </td>
+                        <td class="text-center px-6 py-4">
+                            <div class="flex flex-1 items-end justify-between text-sm">
+                                <div class="flex">                                               
+                                    <form class="drawer__product-qyt max-w-xs mx-auto">
+                                        <div class="relative flex items-center -mb-2">
+                                            <button type="button" onclick="countDown('counterinput3')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                            </svg>
+                                            </button>
+                                            <input type="number" id="counterinput3" value="1" class="max-w-[3rem] px-0 pt-2 pb-2 text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center">
+                                            <button type="button" onclick="countUp('counterinput3')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                            </svg>
+                                            </button>
+                                        </div>
+                                    </form>                                                        
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                            $999
+                        </td>
+                        <td class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                            <a href="#" class="flex justify-center items-center font-[14px] leading-[19px] text-[#000000] hover:underline">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>                                
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-end items-start">
+            <div class="w-1/2"></div>
+            <div class="cart__calculate border-t border-gray-200 px-4 py-6 sm:px-6">
+                <h3 class="text-[30px] leading-[41px] text-[#000000] font-semibold">Cart Totals</h3>
+                <p class="mt-0.5 text-[14px] leading-[19px] text-[#000000] font-normal">Shipping and taxes calculated at checkout.</p>
+                <div class="border-t my-[21px]"></div>
+                <div class="flex justify-between text-[17px] leading-[22px] text-[#000000] font-semibold">
+                    <h4>Subtotal</h4>
+                    <p>$262.00</p>
+                </div>
+                <div class="mt-6">
+                    <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-[#373738] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-500">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+{
+    "name": "Cart page",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Cart"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Cart page",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
+        
+
+<script>
+    function countUp(inputId) {
+        document.getElementById(inputId).stepUp(1);
+    }
+    function countDown(inputId) {
+        document.getElementById(inputId).stepDown(1);
+    }
+</script>
