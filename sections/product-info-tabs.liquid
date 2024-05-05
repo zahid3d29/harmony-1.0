@@ -1,0 +1,177 @@
+<style>
+    /* Create an active/current productFeaturedTablink class */
+    .productFeaturedTab button.active {
+        border-bottom: 2px solid #707070;
+    }
+    /* Style the productFeaturedTab content */
+    .aboutTabcontent {
+        display: none;
+        animation: fadeEffect 2s; 
+    }
+</style>
+
+<section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
+    <div class="mx-auto max-w-screen-2xl px-0 py-10 sm:px-0 sm:py-8 lg:px-0">
+        <div class="mx-auto">
+            <div class="productFeaturedTab overflow:hidden bg-white-900 grid lg:border-t lg:border-b border-[#7070704d] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 lg:px-24">
+                {% for block in section.blocks %}
+                    <button class="aboutTablinks block text-[17px] leading-[35px] text-[#000000] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 border-[#7070704d] cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openaboutTab(event, 'pd_{{ block.settings.heading }}')" {% if forloop.index == 1 %} id="aboutTabDefaultOpen"{% endif %}>{{ block.settings.heading }}</button>
+                {% endfor %}
+            </div>
+
+            {% for block in section.blocks %}
+                {%- case block.type -%}
+                {%- when 'block-1' -%}
+                    <div id="pd_{{ block.settings.heading }}" class="aboutTabcontent page_content-main py-8 lg:py-24">
+                        <div class="mx-auto w-full">
+                            <div class="flex mx-auto flex-col flex-col-reverse md:flex-row max-w-7xl justify-between px-6 md:px-10">
+                                <div class="flex py-8 md:py-0 md:pr-8 md:pt-4">
+                                    <div class="lg:max-w-lg md:max-w-md">
+                                        <span class="inline text-[14px] leading-[19px] text-[#000000] font-normal border border-black rounded-full px-2">Who are we?</span>
+                                        <h2 class="text-[27px] leading-[34px] md:text-[36px] md:leading-[42px] lg:text-[50px] lg:leading-[56px] font-semibold text-[#000000] tracking-tight mt-[22px]">Delivering the highest<br>quality products.</h2>
+                                        <div class="text-[14px] leading-[19px] text-[#000000] font-normal mt-[36px]">
+                                            Swiss was born from a passion for skincare and a belief in the transformative power of self-care. Founded by Daniel Moss in 1981, our brand has grown from a small idea to a thriving skincare community.
+                                            <br><br>
+                                            Swiss has always been fascinated by the science of skincare. With a background in fashion and health, they embarked on a mission to create products that combine cutting-edge research with the finest natural ingredients. Their dedication to excellence and authenticity drives our brand to this day.
+                                            <br><br>
+                                            Swiss has always been fascinated by the science of skincare. With a background in fashion and health, they embarked on a mission to create products that combine cutting-edge research with the finest natural ingredients. Their dedication to excellence and authenticity drives our brand to this day.
+                                            <br><br>
+                                            We are committed to delivering the highest quality skincare products. Each formula is carefully crafted, rigorously tested, and backed by scientific research. We believe in transparency. We’re open about our ingredients, our processes, and our results, so you can trust what you’re putting on your skin. 
+                                            <br><br>
+                                            Sustainability: We’re dedicated to minimizing our environmental footprint. From eco-friendly packaging to responsible sourcing, we’re working towards a more sustainable future.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center md:justify-center relative py-8 mb-12 md:py-0 md:mb-0">
+                                    <div class="md:pr-12">
+                                        <div class="h-[24rem] w-[16rem] md:h-[20rem] md:w-[15rem] lg:h-[25rem] lg:w-[20rem] overflow-hidden">
+                                            <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/about-img-big.png?v=1714023341" alt="" class="h-full w-full object-cover object-center">
+                                        </div>
+                                        <div class="absolute bottom-[-3rem] right-[3rem] h-[10rem] w-[8rem] md:bottom-[0rem] md:right-[0rem] md:h-[10rem] md:w-[7rem] lg:bottom-[3rem] lg:right-[1.5rem] lg:h-[15rem] lg:w-[10rem] overflow-hidden">
+                                            <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/about-img-small.png?v=1714023341" alt="" class="h-full w-full object-cover object-center">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endcase %}
+            {% endfor %}
+        </div>              
+    </div>
+</section>
+
+
+
+
+{% schema %}
+{
+    "name": "Product Info Tabs",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Section Heading",
+            "default": "Section Heading"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_heeading",
+            "label": "Show Heading",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "page_title",
+            "label": "Page Title",
+            "default": "About us"
+        },
+        {
+            "type": "text",
+            "id": "page_desc",
+            "label": "Page Short Description",
+            "default": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care.</p>"
+        }
+    ],
+    "blocks":[
+        {
+          "type":"block-1",
+          "name": "Who we are",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Who we are?"
+            }
+          ]
+        },
+        {
+          "type":"block-2",
+          "name": "Our Philosophy",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Our Philosophy"
+            }
+          ]
+        },
+        {
+          "type":"block-3",
+          "name": "Message from",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Message from"
+            }
+          ]
+        },
+        {
+          "type":"block-4",
+          "name": "Our Commitments",
+          "limit": 1,
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "Our Commitments"
+            }
+          ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Info Tabs",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
+
+
+<script>
+    function openaboutTab(evt, aboutTabName) {
+        var i, aboutTabcontent, aboutTablinks;
+        aboutTabcontent = document.getElementsByClassName("aboutTabcontent");
+        for (i = 0; i < aboutTabcontent.length; i++) {
+            aboutTabcontent[i].style.display = "none";
+        }
+        aboutTablinks = document.getElementsByClassName("aboutTablinks");
+        for (i = 0; i < aboutTablinks.length; i++) {
+            aboutTablinks[i].className = aboutTablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(aboutTabName).style.display = "grid";
+        evt.currentTarget.className += " active";
+    }
+    // Get the element with id="aboutTabDefaultOpen" and click on it
+    document.getElementById("aboutTabDefaultOpen").click();
+</script>

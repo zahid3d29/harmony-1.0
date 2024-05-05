@@ -23,6 +23,7 @@
     },
     "page_header_69zxJW": {
       "type": "page-header",
+      "disabled": true,
       "settings": {
         "heading": "View your shopping cart",
         "show_heeading": true,
@@ -306,6 +307,13 @@
     },
     "cart_GdHUMi": {
       "type": "cart",
+      "disabled": true,
+      "settings": {
+        "heading": "Cart"
+      }
+    },
+    "product_how_use_YTVnbK": {
+      "type": "product-how-use",
       "settings": {
         "heading": "Cart"
       }
@@ -335,6 +343,7 @@
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
     "category_filter_e8xEmj",
-    "cart_GdHUMi"
+    "cart_GdHUMi",
+    "product_how_use_YTVnbK"
   ]
 }
