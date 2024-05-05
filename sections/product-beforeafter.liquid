@@ -1,23 +1,40 @@
-
-
+<section id="harmony--{{ section.id }}">
+    <img-comparison-slider class="slider-example-split-line w-full max-h-[350px] md:min-h-[536px]">
+        <img src="https://img-comparison-slider.sneas.io/images/leaves.eb0b4c50.webp" alt="leaves" slot="first" class="w-full h-[536px]">
+        <img src="https://img-comparison-slider.sneas.io/images/leaves-blurred.75f25622.webp" alt="leaves-blurred." slot="second" class="w-full h-[536px]">
+        <svg slot="handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
+            <path stroke="#fff" d="M -5 -2 L -7 0 L -5 2 M -5 -2 L -5 2 M 5 -2 L 7 0 L 5 2 M 5 -2 L 5 2" stroke-width="1" fill="#fff" vector-effect="non-scaling-stroke"></path>
+        </svg>
+    </img-comparison-slider>
+</section>
 
 {% schema %}
-    {
-        "name": "Product how to use",
-        "settings": [
-            {
-                "type": "text",
-                "id": "heading",
-                "label": "Heading",
-                "default": "Cart"
-            }
-        ],
-        "presets": [
-            {
-                "name": "Product how to use",
-                "category": "Harmony Sections"
-            }
-        ]
-    }
+{
+    "name": "Product before after",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Cart"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product before after",
+            "category": "Harmony Sections"
+        }
+    ]
+}
 {% endschema %}
                 
+
+<style>
+  .slider-example-split-line {
+    --divider-width: 10px;
+    --divider-color: #ffffff;
+    --default-handle-opacity: 0;
+  }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+<script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
