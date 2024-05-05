@@ -1,5 +1,25 @@
+{% style %} 
+    .slider-example-split-line {
+        --divider-width: 10px;
+        --divider-color: #ffffff;
+        --default-handle-opacity: 0;
+    }
+    img-comparison-slider {
+        visibility: hidden;
+    }
+    img-comparison-slider [slot='second'] {
+        display: none;
+    }
+    img-comparison-slider.rendered {
+        visibility: inherit;
+    }
+    img-comparison-slider.rendered [slot='second'] {
+        display: unset;
+    }
+{% endstyle %}
+
 <section id="harmony--{{ section.id }}">
-    <img-comparison-slider class="slider-example-split-line w-full max-h-[350px] md:min-h-[536px]">
+    <img-comparison-slider class="slider-example-split-line relative w-full max-h-[350px] md:min-h-[536px]">
         <img src="https://img-comparison-slider.sneas.io/images/leaves.eb0b4c50.webp" alt="leaves" slot="first" class="w-full h-[536px]">
         <img src="https://img-comparison-slider.sneas.io/images/leaves-blurred.75f25622.webp" alt="leaves-blurred." slot="second" class="w-full h-[536px]">
         <svg slot="handle" xmlns="http://www.w3.org/2000/svg" width="100" viewBox="-8 -3 16 6">
@@ -29,12 +49,5 @@
 {% endschema %}
                 
 
-<style>
-  .slider-example-split-line {
-    --divider-width: 10px;
-    --divider-color: #ffffff;
-    --default-handle-opacity: 0;
-  }
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+
 <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
