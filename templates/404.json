@@ -7,13 +7,6 @@
         "heading": ""
       }
     },
-    "offcanvas_pE67qa": {
-      "type": "offcanvas",
-      "disabled": true,
-      "settings": {
-        "banner_heading": "Easy Skin Care Routine"
-      }
-    },
     "hero_cp7Nnr": {
       "type": "hero",
       "disabled": true,
@@ -314,6 +307,13 @@
     },
     "product_beforeafter_fafijV": {
       "type": "product-beforeafter",
+      "disabled": true,
+      "settings": {
+        "heading": "Cart"
+      }
+    },
+    "product_main_c7G7TJ": {
+      "type": "product-main",
       "settings": {
         "heading": "Cart"
       }
@@ -321,7 +321,6 @@
   },
   "order": [
     "announcement_bar_old_3r4gUH",
-    "offcanvas_pE67qa",
     "hero_cp7Nnr",
     "page_header_69zxJW",
     "mega_menu_QRWX77",
@@ -344,6 +343,7 @@
     "category_filter_e8xEmj",
     "cart_GdHUMi",
     "product_how_use_YTVnbK",
-    "product_beforeafter_fafijV"
+    "product_beforeafter_fafijV",
+    "product_main_c7G7TJ"
   ]
 }
