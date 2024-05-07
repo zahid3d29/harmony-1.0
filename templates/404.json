@@ -2,21 +2,18 @@
   "sections": {
     "announcement_bar_old_3r4gUH": {
       "type": "announcement-bar-old",
-      "disabled": true,
       "settings": {
         "heading": ""
       }
     },
     "hero_cp7Nnr": {
       "type": "hero",
-      "disabled": true,
       "settings": {
         "banner_heading": ""
       }
     },
     "page_header_69zxJW": {
       "type": "page-header",
-      "disabled": true,
       "settings": {
         "heading": "View your shopping cart",
         "show_heeading": true,
@@ -217,35 +214,6 @@
         "banner_heading": "eASY Skin Care Routine"
       }
     },
-    "footer_CANxjp": {
-      "type": "footer",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
-    "testimonials_nYVkUY": {
-      "type": "testimonials",
-      "blocks": {
-        "review_KqDAwa": {
-          "type": "review",
-          "settings": {
-            "review_heading": "Hear from them",
-            "review_text": "It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!"
-          }
-        }
-      },
-      "block_order": [
-        "review_KqDAwa"
-      ],
-      "disabled": true,
-      "settings": {
-        "rating": 4.9,
-        "verify": "Verified Buyers",
-        "btn_label": "Read more Testimonials",
-        "btn_url": ""
-      }
-    },
     "page_how_Hrk6iN": {
       "type": "page-how",
       "disabled": true,
@@ -298,24 +266,34 @@
         "heading": "Cart"
       }
     },
-    "product_how_use_YTVnbK": {
-      "type": "product-how-use",
-      "disabled": true,
+    "product_main_c7G7TJ": {
+      "type": "product-main",
+      "settings": {
+        "heading": "Cart"
+      }
+    },
+    "product_facts_6pJAtN": {
+      "type": "product-facts",
       "settings": {
         "heading": "Cart"
       }
     },
     "product_beforeafter_fafijV": {
       "type": "product-beforeafter",
-      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
-    "product_main_c7G7TJ": {
-      "type": "product-main",
+    "product_how_use_YTVnbK": {
+      "type": "product-how-use",
       "settings": {
         "heading": "Cart"
+      }
+    },
+    "footer_CANxjp": {
+      "type": "footer",
+      "settings": {
+        "heading": ""
       }
     }
   },
@@ -333,8 +311,6 @@
     "sales_783xMN",
     "faq_fdKzd7",
     "newsletter_pop_89fWAC",
-    "footer_CANxjp",
-    "testimonials_nYVkUY",
     "page_how_Hrk6iN",
     "blog_page_JLRnGB",
     "article_page_Ywnm6F",
@@ -342,8 +318,10 @@
     "cart_drawer_9mpUVf",
     "category_filter_e8xEmj",
     "cart_GdHUMi",
-    "product_how_use_YTVnbK",
+    "product_main_c7G7TJ",
+    "product_facts_6pJAtN",
     "product_beforeafter_fafijV",
-    "product_main_c7G7TJ"
+    "product_how_use_YTVnbK",
+    "footer_CANxjp"
   ]
 }

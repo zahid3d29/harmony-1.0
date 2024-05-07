@@ -1,17 +1,17 @@
 
 <section id="harmony--{{ section.id }}">
-    <div class="bg-white">
-        <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+    <div class="bg-[#FFFAF4]">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-x-8 gap-y-16 px-6 py-8 sm:px-6 md:py-24 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
 
-            <div class="product__media grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
-                <div class="grid lg:grid-cols-5 gap-4">
-                    <div class="product__gallaries grid grid-cols-1">
-                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut" class="rounded-lg bg-gray-100">
-                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top" class="rounded-lg bg-gray-100">
-                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side" class="rounded-lg bg-gray-100">
-                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut" class="rounded-lg bg-gray-100">
+            <div class="product__media col-span-2 grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
+                <div class="grid md:grid-cols-5 gap-4">
+                    <div class="product__gallaries flex flex-wrap order-last md:order-first md:grid md:grid-cols-1 gap-x-4 gap-y-4 md:gap-y-0 md:gap-x-0">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg" alt="Walnut" class="w-[100px] h-[100px] md:w-full md:h-full rounded-lg bg-gray-100">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg" alt="Top" class="w-[100px] h-[100px] md:w-full md:h-full rounded-lg bg-gray-100">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg" alt="Side" class="w-[100px] h-[100px] md:w-full md:h-full rounded-lg bg-gray-100">
+                        <img src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg" alt="Walnut" class="w-[100px] h-[100px] md:w-full md:h-full rounded-lg bg-gray-100">
                     </div>
-                    <div class="product__featured lg:col-span-4 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
+                    <div class="product__featured md:col-span-4 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
                         <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing" class="h-full w-full object-cover object-center">
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <ol role="list" class="flex max-w-2xl items-center lg:max-w-7xl">
                             <li>
                                 <div class="flex items-center">
-                                    <a href="#" class="mr-2 text-sm font-medium text-gray-900">Home</a>
+                                    <a href="#" class="text-[14px] leading-[19px] font-normal text-[#000000] mr-2">Home</a>
                                     <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
                                     <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                                     </svg>
@@ -30,7 +30,7 @@
                             </li>
                             <li>
                                 <div class="flex items-center">
-                                    <a href="#" class="mr-2 text-sm font-medium text-gray-900">Cleanser</a>
+                                    <a href="#" class="text-[14px] leading-[19px] font-normal text-[#000000] mr-2">Cleanser</a>
                                     <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
                                     <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                                     </svg>
@@ -38,50 +38,49 @@
                             </li>
         
                             <li class="text-sm">
-                                <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Facial</a>
+                                <a href="#" aria-current="page" class="text-[14px] leading-[19px] font-normal text-[#000000] mr-2">Facial</a>
                             </li>
                         </ol>
                     </nav>
                     <div class="product__review">
                         <h3 class="sr-only">Reviews</h3>
                         <div class="flex items-center">
-                            <div class="flex items-center">
-                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;text-gray-900&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <div class="flex items-center gap-x-[2px]">
+                                <svg class="text-[13px] leading-[18px] font-normal text-[#000000] h-5 w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;text-gray-900&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                                 </svg>
-                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg class="text-[13px] leading-[18px] font-normal text-[#000000] h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                                 </svg>
-                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg class="text-[13px] leading-[18px] font-normal text-[#000000] h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                                 </svg>
-                                <svg class="text-gray-900 h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg class="text-[13px] leading-[18px] font-normal text-[#000000] h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                                 </svg>
-                                <svg class="text-gray-200 h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg class="text-[13px] leading-[18px] font-normal text-[#000000] h-5 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                                 </svg>
-                                
                             </div>
                             <p class="sr-only">4 out of 5 stars</p>
-                            <a href="#" class="ml-3 text-sm font-medium text-gray-600 hover:text-gray-500">7</a>
+                            <a href="#" class="text-[16px] leading-[20px] font-normal text-[#000000] mx-2 hover:text-gray-500">7</a>
                         </div>
                     </div>
                 </div>
                 <div class="flex items-center justify-between mt-[10px]">
                     <div class="product__title lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Facial Cleanser</h1>
+                        <h1 class="text-[32px] leading-[35px] font-semibold text-[#000000]">Facial Cleanser</h1>
                     </div>
                     <div class="flex gap-x-3">
                         <svg class="mt-1 h-5 w-5 flex-none text-gray-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path d="M4.632 3.533A2 2 0 016.577 2h6.846a2 2 0 011.945 1.533l1.976 8.234A3.489 3.489 0 0016 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234z"></path>
                             <path fill-rule="evenodd" d="M4 13a2 2 0 100 4h12a2 2 0 100-4H4zm11.24 2a.75.75 0 01.75-.75H16a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V15zm-2.25-.75a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75h-.01z" clip-rule="evenodd"></path>
                         </svg>
-                        <span><strong class="font-semibold text-gray-900">Add to Wishlist</strong></span>
+                        <span><strong class="text-[14px] leading-[19px] font-normal text-[#000000]">Add to Wishlist</strong></span>
                     </div>
                 </div>
-                <div class="product__price text-3xl tracking-tight text-gray-900 mt-[10px]">$60.00</div>
-                <div class="product_short_desc mt-[12px] text-base text-gray-900">
+                <div class="product__price text-[19px] leading-[22px] font-normal text-[#000000] mr-2 mt-[10px]">$60.00</div>
+                <div class="product_short_desc text-[14px] leading-[19px] font-normal text-[#000000] mt-[12px]">
                     It has been meticulously formulated to address multiple skincare concerns and provide a comprehensive solution for all skin types.
                 </div>
                 <div class="product__variant">
@@ -90,9 +89,9 @@
                         <!-- Color Dropdown-->
                         <div class="mt-10">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-medium text-gray-900">Color Dropdown</h3>
+                                <h3 class="text-[14px] leading-[19px] font-normal text-[#000000] mr-2">Color Dropdown</h3>
                             </div>
-                            <select id="country" name="country" autocomplete="country-name" class="block w-full flex-auto border-0 border-b border-b-gray-200 text-[14px] leading-[19px] text-[#000000] font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Enter your email address">
+                            <select id="country" name="country" autocomplete="country-name" class="block w-full flex-auto border-0 border-b border-b-gray-200 text-[13px] leading-[18px] text-[#000000] font-normal bg-transparent px-0 focus:px-2 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Enter your email address">
                               <option>Red</option>
                               <option>Blue</option>
                               <option>Green</option>
@@ -101,24 +100,24 @@
 
                         <!-- Colors Swatches -->
                         <div class="mt-10">
-                            <h3 class="text-sm font-medium text-gray-900">Color Swatches</h3>
+                            <h3 class="text-[14px] leading-[19px] font-normal text-[#000000]">Color Swatches</h3>
                             <div class="mt-6" id="filter-section-2">
                                 <fieldset class="mt-4">
-                                  <legend class="sr-only">Colorr</legend>
+                                  <legend class="sr-only text-[14px] leading-[19px] text-[#000000] font-normal">Color</legend>
                                   <div class="flex items-center space-x-3">
                                     <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-transparent undefined ring ring-offset-1">
-                                    <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
-                                        <span id="color-choice-0-label" class="sr-only">White</span>
-                                        <span aria-hidden="true" class="h-8 w-8 bg-gray-200 rounded-none border border-black border-opacity-10"></span>
-                                      </label>
+                                        <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
+                                        <span id="color-choice-0-label" class="sr-only text-[13px] leading-[18px] text-[#000000] font-normal">White</span>
+                                        <span aria-hidden="true" class="h-8 w-8 bg-green-500 rounded-none border border-black border-opacity-10"></span>
+                                    </label>
                                     <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400 undefined">
-                                    <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
-                                        <span id="color-choice-1-label" class="sr-only">Gray</span>
-                                        <span aria-hidden="true" class="h-8 w-8 bg-red-700 rounded-none border border-black border-opacity-10"></span>
+                                        <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
+                                        <span id="color-choice-1-label" class="sr-only text-[13px] leading-[18px] text-[#000000] font-normal">Gray</span>
+                                        <span aria-hidden="true" class="h-8 w-8 bg-indigo-700 rounded-none border border-black border-opacity-10"></span>
                                     </label>
                                     <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900 undefined">
-                                    <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
-                                        <span id="color-choice-2-label" class="sr-only">Black</span>
+                                        <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
+                                        <span id="color-choice-2-label" class="sr-only text-[13px] leading-[18px] text-[#000000] font-normal">Black</span>
                                         <span aria-hidden="true" class="h-8 w-8 bg-black rounded-none border border-black border-opacity-10"></span>
                                     </label>
                                   </div>
@@ -129,9 +128,9 @@
                         <!-- Sizes Dropdown-->
                         <div class="mt-10">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-medium text-gray-900">Size Dropdown</h3>
+                                <h3 class="text-[14px] leading-[19px] text-[#000000] font-normal">Size Dropdown</h3>
                             </div>
-                            <select id="country" name="country" autocomplete="country-name" class="block w-full flex-auto border-0 border-b border-b-gray-200 text-[14px] leading-[19px] text-[#000000] font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Enter your email address">
+                            <select id="country" name="country" autocomplete="country-name" class="block w-full flex-auto border-0 border-b border-b-gray-200 text-[13px] leading-[18px] text-[#000000] font-normal bg-transparent px-0 focus:px-2 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200" placeholder="Enter your email address">
                               <option>200ml</option>
                               <option>300ml</option>
                               <option>400ml</option>
@@ -141,31 +140,30 @@
                         <!-- Size Swatches -->
                         <div class="mt-10">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-medium text-gray-900">Size Swatches</h3>
-                                <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size guide</a>
+                                <h3 class="text-[14px] leading-[19px] text-[#000000] font-normal">Size Swatches</h3>
                             </div>
 
                             <div>
                                 <!-- Filter section, show/hide based on section state. -->
                                 <div class="mt-6" id="filter-section-4">
                                   <fieldset class="mt-4">
-                                    <legend class="sr-only">Choose a size</legend>
+                                    <legend class="sr-only text-[14px] leading-[19px] text-[#000000] font-normal">Choose a size</legend>
                                     <div class="grid grid-cols-3 gap-4 md:grid-cols-4">
-                                      <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#000000] font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-not-allowed bg-gray-50 undefined">
+                                      <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[13px] leading-[18px] text-[#000000] font-normal uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-not-allowed bg-gray-50 undefined">
                                       <input type="radio" name="size-choice" value="100ml" disabled="" class="sr-only" aria-labelledby="size-choice-0-label">
                                           <span id="size-choice-0-label">100ml</span>
                                           <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-full border-2 border-gray-200">
-                                              <svg class="absolute inset-0 h-full w-full stroke-2 text-[12px] text-gray-500" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
+                                              <svg class="absolute inset-0 h-full w-full stroke-2 text-[13px] leading-[18px] text-[#000000] font-normal" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
                                                 <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke"></line>
                                               </svg>
                                           </span>
                                       </label>
-                                      <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#ffffff] font-medium uppercase hover:bg-gray-100 focus:outline-none sm:flex-1 cursor-pointer bg-gray-900  hover:text-gray-700 undefined">
+                                      <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[13px] leading-[18px] text-[#ffffff] font-normal uppercase hover:bg-gray-100 focus:outline-none sm:flex-1 cursor-pointer bg-gray-900  hover:text-gray-700 undefined">
                                         <input type="radio" name="size-choice" value="200ml" class="sr-only" aria-labelledby="size-choice-1-label">
                                           <span id="size-choice-1-label">200ml</span>
                                           <span class="pointer-events-none absolute -inset-px rounded-md border border-transparent" aria-hidden="true"></span>
                                       </label>
-                                      <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#000000] font-medium uppercase hover:bg-gray-900 focus:outline-none sm:flex-1 cursor-pointer bg-transparent hover:text-gray-100 undefined">
+                                      <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full bordertext-[13px] leading-[18px] text-[#000000] font-normal uppercase hover:bg-gray-900 focus:outline-none sm:flex-1 cursor-pointer bg-transparent hover:text-gray-100 undefined">
                                         <input type="radio" name="size-choice" value="300ml" class="sr-only" aria-labelledby="size-choice-2-label">
                                           <span id="size-choice-2-label">300ml</span>
                                           <span class="pointer-events-none w-full inset-x-0 rounded-full border border-transparent" aria-hidden="true"></span>
@@ -181,27 +179,27 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>                     
-                                <span><strong class="font-semibold text-gray-900">3 in stock</strong></span>
+                                <span><strong class="text-[14px] leading-[19px] text-[#000000] font-normal">3 in stock</strong></span>
                             </div>
                             <div class="gift__wrap flex gap-x-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                 </svg>                              
-                                <span><strong class="font-semibold text-gray-900">Use Gift Wrap</strong></span>
+                                <span><strong class="text-[14px] leading-[19px] text-[#000000] font-normal">Use Gift Wrap</strong></span>
                             </div>
                         </div>
 
                         <div class="mt-10 flex items-center justify-center">
-                            <button type="submit" class="flex w-full items-center justify-center border bg-transparent px-8 py-3 text-base font-medium text-black hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">One Time Purchase</button>
-                            <button type="submit" class="flex w-full items-center justify-center border bg-transparent px-8 py-3 text-base font-medium text-black hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Subscribe</button>
+                            <button type="submit" class="flex w-full items-center justify-center border bg-transparent px-8 py-[17px] text-[13px] leading-[18px] text-[#000000] font-normal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">One Time Purchase</button>
+                            <button type="submit" class="flex w-full items-center justify-center border bg-transparent px-8 py-[17px] text-[13px] leading-[18px] text-[#000000] font-normal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Subscribe</button>
                         </div>
-                        <button type="submit" class="flex w-full items-center justify-center border border-transparent bg-[#373738] px-8 py-3 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Add to bag</button>
-                        <button type="submit" class="flex w-full items-center justify-center border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Buy it now</button>
+                        <button type="submit" class="flex w-full items-center justify-center border border-transparent bg-[#373738] px-8 py-[17px] text-[17px] leading-[13px] text-[#ffffff] font-normal hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Add to bag</button>
+                        <button type="submit" class="flex w-full items-center justify-center border border-transparent bg-green-600 px-8 py-[17px] text-[17px] leading-[13px] text-[#ffffff] font-normal hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 mt-[5px]">Buy it now</button>
 
                     </form>
 
                     <div class="product__installment flex items-center justify-between mt-[20px] py-4 border-b">
-                        <div class="installment__pay">
+                        <div class="installment__pay text-[14px] leading-[19px] text-[#000000] font-normal">
                             Pay in <strong>4</strong> installments.
                         </div>
                         <div class="installment_payment_getway">
@@ -211,13 +209,13 @@
 
                     <div class="shipping__share flex items-center justify-between mt-[20px]">
                         <div class="shipping">
-                            <ul role="list" class="grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600">
+                            <ul role="list" class="grid grid-cols-1 gap-4 text-[14px] leading-[19px] text-[#000000] font-normal">
                                 <li class="flex gap-x-3">
                                     <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
                                     </svg>
                                     Ready to ship.
-                                    </li>
+                                </li>
                                 <li class="flex gap-x-3">
                                     <svg class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path>
@@ -226,19 +224,19 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="share flex gap-x-3">
+                        <div class="share flex gap-x-3 text-[14px] leading-[19px] text-[#000000] font-normal">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
                             </svg>
-                            <span><strong class="font-normal text-gray-900">Share</strong></span>
+                            <span><strong class="share">Share</strong></span>
                         </div>
                     </div>
 
-                    <div class="pickup_stats flex gap-x-3 mt-[34px]">
+                    <div class="pickup_stats flex gap-x-3 text-[14px] leading-[19px] text-[#000000] font-normal mt-[34px]">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
                         </svg>                      
-                        <span><strong class="font-normal text-gray-900">Pickup Available at NYC, 23</strong></span>
+                        <span>Pickup Available at NYC, 23</span>
                     </div>
 
                 </div>
