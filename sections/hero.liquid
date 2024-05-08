@@ -1,6 +1,6 @@
-<section class="bg-[#FAF2DC] relative min-h-[10rem] md:min-h-[15rem] lg:min-h-[30rem] bg-scroll bg-center bg-no-repeat bg-cover bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/home-banner.png?v=1713506306')]" id="harmony--{{ section.id }}">
+<section class="bg-[#FAF2DC] relative min-h-[10rem] md:min-h-[15rem] lg:min-h-[30rem] bg-scroll bg-center bg-no-repeat bg-cover bg-[url('{{ section.settings.banner_image | image_url }}')]" id="harmony--{{ section.id }}" id="harmony--{{ section.id }}">
     <div class="hero__top-overlay w-full bg-gradient-to-b from-black min-h-[3rem] lg:min-h-[7rem] absolute top-0 left-0 right-0 opacity-70"></div>
-      <header class="mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-6 md:px-10 py-1.5">
+      <header class="mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
         <nav class="flex items-center justify-between" aria-label="Global">
           <div class="flex lg:flex-1">
               <button type="button" class="hidden lg:inline-flex items-center justify-center rounded-md text-[#FAF2DC] pt-1">
@@ -22,13 +22,13 @@
               </svg>
             </button>
           </div>
-          <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">Shop</a>
-            <a href="#" class="text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">How to use</a>
-            <a href="#" class="text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">About us</a>
-            <a href="#" class="text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">Blog</a>
-            <a href="#" class="text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">Help</a>
-            <a href="#" class="text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">Contact</a>
+          <div class="hidden lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">
+            <a href="#">Shop</a>
+            <a href="#">How to use</a>
+            <a href="#">About us</a>
+            <a href="#">Blog</a>
+            <a href="#">Help</a>
+            <a href="#">Contact</a>
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
               <a href="#" class="flex items-center w-[40px] p-2 text-[#FAF2DC] hover:text-gray-500">
@@ -62,7 +62,7 @@
     </div>
 
     {%- if section.settings.banner_heading != blank -%}
-    <div class="mx-auto max-w-7xl relative isolate px-6 md:px-10 pt-14">
+    <div class="mx-auto max-w-7xl relative isolate px-4 sm:px-6 md:px-10 pt-14">
         <div class="max-w-lg md:py-32 py-20 lg:pt-[20rem]">
             <div class="hidden sm:mb-3 sm:flex sm:justify-left">
             <div class="relative rounded-full text-[14px] leading-[19px] text-[#f7f4ed]">
@@ -72,35 +72,63 @@
             <div class="text-left">
               <h1 class="font-bold tracking-tight text-[42px] leading-[48px] lg:text-[90px] lg:leading-[81px] text-[#f7f4ed]">Your path to radiant skin.</h1>
               <p class="mt-6 text-[18px] leading-[22px] text-[#f7f4ed]">We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals.</p>
-              <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                <a href="#" class="text-[17px] font-semibold leading-[13px] text-[#EEFD8D] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">Shop All <span class="ml-1.5 text-[#EEFD8D]" aria-hidden="true">→</span></a>
+              <div class="mt-10 flex items-center justify-start gap-x-6">
+                <a href="{{ section.settings.button_url }}" class="text-[17px] font-semibold leading-[13px] text-[#EEFD8D] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ section.settings.button_text }} <span class="ml-1.5 text-[#EEFD8D]" aria-hidden="true">→</span></a>
               </div>
             </div>
         </div>
     </div>
     {% endif %}
-    <div class="hero__bottom-overlay w-full bg-gradient-to-t from-black min-h-[30rem] absolute bottom-0 left-0 right-0 opacity-70"></div>
+    <div class="hero__bottom-overlay w-full bg-gradient-to-t from-black min-h-[10rem] md:min-h-[30rem] absolute bottom-0 left-0 right-0 opacity-70"></div>
 </section>
 
 
 
 {% schema %}
-  {
+{
     "name": "Hero Banner",
     "settings": [
+      {
+        "type": "text",
+        "id": "sub_text",
+        "label": "Sub Text",
+        "default": "eASY Skin Care Routine"
+      },
       {
         "type": "text",
         "id": "banner_heading",
         "label": "Banner Heading",
         "default": "eASY Skin Care Routine"
+      },
+      {
+        "type": "text",
+        "id": "banner_text",
+        "label": "Banner Text",
+        "default": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop All"
+      },
+      {
+        "type": "text",
+        "id": "button_url",
+        "label": "Button URL",
+        "default": "#"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
       }
     ],
     "presets": [
-        {
-          "name": "Hero Banner",
-          "category": "Harmony Sections"
-        }
+      {
+        "name": "Hero Banner",
+        "category": "Harmony Sections"
+      }
     ]
-  }
+}
 {% endschema %}
-    

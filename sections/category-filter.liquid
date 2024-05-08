@@ -1,5 +1,5 @@
 <section id="harmony--{{ section.id }}">
-  <div class="bg-[#F7F5EF]">
+  <div class="bg-[#FFFAF4]">
     <div>
       <div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
         <div class="fixed inset-0 bg-black bg-opacity-25"></div>
@@ -17,29 +17,63 @@
 
             <!-- Filters -->
             <form class="mt-4 border-t border-gray-200 px-4 py-6">
-              <h3 class="sr-only">Categories</h3>
-              <ul role="list" class="text-[14px] leading-[19px] text-[#000000] font-normal space-y-4 border-b border-gray-200 pb-6">
-                <li class="flex justify-between items-center">
-                  <a href="#">Face</a>
-                  <span class="cats_product_count">5</span>
-                </li>
-                <li class="flex justify-between items-center">
-                  <a href="#">Skin</a>
-                  <span class="cats_product_count">44</span>
-                </li>
-                <li class="flex justify-between items-center">
-                  <a href="#">Body</a>
-                  <span class="cats_product_count">33</span>
-                </li>
-                <li class="flex justify-between items-center">
-                  <a href="#">Hair</a>
-                  <span class="cats_product_count">11</span>
-                </li>
-                <li class="flex justify-between items-center">
-                  <a href="#">Dresses</a>
-                  <span class="cats_product_count">12</span>
-                </li>
-              </ul>
+              <div class="border-b border-gray-200 py-6">
+                <h3 class="-my-3 flow-root">
+                  <button type="button" class="flex w-full items-center justify-between bg-transparent py-3 text-[14px] leading-[19px] text-[#000000] font-semibold hover:text-gray-500" aria-controls="filter-section-1" aria-expanded="false">
+                    <span>FILTER BY CATEGORY</span>
+                    <span class="ml-6 flex items-center">
+                      <!-- Expand icon, show/hide based on section open state. -->
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                      <!-- Collapse icon, show/hide based on section open state. -->
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                <div class="pt-6" x-description="Filter section, show/hide based on section state." id="filter-section-1" x-show="open">
+                  <div class="space-y-4 text-[14px] leading-[19px] text-[#000000] font-normal">
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-0" name="category[]" value="new-arrivals" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-0" class="ml-3">Face</label>
+                        </div>
+                        <span class="cats_product_count">5</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-1" name="category[]" value="sale" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-1" class="ml-3">Skin</label>
+                        </div>
+                        <span class="cats_product_count">51</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-2" name="category[]" value="travel" type="checkbox" checked="" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-2" class="ml-3">Body</label>
+                        </div>
+                        <span class="cats_product_count">35</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-3" name="category[]" value="organization" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-3" class="ml-3">Hair</label>
+                        </div>
+                        <span class="cats_product_count">15</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-4" name="category[]" value="accessories" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-4" class="ml-3">Dresses</label>
+                        </div>
+                        <span class="cats_product_count">25</span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
 
               <div class="border-t border-gray-200 px-0 py-6">
                 <div>
@@ -64,19 +98,19 @@
                       <legend class="sr-only">Choose a color</legend>
                       <div class="flex items-center space-x-3">
                         <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-transparent undefined ring ring-offset-1">
-                        <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
-                            <span id="color-choice-0-label" class="sr-only">White</span>
-                            <span aria-hidden="true" class="h-8 w-8 bg-gray-200 rounded-none border border-black border-opacity-10"></span>
-                          </label>
+                          <input type="checkbox" name="color-choice[]" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
+                          <span id="color-choice-0-label" class="sr-only">White</span>
+                          <span aria-hidden="true" class="h-8 w-8 bg-gray-200 rounded-none border border-black border-opacity-10"></span>
+                        </label>
                         <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400 undefined">
-                        <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
-                            <span id="color-choice-1-label" class="sr-only">Gray</span>
-                            <span aria-hidden="true" class="h-8 w-8 bg-red-700 rounded-none border border-black border-opacity-10"></span>
+                          <input type="checkbox" name="color-choice[]" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
+                          <span id="color-choice-1-label" class="sr-only">Gray</span>
+                          <span aria-hidden="true" class="h-8 w-8 bg-red-700 rounded-none border border-black border-opacity-10"></span>
                         </label>
                         <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900 undefined">
-                        <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
-                            <span id="color-choice-2-label" class="sr-only">Black</span>
-                            <span aria-hidden="true" class="h-8 w-8 bg-black rounded-none border border-black border-opacity-10"></span>
+                          <input type="checkbox" name="color-choice[]" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
+                          <span id="color-choice-2-label" class="sr-only">Black</span>
+                          <span aria-hidden="true" class="h-8 w-8 bg-black rounded-none border border-black border-opacity-10"></span>
                         </label>
                       </div>
                     </fieldset>
@@ -143,21 +177,21 @@
                       <legend class="sr-only">Choose a size</legend>
                       <div class="grid grid-cols-3 gap-4 md:grid-cols-4">
                         <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#000000] font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-not-allowed bg-gray-50 undefined">
-                        <input type="radio" name="size-choice" value="100ml" disabled="" class="sr-only" aria-labelledby="size-choice-0-label">
-                            <span id="size-choice-0-label">100ml</span>
-                            <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-full border-2 border-gray-200">
-                                <svg class="absolute inset-0 h-full w-full stroke-2 text-[12px] text-gray-500" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
-                                  <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke"></line>
-                                </svg>
-                            </span>
+                          <input type="checkbox" name="size-choice[]" value="100ml" disabled="" class="sr-only" aria-labelledby="size-choice-0-label">
+                          <span id="size-choice-0-label">100ml</span>
+                          <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-full border-2 border-gray-200">
+                              <svg class="absolute inset-0 h-full w-full stroke-2 text-[12px] text-gray-500" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
+                                <line x1="0" y1="100" x2="100" y2="0" vector-effect="non-scaling-stroke"></line>
+                              </svg>
+                          </span>
                         </label>
                         <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#ffffff] font-medium uppercase hover:bg-gray-100 focus:outline-none sm:flex-1 cursor-pointer bg-gray-900  hover:text-gray-700 undefined">
-                          <input type="radio" name="size-choice" value="200ml" class="sr-only" aria-labelledby="size-choice-1-label">
+                          <input type="checkbox" name="size-choice[]" value="200ml" class="sr-only" aria-labelledby="size-choice-1-label">
                             <span id="size-choice-1-label">200ml</span>
                             <span class="pointer-events-none absolute -inset-px rounded-md border border-transparent" aria-hidden="true"></span>
                         </label>
                         <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#000000] font-medium uppercase hover:bg-gray-900 focus:outline-none sm:flex-1 cursor-pointer bg-transparent hover:text-gray-100 undefined">
-                          <input type="radio" name="size-choice" value="300ml" class="sr-only" aria-labelledby="size-choice-2-label">
+                          <input type="checkbox" name="size-choice[]" value="300ml" class="sr-only" aria-labelledby="size-choice-2-label">
                             <span id="size-choice-2-label">300ml</span>
                             <span class="pointer-events-none w-full inset-x-0 rounded-full border border-transparent" aria-hidden="true"></span>
                         </label>
@@ -227,46 +261,63 @@
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
             <!-- Filters -->
             <form class="hidden lg:block">
-              <h3 class="-my-3 flow-root">
-                <!-- Expand/collapse section button -->
-                <button type="button" class="flex w-full items-center justify-between bg-[#F7F5EF] py-3 text-[14px] leading-[19px] text-[#000000] font-semibold hover:text-gray-500" aria-controls="filter-section-1" aria-expanded="false">
-                  <span>FILTER BY CATEGORY</span>
-                  <span class="ml-6 flex items-center">
-                    <!-- Expand icon, show/hide based on section open state. -->
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                    <!-- Collapse icon, show/hide based on section open state. -->
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
-                    </svg>
-                  </span>
-                </button>
-              </h3>
-              <div class="pt-6" id="filter-section-1">
-                <ul role="list" class="text-[14px] leading-[19px] text-[#000000] font-normal space-y-4 border-b border-gray-200 pb-6">
-                  <li class="flex justify-between items-center">
-                    <a href="#">Face</a>
-                    <span class="cats_product_count">5</span>
-                  </li>
-                  <li class="flex justify-between items-center">
-                    <a href="#">Skin</a>
-                    <span class="cats_product_count">44</span>
-                  </li>
-                  <li class="flex justify-between items-center">
-                    <a href="#">Body</a>
-                    <span class="cats_product_count">33</span>
-                  </li>
-                  <li class="flex justify-between items-center">
-                    <a href="#">Hair</a>
-                    <span class="cats_product_count">11</span>
-                  </li>
-                  <li class="flex justify-between items-center">
-                    <a href="#">Dresses</a>
-                    <span class="cats_product_count">12</span>
-                  </li>
-                </ul>
+              <div class="border-b border-gray-200 py-6">
+                <h3 class="-my-3 flow-root">
+                  <button type="button" class="flex w-full items-center justify-between bg-[#FFFAF4] py-3 text-[14px] leading-[19px] text-[#000000] font-semibold hover:text-gray-500" aria-controls="filter-section-1" aria-expanded="false">
+                    <span>FILTER BY CATEGORY</span>
+                    <span class="ml-6 flex items-center">
+                      <!-- Expand icon, show/hide based on section open state. -->
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                      <!-- Collapse icon, show/hide based on section open state. -->
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  </button>
+                </h3>
+                <div class="pt-6" x-description="Filter section, show/hide based on section state." id="filter-section-1" x-show="open">
+                  <div class="space-y-4 text-[14px] leading-[19px] text-[#000000] font-normal">
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-0" name="category[]" value="new-arrivals" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-0" class="ml-3">Face</label>
+                        </div>
+                        <span class="cats_product_count">5</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-1" name="category[]" value="sale" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-1" class="ml-3">Skin</label>
+                        </div>
+                        <span class="cats_product_count">51</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-2" name="category[]" value="travel" type="checkbox" checked="" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-2" class="ml-3">Body</label>
+                        </div>
+                        <span class="cats_product_count">35</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-3" name="category[]" value="organization" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-3" class="ml-3">Hair</label>
+                        </div>
+                        <span class="cats_product_count">15</span>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="category__item">
+                          <input id="filter-category-4" name="category[]" value="accessories" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                          <label for="filter-category-4" class="ml-3">Dresses</label>
+                        </div>
+                        <span class="cats_product_count">25</span>
+                      </div>
+                  </div>
+                </div>
               </div>
+
               <div class="border-b border-gray-200 py-6">
                 <div>
                   <h3 class="-my-3 flow-root">
@@ -290,17 +341,17 @@
                       <legend class="sr-only">Choose a color</legend>
                       <div class="flex items-center space-x-3">
                         <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-transparent undefined ring ring-offset-1">
-                        <input type="radio" name="color-choice" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
+                        <input type="checkbox" name="color-choice[]" value="White" class="sr-only" aria-labelledby="color-choice-0-label">
                             <span id="color-choice-0-label" class="sr-only">White</span>
                             <span aria-hidden="true" class="h-8 w-8 bg-gray-200 rounded-none border border-black border-opacity-10"></span>
                           </label>
                         <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-400 undefined">
-                        <input type="radio" name="color-choice" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
+                        <input type="checkbox" name="color-choice[]" value="Gray" class="sr-only" aria-labelledby="color-choice-1-label">
                             <span id="color-choice-1-label" class="sr-only">Gray</span>
                             <span aria-hidden="true" class="h-8 w-8 bg-red-700 rounded-none border border-black border-opacity-10"></span>
                         </label>
                         <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-gray-900 undefined">
-                        <input type="radio" name="color-choice" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
+                        <input type="checkbox" name="color-choice[]" value="Black" class="sr-only" aria-labelledby="color-choice-2-label">
                             <span id="color-choice-2-label" class="sr-only">Black</span>
                             <span aria-hidden="true" class="h-8 w-8 bg-black rounded-none border border-black border-opacity-10"></span>
                         </label>
@@ -367,7 +418,7 @@
                     <legend class="sr-only">Choose a size</legend>
                     <div class="grid grid-cols-3 gap-4 md:grid-cols-4">
                       <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#000000] font-medium uppercase hover:bg-gray-50 focus:outline-none sm:flex-1 cursor-not-allowed bg-gray-50 undefined">
-                      <input type="radio" name="size-choice" value="100ml" disabled="" class="sr-only" aria-labelledby="size-choice-0-label">
+                      <input type="checkbox" name="size-choice[]" value="100ml" disabled="" class="sr-only" aria-labelledby="size-choice-0-label">
                           <span id="size-choice-0-label">100ml</span>
                           <span aria-hidden="true" class="pointer-events-none absolute -inset-px rounded-full border-2 border-gray-200">
                               <svg class="absolute inset-0 h-full w-full stroke-2 text-[12px] text-gray-500" viewBox="0 0 100 100" preserveAspectRatio="none" stroke="currentColor">
@@ -376,12 +427,12 @@
                           </span>
                       </label>
                       <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#ffffff] font-medium uppercase hover:bg-gray-100 focus:outline-none sm:flex-1 cursor-pointer bg-gray-900  hover:text-gray-700 undefined">
-                        <input type="radio" name="size-choice" value="200ml" class="sr-only" aria-labelledby="size-choice-1-label">
+                        <input type="checkbox" name="size-choice[]" value="200ml" class="sr-only" aria-labelledby="size-choice-1-label">
                           <span id="size-choice-1-label">200ml</span>
                           <span class="pointer-events-none absolute -inset-px rounded-md border border-transparent" aria-hidden="true"></span>
                       </label>
                       <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full border text-[12px] text-[#000000] font-medium uppercase hover:bg-gray-900 focus:outline-none sm:flex-1 cursor-pointer bg-transparent hover:text-gray-100 undefined">
-                        <input type="radio" name="size-choice" value="300ml" class="sr-only" aria-labelledby="size-choice-2-label">
+                        <input type="checkbox" name="size-choice[]" value="300ml" class="sr-only" aria-labelledby="size-choice-2-label">
                           <span id="size-choice-2-label">300ml</span>
                           <span class="pointer-events-none w-full inset-x-0 rounded-full border border-transparent" aria-hidden="true"></span>
                       </label>
@@ -390,7 +441,7 @@
                 </div>
               </div>
               <div class="apply__filter">
-                <button class="w-full flex items-center justify-center border border-transparent bg-[#373738] px-6 py-3 text-[17px] leading-[21px] text-[#F7F4ED] font-normal shadow-sm hover:bg-gray-500 mt-[64px]">Apply Filter</button>
+                <button class="w-full flex items-center justify-center border border-transparent bg-[#373738] px-6 py-3 text-[17px] leading-[21px] text-[#F7F4ED] font-normal hover:bg-gray-500 mt-[64px]">Apply Filter</button>
               </div>
             </form>
 

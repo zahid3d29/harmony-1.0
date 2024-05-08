@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Adastra",
+    "theme_name": "Harmony",
     "theme_version": "0.0.0",
     "theme_author": "You Astronaut",
     "theme_documentation_url": "https:\/\/docs.blanklob.com",
@@ -91,11 +91,11 @@
     ]
   },
   {
-    "name": "Colors",
+    "name": "Color Scheme",
     "settings": [
       {
         "type": "color_scheme_group",
-        "id": "zhd_color_schemes",
+        "id": "color_schemes",
         "definition": [
           {
             "type": "color",
@@ -106,42 +106,37 @@
           {
             "type": "color_background",
             "id": "background_gradient",
-            "label": "Background Gradient"
+            "label": "Background Gradient",
+            "info": "Backgroudnd gradient color"
           },
           {
             "type": "color",
             "id": "text",
-            "label": "Text color",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "heading",
-            "label": "Heading color",
+            "label": "Text Color",
             "default": "#121212"
           },
           {
             "type": "color",
             "id": "button",
-            "label": "Button Background",
+            "label": "Button BG",
             "default": "#121212"
           },
           {
             "type": "color",
             "id": "button_label",
-            "label": "Button Label",
+            "label": "Button label",
             "default": "#FFFFFF"
           },
           {
             "type": "color",
-            "id": "secondary_button",
-            "label": "Secondary Button Background",
+            "id": "secondary_button_label",
+            "label": "Secondary Button Label",
             "default": "#121212"
           },
           {
             "type": "color",
-            "id": "secondary_button_label",
-            "label": "Secondary Button label",
+            "id": "shadow",
+            "label": "Shadow",
             "default": "#121212"
           }
         ],
@@ -160,61 +155,6 @@
           "on_secondary_button": "secondary_button_label",
           "secondary_button_border": "secondary_button_label"
         }
-      }
-    ]
-  },
-  {
-    "name": "Colors",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Use colors to communicate meaning and create meaningful experiences while also expressing hierarchy, state, and brand identity."
-      },
-      {
-        "type": "color",
-        "id": "colors_accent",
-        "label": "Accent",
-        "default": "#0E2700"
-      },
-      {
-        "type": "color",
-        "id": "colors_surface",
-        "label": "Surface",
-        "default": "#F0F2F4"
-      },
-      {
-        "type": "header",
-        "content": "Primary colors",
-        "info": "Use it to derive roles for key components such as prominent buttons."
-      },
-      {
-        "type": "color",
-        "id": "colors_primary",
-        "label": "Accent",
-        "default": "#1C1E21"
-      },
-      {
-        "type": "color",
-        "id": "colors_contrast",
-        "label": "Contrast",
-        "default": "#C5FC81"
-      },
-      {
-        "type": "header",
-        "content": "Secondary colors",
-        "info": "Use it to derive roles for less prominent components in the UI."
-      },
-      {
-        "type": "color",
-        "id": "colors_secondary",
-        "label": "Accent",
-        "default": "#543C6E"
-      },
-      {
-        "type": "color_background",
-        "id": "colors_gradient",
-        "label": "Gradient",
-        "default": "linear-gradient(45deg, rgba(206, 241, 65, 1), rgba(133, 232, 254, 1) 30%, rgba(226, 199, 255, 1) 50%, rgba(255, 255, 255, 1) 60%)"
       }
     ]
   },

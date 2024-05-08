@@ -1,19 +1,45 @@
 {
   "sections": {
-    "announcement_bar_old_3r4gUH": {
-      "type": "announcement-bar-old",
+    "announcement_bar_wMehh4": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_L9kzrb": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_L9kzrb"
+      ],
       "settings": {
-        "heading": ""
+        "color_scheme": "scheme-3",
+        "show_social": true,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": true,
+        "enable_language_selector": true
       }
     },
     "hero_cp7Nnr": {
       "type": "hero",
+      "disabled": true,
       "settings": {
-        "banner_heading": ""
+        "banner_heading": "Your path to radiant skin."
+      }
+    },
+    "gdpr_T9AdaU": {
+      "type": "GDPR",
+      "disabled": true,
+      "settings": {
+        "heading": ""
       }
     },
     "page_header_69zxJW": {
       "type": "page-header",
+      "disabled": true,
       "settings": {
         "heading": "View your shopping cart",
         "show_heeading": true,
@@ -259,47 +285,46 @@
         "heading": "Cart"
       }
     },
-    "cart_GdHUMi": {
-      "type": "cart",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
     "product_main_c7G7TJ": {
       "type": "product-main",
+      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
     "product_facts_6pJAtN": {
       "type": "product-facts",
+      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
     "product_beforeafter_fafijV": {
       "type": "product-beforeafter",
+      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
     "product_how_use_YTVnbK": {
       "type": "product-how-use",
+      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
     "footer_CANxjp": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "heading": ""
       }
     }
   },
   "order": [
-    "announcement_bar_old_3r4gUH",
+    "announcement_bar_wMehh4",
     "hero_cp7Nnr",
+    "gdpr_T9AdaU",
     "page_header_69zxJW",
     "mega_menu_QRWX77",
     "testimonials_GtL8fm",
@@ -317,7 +342,6 @@
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
     "category_filter_e8xEmj",
-    "cart_GdHUMi",
     "product_main_c7G7TJ",
     "product_facts_6pJAtN",
     "product_beforeafter_fafijV",
