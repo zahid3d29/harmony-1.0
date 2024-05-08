@@ -1,5 +1,9 @@
 {
   "current": {
+    "type_header_font": "beefcakes_n4",
+    "heading_font_scale": 26,
+    "body_font_scale": 12,
+    "type_heading": "alfie_n4",
     "content_for_index": [
 
     ],
@@ -41,11 +45,11 @@
         "settings": {
           "background": "#dd1d1d",
           "background_gradient": "",
-          "text": "#fff",
+          "text": "#ffffff",
           "button": "#dd1d1d",
-          "button_label": "#fff",
+          "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
-          "shadow": "#fff"
+          "shadow": "#ffffff"
         }
       }
     }

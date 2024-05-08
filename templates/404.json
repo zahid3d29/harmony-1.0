@@ -27,7 +27,12 @@
       "type": "hero",
       "disabled": true,
       "settings": {
-        "banner_heading": "Your path to radiant skin."
+        "sub_text": "eASY Skin Care Routine",
+        "banner_heading": "Your path to radiant skin.",
+        "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals.",
+        "button_text": "Shop All",
+        "button_url": "#",
+        "banner_image": "shopify:\/\/shop_images\/home-banner.png"
       }
     },
     "gdpr_T9AdaU": {

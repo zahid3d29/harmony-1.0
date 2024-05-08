@@ -171,10 +171,20 @@
       },
       {
         "type": "font_picker",
-        "id": "type_heading",
+        "id": "type_header_font",
         "default": "inter_n7",
         "label": "Font",
         "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+      },
+      {
+        "type": "range",
+        "id": "heading_font_scale",
+        "min": 14,
+        "max": 128,
+        "step": 2,
+        "unit": "px",
+        "label": "Heading Font Size",
+        "default": 16
       },
       {
         "type": "header",
@@ -182,10 +192,20 @@
       },
       {
         "type": "font_picker",
-        "id": "type_body",
+        "id": "type_body_font",
         "default": "inter_n4",
         "label": "Font",
         "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+      },
+      {
+        "type": "range",
+        "id": "body_font_scale",
+        "min": 10,
+        "max": 90,
+        "step": 1,
+        "unit": "px",
+        "label": "Body Font Size",
+        "default": 14
       }
     ]
   },

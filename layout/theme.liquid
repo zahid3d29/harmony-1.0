@@ -4,15 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="adastra">
-    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
-    <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
-    
-    {% comment %} <script src="//cdn.tailwindcss.com"></script> {% endcomment %}
-    {% comment %} <script src="//cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio@0.4.2/src/index.min.js"></script> {% endcomment %}
-    <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-
-
+    <meta name="generator" content="harmony">
     <link rel="canonical" href="{{ canonical_url }}">
 
     {% if settings.favicon != blank %}
@@ -30,9 +22,10 @@
     {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
     
     {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
-    {% unless settings.type_heading.system? and settings.type_body.system? %}
+    {% unless settings.type_header_font.system? and settings.type_body_font.system? %}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {% endunless %}
+
     {% comment %}
       {% liquid
         render 'colors'
@@ -47,6 +40,14 @@
     <!-- shopify/apps -->
     {{ content_for_header }}
 
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
+    
+    {% comment %} <script src="//cdn.tailwindcss.com"></script> {% endcomment %}
+    {% comment %} <script src="//cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio@0.4.2/src/index.min.js"></script> {% endcomment %}
+    <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+
     {% comment %}
     {% liquid
       # Always add entrypoint below content_for_header
@@ -57,47 +58,21 @@
 
     {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
 
-{% style %}
-      {% for scheme in settings.color_schemes -%}
-        {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
-        {% if forloop.index == 1 -%}
-          :root,
-        {%- endif %}
-        .color-{{ scheme.id }} {
-          --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        {% if scheme.settings.background_gradient != empty %}
-          --gradient-background: {{ scheme.settings.background_gradient }};
-        {% else %}
-          --gradient-background: {{ scheme.settings.background }};
-        {% endif %}
+    {% style %}
+      :root {
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-style: {{ settings.type_body_font.style }};
+        --font-body-weight: {{ settings.type_body_font.weight }};
 
-        {% liquid
-          assign background_color = scheme.settings.background
-          assign background_color_brightness = background_color | color_brightness
-          if background_color_brightness <= 26
-            assign background_color_contrast = background_color | color_lighten: 50
-          elsif background_color_brightness <= 65
-            assign background_color_contrast = background_color | color_lighten: 5
-          else
-            assign background_color_contrast = background_color | color_darken: 25
-          endif
-        %}
+        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-style: {{ settings.type_header_font.style }};
+        --font-heading-weight: {{ settings.type_header_font.weight }};
 
-        --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --color-background-contrast: {{ background_color_contrast.red }},{{ background_color_contrast.green }},{{ background_color_contrast.blue }};
-        --color-shadow: {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }},{{ scheme.settings.shadow.blue }};
-        --color-button: {{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }};
-        --color-button-text: {{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }};
-        --color-secondary-button: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
-        --color-link: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
-        --color-badge-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --color-badge-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-badge-border: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
-        --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
+        --font-body-scale: {{ settings.body_font_scale  }}px;
+        --font-heading-scale: {{ settings.heading_font_scale  }}px;
+
       }
-      {% endfor %}
-{% endstyle %}
+    {% endstyle %}
 
     
   </head>
