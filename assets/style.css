@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
+
 p {
-  font-family: var(--font-heading-family);
+  font-family: "NeuzeitS Book" !important;
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   font-size: var(--font-heading-scale);
+}
+
+button, input, optgroup, select, textarea {
+  font-family: "Neue Haas Unica W1G" !important;
 }
