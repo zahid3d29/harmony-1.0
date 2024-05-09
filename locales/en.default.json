@@ -45,5 +45,21 @@
         "other": "{{ count }} items"
       }
     }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "enter_address_manually_label": "Enter the address manually"
+      }
+    }
+  },
+  "localization": {
+    "country_label": "Country\/region",
+    "language_label": "Language",
+    "update_language": "Update language",
+    "update_country": "Update country\/region",
+    "search": "To research",
+    "popular_countries_regions": "Popular countries\/regions",
+    "country_results_count": "{{ count }} countries\/regions found"
   }
 }
