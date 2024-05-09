@@ -22,10 +22,10 @@
     <link href="//db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=Neue+Haas+Unica+W1G" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/c10b8c44adcd28d073240edf9ebf72af?family=NeuzeitS+Book" rel="stylesheet">
 
-    {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> {% endcomment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> {% endcomment %}
     {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
     
     {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
@@ -43,6 +43,17 @@
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
     </script>
+
+    {% comment %} schema settings color style  {% endcomment %}
+    {% for scheme in settings.color_schemes %}
+      {% style %} 
+        .harmony__color-{{ scheme.id }}{
+          background: {{ scheme.settings.background }};
+          color: {{ scheme.settings.text  }};
+        }
+      {% endstyle %} 
+    {% endfor %}
+
 
     <!-- shopify/apps -->
     {{ content_for_header }}

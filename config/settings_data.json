@@ -8,7 +8,7 @@
 
     ],
     "color_schemes": {
-      "scheme-3": {
+      "scheme-1": {
         "settings": {
           "background": "#0e1b4d",
           "background_gradient": "",
@@ -19,7 +19,7 @@
           "shadow": "#0e1b4d"
         }
       },
-      "scheme-4": {
+      "scheme-2": {
         "settings": {
           "background": "#d0baac",
           "background_gradient": "",
@@ -57,7 +57,7 @@
   "presets": {
     "Default": {
       "color_schemes": {
-        "scheme-3": {
+        "scheme-1": {
           "settings": {
             "background": "#0e1b4d",
             "background_gradient": "",
@@ -68,7 +68,7 @@
             "shadow": "#0e1b4d"
           }
         },
-        "scheme-4": {
+        "scheme-2": {
           "settings": {
             "background": "#4770db",
             "background_gradient": "",

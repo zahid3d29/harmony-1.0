@@ -17,14 +17,14 @@
         "share_on_pinterest": "Épingler sur Pinterest"
       },
       "links": {
-        "twitter": "X (Twitter) fr",
-        "facebook": "Facebook fr",
-        "pinterest": "Pinterest fr",
-        "instagram": "Instagram fr",
-        "tumblr": "Tumblr fr",
-        "snapchat": "Snapchat fr",
-        "youtube": "YouTube fr",
-        "vimeo": "Vimeo fr",
+        "twitter": "X (Twitter)",
+        "facebook": "Facebook",
+        "pinterest": "Pinterest",
+        "instagram": "Instagram",
+        "tumblr": "Tumblr",
+        "snapchat": "Snapchat",
+        "youtube": "YouTube",
+        "vimeo": "Vimeo",
         "tiktok": "TikTok"
       }
     }
@@ -36,13 +36,6 @@
       "carousel": "Carrousel",
       "announcement": "Annonce",
       "announcement_bar": "Barre d’annonces"
-    },
-    "header": {
-      "announcement": "Annonce",
-      "cart_count": {
-        "one": "{{ count }} article",
-        "other": "{{ count }} articles"
-      }
     }
   },
   "localization": {
@@ -53,12 +46,5 @@
     "search": "Rechercher",
     "popular_countries_regions": "Pays\/régions populaires",
     "country_results_count": "{{ count }} pays\/régions trouvés"
-  },
-  "shopify": {
-    "checkout": {
-      "payment": {
-        "paypal_wallet_label": "Portefeuille PayPal"
-      }
-    }
   }
 }

@@ -15,7 +15,8 @@
         "announcement_L9kzrb"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "show_border": true,
         "show_social": true,
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -259,7 +260,14 @@
       "type": "blog-page",
       "disabled": true,
       "settings": {
-        "heading": "Section Heading"
+        "show_category": true,
+        "show_excerpt": true,
+        "number_of_words_in_text": 30,
+        "show_date": true,
+        "show_author": true,
+        "show_pagination": true,
+        "number_of_posts_per_page": 4,
+        "image_placement": "right"
       }
     },
     "article_page_Ywnm6F": {
