@@ -46,12 +46,5 @@
     "search": "Rechercher",
     "popular_countries_regions": "Pays\/régions populaires",
     "country_results_count": "{{ count }} pays\/régions trouvés"
-  },
-  "shopify": {
-    "checkout": {
-      "payment": {
-        "paypal_wallet_label": "Portefeuille PayPal"
-      }
-    }
   }
 }

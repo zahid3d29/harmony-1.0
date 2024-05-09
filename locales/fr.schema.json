@@ -6,6 +6,50 @@
           "content": "Border"
         }
       }
+    },
+    "social-media": {
+      "name": "Social media fr",
+      "settings": {
+        "header": {
+          "content": "Social accounts fr"
+        },
+        "social_twitter_link": {
+          "label": "X \/ Twitter fr",
+          "info": "https:\/\/x.com\/shopify"
+        },
+        "social_facebook_link": {
+          "label": "Facebook fr",
+          "info": "https:\/\/facebook.com\/shopify"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest fr",
+          "info": "https:\/\/pinterest.com\/shopify"
+        },
+        "social_instagram_link": {
+          "label": "Instagram fr",
+          "info": "http:\/\/instagram.com\/shopify"
+        },
+        "social_tiktok_link": {
+          "label": "TikTok fr",
+          "info": "https:\/\/tiktok.com\/@shopify"
+        },
+        "social_tumblr_link": {
+          "label": "Tumblr fr",
+          "info": "https:\/\/shopify.tumblr.com"
+        },
+        "social_snapchat_link": {
+          "label": "Snapchat fr",
+          "info": "https:\/\/www.snapchat.com\/add\/shopify"
+        },
+        "social_youtube_link": {
+          "label": "YouTube fr",
+          "info": "https:\/\/www.youtube.com\/shopify"
+        },
+        "social_vimeo_link": {
+          "label": "Vimeo fr",
+          "info": "https:\/\/vimeo.com\/shopify"
+        }
+      }
     }
   },
   "sections": {
@@ -22,7 +66,7 @@
           "label": "Change every"
         },
         "show_border": {
-          "label": "Show Border?"
+          "label": "Afficher la bordure?"
         },
         "header__1": {
           "content": "Social media icons",
