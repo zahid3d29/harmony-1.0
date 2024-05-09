@@ -3,7 +3,7 @@
     "name": "theme_info",
     "theme_name": "Harmony",
     "theme_version": "0.0.0",
-    "theme_author": "You Astronaut",
+    "theme_author": "Harmony",
     "theme_documentation_url": "https:\/\/docs.blanklob.com",
     "theme_support_url": "https:\/\/help.blanklob.com"
   },
@@ -35,58 +35,6 @@
         "id": "favicon",
         "label": "Favicon",
         "info": "PNG, or JPG. Recommended: 512x512 pixels minimum."
-      },
-      {
-        "type": "header",
-        "content": "Social links"
-      },
-      {
-        "type": "url",
-        "id": "social_instagram_link",
-        "label": "Instagram",
-        "info": "https:\/\/instagram.com\/shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_tiktok_link",
-        "label": "Tiktok",
-        "info": "https:\/\/tiktok.com\/@shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_facebook_link",
-        "label": "Facebook",
-        "info": "https:\/\/facebook.com\/shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_pinterest_link",
-        "label": "Pinterest",
-        "info": "https:\/\/pinterest.com\/shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_twitter_link",
-        "label": "Twitter",
-        "info": "https:\/\/twitter.com\/shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_youtube_link",
-        "label": "Youtube",
-        "info": "https:\/\/www.youtube.com\/@shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_linkedin_link",
-        "label": "Linkedin",
-        "info": "https:\/\/linkedin.com\/company\/shopify"
-      },
-      {
-        "type": "url",
-        "id": "social_vimeo_link",
-        "label": "Vimeo",
-        "info": "https:\/\/vimeo.com\/shopify"
       }
     ]
   },
@@ -222,6 +170,63 @@
         "label": "Show currency codes",
         "info": "Cart and checkout prices always show currency codes. Example: $1.00 USD.",
         "default": true
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.social-media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header.content"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_tumblr_link.info"
       }
     ]
   }

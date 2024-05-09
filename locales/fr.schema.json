@@ -1,112 +1,115 @@
 {
-  "sections": {
-    "all": {
-      "animation": {
-        "content": "Animations",
-        "image_behavior": {
-          "options__1": {
-            "label": "Aucun"
-          },
-          "options__2": {
-            "label": "Mouvement ambiant"
-          },
-          "options__3": {
-            "label": "Position de fond fixe"
-          },
-          "options__4": {
-            "label": "Zoom lors du défilement"
-          },
-          "label": "Comportement de l'image"
+  "settings_schema": {
+    "colors": {
+      "name": "Couleurs",
+      "settings": {
+        "background": {
+          "label": "Arrière‑plan"
+        },
+        "background_gradient": {
+          "label": "Dégradé de l’arrière-plan",
+          "info": "Le dégradé de l’arrière-plan remplace l’arrière-plan là où c’est possible."
+        },
+        "text": {
+          "label": "Texte"
+        },
+        "button_background": {
+          "label": "Arrière-plan plein du bouton"
+        },
+        "button_label": {
+          "label": "Texte de bouton plein"
+        },
+        "secondary_button_label": {
+          "label": "Bouton en relief"
+        },
+        "shadow": {
+          "label": "Ombre"
         }
-      },
-      "padding": {
-        "section_padding_heading": "Rembourrage de la section",
-        "padding_top": "Rembourrage supérieur",
-        "padding_bottom": "Rembourrage inférieur"
-      },
-      "spacing": "Espacement",
-      "colors": {
-        "label": "Schéma de couleurs",
-        "has_cards_info": "Pour changer le schéma de couleur des cartes, mettez à jour les paramètres de votre thème."
-      },
-      "heading_size": {
-        "label": "Taille de l'en-tête",
-        "options__1": {
-          "label": "Petite"
-        },
-        "options__2": {
-          "label": "Moyenne"
-        },
-        "options__3": {
-          "label": "Grande"
-        },
-        "options__4": {
-          "label": "Très grande"
-        }
-      },
-      "image_shape": {
-        "options__1": {
-          "label": "Défaut"
-        },
-        "options__2": {
-          "label": "Arc"
-        },
-        "options__3": {
-          "label": "Blob"
-        },
-        "options__4": {
-          "label": "Chevron gauche"
-        },
-        "options__5": {
-          "label": "Chevron droit"
-        },
-        "options__6": {
-          "label": "Diamant"
-        },
-        "options__7": {
-          "label": "Parallélogramme"
-        },
-        "options__8": {
-          "label": "Rond"
-        },
-        "label": "Forme de l'image",
-        "info": "Les cartes au style standard n'ont pas de bordures lorsque la forme de l'image est active."
       }
     },
-    "announcement-bar": {
-      "name": "Barre d'annonce",
+    "typography": {
+      "name": "Typographie",
       "settings": {
-        "auto_rotate": {
-          "label": "Faire pivoter automatiquement les annonces"
-        },
-        "change_slides_speed": {
-          "label": "Changer toutes les"
+        "type_header_font": {
+          "label": "Police",
+          "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
         "header__1": {
-          "content": "Icônes des médias sociaux",
-          "info": "Pour afficher vos comptes de médias sociaux, liez-les dans vos [paramètres de thème](\/editor?context=theme&category=social%20media)."
+          "content": "Titres"
         },
         "header__2": {
-          "content": "Annonces"
+          "content": "Corps"
         },
-        "show_social": {
-          "label": "Afficher les icônes sur le bureau"
+        "type_body_font": {
+          "label": "Police",
+          "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__3": {
-          "content": "Sélecteur de pays\/région",
-          "info": "Pour ajouter un pays\/région, accédez à vos [paramètres de marché.](\/admin\/settings\/markets)"
+        "heading_scale": {
+          "label": "Échelle de taille de police"
         },
-        "enable_country_selector": {
-          "label": "Activer le sélecteur de pays\/région"
-        },
-        "header__4": {
-          "content": "Sélecteur de langue",
-          "info": "Pour ajouter une langue, accédez à vos [paramètres de langue.](\/admin\/settings\/languages)"
-        },
-        "enable_language_selector": {
-          "label": "Activer le sélecteur de langue"
+        "body_scale": {
+          "label": "Échelle de taille de police"
         }
-      },
+      }
+    },
+    "social-media": {
+      "name": "Médias sociaux",
+      "settings": {
+        "header": {
+          "content": "Comptes sociaux"
+        },
+        "social_twitter_link": {
+          "label": "X \/ Twitter",
+          "info": "https:\/\/x.com\/shopify"
+        },
+        "social_facebook_link": {
+          "label": "Facebook",
+          "info": "https:\/\/facebook.com\/shopify"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest",
+          "info": "https:\/\/pinterest.com\/shopify"
+        },
+        "social_instagram_link": {
+          "label": "Instagram",
+          "info": "http:\/\/instagram.com\/shopify"
+        },
+        "social_tiktok_link": {
+          "label": "TikTok",
+          "info": "https:\/\/vimeo.com\/shopify"
+        },
+        "social_tumblr_link": {
+          "label": "Tumblr",
+          "info": "http:\/\/shopify.tumblr.com"
+        },
+        "social_snapchat_link": {
+          "label": "Snapchat",
+          "info": "https:\/\/www.snapchat.com\/add\/shopify"
+        },
+        "social_youtube_link": {
+          "label": "YouTube",
+          "info": "https:\/\/www.youtube.com\/shopify"
+        },
+        "social_vimeo_link": {
+          "label": "Vimeo",
+          "info": "https:\/\/vimeo.com\/shopify"
+        }
+      }
+    },
+    "currency_format": {
+      "name": "Format de devise",
+      "settings": {
+        "content": "Codes de devise",
+        "currency_code_enabled": {
+          "label": "Afficher les codes de devise"
+        },
+        "paragraph": "Le panier et les prix au moment du paiement indiquent toujours les codes de devise. Exemple : 1 EUR."
+      }
+    }
+  },
+  "sections": {
+    "announcement-bar": {
+      "name": "Barre d'annonces",
       "blocks": {
         "announcement": {
           "name": "Annonce",
@@ -132,8 +135,40 @@
           }
         }
       },
+      "settings": {
+        "auto_rotate": {
+          "label": "Rotation automatique des annonces"
+        },
+        "change_slides_speed": {
+          "label": "Changer toutes les"
+        },
+        "header__1": {
+          "content": "Icônes de réseaux sociaux",
+          "info": "Pour afficher vos comptes de réseaux sociaux, ajoutez les liens correspondants dans les [paramètres de votre thème](\/editor?context=theme&category=social%20media)."
+        },
+        "header__2": {
+          "content": "Annonces"
+        },
+        "show_social": {
+          "label": "Afficher les icônes sur le bureau"
+        },
+        "header__3": {
+          "content": "Sélecteur de pays\/région",
+          "info": "Pour ajouter un pays\/une région, accédez à vos [paramètres de marché.](\/admin\/settings\/markets)"
+        },
+        "enable_country_selector": {
+          "label": "Activer le sélecteur de pays\/région"
+        },
+        "header__4": {
+          "content": "Sélecteur de langue",
+          "info": "Pour ajouter une langue, accédez à vos [paramètres de langue.](\/admin\/settings\/languages)"
+        },
+        "enable_language_selector": {
+          "label": "Activer le sélecteur de langue"
+        }
+      },
       "presets": {
-        "name": "Barre d'annonce"
+        "name": "Barre d’annonces"
       }
     }
   }
