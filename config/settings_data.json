@@ -1,8 +1,10 @@
 {
   "current": {
     "type_header_font": "beefcakes_n4",
-    "heading_font_scale": 26,
+    "heading_font_wieght": "400",
+    "heading_font_scale": 16,
     "body_font_scale": 12,
+    "social_instagram_link": "https:\/\/www.instagram.com\/",
     "type_heading": "alfie_n4",
     "content_for_index": [
 

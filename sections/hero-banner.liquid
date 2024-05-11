@@ -1,0 +1,138 @@
+<section id="harmony--{{ section.id }}">
+  <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
+    <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
+      <div class="flex lg:flex-1">
+          <button type="button" class="hidden lg:inline-flex items-center justify-center rounded-md text-[#FAF2DC] pt-1">
+              <span class="sr-only">Open</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+          </button>
+          <a href="#" class="ml-1.5">
+              <span class="sr-only">Your Company</span>
+              <span class="text-xl text-[#FAF2DC] font-bold leading-normal">swiss</span>
+          </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" class="inline-flex items-center justify-center rounded-md text-[#FAF2DC]">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] text-[#FAF2DC]">
+        <a href="#">Shop</a>
+        <a href="#">How to use</a>
+        <a href="#">About us</a>
+        <a href="#">Blog</a>
+        <a href="#">Help</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" class="flex items-center w-[40px] p-2 text-[#FAF2DC] hover:text-gray-500">
+            <span class="sr-only">Search</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+            </svg>
+          </a>
+          <a href="#" class="flex w-[40px] group flex items-center p-2 text-[#FAF2DC] hover:text-slate-500 dark:hover:text-slate-400">
+            <span class="sr-only">Profile</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#" class="flex w-[40px] group flex items-center p-2">
+            <span class="sr-only">Cart</span>
+            <svg class="h-6 w-6 flex-shrink-0 text-[#FAF2DC] group-hover:text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
+            </svg>
+            <span class="hidden ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">3</span>
+            <span class="sr-only">items in cart, view bag</span>
+          </a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+  </header>
+  <div class="harmony__hero-banner bg-[#FAF2DC] relative min-h-[10rem] md:min-h-[15rem] lg:min-h-[30rem] bg-scroll bg-center bg-no-repeat bg-cover bg-[url('{{ section.settings.banner_image | image_url }}')]">
+    <div class="harmony__hero-top-overlay w-full bg-gradient-to-b from-black min-h-[3rem] lg:min-h-[7rem] absolute top-0 left-0 right-0 opacity-70"></div>
+
+
+    <div class="harmony__sale-badge hidden md:flex sale__alert absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] px-2 py-1 bg-[#304834] text-white texdt-[14px] text-normal gap-x-2 pr-3 rotate-0 md:rotate-90">
+      <span class="closebtn mx-1 flex text-[24px] text-normal hover:text-gray-900 leading-[20px] cursor-pointer transition ease-in-out delay-150" onclick="this.parentElement.style.display='none';">&times;</span> 
+      Sale! 30% Off
+    </div>
+
+    {%- if section.settings.banner_heading != blank -%}
+    <div class="harmony__hero-banner-content mx-auto max-w-7xl relative isolate px-4 sm:px-6 md:px-10 pt-14">
+        <div class="max-w-lg md:py-32 py-20 lg:pt-[20rem]">
+            <div class="hidden sm:mb-3 sm:flex sm:justify-left">
+            <div class="relative rounded-full text-[14px] leading-[19px] text-[#f7f4ed]">
+                {{ section.settings.banner_heading | escape }}
+            </div>
+            </div>
+            <div class="text-left">
+              <h1 class="font-bold tracking-tight text-[42px] leading-[48px] lg:text-[90px] lg:leading-[81px] text-[#f7f4ed]">Your path to radiant skin.</h1>
+              <p class="mt-6 text-[18px] leading-[22px] text-[#f7f4ed]">We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals.</p>
+              <div class="mt-10 flex items-center justify-start gap-x-6">
+                <a href="{{ section.settings.button_url }}" class="text-[17px] font-semibold leading-[13px] text-[#EEFD8D] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ section.settings.button_text }} <span class="ml-1.5 text-[#EEFD8D]" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="harmony__hero-bottom-overlay w-full bg-gradient-to-t from-black min-h-[10rem] md:min-h-[30rem] absolute bottom-0 left-0 right-0 opacity-70"></div>
+  </div>
+
+</section>
+
+
+
+{% schema %}
+{
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sub_text",
+        "label": "Sub Text",
+        "default": "eASY Skin Care Routine"
+      },
+      {
+        "type": "text",
+        "id": "banner_heading",
+        "label": "Banner Heading",
+        "default": "eASY Skin Care Routine"
+      },
+      {
+        "type": "text",
+        "id": "banner_text",
+        "label": "Banner Text",
+        "default": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop All"
+      },
+      {
+        "type": "text",
+        "id": "button_url",
+        "label": "Button URL",
+        "default": "#"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Banner",
+        "category": "Harmony Sections"
+      }
+    ]
+}
+{% endschema %}

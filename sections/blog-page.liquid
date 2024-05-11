@@ -35,7 +35,6 @@
                     <div class="flex items-center gap-x-4 text-xs mt-[19px] md:mt-[98px]">
                      {%- if section.settings.show_date -%} <time datetime="2020-03-10" class="text-gray-500">{{ article.published_at | time_tag: format: 'date' }}</time> {% endif %}
                      {%- if section.settings.show_author -%} <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">by {{ article.author }}</a> {% endif %}
-
                     </div>
                 </article>
               </div>
@@ -48,7 +47,7 @@
           </div>
         {% endfor %}
   
-          {% comment %} Blog post pagination  {% endcomment %}
+        {% comment %} Blog post pagination  {% endcomment %}
 
     {%- if paginate.pages > 1 -%}
       {%- render 'pagination', paginate: paginate -%}
@@ -77,7 +76,8 @@
     {
       "type": "number",
       "id": "number_of_words_in_title",
-      "label": "Number of words in Title"
+      "label": "Number of words in Title",
+      "default": 10
     },
     {
       "type": "checkbox",

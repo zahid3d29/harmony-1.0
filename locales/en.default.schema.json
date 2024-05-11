@@ -59,8 +59,8 @@
         "color_scheme": {
           "label": "Color Scheme"
         },
-        "auto_rotate": {
-          "label": "Auto-rotate announcements"
+        "auto_slide": {
+          "label": "Auto-slide announcements"
         },
         "change_slides_speed": {
           "label": "Change every"

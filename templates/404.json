@@ -3,37 +3,30 @@
     "announcement_bar_wMehh4": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_L9kzrb": {
+        "announcement_BNbPcJ": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "<em>Welcome   <\/em> <strong>to<\/strong>   <a href=\"\/collections\/all\" title=\"All products\">our store<\/a>"
+          }
+        },
+        "announcement_CjdAhw": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping first order"
           }
         }
       },
       "block_order": [
-        "announcement_L9kzrb"
+        "announcement_BNbPcJ",
+        "announcement_CjdAhw"
       ],
       "settings": {
-        "color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "color_scheme": "scheme-1",
         "show_border": true,
         "show_social": true,
-        "auto_rotate": false,
         "change_slides_speed": 5,
         "enable_country_selector": true,
         "enable_language_selector": true
-      }
-    },
-    "hero_cp7Nnr": {
-      "type": "hero",
-      "disabled": true,
-      "settings": {
-        "sub_text": "eASY Skin Care Routine",
-        "banner_heading": "Your path to radiant skin.",
-        "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals.",
-        "button_text": "Shop All",
-        "button_url": "#",
-        "banner_image": "shopify:\/\/shop_images\/home-banner.png"
       }
     },
     "gdpr_T9AdaU": {
@@ -261,6 +254,7 @@
       "disabled": true,
       "settings": {
         "show_category": true,
+        "number_of_words_in_title": 10,
         "show_excerpt": true,
         "number_of_words_in_text": 30,
         "show_date": true,
@@ -332,11 +326,22 @@
       "settings": {
         "heading": ""
       }
+    },
+    "hero_banner_yfzKPH": {
+      "type": "hero-banner",
+      "disabled": true,
+      "settings": {
+        "sub_text": "eASY Skin Care Routine",
+        "banner_heading": "eASY Skin Care Routine",
+        "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals.",
+        "button_text": "Shop All",
+        "button_url": "#",
+        "banner_image": "shopify:\/\/shop_images\/home-banner.png"
+      }
     }
   },
   "order": [
     "announcement_bar_wMehh4",
-    "hero_cp7Nnr",
     "gdpr_T9AdaU",
     "page_header_69zxJW",
     "mega_menu_QRWX77",
@@ -359,6 +364,7 @@
     "product_facts_6pJAtN",
     "product_beforeafter_fafijV",
     "product_how_use_YTVnbK",
-    "footer_CANxjp"
+    "footer_CANxjp",
+    "hero_banner_yfzKPH"
   ]
 }

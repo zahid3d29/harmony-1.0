@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
-    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> {% endcomment %}
+
     {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
     
     {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
@@ -48,21 +48,17 @@
     {% for scheme in settings.color_schemes %}
       {% style %} 
         .harmony__color-{{ scheme.id }}{
-          background: {{ scheme.settings.background }};
-          color: {{ scheme.settings.text  }};
+          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+          color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
         }
       {% endstyle %} 
     {% endfor %}
 
-
-    <!-- shopify/apps -->
     {{ content_for_header }}
 
     <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
     
-    {% comment %} <script src="//cdn.tailwindcss.com"></script> {% endcomment %}
-    {% comment %} <script src="//cdn.jsdelivr.net/npm/@tailwindcss/aspect-ratio@0.4.2/src/index.min.js"></script> {% endcomment %}
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
 
@@ -74,20 +70,19 @@
     %}
     {% endcomment %}
 
-    {% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
+
 
     {% style %}
       :root {
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-body-scale: {{ settings.body_font_scale  }}px;
 
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: {{ settings.type_header_font.weight }};
-
-        --font-body-scale: {{ settings.body_font_scale  }}px;
-        --font-heading-scale: {{ settings.heading_font_scale  }}px;
+        --font-heading-weight: {{ settings.heading_font_wieght }};
+        --font-heading-scale: {{ settings.heading_font_scale }}px;
       }
     {% endstyle %}
 
@@ -112,7 +107,6 @@
         product_recommendations_url: '{{ routes.product_recommendations_url }}'
       }
     </script>
-
 
   </body>
 </html>
