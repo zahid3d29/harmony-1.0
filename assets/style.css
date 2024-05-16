@@ -4,6 +4,29 @@
 
 
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(131, 131, 131);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(131, 131, 131);
+}
+
+
 p {
   font-family: "NeuzeitS Book" !important;
   font-style: var(--font-heading-style);
@@ -13,4 +36,24 @@ p {
 
 button, input, optgroup, select, textarea {
   font-family: "Neue Haas Unica W1G" !important;
+}
+
+
+/* Apply Directive  */
+@layer base {
+  /* h1 {
+    @apply text-2xl;
+  } */
+}
+
+@layer components {
+  .harmony__content-text {
+    @apply text-[14px] leading-[19px] font-normal;
+  }
+}
+
+@layer utilities {
+  /* .filter-none {
+    filter: none;
+  } */
 }
