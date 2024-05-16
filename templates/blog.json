@@ -9,7 +9,6 @@
         "number_of_words_in_text": 34,
         "show_date": true,
         "show_author": true,
-        "show_pagination": true,
         "number_of_posts_per_page": 2,
         "image_placement": "left"
       }

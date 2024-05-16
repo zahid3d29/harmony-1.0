@@ -50,6 +50,7 @@
         .harmony__color-{{ scheme.id }}{
           background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
           color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+          border-color: rgb({{ scheme.settings.border_color.red }}, {{ scheme.settings.border_color.green }}, {{ scheme.settings.border_color.blue }});
         }
       {% endstyle %} 
     {% endfor %}

@@ -1,73 +1,75 @@
 {% assign post_per_page = section.settings.number_of_posts_per_page %}
  {%- paginate blog.articles by post_per_page -%}
-<section id="harmony--{{ section.id }}">
-    <div class="overflow-hidden bg-[#FFFAF4] py-6 sm:py-8">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          {%- for article in blog.articles  -%}
-          <div class="article__list mx-auto flex flex-col md:flex-row justify-between items-start border-b border-gray-300 py-8 md:py-[44px]  ">
-            <div class="lg:pr-8 lg:pt-4">
-              <div class="lg:max-w-lg">
-                <article class="flex max-w-sm flex-col items-start justify-between">
-                  {%- if section.settings.show_category -%}
-                    <span class="author__label inline-block text-[14px] leading-[19px] text-[#000000] font-normal border border-[#000000] rounded-full px-2 py-1.5">
-                       {{ blog.title }}
-                    </span>
-                  {% endif %}
-                    <div class="group relative">
-                      <h3 class="text-[45px] leading-[47px] text-[#000000] font-semibold mt-[19px]">
-                        <a href="{{ article.url }}">
-                          <span class="absolute inset-0"></span>
-                          {%  assign nmbr_title = section.settings.number_of_words_in_title %} 
-                          {{ article.title | truncatewords: nmbr_title | escape }}
-                        </a>
-                      </h3>
-                      {%- if section.settings.show_excerpt -%}
-                      <div class="text-[14px] leading-[19px] text-[#000000] font-normal mt-[19px]">
-                          {%  assign nmbr_expt = section.settings.number_of_words_in_text %} 
-                        {%- if article.excerpt.size > 0 -%}
-                          {{ article.excerpt | strip_html | truncatewords: nmbr_expt }}
-                        {%- else -%}
-                          {{ article.content | strip_html | truncatewords: nmbr_expt }}
-                        {%- endif -%}
+  <section id="harmony--{{ section.id }}" class="bg-[#FFFAF4]" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+      <div class="overflow-hidden py-6 sm:py-8">
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            {%- for article in blog.articles  -%}
+            <div class="blog__list mx-auto flex flex-col-reverse {% if section.settings.image_placement == 'left' %}md:flex-row-reverse {% else %} md:flex-row {% endif %} justify-between items-start border-b border-gray-300 shadow-lg py-8 px-4 md:py-[44px]">
+              <div class="lg:pr-8 lg:pt-4">
+                <div class="lg:max-w-lg">
+                  <article class="flex max-w-sm flex-col items-start justify-between">
+                    {%- if section.settings.show_category -%}
+                      <span class="blog__category inline-block harmony__content-text text-[#000000] border border-[#000000] rounded-full px-2 py-1.5">
+                        {{ blog.title }}
+                      </span>
+                    {% endif %}
+                      <div class="group relative">
+                        <h3 class="blog__title text-[45px] leading-[47px] text-[#000000] font-semibold mt-[19px]">
+                          <a href="{{ article.url }}">
+                            <span class="absolute inset-0"></span>
+                            {%  assign nmbr_title = section.settings.number_of_words_in_title %} 
+                            {{ article.title | truncatewords: nmbr_title | escape }}
+                          </a>
+                        </h3>
+                        {%- if section.settings.show_excerpt -%}
+                        <div class="blog__content harmony__content-text text-[#000000] mt-[19px]">
+                            {%  assign nmbr_expt = section.settings.number_of_words_in_text %} 
+                          {%- if article.excerpt.size > 0 -%}
+                            {{ article.excerpt | strip_html | truncatewords: nmbr_expt }}
+                          {%- else -%}
+                            {{ article.content | strip_html | truncatewords: nmbr_expt }}
+                          {%- endif -%}
+                        </div>
+                        {% endif %}
                       </div>
-                      {% endif %}
-                    </div>
-                    <div class="flex items-center gap-x-4 text-xs mt-[19px] md:mt-[98px]">
-                     {%- if section.settings.show_date -%} <time datetime="2020-03-10" class="text-gray-500">{{ article.published_at | time_tag: format: 'date' }}</time> {% endif %}
-                     {%- if section.settings.show_author -%} <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">by {{ article.author }}</a> {% endif %}
-                    </div>
-                </article>
+                      <div class="blog__info flex items-center gap-x-4 text-xs mt-[19px] md:mt-[98px]">
+                      {%- if section.settings.show_date -%} <time datetime="2020-03-10" class="text-gray-500">{{ article.published_at | time_tag: format: 'date' }}</time> {% endif %}
+                      {%- if section.settings.show_author -%} <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">by {{ article.author }}</a> {% endif %}
+                      </div>
+                  </article>
+                </div>
+              </div>
+              <div class="blog__featured-image mb-8 md:mb-0">
+                <picture>
+                  <source media="(min-width:768px)" width="450px" height="auto" srcset="{{ article.image.src | image_url: width: 400 }}">
+                  <source media="(min-width:640px)" width="350px" height="auto" srcset="{{ article.image.src | image_url: width: 400 }}">
+                  <img src="{{ article.image.src | image_url: width: 400 }}" width="400px" height="auto" alt="Flowers">
+                </picture>
               </div>
             </div>
-            <picture>
-              <source media="(min-width:768px)" width="450px" height="auto" srcset="{{ article.image.src | image_url: width: 400 }}">
-              <source media="(min-width:640px)" width="350px" height="auto" srcset="{{ article.image.src | image_url: width: 400 }}">
-              <img src="{{ article.image.src | image_url: width: 400 }}" width="400px" height="auto" alt="Flowers">
-            </picture>
-          </div>
-        {% endfor %}
-  
-        {% comment %} Blog post pagination  {% endcomment %}
+          {% endfor %}
+    
+            {% comment %} Blog post pagination  {% endcomment %}
 
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
-    {%- endif -%}
-         
+          {%- if paginate.pages > 1 -%}
+            {%- render 'blog-pagination', paginate: paginate -%}
+          {%- endif -%}
           
+            
 
-        </div>
-    </div>
-      
-</section>
+          </div>
+      </div>
+        
+  </section>
 {% endpaginate %}
 
                         
                         
 {% schema %}
 {
-    "name": "Blog List",
-    "settings": [
-          {
+  "name": "Blog List",
+  "settings": [
+    {
       "type": "checkbox",
       "id": "show_category",
       "label": "Show Category",
@@ -77,7 +79,7 @@
       "type": "number",
       "id": "number_of_words_in_title",
       "label": "Number of words in Title",
-      "default": 10
+      "default": 6
     },
     {
       "type": "checkbox",
@@ -104,12 +106,6 @@
       "default": true
     },
     {
-      "type": "checkbox",
-      "id": "show_pagination",
-      "label": "Show Pagination",
-      "default": true
-    },
-    {
       "type": "range",
       "id": "number_of_posts_per_page",
       "label": "Number of Posts per page",
@@ -133,13 +129,37 @@
         }
       ],
       "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
     }
   ],
-    "presets": [
-        {
-            "name": "Blog List",
-            "category": "Harmony Sections"
-        }
-    ]
+  "presets": [
+    {
+      "name": "Blog List",
+      "category": "Harmony Sections"
+    }
+  ]
 }
 {% endschema %}

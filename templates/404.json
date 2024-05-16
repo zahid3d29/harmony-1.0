@@ -20,13 +20,17 @@
         "announcement_BNbPcJ",
         "announcement_CjdAhw"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "show_border": true,
         "show_social": true,
+        "auto_slide": false,
         "change_slides_speed": 5,
         "enable_country_selector": true,
-        "enable_language_selector": true
+        "enable_language_selector": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "gdpr_T9AdaU": {
@@ -146,7 +150,9 @@
       "disabled": true,
       "settings": {
         "heading": "Section Featured Collection",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product_featured_WF6tYG": {
@@ -185,15 +191,23 @@
       ],
       "disabled": true,
       "settings": {
+        "color_scheme": "",
         "heading": "Shop All",
-        "show_heeading": true
+        "show_heeading": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "reveal_JJ7fw6": {
       "type": "reveal",
-      "disabled": true,
       "settings": {
-        "heading": ""
+        "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
+        "colored_txt": "#d0baac",
+        "border_color": "#d0baac",
+        "heading_size": "standard",
+        "heading": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "focal_FRdfRG": {
@@ -259,16 +273,18 @@
         "number_of_words_in_text": 30,
         "show_date": true,
         "show_author": true,
-        "show_pagination": true,
         "number_of_posts_per_page": 4,
-        "image_placement": "right"
+        "image_placement": "right",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "article_page_Ywnm6F": {
       "type": "article-page",
       "disabled": true,
       "settings": {
-        "banner_heading": "eASY Skin Care Routine"
+        "show_author_bio": true,
+        "show_next_previous_articles": false
       }
     },
     "newsletter_section_BiNdyU": {
@@ -324,19 +340,16 @@
       "type": "footer",
       "disabled": true,
       "settings": {
-        "heading": ""
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "hero_banner_yfzKPH": {
       "type": "hero-banner",
       "disabled": true,
       "settings": {
-        "sub_text": "eASY Skin Care Routine",
-        "banner_heading": "eASY Skin Care Routine",
-        "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals.",
-        "button_text": "Shop All",
-        "button_url": "#",
-        "banner_image": "shopify:\/\/shop_images\/home-banner.png"
+        "show_sale_badge": false
       }
     }
   },

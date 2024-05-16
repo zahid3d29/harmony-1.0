@@ -45,10 +45,10 @@
       },
       "scheme-85436d7a-8766-4d97-a6df-212047299535": {
         "settings": {
-          "background": "#dd1d1d",
+          "background": "#293423",
           "background_gradient": "",
           "text": "#ffffff",
-          "button": "#dd1d1d",
+          "button": "#293423",
           "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
           "shadow": "#ffffff"

@@ -1,24 +1,24 @@
-<section id="harmony--{{ section.id }}" class="bg-scroll bg-[#293423] bg-center bg-no-repeat bg-cover bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-bg.png?v=1713536456')]">
-    <div class="overflow-hidden relative py-24 sm:py-32 lg:py-15">
+<section id="harmony--{{ section.id }}" class="bg-scroll harmony__color-{{ section.settings.color_scheme }}">
+    <div class="overflow-hidden relative py-24">
         <div class="mx-auto max-w-7xl px-6 md:px-10">
             <div class="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-                <div class="col-img justify-end align-bottom content-end relative xl:top-[22rem] xl:left-[-6rem] lg:opacity-50 lg:top-[23rem] lg:left-[-5rem] md:absolute md:top-[-2rem] md:left-0">
+                <div class="col-img justify-end align-bottom content-end relative xl:top-[22rem] xl:left-[-6rem] lg:opacity-50 xl:opacity-100 lg:top-[23rem] lg:left-[-5rem] md:absolute md:top-[-2rem] md:left-0">
                     <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-left-img.png?v=1713371020" alt="Product screenshot" class="w-full md:w-[150px] lg:w-[230px] 2xl:w-[250px] md:-ml-4 lg:-ml-0" width="280" height="100%">
                 </div>
                 <div class="lg:pr-8 lg:pt-4 col-span-3">
                     <div class="lg:w-full">
-                        <h4 class="inline-block text-[14px] leading-[19px] text-[#f7f4ed] font-semibold border rounded-full border-gray-100 px-2 py-2">Deploy faster</h4>
-                        <h2 class="text-[#626E5C] text-ellipsis mt-2 block xl:min-w-[63rem] xl:text-[70px] xl:leading-[75px] lg:min-w-[54rem] lg:text-[60px] lg:leading-[70px] md:min-w-[40rem] md:text-[32px] md:leading-[40px] font-semibold tracking-tight sm:text-4xl">
-                           <span class="text-[#F7F4ED]"> We invite you to explore our range of pro</span>ducts, discover your personalized skincare routine, and embark on a journey to radiant, healthy skin.
+                        <h4 class="label inline-block text-[14px] leading-[19px] font-semibold border border-[{{ section.settings.border_color }}] rounded-full mb-[30px] px-2 py-2">Deploy faster</h4>
+                        <h2 class="reveal_colored_text text-[{{ section.settings.colored_txt }}] xl:min-w-[63rem] xl:text-[80px] xl:leading-[90px] lg:min-w-[54rem] lg:text-[60px] lg:leading-[70px] md:min-w-[40rem] md:text-[32px] md:leading-[40px] font-semibold tracking-tight text-4xl">
+                           <span class="harmony__color-{{ section.settings.color_scheme }}"> We invite you to explore our range of pro</span>ducts, discover your personalized skincare routine, and embark on a journey to radiant, healthy skin.
                         </h2>
                     </div>
                 </div>
-                <div class="col-img justify-end align-bottom content-end relative xl:bottom-[14rem] xl:right-20 lg:bottom-[18rem] lg:right-20 md:absolute md:bottom-[1rem] md:right-20">
+                <div class="col-img justify-end align-bottom content-end relative lg:opacity-50 xl:opacity-100 xl:bottom-[14rem] xl:right-20 lg:bottom-[18rem] lg:right-20 md:absolute md:bottom-[1rem] md:right-20">
                     <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-img-right.png?v=1713369269" alt="Product screenshot" class="w-full md:w-[160px] lg:w-[240px] xl:w-[240px] md:-ml-4 lg:-ml-0" width="280" height="100%">
                 </div>
             </div>
             <div class="reveal__description mt-10">
-                <p class="text-base text-[#b1c4a6] max-w-xl">It was so easy to use! My friends have been asking me what I've been doing differently because my complextion has never looked better . Thank you. Swiss, for giving me the con</p>
+                <div class="text-base text-[#b1c4a6] max-w-xl">It was so easy to use! My friends have been asking me what I've been doing differently because my complextion has never looked better . Thank you. Swiss, for giving me the con</div>
             </div>
         </div>
     </div>
@@ -30,9 +30,71 @@
     "name": "reveal",
     "settings": [
         {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "Harmony Color Scheme",
+            "default": "scheme-1"
+        },
+        {
+            "type": "color",
+            "id": "colored_txt",
+            "label": "Span text Color",
+            "default": "#626E5C"
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Border Color",
+            "default": "#626E5C"
+        },
+        {
+            "type": "select",
+            "id": "heading_size",
+            "label": "Heading Size",
+            "options": [
+                {
+                    "value": "small",
+                    "label": "Small"
+                },
+                {
+                    "value": "standard",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Large"
+                }
+            ],
+            "default": "standard"
+        },
+        {
             "type": "text",
             "id": "heading",
             "label": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Top",
+            "default": 36
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Bottom",
+            "default": 36
         }
     ],
     "presets": [
@@ -43,3 +105,14 @@
     ]
 }
 {% endschema %}
+
+{% comment %} schema settings color style  {% endcomment %}
+{% for scheme in settings.color_schemes %}
+    {% style %} 
+        .harmony__color-{{ scheme.id }}{
+            background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+            color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+            border-color: rgb({{ scheme.settings.border_color.red }}, {{ scheme.settings.border_color.green }}, {{ scheme.settings.border_color.blue }});
+        }
+    {% endstyle %} 
+{% endfor %}

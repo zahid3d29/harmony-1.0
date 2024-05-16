@@ -83,6 +83,12 @@
           },
           {
             "type": "color",
+            "id": "border_color",
+            "label": "Border",
+            "default": "#FFFAF4"
+          },
+          {
+            "type": "color",
             "id": "shadow",
             "label": "Shadow",
             "default": "#121212"
