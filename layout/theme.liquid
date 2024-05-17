@@ -45,6 +45,7 @@
     </script>
 
     {% comment %} schema settings color style  {% endcomment %}
+    {% comment %}
     {% for scheme in settings.color_schemes %}
       {% style %} 
         .harmony__color-{{ scheme.id }}{
@@ -54,6 +55,7 @@
         }
       {% endstyle %} 
     {% endfor %}
+    {% endcomment %}
 
     {{ content_for_header }}
 

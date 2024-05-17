@@ -224,4 +224,14 @@
   }
 {% endschema %}
   
+{% comment %} schema settings color style  {% endcomment %}
+{% for scheme in settings.color_schemes %}
+  {% style %} 
+      .harmony__color-{{ scheme.id }}{
+        background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+        color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+      }
+  {% endstyle %}
+{% endfor %}
+
 {% comment %} signature: latest file  {% endcomment %}

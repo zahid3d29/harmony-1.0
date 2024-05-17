@@ -1,54 +1,55 @@
-<section id="harmony--{{ section.id }}" class="bg-[#E8E7E3] ">
+<section id="harmony--{{ section.id }}" class="section__sale harmony__color-{{ section.settings.color_scheme }}">
   <div class="grid grid-cols-1 lg:grid-cols-2 relative pt-12 lg:py-0">
     <div class="grid grid-cols-1 py-8 px-6 lg:pt-24 md:px-10">
       {% for block in section.blocks %}
         {% if 'product' %}
           {% assign sale_product = block.settings.s_product %}
-          <div class="product-col text-left">
-            <div href="#" class="group relative">
-              <span class="sale__badge absolute top-[-2rem] lg:top-[-1.5rem] left-0 bg-[#D0BAAC] text-black py-1.5 px-2 text-[14px] leading-[19px] text-center z-99">SALE 20%</span>
-              <div class="aspect-h-2 aspect-w-2 md:aspect-h-5 md:aspect-w-7 sm:overflow-hidden sm:rounded-lg">
-                <div
-                  class="bg-[url('{{ sale_product.featured_image | img_url: 'master' }}')] hover:bg-[url('{{ sale_product.media[1] | img_url: 'master' }}')] bg-cover md:bg-contain bg-center bg-no-repeat"
-                ></div>
+          <div class="product__col text-left">
+            <a href="#" class="group relative">
+              <div class="relative h-auto w-full overflow-hidden aspect-h-2 aspect-w-2 sm:aspect-h-1 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
+                <span class="sale__badge inline max-w-[104px] max-h-[21px] z-10 items-center bg-[#532C2C] absolute left-1 top-1 sm:left-3 sm:top-3 px-2 text-[14px] leading-[19px] font-normal text-[#ffffff] ring-1 ring-inset ring-green-600/20">sale 20%</span>
+                <div class="product_featured_img block bg-[url('{{ sale_product.featured_image | img_url: 'master' }}')] hover:bg-[url('{{ sale_product.media[1] | img_url: 'master' }}')] bg-cover bg-center bg-no-repeat"></div>
               </div>
-                <div class="mt-4 flex justify-between">
-                    <div class="w-4/5">
-                      <a href="/products/gold-bird-necklace" class="block">
-                          <h3 class="mt-2 mb-3 pb-2 text-[16px] leading-[21px] text-[#000000] font-medium border-b border-[#7070704d]">Gold Bird Necklace</h3>
-                      </a>  
-                      <p class="text-[14px] leading-[19px] text-[#000000] inline-block px-2 py-0.5 border border-black rounded-full collection-title">Collection 2</p>
-                    </div>
-                    <div class="w-2/5">
-                        <h3 class="mt-2 mb-3 pb-3 text-[13px] leading-[17px] text-[#000000] text-right border-b border-[#7070704d]">Tk 79.99</h3>
-                        <div class="flex items-center justify-end">
-                            <div class="flex items-center justify-end text-[13px]">
-                                <svg class="text-gray-900 w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;text-gray-900&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                </svg>
-                                <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                </svg>
-                                <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                </svg>
-                                <svg class="text-gray-900 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                </svg>
-                                <svg class="text-gray-200 w-5 flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="sr-only">3.9 out of 5 stars</span>
-                            <span class="ml-3 text-[13px] leading-[17px] text-[#000000] hover:text-gray-500">22</span>
-                        </div>
-                    </div>    
-                </div>
-            </div>
-            <div class="flex items-center justify-center my-4">
+              <div class="mt-4 flex justify-between">
+                  <div class="w-4/5">
+                    <a href="/products/gold-bird-necklace" class="block">
+                        <h3 class="product__title mt-2 mb-3 pb-2 text-[16px] leading-[21px]  font-medium border-b border-[#7070704d]">Gold Bird Necklace</h3>
+                    </a>  
+                    <div class="product__collection text-[14px] leading-[19px]  inline-block px-2 py-0.5 border border-black rounded-full collection-title">Collection 2</div>
+                  </div>
+                  <div class="w-2/5">
+                      <div class="product_price mt-2 mb-3 pb-3 text-[14px] leading-[19px]  text-right border-b border-[#7070704d]">
+                        <span class="compare_at_price line-through text-gray-500">Tk 79.99</span>
+                        <span class="price">Tk 49.99</span>
+                      </div>
+                      <div class="product_rating flex items-center justify-end">
+                          <div class="flex items-center justify-end text-[13px]">
+                              <svg class=" w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                              </svg>
+                              <svg class=" w-5 flex-shrink-0" x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                              </svg>
+                              <svg class=" w-5 flex-shrink-0" x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                              </svg>
+                              <svg class=" w-5 flex-shrink-0" x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                              </svg>
+                              <svg class="text-gray-200 w-5 flex-shrink-0" x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                              </svg>
+                          </div>
+                          <span class="sr-only">3.9 out of 5 stars</span>
+                          <span class="rating_count ml-3 text-[13px] leading-[17px]  hover:text-gray-500">22</span>
+                      </div>
+                  </div>    
+              </div>
+            </a>
+            <div class="product_carousel-control flex items-center justify-center my-4">
               <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3" id="headlessui-tabs-tab-6" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="headlessui-tabs-panel-8">
-                  <span class="lg:mr-2">
-                      <a href="#" class="relative inline-flex items-center rounded-full text-[17px] leading-[35px] text-[#000000] px-2 py-2 hover:text-gray-900 ring-1 ring-inset ring-gray-300 bg-gray-100 hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0">
+                  <span class="product_carousel-prev lg:mr-2">
+                      <a href="#" class="prev relative inline-flex items-center rounded-full text-[17px] leading-[35px]  px-2 py-2 hover: ring-1 ring-inset ring-gray-300 bg-transparent hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0">
                           <span class="sr-only">Previous</span>
                           <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                               <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
@@ -64,8 +65,8 @@
                   <span class="mx-2 lg:mx-2">
                       <div class="h-1.5 w-1.5 rounded-full bg-gray-300"></div>
                   </span>
-                  <span class="lg:ml-2 text-gray-700">
-                      <a href="#" class="relative inline-flex items-center rounded-full px-2 py-2 text-gray-700 hover:text-gray-900 bg-[#7070704d] hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                  <span class="product_carousel-next lg:ml-2 text-gray-700">
+                      <a href="#" class="next relative inline-flex items-center rounded-full px-2 py-2 text-gray-700 hover: bg-white hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] focus:z-20 focus:outline-offset-0">
                           <span class="sr-only">Next</span>
                           <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                           <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
@@ -111,15 +112,15 @@
     <div class="relative grid grid-cols-1 lg:grid-rows-2 grid-flow-col gap-4 px-8 py-16 h-full w-full bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830')]  bg-cover">
       {% if section.settings.description != blank %}
         <div class="row-start-1 text-center px-[1rem] max-w-1xl lg:px-[6rem]">
-          <p class="text-[18px] leading-[22px] text-[#f7f4ed] font-normal">
+          <div class="sale_description text-[18px] leading-[22px] text-[#f7f4ed] font-normal">
             {{ section.settings.description }}
-          </p>
+          </div>
         </div>
       {% endif %}
-      <div class="row-start-3">
+      <div class="slae__countdown row-start-3">
         <div class="mx-auto max-w-7xl px-6 md:px-10 md:py-8 lg:py-14">
           <dl class="grid grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <div class="countdown__day mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Days</dt>
               <dd class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200">
                 {% assign day = section.settings.day %}
@@ -129,18 +130,17 @@
                 {{ day }}
               </dd>
             </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <div class="countdown__hours mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Hours</dt>
               <dd class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200">
                 {% assign hour = section.settings.hour %}
                 {% if hour < 10 %}
                   {% assign hour = hour | prepend: '0' %}
                 {% endif %}
-
                 {{ hour }}
               </dd>
             </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <div class="countdown__min mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Minutes</dt>
               <dd class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200">
                 {% assign min = section.settings.min %}
@@ -150,7 +150,7 @@
                 {{ min }}
               </dd>
             </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <div class="countdown__sec mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Seconds</dt>
               <dd class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200">
                 {% assign sec = section.settings.sec %}
@@ -175,8 +175,14 @@
 
 {% schema %}
 {
-  "name": "sales",
+  "name": "Sales",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Harmony Color Scheme",
+      "default": "scheme-1"
+    },
     {
       "type": "text",
       "id": "heading",
@@ -211,12 +217,36 @@
       "id":"sec",
       "label": "Seconds",
       "default":0
-    }
-  ],
-  "presets": [
+    },
     {
-      "name": "sales",
-      "category": "Harmony Sections"
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#626E5C"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
     }
   ],
   "blocks":[
@@ -231,6 +261,24 @@
         }
       ]
     }
+  ],
+  "presets": [
+    {
+      "name": "Sales",
+      "category": "Harmony Sections"
+    }
   ]
 }
 {% endschema %}
+
+
+{% comment %} schema settings color style  {% endcomment %}
+{% for scheme in settings.color_schemes %}
+  {% style %} 
+      .harmony__color-{{ scheme.id }}{
+        background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+        color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+      }
+  {% endstyle %} 
+{% endfor %}
+{% comment %} signature: latest file  {% endcomment %}

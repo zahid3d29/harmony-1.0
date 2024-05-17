@@ -200,8 +200,10 @@
     },
     "reveal_JJ7fw6": {
       "type": "reveal",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
+        "color_scheme_enable": false,
         "colored_txt": "#d0baac",
         "border_color": "#d0baac",
         "heading_size": "standard",
@@ -214,6 +216,10 @@
       "type": "focal",
       "disabled": true,
       "settings": {
+        "color_scheme": "",
+        "border_color": "#626E5C",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "sales_783xMN": {
@@ -222,21 +228,24 @@
         "product_H3bCAQ": {
           "type": "product",
           "settings": {
-            "s_product": "bangle-bracelet"
+            "s_product": "bangle-bracelet-with-feathers"
           }
         }
       },
       "block_order": [
         "product_H3bCAQ"
       ],
-      "disabled": true,
       "settings": {
+        "color_scheme": "",
         "heading": "Limited Time Sale Offer",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "day": 4,
         "hour": 14,
         "min": 20,
-        "sec": 50
+        "sec": 50,
+        "border_color": "#626E5C",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "faq_fdKzd7": {

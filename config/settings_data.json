@@ -18,6 +18,7 @@
           "button": "#ffffff",
           "button_label": "#0e1b4d",
           "secondary_button_label": "#ffffff",
+          "border_color": "#fffaf4",
           "shadow": "#0e1b4d"
         }
       },
@@ -29,6 +30,7 @@
           "button": "#ffffff",
           "button_label": "#d0baac",
           "secondary_button_label": "#ffffff",
+          "border_color": "#fffaf4",
           "shadow": "#0e1b4d"
         }
       },
@@ -40,6 +42,7 @@
           "button": "#ffd902",
           "button_label": "#0e1b4d",
           "secondary_button_label": "#0e1b4d",
+          "border_color": "#fffaf4",
           "shadow": "#ffd902"
         }
       },
@@ -51,6 +54,7 @@
           "button": "#293423",
           "button_label": "#ffffff",
           "secondary_button_label": "#ffffff",
+          "border_color": "#dd1d1d",
           "shadow": "#ffffff"
         }
       }
