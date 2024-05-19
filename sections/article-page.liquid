@@ -91,20 +91,23 @@
 
 {% schema %}
 {
-      "name": "Article",
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "show_author_bio",
-          "label": "Show Author Bio",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "show_next_previous_articles",
-          "label": "Show Next Previous Articles",
-          "default": false
-        }
+  "name": "Article",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_author_bio",
+      "label": "Show Author Bio",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_next_previous_articles",
+      "label": "Show Next Previous Articles",
+      "default": false
+    }
   ],
    "blocks": [
   {

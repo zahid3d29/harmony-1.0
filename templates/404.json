@@ -113,91 +113,6 @@
         "sub_text": "Learn more about our commitment to high quality products."
       }
     },
-    "featured_collection_MATT7C": {
-      "type": "featured-collection",
-      "blocks": {
-        "block_Tzbd78": {
-          "type": "block",
-          "settings": {
-            "collection": "gold"
-          }
-        },
-        "block_7r3tqy": {
-          "type": "block",
-          "settings": {
-            "collection": "cream"
-          }
-        },
-        "block_iLjxAc": {
-          "type": "block",
-          "settings": {
-            "collection": "t-shirts"
-          }
-        },
-        "block_6K77hd": {
-          "type": "block",
-          "settings": {
-            "collection": "books"
-          }
-        }
-      },
-      "block_order": [
-        "block_Tzbd78",
-        "block_7r3tqy",
-        "block_iLjxAc",
-        "block_6K77hd"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Section Featured Collection",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "product_featured_WF6tYG": {
-      "type": "product_featured",
-      "blocks": {
-        "block_PWAXam": {
-          "type": "block",
-          "settings": {
-            "collection": "gold"
-          }
-        },
-        "block_NmdRA3": {
-          "type": "block",
-          "settings": {
-            "collection": "books"
-          }
-        },
-        "block_TTyirx": {
-          "type": "block",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "block_FKPEUH": {
-          "type": "block",
-          "settings": {
-            "collection": "jwellary"
-          }
-        }
-      },
-      "block_order": [
-        "block_PWAXam",
-        "block_NmdRA3",
-        "block_TTyirx",
-        "block_FKPEUH"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "heading": "Shop All",
-        "show_heeading": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "reveal_JJ7fw6": {
       "type": "reveal",
       "disabled": true,
@@ -208,16 +123,6 @@
         "border_color": "#d0baac",
         "heading_size": "standard",
         "heading": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "focal_FRdfRG": {
-      "type": "focal",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "border_color": "#626E5C",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -235,6 +140,7 @@
       "block_order": [
         "product_H3bCAQ"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "heading": "Limited Time Sale Offer",
@@ -243,7 +149,7 @@
         "hour": 14,
         "min": 20,
         "sec": 50,
-        "border_color": "#626E5C",
+        "border_color": "#626e5c",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -272,30 +178,6 @@
         "page_desc": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care.<\/p>"
       }
     },
-    "blog_page_JLRnGB": {
-      "type": "blog-page",
-      "disabled": true,
-      "settings": {
-        "show_category": true,
-        "number_of_words_in_title": 10,
-        "show_excerpt": true,
-        "number_of_words_in_text": 30,
-        "show_date": true,
-        "show_author": true,
-        "number_of_posts_per_page": 4,
-        "image_placement": "right",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "article_page_Ywnm6F": {
-      "type": "article-page",
-      "disabled": true,
-      "settings": {
-        "show_author_bio": true,
-        "show_next_previous_articles": false
-      }
-    },
     "newsletter_section_BiNdyU": {
       "type": "newsletter-section",
       "disabled": true,
@@ -308,50 +190,6 @@
       "disabled": true,
       "settings": {
         "heading": "Cart"
-      }
-    },
-    "category_filter_e8xEmj": {
-      "type": "category-filter",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
-    "product_main_c7G7TJ": {
-      "type": "product-main",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
-    "product_facts_6pJAtN": {
-      "type": "product-facts",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
-    "product_beforeafter_fafijV": {
-      "type": "product-beforeafter",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
-    "product_how_use_YTVnbK": {
-      "type": "product-how-use",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
-    "footer_CANxjp": {
-      "type": "footer",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "hero_banner_yfzKPH": {
@@ -369,24 +207,13 @@
     "mega_menu_QRWX77",
     "testimonials_GtL8fm",
     "swiss_cciQWT",
-    "featured_collection_MATT7C",
-    "product_featured_WF6tYG",
     "reveal_JJ7fw6",
-    "focal_FRdfRG",
     "sales_783xMN",
     "faq_fdKzd7",
     "newsletter_pop_89fWAC",
     "page_how_Hrk6iN",
-    "blog_page_JLRnGB",
-    "article_page_Ywnm6F",
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
-    "category_filter_e8xEmj",
-    "product_main_c7G7TJ",
-    "product_facts_6pJAtN",
-    "product_beforeafter_fafijV",
-    "product_how_use_YTVnbK",
-    "footer_CANxjp",
     "hero_banner_yfzKPH"
   ]
 }

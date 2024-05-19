@@ -1,0 +1,132 @@
+<div class="mega__menu-wrapper hidden lg:block relative bg-[#F7F5F0] mega_menu">
+  <nav class="mega__menu-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex">
+      <div class="absolute inset-x-0 top-full text-sm text-gray-500 mega_menu">
+        <div class="absolute inset-0 top-1/2 bg-[#F7F5F0] shadow-md" aria-hidden="true"></div>
+        <div class="relative bg-[#F7F5F0]">
+          <div class="mx-auto max-w-screen-2xl px-6 md:px-10">
+            <div class="grid grid-cols-3 gap-x-8 gap-y-10 py-16">
+              <div class="mega__menu-nav-content overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
+
+                {% if  section.settings.mega_menu_grid == 'products' %}
+
+{%- assign featured_collection_ = section.settings.featured_collection_ -%}
+
+{%- assign featured_collection__products = featured_collection_.products -%}
+{%- for product in featured_collection__products -%}
+    <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
+                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                    <img
+                      src="{{ product.featured_media | image_url }}"
+                      alt="product-image"
+                      class="object-cover object-center"
+                    >
+                  </div>
+                  <div class="product__info grid grid-cols-2 mt-[14px]">
+                    <a href="#" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                      <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                      {{ product.title }}
+                    </a>
+                    <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">{{ product.price | money_with_currency }}</h6>
+                  </div>
+                  <div class="w-full my-[14px] border-t border-gray-400"></div>
+                  <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                   {{ product.description  | truncatewords: 20 }}
+                  </div>
+                </div>
+  {%- endfor -%}
+{% else  %}
+
+
+{%- assign collections_for_mega_menu_grid = section.settings.collections_for_mega_menu_grid -%}
+{%- for collection in collections_for_mega_menu_grid -%}
+
+    <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
+                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                    <img
+                      src="{{ collection.featured_image | image_url }}"
+                      alt="product-image"
+                      class="object-cover object-center"
+                    >
+                  </div>
+                  <div class="product__info grid grid-cols-2 mt-[14px]">
+                    <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                      <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                       {{ collection.title }}
+                    </a>
+                    <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">
+
+           
+
+{{ collection.products_count }}
+                    
+                    </h6>
+                  </div>
+                  <div class="w-full my-[14px] border-t border-gray-400"></div>
+                  <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                   {{ collection.description  | truncatewords: 20 }}
+                  </div>
+                </div>
+{%- endfor -%}
+
+
+                  
+                  
+                  {% endif %}
+                
+    
+              </div>
+              <div class="mega__menu-nav-item row-start-1 grid grid-cols-1 gap-x-8 gap-y-10 text-sm">
+                <div class="product__categories">
+                  <ul
+                    role="list"
+                    aria-labelledby="Clothing-heading"
+                    class="space-y-[12px] text-[26px] leading-[41px] text-[#000000]"
+                  >
+                    
+{%- assign mega_menu = section.settings.mega_menu.links -%}
+{%- for link in mega_menu -%}
+  
+  
+                    <li class="flex group">
+                      <a href="{{ link.url }}" class="hover:opacity-70 hover:underline">{{ link.title }}</a>
+                      <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-6 h-6"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                      </span>
+                    </li>
+{%- endfor -%}
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<style>
+  .mega_menu {
+      visibility: hidden;
+      height: auto;
+      top: 82px;
+      right: 0;
+      left: 0;
+      width: 100%;
+      position: fixed;
+  }
+    .mega_menu__link:hover .mega_menu {
+      visibility:visible;
+    }
+</style>

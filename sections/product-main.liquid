@@ -1,8 +1,38 @@
 
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .product { display: flex; flex-direction: column; align-items: center; }
+    .product img { max-width: 100%; height: auto; }
+    .product-info { text-align: center; margin-top: 20px; }
+    .product-title { font-size: 24px; margin-bottom: 10px; }
+    .product-price { font-size: 20px; color: #555; margin-bottom: 20px; }
+    .add-to-cart { background-color: #5cb85c; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    .add-to-cart:hover { background-color: #4cae4c; }
+  </style>
+
+
+  <div class="product">
+    <!-- Product Image -->
+    <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+
+    <!-- Product Information -->
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-price">{{ product.price | money }}</p>
+
+      <!-- Add to Cart Form -->
+      <form method="post" action="/cart/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit" class="add-to-cart">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+
+
+
 <section id="harmony--{{ section.id }}">
     <div class="bg-[#FFFAF4]">
         <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-x-8 gap-y-16 px-6 py-8 sm:px-6 md:py-24 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
-
             <div class="product__media col-span-2 grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
                 <div class="grid md:grid-cols-5 gap-4">
                     <div class="product__gallaries flex flex-wrap order-last md:order-first md:grid md:grid-cols-1 gap-x-4 gap-y-4 md:gap-y-2 md:gap-x-0">
@@ -241,13 +271,8 @@
 
                 </div>
             </div>
-
         </div>
     </div>
-      
-
-
-
 </section>
 
 
