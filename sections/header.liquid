@@ -11,8 +11,10 @@
     }
   }
 {%- endstyle -%}
+
+
 <section id="harmony--{{ section.id }}" class="bg-[#FAF2DC] h-full min-h-[50px] section-{{ section.id }}-padding">
-  <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
+  <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-10 px-4 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
       <div class="flex lg:flex-1">
         {% comment %} mega__menu-trigger hamburger Button  {% endcomment %}
@@ -338,27 +340,24 @@
 
 
 <style>
-        div#doubleDropdown {
-          visibility: hidden;
-      }
-      div#dropdownNavbar {
-        visibility: hidden;
-    }
+  div#doubleDropdown {
+    visibility: hidden;
+  }
+  div#dropdownNavbar {
+    visibility: hidden;
+  }
   .dropdown_menu:hover  .nav__sub-menu {
-      visibility: visible !important;
+    visibility: visible !important;
   }
   .double_drop:hover .nav__sub__menu-child {
     visibility: visible !important;
   }
-     .offcanvas {
-      display: none;
-
-    }
-    .offcanvas.active {
-      display: block;
-
-    } 
-
+  .offcanvas {
+    display: none;
+  }
+  .offcanvas.active {
+    display: block;
+  } 
 </style>
 
 {% render 'side-drawer' %}

@@ -8,7 +8,13 @@
               {% if block.settings.icon != blank %}
                 <img
                   src="{{ block.settings.icon | img_url: '' }}"
-                  alt="shipping"
+                  alt="{{ block.settings.text | replace: " ", "-" }}"
+                  class="h-[24px] w-[35px] object-contain"
+                >
+              {% else %}
+                <img
+                  src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263"
+                  alt="{{ block.settings.text | replace: " ", "-" }}"
                   class="h-[24px] w-[35px] object-contain"
                 >
               {% endif %}

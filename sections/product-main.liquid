@@ -1,5 +1,7 @@
 
-<style>
+ {% comment %} Test code  {% endcomment %}
+
+ <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     .product { display: flex; flex-direction: column; align-items: center; }
     .product img { max-width: 100%; height: auto; }
@@ -8,25 +10,40 @@
     .product-price { font-size: 20px; color: #555; margin-bottom: 20px; }
     .add-to-cart { background-color: #5cb85c; color: white; padding: 10px 20px; border: none; cursor: pointer; }
     .add-to-cart:hover { background-color: #4cae4c; }
-  </style>
+    /* When an Ajax request is in progress */
+.js-ajax-cart-processing .my-loading-indicator {
+  display: block;
+}
+</style>
 
 
-  <div class="product">
+<div class="product">
     <!-- Product Image -->
     <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
 
     <!-- Product Information -->
     <div class="product-info">
-      <h1 class="product-title">{{ product.title }}</h1>
-      <p class="product-price">{{ product.price | money }}</p>
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price">{{ product.price | money }}</p>
 
-      <!-- Add to Cart Form -->
-      <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <button type="submit" class="add-to-cart">Add to Cart</button>
-      </form>
+        <ajax-cart-product-form>
+            {% form 'product', product %}
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <button type="submit" class="add-to-cart">Add to Cart</button>
+            {% endform %}
+        </ajax-cart-product-form>
     </div>
-  </div>
+</div>
+
+<div class="my-ajax-cart" data-ajax-cart-section>
+  <h2>Cart ({{ cart.item_count }})</h2>
+</div>
+
+
+
+
+{% comment %} Test code end  {% endcomment %}
+
 
 
 

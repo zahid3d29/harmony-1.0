@@ -1,12 +1,71 @@
 {
   "sections": {
+    "ajax_cart_6bFt8A": {
+      "type": "ajax-cart",
+      "disabled": true,
+      "settings": {
+        "heading": "Cart"
+      }
+    },
     "main": {
       "type": "product-main",
       "settings": {
+        "heading": "Cart"
+      }
+    },
+    "product_info_tabs_ezxmJk": {
+      "type": "product-info-tabs",
+      "blocks": {
+        "block_1_EadJT3": {
+          "type": "block-1",
+          "settings": {
+            "heading": "Who we are?"
+          }
+        },
+        "block_2_KPMgTE": {
+          "type": "block-2",
+          "settings": {
+            "heading": "Our Philosophy"
+          }
+        },
+        "block_3_YtjaR9": {
+          "type": "block-3",
+          "settings": {
+            "heading": "Message from"
+          }
+        },
+        "block_4_rTfhTL": {
+          "type": "block-4",
+          "settings": {
+            "heading": "Our Commitments"
+          }
+        }
+      },
+      "block_order": [
+        "block_1_EadJT3",
+        "block_2_KPMgTE",
+        "block_3_YtjaR9",
+        "block_4_rTfhTL"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "page_title": "About us",
+        "page_desc": "Swiss was born from a passion for skincare and a belief in the transformative power of self-care."
+      }
+    },
+    "product_how_use_crUGaT": {
+      "type": "product-how-use",
+      "settings": {
+        "heading": "Cart{{ product.metafields.custom.zhd_product_option_length_13.value }}"
       }
     }
   },
   "order": [
-    "main"
+    "ajax_cart_6bFt8A",
+    "main",
+    "product_info_tabs_ezxmJk",
+    "product_how_use_crUGaT"
   ]
 }

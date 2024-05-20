@@ -9,126 +9,133 @@
     .drawer__product-qyt input[type=number] {
         -moz-appearance: textfield;
     }
+
 {% endstyle %} 
 
 
 
-
-
 <section id="harmony--{{ section.id }}" class="bg-[#FFFAF4]">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-x-auto">
-            <table class="w-full">
-                <thead class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal uppercase opacity-80 bg-[#FFFAF4]">
-                    <tr>
-                        <th scope="col" class="product__title-label text-left border border-l-0 px-6 py-[27px]">
-                            Product title
-                        </th>
-                        <th scope="col" class="product__price-label border border-l-0 px-6 py-3">
-                            Price
-                        </th>
-                        <th scope="col" class="product__quantity-label border border-l-0 px-6 py-3">
-                            Quantity
-                        </th>
-                        <th scope="col" class="product__total-label border border-l-0 px-6 py-3">
-                            Total
-                        </th>
-                        <th scope="col" class="product__action-label border border-r-0 px-6 py-3">
-                            Remove
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if cart.items.size > 0 %}
-                        {% for item in cart.items %}
-                        <tr class="border-b">
-                            <th scope="row" class="text-left pl-0 pr-6 py-4 whitespace-nowrap">
-                                <div class="flex">
-                                    <div class="h-[102px] w-[87px] flex-shrink-0 overflow-hidden border border-gray-200">
-                                        <img src="{{ item.image |  image_url: master  }}" width="87" height="102" alt="{{ item.title }}" class="h-full w-full object-cover object-center">
-                                    </div>
-                                    <div class="ml-4 flex flex-1 flex-col">
-                                        <div>
-                                            <div class="flex justify-between">
-                                                <h3 class="text-[16px] leading-[35px] text-[#000000] font-semibold">
-                                                    <a href="{{ item.product.url }}">{{ item.product.title }}</a>
-                                                </h3>
-                                            </div>
-                                            <!-- Variant Options -->
-                                            {% if item.variant.title != 'Default Title' %}
-                                                {% for option_index in (0..item.product.options.size) %}
-                                                    {% assign option_name = item.product.options[option_index] %}
-                                                    {% assign option_value = item.variant.options[option_index] %}
-                                                    <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1">
-                                                        {% if option_name %}
-                                                        <dt class="inline font-normal">{{ option_name }}: </dt>
-                                                        <dd class="inline font-semibold px-1">{{ option_value }}</dd>
-                                                        {% endif %}
-                                                    </div>                                           
-                                                {% endfor %}
-                                            {% endif %}
-                                        </div>
-                                    </div>                         
-                                </div>
+    <form action="{{ routes.cart_url }}" method="post">
+        <div class="mx-auto max-w-7xl px-4" data-ajax-cart-section>
+            <div class="relative overflow-x-auto" data-ajax-cart-section-scroll>
+                <table class="w-full">
+                    <thead class="text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal uppercase opacity-80 bg-[#FFFAF4]">
+                        <tr>
+                            <th scope="col" class="product__title-label text-left border border-l-0 px-6 py-[27px]">
+                                Product title
                             </th>
-                            <td class="text-center px-6 py-4">
-                                {{ item.final_line_price  | money }}
-                            </td>
-                            <td class="text-center px-6 py-4">
-                                <div class="flex flex-1 items-end justify-between text-sm">
-                                    <div class="flex">                                               
-                                        <form class="drawer__product-qyt max-w-xs mx-auto">
-                                            <div class="relative flex items-center -mb-2">
-                                                <button type="button" onclick="countDown('{{ item.product.title | remove: ' ' }}')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-                                                </svg>                                              
-                                                </button>
-                                                <input type="number" id="{{ item.product.title | remove: ' ' }}" value="{{ item.quantity }}" class="max-w-[3rem] px-0 pt-2 pb-2 text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center">
-                                                <button type="button" onclick="countUp('{{ item.product.title | remove: ' ' }}')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                                    </svg>                                              
-                                                </button>
-                                            </div>
-                                        </form>                                                        
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="final__line-price text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
-                                {{ item.final_line_price | times: item.quantity  | money }}
-                            </td>
-                            <td class="remove__cart-product text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
-                                <a href="{{ item.url_to_remove }}" class="flex justify-center items-center font-medium text-gray-500 hover:underline">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                    </svg>
-                                </a>
-                            </td>
+                            <th scope="col" class="product__price-label border border-l-0 px-6 py-3">
+                                Price
+                            </th>
+                            <th scope="col" class="product__quantity-label border border-l-0 px-6 py-3">
+                                Quantity
+                            </th>
+                            <th scope="col" class="product__total-label border border-l-0 px-6 py-3">
+                                Total
+                            </th>
+                            <th scope="col" class="product__action-label border border-r-0 px-6 py-3">
+                                Remove
+                            </th>
                         </tr>
-                        {% endfor %}
-                    {% else %}
-                        <h2 class="text-lg lg:text-3xl">Your Cart is empty!</h2>
-                    {% endif %}
-                </tbody>
-            </table>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 justify-end items-start">
-            <div class="w-1/2"></div>
-            <div class="cart__calculate border-t border-gray-200 px-4 py-6 sm:px-6">
-                <h3 class="text-[30px] leading-[41px] text-[#000000] font-semibold">Cart Totals</h3>
-                <p class="mt-0.5 text-[14px] leading-[19px] text-[#000000] font-normal">Taxes, discounts and shipping calculated at checkout</p>
-                <div class="border-t my-[21px]"></div>
-                <div class="cart_subtotal flex justify-between text-[17px] leading-[22px] text-[#000000] font-semibold my-4">
-                    <dt>Estimated total</dt>
-                    <dd>{{ cart.total_price | money }}</dd>
-                </div>
-                <div class="mt-6">
-                    <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-[#373738] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-500">Checkout</a>
+                    </thead>
+                    <tbody>
+                        {% if cart.items.size > 0 %}
+                            {% for item in cart.items %}
+                                {% assign item_index = forloop.index %}
+                            <tr class="border-b">
+                                <th scope="row" class="text-left pl-0 pr-6 py-4 whitespace-nowrap">
+                                    <div class="flex">
+                                        <div class="h-[102px] w-[87px] flex-shrink-0 overflow-hidden border border-gray-200">
+                                            <img src="{{ item.image |  image_url: master  }}" width="87" height="102" alt="{{ item.title }}" class="h-full w-full object-cover object-center">
+                                        </div>
+                                        <div class="ml-4 flex flex-1 flex-col">
+                                            <div>
+                                                <div class="flex justify-between">
+                                                    <h3 class="text-[16px] leading-[35px] text-[#000000] font-semibold">
+                                                        <a href="{{ item.product.url }}">{{ item.product.title }}</a>
+                                                    </h3>
+                                                </div>
+                                                <!-- Variant Options -->
+                                                {% if item.variant.title != 'Default Title' %}
+                                                    {% for option_index in (0..item.product.options.size) %}
+                                                        {% assign option_name = item.product.options[option_index] %}
+                                                        {% assign option_value = item.variant.options[option_index] %}
+                                                        <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1">
+                                                            {% if option_name %}
+                                                            <dt class="inline font-normal">{{ option_name }}: </dt>
+                                                            <dd class="inline font-semibold px-1">{{ option_value }}</dd>
+                                                            {% endif %}
+                                                        </div>                                           
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </div>
+                                        </div>                         
+                                    </div>
+                                </th>
+                                <td class="text-center px-6 py-4">
+                                    {{ item.original_price  | money }}
+                                </td>
+                                <td class="text-center px-6 py-4">
+                                    <div class="flex flex-1 items-end justify-between text-sm">
+                                        <div class="flex">                                               
+                                            <div class="relative flex items-center -mb-2">
+                                                <ajax-cart-quantity>
+                                                    <a class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-minus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                                    </svg>                                              
+                                                    </a>
+                                                    <input class="max-w-[3rem] px-0 pt-2 pb-2 text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center" data-ajax-cart-quantity-input="{{ item_index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
+                                                    <a class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-plus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                                        </svg>          
+                                                    </a>
+                                                </ajax-cart-quantity> 
+                                            </div>
+
+                                            <!-- data-ajax-cart-errors for error messages -->
+                                            <div data-ajax-cart-errors="{{ item.key }}"></div>
+                                                                                            
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="relative final__line-price text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                                    {{ item.original_price | times: item.quantity  | money }} 
+                                </td>
+                                <td class="remove__cart-product text-center text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal px-6 py-4">
+                                    <a href="{{ item.url_to_remove }}" class="flex justify-center items-center font-medium text-gray-500 hover:underline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <h2 class="text-lg lg:text-3xl">Your Cart is empty!</h2>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 justify-end items-start">
+                <div class="w-1/2"></div>
+                <div class="cart__calculate border-t border-gray-200 px-4 py-6 sm:px-6">
+                    <h3 class="text-[30px] leading-[41px] text-[#000000] font-semibold">Cart Totals</h3>
+                    <p class="mt-0.5 text-[14px] leading-[19px] text-[#000000] font-normal">Taxes, discounts and shipping calculated at checkout</p>
+                    <div class="border-t my-[21px]"></div>
+                    <div class="cart_subtotal flex justify-between text-[17px] leading-[22px] text-[#000000] font-semibold my-4">
+                        <dt>Estimated total</dt>
+                        <dd class="relative">{{ cart.total_price | money_with_currency }}<span class="js-ajax-cart-processin cart__update-loader mx-2 mt-2"></span></dd>
+                        
+                    </div>
+                    <div class="mt-6">
+                        <a href="#" type="submit" name="checkout" value="Checkout" class="flex items-center justify-center rounded-md border border-transparent bg-[#373738] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-500">Checkout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </section>
 
 

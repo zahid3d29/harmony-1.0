@@ -20,7 +20,7 @@
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link href="//fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=Neue+Haas+Unica+W1G" rel="stylesheet">
-    <link href="https://db.onlinewebfonts.com/c/c10b8c44adcd28d073240edf9ebf72af?family=NeuzeitS+Book" rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/c10b8c44adcd28d073240edf9ebf72af?family=NeuzeitS+Book" rel="stylesheet">
 
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -87,9 +87,41 @@
         --font-heading-weight: {{ settings.heading_font_wieght }};
         --font-heading-scale: {{ settings.heading_font_scale }}px;
       }
+
+      .cart__update-loader {
+        opacity: 1;
+        transition: opacity .2s;
+      }
+
+      /* Make the cart content look visually disabled while updating */
+      html.js-ajax-cart-processing  {
+        opacity: .6;
+      }
+
+      /* Show a loading indicator */
+      html.js-ajax-cart-processing .cart__update-loader:before {
+        content: ' ';
+        display: inline-block;
+        width: 15px; 
+        height: 15px; 
+        background-image: url(https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Spinning_arrows.gif?v=1716187034);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     {% endstyle %}
 
     
+    {% comment %} Somewhere in layout/theme.liquid {% endcomment %}
+    <script type="application/json" data-ajax-cart-initial-state>
+      {{ cart | json }}
+    </script>
+
+    <script type="module">
+      import '{{ "liquid-ajax-cart-v2.1.0.js" | asset_url }}';
+    </script>
+
+
   </head>
   <body>
 

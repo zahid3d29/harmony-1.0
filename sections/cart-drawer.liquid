@@ -13,12 +13,10 @@
 {% endstyle %} 
 
 
-
-
-<div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-    <div class="fixed inset-0 overflow-hidden">
-        <div class="absolute inset-0 overflow-hidden">
+<div class="relative z-10 my-ajax-cart" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <div class="fixed hidden inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <div class="fixed hidden inset-0 overflow-hidden">
+        <div class="absolute hidden inset-0 overflow-hidden">
             <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                 <div class="pointer-events-auto w-screen max-w-md">
                     <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
@@ -32,23 +30,24 @@
                                     <span aria-hidden="true" class="cart__item-count h-[30px] w-[30px] py-1 px-1.5 text-[12px] text-[#000000] bg-[#D0BAAC] rounded-full border-2 border-white">{{ cart.item_count }}</span>
                                 </div>
                                 <div class="ml-3 flex h-7 items-center">
-                                    <button type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                    <a href="javascript:void(0)" type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
                                         <span class="absolute -inset-0.5"></span>
                                         <span class="sr-only">Close panel</span>
                                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                         </svg>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
 
                             <div class="mt-8">
                                 <div class="flow-root">
                                     <ul role="list" class="-my-6 divide-y divide-gray-200">
+                                    {% form 'cart', cart %} 
                                         {% for item in cart.items %}
                                         <li class="flex py-6">
                                             <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <img src="{{ item.image |  image_url: master  }}" width="24" height="auto" alt="{{ item.title }}" class="h-full w-full object-cover object-center">
+                                                <img src="{{ item.image | image_url: master  }}" width="24" height="auto" alt="{{ item.title }}" class="h-full w-full object-cover object-center">
                                             </div>
                                             <div class="ml-4 flex flex-1 flex-col">
                                                 <div>
@@ -58,7 +57,7 @@
                                                         </h3>
                                                         <p class="item__final-price text-[13px] leading-[17px] text-[#000000] font-normal ml-4">{{ item.final_line_price | money }}</p>
                                                     </div>
-                                                    {% comment %} <p class="text-[12px] leading-[16px] text-[#000000] font-normal opacity-70 mt-1">500gm</p> {% endcomment %}
+
                                                     <!-- Variant Options -->
                                                     {% if item.variant.title != 'Default Title' %}
                                                         {% for option_index in (0..item.product.options.size) %}
@@ -87,92 +86,17 @@
                                                 </div>
                                             </div>
                                             <div class="relative ml-3 flex col-start-3 h-4 items-center justify-center">
-                                                <button type="button" class="absolute top-[2.5rem] items-center justify-center -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                                <a href="{{ item.url_to_remove }}" type="button" class="absolute top-[2.5rem] items-center justify-center -m-2 p-2 text-gray-400 hover:text-gray-500">
                                                     <span class="absolute -inset-0.5"></span>
                                                     <span class="sr-only">Close panel</span>
                                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                                     </svg>
-                                                </button>
+                                                </a>
                                             </div>
                                         </li>
                                         {% endfor %}
-                                        {% comment %} <li class="flex py-6">
-                                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Avatar.png?v=1714540828" width="24" height="auto" alt="product-image" class="h-full w-full object-cover object-center">
-                                            </div>
-                                            <div class="ml-4 flex flex-1 flex-col">
-                                                <div>
-                                                    <div class="flex justify-between text-base font-medium text-gray-900">
-                                                        <h3 class="text-[16px] leading-[21px] text-[#000000] font-normal">
-                                                            <a href="#">Throwback Hip Bag</a>
-                                                        </h3>
-                                                        <p class="text-[13px] leading-[17px] text-[#000000] font-normal ml-4">$90.00</p>
-                                                    </div>
-                                                    <p class="text-[12px] leading-[16px] text-[#000000] font-normal opacity-70 mt-1">100gm</p>
-                                                </div>
-                                                <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-500">Qty 1</p>
-
-                                                    <div class="flex">                                               
-                                                        <form class="drawer__product-qyt max-w-xs mx-auto">
-                                                            <div class="relative flex items-center -mb-2">
-                                                                <button type="button" onclick="countDown('counterinput2')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">-</button>
-                                                                <input type="number" id="counterinput2" value="1" class="max-w-[3rem] px-0 pt-2 pb-2 border-0 bg-transparent text-[12px] leading-[16px] text-[#000000] font-normal focus:outline-none focus:ring-0 text-center">
-                                                                <button type="button" onclick="countUp('counterinput2')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">+</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative ml-3 flex col-start-3 h-4 items-center justify-center">
-                                                <button type="button" class="absolute top-[2.5rem] items-center justify-center -m-2 p-2 text-gray-400 hover:text-gray-500">
-                                                    <span class="absolute -inset-0.5"></span>
-                                                    <span class="sr-only">Close panel</span>
-                                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </li>
-                                        <li class="flex py-6">
-                                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Image_2.png?v=1714467557" width="24" height="auto" alt="product-image" class="h-full w-full object-cover object-center">
-                                            </div>
-                                            <div class="ml-4 flex flex-1 flex-col">
-                                                <div>
-                                                    <div class="flex justify-between text-base font-medium text-gray-900">
-                                                        <h3 class="text-[16px] leading-[21px] text-[#000000] font-normal">
-                                                            <a href="#">Throwback Hip Bag</a>
-                                                        </h3>
-                                                        <p class="text-[13px] leading-[17px] text-[#000000] font-normal ml-4">$90.00</p>
-                                                    </div>
-                                                    <p class="text-[12px] leading-[16px] text-[#000000] font-normal opacity-70 mt-1">300ml</p>
-                                                </div>
-                                                <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-500">Qty 1</p>
-
-                                                    <div class="flex">                                               
-                                                        <form class="drawer__product-qyt max-w-xs mx-auto">
-                                                            <div class="relative flex items-center -mb-2">
-                                                                <button type="button" onclick="countDown('counterinput3')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">-</button>
-                                                                <input type="number" id="counterinput3" value="1" class="max-w-[3rem] px-0 pt-2 pb-2 border-0 bg-transparent text-[12px] leading-[16px] text-[#000000] font-normal focus:outline-none focus:ring-0 text-center">
-                                                                <button type="button" onclick="countUp('counterinput3')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">+</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="relative ml-3 flex col-start-3 h-4 items-center justify-center">
-                                                <button type="button" class="absolute top-[2.5rem] items-center justify-center -m-2 p-2 text-gray-400 hover:text-gray-500">
-                                                    <span class="absolute -inset-0.5"></span>
-                                                    <span class="sr-only">Close panel</span>
-                                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </li> {% endcomment %}
+                                    {% endform %}
                                     </ul>
                                 </div>
                             </div>
@@ -187,13 +111,11 @@
                             <div class="text-[14px] leading-[19px] text-[#000000] font-normal">Taxes and shipping calculated at checkout</div>
                             <div class="flex justify-between text-base font-medium text-gray-900 mt-[20px]">
                                 <div class="text-[19px] leading-[24px] text-[#000000] font-normal">Subtotal</div>
-                                <p class="cart__total-price">{{ cart.total_price | money }}</p>
+                                <p class="cart__total-price">{{ cart.items_subtotal_price | money }}</p>
                             </div>
                             <div class="mt-6">
                                 <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-[#373738] px-6 py-3 text-[17px] leading-[21px] text-[#F7F4ED] font-normal shadow-sm hover:bg-gray-500">Checkout</a>
                             </div>
-                            <button onclick="window.location.href='/checkout'">Go to Checkout</button>
-
                             <div class="py-6 flex justify-center text-center">
                                 <a href="{{ routes.cart_url }}" type="button" class="text-[17px] leading-[21px] text-[#000000] font-normal hover:text-gray-500">
                                     View Cart

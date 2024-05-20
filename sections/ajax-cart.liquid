@@ -1,0 +1,74 @@
+{% comment %} sections/my-cart.liquid {% endcomment %}
+
+<form action="{{ routes.cart_url }}" method="post">
+  
+  <!-- Add the data-ajax-cart-section attribute 
+  to a container that must be re-rendered 
+  when the user's cart gets changed -->
+  <div data-ajax-cart-section>
+    <h2>Cart</h2>
+    
+    <div data-ajax-cart-section-scroll>
+      {% for item in cart.items %}
+        {% assign item_index = forloop.index %}
+        <hr />  
+        <div><a href="{{ item.url }}">{{ item.title }}</a></div>
+        <div>Price: {{ item.final_price | money }}</div>
+
+        <div>
+          Quantity:
+          {% comment %} <span class="js-ajax-cart-processing my-cart__items:before"></span> {% endcomment %}
+          <!-- Wrap the quantity control in the <ajax-cart-quantity> custom tag -->
+          <ajax-cart-quantity>
+            <!-- Add the data-ajax-cart-quantity-minus attribute to the "Minus" button -->
+            <a data-ajax-cart-quantity-minus
+              href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+              Minus one 
+            </a>
+          
+            <!-- Add the data-ajax-cart-quantity-input attribute to quantity input fields -->
+            <input data-ajax-cart-quantity-input="{{ item_index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
+
+            <!-- Add the data-ajax-cart-quantity-plus attribute to the "Plus" button -->
+            <a data-ajax-cart-quantity-plus
+              href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+              Plus one 
+            </a>
+          </ajax-cart-quantity>
+        </div>
+        
+        <!-- Place a data-ajax-cart-errors container for error messages -->
+        <div data-ajax-cart-errors="{{ item.key }}"></div>
+
+        <div class="relative js-ajax-cart-processing">Total: <strong>{{ item.final_line_price | money }}</strong><span class="js-ajax-cart-processin cart__update-loader mx-2 mt-4"></span></div>
+      {% endfor %}
+    </div>
+    
+    <button type="submit" name="checkout">
+      Checkout — {{ cart.total_price | money_with_currency }}
+    </button> 
+  </div>
+
+</form>
+
+
+{% schema %}
+{
+    "name": "Ajax Cart",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Cart"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Ajax Cart",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
+    
