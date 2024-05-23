@@ -2,13 +2,13 @@
   "sections": {
     "ajax_cart_6bFt8A": {
       "type": "ajax-cart",
-      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
     "main": {
       "type": "product-main",
+      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
