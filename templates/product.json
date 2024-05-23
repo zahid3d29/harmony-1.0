@@ -9,14 +9,12 @@
     },
     "main": {
       "type": "product-main",
-      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
     "product_how_use_crUGaT": {
       "type": "product-how-use",
-      "disabled": true,
       "settings": {
         "heading": "Cart{{ product.metafields.custom.zhd_product_option_length_13.value }}"
       }
@@ -27,25 +25,34 @@
         "block_1_PVkWaV": {
           "type": "block-1",
           "settings": {
-            "heading": "Description"
+            "heading": "Description",
+            "content_to_show": "description",
+            "content": "",
+            "page": ""
           }
         },
         "block_2_qaaUeL": {
           "type": "block-2",
           "settings": {
-            "heading": "How to Use"
+            "heading": "How to Use",
+            "content": "",
+            "page": ""
           }
         },
         "block_3_fdaqHR": {
           "type": "block-3",
           "settings": {
-            "heading": "Ingredients"
+            "heading": "Ingredients",
+            "content": "",
+            "page": ""
           }
         },
         "block_4_JJW8Ly": {
           "type": "block-4",
           "settings": {
-            "heading": "Delivery & Return"
+            "heading": "Delivery & Return",
+            "content": "",
+            "page": ""
           }
         }
       },
@@ -56,6 +63,8 @@
         "block_4_JJW8Ly"
       ],
       "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
