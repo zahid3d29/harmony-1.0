@@ -66,26 +66,20 @@
           {
             "type": "color",
             "id": "button",
-            "label": "Button BG",
+            "label": "Button",
             "default": "#121212"
           },
           {
             "type": "color",
             "id": "button_label",
-            "label": "Button label",
+            "label": "Button Label",
             "default": "#FFFFFF"
           },
           {
             "type": "color",
             "id": "secondary_button_label",
-            "label": "Secondary Button Label",
+            "label": "Secondary Button label",
             "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "border_color",
-            "label": "Border",
-            "default": "#FFFAF4"
           },
           {
             "type": "color",
@@ -277,6 +271,156 @@
         "id": "social_tumblr_link",
         "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+      }
+    ]
+  },
+  {
+    "name": "Badge",
+    "settings": [
+      {
+        "type": "range",
+        "id": "badge_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Badge Corder Radius",
+        "default": 40
+      },
+      {
+        "type": "color_scheme",
+        "id": "sale_badge_color_scheme",
+        "label": "Sale Badge Color",
+        "default": "scheme-2"
+      },
+      {
+        "type": "color_scheme",
+        "id": "sold_out_badge_color_scheme",
+        "label": "Sold Out Badge Color",
+        "default": "scheme-1"
+      },
+      {
+        "type": "color_scheme",
+        "id": "sale_offer_badge_color_scheme",
+        "label": "Sale Offer Badge Color",
+        "default": "scheme-1"
+      }
+    ]
+  },
+  {
+    "name": "Product Card",
+    "settings": [
+      {
+        "type": "select",
+        "id": "product_card_style",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "card",
+            "label": "Card"
+          }
+        ],
+        "default": "standard",
+        "label": "Standard"
+      },
+      {
+        "type": "select",
+        "id": "product_card_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "label": "Left"
+      },
+      {
+        "type": "color_scheme",
+        "id": "product_card_color_scheme",
+        "label": "Card Color",
+        "default": "scheme-1"
+      },
+      {
+        "type": "color_scheme",
+        "id": "product_card_overlay_color_scheme",
+        "label": "Card Overlay Color",
+        "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "Border Style"
+      },
+      {
+        "type": "color",
+        "id": "product_card_border_color",
+        "label": "Border Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "range",
+        "id": "product_card_border_thickness",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Border Thickness",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "product_card_border_opacity",
+        "min": 0,
+        "max": 90,
+        "step": 10,
+        "unit": "px",
+        "label": "Border Opacity",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "product_card_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Border Radius",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Card Spacing"
+      },
+      {
+        "type": "range",
+        "id": "product_card_horizontal_offset",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Horizontal Offset",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "product_card_vertical_offset",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Vertical Offset",
+        "default": 10
       }
     ]
   }

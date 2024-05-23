@@ -1,0 +1,57 @@
+<section id="harmony--{{ section.id }}">
+  <div class="bg-white">
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <h2 class="section__heading text-[67px] leading-[72px] font-bold tracking-tight text-[#0000000]">Our Collections</h2>
+
+      <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+        {% for collection in collections %}
+        <div class="group relative">
+          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden  bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+            {% if collection.image %}
+              <img src="{{ collection.image | image_url: width: 450, height: 450 | image_tag: collection.image.alt }}" alt="{{ collection.image.alt }}" class="object-cover object-center lg:h-full lg:w-full">
+            {% elsif collection.products.size > 0 and collection.products.first.image %}
+              {% assign alt = collection.title | escape %}
+              <img src="{{ collection.products.first.image | image_url: width: 450, height: 450 | image_tag: alt }}" alt="{{ collection.image.alt }}" class="object-cover object-center lg:h-full lg:w-full">
+            {% else %}
+              <!-- Fallback if no collection image and no product image -->
+              <img src="https://via.placeholder.com/450" alt="{{ collection.title | escape }}" class="object-cover w-full h-full">
+            {% endif %}
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="collection__title text-[16px] leading-[22px] font-semibold text-[#000000]">
+                <a href="{{ collection.url }}">
+                  <span aria-hidden="true" class="absolute inset-0"></span>
+                  {{ collection.title  }}
+                </a>
+              </h3>
+            </div>
+            <div class="products__count text-[13px] leading-[18px] text-[#000000]">({{ collection.all_products_count }})</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection List",
+  "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Cart"
+      }
+  ],
+  "presets": [
+      {
+        "name": "Collection List",
+        "category": "Harmony Sections"
+      }
+  ]
+}
+{% endschema %}
+        

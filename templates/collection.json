@@ -1,23 +1,13 @@
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
-      "disabled": true,
+    "collection": {
+      "type": "collection",
       "settings": {
-        "heading": "",
-        "instruction_1": "",
-        "instruction_2": ""
-      }
-    },
-    "nf_theme_collections_PmTwMV": {
-      "type": "NFTheme__collections",
-      "settings": {
-        "heading": ""
+        "heading": "text"
       }
     }
   },
   "order": [
-    "main",
-    "nf_theme_collections_PmTwMV"
+    "collection"
   ]
 }

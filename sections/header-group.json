@@ -22,6 +22,7 @@
         "announcement-bar-0",
         "announcement_q9x6MF"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-4",
         "show_border": true,
@@ -36,6 +37,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "mega_label": "",
         "mega_menu": "main-menu",
@@ -49,6 +51,11 @@
         "search": true,
         "cart": true,
         "Profile": true,
+        "mob_slider": "",
+        "mob_menu": "",
+        "mob_s_menu": "",
+        "mob_newsletter": false,
+        "mob_social": false,
         "padding_top": 0,
         "padding_bottom": 36
       }

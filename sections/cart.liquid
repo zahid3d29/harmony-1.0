@@ -1,12 +1,12 @@
 {% style %} 
     /* Chrome, Safari, Edge, Opera */
-    .drawer__product-qyt input::-webkit-outer-spin-button,
-    .drawer__product-qyt input::-webkit-inner-spin-button {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
     /* Firefox */
-    .drawer__product-qyt input[type=number] {
+    input[type=number] {
         -moz-appearance: textfield;
     }
 
@@ -80,14 +80,14 @@
                                         <div class="flex">                                               
                                             <div class="relative flex items-center -mb-2">
                                                 <ajax-cart-quantity>
-                                                    <a class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-minus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-                                                    </svg>                                              
+                                                    <a class="flex-shrink-0 inline-flex items-center justify-center h-4 w-4 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-minus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                                        </svg>                                              
                                                     </a>
-                                                    <input class="max-w-[3rem] px-0 pt-2 pb-2 text-[16px] leading-[35px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center" data-ajax-cart-quantity-input="{{ item_index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
-                                                    <a class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-plus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <input class="max-w-[3rem] px-0 pt-1 pb-1 text-[16px] leading-[22px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center" data-ajax-cart-quantity-input="{{ item_index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
+                                                    <a class="flex-shrink-0 inline-flex items-center justify-center h-4 w-4 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-plus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                                         </svg>          
                                                     </a>

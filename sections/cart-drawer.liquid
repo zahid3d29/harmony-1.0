@@ -1,36 +1,36 @@
 
 {% style %} 
     /* Chrome, Safari, Edge, Opera */
-    .drawer__product-qyt input::-webkit-outer-spin-button,
-    .drawer__product-qyt input::-webkit-inner-spin-button {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
     /* Firefox */
-    .drawer__product-qyt input[type=number] {
+    input[type=number] {
         -moz-appearance: textfield;
     }
 {% endstyle %} 
 
 
-<div class="relative z-10 my-ajax-cart" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-    <div class="fixed hidden inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-    <div class="fixed hidden inset-0 overflow-hidden">
-        <div class="absolute hidden inset-0 overflow-hidden">
+<div class="cart__drawer-wrapper relative z-10" data-ajax-cart-section>
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
             <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                 <div class="pointer-events-auto w-screen max-w-md">
                     <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                         <div class="flex items-start justify-between border-b px-4 sm:px-6 py-2 border-gray-300">
-                            <h5 class="text-[14px] leading-[19px] text-[#000000] font-normal" id="slide-over-title">Enjoy free shipping for your first order</h5>
+                            <h5 class="cart_drawer-ticker text-[14px] leading-[19px] text-[#000000] font-normal">Enjoy free shipping for your first order</h5>
                         </div>
                         <div class="flex-1 overflow-y-auto px-4 pb-4 sm:px-6">
                             <div class="flex items-center justify-between border-b py-4 border-gray-300">
                                 <div class="flex items-center">
-                                    <h2 class="text-[25px] leading-[35px] text-[#000000] font-normal mr-4" id="slide-over-title">Cart</h2>
-                                    <span aria-hidden="true" class="cart__item-count h-[30px] w-[30px] py-1 px-1.5 text-[12px] text-[#000000] bg-[#D0BAAC] rounded-full border-2 border-white">{{ cart.item_count }}</span>
+                                    <h2 class="drawer__label text-[25px] leading-[35px] text-[#000000] font-normal mr-4" id="slide-over-title">Cart</h2>
+                                    <span class="drawer__cart-count flex justify-center items-center cart__item-count h-[30px] w-auto min-w-[30px] py-1 px-1 text-[12px] text-[#000000] bg-[#D0BAAC] rounded-full border-2 border-white">{{ cart.item_count }}</span>
                                 </div>
                                 <div class="ml-3 flex h-7 items-center">
-                                    <a href="javascript:void(0)" type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                    <a href="javascript:void(0)" type="button" class="drawer__close-btn relative -m-2 p-2 text-gray-400 hover:text-gray-500">
                                         <span class="absolute -inset-0.5"></span>
                                         <span class="sr-only">Close panel</span>
                                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -40,22 +40,23 @@
                                 </div>
                             </div>
 
-                            <div class="mt-8">
+                            <div class="drawer__cart-items mt-8">
                                 <div class="flow-root">
-                                    <ul role="list" class="-my-6 divide-y divide-gray-200">
+                                    <ul role="list" class="data-ajax-cart-section-scroll -my-6 divide-y divide-gray-200">
                                     {% form 'cart', cart %} 
                                         {% for item in cart.items %}
-                                        <li class="flex py-6">
-                                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                        {% assign item_index = forloop.index %}
+                                        <li class="drawer__cart-item flex py-6">
+                                            <div class="cart__product-img h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                 <img src="{{ item.image | image_url: master  }}" width="24" height="auto" alt="{{ item.title }}" class="h-full w-full object-cover object-center">
                                             </div>
                                             <div class="ml-4 flex flex-1 flex-col">
                                                 <div>
                                                     <div class="flex justify-between">
-                                                        <h3 class="text-[16px] leading-[21px] text-[#000000] font-normal">
+                                                        <h3 class="cart__item-title text-[16px] leading-[21px] text-[#000000] font-normal">
                                                             <a href="{{ item.product.url }}">{{ item.product.title }}</a>
                                                         </h3>
-                                                        <p class="item__final-price text-[13px] leading-[17px] text-[#000000] font-normal ml-4">{{ item.final_line_price | money }}</p>
+                                                        <p class="cart__item-final-price text-[13px] leading-[17px] text-[#000000] font-normal ml-4">{{ item.final_line_price | money_with_currency }}</p>
                                                     </div>
 
                                                     <!-- Variant Options -->
@@ -63,7 +64,7 @@
                                                         {% for option_index in (0..item.product.options.size) %}
                                                             {% assign option_name = item.product.options[option_index] %}
                                                             {% assign option_value = item.variant.options[option_index] %}
-                                                            <div class="text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1">
+                                                            <div class="cart__item-options text-[12px] leading-[16px] text-[#000000] opacity-50 mt-1">
                                                                 {% if option_name %}
                                                                 <dt class="inline font-normal">{{ option_name }}: </dt>
                                                                 <dd class="inline font-semibold px-1">{{ option_value }}</dd>
@@ -73,20 +74,32 @@
                                                     {% endif %}
                                                 </div>
                                                 <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <p class="text-gray-500">Qty {{ item.quantity }}</p>
+                                                    <p class="cart__item-qty-label text-gray-500">Qty {{ item.quantity }}</p>
                                                     <div class="flex">                                               
-                                                        <form class="drawer__product-qyt max-w-xs mx-auto">
+                                                        <form class="cart__item-qty max-w-xs mx-auto">
                                                             <div class="relative flex items-center -mb-2">
-                                                                <button type="button" onclick="countDown('{{ item.product.title | remove: ' ' }}')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">-</button>
-                                                                <input type="number" id="{{ item.product.title | remove: ' ' }}" value="{{ item.quantity }}" class="max-w-[3rem] px-0 pt-2 pb-2 text-[12px] leading-[16px] text-[#000000] font-normal border-0 bg-transparent  focus:outline-none focus:ring-0 text-center">
-                                                                <button type="button" onclick="countUp('{{ item.product.title | remove: ' ' }}')" class="flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none">+</button>
+                                                                <ajax-cart-quantity>
+                                                                    <a class="cart__item-qty-minus flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-minus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | minus: 1 }}" > 
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                                                    </svg>                                              
+                                                                    </a>
+                                                                    <input class="cart__item-qty-input max-w-[3rem] px-0 pt-1 pb-1 text-[16px] leading-[19px] text-[#000000] text-opacity-80 font-normal border-0 bg-transparent focus:outline-none focus:ring-0 text-center" data-ajax-cart-quantity-input="{{ item_index }}" name="updates[]" value="{{ item.quantity }}" type="number" />
+                                                                    <a class="cart__item-qty-plus flex-shrink-0 inline-flex items-center justify-center h-5 w-5 focus:ring-transparent focus:ring-2 focus:outline-none" data-ajax-cart-quantity-plus href="{{ routes.cart_change_url }}?line={{ item_index }}&quantity={{ item.quantity | plus: 1 }}"> 
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                                                        </svg>          
+                                                                    </a>
+                                                                </ajax-cart-quantity> 
                                                             </div>
+                                                            <!-- Place a data-ajax-cart-errors container for error messages -->
+                                                            <div class="cart__item-error" data-ajax-cart-errors="{{ item.key }}"></div>
                                                         </form>                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="relative ml-3 flex col-start-3 h-4 items-center justify-center">
-                                                <a href="{{ item.url_to_remove }}" type="button" class="absolute top-[2.5rem] items-center justify-center -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                                <a href="{{ item.url_to_remove }}" type="button" class="cart__item-remove absolute top-[2.5rem] items-center justify-center -m-2 p-2 text-gray-400 hover:text-gray-500">
                                                     <span class="absolute -inset-0.5"></span>
                                                     <span class="sr-only">Close panel</span>
                                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -102,22 +115,22 @@
                             </div>
                         </div>
                         <div class="discount_offer border-t border-gray-200 px-4 py-4 sm:px-6">
-                            <div class="my-2 text-[14px] leading-[19px] text-[#000000] font-normal">Add $70 worth of items to get free shipping.</div>
+                            <div class="cart__item-discount-content my-2 text-[14px] leading-[19px] text-[#000000] font-normal">Add $70 worth of items to get free shipping.</div>
                             <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                                <div class="bg-[#D0BAAC] text-xs font-medium text-white text-center p-0.5 leading-none rounded-full" style="width: 78%"> 78%</div>
+                                <div class="cart__item-discount bg-[#D0BAAC] text-xs font-medium text-white text-center p-0.5 leading-none rounded-full" style="width: 78%"> 78%</div>
                             </div>    
                         </div>
                         <div class="drawer__footer border-t border-gray-200 px-4 py-4 sm:px-6 mt-[10px]">
-                            <div class="text-[14px] leading-[19px] text-[#000000] font-normal">Taxes and shipping calculated at checkout</div>
-                            <div class="flex justify-between text-base font-medium text-gray-900 mt-[20px]">
-                                <div class="text-[19px] leading-[24px] text-[#000000] font-normal">Subtotal</div>
-                                <p class="cart__total-price">{{ cart.items_subtotal_price | money }}</p>
+                            <div class="cart__item-msg-tax text-[14px] leading-[19px] text-[#000000] font-normal">Taxes and shipping calculated at checkout</div>
+                            <div class="cart__item-canclulate flex justify-between text-base font-medium text-gray-900 mt-[20px]">
+                                <div class="cart__item-subtotal text-[19px] leading-[24px] text-[#000000] font-normal">Subtotal</div>
+                                <div class="cart__item-total">{{ cart.total_price | money_with_currency }}<span class="js-ajax-cart-processin cart__update-loader mx-2 mt-2"></span></div>
                             </div>
                             <div class="mt-6">
-                                <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-[#373738] px-6 py-3 text-[17px] leading-[21px] text-[#F7F4ED] font-normal shadow-sm hover:bg-gray-500">Checkout</a>
+                                <a href="#" class="cart__item-chcekout flex items-center justify-center rounded-md border border-transparent bg-[#373738] px-6 py-3 text-[17px] leading-[21px] text-[#F7F4ED] font-normal shadow-sm hover:bg-gray-500">Checkout</a>
                             </div>
                             <div class="py-6 flex justify-center text-center">
-                                <a href="{{ routes.cart_url }}" type="button" class="text-[17px] leading-[21px] text-[#000000] font-normal hover:text-gray-500">
+                                <a href="{{ routes.cart_url }}" type="button" class="cart__item-viewcart text-[17px] leading-[21px] text-[#000000] font-normal hover:text-gray-500">
                                     View Cart
                                 </a>
                             </div>

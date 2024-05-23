@@ -38,27 +38,27 @@
 {% else  %}
 
 
-{%- assign collections_for_mega_menu_grid = section.settings.collections_for_mega_menu_grid -%}
-{%- for collection in collections_for_mega_menu_grid -%}
+              {%- assign collections_for_mega_menu_grid = section.settings.collections_for_mega_menu_grid -%}
+              {%- for collection in collections_for_mega_menu_grid -%}
 
-    <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
-                    <img
-                      src="{{ collection.featured_image | image_url }}"
-                      alt="product-image"
-                      class="object-cover object-center"
-                    >
-                  </div>
-                  <div class="product__info grid grid-cols-2 mt-[14px]">
-                    <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
-                      <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                       {{ collection.title }}
-                    </a>
-                    <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">
+                <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
+                                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                                    <img
+                                      src="{{ collection.featured_image | image_url }}"
+                                      alt="product-image"
+                                      class="object-cover object-center"
+                                    >
+                                  </div>
+                                  <div class="product__info grid grid-cols-2 mt-[14px]">
+                                    <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                                      <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                                      {{ collection.title }}
+                                    </a>
+                                    <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">
 
-           
+                          
 
-{{ collection.products_count }}
+                {{ collection.products_count }}
                     
                     </h6>
                   </div>
@@ -67,7 +67,7 @@
                    {{ collection.description  | truncatewords: 20 }}
                   </div>
                 </div>
-{%- endfor -%}
+              {%- endfor -%}
 
 
                   
@@ -120,7 +120,7 @@
   .mega_menu {
       visibility: hidden;
       height: auto;
-      top: 82px;
+      top: 5%;
       right: 0;
       left: 0;
       width: 100%;
@@ -130,3 +130,5 @@
       visibility:visible;
     }
 </style>
+
+

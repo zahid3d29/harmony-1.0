@@ -1,38 +1,5 @@
 {
   "sections": {
-    "announcement_bar_wMehh4": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_BNbPcJ": {
-          "type": "announcement",
-          "settings": {
-            "text": "<em>Welcome   <\/em> <strong>to<\/strong>   <a href=\"\/collections\/all\" title=\"All products\">our store<\/a>"
-          }
-        },
-        "announcement_CjdAhw": {
-          "type": "announcement",
-          "settings": {
-            "text": "Free shipping first order"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_BNbPcJ",
-        "announcement_CjdAhw"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-1",
-        "show_border": true,
-        "show_social": true,
-        "auto_slide": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "gdpr_T9AdaU": {
       "type": "GDPR",
       "disabled": true,
@@ -48,13 +15,6 @@
         "show_heeading": true,
         "page_title": "About us",
         "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
-      }
-    },
-    "mega_menu_QRWX77": {
-      "type": "mega-menu",
-      "disabled": true,
-      "settings": {
-        "banner_heading": "eASY Skin Care Routine"
       }
     },
     "testimonials_GtL8fm": {
@@ -198,13 +158,66 @@
       "settings": {
         "show_sale_badge": false
       }
+    },
+    "product_featured_83JMBn": {
+      "type": "product_featured",
+      "blocks": {
+        "block_nyGNUq": {
+          "type": "block",
+          "settings": {
+            "collection": "automatic"
+          }
+        },
+        "block_QArKcr": {
+          "type": "block",
+          "settings": {
+            "collection": "cream"
+          }
+        },
+        "block_jrPXcC": {
+          "type": "block",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "block_JBHAxa": {
+          "type": "block",
+          "settings": {
+            "collection": "gold"
+          }
+        }
+      },
+      "block_order": [
+        "block_nyGNUq",
+        "block_QArKcr",
+        "block_jrPXcC",
+        "block_JBHAxa"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Section tt",
+        "show_heeading": true,
+        "enable_carousel": "grid",
+        "show_price": true,
+        "show_category": true,
+        "show_reviews": true,
+        "enable_stock_badge": true,
+        "offer_badge": true,
+        "show_wishlist": true,
+        "enable_quick_view": true,
+        "products_to_show": 3,
+        "products_per_row": 4,
+        "mobile_layout": "grid",
+        "number_of_column": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "announcement_bar_wMehh4",
     "gdpr_T9AdaU",
     "page_header_69zxJW",
-    "mega_menu_QRWX77",
     "testimonials_GtL8fm",
     "swiss_cciQWT",
     "reveal_JJ7fw6",
@@ -214,6 +227,7 @@
     "page_how_Hrk6iN",
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
-    "hero_banner_yfzKPH"
+    "hero_banner_yfzKPH",
+    "product_featured_83JMBn"
   ]
 }

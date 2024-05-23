@@ -11,16 +11,15 @@
     }
   }
 {%- endstyle -%}
-
-
 <section id="harmony--{{ section.id }}" class="bg-[#FAF2DC] h-full min-h-[50px] section-{{ section.id }}-padding">
-  <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-10 px-4 md:px-10 py-1.5">
+  <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
       <div class="flex lg:flex-1">
         {% comment %} mega__menu-trigger hamburger Button  {% endcomment %}
         <button
           type="button"
-          class="hidden mega__menu-trigger lg:inline-flex items-center justify-center rounded-md text-black pt-1  openbtn" onclick="openNav()"
+          class="hidden mega__menu-trigger lg:inline-flex items-center justify-center rounded-md text-black pt-1  openbtn"
+          onclick="openNav()"
         >
           <span class="sr-only">Open</span>
           <svg
@@ -148,8 +147,6 @@
                             </li>
                           {% endif %}
                         {% endfor %}
-
-                      
                       </ul>
                     </div>
                   </li>
@@ -165,7 +162,7 @@
                       {{ main_link.title }}
                     </a>
                   </li>
-                  {% render 'mega_menu' %}
+                  {% render 'mega-menu' %}
                 </div>
               {% else %}
                 <li>
@@ -232,37 +229,38 @@
     {% comment %} (Snippets: Offcanvas-nav) Mobile menu, Offcanvas menu show/hide based on menu open state. {% endcomment %}
   </header>
 </section>
-    
-{% comment %} {% render 'offcanvas' %} {% endcomment %}
-                
+
+{% render 'offcanvas' %}
+
+
 {% schema %}
 {
-  "name": "Header",
-  "class": "section-header",
-  "settings": [
-    {
-      "type":"image_picker",
-      "label":"Logo",
-      "id":"logo"
-    },
-    {
-      "type": "text",
-      "label":"Mega Menu",
-      "id":"mega_label",
-      "info": "Write the link of title to assign mega menu"
-    },
-    {
+    "name": "Header",
+    "class": "section-header",
+    "settings": [
+      {
+        "type":"image_picker",
+        "label":"Logo",
+        "id":"logo"
+      },
+      {
+        "type": "text",
+        "label":"Mega Menu",
+        "id":"mega_label",
+        "info": "Write the link of title to assign mega menu"
+      },
+       {
       "type": "link_list",
       "id": "mega_menu",
       "label": "Mega Menu"
     },
+
     {
       "type": "collection",
       "id": "featured_collection_",
       "label": "Featured collection ",
       "info": "Featured collection for mega menu"
-    },   
-    {
+    },   {
       "type": "select",
       "id": "mega_menu_grid",
       "label": "Mega Menu Grid",
@@ -285,79 +283,105 @@
       "label": "Collections for Mega Menu Grid",
       "limit": 6
     },
-    {
-      "type": "header",
-      "content": "Header Icons"
-    },
-    {
+   {
+            "type": "header",
+            "content": "Header Icons"
+        },
+      {
+        "type": "checkbox",
+        "label":"Search Icon",
+        "id":"search"
+      },
+      {
+        "type": "checkbox",
+        "label":"Cart Icon",
+        "id":"cart"
+      },
+      {
+        "type": "checkbox",
+        "label":"Profile Icon",
+        "id":"Profile"
+      },
+       {
+            "type": "header",
+            "content": "Mobile Drawer"
+        },
+      {
+        "type": "image_picker",
+        "label":"Mobile Drawer Background",
+        "id":"mob_bg_img"
+      },
+      {
+        "type":"text",
+        "label":"Mobile Slider LAbel",
+        "id":"mob_slider"
+      },
+      {
+        "type":"link_list",
+        "label":"Mobile Main menu",
+        "id":"mob_menu"
+      },
+      {
+        "type":"link_list",
+        "label":"Mobile Secondary menu",
+        "id":"mob_s_menu"
+      },
+      {
       "type": "checkbox",
-      "label":"Search Icon",
-      "id":"search"
-    },
-    {
+      "label":"News letter",
+      "id":"mob_newsletter"
+      },
+      {
       "type": "checkbox",
-      "label":"Cart Icon",
-      "id":"cart"
-    },
-    {
-      "type": "checkbox",
-      "label":"Profile Icon",
-      "id":"Profile"
-    },
-    {
-      "type": "header",
-      "content": "Section padding"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Bottom",
-      "default": 36
-    }
-  ],
-  "presets": [
-    {
-      "name": "Header",
-      "category": "Harmony Sections"
-    }
-  ]
+      "label":"Social Icons",
+      "id":"mob_social"
+      },
+
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Top",
+            "default": 36
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Bottom",
+            "default": 36
+        }
+    ],
+    "presets": [
+        {
+        "name": "Header",
+        "category": "Harmony Sections"
+        }
+    ]
 }
 {% endschema %}
-
-
 <style>
-  div#doubleDropdown {
-    visibility: hidden;
-  }
-  div#dropdownNavbar {
-    visibility: hidden;
-  }
+        div#doubleDropdown {
+          visibility: hidden;
+      }
+      div#dropdownNavbar {
+        visibility: hidden;
+    }
   .dropdown_menu:hover  .nav__sub-menu {
-    visibility: visible !important;
+      visibility: visible !important;
   }
   .double_drop:hover .nav__sub__menu-child {
     visibility: visible !important;
   }
-  .offcanvas {
-    display: none;
-  }
-  .offcanvas.active {
-    display: block;
-  } 
 </style>
-
-{% render 'side-drawer' %}
