@@ -9,63 +9,60 @@
     },
     "main": {
       "type": "product-main",
+      "disabled": true,
       "settings": {
         "heading": "Cart"
       }
     },
-    "product_info_tabs_ezxmJk": {
+    "product_how_use_crUGaT": {
+      "type": "product-how-use",
+      "disabled": true,
+      "settings": {
+        "heading": "Cart{{ product.metafields.custom.zhd_product_option_length_13.value }}"
+      }
+    },
+    "product_info_tabs_fLwM37": {
       "type": "product-info-tabs",
       "blocks": {
-        "block_1_EadJT3": {
+        "block_1_PVkWaV": {
           "type": "block-1",
           "settings": {
-            "heading": "Who we are?"
+            "heading": "Description"
           }
         },
-        "block_2_KPMgTE": {
+        "block_2_qaaUeL": {
           "type": "block-2",
           "settings": {
-            "heading": "Our Philosophy"
+            "heading": "How to Use"
           }
         },
-        "block_3_YtjaR9": {
+        "block_3_fdaqHR": {
           "type": "block-3",
           "settings": {
-            "heading": "Message from"
+            "heading": "Ingredients"
           }
         },
-        "block_4_rTfhTL": {
+        "block_4_JJW8Ly": {
           "type": "block-4",
           "settings": {
-            "heading": "Our Commitments"
+            "heading": "Delivery & Return"
           }
         }
       },
       "block_order": [
-        "block_1_EadJT3",
-        "block_2_KPMgTE",
-        "block_3_YtjaR9",
-        "block_4_rTfhTL"
+        "block_1_PVkWaV",
+        "block_2_qaaUeL",
+        "block_3_fdaqHR",
+        "block_4_JJW8Ly"
       ],
-      "disabled": true,
       "settings": {
-        "heading": "Section Heading",
-        "show_heeading": true,
-        "page_title": "About us",
-        "page_desc": "Swiss was born from a passion for skincare and a belief in the transformative power of self-care."
-      }
-    },
-    "product_how_use_crUGaT": {
-      "type": "product-how-use",
-      "settings": {
-        "heading": "Cart{{ product.metafields.custom.zhd_product_option_length_13.value }}"
       }
     }
   },
   "order": [
     "ajax_cart_6bFt8A",
     "main",
-    "product_info_tabs_ezxmJk",
-    "product_how_use_crUGaT"
+    "product_how_use_crUGaT",
+    "product_info_tabs_fLwM37"
   ]
 }

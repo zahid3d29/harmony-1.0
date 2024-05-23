@@ -1,0 +1,27 @@
+{
+  "parent": "product.json",
+  "context": {
+    "market": "international"
+  },
+  "sections": {
+    "main": {
+      "disabled": true,
+      "settings": {
+      },
+      "blocks": {
+      }
+    },
+    "product_how_use_crUGaT": {
+      "disabled": true,
+      "settings": {
+      },
+      "blocks": {
+      }
+    }
+  },
+  "order": [
+    "ajax_cart_6bFt8A",
+    "main",
+    "product_how_use_crUGaT"
+  ]
+}

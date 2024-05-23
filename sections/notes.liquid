@@ -116,17 +116,17 @@ Home: Featured Products{
 {% endstyle %}
 
 
-<div class="product__info mt-4 flex justify-between">
-  <table class="table-auto my-6">
-    <tbody class="mt-6">
-      <tr class="my-6">
-        <td class="border-b pr-2 py-2">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-        <td class="border-b text-right pl-2">hello table Malcolm Lockyer</td>
-      </tr>
-      <tr class="my-4">
-        <td>Witchy steven smith Woman</td>
-        <td>david warner batsman The Eagles</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+{% comment %} Product count associated with a Tag  {% endcomment %}
+
+{% assign tag = 'bati' %}
+{% assign product_count = 0 %}
+
+{% for product in collection.products %}
+  {% if product.tags contains tag %}
+    {% assign product_count = product_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<p>Number of products with tag "{{ tag }}": {{ product_count }}</p>
+
+
