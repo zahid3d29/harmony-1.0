@@ -1,43 +1,13 @@
 {
   "sections": {
-    "gdpr_7pHcd8": {
-      "type": "GDPR",
-      "settings": {
-        "heading": ""
-      }
-    },
     "main": {
       "type": "collections-list",
       "settings": {
         "heading": "Cart"
       }
-    },
-    "product_featured_bVMEhV": {
-      "type": "product_featured",
-      "blocks": {
-        "block_jFrRC8": {
-          "type": "block",
-          "settings": {
-            "collection": "books"
-          }
-        }
-      },
-      "block_order": [
-        "block_jFrRC8"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "heading": "Section Heading",
-        "show_heeading": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
-    "gdpr_7pHcd8",
-    "main",
-    "product_featured_bVMEhV"
+    "main"
   ]
 }
