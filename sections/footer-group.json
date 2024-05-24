@@ -2,8 +2,20 @@
   "name": "Footer",
   "type": "footer",
   "sections": {
+    "footer_7wTxV3": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "language_c": true,
+        "currency_c": true,
+        "payment_i": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
   },
   "order": [
-
+    "footer_7wTxV3"
   ]
 }

@@ -1,3 +1,20 @@
+{% comment %} schema settings color  {% endcomment %}
+{% for scheme in settings.color_schemes %}
+  {% style %}
+    .harmony__color-{{ scheme.id }}{
+      background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+      color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+    }
+    .section-padding{{section.id}} {
+      padding-top:{{section.settings.padding_top}}px;
+      padding-bottom:{{section.settings.padding_bottom}}px;
+    }
+  {% endstyle %}
+{% endfor %}
+
+{% comment %} signature: latest file  {% endcomment %}
+
+
 <footer
   id="harmony--{{ section.id }}"
   class="section__footer harmony__color-{{ section.settings.color_scheme }}  "
@@ -401,18 +418,3 @@
 }
 {% endschema %}
 
-{% comment %} schema settings color  {% endcomment %}
-{% for scheme in settings.color_schemes %}
-  {% style %}
-    .harmony__color-{{ scheme.id }}{
-      background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-      color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-    }
-    .section-padding{{section.id}} {
-      padding-top:{{section.settings.padding_top}}px;
-      padding-bottom:{{section.settings.padding_bottom}}px;
-    }
-  {% endstyle %}
-{% endfor %}
-
-{% comment %} signature: latest file  {% endcomment %}

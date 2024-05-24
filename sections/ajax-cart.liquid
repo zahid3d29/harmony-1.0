@@ -1,3 +1,48 @@
+
+ {% comment %} Test code  {% endcomment %}
+ <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .product { display: flex; flex-direction: column; align-items: center; }
+    .product img { max-width: 100%; height: auto; }
+    .product-info { text-align: center; margin-top: 20px; }
+    .product-title { font-size: 24px; margin-bottom: 10px; }
+    .product-price { font-size: 20px; color: #555; margin-bottom: 20px; }
+    .add-to-cart { background-color: #5cb85c; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    .add-to-cart:hover { background-color: #4cae4c; }
+    /* When an Ajax request is in progress */
+.js-ajax-cart-processing .my-loading-indicator {
+  display: block;
+}
+</style>
+
+
+<div class="product">
+    <!-- Product Image -->
+    <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+
+    <!-- Product Information -->
+    <div class="product-info">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <p class="product-price">{{ product.price | money }}</p>
+
+        <ajax-cart-product-form>
+            {% form 'product', product %}
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              <button type="submit" class="add-to-cart">Add to Cart</button>
+            {% endform %}
+        </ajax-cart-product-form>
+    </div>
+</div>
+
+<div class="my-ajax-cart" data-ajax-cart-section>
+  <h2>Cart ({{ cart.item_count }})</h2>
+</div>
+
+{% comment %} Test code end  {% endcomment %}
+
+
+
+
 {% comment %} sections/my-cart.liquid {% endcomment %}
 
 <form action="{{ routes.cart_url }}" method="post">
@@ -43,14 +88,26 @@
         <div class="relative js-ajax-cart-processing">Total: <strong>{{ item.final_line_price | money }}</strong><span class="js-ajax-cart-processin cart__update-loader mx-2 mt-4"></span></div>
       {% endfor %}
     </div>
-    
-    <button type="submit" name="checkout">
+
+<a href="{{ routes.cart_url }}" class="inline-block h-auto w-auto bg-gray-950 text-gray-100 py-2 px-2 my-4 text-center text-md">
+  View Cart
+</a>
+  
+    {% comment %} <button type="submit" name="checkout" class="inline-block h-auto w-auto bg-red-950 text-gray-100 py-2 px-2 my-4 text-center text-md">
       Checkout — {{ cart.total_price | money_with_currency }}
-    </button> 
+    </button>  {% endcomment %}
+
+
   </div>
 
 </form>
 
+
+<form id="checkout-form" action="/checkout" method="post">
+  <button type="submit" name="checkout" class="inline-block h-auto w-auto bg-red-950 text-gray-100 py-2 px-2 my-4 text-center text-md">
+    Checkout — {{ cart.total_price | money_with_currency }}
+  </button>
+</form>
 
 {% schema %}
 {
