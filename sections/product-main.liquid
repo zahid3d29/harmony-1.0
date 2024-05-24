@@ -1,45 +1,4 @@
-{% comment %} Test code  {% endcomment %}
 
-<style>
-      body { font-family: Arial, sans-serif; margin: 20px; }
-      .product { display: flex; flex-direction: column; align-items: center; }
-      .product img { max-width: 100%; height: auto; }
-      .product-info { text-align: center; margin-top: 20px; }
-      .product-title { font-size: 24px; margin-bottom: 10px; }
-      .product-price { font-size: 20px; color: #555; margin-bottom: 20px; }
-      .add-to-cart { background-color: #5cb85c; color: white; padding: 10px 20px; border: none; cursor: pointer; }
-      .add-to-cart:hover { background-color: #4cae4c; }
-      /* When an Ajax request is in progress */
-  .js-ajax-cart-processing .my-loading-indicator {
-    display: block;
-  }
-</style>
-
-<!--
-  <div class="product">
-
-      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
-
-
-      <div class="product-info">
-        <h1 class="product-title">{{ product.title }}</h1>
-        <p class="product-price">{{ product.price | money }}</p>
-
-        <ajax-cart-product-form>
-          {% form 'product', product %}
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-            <button type="submit" class="add-to-cart">Add to Cart</button>
-          {% endform %}
-        </ajax-cart-product-form>
-      </div>
-    </div>
-
-
-  <div class="my-ajax-cart" data-ajax-cart-section>
-    <h2>Cart ({{ cart.item_count }})</h2>
-  </div>
--->
-{% comment %} Test code end  {% endcomment %}
 
 <section id="harmony--{{ section.id }}">
   <div class="bg-[#FFFAF4]">
@@ -617,8 +576,15 @@
   ]
 }
 {% endschema %}
+
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
-                    //サムネイル
   var sliderThumbnail = new Swiper('.slider-thumbnail', {
     slidesPerView: 1,
     freeMode: true,
@@ -626,7 +592,7 @@
     watchSlidesProgress: true,
   });
 
-  //スライダー
+
   var slider = new Swiper('.slider', {
 
     thumbs: {
