@@ -9,6 +9,7 @@
       animation: fadeEffect 2s;
   }
 </style>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -22,6 +23,9 @@
     }
   }
 {%- endstyle -%}
+
+
+
 <section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
   <div class="mx-auto max-w-screen-2xl px-0 section-{{ section.id }}-padding lg:px-0">
     <div class="mx-auto">
@@ -44,11 +48,10 @@
           {%- when 'block-1' -%}
             <div id="pd_{{ block.settings.heading }}" class="aboutTabcontent page_content-main py-2" style="display:  {% if forloop.index == 1 %}grid{% endif %}">
               <div class="mx-auto w-full">
-               
                 <div class="flex mx-auto flex-col  justify-between px-6 md:px-10">
                   <div class="flex py-8 md:py-0 md:pr-8 md:pt-4">
                     <div class="block__content">
-                      {% if  block.settings.content_to_show =='description'  %}
+                      {% if block.settings.content_to_show == 'description'  %}
                         {{ product.description }}
                       {% else  %}
                         {%- if block.settings.content != blank -%}
@@ -57,18 +60,16 @@
                             {% assign page_handle = block.settings.page %}
                             {% assign page = pages[page_handle] %}
                             {% if page %}
-                                <h1>{{ page.title }}</h1>
-                                <div>{{ page.content }}</div>
+                               {{ page.content }}
                             {% else %}
                                 <p>page is empty!</p>
                             {% endif %}
                         {%- else -%}
-                            "No contetn set yet!".
+                            "No content set yet!".
                         {%- endif -%}
                       {% endif %}
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -84,8 +85,7 @@
                             {% assign page_handle = block.settings.page %}
                             {% assign page = pages[page_handle] %}
                             {% if page %}
-                                <h1>{{ page.title }}</h1>
-                                <div>{{ page.content }}</div>
+                                {{ page.content }}
                             {% else %}
                                 <p>page is empty!</p>
                             {% endif %}
@@ -101,7 +101,7 @@
             <div id="pd_{{ block.settings.heading }}" class="aboutTabcontent page_content-main py-2" >
               <div class="mx-auto w-full">
                
-                <div class="flex mx-auto flex-col  justify-between px-6 md:px-10">
+                <div class="flex mx-auto flex-col justify-between px-6 md:px-10">
                   <div class="flex py-8 md:py-0 md:pr-8 md:pt-4">
                     <div class="block__content">
                         {%- if block.settings.content != blank -%}
@@ -110,8 +110,7 @@
                             {% assign page_handle = block.settings.page %}
                             {% assign page = pages[page_handle] %}
                             {% if page %}
-                                <h1>{{ page.title }}</h1>
-                                <div>{{ page.content }}</div>
+                                {{ page.content }}
                             {% else %}
                                 <p>page is empty!</p>
                             {% endif %}
@@ -137,8 +136,7 @@
                             {% assign page_handle = block.settings.page %}
                             {% assign page = pages[page_handle] %}
                             {% if page %}
-                                <h1>{{ page.title }}</h1>
-                                <div>{{ page.content }}</div>
+                              {{ page.content }}
                             {% else %}
                                 <p>page is empty!</p>
                             {% endif %}
@@ -159,165 +157,165 @@
 
 {% schema %}
 {
-    "name": "Product Info Tabs",
-    "settings": [
-        {
-            "type": "header",
-            "content": "Section padding"
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 100,
-            "step": 4,
-            "unit": "px",
-            "label": "Padding Top",
-            "default": 36
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 100,
-            "step": 4,
-            "unit": "px",
-            "label": "Padding Bottom",
-            "default": 36
-        }
+  "name": "Product Info Tabs",
+  "settings": [
+      {
+          "type": "header",
+          "content": "Section padding"
+      },
+      {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 36
+      },
+      {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 36
+      }
+  ],
+  "blocks":[
+      {
+        "type":"block-1",
+        "name": "Description",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Description"
+          },
+          {
+    "type": "select",
+    "id": "content_to_show",
+    "label": "Content to show",
+    "options": [
+      {
+        "value": "description",
+        "label": "Description"
+      },
+      {
+        "value": "custom_content",
+        "label": "Custom Content"
+      }
     ],
-    "blocks":[
-        {
-          "type":"block-1",
-          "name": "Description",
-          "limit": 1,
-          "settings": [
-            {
-              "type": "text",
-              "id": "heading",
-              "label": "Heading",
-              "default": "Description"
-            },
-            {
-      "type": "select",
-      "id": "content_to_show",
-      "label": "Content to show",
-      "options": [
-        {
-          "value": "description",
-          "label": "Description"
-        },
-        {
-          "value": "custom_content",
-          "label": "Custom Content"
-        }
-      ],
-      "default": "description"
-    },
-           {
-          "type": "richtext",
-          "id": "content",
-          "label": "Content"
-        },
-        {
-          "type": "page",
-          "id": "page",
-          "label": "Page"
-        }
-          ]
-        },
-        {
-          "type":"block-2",
-          "name": "How to Use",
-          "limit": 1,
-          "settings": [
-            {
-              "type": "text",
-              "id": "heading",
-              "label": "Heading",
-              "default": "How to Use"
-            },
-            {
-          "type": "richtext",
-          "id": "content",
-          "label": "Content"
-        },
-        {
-          "type": "page",
-          "id": "page",
-          "label": "Page"
-        }
-          ]
-        },
-        {
-          "type":"block-3",
-          "name": "Ingredients",
-          "limit": 1,
-          "settings": [
-            {
-              "type": "text",
-              "id": "heading",
-              "label": "Heading",
-              "default": "Ingredients"
-            },
-            {
-          "type": "richtext",
-          "id": "content",
-          "label": "Content"
-        },
-        {
-          "type": "page",
-          "id": "page",
-          "label": "Page"
-        }
-          ]
-        },
-        {
-          "type":"block-4",
-          "name": "Delivery & Return",
-          "limit": 1,
-          "settings": [
-            {
-              "type": "text",
-              "id": "heading",
-              "label": "Heading",
-              "default": "Delivery & Return"
-            },
-            {
-          "type": "richtext",
-          "id": "content",
-          "label": "Content"
-        },
-        {
-          "type": "page",
-          "id": "page",
-          "label": "Page"
-        }
-          ]
-        }
-    ],
-    "presets": [
-        {
-            "name": "Product Info Tabs",
-            "category": "Harmony Sections"
-        }
-    ]
+    "default": "description"
+  },
+          {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "page",
+        "id": "page",
+        "label": "Page"
+      }
+        ]
+      },
+      {
+        "type":"block-2",
+        "name": "How to Use",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "How to Use"
+          },
+          {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "page",
+        "id": "page",
+        "label": "Page"
+      }
+        ]
+      },
+      {
+        "type":"block-3",
+        "name": "Ingredients",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Ingredients"
+          },
+          {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "page",
+        "id": "page",
+        "label": "Page"
+      }
+        ]
+      },
+      {
+        "type":"block-4",
+        "name": "Delivery & Return",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Delivery & Return"
+          },
+          {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+      },
+      {
+        "type": "page",
+        "id": "page",
+        "label": "Page"
+      }
+        ]
+      }
+  ],
+  "presets": [
+    {
+        "name": "Product Info Tabs",
+        "category": "Harmony Sections"
+    }
+  ]
 }
 {% endschema %}
 
 <script>
   function openaboutTab(evt, aboutTabName) {
-      var i, aboutTabcontent, aboutTablinks;
-      aboutTabcontent = document.getElementsByClassName("aboutTabcontent");
-      for (i = 0; i < aboutTabcontent.length; i++) {
-          aboutTabcontent[i].style.display = "none";
-      }
-      aboutTablinks = document.getElementsByClassName("aboutTablinks");
-      for (i = 0; i < aboutTablinks.length; i++) {
-          aboutTablinks[i].className = aboutTablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(aboutTabName).style.display = "grid";
-      evt.currentTarget.className += " active";
+    var i, aboutTabcontent, aboutTablinks;
+    aboutTabcontent = document.getElementsByClassName("aboutTabcontent");
+    for (i = 0; i < aboutTabcontent.length; i++) {
+        aboutTabcontent[i].style.display = "none";
+    }
+    aboutTablinks = document.getElementsByClassName("aboutTablinks");
+    for (i = 0; i < aboutTablinks.length; i++) {
+        aboutTablinks[i].className = aboutTablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(aboutTabName).style.display = "grid";
+    evt.currentTarget.className += " active";
   }
   // Get the element with id="aboutTabDefaultOpen" and click on it
   document.getElementById("aboutTabDefaultOpen").click();
