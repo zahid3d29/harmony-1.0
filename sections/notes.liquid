@@ -96,7 +96,7 @@ Home: Featured Products{
     size: 14px, 19px;
 }
 
-{%  style  %} 
+{% style %} 
 
   text-style{
     font-family: "NeuzeitS-Book"; ( theme settings )
@@ -116,54 +116,9 @@ Home: Featured Products{
 {% endstyle %}
 
 
-{% comment %} Product count associated with a Tag  {% endcomment %}
 
 
-{% comment %} collection page product grid  {% endcomment %}
-<div class="products__grid group relative">
-  <div class="product__img aspect-h-1 aspect-w-1 w-full overflow-hidden  bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-    <a href="{{ product.url }}">
-        {% if product.featured_image %}
-            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        {% else %}
-            <img src="https://via.placeholder.com/300" alt="{{ product.title }}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        {% endif %}
-    </a>
-  </div>
-  <div class="product__info mt-4 flex justify-between">
-    <div class="product__info-first">
-        <a href="{{ product.url }}" class="product__title block">
-            <h3 class="mt-2 mb-3 pb-2 text-[16px] leading-[21px] font-medium">{{ product.title |  escape }}</h3>
-        </a>
-        {% for tag in product.tags limit: 1 %}
-        <div class="product__tags text-[12px] leading-[19px] inline-block mx-1 my-1 px-2 py-0.5 border border-black rounded-full collection-title">
-            {{ tag }}
-        </div>
-        {% endfor %}
-    </div>
-    <div class="product__info-second">
-        <h4 class="product__price mt-2 mb-3 pb-3 text-[13px] leading-[17px] text-right"><span class="compared_at_price line-through text-gray-500 mr-2">{{ product.compare_at_price | money_with_currency }}</span>{{ product.price | money_with_currency }}</h4>
-        <div class="product__rating flex items-center justify-end">
-            <div class="flex items-center justify-end text-[13px]">
-                <svg class="harmony__color-{{ section.settings.color_scheme }} w-5 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                </svg>
-                <svg class="harmony__color-{{ section.settings.color_scheme }} w-5 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                </svg>
-                <svg class="harmony__color-{{ section.settings.color_scheme }} w-5 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                </svg>
-                <svg class="harmony__color-{{ section.settings.color_scheme }} w-5 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                </svg>
-                <svg class="text-gray-200 w-5 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                </svg>
-            </div>
-            <span class="sr-only">3.9 out of 5 stars</span>
-            <span class="product__feedback-count ml-3 text-[13px] leading-[17px]  hover:text-gray-500">22</span>
-        </div>
-    </div>
-  </div>
-</div>
+{% comment %} Product Grid style  {% endcomment %}
+
+section color scheme = harmony__color-{{ settings.section_color_scheme }} 
+product card color scheme = harmony__color-{{ settings.product_card_color_scheme }}
