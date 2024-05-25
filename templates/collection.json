@@ -3,7 +3,7 @@
     "page_header_XhKcji": {
       "type": "page-header",
       "settings": {
-        "color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "heading": "",
         "show_heeading": true,
         "page_title": "About us",
@@ -17,7 +17,7 @@
         "color_scheme_filter": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "show_price": true,
         "show_category": true,
-        "show_reviews": false,
+        "show_reviews": true,
         "enable_stock_badge": true,
         "offer_badge": true,
         "show_wishlist": true,

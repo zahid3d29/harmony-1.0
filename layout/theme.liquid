@@ -24,7 +24,9 @@
 
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    {% comment %} We preconnect to commonly used third-parties to initiate TCP/TLS handshake {% endcomment %}
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
     {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
     
@@ -33,12 +35,6 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {% endunless %}
 
-    {% comment %}
-      {% liquid
-        render 'colors'
-        render 'typography'
-      %}
-    {% endcomment %}
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
@@ -61,8 +57,9 @@
 
     <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
-    
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+
 
 
     {% comment %}
@@ -144,6 +141,9 @@
         product_recommendations_url: '{{ routes.product_recommendations_url }}'
       }
     </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   </body>
 </html>

@@ -5,6 +5,8 @@
     "heading_font_scale": 16,
     "body_font_scale": 12,
     "social_instagram_link": "https:\/\/www.instagram.com\/",
+    "sale_badge_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+    "product_card_style": "card",
     "product_card_overlay_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
     "type_heading": "alfie_n4",
     "content_for_index": [
