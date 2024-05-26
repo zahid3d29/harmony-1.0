@@ -47,18 +47,13 @@
                 </picture>
               </div>
             </div>
-          {% endfor %}
-    
+            {% endfor %}
             {% comment %} Blog post pagination  {% endcomment %}
-          {%- if paginate.pages > 1 -%}
-            {%- render 'blog-pagination', paginate: paginate -%}
-          {%- endif -%}
-          
-            
-
+            {%- if paginate.pages > 1 -%}
+              {%- render 'pagination-blog', paginate: paginate -%}
+            {%- endif -%}
           </div>
       </div>
-        
   </section>
 {% endpaginate %}
 
