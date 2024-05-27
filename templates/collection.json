@@ -4,15 +4,16 @@
       "type": "page-header",
       "settings": {
         "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
-        "heading": "",
+        "heading": "Shop all Products",
         "show_heeading": true,
-        "page_title": "About us",
+        "page_title": "collection all",
         "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
       }
     },
     "collection": {
       "type": "collection",
       "settings": {
+        "section_color_scheme": "",
         "show_price": true,
         "show_category": true,
         "show_reviews": true,
@@ -20,6 +21,7 @@
         "offer_badge": true,
         "show_wishlist": true,
         "enable_quick_view": true,
+        "number_of_letters_in_title": 12,
         "products_to_show": 3,
         "products_per_row": 3,
         "mobile_layout": "carousel",

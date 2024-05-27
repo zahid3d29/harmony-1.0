@@ -14,7 +14,7 @@
     width: 100%;
     height: 0;
     transition: .5s ease;
-    z-index: 99;
+    z-index: 21;
   }
   #product__grid-wrapper:hover #product__overlay{
     height: 100%;
@@ -39,16 +39,30 @@
     }
   {% endfor %}
 
-  /* schema settings Badge Corner Radius  */
-  .badge_corner_radius{
-    border-radius: {{ settings.badge_corner_radius }}px;
-  }
+    /* schema settings color  */
+    {% for scheme in settings.color_schemes %}
+    /* Button color  */
+    .overlay__btn{
+      background: rgb({{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }});
+      color: rgb({{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }});
+    }
+  {% endfor %}
+
+
   .product__grid-card {
     padding: {{ settings.product_card_horizontal_offset }}px {{ settings.product_card_vertical_offset }}px;
     border-radius: {{ settings.product_card_corner_radius }}px;
     border-width: {{ settings.product_card_border_thickness }}px;
     border-color: {{ settings.product_card_border_color }}{{ settings.product_card_border_opacity }};
   }
+
+
+  /* schema settings Badge Corner Radius  */
+  .badge_corner_radius{
+    border-radius: {{ settings.badge_corner_radius }}px;
+  }
+
+  /* Section padding  */
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -61,16 +75,55 @@
   }
 {%- endstyle -%}
 
-{% paginate collection.products by 12 %}
-
 <section id="harmony--{{ section.id }}" class="section__collection-all harmony__color-{{ section.settings.section_color_scheme }}">
-  <div class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-6">
-    {% if collection.handle == blank %}
-      <h2 class="section__heading text-[67px] leading-[72px] font-bold tracking-tight">Collection not found</h2>
-    {% else %}
-      <div class="collection__main flex flex-row">
+  {% paginate collection.products by 12 %}
+    <div class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-6">
+      {% if collection.handle == blank %}
+        <h2 class="section__heading text-[67px] leading-[72px] font-bold tracking-tight">Collection not found</h2>
+      {% else %}
+      {% comment %} Products filter button and sorting options Bar  {% endcomment %}
+      <div class="flter__sort-bar flex items-center justify-between px-4 py-3 sm:px-6">
+        <div class="filter_sort-barhidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+          <div class="filter flex justify-start space-x-2">
+            <button class="filter_trigger">Filter</button>
+            <span class="filter__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+              </svg>
+            </span>
+          </div>
+          <div class="sort_result">
+            <div class="relative inline-block text-left">
+              {% comment %} <p class="text-sm font-medium text-gray-700">DEFAULT SORTING</p> {% endcomment %}
+              <div>
+                <button id="SortBtn" type="button" class="inline-flex justify-center w-full px-4 py-2 bg-transparent text-sm harmony__color-{{ section.settings.section_color_scheme }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                  Default Sorting
+                  <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.292 7.292a1 1 0 011.414 0L10 10.586l3.293-3.294a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
 
-        <div class="collection__filter filter__sidebar hidden lg:block md:basis-1/3 lg:basis-1/4 px-4 lg:px-4">
+              <div id="SortList" class="origin-top-right absolute right-0 mt-2 w-56 harmony__color-{{ section.settings.section_color_scheme }} ring-1 ring-black ring-opacity-5 focus:outline-none z-30 hidden">
+                <ul class="py-1 shadow-lg border border-gray-300" role="menu" aria-orientation="vertical" aria-labelledby="SortBtn">
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=manual" class="block px-4 py-2 text-sm" role="menuitem">Sort by Manual</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=best-selling" class="block px-4 py-2 text-sm" role="menuitem">Sort by Best Selling</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=title-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by Title (A-Z)</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=title-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by Title (Z-A)</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=price-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by price Ascending</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=price-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by price Discending</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=created-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by date Discending</a></li>
+                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=created-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by date Ascending</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% comment %} Collection main content  {% endcomment %}
+      <div class="collection__main flex flex-row">
+        {% comment %} Collection products filter sidebar  {% endcomment %}
+        <div class="collection__filter filter__sidebar  lg:basis-3/12 px-4 lg:px-4">
           <form class="border-t border-gray-200 px-4 py-6">
             {%- for filter in collection.filters -%}
             <div class="border-b border-gray-200 py-6">
@@ -154,19 +207,21 @@
             {% endfor %}
           </form>
         </div>
-        <div class="collection__products px-4 py-4 lg:px-6 lg:py-6">
-          <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
+
+        {% comment %} Collection products grid  {% endcomment %}
+        <div class="collection__products lg:basis-9/12 px-4 py-4 lg:px-6 lg:py-6">
+          <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
             {% for product in collection.products %}
               {% if collection.products.size > 0 %}
                   <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-{{ settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %}" id="product__grid-wrapper">
                     <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
                         {%- if section.settings.enable_stock_badge -%} 
                         {%- if product.available -%}
-                        <span class="stock__status-sale harmony__color-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-10 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                        <span class="stock__status-sale harmony__color-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
                             Sale
                             </span>
                         {%- else -%}
-                            <span class="stock__status-sold-out harmony__color-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-10 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                            <span class="stock__status-sold-out harmony__color-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
                             Sold out
                             </span>
                         {%- endif -%}
@@ -182,7 +237,7 @@
                             <div class="flex h-full max-w-xl flex-col items-start justify-between">
                                 {%- if section.settings.enable_quick_view -%}
                                 <div class="flex items-center justify-center harmony__color-{{ settings.product_card_overlay_color_scheme }} gap-x-4 text-xs">
-                                    {%- if section.settings.offer_badge -%} <span class="sale-badge absolute z-50 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-{{ settings.product_card_overlay_color_scheme }} py-1 px-2 font-semibold">40% off</span>{% endif %}
+                                    {%- if section.settings.offer_badge -%} <span class="sale-badge absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-{{ settings.sale_offer_badge_color_scheme }} py-1 px-2 font-semibold">40% off</span>{% endif %}
                                     {%- if section.settings.show_wishlist -%}  
                                     <button class="absolute right-2 top-3 text-sm font-semibold h-[35px] w-[35px] block harmony__color-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -194,7 +249,7 @@
                                 </div>
                                 {% endif %}
                                 {%- if section.settings.enable_quick_view -%}
-                                <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-{{ settings.product_card_overlay_color_scheme }} px-4 py-4 mb-4 text-base font-medium">Quick View</button>
+                                <button type="submit" class="mx-auto flex w-[85%] items-center justify-center overlay__btn  px-4 py-4 mb-4 text-base font-medium">Quick View</button>
                                 {% endif %}
                             </div>
                         </div>
@@ -247,9 +302,9 @@
         </div>
       </div>
     {% endif %} 
-  </div>
+    </div>
+  {% endpaginate %}
 </section>
-{% endpaginate %}
 
 {% schema %}
 {
@@ -398,3 +453,31 @@
 }
 {% endschema %}
         
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sortBtn = document.getElementById('SortBtn');
+    const sortList = document.getElementById('SortList');
+
+    sortBtn.addEventListener('click', function() {
+      if (sortList.classList.contains('hidden')) {
+        sortList.classList.remove('-translate-y-2', 'opacity-0', 'hidden');
+        sortList.classList.add('translate-y-0', 'opacity-100');
+      } else {
+        sortList.classList.remove('translate-y-0', 'opacity-100');
+        sortList.classList.add('-translate-y-2', 'opacity-0');
+        setTimeout(() => sortList.classList.add('hidden'), 700); // Wait for animation to finish
+      }
+    });
+
+    // Close the dropdown when clicking outside of it
+    document.addEventListener('click', function(event) {
+      if (!sortBtn.contains(event.target) && !sortList.contains(event.target)) {
+        sortList.classList.remove('translate-y-0', 'opacity-100');
+        sortList.classList.add('-translate-y-2', 'opacity-0');
+        setTimeout(() => sortList.classList.add('hidden'), 700); // Wait for animation to finish
+      }
+    });
+  });
+</script>
+
