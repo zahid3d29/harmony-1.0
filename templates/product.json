@@ -121,6 +121,62 @@
     },
     "product_main_yj8KNG": {
       "type": "product-main",
+      "blocks": {
+        "review_breadcrumbs_HMbzEd": {
+          "type": "review_breadcrumbs",
+          "settings": {
+            "breadcrumb": false,
+            "rating": false
+          }
+        },
+        "title_zRGtEb": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price_yicNJC": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_3cTXPD": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "pills",
+            "color_swatches": false
+          }
+        },
+        "gift_stock_6zybBU": {
+          "type": "gift_stock",
+          "settings": {
+            "gift": true,
+            "stock": true
+          }
+        },
+        "buy_button_zxz9cP": {
+          "type": "buy_button",
+          "settings": {
+            "subscribe": false,
+            "instalments": false
+          }
+        },
+        "icon_with_text_WpKDnn": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Spinning_arrows.gif",
+            "text": "Icon with text"
+          }
+        }
+      },
+      "block_order": [
+        "review_breadcrumbs_HMbzEd",
+        "title_zRGtEb",
+        "price_yicNJC",
+        "variant_picker_3cTXPD",
+        "gift_stock_6zybBU",
+        "buy_button_zxz9cP",
+        "icon_with_text_WpKDnn"
+      ],
       "settings": {
         "heading": "Cart",
         "wishlist": false
