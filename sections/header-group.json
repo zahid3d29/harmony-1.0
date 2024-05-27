@@ -39,7 +39,7 @@
       "type": "header",
       "disabled": true,
       "settings": {
-        "mega_label": "",
+        "mega_label": "Home",
         "mega_menu": "main-menu",
         "featured_collection_": "books",
         "mega_menu_grid": "collections",
