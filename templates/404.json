@@ -11,6 +11,7 @@
       "type": "page-header",
       "disabled": true,
       "settings": {
+        "color_scheme": "",
         "heading": "View your shopping cart",
         "show_heeading": true,
         "page_title": "About us",
