@@ -122,3 +122,17 @@ Home: Featured Products{
 
 section color scheme = harmony__color-{{ settings.section_color_scheme }} 
 product card color scheme = harmony__color-{{ settings.product_card_color_scheme }}
+ => Product overlay color scheme
+Badge color Scheme: harmony__color-{{ settings.badge_color_scheme }}
+
+
+{% comment %} Product Grid products_per_row  {% endcomment %}
+
+products_per_row = 3 -> "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+
+products_per_row = 4 -> "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+
+
+{%- if section.settings.products_per_row == '3' -%} grid-cols-1 sm:grid-cols-2 md:grid-cols-3 {%- else -%} grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 {%- endif -%}
+
+{% comment %} Show/Hide filter in sidebar  {% endcomment %}

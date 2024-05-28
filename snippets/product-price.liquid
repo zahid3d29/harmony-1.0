@@ -1,0 +1,9 @@
+    <div class="product-prices flex items-center gap-3  mt-[10px]">
+              <p class="product-price font-normal text-[#000000] text-[19px] leading-[22px]">
+              {{ product.selected_or_first_available_variant.price | money }}
+              </p>
+              <p class="product-compare font-normal text-[#767474] line-through text-[17px] leading-[22px]{% unless  product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price  %}hidden{% endunless %} ">
+              {{product.selected_or_first_available_variant.compare_at_price | money }}
+              </p>
+              
+              </div>

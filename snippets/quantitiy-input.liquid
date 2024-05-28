@@ -1,0 +1,67 @@
+<style>
+  .quantity-input {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-input button {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.quantity-input input {
+    width: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.quantity-input button:first-of-type {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.quantity-input button:last-of-type {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+  </style>
+  <div class="quantity-input mt-4 flex items-center">
+    <span type="button" id="decrease-quantity" class="px-2 py-1 bg-gray-200 text-gray-700 rounded-l">-</span>
+    <input id="quantity_input" type="number" name="quantity" min="1" value="1" class="text-center w-16 px-3 py-2 border border-gray-300 focus:outline-none focus:ring-gray-500 focus:border-gray-500">
+    <span type="button" id="increase-quantity" class="px-2 py-1 bg-gray-200 text-gray-700 rounded-r">+</span>
+</div>
+
+
+
+<script>
+// Function to update the #quantity field when #quantity_input changes
+document.getElementById('quantity_input').addEventListener('input', () => {
+    let quantityInputValue = document.getElementById('quantity_input').value;
+    document.getElementById('quantity').value = quantityInputValue;
+});
+
+// Quantity control buttons functionality
+document.getElementById('increase-quantity').addEventListener('click', () => {
+    let quantityInput = document.getElementById('quantity');
+    let currentQuantity = parseInt(quantityInput.value);
+    quantityInput.value = currentQuantity + 1;
+    document.getElementById('quantity_input').value = quantityInput.value; // Sync with quantity_input
+});
+
+document.getElementById('decrease-quantity').addEventListener('click', () => {
+    let quantityInput = document.getElementById('quantity');
+    let currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+        document.getElementById('quantity_input').value = quantityInput.value; // Sync with quantity_input
+    }
+});
+
+        </script>

@@ -1,0 +1,107 @@
+     <div class="product__variant">
+
+ <!-- Color Dropdown -->
+                {% if variant_type == 'pills' %}
+                  {% for option in product.options_with_values %}
+                    {% if option.name == 'Color' and swatch %}
+                      <div class="mt-10">
+                        <h3 class="text-[14px] leading-[19px] font-normal text-[#000000]">{{ option.name }}</h3>
+                        <div class="mt-6" id="filter-section-2">
+                          <fieldset class="mt-4">
+                            <legend class="sr-only text-[14px] leading-[19px] text-[#000000] font-normal">Color</legend>
+                            <div class="flex items-center space-x-3 product-option">
+                              {% for value in option.values %}
+                                <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-transparent undefined ring ring-offset-1">
+                                  <input
+                                    type="radio"
+                                    name="color-choice"
+                                    value="{{ value }}"
+                                    class="sr-only"
+                                    aria-labelledby="color-choice-0-label"
+                                  >
+                                  <span
+                                    id="color-choice-0-label"
+                                    class="sr-only text-[13px] leading-[18px] text-[#000000] font-normal"
+                                  >
+                                    {{- value -}}
+                                  </span>
+                                  <span
+                                    aria-hidden="true"
+                                    class="h-8 w-8  rounded-none border border-black border-opacity-10"
+                                    style="background:{{ value }};"
+                                  ></span>
+                                </label>
+                              {% endfor %}
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    {% else %}
+                      <div class="mt-10">
+                        
+                        <div class="flex items-center justify-between">
+                          <h3 class="text-[14px] leading-[19px] text-[#000000] font-normal">{{ option.name }}</h3>
+                        </div>
+
+                        <div>
+                          <!-- Filter section, show/hide based on section state. -->
+                          <div class="mt-6 product-option" id="filter-section-4">
+
+
+                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant }}" />
+
+
+
+
+                            
+                            <fieldset class="mt-4">
+                              <legend class="sr-only text-[14px] leading-[19px] text-[#000000] font-normal">
+                                Choose a size
+                              </legend>
+                              <div class="grid grid-cols-3 gap-4 md:grid-cols">
+                               
+                                {% for value in option.values %}
+                                  <label class="group h-8 w-full px-8 p-2 relative flex items-center justify-center rounded-full bordertext-[13px] leading-[18px] text-[#000000] font-normal uppercase hover:bg-gray-900 focus:outline-none sm:flex-1 cursor-pointer bg-transparent hover:text-gray-100 undefined border border-solid border-black">
+                                    <input
+                                      type="radio"
+                                      name="{{ option.name}}"
+                                       value="{{ value }}"
+                                      id="{{ option.name | handlize }}-{{ value | handlize }}"
+                                      class="sr-only"
+                                      aria-labelledby="{{ option.name}}"
+                                    >
+                                    <span id="{{ option.name | handlize }}-{{ value | handlize }}" for="{{ option. name | handlize }}-{{ value | handlize }}">{{ value }}</span>
+                                    <span
+                                      class="pointer-events-none w-full inset-x-0 rounded-full border border-transparent"
+                                      aria-hidden="true"
+                                    ></span>
+                                  </label>
+                                {% endfor %}
+                                
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                  {% for option in product.options_with_values %}
+                    <div class="mt-10 product-option">
+                      <div class="flex items-center justify-between">
+                        <h3 class="text-[14px] leading-[19px] font-normal text-[#000000] mr-2">{{ option.name }}</h3>
+                      </div>
+                      <select
+                        id="{{ option.name }}"
+                        name="{{ option.name }}"
+                        autocomplete="off"
+                        class="block w-full flex-auto border-0 border-b border-b-gray-200 text-[13px] leading-[18px] text-[#000000] font-normal bg-transparent px-0 focus:px-2 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200"
+                      >
+                        {% for value in option.values %}
+                          <option value="{{ value }}">{{ value }}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>

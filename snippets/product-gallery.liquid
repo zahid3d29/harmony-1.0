@@ -1,0 +1,128 @@
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .gallery-container {
+            display: flex;
+            flex-direction: row;
+        }
+        .thumbnail-slider {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        .main-slider {
+            width: 100%;
+            height: 500px;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+   <!-- <div class="gallery-container">
+        <div class="thumbnail-slider swiper-container">
+            <div class="swiper-wrapper">
+              {% for image in product.images %}
+                <div class="swiper-slide"><img src="{{ image | image_url }}" alt="Thumbnail 1"></div>
+               {% endfor %}
+            </div>
+        </div>
+        <div class="main-slider swiper-container">
+            <div class="swiper-wrapper">
+                 {% for image in product.images %}
+                <div class="swiper-slide"><img src="{{ image | image_url }}" alt="image 1"></div>
+               {% endfor %}
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+       
+        <div class="grid md:grid-cols-5 gap-4">
+     
+         <div class="product__gallaries flex flex-wrap order-last md:order-first md:grid md:grid-cols-1 gap-x-4 gap-y-4 md:gap-y-2 md:gap-x-0">
+            
+            <div class="swiper-container thumbnail-slider">
+              <div class="swiper-wrapper product__gallaries flex flex-wrap order-last md:order-first md:grid md:grid-cols-1 gap-x-4 gap-y-4 md:gap-y-2 md:gap-x-0">
+                {% for image in product.images %}
+                  <div class="swiper-slide">
+                    <img
+                      src="{{ image | image_url }}"
+                      class="w-[100px] h-[100px] md:w-full md:h-[150px] rounded-lg bg-gray-100"
+                    >
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="product__featured md:col-span-4 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
+            <div class="swiper-container slider main-slider">
+              <div class="swiper-wrapper">
+                {% for image in product.images %}
+                  <div class="swiper-slide">
+                    <img src="{{ image | image_url }}" class="h-full w-full object-cover object-center">
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div> 
+        </div>
+
+    <!-- Variant selection (for example) -->
+    <select id="variant-selector">
+    
+      {% assign product_image = product.featured_image %}
+
+
+  {% for variant in product.variants %}
+  
+  
+      {% assign variant_image = null %}
+      
+      {% for image in product.images %}
+        {% if image.id == variant.featured_image.id %}
+          {% assign variant_image = image %}
+        {% endif %}
+      {% endfor %}
+           <option product-variant-id="{{ variant.id }}" value="{% if variant_image %}{{ variant_image | image_url  }}{% else %}{{ product_image | image_url  }}{% endif %}">{{ variant.title }}</option>
+  {% endfor %}
+    </select>
+<style>
+  .swiper-vertical>.swiper-wrapper {
+    flex-direction: row;
+}
+  .swiper-slide-thumb-active{border:2px solid}
+</style>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize thumbnail slider
+            var thumbnailSwiper = new Swiper('.thumbnail-slider', {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              scroll:true,
+                direction: 'vertical',
+                watchSlidesProgress: true,
+            });
+
+            // Initialize main slider
+            var mainSwiper = new Swiper('.main-slider', {
+                spaceBetween: 10,
+                thumbs: {
+                    swiper: thumbnailSwiper,
+                },
+            });
+
+            // Update main slider based on variant selection
+            document.getElementById('variant-selector').addEventListener('change', function () {
+                var selectedImage = this.value;
+                var slideIndex = Array.from(mainSwiper.slides).findIndex(slide => slide.querySelector('img').src.includes(selectedImage));
+                if (slideIndex >= 0) {
+                    mainSwiper.slideTo(slideIndex);
+                }
+            });
+        });
+    </script>

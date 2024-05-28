@@ -1,36 +1,27 @@
+{% comment %} Test code  {% endcomment %}
+
+<style>
+      body { font-family: Arial, sans-serif; margin: 20px; }
+      .product { display: flex; flex-direction: column; align-items: center; }
+      .product img { max-width: 100%; height: auto; }
+      .product-info { text-align: center; margin-top: 20px; }
+      .product-title { font-size: 24px; margin-bottom: 10px; }
+      /* .product-price { font-size: 20px; color: #555; margin-bottom: 20px; } */
+      /* .add-to-cart { background-color: #5cb85c; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+      .add-to-cart:hover { background-color: #4cae4c; } */
+      /* When an Ajax request is in progress */
+  .js-ajax-cart-processing .my-loading-indicator {
+    display: block;
+  }
+</style>
+
 
 
 <section id="harmony--{{ section.id }}">
   <div class="bg-[#FFFAF4]">
     <div class="mx-auto grid max-w-7xl grid-cols-1 items-start gap-x-8 gap-y-16 px-6 py-8 sm:px-6 md:py-24 lg:max-w-7xl lg:grid-cols-3 lg:px-8">
       <div class="product__media col-span-2 grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
-        <div class="grid md:grid-cols-5 gap-4">
-          <div class="product__gallaries flex flex-wrap order-last md:order-first md:grid md:grid-cols-1 gap-x-4 gap-y-4 md:gap-y-2 md:gap-x-0">
-            <div class="swiper-container slider-thumbnail">
-              <div class="swiper-wrapper product__gallaries flex flex-wrap order-last md:order-first md:grid md:grid-cols-1 gap-x-4 gap-y-4 md:gap-y-2 md:gap-x-0">
-                {% for image in product.images %}
-                  <div class="swiper-slide">
-                    <img
-                      src="{{ image | image_url }}"
-                      class="w-[100px] h-[100px] md:w-full md:h-[150px] rounded-lg bg-gray-100"
-                    >
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-          <div class="product__featured md:col-span-4 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <div class="swiper-container slider">
-              <div class="swiper-wrapper">
-                {% for image in product.images %}
-                  <div class="swiper-slide">
-                    <img src="{{ image | image_url }}" class="h-full w-full object-cover object-center">
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
+        {% render "product-gallery" %}
       </div>
       <div class="product__information">
         {% for block in section.blocks %}
@@ -168,109 +159,84 @@
                 {% endif %}
               </div>
             {% when 'price' %}
-              <div class="product__price text-[19px] leading-[22px] font-normal text-[#000000] mr-2 mt-[10px]">
-                {{ product.price | money | escape }}
-              </div>
+    
+
+
+              {% render "product-price" %}
+        
+
+            
             {% when 'description' %}
               <div class="product_short_desc text-[14px] leading-[19px] font-normal text-[#000000] mt-[12px]">
                 {{ product.description }}
               </div>
+                              {% when 'quantity' %}
+                              {% render "quantity-input" %}
             {% when 'variant_picker' %}
-              <div class="product__variant">
-                <!-- Color Dropdown -->
-                {% if block.settings.picker_type == 'pills' %}
-                  {% for option in product.options_with_values %}
-                    {% if option.name == 'Color' and block.settings.color_swatches %}
-                      <div class="mt-10">
-                        <h3 class="text-[14px] leading-[19px] font-normal text-[#000000]">{{ option.name }}</h3>
-                        <div class="mt-6" id="filter-section-2">
-                          <fieldset class="mt-4">
-                            <legend class="sr-only text-[14px] leading-[19px] text-[#000000] font-normal">Color</legend>
-                            <div class="flex items-center space-x-3">
-                              {% for value in option.values %}
-                                <label class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none ring-transparent undefined ring ring-offset-1">
-                                  <input
-                                    type="radio"
-                                    name="color-choice"
-                                    value="{{ value }}"
-                                    class="sr-only"
-                                    aria-labelledby="color-choice-0-label"
-                                  >
-                                  <span
-                                    id="color-choice-0-label"
-                                    class="sr-only text-[13px] leading-[18px] text-[#000000] font-normal"
-                                  >
-                                    {{- value -}}
-                                  </span>
-                                  <span
-                                    aria-hidden="true"
-                                    class="h-8 w-8  rounded-none border border-black border-opacity-10"
-                                    style="background:{{ value }};"
-                                  ></span>
-                                </label>
-                              {% endfor %}
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    {% else %}
-                      <div class="mt-10">
-                        <div class="flex items-center justify-between">
-                          <h3 class="text-[14px] leading-[19px] text-[#000000] font-normal">{{ option.name }}</h3>
-                        </div>
+               {% render "product-variant-picker",
+               variant_type :block.settings.picker_type,
+                 swatch :block.settings.color_swatches
+               %}
+         
+            
+            {% when 'buy_button' %}
+                               {% render "buy-buttons" %}
+              {% if block.settings.subscribe %}
+                <div class="mt-10 flex items-center justify-center">
+                  <button
+                    type="submit"
+                    class="flex w-full items-center justify-center border bg-transparent px-8 py-[17px] text-[13px] leading-[18px] text-[#000000] font-normal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  >
+                    One Time Purchase
+                  </button>
+                  <button
+                    type="submit"
+                    class="flex w-full items-center justify-center border bg-transparent px-8 py-[17px] text-[13px] leading-[18px] text-[#000000] font-normal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              {% endif %}
+             
 
-                        <div>
-                          <!-- Filter section, show/hide based on section state. -->
-                          <div class="mt-6" id="filter-section-4">
-                            <fieldset class="mt-4">
-                              <legend class="sr-only text-[14px] leading-[19px] text-[#000000] font-normal">
-                                Choose a size
-                              </legend>
-                              <div class="grid grid-cols-3 gap-4 md:grid-cols-4">
-                                {% for value in option.values %}
-                                  <label class="group h-8 w-full px-8 py-2 relative flex items-center justify-center rounded-full bordertext-[13px] leading-[18px] text-[#000000] font-normal uppercase hover:bg-gray-900 focus:outline-none sm:flex-1 cursor-pointer bg-transparent hover:text-gray-100 undefined">
-                                    <input
-                                      type="radio"
-                                      name="size-choice"
-                                      value="{{ value }}"
-                                      class="sr-only"
-                                      aria-labelledby="size-choice-2-label"
-                                    >
-                                    <span id="size-choice-2-label">{{ value }}</span>
-                                    <span
-                                      class="pointer-events-none w-full inset-x-0 rounded-full border border-transparent"
-                                      aria-hidden="true"
-                                    ></span>
-                                  </label>
-                                {% endfor %}
-                              </div>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-                    {% endif %}
-                  {% endfor %}
-                {% else %}
-                  {% for option in product.options_with_values %}
-                    <div class="mt-10">
-                      <div class="flex items-center justify-between">
-                        <h3 class="text-[14px] leading-[19px] font-normal text-[#000000] mr-2">{{ option.name }}</h3>
-                      </div>
-                      <select
-                        id="{{ option.name }}"
-                        name="{{ option.name }}"
-                        autocomplete="off"
-                        class="block w-full flex-auto border-0 border-b border-b-gray-200 text-[13px] leading-[18px] text-[#000000] font-normal bg-transparent px-0 focus:px-2 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200"
-                      >
-                        {% for value in option.values %}
-                          <option value="{{ value }}">{{ value }}</option>
-                        {% endfor %}
-                      </select>
-                    </div>
-                  {% endfor %}
-                {% endif %}
-              </div>
-            {% when 'gift_stock' %}
+
+              <ajax-cart-product-form>
+          {% form 'product', product %}
+            <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+             <input id="quantity" type="number" name="quantity" min="1" value="1" class="sr-only">
+            <button type="submit" class="add-to-cart flex w-full items-center justify-center border border-transparent bg-[#373738] px-8 py-[17px] text-[17px] leading-[13px] text-[#ffffff] font-normal hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">Add to Cart</button>
+          {% endform %}
+        </ajax-cart-product-form>
+
+            
+              <button
+                type="submit"
+                class="flex w-full items-center justify-center border border-transparent bg-green-600 px-8 py-[17px] text-[17px] leading-[13px] text-[#ffffff] font-normal hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 mt-[5px]"
+              >
+                Buy it now
+              </button>
+                    
+              {% if block.settings.instalments %}
+                <div class="product__installment flex items-center justify-between mt-[20px] py-4 border-b">
+                  <div class="installment__pay text-[14px] leading-[19px] text-[#000000] font-normal">
+                    Pay in <strong>4</strong> installments.
+                  </div>
+                  <div class="installment_payment_getway">
+                    <svg
+                      class="icon icon--full-color"
+                      viewBox="0 0 38 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      width="38"
+                      height="24"
+                      aria-labelledby="pi-master"
+                    >
+                      <title id="pi-master">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><circle fill="#EB001B" cx="15" cy="12" r="7"></circle><circle fill="#F79E1B" cx="23" cy="12" r="7"></circle><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path>
+                    </svg>
+                  </div>
+                </div>
+              {% endif %}
+                              {% when 'gift_stock' %}
               <div class="flex items-center justify-between mt-[40px]">
                 {% if block.settings.stock %}
                   <div class="stock__status flex gap-x-3">
@@ -309,55 +275,6 @@
                   </div>
                 {% endif %}
               </div>
-            {% when 'buy_button' %}
-              {% if block.settings.subscribe %}
-                <div class="mt-10 flex items-center justify-center">
-                  <button
-                    type="submit"
-                    class="flex w-full items-center justify-center border bg-transparent px-8 py-[17px] text-[13px] leading-[18px] text-[#000000] font-normal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                  >
-                    One Time Purchase
-                  </button>
-                  <button
-                    type="submit"
-                    class="flex w-full items-center justify-center border bg-transparent px-8 py-[17px] text-[13px] leading-[18px] text-[#000000] font-normal hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              {% endif %}
-              <button
-                type="submit"
-                class="flex w-full items-center justify-center border border-transparent bg-[#373738] px-8 py-[17px] text-[17px] leading-[13px] text-[#ffffff] font-normal hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-              >
-                Add to bag
-              </button>
-              <button
-                type="submit"
-                class="flex w-full items-center justify-center border border-transparent bg-green-600 px-8 py-[17px] text-[17px] leading-[13px] text-[#ffffff] font-normal hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 mt-[5px]"
-              >
-                Buy it now
-              </button>
-              {% if block.settings.instalments %}
-                <div class="product__installment flex items-center justify-between mt-[20px] py-4 border-b">
-                  <div class="installment__pay text-[14px] leading-[19px] text-[#000000] font-normal">
-                    Pay in <strong>4</strong> installments.
-                  </div>
-                  <div class="installment_payment_getway">
-                    <svg
-                      class="icon icon--full-color"
-                      viewBox="0 0 38 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      role="img"
-                      width="38"
-                      height="24"
-                      aria-labelledby="pi-master"
-                    >
-                      <title id="pi-master">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><circle fill="#EB001B" cx="15" cy="12" r="7"></circle><circle fill="#F79E1B" cx="23" cy="12" r="7"></circle><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path>
-                    </svg>
-                  </div>
-                </div>
-              {% endif %}
             {% when 'benifit_share' %}
               <div class="shipping__share flex items-center justify-between mt-[20px]">
                 {% if block.settings.benifit %}
@@ -411,6 +328,149 @@
   </div>
 </section>
 
+<style>
+  .product-option input[type=radio]:checked+label{
+    background:#000;
+    color:#fff;
+  }
+  input[type="radio"] {
+    display: none; /* Hide the radio button */
+  }
+
+  input[type="radio"]:checked + label {
+      background-color: yellow; /* Change background color */
+      color: red;               /* Change text color */
+      font-weight: bold;        /* Make text bold */
+  }
+
+  label {
+      padding: 10px;
+      display: inline-block;
+      cursor: pointer;
+      border: 1px solid #ccc;   /* Optional: border for better visual */
+  }
+</style>
+
+                        
+<script>
+    var product = {{ product | json }}
+    console.log(product)
+    document.querySelectorAll('.product-option input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+
+    var selectedOptions = []
+      document.querySelectorAll('.product-option input[type="radio"]:checked').forEach(radio =>{
+      selectedOptions.push(radio.value)
+    })
+    console.log(selectedOptions + " valuse")
+
+    var matchedVariant = product.variants.find(variant => {
+    var pass = true
+    for (var i = 0; i < selectedOptions.length; i++) {
+    if (selectedOptions.indexOf(variant.options[i]) == -1) {
+      console.log(selectedOptions + " false")
+    pass = false
+    break
+    }
+    }
+    return pass
+            console.log(selectedOptions + " true")
+    })
+    console.log(matchedVariant)
+    // console.log(selectedOptions)
+    document.querySelector('#product-id').value = matchedVariant.id;
+
+    console.log(matchedVariant.featured_media)
+
+        // Change url
+    var url = new URLParse(window.location.href, true)
+    url.query.variant = matchedVariant.id
+        window.history.replaceState(null, null, url.toString());
+    console.log(url.toString())
+
+    //product price udpate
+    document.querySelector('.product-price').textContent = formatMoney (matchedVariant.price, "{{ shop.money_format }}")
+    document.querySelector('.product-compare').textContent = formatMoney (matchedVariant.compare_at_price, "{{ shop.money_format }}")
+
+    matchedVariant.compare_at_price > matchedVariant.price ? 
+    document.querySelector('.product-compare').classList.remove('hidden'): 
+    document.querySelector('.product-compare').classList.add('hidden'); 
+        
+      })
+    })
+
+    // for select
+    var selectedOptions = []
+      document.querySelectorAll('.product-option select').forEach(radio => {
+    radio.addEventListener('change', () => {
+
+
+
+
+          
+      // Collect selected select options
+        document.querySelectorAll('.product-option select').forEach(select => {
+            var optionName = select.name;
+            selectedOptions[optionName] = select.value;
+        });
+
+        var selectedOptionsArray = Object.values(selectedOptions);
+
+        var matchedVariants = product.variants.find(variant => {
+            var pass = true;
+            for (var i = 0; i < selectedOptionsArray.length; i++) {
+                if (selectedOptionsArray.indexOf(variant.options[i]) == -1) {
+                    pass = false;
+                    break;
+                }
+            }
+            return pass;
+        });
+        console.log(matchedVariants);
+        document.querySelector('#product-id').value = matchedVariants.id;
+
+    console.log(matchedVariants.featured_media.preview_image.src)
+
+        // Change url
+    var url = new URLParse(window.location.href, true)
+    url.query.variant = matchedVariants.id
+        window.history.replaceState(null, null, url.toString());
+    console.log(url.toString())
+
+        //product price udpate
+          document.querySelector('.product-price').textContent = formatMoney (matchedVariants.price, "{{ shop.money_format }}")
+          document.querySelector('.product-compare').textContent = formatMoney (matchedVariants.compare_at_price, "{{ shop.money_format }}")
+
+        matchedVariants.compare_at_price > matchedVariants.price ? 
+    document.querySelector('.product-compare').classList.remove('hidden'): 
+    document.querySelector('.product-compare').classList.add('hidden'); 
+
+
+    let selected_id = matchedVariants.id;
+        console.log(selected_id)
+
+            document.querySelectorAll('.product-option select').forEach(radio => {
+      radio.addEventListener('change', () => {
+                var selectedValue =  matchedVariants.id;
+                var variantSelector = document.getElementById('variant-selector');
+                
+                for (var i = 0; i < variantSelector.options.length; i++) {
+                    if (variantSelector.options[i].getAttribute('product-variant-id') === selectedValue) {
+                        variantSelector.selectedIndex = i;
+                        break;
+                    }
+                }
+                
+                // Trigger the change event on the variant selector
+                var event = new Event('change');
+                variantSelector.dispatchEvent(event);
+            });
+        });
+          })
+        })
+</script>
+
+
 {% schema %}
 {
     "name": "Product Main",
@@ -462,6 +522,10 @@
     {
       "type":"description",
       "name":"Description"
+    },
+    {
+      "type":"quantity",
+      "name":"Quantity Input"
     },
     {
       "type":"variant_picker",
@@ -576,30 +640,24 @@
   ]
 }
 {% endschema %}
+<script>            
+  // var sliderThumbnail = new Swiper('.slider-thumbnail', {
+  //   slidesPerView: 1,
+  //   freeMode: true,
+  //   watchSlidesVisibility: true,
+  //   watchSlidesProgress: true,
+  // });
 
+ 
+  // var slider = new Swiper('.slider', {
 
-
-
-<script>
-  var sliderThumbnail = new Swiper('.slider-thumbnail', {
-    slidesPerView: 1,
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-  });
-
-
-  var slider = new Swiper('.slider', {
-
-    thumbs: {
-      swiper: sliderThumbnail
-    }
-  });
+  //   thumbs: {
+  //     swiper: sliderThumbnail
+  //   }
+  // });
 </script>
-
-
 <style>
-.product__gallaries .swiper-slide{
+  .product__gallaries .swiper-slide{
     height:auto;
-}
+  }
 </style>

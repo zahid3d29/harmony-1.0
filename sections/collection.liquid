@@ -76,7 +76,7 @@
 {%- endstyle -%}
 
 <section id="harmony--{{ section.id }}" class="section__collection-all harmony__color-{{ section.settings.section_color_scheme }}">
-  {% paginate collection.products by 12 %}
+  {% paginate collection.products by section.settings.products_to_show %}
     <div class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-6">
       {% if collection.handle == blank %}
         <h2 class="section__heading text-[67px] leading-[72px] font-bold tracking-tight">Collection not found</h2>
@@ -84,6 +84,7 @@
       {% comment %} Products filter button and sorting options Bar  {% endcomment %}
       <div class="flter__sort-bar flex items-center justify-between px-4 py-3 sm:px-6">
         <div class="filter_sort-barhidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+          {%- if section.settings.enable_filter or section.settings.enable_filter_drawer -%}
           <div class="filter flex justify-start space-x-2">
             <button class="filter_trigger">Filter</button>
             <span class="filter__icon">
@@ -92,136 +93,119 @@
               </svg>
             </span>
           </div>
+          {%- endif -%}
+          {%- if section.settings.enable_sort -%}
           <div class="sort_result">
-            <div class="relative inline-block text-left">
-              {% comment %} <p class="text-sm font-medium text-gray-700">DEFAULT SORTING</p> {% endcomment %}
-              <div>
-                <button id="SortBtn" type="button" class="inline-flex justify-center w-full px-4 py-2 bg-transparent text-sm harmony__color-{{ section.settings.section_color_scheme }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                  Default Sorting
-                  <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.292 7.292a1 1 0 011.414 0L10 10.586l3.293-3.294a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-
-              <div id="SortList" class="origin-top-right absolute right-0 mt-2 w-56 harmony__color-{{ section.settings.section_color_scheme }} ring-1 ring-black ring-opacity-5 focus:outline-none z-30 hidden">
-                <ul class="py-1 shadow-lg border border-gray-300" role="menu" aria-orientation="vertical" aria-labelledby="SortBtn">
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=manual" class="block px-4 py-2 text-sm" role="menuitem">Sort by Manual</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=best-selling" class="block px-4 py-2 text-sm" role="menuitem">Sort by Best Selling</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=title-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by Title (A-Z)</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=title-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by Title (Z-A)</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=price-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by price Ascending</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=price-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by price Discending</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=created-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by date Discending</a></li>
-                  <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=created-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by date Ascending</a></li>
-                </ul>
-              </div>
-            </div>
+            {%  render 'product_sort' %}
           </div>
+          {%- endif-%}
         </div>
       </div>
       {% comment %} Collection main content  {% endcomment %}
       <div class="collection__main flex flex-row">
+        
         {% comment %} Collection products filter sidebar  {% endcomment %}
-        <div class="collection__filter filter__sidebar  lg:basis-3/12 px-4 lg:px-4">
-          <form class="border-t border-gray-200 px-4 py-6">
-            {%- for filter in collection.filters -%}
-            <div class="border-b border-gray-200 py-6">
-              <h3 class="-my-3 flow-root">
-                <button type="button" class="flex w-full items-center justify-between bg-transparent py-3 text-[14px] leading-[19px] font-semibold" aria-controls="filter-section-1" aria-expanded="false">
-                  <span>FILTER BY {{ filter.label | upcase }} 
-                    <strong>
-                      {%- if filter.active_values.size > 0 -%}
-                        ({{ filter.active_values.size }})
-                      {%- endif -%}
-                    </strong>
-                  </span>
-                  <span class="ml-6 flex items-center">
-                    <!-- Expand icon, show/hide based on section open state. -->
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                    <!-- Collapse icon, show/hide based on section open state. -->
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
-                    </svg>
-                  </span>
-                </button>
-              </h3>
-              <div class="pt-6" id="filter-section-1" x-show="open">
-                <div class="space-y-4 text-[14px] leading-[19px] font-normal">
-                  {%- for filter_value in filter.values -%}
-                    <div class="flex items-center justify-between">
-                      <div class="tags__item">
-                        <input id="Filter-{{ filter.param_name }}-{{ forloop.index }}" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" type="checkbox" {% if filter_value.active -%}checked{%- endif %}
-                        {% if filter_value.count == 0 and filter_value.active == false -%}disabled-none {%- endif %} class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
-                        <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="ml-3">
-                          <span>
-                            {%- case filter_value.display.type -%}
-                              {%- when 'colors' -%}
-                                {% liquid
-                                  assign size_limit = filter_value.display.value.size | at_most: 4
-                                  assign rotation = '0deg'
-                                  if size_limit == 2
-                                    assign rotation = '45deg'
-                                  endif
-      
-                                  assign angle_increment = 360 | divided_by: size_limit
-                                  assign angle = 0
-                                %}
-                                {%- capture conic_gradient -%}
-                                  {%- for color in filter_value.display.value limit: size_limit -%}
-                                    {{ color }} {{ angle }}deg{%- assign angle = angle | plus: angle_increment %} {{ angle }}deg{%- unless forloop.last %}, {%- endunless -%}
-                                  {%- endfor -%}
-                                {%- endcapture -%}
-                                <span style="
-                                  width: 25px;
-                                  height: 25px;
-                                  border-radius: 50%;
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  background: conic-gradient({{ conic_gradient }}); transform: rotateZ({{ rotation }});
-                                "></span>
-                              {%- when 'image' -%}
-                                {{
-                                  filter_value.display.value
-                                  | image_url: width: 25
-                                  | image_tag: alt: filter_value.display.value.alt
-                                }}
-                              {%- else -%}
-                                <span class="visual-display__child"></span>
-                            {%- endcase -%}
-                          </span>  
-                        {{ filter_value.label }}</label>
-                      </div>
-                        (5)
+      {%- if section.settings.enable_filter or section.settings.enable_filter_drawer -%}
+      <div class="collection__filter filter__sidebar {% if section.settings.enable_filter != false and section.settings.enable_filter_drawer != true %} lg:basis-3/12 {% else %} hidden {% endif %} px-4 lg:px-4">
+        <form class="border-t border-gray-200 px-4 py-6">
+          {%- for filter in collection.filters -%}
+          <div class="border-b border-gray-200 py-6">
+            <h3 class="-my-3 flow-root">
+              <button type="button" class="flex w-full items-center justify-between bg-transparent py-3 text-[14px] leading-[19px] font-semibold" aria-controls="filter-section-1" aria-expanded="false">
+                <span>FILTER BY {{ filter.label | upcase }} 
+                  <strong>
+                    {%- if filter.active_values.size > 0 -%}
+                      ({{ filter.active_values.size }})
+                    {%- endif -%}
+                  </strong>
+                </span>
+                <span class="ml-6 flex items-center">
+                  <!-- Expand icon, show/hide based on section open state. -->
+                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                  </svg>
+                  <!-- Collapse icon, show/hide based on section open state. -->
+                  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div class="pt-6" id="filter-section-1" x-show="open">
+              <div class="space-y-4 text-[14px] leading-[19px] font-normal">
+                {%- for filter_value in filter.values -%}
+                  <div class="flex items-center justify-between">
+                    <div class="tags__item">
+                      <input id="Filter-{{ filter.param_name }}-{{ forloop.index }}" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" type="checkbox" {% if filter_value.active -%}checked{%- endif %}
+                      {% if filter_value.count == 0 and filter_value.active == false -%}disabled-none {%- endif %} class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+                      <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="ml-3">
+                        <span>
+                          {%- case filter_value.display.type -%}
+                            {%- when 'colors' -%}
+                              {% liquid
+                                assign size_limit = filter_value.display.value.size | at_most: 4
+                                assign rotation = '0deg'
+                                if size_limit == 2
+                                  assign rotation = '45deg'
+                                endif
+    
+                                assign angle_increment = 360 | divided_by: size_limit
+                                assign angle = 0
+                              %}
+                              {%- capture conic_gradient -%}
+                                {%- for color in filter_value.display.value limit: size_limit -%}
+                                  {{ color }} {{ angle }}deg{%- assign angle = angle | plus: angle_increment %} {{ angle }}deg{%- unless forloop.last %}, {%- endunless -%}
+                                {%- endfor -%}
+                              {%- endcapture -%}
+                              <span style="
+                                width: 25px;
+                                height: 25px;
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background: conic-gradient({{ conic_gradient }}); transform: rotateZ({{ rotation }});
+                              "></span>
+                            {%- when 'image' -%}
+                              {{
+                                filter_value.display.value
+                                | image_url: width: 25
+                                | image_tag: alt: filter_value.display.value.alt
+                              }}
+                            {%- else -%}
+                              <span class="visual-display__child"></span>
+                          {%- endcase -%}
+                        </span>  
+                      {{ filter_value.label }}</label>
                     </div>
-                  {%- endfor -%}
-                  <div class="filter-group-display__submit">
-                    <input type="submit" value="Apply">
+                      (5)
                   </div>
+                {%- endfor -%}
+                <div class="filter-group-display__submit">
+                  <input type="submit" value="Apply">
                 </div>
               </div>
             </div>
-            {% endfor %}
-          </form>
-        </div>
+          </div>
+          {% endfor %}
+        </form>
+      </div>
+      {%- endif -%}
 
         {% comment %} Collection products grid  {% endcomment %}
-        <div class="collection__products lg:basis-9/12 px-4 py-4 lg:px-6 lg:py-6">
-          <div class="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
+      <div class="collection__products {% if section.settings.enable_filter != false and section.settings.enable_filter_drawer != true %} lg:basis-9/12 {% else %} lg:basis-full {% endif %} px-4 py-4 lg:px-6 lg:py-6">
+        <div class="{% if section.settings.products_per_row == '3' %} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 {% else %} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 {% endif %} xl:gap-x-8 gap-x-6 gap-y-6">
             {% for product in collection.products %}
               {% if collection.products.size > 0 %}
-                  <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-{{ settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %}" id="product__grid-wrapper">
+                  <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-{{ section.settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %}" id="product__grid-wrapper">
                     <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
                         {%- if section.settings.enable_stock_badge -%} 
                         {%- if product.available -%}
-                        <span class="stock__status-sale harmony__color-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                        <span class="badge__sale harmony__color-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
                             Sale
                             </span>
                         {%- else -%}
-                            <span class="stock__status-sold-out harmony__color-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                            <span class="badge__sold-out harmony__color-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
                             Sold out
                             </span>
                         {%- endif -%}
@@ -237,7 +221,7 @@
                             <div class="flex h-full max-w-xl flex-col items-start justify-between">
                                 {%- if section.settings.enable_quick_view -%}
                                 <div class="flex items-center justify-center harmony__color-{{ settings.product_card_overlay_color_scheme }} gap-x-4 text-xs">
-                                    {%- if section.settings.offer_badge -%} <span class="sale-badge absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-{{ settings.sale_offer_badge_color_scheme }} py-1 px-2 font-semibold">40% off</span>{% endif %}
+                                    {%- if section.settings.offer_badge -%} <span class="badge__discount absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-{{ settings.sale_offer_badge_color_scheme }} py-1 px-2 font-semibold">40% off</span>{% endif %}
                                     {%- if section.settings.show_wishlist -%}  
                                     <button class="absolute right-2 top-3 text-sm font-semibold h-[35px] w-[35px] block harmony__color-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -277,13 +261,13 @@
                               {% for collection in product.collections limit: 1 %}
                                 {%- if section.settings.show_category -%}
                                 <td class="pr-2 py-2">
-                                    <div class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-{{ settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</div>
+                                    <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-{{ section.settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
                                 </td>
                                 {% endif %}
                               {% endfor %}
                               {%- if section.settings.show_reviews -%}
                               <td class="flex items-center justify-end text-right py-2 pl-2">
-                                <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-{{ settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %}">
+                                <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-{{ section.settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %}">
                                   {%  render 'rating-star' %}
                                 </div>
                                 <span class="sr-only">3.9 out of 5 stars</span>
@@ -306,6 +290,7 @@
   {% endpaginate %}
 </section>
 
+
 {% schema %}
 {
   "name": "Collection All",
@@ -315,6 +300,49 @@
       "id": "section_color_scheme",
       "label": "Section Color Scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "product_card_color_scheme",
+      "label": "Product card Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "product_overlay_color_scheme",
+      "label": "Product Overlay Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "number",
+      "id": "number_of_letters_in_title",
+      "label": "Number of letters in Title",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show?",
+      "min": 3,
+      "max": 16,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "products_per_row",
+      "label": "Products per Row",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
     },
     {
       "type": "checkbox",
@@ -342,6 +370,28 @@
     },
     {
       "type": "checkbox",
+      "id": "enable_filter",
+      "label": "Enable Product Filtering",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filter_drawer",
+      "label": "Enable Product Filter Drawer",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sort",
+      "label": "Enable Product Sorting",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product Overlay"
+    },
+    {
+      "type": "checkbox",
       "id": "offer_badge",
       "label": "Sale Badge",
       "default": true
@@ -357,30 +407,6 @@
       "id": "enable_quick_view",
       "label": "Enable Quick View",
       "default": true
-    },
-    {
-      "type": "number",
-      "id": "number_of_letters_in_title",
-      "label": "Number of letters in Title",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "label": "Products to show?",
-      "min": 2,
-      "max": 12,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "products_per_row",
-      "label": "Products per row",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 3
     },
     {
       "type": "header",

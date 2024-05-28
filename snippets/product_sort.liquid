@@ -1,0 +1,23 @@
+<div class="relative inline-block text-left">
+    <div>
+      <button id="SortBtn" type="button" class="inline-flex justify-center w-full px-4 py-2 bg-transparent text-sm harmony__color-{{ section.settings.section_color_scheme }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+        Default Sorting
+        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M5.292 7.292a1 1 0 011.414 0L10 10.586l3.293-3.294a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="SortList" class="origin-top-right absolute right-0 mt-2 w-56 harmony__color-{{ section.settings.section_color_scheme }} ring-1 ring-black ring-opacity-5 focus:outline-none z-30 hidden">
+      <ul class="py-1 shadow-lg border border-gray-300" role="menu" aria-orientation="vertical" aria-labelledby="SortBtn">
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=manual" class="block px-4 py-2 text-sm" role="menuitem">Sort by Manual</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=best-selling" class="block px-4 py-2 text-sm" role="menuitem">Sort by Best Selling</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=title-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by Title (A-Z)</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=title-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by Title (Z-A)</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=price-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by price Ascending</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=price-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by price Discending</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=created-descending" class="block px-4 py-2 text-sm" role="menuitem">Sort by date Discending</a></li>
+        <li><a href="{% if template == 'index' %}collections/all/{% endif %}?sort_by=created-ascending" class="block px-4 py-2 text-sm" role="menuitem">Sort by date Ascending</a></li>
+      </ul>
+    </div>
+</div>

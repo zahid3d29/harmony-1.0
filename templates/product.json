@@ -7,6 +7,94 @@
         "heading": "Cart"
       }
     },
+    "product_main_Dkm97y": {
+      "type": "product-main",
+      "blocks": {
+        "title_pL4yWN": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "review_breadcrumbs_469tGq": {
+          "type": "review_breadcrumbs",
+          "settings": {
+            "breadcrumb": false,
+            "rating": false
+          }
+        },
+        "price_z7Qiq8": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description_DbzmGQ": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "variant_picker_43zzCr": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "pills",
+            "color_swatches": false
+          }
+        },
+        "gift_stock_NYkjK7": {
+          "type": "gift_stock",
+          "settings": {
+            "gift": false,
+            "stock": false
+          }
+        },
+        "buy_button_JQBkpc": {
+          "type": "buy_button",
+          "settings": {
+            "subscribe": false,
+            "instalments": false
+          }
+        },
+        "benifit_share_d4QanN": {
+          "type": "benifit_share",
+          "settings": {
+            "benifit": false,
+            "li_1": "",
+            "li_2": "",
+            "share": false
+          }
+        },
+        "icon_with_text_bzJLMz": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Spinning_arrows.gif",
+            "text": "we are spiniing all the way"
+          }
+        },
+        "icon_with_text_jxHBaJ": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/photo_frame_back_side_91.jpg",
+            "text": "Make something unique, that will bring you something."
+          }
+        }
+      },
+      "block_order": [
+        "title_pL4yWN",
+        "review_breadcrumbs_469tGq",
+        "price_z7Qiq8",
+        "description_DbzmGQ",
+        "variant_picker_43zzCr",
+        "gift_stock_NYkjK7",
+        "buy_button_JQBkpc",
+        "benifit_share_d4QanN",
+        "icon_with_text_bzJLMz",
+        "icon_with_text_jxHBaJ"
+      ],
+      "settings": {
+        "heading": "Cart",
+        "wishlist": false
+      }
+    },
     "product_how_use_crUGaT": {
       "type": "product-how-use",
       "disabled": true,
@@ -118,77 +206,14 @@
       "settings": {
         "heading": "Cart"
       }
-    },
-    "product_main_yj8KNG": {
-      "type": "product-main",
-      "blocks": {
-        "review_breadcrumbs_HMbzEd": {
-          "type": "review_breadcrumbs",
-          "settings": {
-            "breadcrumb": false,
-            "rating": false
-          }
-        },
-        "title_zRGtEb": {
-          "type": "title",
-          "settings": {
-          }
-        },
-        "price_yicNJC": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "variant_picker_3cTXPD": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "pills",
-            "color_swatches": false
-          }
-        },
-        "gift_stock_6zybBU": {
-          "type": "gift_stock",
-          "settings": {
-            "gift": true,
-            "stock": true
-          }
-        },
-        "buy_button_zxz9cP": {
-          "type": "buy_button",
-          "settings": {
-            "subscribe": false,
-            "instalments": false
-          }
-        },
-        "icon_with_text_WpKDnn": {
-          "type": "icon_with_text",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Spinning_arrows.gif",
-            "text": "Icon with text"
-          }
-        }
-      },
-      "block_order": [
-        "review_breadcrumbs_HMbzEd",
-        "title_zRGtEb",
-        "price_yicNJC",
-        "variant_picker_3cTXPD",
-        "gift_stock_6zybBU",
-        "buy_button_zxz9cP",
-        "icon_with_text_WpKDnn"
-      ],
-      "settings": {
-        "heading": "Cart",
-        "wishlist": false
-      }
     }
   },
   "order": [
     "ajax_cart_6bFt8A",
+    "product_main_Dkm97y",
     "product_how_use_crUGaT",
     "product_facts_Hh7hLV",
     "product_info_tabs_fLwM37",
-    "cart_drawer_F3gRFU",
-    "product_main_yj8KNG"
+    "cart_drawer_F3gRFU"
   ]
 }
