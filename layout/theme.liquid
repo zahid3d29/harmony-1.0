@@ -27,8 +27,6 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
-    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
     
     {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
     {% unless settings.type_header_font.system? and settings.type_body_font.system? %}
@@ -40,26 +38,12 @@
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
     </script>
 
-    {% comment %} schema settings color style  {% endcomment %}
-    {% comment %}
-    {% for scheme in settings.color_schemes %}
-      {% style %} 
-        .harmony__color-{{ scheme.id }}{
-          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-          color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-          border-color: rgb({{ scheme.settings.border_color.red }}, {{ scheme.settings.border_color.green }}, {{ scheme.settings.border_color.blue }});
-        }
-      {% endstyle %} 
-    {% endfor %}
-    {% endcomment %}
 
     {{ content_for_header }}
 
     <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-
-
 
 
     {% comment %}
@@ -118,7 +102,16 @@
       import '{{ "liquid-ajax-cart-v2.1.0.js" | asset_url }}';
     </script>
 
-
+    {%  style  %}  
+        {% for scheme in settings.color_schemes %}
+          .harmony__color-{{ scheme.id }}{
+            background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+            color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+            border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
+          }
+        {% endfor %}
+    {% endstyle %} 
+    
   </head>
   <body>
 

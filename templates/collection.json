@@ -13,10 +13,9 @@
     },
     "collection": {
       "type": "collection",
+      "disabled": true,
       "settings": {
         "section_color_scheme": "",
-        "product_card_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
-        "product_overlay_color_scheme": "",
         "number_of_letters_in_title": 12,
         "products_to_show": 9,
         "products_per_row": "3",

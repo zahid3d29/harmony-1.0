@@ -47,8 +47,14 @@ button, input, optgroup, select, textarea {
 }
 
 @layer components {
-  .harmony__content-text {
+  .harmony__content-text-base {
     @apply text-[14px] leading-[19px] font-normal;
+  }
+  .harmony__content-text-md {
+    @apply text-[16px] leading-[22px] font-semibold;
+  }
+  .harmony__content-text-lg {
+    @apply text-[18px] leading-[24px] font-semibold;
   }
 }
 
@@ -57,3 +63,4 @@ button, input, optgroup, select, textarea {
     filter: none;
   } */
 }
+

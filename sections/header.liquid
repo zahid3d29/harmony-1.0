@@ -162,7 +162,7 @@
                       {{ main_link.title }}
                     </a>
                   </li>
-                  {% render 'mega-menu' %}
+                  {% render 'mega_menu' %}
                 </div>
               {% else %}
                 <li>
@@ -231,7 +231,6 @@
 </section>
 
 {% render 'offcanvas' %}
-
 
 {% schema %}
 {
@@ -363,6 +362,25 @@
             "default": 36
         }
     ],
+   "blocks": [
+    {
+      "name": "Mega menu Collection ",
+      "type": "mega_menu_collection_",
+      "settings": [
+        {
+          "type": "text",
+          "id": "custom_label",
+          "label": "Custom Label",
+          "default": "Popular Collections"
+        },
+        {
+          "type": "collection_list",
+          "label": "Collection List 1",
+          "id": "collection_list_1"
+        }
+      ]
+    }
+  ],
     "presets": [
         {
         "name": "Header",

@@ -21,7 +21,6 @@
   }
 
   /* paginate style  */
-  
   .paginate_circle { 
     width: 50px; 
     line-height: 50px; 
@@ -33,28 +32,22 @@
 
   /* schema settings color  */
   {% for scheme in settings.color_schemes %}
-    .harmony__color-{{ scheme.id }}{
-      background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-      color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-    }
-  {% endfor %}
-
-    /* schema settings color  */
-    {% for scheme in settings.color_schemes %}
+    
     /* Button color  */
     .overlay__btn{
       background: rgb({{ scheme.settings.button.red }},{{ scheme.settings.button.green }},{{ scheme.settings.button.blue }});
       color: rgb({{ scheme.settings.button_label.red }},{{ scheme.settings.button_label.green }},{{ scheme.settings.button_label.blue }});
     }
+
+    .product__grid-card {
+      padding: {{ settings.product_card_padding }}px {{ settings.product_card_padding }}px;
+      border-radius: {{ settings.product_card_corner_radius }}px;
+      border-width: {{ settings.product_card_border_thickness }}px;
+      border-color: {{ settings.product_card_border_color }};
+      box-shadow: {{ settings.product_card_shadow_horizontal_offset }}px {{ settings.product_card_shadow_vertical_offset }}px {{ settings.product_card_shadow_blur }}px {{ settings.product_card_shadow_spread }}px rgb({{ scheme.settings.shadow.red }} {{ scheme.settings.shadow.green }} {{ scheme.settings.shadow.blue }} / {{ settings.product_card_shadow_opacity }}%);
+    }
+
   {% endfor %}
-
-
-  .product__grid-card {
-    padding: {{ settings.product_card_horizontal_offset }}px {{ settings.product_card_vertical_offset }}px;
-    border-radius: {{ settings.product_card_corner_radius }}px;
-    border-width: {{ settings.product_card_border_thickness }}px;
-    border-color: {{ settings.product_card_border_color }}{{ settings.product_card_border_opacity }};
-  }
 
 
   /* schema settings Badge Corner Radius  */
@@ -259,14 +252,14 @@
                             </tr>
                             <tr>
                               {% for collection in product.collections limit: 1 %}
-                                {%- if section.settings.show_category -%}
+                                {%- if section.settings.show_category and collection != blank -%}
                                 <td class="pr-2 py-2">
                                     <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-{{ section.settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
                                 </td>
                                 {% endif %}
                               {% endfor %}
                               {%- if section.settings.show_reviews -%}
-                              <td class="flex items-center justify-end text-right py-2 pl-2">
+                              <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
                                 <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-{{ section.settings.product_card_color_scheme }} {% else %} harmony__color-{{ section.settings.section_color_scheme }} {% endif %}">
                                   {%  render 'rating-star' %}
                                 </div>
@@ -299,18 +292,6 @@
       "type": "color_scheme",
       "id": "section_color_scheme",
       "label": "Section Color Scheme",
-      "default": "scheme-1"
-    },
-    {
-      "type": "color_scheme",
-      "id": "product_card_color_scheme",
-      "label": "Product card Color Scheme",
-      "default": "scheme-1"
-    },
-    {
-      "type": "color_scheme",
-      "id": "product_overlay_color_scheme",
-      "label": "Product Overlay Color Scheme",
       "default": "scheme-1"
     },
     {

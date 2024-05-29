@@ -71,6 +71,12 @@
           },
           {
             "type": "color",
+            "id": "border",
+            "label": "Border",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
             "id": "button_label",
             "label": "Button Label",
             "default": "#FFFFFF"
@@ -304,6 +310,26 @@
         "id": "sale_offer_badge_color_scheme",
         "label": "Sale Offer Badge Color",
         "default": "scheme-1"
+      },
+      {
+        "type": "select",
+        "id": "product_badge_box_shadow",
+        "options": [
+          {
+            "value": "shadow-lg",
+            "label": "Shadow lg"
+          },
+          {
+            "value": "shadow-md",
+            "label": "Shadow md"
+          },
+          {
+            "value": "shadow",
+            "label": "Shadow"
+          }
+        ],
+        "default": "shadow",
+        "label": "Shadow"
       }
     ]
   },
@@ -327,45 +353,35 @@
         "label": "Standard"
       },
       {
-        "type": "select",
-        "id": "product_card_text_alignment",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "center",
-            "label": "Center"
-          },
-          {
-            "value": "right",
-            "label": "Right"
-          }
-        ],
-        "default": "left",
-        "label": "Left"
+        "type": "range",
+        "id": "product_card_padding",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Card Padding",
+        "default": 10
       },
       {
         "type": "color_scheme",
         "id": "product_card_color_scheme",
-        "label": "Card Color",
+        "label": "Card Color Scheme",
         "default": "scheme-1"
       },
       {
         "type": "color_scheme",
         "id": "product_card_overlay_color_scheme",
-        "label": "Card Overlay Color",
+        "label": "Overlay Color Scheme",
         "default": "scheme-1"
       },
       {
         "type": "header",
-        "content": "Border Style"
+        "content": "Border"
       },
       {
         "type": "color",
         "id": "product_card_border_color",
-        "label": "Border Color",
+        "label": "Color",
         "default": "#ffffff"
       },
       {
@@ -375,7 +391,7 @@
         "max": 10,
         "step": 1,
         "unit": "px",
-        "label": "Border Thickness",
+        "label": "Thickness",
         "default": 0
       },
       {
@@ -383,9 +399,9 @@
         "id": "product_card_border_opacity",
         "min": 0,
         "max": 90,
-        "step": 10,
+        "step": 5,
         "unit": "px",
-        "label": "Border Opacity",
+        "label": "Opacity",
         "default": 0
       },
       {
@@ -395,32 +411,62 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "Border Radius",
+        "label": "Corner Radius",
         "default": 0
       },
       {
         "type": "header",
-        "content": "Card Spacing"
+        "content": "Shadow"
       },
       {
         "type": "range",
-        "id": "product_card_horizontal_offset",
-        "min": 10,
-        "max": 30,
-        "step": 1,
+        "id": "product_card_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "Opacity",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "product_card_shadow_blur",
+        "min": 0,
+        "max": 90,
+        "step": 2,
+        "unit": "px",
+        "label": "Blur",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "product_card_shadow_spread",
+        "min": -40,
+        "max": 90,
+        "step": 2,
+        "unit": "px",
+        "label": "Spread",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "product_card_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
         "unit": "px",
         "label": "Horizontal Offset",
-        "default": 10
+        "default": 0
       },
       {
         "type": "range",
-        "id": "product_card_vertical_offset",
-        "min": 10,
-        "max": 30,
-        "step": 1,
+        "id": "product_card_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
         "unit": "px",
         "label": "Vertical Offset",
-        "default": 10
+        "default": 0
       }
     ]
   }
