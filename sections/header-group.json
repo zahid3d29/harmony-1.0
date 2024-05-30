@@ -53,6 +53,7 @@
       "block_order": [
         "mega_menu_collection_e9VRtK"
       ],
+      "disabled": true,
       "settings": {
         "logo": "shopify:\/\/shop_images\/swiss-black.png",
         "mega_label": "Home",

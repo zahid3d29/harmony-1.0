@@ -11,6 +11,7 @@
       "type": "page-header",
       "disabled": true,
       "settings": {
+        "color_scheme": "",
         "heading": "View your shopping cart",
         "show_heeading": true,
         "page_title": "About us",
@@ -213,6 +214,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "mega_menu_fire6h": {
+      "type": "mega-menu",
+      "settings": {
+        "banner_heading": "eASY Skin Care Routine"
+      }
     }
   },
   "order": [
@@ -228,6 +235,7 @@
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
     "hero_banner_yfzKPH",
-    "product_featured_83JMBn"
+    "product_featured_83JMBn",
+    "mega_menu_fire6h"
   ]
 }
