@@ -104,12 +104,16 @@
       "disabled": true,
       "settings": {
         "color_scheme": "",
+        "countdown_position": "right",
         "heading": "Limited Time Sale Offer",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "day": 4,
-        "hour": 14,
-        "min": 20,
-        "sec": 50,
+        "end_date": "2024-12-31",
+        "end_time": "23:59:59",
+        "slider_navigation": "both",
+        "show_price": true,
+        "show_category": true,
+        "show_reviews": false,
+        "enable_sale_badge": true,
         "border_color": "#626e5c",
         "padding_top": 36,
         "padding_bottom": 36
@@ -215,8 +219,50 @@
         "padding_bottom": 36
       }
     },
-    "mega_menu_fire6h": {
+    "mega_menu_A4Rwra": {
       "type": "mega-menu",
+      "blocks": {
+        "collection_list_wF74AX": {
+          "type": "collection_list",
+          "settings": {
+            "collection_list_nav": "All Collections",
+            "collection_list": [
+              "automatic",
+              "books",
+              "collection-2",
+              "cream",
+              "gold",
+              "jwellary",
+              "man",
+              "manual"
+            ]
+          }
+        },
+        "collection_eUxJ7n": {
+          "type": "collection",
+          "settings": {
+            "collection_nav": "All Products",
+            "collection": "gold"
+          }
+        },
+        "collection_list_2_CxArix": {
+          "type": "collection_list_2",
+          "settings": {
+            "collection_list_nav_2": "Collections 2",
+            "collection_list_2": [
+              "cream",
+              "gold",
+              "manual",
+              "t-shirts"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_wF74AX",
+        "collection_eUxJ7n",
+        "collection_list_2_CxArix"
+      ],
       "settings": {
         "banner_heading": "eASY Skin Care Routine"
       }
@@ -236,6 +282,6 @@
     "cart_drawer_9mpUVf",
     "hero_banner_yfzKPH",
     "product_featured_83JMBn",
-    "mega_menu_fire6h"
+    "mega_menu_A4Rwra"
   ]
 }
