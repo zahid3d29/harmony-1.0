@@ -11,7 +11,7 @@
     }
   }
 {%- endstyle -%}
-<section id="harmony--{{ section.id }}" class="bg-[#FAF2DC] h-full min-h-[50px] section-{{ section.id }}-padding">
+<section id="harmony--{{ section.id }}" class="bg-[#FAF2DC] h-full min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
   <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
       <div class="flex lg:flex-1">
@@ -248,44 +248,40 @@
         "id":"mega_label",
         "info": "Write the link of title to assign mega menu"
       },
-       {
-      "type": "link_list",
-      "id": "mega_menu",
-      "label": "Mega Menu"
-    },
 
-    {
-      "type": "collection",
-      "id": "featured_collection_",
-      "label": "Featured collection ",
-      "info": "Featured collection for mega menu"
-    },   {
-      "type": "select",
-      "id": "mega_menu_grid",
-      "label": "Mega Menu Grid",
-      "options": [
-        {
-          "value": "products",
-          "label": "Products"
-        },
-        {
-          "value": "collections",
-          "label": "Collections"
-        }
-      ],
-      "default": "collections",
-      "info": "Choose 1 to display in mega menu grid"
-    },
-    {
-      "type": "collection_list",
-      "id": "collections_for_mega_menu_grid",
-      "label": "Collections for Mega Menu Grid",
-      "limit": 6
-    },
-   {
-            "type": "header",
-            "content": "Header Icons"
-        },
+      {
+        "type": "collection",
+        "id": "featured_collection_",
+        "label": "Featured collection ",
+        "info": "Featured collection for mega menu"
+      },   
+      {
+        "type": "select",
+        "id": "mega_menu_grid",
+        "label": "Mega Menu Grid",
+        "options": [
+          {
+            "value": "products",
+            "label": "Products"
+          },
+          {
+            "value": "collections",
+            "label": "Collections"
+          }
+        ],
+        "default": "collections",
+        "info": "Choose 1 to display in mega menu grid"
+      },
+      {
+        "type": "collection_list",
+        "id": "collections_for_mega_menu_grid",
+        "label": "Collections for Mega Menu Grid",
+        "limit": 6
+      },
+      {
+        "type": "header",
+        "content": "Header Icons"
+      },
       {
         "type": "checkbox",
         "label":"Search Icon",
@@ -301,10 +297,10 @@
         "label":"Profile Icon",
         "id":"Profile"
       },
-       {
-            "type": "header",
-            "content": "Mobile Drawer"
-        },
+      {
+          "type": "header",
+          "content": "Mobile Drawer"
+      },
       {
         "type": "image_picker",
         "label":"Mobile Drawer Background",
@@ -326,80 +322,174 @@
         "id":"mob_s_menu"
       },
       {
-      "type": "checkbox",
-      "label":"News letter",
-      "id":"mob_newsletter"
+        "type": "checkbox",
+        "label":"News letter",
+        "id":"mob_newsletter"
       },
       {
-      "type": "checkbox",
-      "label":"Social Icons",
-      "id":"mob_social"
+        "type": "checkbox",
+        "label":"Social Icons",
+        "id":"mob_social"
       },
-
-        {
-            "type": "header",
-            "content": "Section padding"
-        },
-
-        {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 100,
-            "step": 4,
-            "unit": "px",
-            "label": "Padding Top",
-            "default": 36
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 100,
-            "step": 4,
-            "unit": "px",
-            "label": "Padding Bottom",
-            "default": 36
-        }
+      {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 0
+      }
     ],
    "blocks": [
     {
-      "name": "Mega menu Collection ",
-      "type": "mega_menu_collection_",
+      "type": "collection_list",
+      "name": "Collection List",
+      "limit": 1,
       "settings": [
         {
-          "type": "text",
-          "id": "custom_label",
-          "label": "Custom Label",
-          "default": "Popular Collections"
+          "type": "inline_richtext",
+          "id": "collection_list_nav",
+          "label": "Nav Title",
+          "default": "All Collections"
         },
         {
           "type": "collection_list",
-          "label": "Collection List 1",
-          "id": "collection_list_1"
+          "id": "collection_list",
+          "label": "Collections",
+          "limit": 8
+        }
+      ]
+    },
+    {
+      "type": "collection_list_2",
+      "name": "Collection List Two",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "collection_list_nav_2",
+          "label": "Nav Title",
+          "default": "All Collections"
+        },
+        {
+          "type": "collection_list",
+          "id": "collection_list_2",
+          "label": "Collections",
+          "limit": 8
+        }
+      ]
+    },
+    {
+      "type": "collection_list_3",
+      "name": "Collection List Three",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "collection_list_nav_3",
+          "label": "Nav Title",
+          "default": "All Collections"
+        },
+        {
+          "type": "collection_list",
+          "id": "collection_list_3",
+          "label": "Collections",
+          "limit": 8
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Collection",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "collection_nav",
+          "label": "Nav Title",
+          "default": "All Collections"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+
+      ]
+    },
+    {
+      "type": "collection_2",
+      "name": "Collection Two",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "collection_nav_2",
+          "label": "Nav Title",
+          "default": "All Collections"
+        },
+        {
+          "type": "collection",
+          "id": "collection_2",
+          "label": "Collection"
+        }
+      ]
+    },
+    {
+      "type": "collection_3",
+      "name": "Collection Three",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "collection_nav_3",
+          "label": "Nav Title",
+          "default": "All Collections"
+        },
+        {
+          "type": "collection",
+          "id": "collection_3",
+          "label": "Collection"
         }
       ]
     }
   ],
-    "presets": [
-        {
-        "name": "Header",
-        "category": "Harmony Sections"
-        }
-    ]
+  "presets": [
+    {
+      "name": "Header",
+      "category": "Harmony Sections"
+    }
+  ]
 }
 {% endschema %}
+
 <style>
-        div#doubleDropdown {
-          visibility: hidden;
-      }
-      div#dropdownNavbar {
-        visibility: hidden;
+    div#doubleDropdown {
+      visibility: hidden;
     }
-  .dropdown_menu:hover  .nav__sub-menu {
+    div#dropdownNavbar {
+      visibility: hidden;
+    }
+    .dropdown_menu:hover  .nav__sub-menu {
       visibility: visible !important;
-  }
-  .double_drop:hover .nav__sub__menu-child {
-    visibility: visible !important;
-  }
+    }
+    .double_drop:hover .nav__sub__menu-child {
+      visibility: visible !important;
+    }
 </style>
