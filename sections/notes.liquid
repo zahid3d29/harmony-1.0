@@ -136,3 +136,141 @@ products_per_row = 4 -> "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-
 {%- if section.settings.products_per_row == '3' -%} grid-cols-1 sm:grid-cols-2 md:grid-cols-3 {%- else -%} grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 {%- endif -%}
 
 {% comment %} Show/Hide filter in sidebar  {% endcomment %}
+
+
+                        {% comment %} Nav with multi lavel menu items  {% endcomment %}
+                        <div class="main__menu-item">
+                          <div class="py-4">
+                            <ul role="nav__item-list" class="space-y-4 pb-6 text-[18px] leading-[32px] text-white">
+                              {% assign mob-menu = section.settings.mob_menu %}
+                              {% for main_link in linklists[mob-menu].links -%}
+                                {% if main_link.links.size == 0 %}
+                                  <li>
+                                    <a href="{{ main_link.url }}">{{ main_link.title }}</a>
+                                  </li>
+                                {% elsif main_link.links.size > 0 %}
+                                  <li>
+                                    <button
+                                      type="button"
+                                      class="flex w-full items-center justify-between bg-transparent text-[18px] leading-[41px] text-white  hover:opacity-70 hover:underline"
+                                    >
+                                      <span>{{ main_link.title }}</span>
+                                      <span class="ml-6 flex items-center">
+                                        <!-- Expand icon, show/hide based on section open state. -->
+                                        <svg
+                                          class="-rotate-90"
+                                          width="24"
+                                          height="24"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="1.3"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          class="icon feather feather-chevron-down"
+                                          aria-hidden="true"
+                                          focusable="false"
+                                          role="presentation"
+                                        >
+                                          <path d="m6 9 6 6 6-6"></path>
+                                        </svg>
+                                        <!-- Collapse icon, show/hide based on section open state. -->
+                                        <svg
+                                          width="24"
+                                          height="24"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="1.3"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          class="icon feather feather-chevron-down"
+                                          aria-hidden="true"
+                                          focusable="false"
+                                          role="presentation"
+                                        >
+                                          <path d="m6 9 6 6 6-6"></path>
+                                        </svg>
+                                      </span>
+                                    </button>
+                                    <div class="pl-4">
+                                      <ul class="nav__item-list space-y-4 text-[18px] leading-[32px] text-white">
+                                        {% for child_link in main_link.links %}
+                                          {% if child_link.links.size == 0 %}
+                                            <li>
+                                              <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                                            </li>
+                                          {% elsif child_link.links.size > 0 %}
+                                            <li>
+                                              <div class="nav__item-child">
+                                                <ul class="nav__item-list-child space-y-4 text-[18px] leading-[32px] text-white">
+                                                  <li>
+                                                    <button
+                                                      type="button"
+                                                      class="flex w-full items-center justify-between bg-transparent text-[18px] leading-[41px] text-white  hover:opacity-70 hover:underline"
+                                                    >
+                                                      <span>{{ child_link.title }}</span>
+                                                      <span class="ml-6 flex items-center">
+                                                        <!-- Expand icon, show/hide based on section open state. -->
+                                                        <svg
+                                                          class="-rotate-90"
+                                                          width="24"
+                                                          height="24"
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          stroke-width="1.3"
+                                                          stroke-linecap="round"
+                                                          stroke-linejoin="round"
+                                                          class="icon feather feather-chevron-down"
+                                                          aria-hidden="true"
+                                                          focusable="false"
+                                                          role="presentation"
+                                                        >
+                                                          <path d="m6 9 6 6 6-6"></path>
+                                                        </svg>
+                                                        <!-- Collapse icon, show/hide based on section open state. -->
+                                                        <svg
+                                                          width="24"
+                                                          height="24"
+                                                          viewBox="0 0 24 24"
+                                                          fill="none"
+                                                          stroke="currentColor"
+                                                          stroke-width="1.3"
+                                                          stroke-linecap="round"
+                                                          stroke-linejoin="round"
+                                                          class="icon feather feather-chevron-down"
+                                                          aria-hidden="true"
+                                                          focusable="false"
+                                                          role="presentation"
+                                                        >
+                                                          <path d="m6 9 6 6 6-6"></path>
+                                                        </svg>
+                                                      </span>
+                                                    </button>
+                                                    <div class="pl-4">
+                                                      <ul
+                                                        role="nav__item-list"
+                                                        class="space-y-4 text-[18px] leading-[32px] text-white"
+                                                      >
+                                                        {% for grand_child in child_link.links %}
+                                                          <li>
+                                                            <a href="{{ grand_child.url }}">{{ grand_child.title }}</a>
+                                                          </li>
+                                                        {% endfor %}
+                                                      </ul>
+                                                    </div>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </li>
+                                          {% endif %}
+                                        {% endfor %}
+                                      </ul>
+                                    </div>
+                                  </li>
+                                {% endif %}
+                              {% endfor %}
+                            </ul>
+                          </div>
+                        </div>

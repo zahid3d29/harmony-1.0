@@ -13,7 +13,6 @@
     },
     "collection": {
       "type": "collection",
-      "disabled": true,
       "settings": {
         "section_color_scheme": "",
         "number_of_letters_in_title": 12,

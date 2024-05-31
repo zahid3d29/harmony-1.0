@@ -218,54 +218,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "mega_menu_A4Rwra": {
-      "type": "mega-menu",
-      "blocks": {
-        "collection_list_wF74AX": {
-          "type": "collection_list",
-          "settings": {
-            "collection_list_nav": "All Collections",
-            "collection_list": [
-              "automatic",
-              "books",
-              "collection-2",
-              "cream",
-              "gold",
-              "jwellary",
-              "man",
-              "manual"
-            ]
-          }
-        },
-        "collection_eUxJ7n": {
-          "type": "collection",
-          "settings": {
-            "collection_nav": "All Products",
-            "collection": "gold"
-          }
-        },
-        "collection_list_2_CxArix": {
-          "type": "collection_list_2",
-          "settings": {
-            "collection_list_nav_2": "Collections 2",
-            "collection_list_2": [
-              "cream",
-              "gold",
-              "manual",
-              "t-shirts"
-            ]
-          }
-        }
-      },
-      "block_order": [
-        "collection_list_wF74AX",
-        "collection_eUxJ7n",
-        "collection_list_2_CxArix"
-      ],
-      "settings": {
-        "banner_heading": "eASY Skin Care Routine"
-      }
     }
   },
   "order": [
@@ -281,7 +233,6 @@
     "newsletter_section_BiNdyU",
     "cart_drawer_9mpUVf",
     "hero_banner_yfzKPH",
-    "product_featured_83JMBn",
-    "mega_menu_A4Rwra"
+    "product_featured_83JMBn"
   ]
 }
