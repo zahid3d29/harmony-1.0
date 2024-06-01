@@ -247,36 +247,7 @@
         "label":"Mega Menu",
         "id":"mega_label",
         "info": "Write the link of title to assign mega menu"
-      },
-      {
-        "type": "collection",
-        "id": "featured_collection_",
-        "label": "Featured collection ",
-        "info": "Featured collection for mega menu"
-      },   
-      {
-        "type": "select",
-        "id": "mega_menu_grid",
-        "label": "Mega Menu Grid",
-        "options": [
-          {
-            "value": "products",
-            "label": "Products"
-          },
-          {
-            "value": "collections",
-            "label": "Collections"
-          }
-        ],
-        "default": "collections",
-        "info": "Choose 1 to display in mega menu grid"
-      },
-      {
-        "type": "collection_list",
-        "id": "collections_for_mega_menu_grid",
-        "label": "Collections for Mega Menu Grid",
-        "limit": 6
-      },
+      }, 
       {
         "type": "header",
         "content": "Header Icons"
@@ -304,11 +275,6 @@
         "type": "image_picker",
         "label":"Mobile Drawer Background",
         "id":"mob_bg_img"
-      },
-      {
-        "type":"text",
-        "label":"Mobile Slider LAbel",
-        "id":"mob_slider"
       },
       {
         "type":"link_list",
@@ -365,7 +331,7 @@
           "type": "inline_richtext",
           "id": "collection_list_nav",
           "label": "Nav Title",
-          "default": "All Collections"
+          "default": "Collection list one"
         },
         {
           "type": "collection_list",
@@ -384,7 +350,7 @@
           "type": "inline_richtext",
           "id": "collection_list_nav_2",
           "label": "Nav Title",
-          "default": "All Collections"
+          "default": "Collection list two"
         },
         {
           "type": "collection_list",
@@ -403,7 +369,7 @@
           "type": "inline_richtext",
           "id": "collection_list_nav_3",
           "label": "Nav Title",
-          "default": "All Collections"
+          "default": "Collection list three"
         },
         {
           "type": "collection_list",
@@ -422,7 +388,7 @@
           "type": "inline_richtext",
           "id": "collection_nav",
           "label": "Nav Title",
-          "default": "All Collections"
+          "default": "Collection One"
         },
         {
           "type": "collection",
@@ -441,7 +407,7 @@
           "type": "inline_richtext",
           "id": "collection_nav_2",
           "label": "Nav Title",
-          "default": "All Collections"
+          "default": "Collection two"
         },
         {
           "type": "collection",
@@ -459,7 +425,7 @@
           "type": "inline_richtext",
           "id": "collection_nav_3",
           "label": "Nav Title",
-          "default": "All Collections"
+          "default": "Collection Three"
         },
         {
           "type": "collection",
@@ -478,17 +444,18 @@
 }
 {% endschema %}
 
+
 <style>
-    div#doubleDropdown {
-      visibility: hidden;
-    }
-    div#dropdownNavbar {
-      visibility: hidden;
-    }
-    .dropdown_menu:hover  .nav__sub-menu {
-      visibility: visible !important;
-    }
-    .double_drop:hover .nav__sub__menu-child {
-      visibility: visible !important;
-    }
+  div#doubleDropdown {
+    visibility: hidden;
+  }
+  div#dropdownNavbar {
+    visibility: hidden;
+  }
+  .dropdown_menu:hover  .nav__sub-menu {
+    visibility: visible !important;
+  }
+  .double_drop:hover .nav__sub__menu-child {
+    visibility: visible !important;
+  }
 </style>

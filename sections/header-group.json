@@ -35,54 +35,89 @@
         "padding_bottom": 36
       }
     },
-    "header_Jy9JkE": {
+    "header_qCmVcD": {
       "type": "header",
       "blocks": {
-        "collection_txL7tR": {
+        "collection_list_2_bNgVRd": {
+          "type": "collection_list_2",
+          "settings": {
+            "collection_list_nav_2": "Collection list two",
+            "collection_list_2": [
+              "automatic",
+              "gold",
+              "books",
+              "big-collection"
+            ]
+          }
+        },
+        "collection_list_3_FqDUkT": {
+          "type": "collection_list_3",
+          "settings": {
+            "collection_list_nav_3": "Collection list three",
+            "collection_list_3": [
+              "women",
+              "big-collection",
+              "man",
+              "cream",
+              "gold",
+              "books"
+            ]
+          }
+        },
+        "collection_list_bartGB": {
+          "type": "collection_list",
+          "settings": {
+            "collection_list_nav": "Collection list one",
+            "collection_list": [
+              "books",
+              "big-collection",
+              "cream",
+              "gold"
+            ]
+          }
+        },
+        "collection_3_VAy7AN": {
+          "type": "collection_3",
+          "settings": {
+            "collection_nav_3": "Collection Three",
+            "collection_3": "books"
+          }
+        },
+        "collection_2_drP4cA": {
+          "type": "collection_2",
+          "disabled": true,
+          "settings": {
+            "collection_nav_2": "Collection two",
+            "collection_2": "bigger-collection"
+          }
+        },
+        "collection_FT8cpz": {
           "type": "collection",
           "disabled": true,
           "settings": {
-            "collection_nav": "GOLD",
-            "collection": "gold"
-          }
-        },
-        "collection_list_ecDky6": {
-          "type": "collection_list",
-          "settings": {
-            "collection_list_nav": "Popular",
-            "collection_list": [
-              "books",
-              "automatic",
-              "big-collection",
-              "cream",
-              "gold",
-              "jwellary",
-              "man",
-              "manual"
-            ]
+            "collection_nav": "Collection One",
+            "collection": "big-collection"
           }
         }
       },
       "block_order": [
-        "collection_txL7tR",
-        "collection_list_ecDky6"
+        "collection_list_2_bNgVRd",
+        "collection_list_3_FqDUkT",
+        "collection_list_bartGB",
+        "collection_3_VAy7AN",
+        "collection_2_drP4cA",
+        "collection_FT8cpz"
       ],
       "settings": {
         "logo": "shopify:\/\/shop_images\/swiss-black.png",
-        "mega_label": "About",
-        "featured_collection_": "gold",
-        "mega_menu_grid": "products",
-        "collections_for_mega_menu_grid": [
-          "gold"
-        ],
-        "search": true,
-        "cart": true,
-        "Profile": true,
-        "mob_slider": "",
-        "mob_menu": "main-menu",
-        "mob_s_menu": "mega-menu-2",
-        "mob_newsletter": true,
-        "mob_social": true,
+        "mega_label": "Home",
+        "search": false,
+        "cart": false,
+        "Profile": false,
+        "mob_menu": "",
+        "mob_s_menu": "",
+        "mob_newsletter": false,
+        "mob_social": false,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -90,6 +125,6 @@
   },
   "order": [
     "announcement-bar",
-    "header_Jy9JkE"
+    "header_qCmVcD"
   ]
 }
