@@ -46,7 +46,7 @@
         "block_mGDwpD": {
           "type": "block",
           "settings": {
-            "collection": "frontpage"
+            "collection": "bigger-collection"
           }
         }
       },
@@ -87,7 +87,7 @@
         "block_iqWYaX": {
           "type": "block",
           "settings": {
-            "collection": "frontpage"
+            "collection": "bigger-collection"
           }
         },
         "block_xnwNdC": {
