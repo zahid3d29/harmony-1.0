@@ -1,5 +1,12 @@
 
 {% style %}
+  {% for scheme in settings.color_schemes %}
+    .harmony__color-{{ scheme.id }}{
+      background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+      color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+      border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
+    }
+  {% endfor %}
   /* Style the tab content */
   .navcontent {
     display: none;
@@ -20,13 +27,12 @@
 {% endstyle %}
   
 
-
-<div class="mega__menu-wrapper hidden lg:block relative bg-[#F7F5F0] mega_menu">
+<div class="mega__menu-wrapper hidden lg:block relative mega_menu harmony__color-{{ section.settings.mega_menu_color_scheme }}">
   <nav class="mega__menu-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex">
-      <div class="absolute inset-x-0 top-full text-sm text-gray-500 mega_menu">
-        <div class="absolute inset-0 top-1/2 bg-[#F7F5F0] shadow-md" aria-hidden="true"></div>
-        <div class="relative bg-[#F7F5F0]">
+      <div class="absolute inset-x-0 top-full mega_menu harmony__color-{{ section.settings.mega_menu_color_scheme }}">
+        <div class="absolute inset-0 top-1/2 shadow-md" aria-hidden="true"></div>
+        <div class="relative">
           <div class="mx-auto max-w-screen-2xl px-6 md:px-10">
             <div class="grid grid-cols-3 gap-x-8 gap-y-10 py-16">
               {% for block in section.blocks %}
@@ -34,20 +40,20 @@
                 {% when 'collection_list' %}
                   <div id="{{ block.settings.collection_list_nav | replace: ' ', '' }}" class="navcontent overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
                   {% for collection in block.settings.collection_list %}
-                    <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                      <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                    <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px] ">
+                      <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none group-hover:opacity-75">
                         <img src="{{ collection.image | img_url: '600x600' }}" alt="{{ collection.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                       </div>
                       <div class="product__info grid grid-cols-2 mt-[14px]">
-                        <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                        <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px]">
                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                           {{ collection.title }}
                         </a>
-                        <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">({{ collection.products_count }})</h6>
+                        <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px]">({{ collection.products_count }})</h6>
                       </div>
                       {% if collection.description != blank %}
-                      <div class="w-full my-[14px] border-t border-gray-400"></div>
-                      <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                      <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                      <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                         {{ collection.description | truncate: 100 }}
                       </div>
                       {% endif %}
@@ -57,20 +63,20 @@
                 {% when 'collection_list_2' %}
                   <div id="{{ block.settings.collection_list_nav_2 | replace: ' ', '' }}" class="navcontent overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
                   {% for collection in block.settings.collection_list_2 %}
-                    <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                      <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                    <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px]">
+                      <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                         <img src="{{ collection.image | img_url: '600x600' }}" alt="{{ collection.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                       </div>
                       <div class="product__info grid grid-cols-2 mt-[14px]">
-                        <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                        <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px]">
                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                           {{ collection.title }}
                         </a>
-                        <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">({{ collection.products_count }})</h6>
+                        <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px]">({{ collection.products_count }})</h6>
                       </div>
                       {% if collection.description != blank %}
-                      <div class="w-full my-[14px] border-t border-gray-400"></div>
-                      <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                      <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                      <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                         {{ collection.description | truncate: 100 }}
                       </div>
                       {% endif %}
@@ -80,20 +86,20 @@
                 {% when 'collection_list_3' %}
                   <div id="{{ block.settings.collection_list_nav_3 | replace: ' ', '' }}" class="navcontent overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
                     {% for collection in block.settings.collection_list_3 %}
-                      <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                        <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                      <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px]">
+                        <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                           <img src="{{ collection.image | img_url: '600x600' }}" alt="{{ collection.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                         </div>
                         <div class="product__info grid grid-cols-2 mt-[14px]">
-                          <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                          <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px]">
                             <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                             {{ collection.title }}
                           </a>
-                          <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] text-[#000000]">({{ collection.products_count }})</h6>
+                          <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px]">({{ collection.products_count }})</h6>
                         </div>
                         {% if collection.description != blank %}
-                          <div class="w-full my-[14px] border-t border-gray-400"></div>
-                          <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                          <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                          <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                             {{ collection.description | truncate: 100 }}
                           </div>
                         {% endif %}
@@ -105,22 +111,22 @@
                     {% if block.settings.collection %}
                       {% assign selected_collection = collections[block.settings.collection] %}
                       {% for product in selected_collection.products %}
-                        <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                          <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                        <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px]">
+                          <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                             <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                           </div>
                           <div class="product__info grid grid-cols-2 mt-[14px]">
-                            <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                            <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px]">
                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                               {{ product.title }}
                             </a>
-                            <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px] text-[#000000]">
+                            <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px]">
                               {{ product.price | money }}
                             </h6>
                           </div>
                           {% if product.description %}
-                            <div class="w-full my-[14px] border-t border-gray-400"></div>
-                            <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                            <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                            <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                               {{ product.description | truncate: 50 }}
                             </div>
                           {% endif %}
@@ -133,22 +139,22 @@
                     {% if block.settings.collection_2 %}
                     {% assign selected_collection_2 = collections[block.settings.collection_2] %}
                     {% for product in selected_collection_2.products %}
-                      <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                        <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                      <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px]">
+                        <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                           <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                         </div>
                         <div class="product__info grid grid-cols-2 mt-[14px]">
-                          <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                          <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px]">
                             <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                             {{ product.title }}
                           </a>
-                          <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px] text-[#000000]">
+                          <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px]">
                             {{ product.price | money }}
                           </h6>
                         </div>
                         {% if product.description %}
-                          <div class="w-full my-[14px] border-t border-gray-400"></div>
-                          <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                          <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                          <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                             {{ product.description | truncate: 50 }}
                           </div>
                         {% endif %}
@@ -161,22 +167,22 @@
                     {% if block.settings.collection_3 %}
                       {% assign selected_collection_3 = collections[block.settings.collection_3] %}
                       {% for product in selected_collection_3.products %}
-                        <div class="max-w-[30%] group flex-none relative text-base sm:text-sm">
-                          <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none bg-gray-100 group-hover:opacity-75">
+                        <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px]">
+                          <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                             <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                           </div>
                           <div class="product__info grid grid-cols-2 mt-[14px]">
-                            <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px] text-[#000000]">
+                            <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px]">
                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                               {{ product.title }}
                             </a>
-                            <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px] text-[#000000]">
+                            <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px]">
                               {{ product.price | money }}
                             </h6>
                           </div>
                           {% if product.description %}
-                            <div class="w-full my-[14px] border-t border-gray-400"></div>
-                            <div class="product_short_desc text-[14px] leading-[19px] text-[#000000]" aria-hidden="true">
+                            <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                            <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                               {{ product.description | truncate: 50 }}
                             </div>
                           {% endif %}
@@ -188,11 +194,11 @@
               {% endfor %}
               <div class="mega__menu-nav-item row-start-1 grid grid-cols-1 gap-x-8 gap-y-10 text-sm">
                 <div class="product__categories">
-                  <ul class="tab space-y-[12px] text-[26px] leading-[41px] text-[#000000]">
+                  <ul class="tab space-y-[12px] text-[26px] leading-[41px]">
                     {% for block in section.blocks %}
                       {% case block.type %}
                         {% when 'collection_list' %}
-                        <li class="tablinks flex group" onmouseover="openCity(event, '{{ block.settings.collection_list_nav | replace: ' ', '' }}')">
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -201,7 +207,7 @@
                           </span>
                         </li>
                         {% when 'collection_list_2' %}
-                        <li class="tablinks flex group" onmouseover="openCity(event, '{{ block.settings.collection_list_nav_2 | replace: ' ', '' }}')">
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav_2 | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav_2 }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -210,16 +216,16 @@
                           </span>
                         </li>
                         {% when 'collection_list_3' %}
-                          <li class="tablinks flex group" onmouseover="openCity(event, '{{ block.settings.collection_list_nav_3 | replace: ' ', '' }}')">
-                            <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav_3 }}</a>
-                            <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                              </svg>
-                            </span>
-                          </li>
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav_3 | replace: ' ', '' }}')">
+                          <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav_3 }}</a>
+                          <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                          </span>
+                        </li>
                         {% when 'collection' %}
-                        <li class="tablinks flex group" onmouseover="openCity(event, '{{ block.settings.collection_nav | replace: ' ', '' }}')">
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_nav | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -228,7 +234,7 @@
                           </span>
                         </li>
                         {% when 'collection_2' %}
-                        <li class="tablinks flex group" onmouseover="openCity(event, '{{ block.settings.collection_nav_2 | replace: ' ', '' }}')">
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_nav_2 | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav_2 }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -237,14 +243,14 @@
                           </span>
                         </li>
                         {% when 'collection_3' %}
-                          <li class="tablinks flex group" onmouseover="openCity(event, '{{ block.settings.collection_nav_3 | replace: ' ', '' }}')">
-                            <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav_3 }}</a>
-                            <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                              </svg>
-                            </span>
-                          </li>
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_nav_3 | replace: ' ', '' }}')">
+                          <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav_3 }}</a>
+                          <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                          </span>
+                        </li>
                       {% endcase %}
                     {% endfor %}
                   </ul>
@@ -260,7 +266,7 @@
 
 
 <script>
-  function openCity(evt, cityName) {
+  function openContent(evt, navName) {
     var i, navcontent, tablinks;
     navcontent = document.getElementsByClassName("navcontent");
     for (i = 0; i < navcontent.length; i++) {
@@ -270,7 +276,7 @@
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "flex";
+    document.getElementById(navName).style.display = "flex";
     evt.currentTarget.className += " active";
   }
 </script>

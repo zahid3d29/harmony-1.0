@@ -38,6 +38,13 @@
     "header_qCmVcD": {
       "type": "header",
       "blocks": {
+        "collection_3_VAy7AN": {
+          "type": "collection_3",
+          "settings": {
+            "collection_nav_3": "Collection Three",
+            "collection_3": "gold"
+          }
+        },
         "collection_list_2_bNgVRd": {
           "type": "collection_list_2",
           "settings": {
@@ -75,49 +82,27 @@
               "gold"
             ]
           }
-        },
-        "collection_3_VAy7AN": {
-          "type": "collection_3",
-          "settings": {
-            "collection_nav_3": "Collection Three",
-            "collection_3": "books"
-          }
-        },
-        "collection_2_drP4cA": {
-          "type": "collection_2",
-          "disabled": true,
-          "settings": {
-            "collection_nav_2": "Collection two",
-            "collection_2": "bigger-collection"
-          }
-        },
-        "collection_FT8cpz": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection_nav": "Collection One",
-            "collection": "big-collection"
-          }
         }
       },
       "block_order": [
+        "collection_3_VAy7AN",
         "collection_list_2_bNgVRd",
         "collection_list_3_FqDUkT",
-        "collection_list_bartGB",
-        "collection_3_VAy7AN",
-        "collection_2_drP4cA",
-        "collection_FT8cpz"
+        "collection_list_bartGB"
       ],
       "settings": {
         "logo": "shopify:\/\/shop_images\/swiss-black.png",
+        "search": true,
+        "cart": true,
+        "Profile": true,
+        "mega_menu_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "mega_label": "Home",
-        "search": false,
-        "cart": false,
-        "Profile": false,
-        "mob_menu": "",
-        "mob_s_menu": "",
-        "mob_newsletter": false,
-        "mob_social": false,
+        "mobile_offcanvas_color_scheme": "scheme-2",
+        "mob_bg_img": "shopify:\/\/shop_images\/offcanvas-image.png",
+        "mob_menu": "main-menu",
+        "mob_s_menu": "mobile-secondary",
+        "mob_newsletter": true,
+        "mob_social": true,
         "padding_top": 0,
         "padding_bottom": 0
       }

@@ -39,18 +39,22 @@
 
 {% schema %}
 {
-    "name": "Newsletter Section",
+    "name": "Newsletter",
+    "class": "harmony_section-newsletter",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
     "settings": [
         {
             "type": "text",
             "id": "banner_heading",
             "label": "Banner Heading",
-            "default": "eASY Skin Care Routine"
+            "default": "Easy Skin Care Routine"
         }
     ],
     "presets": [
         {
-            "name": "Newsletter Section",
+            "name": "Newsletter",
             "category": "Harmony Sections"
         }
     ]

@@ -103,13 +103,13 @@
     </script>
 
     {%  style  %}  
-        {% for scheme in settings.color_schemes %}
-          .harmony__color-{{ scheme.id }}{
-            background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-            color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-            border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
-          }
-        {% endfor %}
+    {% for scheme in settings.color_schemes %}
+      .harmony__color-{{ scheme.id }}{
+        background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+        color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+        border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
+      }
+    {% endfor %}
     {% endstyle %} 
     
   </head>

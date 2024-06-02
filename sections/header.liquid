@@ -36,11 +36,7 @@
 
         <a href="#" class="store__logo ml-1.5">
           {% if section.settings.logo != blank %}
-            <img
-              class="mx-auto h-[30px]"
-              src="{{ section.settings.logo | img_url: '' }}"
-              alt="{{ shop.name }}"
-            >
+            <img class="mx-auto h-[30px]" src="{{ section.settings.logo | img_url: '' }}" alt="{{ shop.name }}">
           {% endif %}
           {% comment %} Fallback Logo should be store name  {% endcomment %}
           <h2 class="sr-only fallback__logo text-lg leading-1 text-[#ffffff]" id="slide-over-title">SWISS</h2>
@@ -63,9 +59,9 @@
         </button>
       </div>
       {% comment %} header Main navigation for large screen  {% endcomment %}
-      <div class="header__main-nav  lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] text-black">
+      <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] text-black">
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
-          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
             {% for main_link in linklists['main-menu'].links -%}
               {% if main_link.links.size > 0 %}
                 <div class="dropdown_menu">
@@ -90,7 +86,7 @@
                     <!-- Nav first level Dropdown sub-nav-menu -->
                     <div
                       id="dropdownNavbar"
-                      class="nav__sub-menu absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                      class="nav__sub-menu absolute z-10 font-normal bg-white divide-y divide-gray-100  shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                     >
                       <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownLargeButton">
                         {% for child_link in main_link.links %}
@@ -116,7 +112,7 @@
                               </button>
                               <div
                                 id="doubleDropdown"
-                                class="nav__sub__menu-child absolute left-[180px] top-12 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                                class="nav__sub__menu-child absolute left-[180px] top-12 z-10 bg-white divide-y divide-gray-100 shadow w-44 dark:bg-gray-700"
                               >
                                 <ul
                                   class="nav__sub-menu-child py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -128,7 +124,7 @@
                                         href="#"
                                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                                       >
-                                        {{- grand_child.title -}}
+                                      {{- grand_child.title -}}
                                       </a>
                                     </li>
                                   {% endfor %}
@@ -235,23 +231,20 @@
 {% schema %}
 {
     "name": "Header",
-    "class": "section-header",
+    "class": "harmony-header",
+    "enabled_on": {
+      "groups": ["header"]
+    },
     "settings": [
+      {
+        "type": "header",
+        "content": "Header Nav"
+      },
       {
         "type":"image_picker",
         "label":"Logo",
         "id":"logo"
-      },
-      {
-        "type": "text",
-        "label":"Mega Menu",
-        "id":"mega_label",
-        "info": "Write the link of title to assign mega menu"
       }, 
-      {
-        "type": "header",
-        "content": "Header Icons"
-      },
       {
         "type": "checkbox",
         "label":"Search Icon",
@@ -268,8 +261,30 @@
         "id":"Profile"
       },
       {
-          "type": "header",
-          "content": "Mobile Drawer"
+        "type": "header",
+        "content": "Mega Menu"
+      },
+      {
+        "type": "color_scheme",
+        "id": "mega_menu_color_scheme",
+        "label": "Mega menu Color",
+        "default": "scheme-2"
+      },
+      {
+        "type": "text",
+        "label":"Mega Menu",
+        "id":"mega_label",
+        "info": "Write the link of title to assign mega menu"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Drawer"
+      },
+      {
+        "type": "color_scheme",
+        "id": "mobile_offcanvas_color_scheme",
+        "label": "Mobile menu Color",
+        "default": "scheme-2"
       },
       {
         "type": "image_picker",
