@@ -1,0 +1,93 @@
+
+<section id="harmony--{{ section.id }}">
+    <div class="relative isolate overflow-hidden bg-[#FFFAF4] py-12 md:py-[50px]">
+        <div class="max-w-screen devider border-b my-8 md:my-[50px]"></div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="relative overflow-x-auto">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead class="border border-[#707070] text-xs text-gray-700 uppercase ">
+                        <tr>
+                            <td scope="col" class="border border-[#707070] px-6 py-3">
+                                Product name
+                            </td>
+                            <td scope="col" class="border border-[#707070] px-6 py-3">
+                                Color
+                            </td>
+                            <td scope="col" class="border border-[#707070] px-6 py-3">
+                                Category
+                            </td>
+                            <td scope="col" class="border border-[#707070] px-6 py-3">
+                                Price
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody class="border border-[#707070]">
+                        <tr class="border border-[#707070] text-xs text-gray-700">
+                            <td scope="row" class="border border-[#707070] px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                Apple MacBook Pro 17"
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                Silver
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                Laptop
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                $2999
+                            </td>
+                        </tr>
+                        <tr class="border border-[#707070] text-xs text-gray-700">
+                            <td scope="row" class="border border-[#707070] px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                Microsoft Surface Pro
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                White
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                Laptop PC
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                $1999
+                            </td>
+                        </tr>
+                        <tr class="border border-[#707070] text-xs text-gray-700">
+                            <td scope="row" class="border border-[#707070] px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                Magic Mouse 2
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                Black
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                Accessories
+                            </td>
+                            <td class="border border-[#707070] px-6 py-4">
+                                $99
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Product Table",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Cart"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Table",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
+            

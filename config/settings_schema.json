@@ -46,6 +46,20 @@
         "id": "color_schemes",
         "definition": [
           {
+            "type": "header",
+            "content": "Typography"
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "Text",
+            "default": "#121212"
+          },
+          {
+            "type": "header",
+            "content": "Background"
+          },
+          {
             "type": "color",
             "id": "background",
             "label": "Background",
@@ -54,60 +68,75 @@
           {
             "type": "color_background",
             "id": "background_gradient",
-            "label": "Background Gradient",
-            "info": "Backgroudnd gradient color"
+            "label": "Gradient",
+            "info": "Background gradient replaces background where possible."
+          },
+          {
+            "type": "header",
+            "content": "Additional"
           },
           {
             "type": "color",
-            "id": "text",
-            "label": "Text Color",
+            "id": "primary_button",
+            "label": "Primary",
             "default": "#121212"
           },
           {
             "type": "color",
-            "id": "button",
-            "label": "Button",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "border",
-            "label": "Border",
-            "default": "#121212"
-          },
-          {
-            "type": "color",
-            "id": "button_label",
-            "label": "Button Label",
+            "id": "on_primary_button",
+            "label": "On Primary Button",
             "default": "#FFFFFF"
           },
           {
             "type": "color",
-            "id": "secondary_button_label",
-            "label": "Secondary Button label",
+            "id": "primary_button_border",
+            "label": "Primary Button Border",
             "default": "#121212"
           },
           {
             "type": "color",
-            "id": "shadow",
-            "label": "Shadow",
+            "id": "secondary_button",
+            "label": "Secondary Button"
+          },
+          {
+            "type": "color",
+            "id": "on_secondary_button",
+            "label": "On Secondary Button",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "Secondary Button Border",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "icons",
+            "label": "Icons",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "links",
+            "label": "Links",
             "default": "#121212"
           }
         ],
         "role": {
-          "text": "text",
           "background": {
             "solid": "background",
             "gradient": "background_gradient"
           },
-          "links": "secondary_button_label",
-          "icons": "text",
-          "primary_button": "button",
-          "on_primary_button": "button_label",
-          "primary_button_border": "button",
-          "secondary_button": "background",
-          "on_secondary_button": "secondary_button_label",
-          "secondary_button_border": "secondary_button_label"
+          "text": "text",
+          "primary_button": "primary_button",
+          "on_primary_button": "on_primary_button",
+          "primary_button_border": "primary_button_border",
+          "secondary_button": "secondary_button",
+          "on_secondary_button": "on_secondary_button",
+          "secondary_button_border": "secondary_button_border",
+          "icons": "icons",
+          "links": "links"
         }
       }
     ]
@@ -120,6 +149,21 @@
         "content": "Use typography to present your design and content as clearly and efficiently as possible."
       },
       {
+        "type": "select",
+        "id": "use_font",
+        "label": "Use font?",
+        "options": [
+          {
+            "value": "system",
+            "label": "System"
+          },
+          {
+            "value": "theme",
+            "label": "Theme"
+          }
+        ]
+      },
+      {
         "type": "header",
         "content": "Headings"
       },
@@ -129,50 +173,6 @@
         "default": "inter_n7",
         "label": "Font",
         "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
-      },
-      {
-        "type": "select",
-        "id": "heading_font_wieght",
-        "label": "Font Weight",
-        "options": [
-          {
-            "value": "100",
-            "label": "100"
-          },
-          {
-            "value": "200",
-            "label": "200"
-          },
-          {
-            "value": "300",
-            "label": "300"
-          },
-          {
-            "value": "400",
-            "label": "400"
-          },
-          {
-            "value": "500",
-            "label": "500"
-          },
-          {
-            "value": "600",
-            "label": "600"
-          },
-          {
-            "value": "700",
-            "label": "700"
-          },
-          {
-            "value": "800",
-            "label": "800"
-          },
-          {
-            "value": "900",
-            "label": "900"
-          }
-        ],
-        "default": "900"
       },
       {
         "type": "range",
@@ -232,39 +232,15 @@
       },
       {
         "type": "text",
-        "id": "social_facebook_link",
-        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
-      },
-      {
-        "type": "text",
-        "id": "social_instagram_link",
-        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
-      },
-      {
-        "type": "text",
-        "id": "social_youtube_link",
-        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
-      },
-      {
-        "type": "text",
-        "id": "social_tiktok_link",
-        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
-      },
-      {
-        "type": "text",
         "id": "social_twitter_link",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_twitter_link.info"
       },
       {
         "type": "text",
-        "id": "social_snapchat_link",
-        "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
       },
       {
         "type": "text",
@@ -274,9 +250,57 @@
       },
       {
         "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+      },
+      {
+        "type": "text",
         "id": "social_tumblr_link",
         "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_dribble_link",
+        "label": "t:settings_schema.social-media.settings.social_dribble_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_dribble_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_github_link",
+        "label": "t:settings_schema.social-media.settings.social_github_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_github_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "t:settings_schema.social-media.settings.social_linkedin_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_linkedin_link.info"
       }
     ]
   },

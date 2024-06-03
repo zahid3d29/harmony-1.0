@@ -1,238 +1,39 @@
 {
   "sections": {
-    "gdpr_T9AdaU": {
-      "type": "GDPR",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
-    "page_header_69zxJW": {
-      "type": "page-header",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "heading": "View your shopping cart",
-        "show_heeading": true,
-        "page_title": "About us",
-        "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
-      }
-    },
-    "testimonials_GtL8fm": {
-      "type": "testimonials",
+    "product_how_use_Wdtk6A": {
+      "type": "product-how-use",
       "blocks": {
-        "review_gEzVPK": {
-          "type": "review",
+        "usage_iFnyfm": {
+          "type": "usage",
           "settings": {
-            "review_heading": "What do they say about us?",
-            "review_text": "It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!"
+            "text": "Clean your"
+          }
+        },
+        "usage_iQNm6w": {
+          "type": "usage",
+          "settings": {
+            "text": "Wait for it to be absorbed wAIT FOR 2 MINUTES"
+          }
+        },
+        "usage_6k9cKY": {
+          "type": "usage",
+          "settings": {
+            "text": "hAVE A QUESTION? chECK OUT faq."
           }
         }
       },
       "block_order": [
-        "review_gEzVPK"
+        "usage_iFnyfm",
+        "usage_iQNm6w",
+        "usage_6k9cKY"
       ],
       "disabled": true,
       "settings": {
-        "rating": 4.8,
-        "verify": "From Verified Buyers",
-        "num_r": 45,
-        "btn_label": "Read more Testimonials",
-        "btn_url": "shopify:\/\/pages\/about"
-      }
-    },
-    "swiss_cciQWT": {
-      "type": "swiss",
-      "blocks": {
-        "benifit_MBni9G": {
-          "type": "benifit",
-          "settings": {
-            "text": "Organic Healthy Ingredients"
-          }
-        },
-        "benifit_RqA8dk": {
-          "type": "benifit",
-          "settings": {
-            "text": "Easy to use Daily Routine"
-          }
-        },
-        "benifit_kYEcHY": {
-          "type": "benifit",
-          "settings": {
-            "text": "Cruelty-Free Products"
-          }
-        }
-      },
-      "block_order": [
-        "benifit_MBni9G",
-        "benifit_RqA8dk",
-        "benifit_kYEcHY"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Why Swiss?",
-        "sub_text": "Learn more about our commitment to high quality products."
-      }
-    },
-    "reveal_JJ7fw6": {
-      "type": "reveal",
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
-        "color_scheme_enable": false,
-        "colored_txt": "#d0baac",
-        "border_color": "#d0baac",
-        "heading_size": "standard",
-        "heading": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "sales_783xMN": {
-      "type": "sales",
-      "blocks": {
-        "product_H3bCAQ": {
-          "type": "product",
-          "settings": {
-            "s_product": "bangle-bracelet-with-feathers"
-          }
-        }
-      },
-      "block_order": [
-        "product_H3bCAQ"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "countdown_position": "right",
-        "heading": "Limited Time Sale Offer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "end_date": "2024-12-31",
-        "end_time": "23:59:59",
-        "slider_navigation": "both",
-        "show_price": true,
-        "show_category": true,
-        "show_reviews": false,
-        "enable_sale_badge": true,
-        "border_color": "#626e5c",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "faq_fdKzd7": {
-      "type": "faq",
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
-    },
-    "newsletter_pop_89fWAC": {
-      "type": "newsletter-pop",
-      "disabled": true,
-      "settings": {
-        "banner_heading": "eASY Skin Care Routine"
-      }
-    },
-    "page_how_Hrk6iN": {
-      "type": "page-how",
-      "disabled": true,
-      "settings": {
-        "heading": "How to use it?",
-        "show_heeading": true,
-        "page_title": "eASY TO USE",
-        "page_desc": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care.<\/p>"
-      }
-    },
-    "newsletter_section_BiNdyU": {
-      "type": "newsletter-section",
-      "disabled": true,
-      "settings": {
-        "banner_heading": "eASY Skin Care Routine"
-      }
-    },
-    "cart_drawer_9mpUVf": {
-      "type": "cart-drawer",
-      "disabled": true,
-      "settings": {
-        "heading": "Cart"
-      }
-    },
-    "hero_banner_yfzKPH": {
-      "type": "hero-banner",
-      "disabled": true,
-      "settings": {
-        "show_sale_badge": false
-      }
-    },
-    "product_featured_83JMBn": {
-      "type": "product_featured",
-      "blocks": {
-        "block_nyGNUq": {
-          "type": "block",
-          "settings": {
-            "collection": "automatic"
-          }
-        },
-        "block_QArKcr": {
-          "type": "block",
-          "settings": {
-            "collection": "cream"
-          }
-        },
-        "block_jrPXcC": {
-          "type": "block",
-          "settings": {
-            "collection": "bigger-collection"
-          }
-        },
-        "block_JBHAxa": {
-          "type": "block",
-          "settings": {
-            "collection": "gold"
-          }
-        }
-      },
-      "block_order": [
-        "block_nyGNUq",
-        "block_QArKcr",
-        "block_jrPXcC",
-        "block_JBHAxa"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-1",
-        "heading": "Section tt",
-        "show_heeading": true,
-        "enable_carousel": "grid",
-        "show_price": true,
-        "show_category": true,
-        "show_reviews": true,
-        "enable_stock_badge": true,
-        "offer_badge": true,
-        "show_wishlist": true,
-        "enable_quick_view": true,
-        "products_to_show": 3,
-        "products_per_row": 4,
-        "mobile_layout": "grid",
-        "number_of_column": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "How to use?"
       }
     }
   },
   "order": [
-    "gdpr_T9AdaU",
-    "page_header_69zxJW",
-    "testimonials_GtL8fm",
-    "swiss_cciQWT",
-    "reveal_JJ7fw6",
-    "sales_783xMN",
-    "faq_fdKzd7",
-    "newsletter_pop_89fWAC",
-    "page_how_Hrk6iN",
-    "newsletter_section_BiNdyU",
-    "cart_drawer_9mpUVf",
-    "hero_banner_yfzKPH",
-    "product_featured_83JMBn"
+    "product_how_use_Wdtk6A"
   ]
 }

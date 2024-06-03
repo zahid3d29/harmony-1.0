@@ -1,65 +1,159 @@
 {% comment %} This section will be a snippets of newsletter popup  {% endcomment %}
 
-<div class="newsletter__popup">
-    <div class="relative z-10" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
-        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div class="flex min-h-[80%] sm:min-h-[53%] lg:min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
-                <div class="popup flex w-full transform text-left text-base transition md:max-w-2xl lg:max-w-4xl">
-                    <div class="relative bg-[#F7F4ED] flex w-full items-center overflow-hidden bg-white">
-                        <button type="button" class="absolute right-4 top-4 text-gray-100 sm:text-gray-900 hover:text-gray-100 z-10 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8">
-                            <span class="sr-only">Close</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-            
-                        <div class="grid w-full bg-[#F7F4ED] grid-cols-1 items-start gap-x-0 gap-y-0 lg:gap-y-8 sm:grid-cols-12 lg:gap-x-0">
-                            <div class="aspect-h-[2.5] lg:aspect-h-2 md:aspect-h-3 aspect-w-2 overflow-hidden bg-gray-500 sm:col-span-6 lg:col-span-6">
-                                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/newsletter-img.png?v=1713693079" alt="newsletter-image" class="object-cover object-center">
-                            </div>
-                            <div class="sm:col-span-6 bg-[#F7F4ED] lg:col-span-6 px-6 py-10">
-                                <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Mail.png?v=1713695102" alt="newsletter-image" class="object-cover object-center">
-                                <h2 class="text-2xl font-bold text-gray-900 sm:pr-12 mb-2">Subscibe and save money.</h2>
-                                <p class="max-w-[90%] text-base text-gray-900 mb-4">Subscribe to our newsletter and be the first to know about promotions, new product launches, and skincare tips.</p>
-                                <div class="mt-6 flex max-w-md gap-x-1">
-                                    <label for="email-address" class="sr-only px-0">Email address</label>
-                                    <input id="email-address" name="email" type="email" autocomplete="email" required="required" class="min-w-0 flex-auto border-0 border-b border-b-gray-200 bg-transparent px-0 py-2 text-white focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200 sm:text-sm sm:leading-6" placeholder="Enter your email address">
-                                    <button type="submit" class="flex-none">
-                                        <span class="text-gray-100 border border-gray-200 rounded-full px-2.5 py-2 bg-gray-900 hover:bg-gray-100 hover:text-gray-900 transition" aria-hidden="true">→</span>
-                                    </button>
-                                </div>
-                                <div class="relative flex gap-x-3 mt-6">
-                                    <div class="flex h-6 items-center">
-                                        <input id="tearms" name="tearms" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                    </div>
-                                    <div class="text-sm leading-6">
-                                        <label for="tearms" class="font-normal text-gray-900">I agree to the tearms and services</label>
-                                    </div>
-                                </div>
-                            </div>
+<div class="newsletter__popup " id="newsletter" style="display:none;">
+  <div class="relative z-10" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block"></div>
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div class="flex min-h-[80%] sm:min-h-[53%] lg:min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
+        <div class="popup flex w-full transform text-left text-base transition md:max-w-2xl lg:max-w-4xl">
+          <div class="relative bg-[#F7F4ED] flex w-full items-center overflow-hidden bg-white">
+            <button
+              onclick="closeNewsletter()"
+              type="button"
+              class="close__newsletter absolute right-4 top-4 text-gray-100 sm:text-gray-900 hover:text-gray-100 z-10 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+            >
+              <span class="sr-only">Close</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div class="grid w-full bg-[#F7F4ED] grid-cols-1 items-start gap-x-0 gap-y-0 lg:gap-y-8 sm:grid-cols-12 lg:gap-x-0">
+              <div class="aspect-h-[2.5] lg:aspect-h-2 md:aspect-h-3 aspect-w-2 overflow-hidden bg-gray-500 sm:col-span-6 lg:col-span-6">
+                {% if section.settings.img != blank %}
+                  <img
+                    src="{{ section.settings.img | image_url }}"
+                    alt="newsletter-image"
+                    class="object-cover object-center"
+                  >
+                {% endif %}
+              </div>
+              <div class="sm:col-span-6 bg-[#F7F4ED] lg:col-span-6 px-6 py-10">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Mail.png?v=1713695102"
+                  alt="newsletter-image"
+                  class="object-cover object-center"
+                >
+                <h2 class="text-2xl font-bold text-gray-900 sm:pr-12 mb-2">{{ section.settings.heading }}</h2>
+                <p class="max-w-[90%] text-base text-gray-900 mb-4">{{ section.settings.text }}</p>
+
+                <div class="mt-6 flex max-w-md gap-x-1">
+                  {% form 'customer', class: 'newsletter-form', id: 'newsletterForm' %}
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <label for="email-address" class="sr-only px-0">Email address</label>
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="field__input"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+
+                      required="required"
+                      class="min-w-0 flex-auto border-0 border-b border-b-gray-200 bg-transparent px-0 py-2 text-white focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200 sm:text-sm sm:leading-6"
+                      placeholder="Enter your email address"
+                    >
+
+                    <button type="submit" id="submitButton" class="flex-none">
+                      <span
+                        class="text-gray-100 border border-gray-200 rounded-full px-2.5 py-2 bg-gray-900 hover:bg-gray-100 hover:text-gray-900 transition"
+                        aria-hidden="true"
+                        >→</span
+                      >
+                    </button>
+                    <!--
+                      <div class="relative flex gap-x-3 mt-6">
+                        <div class="flex h-6 items-center">
+                          <input
+                            id="terms"
+                            name="terms"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                          >
                         </div>
-                    </div>
+                        <div class="text-sm leading-6">
+                          <label for="terms" id="termsLabel" class="font-normal text-gray-900"
+                            >I agree to the terms and services</label
+                          >
+                        </div>
+                      </div>
+
+                      <div id="termsError" class="text-red-500 mt-1" style="display: none;">
+                        Agreeing to terms and conditions is required.
+                      </div>
+                    -->
+                  {% endform %}
+
+                  <!--
+                    <script>
+                      var newsletterForm = document.getElementById('newsletterForm');
+                      var termsCheckbox = document.getElementById('terms');
+                      var submitButton = document.getElementById('submitButton');
+                      var termsError = document.getElementById('termsError');
+
+                      newsletterForm.addEventListener('submit', function(event) {
+                          if (!termsCheckbox.checked) {
+                              event.preventDefault();
+                              submitButton.disabled = true;
+                              termsError.style.display = 'block';
+                          }
+                      });
+
+                      termsCheckbox.addEventListener('change', function() {
+                          if (!this.checked) {
+                              submitButton.disabled = true;
+                              if (termsError.style.display !== 'block') {
+                                  termsError.style.display = 'block';
+                              }
+                          } else {
+                              submitButton.disabled = false;
+                              termsError.style.display = 'none';
+                          }
+                      });
+                    </script>
+                  -->
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
-
-
 
 {% schema %}
 {
     "name": "Newsletter Popup",
     "settings": [
-        {
-            "type": "text",
-            "id": "banner_heading",
-            "label": "Banner Heading",
-            "default": "eASY Skin Care Routine"
-        }
-    ],
+      {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Subscibe and save money."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Subscribe to our newsletter and be the first to know about promotions, new product launches, and skincare tips."
+    },
+      {
+        "type": "image_picker",
+        "label":"Image",
+        "id":"img"
+      }
+  ],
     "presets": [
         {
             "name": "Newsletter Popup",
@@ -67,4 +161,86 @@
         }
     ]
 }
-  {% endschema %}
+{% endschema %}
+<script>
+  // Function to set a cookie
+  function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
+  // Function to get a cookie value
+  function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+  }
+
+  // Function to check if the newsletter was previously closed
+  function checkNewsletterStatus() {
+      return getCookie("newsletterClosed");
+  }
+
+  // Function to show the newsletter
+  function showNewsletter() {
+      var newsletter = document.getElementById("newsletter");
+      newsletter.style.display = "block";
+  }
+
+  // Function to hide the newsletter and set a cookie when the close button is clicked
+  function closeNewsletter() {
+      var newsletter = document.getElementById("newsletter");
+      newsletter.style.display = "none";
+      setCookie("newsletterClosed", true, 30); // Cookie expires in 30 days
+  }
+
+  // Add event listener for form submission
+  document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+      // Prevent default form submission
+      event.preventDefault();
+
+      // Close the newsletter
+      closeNewsletter();
+
+      // Optionally, you can submit the form data using AJAX or other methods here
+      // Example:
+      // var formData = new FormData(this);
+      // fetch('/submit-newsletter-form', {
+      //     method: 'POST',
+      //     body: formData
+      // })
+      // .then(response => response.json())
+      // .then(data => {
+      //     // Handle response if needed
+      // })
+      // .catch(error => {
+      //     console.error('Error:', error);
+      // });
+  });
+
+  // Delay showing the newsletter by 20 seconds after the page loads
+  setTimeout(function() {
+      // Check if the newsletter was previously closed
+      if (!checkNewsletterStatus()) {
+          showNewsletter();
+      }
+  }, 20000); // 20 seconds in milliseconds
+
+  // Check if the newsletter was previously closed on page load
+  window.onload = function() {
+      if (checkNewsletterStatus()) {
+          var newsletter = document.getElementById("newsletter");
+          newsletter.style.display = "none";
+      }
+  };
+</script>

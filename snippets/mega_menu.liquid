@@ -1,12 +1,5 @@
 
 {% style %}
-  {% for scheme in settings.color_schemes %}
-    .harmony__color-{{ scheme.id }}{
-      background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-      color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-      border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
-    }
-  {% endfor %}
   /* Style the tab content */
   .navcontent {
     display: none;
@@ -26,6 +19,7 @@
   }
 {% endstyle %}
   
+
 
 <div class="mega__menu-wrapper hidden lg:block relative mega_menu harmony__color-{{ section.settings.mega_menu_color_scheme }}">
   <nav class="mega__menu-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -263,6 +257,7 @@
     </div>
   </nav>
 </div>
+
 
 
 <script>

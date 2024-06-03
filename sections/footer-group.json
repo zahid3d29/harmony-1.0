@@ -2,11 +2,94 @@
   "name": "Footer",
   "type": "footer",
   "sections": {
-    "footer_7wTxV3": {
-      "type": "footer",
+    "footer_benifits_biW7Kz": {
+      "type": "footer_benifits",
+      "blocks": {
+        "icon_text_AH6PeH": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Path_141862.png",
+            "text": "Free Delivery Free Shipping for all orders"
+          }
+        },
+        "icon_text_mrtdqt": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Path_141864.png",
+            "text": "Secure Payments 256-Bit Protection"
+          }
+        },
+        "icon_text_NP7kHL": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Path_141865.png",
+            "text": "Discount Coupons Enjoy Huge Promotions"
+          }
+        },
+        "icon_text_jLGqem": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Path_141863.png",
+            "text": "Easy Returns Free returns. No hassle."
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_AH6PeH",
+        "icon_text_mrtdqt",
+        "icon_text_NP7kHL",
+        "icon_text_jLGqem"
+      ],
       "disabled": true,
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "footer_7wTxV3": {
+      "type": "footer",
+      "blocks": {
+        "subscribe_jVF6xp": {
+          "type": "subscribe",
+          "settings": {
+            "heading": "Subscribe",
+            "text": "Be the first to know about promotions and skincare tips.",
+            "social_icons": "show"
+          }
+        },
+        "brand_eCFMz9": {
+          "type": "brand",
+          "settings": {
+            "text": "<p>290 Maryam Springs Courbevoie, NYC +1 283 879 90<\/p>",
+            "contact_label": "Send a message",
+            "url": "shopify:\/\/pages\/contact"
+          }
+        },
+        "menu_tKydTR": {
+          "type": "menu",
+          "settings": {
+            "title": "Company",
+            "menu": "footer-menu-2"
+          }
+        },
+        "menu_VndjtM": {
+          "type": "menu",
+          "settings": {
+            "title": "Shop",
+            "menu": "mega-menu-2"
+          }
+        }
+      },
+      "block_order": [
+        "subscribe_jVF6xp",
+        "brand_eCFMz9",
+        "menu_tKydTR",
+        "menu_VndjtM"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "language_c": true,
         "currency_c": true,
         "payment_i": true,
@@ -16,6 +99,7 @@
     }
   },
   "order": [
+    "footer_benifits_biW7Kz",
     "footer_7wTxV3"
   ]
 }

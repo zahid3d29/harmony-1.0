@@ -91,13 +91,14 @@
         "collection_list_bartGB"
       ],
       "settings": {
+        "header_color_scheme": "section-scheme",
         "logo": "shopify:\/\/shop_images\/swiss-black.png",
         "search": true,
         "cart": true,
         "Profile": true,
-        "mega_menu_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "mega_menu_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
         "mega_label": "Home",
-        "mobile_offcanvas_color_scheme": "scheme-2",
+        "mobile_offcanvas_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "mob_bg_img": "shopify:\/\/shop_images\/offcanvas-image.png",
         "mob_menu": "main-menu",
         "mob_s_menu": "mobile-secondary",

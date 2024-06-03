@@ -1,33 +1,40 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
+    "hero_banner_HJpAK3": {
+      "type": "hero-banner",
       "settings": {
-        "banner_heading": ""
+        "show_sale_badge": false,
+        "banner_image": "shopify:\/\/shop_images\/newsletter-img.png"
       }
     },
-    "page-header": {
+    "page_header_qrFUeX": {
       "type": "page-header",
       "settings": {
-        "heading": "Have a question?",
+        "color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "heading": "Have a Question?",
         "show_heeading": true,
         "page_title": "Contact us",
         "page_desc": "Have questions or feedback about your shopping? We’re here to here answer any question you may have."
       }
     },
-    "page_contact_form_nHnx9D": {
+    "page_contact_form_Nrp7AE": {
       "type": "page-contact-form",
       "settings": {
-        "heading": "Section Heading",
-        "show_heeading": true,
-        "page_title": "About us",
-        "page_desc": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care.<\/p>"
+        "adress_label": "Visit",
+        "adress": "170 Soho st, London UK",
+        "phone_label": "Call",
+        "phone_number": "+98 690 2148 99",
+        "email_label": "Email",
+        "email": "info@example.com",
+        "section_heading": "Send a message",
+        "show_social_media": true,
+        "show_copy_email": true
       }
     }
   },
   "order": [
-    "hero",
-    "page-header",
-    "page_contact_form_nHnx9D"
+    "hero_banner_HJpAK3",
+    "page_header_qrFUeX",
+    "page_contact_form_Nrp7AE"
   ]
 }

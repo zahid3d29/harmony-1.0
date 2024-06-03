@@ -48,6 +48,18 @@
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
+        },
+        "social_dribble_link": {
+          "label": "Dribble",
+          "info": "https:\/\/dribble.com\/shopify"
+        },
+        "social_github_link": {
+          "label": "Github",
+          "info": "https:\/\/github.com\/shopify"
+        },
+        "social_linkedin_link": {
+          "label": "Linkedin",
+          "info": "https:\/\/linkedin.com\/shopify"
         }
       }
     }

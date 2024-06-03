@@ -46,28 +46,35 @@
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
 
-    {% comment %}
-    {% liquid
-      # Always add entrypoint below content_for_header
-      render 'adastra' with 'base.css'
-      render 'adastra' with 'index.js'
-    %}
-    {% endcomment %}
-
-
 
     {% style %}
       :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-        --font-body-style: {{ settings.type_body_font.style }};
-        --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-body-family: {{ settings.type_body_font | font_face: font_display: 'swap' }}, {{ settings.type_body_font.fallback_families }};
         --font-body-scale: {{ settings.body_font_scale  }}px;
 
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
-        --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: {{ settings.heading_font_wieght }};
+        --font-heading-family: {{ settings.type_header_font | font_face: font_display: 'swap' }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-scale: {{ settings.heading_font_scale }}px;
       }
+
+      
+      {%- if settings.use_font == 'system' -%}
+        h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl{
+          font-family: var(--font-heading-family);
+          font-style: var(--font-heading-style);
+          font-weight: var(--font-heading-weight);
+          font-size: var(--font-heading-scale);
+        }
+        p, a, button, input, optgroup, select, textarea {
+          font-family: var(--font-body-family);
+        }
+      {% else %}
+        h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl{
+          font-family: "NeuzeitS Book" !important;
+        }
+        p, a, button, input, optgroup, select, textarea {
+          font-family: "Neue Haas Unica W1G" !important;
+        }
+      {%- endif -%}
 
       .cart__update-loader {
         opacity: 1;
@@ -103,13 +110,14 @@
     </script>
 
     {%  style  %}  
-    {% for scheme in settings.color_schemes %}
-      .harmony__color-{{ scheme.id }}{
-        background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-        color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-        border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
-      }
-    {% endfor %}
+      {% for scheme in settings.color_schemes %}
+        .harmony__color-{{ scheme.id }}{
+          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+          background: {{ scheme.settings.background_gradient }};
+          color: {{ scheme.settings.text }};
+          border-color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+        }
+      {% endfor %}
     {% endstyle %} 
     
   </head>
