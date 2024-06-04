@@ -60,7 +60,7 @@
                 </div>
 
                 {% comment %} Mobile offcanvas Main navigation {% endcomment %}
-                <div class="main__nav-items mt-[20px] harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }}">
+                <div class="main__nav-items mt-[20px] ">
                   <div class="grid grid-cols-1 gap-y-10">
                     <div class="product__categories">
                       {% comment %} Mobile nav  {% endcomment %}
@@ -83,7 +83,7 @@
                                     {% for block in section.blocks %}
                                         {% for collection in block.settings.collection_list %}
                                         <div class="flex-none max-w-[75%] mr-8 mb-8 max-h-md relative">
-                                          <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} group-hover:opacity-75">
+                                          <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                                             <img src="{{ collection.image | img_url: '600x600' }}" alt="{{ collection.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
                                           </div>
                                           <div class="product__info grid grid-cols-2 mt-[14px]">
@@ -362,7 +362,7 @@
                   </div>
                 </div>
                 {% comment %} Mobile offcanvas secondary navigation {% endcomment %}
-                <div class="offcanvas__secondary-nav mt-[60px] harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }}">
+                <div class="offcanvas__secondary-nav mt-[60px] ">
                   <div class="grid grid-cols-1 gap-y-10">
                     <div class="secondary__navigation">
                       <ul
@@ -381,11 +381,11 @@
                   </div>
                 </div>
                 {% comment %} (Snippetes: offcanvas-newsletter) Mobile offcanvas Newsletter {% endcomment %}
-                <div class="offcanvas_newsletter mt-[60px] harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }}">
+                <div class="offcanvas_newsletter mt-[60px] ">
                   {% if section.settings.mob_newsletter %}
                     <div class="grid grid-cols-1">
                       <div class="subscribe">
-                        <span class="page__title inline text-[14px] leading-[19px]  font-normal border harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} rounded-full px-2 py-1.5"
+                        <span class="page__title inline text-[14px] leading-[19px]  font-normal border  rounded-full px-2 py-1.5"
                           >Subscribe</span
                         >
                         <div class="page__description text-[14px] leading-[19px]  font-normal mt-[20px]">
@@ -410,11 +410,11 @@
                               autocorrect="off"
                               autocapitalize="off"
                               required="required"
-                              class="min-w-0 flex-auto border-0 border-b harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} text-[14px] leading-[19px]  font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200"
+                              class="min-w-0 flex-auto border-0 border-b  text-[14px] leading-[19px]  font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200"
                               placeholder="Enter your email address"
                             >
                             <button type="submit" name="commit" id="Subscribe" class="flex-none">
-                              <span class="border harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} rounded-full px-2.5 py-2 hover:bg-black hover: transition"
+                              <span class="border  rounded-full px-2.5 py-2 hover:bg-black hover: transition"
                                 aria-hidden="true">→</span>
                             </button>
                           {% endif %}
@@ -456,7 +456,7 @@
                             <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" />
                           </svg>
                         </a>
-                      </div>
+                      </div>  
                     </div>
                   {% endif %}
                 </div>

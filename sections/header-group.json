@@ -35,60 +35,81 @@
         "padding_bottom": 36
       }
     },
-    "header_qCmVcD": {
+    "header_Mj7j9d": {
       "type": "header",
       "blocks": {
-        "collection_3_VAy7AN": {
-          "type": "collection_3",
-          "settings": {
-            "collection_nav_3": "Collection Three",
-            "collection_3": "gold"
-          }
-        },
-        "collection_list_2_bNgVRd": {
-          "type": "collection_list_2",
-          "settings": {
-            "collection_list_nav_2": "Collection list two",
-            "collection_list_2": [
-              "automatic",
-              "gold",
-              "books",
-              "big-collection"
-            ]
-          }
-        },
-        "collection_list_3_FqDUkT": {
-          "type": "collection_list_3",
-          "settings": {
-            "collection_list_nav_3": "Collection list three",
-            "collection_list_3": [
-              "women",
-              "big-collection",
-              "man",
-              "cream",
-              "gold",
-              "books"
-            ]
-          }
-        },
-        "collection_list_bartGB": {
+        "collection_list_8N87Nh": {
           "type": "collection_list",
           "settings": {
             "collection_list_nav": "Collection list one",
             "collection_list": [
-              "books",
+              "automatic",
               "big-collection",
+              "bigger-collection",
+              "books",
               "cream",
-              "gold"
+              "gold",
+              "jwellary",
+              "man"
             ]
+          }
+        },
+        "collection_wqfFBF": {
+          "type": "collection",
+          "settings": {
+            "collection_nav": "Collection One",
+            "collection": "manual"
+          }
+        },
+        "collection_list_2_efbnyn": {
+          "type": "collection_list_2",
+          "settings": {
+            "collection_list_nav_2": "Collection list two",
+            "collection_list_2": [
+              "t-shirts",
+              "manual",
+              "man",
+              "jwellary",
+              "gold",
+              "cream"
+            ]
+          }
+        },
+        "collection_2_7PnNVh": {
+          "type": "collection_2",
+          "settings": {
+            "collection_nav_2": "Collection two",
+            "collection_2": "gold"
+          }
+        },
+        "collection_list_3_ABGqex": {
+          "type": "collection_list_3",
+          "settings": {
+            "collection_list_nav_3": "Collection list three",
+            "collection_list_3": [
+              "cream",
+              "gold",
+              "books",
+              "bigger-collection",
+              "jwellary"
+            ]
+          }
+        },
+        "collection_3_6DB9ME": {
+          "type": "collection_3",
+          "settings": {
+            "collection_nav_3": "Collection Three",
+            "collection_3": "t-shirts"
           }
         }
       },
       "block_order": [
-        "collection_3_VAy7AN",
-        "collection_list_2_bNgVRd",
-        "collection_list_3_FqDUkT",
-        "collection_list_bartGB"
+        "collection_list_8N87Nh",
+        "collection_wqfFBF",
+        "collection_list_2_efbnyn",
+        "collection_2_7PnNVh",
+        "collection_list_3_ABGqex",
+        "collection_3_6DB9ME"
       ],
       "settings": {
         "header_color_scheme": "section-scheme",
@@ -96,9 +117,10 @@
         "search": true,
         "cart": true,
         "Profile": true,
-        "mega_menu_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "mega_menu_color_scheme": "section-scheme",
+        "main_menu": "main-menu",
         "mega_label": "Home",
-        "mobile_offcanvas_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
+        "mobile_offcanvas_color_scheme": "section-scheme",
         "mob_bg_img": "shopify:\/\/shop_images\/offcanvas-image.png",
         "mob_s_menu": "mobile-secondary",
         "mob_newsletter": true,
@@ -110,6 +132,6 @@
   },
   "order": [
     "announcement-bar",
-    "header_qCmVcD"
+    "header_Mj7j9d"
   ]
 }

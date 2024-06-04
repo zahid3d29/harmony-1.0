@@ -33,7 +33,7 @@
                 {% case block.type %}
                 {% when 'collection_list' %}
                   <div id="{{ block.settings.collection_list_nav | replace: ' ', '' }}" class="navcontent overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
-                  {% for collection in block.settings.collection_list %}
+                    {% for collection in block.settings.collection_list %}
                     <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px] ">
                       <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none group-hover:opacity-75">
                         <img src="{{ collection.image | img_url: '600x600' }}" alt="{{ collection.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
@@ -52,11 +52,11 @@
                       </div>
                       {% endif %}
                     </div>
-                  {% endfor %}
+                    {% endfor %}
                   </div>
                 {% when 'collection_list_2' %}
                   <div id="{{ block.settings.collection_list_nav_2 | replace: ' ', '' }}" class="navcontent overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
-                  {% for collection in block.settings.collection_list_2 %}
+                    {% for collection in block.settings.collection_list_2 %}
                     <div class="max-w-[30%] group flex-none relative text-[14px] leading-[19px]">
                       <div class="min-h-[300px] max-h-[300px] overflow-hidden rounded-none  group-hover:opacity-75">
                         <img src="{{ collection.image | img_url: '600x600' }}" alt="{{ collection.title }}" class="object-cover object-center w-full min-h-[300px] max-h-[300px]">
@@ -75,7 +75,7 @@
                       </div>
                       {% endif %}
                     </div>
-                  {% endfor %}
+                    {% endfor %}
                   </div>
                 {% when 'collection_list_3' %}
                   <div id="{{ block.settings.collection_list_nav_3 | replace: ' ', '' }}" class="navcontent overflow-x-scroll flex col-start-2 col-span-2 gap-x-4 pb-8">
