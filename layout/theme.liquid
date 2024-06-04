@@ -114,7 +114,7 @@
         .harmony__color-{{ scheme.id }}{
           background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
           background: {{ scheme.settings.background_gradient }};
-          color: {{ scheme.settings.text }};
+          color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
           border-color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
         }
       {% endfor %}

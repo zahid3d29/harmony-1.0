@@ -5,8 +5,8 @@
     display: none;
   }
   .mega_menu {
-    /* visibility: hidden; */
-    visibility: visible;
+    visibility: hidden;
+    /* visibility: visible;  */
     height: auto;
     top: 4%;
     right: 0;
@@ -41,12 +41,12 @@
                       <div class="product__info grid grid-cols-2 mt-[14px]">
                         <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px]">
                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                          {{ collection.title }}
+                          {{ collection.title | truncate: 100 }}
                         </a>
                         <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px]">({{ collection.products_count }})</h6>
                       </div>
                       {% if collection.description != blank %}
-                      <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                      <div class="w-full my-[14px] border-t opacity-10 harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
                       <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                         {{ collection.description | truncate: 100 }}
                       </div>
@@ -64,12 +64,12 @@
                       <div class="product__info grid grid-cols-2 mt-[14px]">
                         <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px]">
                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                          {{ collection.title }}
+                          {{ collection.title | truncate: 100 }}
                         </a>
                         <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px]">({{ collection.products_count }})</h6>
                       </div>
                       {% if collection.description != blank %}
-                      <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                      <div class="w-full my-[14px] border-t opacity-10 harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
                       <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                         {{ collection.description | truncate: 100 }}
                       </div>
@@ -87,12 +87,12 @@
                         <div class="product__info grid grid-cols-2 mt-[14px]">
                           <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px]">
                             <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                            {{ collection.title }}
+                            {{ collection.title | truncate: 100 }}
                           </a>
                           <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px]">({{ collection.products_count }})</h6>
                         </div>
                         {% if collection.description != blank %}
-                          <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                          <div class="w-full my-[14px] border-t opacity-10 harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
                           <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
                             {{ collection.description | truncate: 100 }}
                           </div>
@@ -112,16 +112,16 @@
                           <div class="product__info grid grid-cols-2 mt-[14px]">
                             <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px]">
                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                              {{ product.title }}
+                              {{ product.title | truncate: 100 }}
                             </a>
                             <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px]">
                               {{ product.price | money }}
                             </h6>
                           </div>
                           {% if product.description %}
-                            <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                            <div class="w-full my-[14px] border-t opacity-10 harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
                             <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
-                              {{ product.description | truncate: 50 }}
+                              {{ product.description | truncate: 100 }}
                             </div>
                           {% endif %}
                         </div>
@@ -140,16 +140,16 @@
                         <div class="product__info grid grid-cols-2 mt-[14px]">
                           <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px]">
                             <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                            {{ product.title }}
+                            {{ product.title | truncate: 100 }}
                           </a>
                           <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px]">
                             {{ product.price | money }}
                           </h6>
                         </div>
                         {% if product.description %}
-                          <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                          <div class="w-full my-[14px] border-t opacity-10 harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
                           <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
-                            {{ product.description | truncate: 50 }}
+                            {{ product.description | truncate: 100 }}
                           </div>
                         {% endif %}
                       </div>
@@ -168,16 +168,16 @@
                           <div class="product__info grid grid-cols-2 mt-[14px]">
                             <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px]">
                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                              {{ product.title }}
+                              {{ product.title | truncate: 100 }}
                             </a>
                             <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px]">
                               {{ product.price | money }}
                             </h6>
                           </div>
                           {% if product.description %}
-                            <div class="w-full my-[14px] border-t harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
+                            <div class="w-full my-[14px] border-t opacity-10 harmony__color-{{ section.settings.mega_menu_color_scheme }}"></div>
                             <div class="product_short_desc text-[14px] leading-[19px]" aria-hidden="true">
-                              {{ product.description | truncate: 50 }}
+                              {{ product.description | truncate: 100 }}
                             </div>
                           {% endif %}
                         </div>

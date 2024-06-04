@@ -62,7 +62,7 @@
       <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] ">
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
           <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-{{ section.settings.header_color_scheme }} border border-gray-100  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
-            {% for main_link in linklists['main-menu'].links -%}
+            {% for main_link in linklists[section.settings.main_menu].links %}
               {% if main_link.links.size > 0 %}
                 <div class="dropdown_menu">
                   <li>
@@ -238,12 +238,12 @@
     "settings": [
       {
         "type": "header",
-        "content": "Header Nav"
+        "content": "Header"
       },
       {
         "type": "color_scheme",
         "id": "header_color_scheme",
-        "label": "Header Color",
+        "label": "Color Scheme",
         "default": "scheme-2"
       },
       {
@@ -273,14 +273,19 @@
       {
         "type": "color_scheme",
         "id": "mega_menu_color_scheme",
-        "label": "Mega menu Color",
+        "label": "Color Scheme",
         "default": "scheme-2"
+      },
+      {
+        "type":"link_list",
+        "label":"Main menu",
+        "id":"main_menu"
       },
       {
         "type": "text",
         "label":"Mega Menu",
         "id":"mega_label",
-        "info": "Write the link of title to assign mega menu"
+        "info": "Write the nav item name that you want to show mega-menu"
       },
       {
         "type": "header",
@@ -289,18 +294,13 @@
       {
         "type": "color_scheme",
         "id": "mobile_offcanvas_color_scheme",
-        "label": "Mobile menu Color",
+        "label": "Color Scheme",
         "default": "scheme-2"
       },
       {
         "type": "image_picker",
         "label":"Mobile Drawer Background",
         "id":"mob_bg_img"
-      },
-      {
-        "type":"link_list",
-        "label":"Mobile Main menu",
-        "id":"mob_menu"
       },
       {
         "type":"link_list",

@@ -89,12 +89,12 @@
                                           <div class="product__info grid grid-cols-2 mt-[14px]">
                                             <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] ">
                                               <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                              {{ collection.title }}
+                                              {{ collection.title | truncate: 100 }}
                                             </a>
                                             <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] ">({{ collection.products_count }})</h6>
                                           </div>
                                           {% if collection.description != blank %}
-                                          <div class="w-full my-[14px] border-t border-gray-400"></div>
+                                          <div class="w-full my-[14px] border-t opacity-10 "></div>
                                           <div class="product_short_desc text-[14px] leading-[19px] " aria-hidden="true">
                                             {{ collection.description | truncate: 100 }}
                                           </div>
@@ -126,12 +126,12 @@
                                       <div class="product__info grid grid-cols-2 mt-[14px]">
                                         <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] ">
                                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                          {{ collection.title }}
+                                          {{ collection.title | truncate: 100 }}
                                         </a>
                                         <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] ">({{ collection.products_count }})</h6>
                                       </div>
                                       {% if collection.description != blank %}
-                                      <div class="w-full my-[14px] border-t border-gray-400"></div>
+                                      <div class="w-full my-[14px] border-t opacity-10 "></div>
                                       <div class="product_short_desc text-[14px] leading-[19px] " aria-hidden="true">
                                         {{ collection.description | truncate: 100 }}
                                       </div>
@@ -162,12 +162,12 @@
                                       <div class="product__info grid grid-cols-2 mt-[14px]">
                                         <a href="{{ collection.url }}" class="flex justify-start text-[16px] leading-[21px] ">
                                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                          {{ collection.title }}
+                                          {{ collection.title | truncate: 100 }}
                                         </a>
                                         <h6 aria-hidden="true" class="flex justify-end text-[16px] leading-[21px] ">({{ collection.products_count }})</h6>
                                       </div>
                                       {% if collection.description != blank %}
-                                      <div class="w-full my-[14px] border-t border-gray-400"></div>
+                                      <div class="w-full my-[14px] border-t opacity-10 "></div>
                                       <div class="product_short_desc text-[14px] leading-[19px] " aria-hidden="true">
                                         {{ collection.description | truncate: 100 }}
                                       </div>
@@ -200,16 +200,16 @@
                                       <div class="product__info grid grid-cols-2 mt-[14px]">
                                         <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px] ">
                                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                          {{ product.title }}
+                                          {{ product.title | truncate: 100 }}
                                         </a>
                                         <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px] ">
                                           {{ product.price | money }}
                                         </h6>
                                       </div>
                                       {% if product.description %}
-                                        <div class="w-full my-[14px] border-t border-gray-400"></div>
+                                        <div class="w-full my-[14px] border-t opacity-10 "></div>
                                         <div class="product_short_desc text-[14px] leading-[19px] " aria-hidden="true">
-                                          {{ product.description | truncate: 50 }}
+                                          {{ product.description | truncate: 100 }}
                                         </div>
                                       {%- endif -%}
                                     </div>
@@ -241,16 +241,16 @@
                                       <div class="product__info grid grid-cols-2 mt-[14px]">
                                         <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px] ">
                                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                          {{ product.title }}
+                                          {{ product.title | truncate: 100 }}
                                         </a>
                                         <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px] ">
                                           {{ product.price | money }}
                                         </h6>
                                       </div>
                                       {% if product.description %}
-                                        <div class="w-full my-[14px] border-t border-gray-400"></div>
+                                        <div class="w-full my-[14px] border-t opacity-10 "></div>
                                         <div class="product_short_desc text-[14px] leading-[19px] " aria-hidden="true">
-                                          {{ product.description | truncate: 50 }}
+                                          {{ product.description | truncate: 100 }}
                                         </div>
                                       {%- endif -%}
                                     </div>
@@ -270,7 +270,7 @@
                                 </span>
                               </button>
                               <div class="nav__product pt-6 hidden">
-                                <div class="space-y-4 text-[14px] leading-[19px]  font-normal">
+                                <div class="space-y-4 text-[14px] leading-[19px] font-normal">
                                   <div class="overflow-x-scroll flex">
                                     {%- if block.settings.collection_3 -%}
                                     {% assign selected_collection_3 = collections[block.settings.collection_3] %}
@@ -282,16 +282,16 @@
                                       <div class="product__info grid grid-cols-2 mt-[14px]">
                                         <a href="{{ product.url }}" class="product__title flex justify-start text-[16px] leading-[21px] ">
                                           <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                          {{ product.title }}
+                                          {{ product.title | truncate: 100 }}
                                         </a>
                                         <h6 aria-hidden="true" class="product__price flex justify-end text-[16px] leading-[21px] ">
                                           {{ product.price | money }}
                                         </h6>
                                       </div>
                                       {% if product.description %}
-                                        <div class="w-full my-[14px] border-t border-gray-400"></div>
+                                        <div class="w-full my-[14px] border-t opacity-10 "></div>
                                         <div class="product_short_desc text-[14px] leading-[19px] " aria-hidden="true">
-                                          {{ product.description | truncate: 50 }}
+                                          {{ product.description | truncate: 100 }}
                                         </div>
                                       {%- endif -%}
                                     </div>
@@ -392,24 +392,33 @@
                           Be the first to know about promotions and skincare tips.
                         </div>
                       </div>
+
                       <div class="flex mt-[30px]">
-                        <label for="email-address" class="sr-only px-0">Email address</label>
-                        <input
-                          id="email-address"
-                          name="email"
-                          type="email"
-                          autocomplete="email"
-                          required="required"
-                          class="min-w-0 flex-auto border-0 border-b harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} text-[14px] leading-[19px]  font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200"
-                          placeholder="Enter your email address"
-                        >
-                        <button type="submit" class="flex-none">
-                          <span
-                            class=" border harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} rounded-full px-2.5 py-2 hover:bg-black hover: transition"
-                            aria-hidden="true"
-                            >→</span
-                          >
-                        </button>
+                        {% form 'customer', class: 'flex w-full' %}
+                          {{ form.errors | default_errors }}
+                          {% if form.posted_successfully? %}
+                            <p class="text-[14px] leading-[19px] text-green-700">Submission Successful!</p>
+                          {% else %}
+                            <input type="hidden" name="contact[tags]" value="newsletter">
+                            <label for="Email" class="sr-only px-0">Email address</label>
+                            <input
+                              id="Email"
+                              name="contact[email]"
+                              value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+                              type="email"
+                              autocomplete="email"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              required="required"
+                              class="min-w-0 flex-auto border-0 border-b harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} text-[14px] leading-[19px]  font-normal bg-transparent px-0 py-2 focus:ring-0 focus:border-b-gray-500 focus:outline-none focus:border-b-2 focus:border-gray-200"
+                              placeholder="Enter your email address"
+                            >
+                            <button type="submit" name="commit" id="Subscribe" class="flex-none">
+                              <span class="border harmony__color-{{ section.settings.mobile_offcanvas_color_scheme }} rounded-full px-2.5 py-2 hover:bg-black hover: transition"
+                                aria-hidden="true">→</span>
+                            </button>
+                          {% endif %}
+                        {% endform %}
                       </div>
                     </div>
                   {% endif %}

@@ -1,13 +1,16 @@
 {
   "current": {
+    "use_font": "system",
     "type_header_font": "fette_gotisch_n4",
-    "heading_font_wieght": "400",
     "heading_font_scale": 16,
     "type_body_font": "fette_gotisch_n4",
     "body_font_scale": 14,
+    "social_twitter_link": "x.com",
     "social_facebook_link": "facebook.com",
     "social_instagram_link": "https:\/\/www.instagram.com\/",
-    "social_twitter_link": "x.com",
+    "social_dribble_link": "dribble.com",
+    "social_github_link": "github.com",
+    "social_linkedin_link": "linkedin.com",
     "sale_badge_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
     "sale_offer_badge_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
     "product_card_style": "card",
@@ -23,10 +26,7 @@
     "product_card_shadow_spread": 0,
     "product_card_shadow_horizontal_offset": 0,
     "product_card_shadow_vertical_offset": 0,
-    "use_font": "system",
-    "social_dribble_link": "dribble.com",
-    "social_github_link": "github.com",
-    "social_linkedin_link": "linkedin.com",
+    "heading_font_wieght": "400",
     "product_card_horizontal_offset": 19,
     "product_card_vertical_offset": 14,
     "product_card_box_shadow": "shadow-lg",
@@ -37,37 +37,77 @@
     "color_schemes": {
       "section-scheme": {
         "settings": {
+          "text": "#121212",
           "background": "#0e1b4d",
-          "background_gradient": "linear-gradient(180deg, #f3ffd1 0.00%, rgba(252, 244, 164, 0) 100.00%)",
-          "text": "#ffffff"
+          "background_gradient": "linear-gradient(180deg, rgba(243, 255, 209, 1), rgba(252, 244, 164, 0) 100%)",
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
         }
       },
       "scheme-2": {
         "settings": {
+          "text": "#000000",
           "background": "#d0baac",
           "background_gradient": "",
-          "text": "#000000"
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
         }
       },
       "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250": {
         "settings": {
+          "text": "#0e1b4d",
           "background": "#ffd902",
           "background_gradient": "",
-          "text": "#0e1b4d"
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
         }
       },
       "scheme-85436d7a-8766-4d97-a6df-212047299535": {
         "settings": {
+          "text": "#ffffff",
           "background": "#293423",
           "background_gradient": "",
-          "text": "#ffffff"
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
         }
       },
       "scheme-2b806c43-d5e0-4efc-a299-43249867c136": {
         "settings": {
+          "text": "#000000",
           "background": "#ffffff",
           "background_gradient": "",
-          "text": "#000000"
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#121212",
+          "secondary_button": "",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "links": "#121212"
         }
       }
     }
