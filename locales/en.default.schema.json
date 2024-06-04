@@ -72,13 +72,10 @@
           "label": "Color Scheme"
         },
         "auto_slide": {
-          "label": "Auto-slide announcements"
+          "label": "Auto slide?"
         },
-        "change_slides_speed": {
-          "label": "Change every"
-        },
-        "show_border": {
-          "label": "Show Border?"
+        "slide_loop": {
+          "label": "Slide Loop?"
         },
         "header__1": {
           "content": "Social media icons",
@@ -103,6 +100,12 @@
         },
         "enable_language_selector": {
           "label": "Enable language selector"
+        },
+        "padding_top": {
+          "label": "Padding Top"
+        },
+        "padding_bottom": {
+          "label": "Padding Bottom"
         }
       },
       "blocks": {
@@ -111,18 +114,6 @@
           "settings": {
             "text": {
               "label": "Text"
-            },
-            "text_alignment": {
-              "label": "Text alignment",
-              "options__1": {
-                "label": "Left"
-              },
-              "options__2": {
-                "label": "Center"
-              },
-              "options__3": {
-                "label": "Right"
-              }
             },
             "link": {
               "label": "Link"

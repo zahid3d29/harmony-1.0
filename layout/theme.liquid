@@ -7,6 +7,8 @@
     <meta name="generator" content="harmony">
     <link rel="canonical" href="{{ canonical_url }}">
 
+
+
     {% if settings.favicon != blank %}
       <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" sizes="32x32">
     {% endif %}
@@ -24,8 +26,6 @@
 
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     
     {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
@@ -41,13 +41,24 @@
 
     {{ content_for_header }}
 
+
+ 
     <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
 
-
     {% style %}
+
+      {% for scheme in settings.color_schemes %}
+        .harmony__color-{{ scheme.id }}{
+          background: {{ scheme.settings.background_gradient }};
+          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+          color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+          border-color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+        }
+      {% endfor %}
+
       :root {
         --font-body-family: {{ settings.type_body_font | font_face: font_display: 'swap' }}, {{ settings.type_body_font.fallback_families }};
         --font-body-scale: {{ settings.body_font_scale  }}px;
@@ -56,7 +67,7 @@
         --font-heading-scale: {{ settings.heading_font_scale }}px;
       }
 
-      
+
       {%- if settings.use_font == 'system' -%}
         h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl{
           font-family: var(--font-heading-family);
@@ -97,6 +108,7 @@
         background-repeat: no-repeat;
         background-position: center;
       }
+
     {% endstyle %}
 
     
@@ -105,21 +117,10 @@
       {{ cart | json }}
     </script>
 
-    <script type="module">
-      import '{{ "liquid-ajax-cart-v2.1.0.js" | asset_url }}';
-    </script>
+    <script type="module"> import '{{ "liquid-ajax-cart-v2.1.0.js" | asset_url }}';</script>
 
-    {%  style  %}  
-      {% for scheme in settings.color_schemes %}
-        .harmony__color-{{ scheme.id }}{
-          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-          background: {{ scheme.settings.background_gradient }};
-          color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-          border-color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-        }
-      {% endfor %}
-    {% endstyle %} 
-    
+
+
   </head>
   <body>
 
@@ -143,8 +144,8 @@
       }
     </script>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 
   </body>
 </html>
