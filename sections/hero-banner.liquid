@@ -3,42 +3,37 @@
   <div class="harmony__hero-banner bg-[#FAF2DC] relative min-h-[10rem] md:min-h-[15rem] lg:min-h-[30rem] bg-scroll bg-center bg-no-repeat bg-cover bg-[url('{{ section.settings.banner_image | image_url }}')]">
     <div class="harmony__hero-top-overlay w-full bg-gradient-to-b from-black min-h-[3rem] lg:min-h-[7rem] absolute top-0 left-0 right-0 opacity-70"></div>
 
-{% if section.settings.show_sale_badge %}
-    <div class="harmony__sale-badge hidden md:flex sale__alert absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] px-2 py-1 bg-[#304834] text-white texdt-[14px] text-normal gap-x-2 pr-3 rotate-0 md:rotate-90">
-      <span class="closebtn mx-1 flex text-[24px] text-normal hover:text-gray-900 leading-[20px] cursor-pointer transition ease-in-out delay-150" onclick="this.parentElement.style.display='none';">&times;</span> 
-      Sale! 30% Off
-    </div>
-{% endif %}
+    {% if section.settings.show_sale_badge %}
+      <div class="harmony__sale-badge hidden md:flex sale__alert absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] px-2 py-1 bg-[#304834] text-white texdt-[14px] text-normal gap-x-2 pr-3 rotate-0 md:rotate-90">
+        <span class="closebtn mx-1 flex text-[24px] text-normal hover:text-gray-900 leading-[20px] cursor-pointer transition ease-in-out delay-150" onclick="this.parentElement.style.display='none';">&times;</span> 
+        Sale! 30% Off
+      </div>
+    {% endif %}
 
     <div class="harmony__hero-banner-content mx-auto max-w-7xl relative isolate px-4 sm:px-6 md:px-10 pt-14">
-        <div class="max-w-lg md:py-32 py-20 lg:pt-[20rem]">
-          
-              
-            <div class="text-left">
-              {% for block in section.blocks %}
-                {%- case block.type -%}
-                {%-when 'sub_text_slide' -%}
-                <div class="hidden sm:mb-3 sm:flex sm:justify-left">
-                  <div class="relative rounded-full text-[14px] leading-[19px] text-[#f7f4ed]">
-                      {{ block.settings.sub_text | escape }}
-                  </div>
-                </div>
-                {%-when 'title' -%}
-                <h1 class="font-bold tracking-tight text-[42px] leading-[48px] lg:text-[90px] lg:leading-[81px] text-[#f7f4ed]">{{ block.settings.banner_heading | escape }}</h1>
-                {%-when 'text' -%}
-                <p class="mt-6 text-[18px] leading-[22px] text-[#f7f4ed]">{{ block.settings.banner_text | escape }}</p>
-                {%-when 'button' -%}
-                <div class="mt-10 flex items-center justify-start gap-x-6">
-                  <a href="{{ block.settings.button_url }}" class="text-[17px] font-semibold leading-[13px] text-[#EEFD8D] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ block.settings.button_text }} <span class="ml-1.5 text-[#EEFD8D]" aria-hidden="true">→</span></a>
-                </div>
-                {% endcase %}
-              {% endfor %}
+      <div class="max-w-lg md:py-32 py-20 lg:pt-[20rem]">
+        <div class="text-left">
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+            {%-when 'sub_text_slide' -%}
+            <div class="hidden sm:mb-3 sm:flex sm:justify-left">
+              <div class="relative rounded-full text-[14px] leading-[19px] text-[#f7f4ed]">
+                  {{ block.settings.sub_text | escape }}
+              </div>
             </div>
-                            
-        </div>
+            {%-when 'title' -%}
+            <h1 class="font-bold tracking-tight text-[42px] leading-[48px] lg:text-[90px] lg:leading-[81px] text-[#f7f4ed]">{{ block.settings.banner_heading | escape }}</h1>
+            {%-when 'text' -%}
+            <p class="mt-6 text-[18px] leading-[22px] text-[#f7f4ed]">{{ block.settings.banner_text | escape }}</p>
+            {%-when 'button' -%}
+            <div class="mt-10 flex items-center justify-start gap-x-6">
+              <a href="{{ block.settings.button_url }}" class="text-[17px] font-semibold leading-[13px] text-[#EEFD8D] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ block.settings.button_text }} <span class="ml-1.5 text-[#EEFD8D]" aria-hidden="true">→</span></a>
+            </div>
+            {% endcase %}
+          {% endfor %}
+        </div>          
+      </div>
     </div>
-
- 
     <div class="harmony__hero-bottom-overlay w-full bg-gradient-to-t from-black min-h-[10rem] md:min-h-[30rem] absolute bottom-0 left-0 right-0 opacity-80"></div>
   </div>
                    
@@ -48,97 +43,90 @@
 
 
 {% schema %}
-  {
+{
     "name": "Hero Banner",
     "class": "harmony_section-hero",
     "disabled_on": {
       "groups": ["header", "footer"]
     },
     "settings": [
-       {
-          "type": "checkbox",
-          "id": "show_sale_badge",
-          "label": "Show Sale Badge",
-          "default": false
-        }
-      ,
       {
-      "type": "image_picker",
-      "id": "banner_image",
-      "label": "Banner Image"
+        "type": "checkbox",
+        "id": "show_sale_badge",
+        "label": "Show Sale Badge",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
       }
     ],
-     "blocks": [
+    "blocks": [
     {
       "name": "Sub Text",
       "type": "sub_text_slide",
        "limit": 1,
       "settings": [
-       
-         {
-      "type": "text",
-      "id": "sub_text",
-      "label": "Sub Text",
-      "default": "eASY Skin Care Routine"
-      }
+        {
+          "type": "text",
+          "id": "sub_text",
+          "label": "Sub Text",
+          "default": "eASY Skin Care Routine"
+        }
       ]
     },
-      
-       {
+    {
       "name": "Title",
       "type": "title",
-          "limit": 1,
+      "limit": 1,
       "settings": [
-    {
-      "type": "text",
-      "id": "banner_heading",
-      "label": "Banner Heading",
-      "default": "Your path to radiant skin."
-   }
+        {
+          "type": "text",
+          "id": "banner_heading",
+          "label": "Banner Heading",
+          "default": "Your path to radiant skin."
+        }
       ]
     },
-     {
+    {
       "name": "Text",
       "type": "text",
-        "limit": 1,
+      "limit": 1,
       "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "banner_text",
-      "label": "Banner Text",
-      "default": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
-     }
+        {
+          "type": "inline_richtext",
+          "id": "banner_text",
+          "label": "Banner Text",
+          "default": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+        }
       ]
     },
-     {
+    {
       "name": "Button",
       "type": "button",
-       "limit": 1,
+      "limit": 1,
       "settings": [
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Shop All"
-    },
-    {
-      "type": "text",
-      "id": "button_url",
-      "label": "Button URL",
-      "default": "#"
-    }
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop All"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
       ]
     }
-      
-    
-    
   ],
-    "presets": [
-        {
-          "name": "Hero Banner",
-          "category": "Harmony Sections"
-        }
-    ]
-  }
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "category": "Harmony Sections"
+    }
+  ]
+}
 {% endschema %}
     

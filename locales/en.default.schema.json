@@ -72,10 +72,10 @@
           "label": "Color Scheme"
         },
         "auto_slide": {
-          "label": "Auto slide?"
+          "label": "Auto Rotate?"
         },
         "slide_loop": {
-          "label": "Slide Loop?"
+          "label": "Loop?"
         },
         "header__1": {
           "content": "Social media icons",

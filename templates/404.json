@@ -1,5 +1,45 @@
 {
   "sections": {
+    "hero_banner_h7fkYd": {
+      "type": "hero-banner",
+      "blocks": {
+        "sub_text_slide_wj84Lf": {
+          "type": "sub_text_slide",
+          "settings": {
+            "sub_text": "eASY Skin Care Routine"
+          }
+        },
+        "title_Gz4qBy": {
+          "type": "title",
+          "settings": {
+            "banner_heading": "Your path to radiant skin."
+          }
+        },
+        "text_7ReNzb": {
+          "type": "text",
+          "settings": {
+            "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+          }
+        },
+        "button_xPWC4G": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop All",
+            "button_url": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "sub_text_slide_wj84Lf",
+        "title_Gz4qBy",
+        "text_7ReNzb",
+        "button_xPWC4G"
+      ],
+      "settings": {
+        "show_sale_badge": true,
+        "banner_image": "shopify:\/\/shop_images\/article-image.png"
+      }
+    },
     "product_how_use_Wdtk6A": {
       "type": "product-how-use",
       "blocks": {
@@ -34,6 +74,7 @@
     }
   },
   "order": [
+    "hero_banner_h7fkYd",
     "product_how_use_Wdtk6A"
   ]
 }

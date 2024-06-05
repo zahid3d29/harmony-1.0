@@ -1,6 +1,6 @@
 {
   "current": {
-    "use_font": "system",
+    "use_font": "theme",
     "type_header_font": "fette_gotisch_n4",
     "heading_font_scale": 16,
     "type_body_font": "fette_gotisch_n4",
@@ -37,16 +37,16 @@
     "color_schemes": {
       "section-scheme": {
         "settings": {
-          "text": "#121212",
+          "text": "#000000",
           "background": "#0e1b4d",
           "background_gradient": "linear-gradient(180deg, rgba(243, 255, 209, 1), rgba(252, 244, 164, 0) 100%)",
-          "primary_button": "#121212",
+          "primary_button": "#ffd902",
           "on_primary_button": "#ffffff",
           "primary_button_border": "#121212",
           "secondary_button": "",
           "on_secondary_button": "#121212",
           "secondary_button_border": "#ffffff",
-          "icons": "#ffffff",
+          "icons": "#000000",
           "links": "#121212"
         }
       },
@@ -61,7 +61,7 @@
           "secondary_button": "",
           "on_secondary_button": "#121212",
           "secondary_button_border": "#ffffff",
-          "icons": "#ffffff",
+          "icons": "#ff0000",
           "links": "#121212"
         }
       },
@@ -76,7 +76,7 @@
           "secondary_button": "",
           "on_secondary_button": "#121212",
           "secondary_button_border": "#ffffff",
-          "icons": "#ffffff",
+          "icons": "#0e1b4d",
           "links": "#121212"
         }
       },

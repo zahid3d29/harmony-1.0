@@ -6,26 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="harmony">
     <link rel="canonical" href="{{ canonical_url }}">
-
-
-
     {% if settings.favicon != blank %}
       <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" sizes="32x32">
     {% endif %}
-
     <title>{{ page_title }}</title>
-
     <meta name="description" content="{{ page_description | default: shop.name | escape }}">
-
-    {% comment %} Google and Others Fonts  {% endcomment %}
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
     <link href="//fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=Neue+Haas+Unica+W1G" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/c10b8c44adcd28d073240edf9ebf72af?family=NeuzeitS+Book" rel="stylesheet">
-
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {% comment %} External CSS files  {% endcomment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
     
     {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
@@ -38,10 +33,6 @@
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
     </script>
 
-
-    {{ content_for_header }}
-
-
  
     <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
@@ -52,10 +43,26 @@
 
       {% for scheme in settings.color_schemes %}
         .harmony__color-{{ scheme.id }}{
-          background: {{ scheme.settings.background_gradient }};
           background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+          background: {{ scheme.settings.background_gradient }};
           color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-          border-color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+        }
+        .harmony__color-primary-button-{{ scheme.id }}{
+          background: rgb({{ scheme.settings.primary_button.red }},{{ scheme.settings.primary_button.green }},{{ scheme.settings.primary_button.blue }});
+          color: rgb({{ scheme.settings.on_primary_button.red }},{{ scheme.settings.on_primary_button.green }},{{ scheme.settings.on_primary_button.blue }});
+          border-color: rgb({{ scheme.settings.primary_button_border.red }},{{ scheme.settings.primary_button_border.green }},{{ scheme.settings.primary_button_border.blue }});
+        }
+        .harmony__color-secondary-button-{{ scheme.id }}{
+          background: rgb({{ scheme.settings.secondary_button.red }},{{ scheme.settings.secondary_button.green }},{{ scheme.settings.secondary_button.blue }});
+          color: rgb({{ scheme.settings.on_secondary_button.red }},{{ scheme.settings.on_secondary_button.green }},{{ scheme.settings.on_secondary_button.blue }});
+          border-color: rgb({{ scheme.settings.secondary_button_border.red }},{{ scheme.settings.secondary_button_border.green }},{{ scheme.settings.secondary_button_border.blue }});
+        }
+        .harmony__color-icon-{{ scheme.id }}{
+          color: rgb({{ scheme.settings.icons.red }},{{ scheme.settings.icons.green }},{{ scheme.settings.icons.blue }});
+          fill: rgb({{ scheme.settings.icons.red }},{{ scheme.settings.icons.green }},{{ scheme.settings.icons.blue }});
+        }
+        .harmony__color-link-{{ scheme.id }}{
+          color: rgb({{ scheme.settings.links.red }},{{ scheme.settings.links.green }},{{ scheme.settings.links.blue }});
         }
       {% endfor %}
 
@@ -66,7 +73,6 @@
         --font-heading-family: {{ settings.type_header_font | font_face: font_display: 'swap' }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-scale: {{ settings.heading_font_scale }}px;
       }
-
 
       {%- if settings.use_font == 'system' -%}
         h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl{
@@ -117,9 +123,10 @@
       {{ cart | json }}
     </script>
 
-    <script type="module"> import '{{ "liquid-ajax-cart-v2.1.0.js" | asset_url }}';</script>
+    <script type="module"> import '{{ "liquid-ajax-cart" | asset_url }}';</script>
+    <script src="{{ 'swiper_bundle.min.js' | asset_url }}"></script>
 
-
+    {{ content_for_header }}
 
   </head>
   <body>
@@ -143,8 +150,6 @@
         product_recommendations_url: '{{ routes.product_recommendations_url }}'
       }
     </script>
-
-
 
 
   </body>

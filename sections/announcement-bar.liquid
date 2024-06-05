@@ -1,4 +1,3 @@
-
 <section id="harmony--{{ section.id }}" class="section__announcement-bar harmony__color-{{ section.settings.color_scheme }}">
   <div class="announcement__bar-main mx-auto max-w-screen-2xl px-4 md:px-10">
     <div class="grid grid-cols-1 gap-x-4 lg:gap-x-8 gap-y-6 lg:gap-y-16 text-center md:grid-cols-4">
@@ -80,13 +79,13 @@
           </div>
           <button class="swiper-button-next relative inline-flex items-center">
             <span class="sr-only">Next</span>
-            <svg class="mt-3.5 w-5 absolute text-[14px] top-[-14px] left-[5px] inline-flex items-center" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <svg class="mt-3.5 w-5 absolute text-[14px] top-[-14px] left-[5px] inline-flex items-center harmony__color-icon-{{ section.settings.color_scheme }}" viewBox="0 0 20 20" fill="" aria-hidden="true">
               <path  fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
             </svg>
           </button>
           <button class="swiper-button-prev relative inline-flex items-center">
             <span class="sr-only">Previews</span>
-            <svg class="mt-3.5 w-5 absolute text-[14px] top-[-14px] right-[5px] inline-flex items-center" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <svg class="mt-3.5 w-5 absolute text-[14px] top-[-14px] right-[5px] inline-flex items-center harmony__color-icon-{{ section.settings.color_scheme }}" viewBox="0 0 20 20" fill="" aria-hidden="true">
               <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
             </svg>
           </button> 
@@ -94,7 +93,7 @@
       </div>
       <div class="relative hidden md:flex items-center justify-end lg:justify-end gap-x-3 lg:gap-x-3 mx-2 lg:mx-0 order-2 sm:order-2">
         {%- if section.settings.show_social -%}
-          <svg class="h-[16px] w-[16px]" fill="currentColor" preserveAspectRatio="xMidYMid" version="1.1" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+        <svg class="h-[16px] w-[16px] harmony__color-icon-{{ section.settings.color_scheme }}" fill="" preserveAspectRatio="xMidYMid" version="1.1" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
           <path d="m128 23.064c34.178 0 38.226 0.13007 51.723 0.74589 12.48 0.56958 19.257 2.6548 23.768 4.4072 5.9742 2.322 10.239 5.0962 14.718 9.5751s7.2531 8.7433 9.5746 14.718c1.7529 4.5109 3.8382 11.288 4.4077 23.768 0.61581 13.498 0.74589 17.546 0.74589 51.723 0 34.178-0.13007 38.226-0.74589 51.723-0.56958 12.48-2.6548 19.257-4.4077 23.768-2.3215 5.9742-5.0957 10.239-9.5746 14.718s-8.7433 7.2531-14.718 9.5746c-4.5109 1.7529-11.288 3.8382-23.768 4.4077-13.495 0.61581-17.543 0.74589-51.723 0.74589-34.18 0-38.228-0.13007-51.723-0.74589-12.48-0.56958-19.257-2.6548-23.768-4.4077-5.9747-2.3215-10.239-5.0957-14.718-9.5746s-7.2531-8.7433-9.5746-14.718c-1.7529-4.5109-3.8382-11.288-4.4077-23.768-0.61581-13.498-0.74589-17.546-0.74589-51.723 0-34.178 0.13007-38.226 0.74589-51.723 0.56958-12.48 2.6548-19.257 4.4077-23.768 2.3215-5.9742 5.0957-10.239 9.5746-14.718s8.7433-7.2531 14.718-9.5751c4.5104-1.7524 11.288-3.8377 23.767-4.4072 13.498-0.61581 17.546-0.74589 51.723-0.74589m0-23.064c-34.763 0-39.121 0.14735-52.774 0.77027-13.625 0.62191-22.929 2.7854-31.071 5.9498-8.4171 3.2711-15.555 7.6479-22.671 14.764s-11.493 14.254-14.764 22.671c-3.1644 8.1423-5.3279 17.447-5.9498 31.071-0.62293 13.652-0.76977 18.011-0.76977 52.774 0 34.763 0.14684 39.122 0.76977 52.774 0.62191 13.625 2.7854 22.929 5.9498 31.071 3.2711 8.4166 7.6479 15.555 14.764 22.671s14.254 11.493 22.671 14.764c8.1423 3.1644 17.447 5.3279 31.071 5.9498 13.653 0.62293 18.011 0.76977 52.774 0.76977 34.763 0 39.122-0.14684 52.774-0.76977 13.625-0.62191 22.929-2.7854 31.071-5.9498 8.4171-3.2711 15.555-7.6479 22.671-14.764s11.493-14.254 14.764-22.671c3.1644-8.1423 5.3279-17.447 5.9498-31.071 0.62293-13.652 0.77028-18.011 0.77028-52.774 0-34.763-0.14735-39.122-0.77028-52.774-0.62191-13.625-2.7854-22.929-5.9498-31.071-3.2711-8.4171-7.6479-15.555-14.764-22.671s-14.254-11.493-22.671-14.764c-8.1423-3.1644-17.447-5.3279-31.071-5.9498-13.652-0.62293-18.011-0.77027-52.774-0.77027zm0 62.27c-36.301 0-65.73 29.428-65.73 65.73s29.428 65.73 65.73 65.73 65.73-29.428 65.73-65.73-29.428-65.73-65.73-65.73zm0 108.4c-23.564 0-42.667-19.103-42.667-42.667s19.103-42.667 42.667-42.667 42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667zm83.687-110.99c0 8.4832-6.8766 15.36-15.36 15.36s-15.36-6.8771-15.36-15.36 6.8771-15.36 15.36-15.36 15.36 6.8766 15.36 15.36z"/></svg>
           <a class="hover:underline" href="{{ settings.social_instagram_link }}" target="_blank">
             <div class="text-[14px] leading[19px] font-normal">Follow us on IG</div>
@@ -105,137 +104,137 @@
   </div>
 </section>
 
-{%- assign loopSlide = section.settings.slide_loop -%}
+
 
 {% schema %}
-  {
-    "name": "t:sections.announcement-bar.name",
-    "max_blocks": 3,
-    "class": "harmony_section-announcement-bar",
-    "enabled_on": {
-      "groups": ["header"]
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 3,
+  "class": "harmony_section-announcement-bar",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Color & Style"
     },
-    "settings": [
-      {
-        "type": "color_scheme",
-        "id": "color_scheme",
-        "label": "t:sections.announcement-bar.settings.color_scheme.label",
-        "default": "scheme-1"
-      },
-      {
-        "type": "header",
-        "content": "t:sections.announcement-bar.settings.header__1.content",
-        "info": "t:sections.announcement-bar.settings.header__1.info"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_social",
-        "default": true,
-        "label": "t:sections.announcement-bar.settings.show_social.label"
-      },
-      {
-        "type": "header",
-        "content": "t:sections.announcement-bar.settings.header__2.content"
-      },
-      {
-        "type": "checkbox",
-        "id": "auto_slide",
-        "label": "t:sections.announcement-bar.settings.auto_slide.label",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "slide_loop",
-        "label": "t:sections.announcement-bar.settings.slide_loop.label",
-        "default": false
-      },
-      {
-        "type": "header",
-        "content": "t:sections.announcement-bar.settings.header__3.content",
-        "info": "t:sections.announcement-bar.settings.header__3.info"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_country_selector",
-        "default": true,
-        "label": "t:sections.announcement-bar.settings.enable_country_selector.label"
-      },
-      {
-        "type": "header",
-        "content": "t:sections.announcement-bar.settings.header__4.content",
-        "info": "t:sections.announcement-bar.settings.header__4.info"
-      },
-      {
-        "type": "checkbox",
-        "id": "enable_language_selector",
-        "default": true,
-        "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
-      },
-      {
-        "type": "header",
-        "content": "Section padding"
-      },
-      {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.announcement-bar.settings.padding_top.label",
-        "default": 36
-      },
-      {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "t:sections.announcement-bar.settings.padding_bottom.label",
-        "default": 36
-      }
-    ],
-    "blocks": [
-      {
-        "type": "announcement",
-        "name": "t:sections.announcement-bar.blocks.announcement.name",
-        "settings": [
-          {
-            "type": "inline_richtext",
-            "id": "text",
-            "default": "Welcome to our store",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label",
-            "info": "You can use html tag here. ex: &nbsp, <strong>, <strike></strike> etc"
-          },
-          {
-            "type": "url",
-            "id": "announcement_link",
-            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "t:sections.announcement-bar.name",
-        "blocks": [
-          {
-            "type": "announcement"
-          }
-        ]
-      }
-    ]
-  }
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.announcement-bar.settings.color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__1.content",
+      "info": "t:sections.announcement-bar.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "t:sections.announcement-bar.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__2.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_slide",
+      "label": "t:sections.announcement-bar.settings.auto_slide.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_loop",
+      "label": "t:sections.announcement-bar.settings.slide_loop.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__3.content",
+      "info": "t:sections.announcement-bar.settings.header__3.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.announcement-bar.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__4.content",
+      "info": "t:sections.announcement-bar.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.announcement-bar.settings.padding_top.label",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.announcement-bar.settings.padding_bottom.label",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label",
+          "info": "You can use html tag here. ex: &nbsp, <strong>, <strike></strike> etc"
+        },
+        {
+          "type": "url",
+          "id": "announcement_link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-bar.name",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
   
 
-    
 
 <link rel="stylesheet" href="{{ 'swiper_bundle.min.css' |  asset_url }}">
-<!-- Swiper JS -->
-<script src="{{ 'swiper_bundle.min.js' | asset_url }}"></script>
-
 <style>
   .swiper {
     width: 100%;
@@ -249,12 +248,16 @@
   }
 </style>
 
-<!-- Initialize Swiper -->
+{%- assign loopSlide = section.settings.slide_loop -%}
+{%- assign autoSlide = section.settings.auto_slide -%}
+
 <script>
   var slideLoop = {{ loopSlide }};
+  var autoPlaySlide = {{ autoSlide }};
   var swiper = new Swiper(".announcementSwiper", {
     direction: "vertical",
-    effect: "slide",
+    autoplay: autoPlaySlide,
+    effect: 'slide',
     loop: slideLoop,
     navigation: {
       nextEl: ".announcementSwiper .swiper-button-next",
@@ -262,3 +265,4 @@
     },
   });
 </script>
+
