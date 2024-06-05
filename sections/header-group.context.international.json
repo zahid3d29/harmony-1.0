@@ -1,0 +1,15 @@
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "international"
+  },
+  "sections": {
+    "announcement_bar_F7p9Ce": {
+      "settings": {
+        "color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535"
+      },
+      "blocks": {
+      }
+    }
+  }
+}

@@ -46,17 +46,5 @@
     "search": "Rechercher",
     "popular_countries_regions": "Pays\/régions populaires",
     "country_results_count": "{{ count }} pays\/régions trouvés"
-  },
-  "shopify": {
-    "checkout": {
-      "wallets": {
-        "return_to_checkout": "Retour à la caisse",
-        "errors": {
-          "unavailable_terminal": {
-            "instructions": "{{walletName}} n'est actuellement pas disponible pour votre commande. Pour continuer votre achat, choisissez une autre méthode de paiement."
-          }
-        }
-      }
-    }
   }
 }
