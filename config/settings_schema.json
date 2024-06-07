@@ -56,6 +56,12 @@
             "default": "#121212"
           },
           {
+            "type": "color",
+            "id": "text_secondary",
+            "label": "Text Secondary",
+            "default": "#ffffff"
+          },
+          {
             "type": "header",
             "content": "Background"
           },
@@ -78,13 +84,13 @@
           {
             "type": "color",
             "id": "primary_button",
-            "label": "Primary Button",
+            "label": "Primary Button Background",
             "default": "#121212"
           },
           {
             "type": "color",
             "id": "on_primary_button",
-            "label": "On Primary Button",
+            "label": "Primary Button label",
             "default": "#FFFFFF"
           },
           {
@@ -96,12 +102,12 @@
           {
             "type": "color",
             "id": "secondary_button",
-            "label": "Secondary Button"
+            "label": "Secondary Button Background"
           },
           {
             "type": "color",
             "id": "on_secondary_button",
-            "label": "On Secondary Button",
+            "label": "Secondary Button Label",
             "default": "#121212"
           },
           {
@@ -114,6 +120,12 @@
             "type": "color",
             "id": "icons",
             "label": "Icons",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "border",
+            "label": "Border",
             "default": "#FFFFFF"
           },
           {

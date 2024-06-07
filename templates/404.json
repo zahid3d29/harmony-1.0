@@ -1,5 +1,62 @@
 {
   "sections": {
+    "banner_ktNWgn": {
+      "type": "banner",
+      "blocks": {
+        "sub_text_slide_9xxCiB": {
+          "type": "sub_text_slide",
+          "settings": {
+            "sub_text": "eASY Skin Care Routine"
+          }
+        },
+        "title_KBPm6b": {
+          "type": "title",
+          "settings": {
+            "banner_heading": "Your path to radiant skin."
+          }
+        },
+        "text_dzDEwb": {
+          "type": "text",
+          "settings": {
+            "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+          }
+        },
+        "button_ERHiQM": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop All",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "sub_text_slide_9xxCiB",
+        "title_KBPm6b",
+        "text_dzDEwb",
+        "button_ERHiQM"
+      ],
+      "disabled": true,
+      "settings": {
+        "banner_color_scheme": "",
+        "enable_gradient": false,
+        "overlay_opacity": 83,
+        "show_sale_badge": false,
+        "color_scheme_sale_badge": "scheme-2",
+        "banner_type": "background",
+        "banner_image": "shopify:\/\/shop_images\/article-image.png",
+        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+      }
+    },
+    "gdpr_KGmQiU": {
+      "type": "GDPR",
+      "settings": {
+        "gdpr_color_scheme": "scheme-2",
+        "enable_gradient": false,
+        "content": "By browsing this website, you consent to our Privacy Policy.",
+        "link_text": "<strong>Accept Cookies<\/strong>",
+        "link": ""
+      }
+    },
     "hero_banner_h7fkYd": {
       "type": "hero-banner",
       "blocks": {
@@ -35,9 +92,11 @@
         "text_7ReNzb",
         "button_xPWC4G"
       ],
+      "disabled": true,
       "settings": {
-        "show_sale_badge": true,
-        "banner_image": "shopify:\/\/shop_images\/man-browsing-at-a-guitar-shop.jpg"
+        "color_scheme": "scheme-76cdf123-1940-4de0-a1a4-515fc3d99f61",
+        "overlay_opacity": 28,
+        "show_sale_badge": true
       }
     },
     "product_how_use_Wdtk6A": {
@@ -74,6 +133,8 @@
     }
   },
   "order": [
+    "banner_ktNWgn",
+    "gdpr_KGmQiU",
     "hero_banner_h7fkYd",
     "product_how_use_Wdtk6A"
   ]

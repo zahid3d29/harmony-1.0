@@ -40,22 +40,39 @@
 
 
     {% style %}
-
       {% for scheme in settings.color_schemes %}
-        .harmony__color-{{ scheme.id }}{
-          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+        .harmony__color-background-gradient-{{ scheme.id }}{
           background: {{ scheme.settings.background_gradient }};
+        }
+        .harmony__color-background-{{ scheme.id }}{
+          background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
+        }
+        .harmony__color-text-{{ scheme.id }}{
           color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
         }
-        .harmony__color-primary-button-{{ scheme.id }}{
+        .harmony__color-text-secondary-{{ scheme.id }}{
+          color: rgb({{ scheme.settings.text_secondary.red }},{{ scheme.settings.text_secondary.green }},{{ scheme.settings.text_secondary.blue }});
+        }
+        .harmony__color-primary-button-background-{{ scheme.id }}{
           background: rgb({{ scheme.settings.primary_button.red }},{{ scheme.settings.primary_button.green }},{{ scheme.settings.primary_button.blue }});
+        }
+        .harmony__color-primary-button-label-{{ scheme.id }}{
           color: rgb({{ scheme.settings.on_primary_button.red }},{{ scheme.settings.on_primary_button.green }},{{ scheme.settings.on_primary_button.blue }});
+        }
+        .harmony__color-primary-button-border-{{ scheme.id }}{
           border-color: rgb({{ scheme.settings.primary_button_border.red }},{{ scheme.settings.primary_button_border.green }},{{ scheme.settings.primary_button_border.blue }});
         }
-        .harmony__color-secondary-button-{{ scheme.id }}{
+        .harmony__color-secondary-button-background-{{ scheme.id }}{
           background: rgb({{ scheme.settings.secondary_button.red }},{{ scheme.settings.secondary_button.green }},{{ scheme.settings.secondary_button.blue }});
+        }
+        .harmony__color-secondary-button-label-{{ scheme.id }}{
           color: rgb({{ scheme.settings.on_secondary_button.red }},{{ scheme.settings.on_secondary_button.green }},{{ scheme.settings.on_secondary_button.blue }});
+        }
+        .harmony__color-secondary-button-border-{{ scheme.id }}{
           border-color: rgb({{ scheme.settings.secondary_button_border.red }},{{ scheme.settings.secondary_button_border.green }},{{ scheme.settings.secondary_button_border.blue }});
+        }
+        .harmony__color-border-{{ scheme.id }}{
+          border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }});
         }
         .harmony__color-icon-{{ scheme.id }}{
           color: rgb({{ scheme.settings.icons.red }},{{ scheme.settings.icons.green }},{{ scheme.settings.icons.blue }});

@@ -78,7 +78,6 @@
         "collection_list_3_ABGqex",
         "collection_3_6DB9ME"
       ],
-      "disabled": true,
       "settings": {
         "header_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "logo": "shopify:\/\/shop_images\/swiss-white.png",
@@ -128,9 +127,10 @@
         "announcement_zdhQeC"
       ],
       "settings": {
-        "color_scheme": "section-scheme",
+        "announcement_color_scheme": "",
+        "enable_gradient": true,
         "show_social": true,
-        "auto_slide": true,
+        "auto_slide": false,
         "slide_loop": true,
         "enable_country_selector": true,
         "enable_language_selector": true,

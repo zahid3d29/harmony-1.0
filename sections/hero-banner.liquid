@@ -1,7 +1,7 @@
 <section id="harmony--{{ section.id }}">
-                   
+  {% comment %} <img src="{{ section.settings.banner_image | image_url }}" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">                 {% endcomment %}
   <div class="harmony__hero-banner bg-[#FAF2DC] relative min-h-[10rem] md:min-h-[15rem] lg:min-h-[30rem] bg-scroll bg-center bg-no-repeat bg-cover bg-[url('{{ section.settings.banner_image | image_url }}')]">
-    <div class="harmony__hero-top-overlay w-full bg-gradient-to-b from-black min-h-[3rem] lg:min-h-[7rem] absolute top-0 left-0 right-0 opacity-70"></div>
+    <div class="harmony__hero-top-overlay w-full harmony__color-{{ section.settings.color_scheme }} min-h-[3rem] lg:min-h-[7rem] absolute top-0 left-0 right-0 opacity-{{ section.settings.overlay_opacity }}"></div>
 
     {% if section.settings.show_sale_badge %}
       <div class="harmony__sale-badge hidden md:flex sale__alert absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] px-2 py-1 bg-[#304834] text-white texdt-[14px] text-normal gap-x-2 pr-3 rotate-0 md:rotate-90">
@@ -12,7 +12,7 @@
 
     <div class="harmony__hero-banner-content mx-auto max-w-7xl relative isolate px-4 sm:px-6 md:px-10 pt-14">
       <div class="max-w-lg md:py-32 py-20 lg:pt-[20rem]">
-        <div class="text-left">
+        <div class="text-left harmony__color-{{ section.settings.color_scheme }}">
           {% for block in section.blocks %}
             {%- case block.type -%}
             {%-when 'sub_text_slide' -%}
@@ -34,7 +34,7 @@
         </div>          
       </div>
     </div>
-    <div class="harmony__hero-bottom-overlay w-full bg-gradient-to-t from-black min-h-[10rem] md:min-h-[30rem] absolute bottom-0 left-0 right-0 opacity-80"></div>
+    <div class="harmony__hero-bottom-overlay w-full harmony__color-{{ section.settings.color_scheme }} min-h-[10rem] md:min-h-[30rem] absolute bottom-0 left-0 right-0 opacity-{{ section.settings.overlay_opacity }}"></div>
   </div>
                    
    
@@ -50,6 +50,26 @@
       "groups": ["header", "footer"]
     },
     "settings": [
+      {
+        "type": "header",
+        "content": "Section Color & Style"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.announcement-bar.settings.color_scheme.label",
+        "default": "scheme-1"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Overlay Opacity",
+        "default": 10
+      },
       {
         "type": "checkbox",
         "id": "show_sale_badge",

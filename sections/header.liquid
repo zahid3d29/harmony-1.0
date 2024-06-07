@@ -11,7 +11,7 @@
     }
   }
 {%- endstyle -%}
-<section id="harmony--{{ section.id }}" class="harmony__color-{{ section.settings.header_color_scheme }} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
+<section id="harmony--{{ section.id }}" class="harmony__color-background-{{ section.settings.header_color_scheme }} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
   <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
       <div class="flex lg:flex-1">
@@ -23,7 +23,7 @@
         >
           <span class="sr-only">Open</span>
           <svg
-            class="h-6 w-6"
+            class="h-6 w-6 harmony__color-icon-{{ section.settings.header_color_scheme }}"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -47,7 +47,7 @@
         <button type="button" class="inline-flex items-center justify-center rounded-md " onclick="openNav()">
           <span class="sr-only">Open main menu</span>
           <svg
-            class="h-6 w-6"
+            class="h-6 w-6 harmony__color-icon-{{ section.settings.header_color_scheme }}"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -61,7 +61,7 @@
       {% comment %} header Main navigation for large screen  {% endcomment %}
       <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] ">
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
-          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-{{ section.settings.header_color_scheme }} border border-gray-100  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }}  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {% for main_link in linklists[section.settings.main_menu].links %}
               {% if main_link.links.size > 0 %}
                 <div class="dropdown_menu">
@@ -73,7 +73,7 @@
                     >
                       {{ main_link.title }}
                       <svg
-                        class="w-2.5 h-2.5 ms-2.5"
+                        class="w-2.5 h-2.5 ms-2.5 harmony__color-icon-{{ section.settings.header_color_scheme }}"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -88,7 +88,7 @@
                       id="dropdownNavbar"
                       class="nav__sub-menu absolute z-10 font-normal divide-y divide-gray-100  shadow w-44"
                     >
-                      <ul class="py-2 text-[14px] leading-[19px] harmony__color-{{ section.settings.header_color_scheme }}" aria-labelledby="dropdownLargeButton">
+                      <ul class="py-2 text-[14px] leading-[19px] harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }}" aria-labelledby="dropdownLargeButton">
                         {% for child_link in main_link.links %}
                           {% if child_link.links.size > 0 %}
                             <li aria-labelledby="dropdownNavbarLink" class="double_drop">
@@ -101,7 +101,7 @@
                               >
                                 {{ child_link.title }}
                                 <svg
-                                  class="w-2.5 h-2.5 ms-2.5"
+                                  class="w-2.5 h-2.5 ms-2.5 harmony__color-icon-{{ section.settings.header_color_scheme }}"
                                   aria-hidden="true"
                                   xmlns="http://www.w3.org/2000/svg"
                                   fill="none"
@@ -115,7 +115,7 @@
                                 class="nav__sub__menu-child absolute left-[180px] top-12 z-10 divide-y divide-gray-100 shadow w-44"
                               >
                                 <ul
-                                  class="nav__sub-menu-child py-2 text-[14px] leading-[19px] harmony__color-{{ section.settings.header_color_scheme }}"
+                                  class="nav__sub-menu-child py-2 text-[14px] leading-[19px] harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }}"
                                   aria-labelledby="doubleDropdownButton"
                                 >
                                   {% for grand_child in child_link.links %}
@@ -164,7 +164,7 @@
                 <li>
                   <a
                     href="{{ main_link.url }}"
-                    class="block py-2 px-3  rounded  md:hover:bg-transparent md:border-0  md:p-0"
+                    class="block py-2 px-3 rounded md:hover:bg-transparent md:border-0  md:p-0"
                     aria-current="page"
                   >
                     {{ main_link.title }}
@@ -181,7 +181,7 @@
           <a href="" class="flex items-center w-[40px] p-2  hover:text-gray-500">
             <span class="sr-only">Search</span>
             <svg
-              class="h-6 w-6"
+              class="h-6 w-6 harmony__color-icon-{{ section.settings.header_color_scheme }}"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -198,7 +198,7 @@
             class="flex w-[40px] group items-center p-2  hover:text-slate-500"
           >
             <span class="sr-only">Profile</span>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg class="harmony__color-icon-{{ section.settings.header_color_scheme }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd"></path>
             </svg>
           </a>
@@ -207,7 +207,7 @@
           <a href="/cart" class="flex w-[40px] group items-center p-2">
             <span class="sr-only">Cart</span>
             <svg
-              class="h-6 w-6 flex-shrink-0  group-hover:"
+              class="h-6 w-6 flex-shrink-0 harmony__color-icon-{{ section.settings.header_color_scheme }} group-hover:harmony__color-text-{{ section.settings.header_color_scheme }}"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
@@ -216,13 +216,12 @@
             >
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
             </svg>
-            <span class="hidden ml-2 text-[14px] leading-[19px] font-medium  group-hover:text-gray-800">3</span>
+            <span class="hidden ml-2 text-[14px] leading-[19px] font-medium group-hover:text-gray-800">3</span>
             <span class="sr-only">items in cart, view bag</span>
           </a>
         {% endif %}
       </div>
     </nav>
-    {% comment %} (Snippets: Offcanvas-nav) Mobile menu, Offcanvas menu show/hide based on menu open state. {% endcomment %}
   </header>
 </section>
 

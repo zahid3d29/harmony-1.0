@@ -1,0 +1,202 @@
+<div class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.banner_color_scheme }} {% else %} harmony__color-background-{{ section.settings.banner_color_scheme }} {% endif %} relative isolate overflow-hidden {% if section.settings.banner_type == 'video' %} min-h-[500px] md:min-h-[700px] {%- else -%} py-24 sm:py-32 {% endif %}">
+  {% if section.settings.banner_type == 'image' %} 
+    <img src="{{ section.settings.banner_image | image_url  }}" class="absolute inset-0 -z-10 h-full w-full object-cover object-center md:object-center">
+  {% endif %}
+  {%- if section.settings.enable_gradient -%}
+  <div class="{% if section.settings.banner_type == 'video' %} hidden {% else %} hidden sm:block {% endif %} sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+    <div class="aspect-[1097/845] w-[68.5625rem] harmony__color-background-gradient-{{ section.settings.banner_color_scheme }} opacity-{{ section.settings.overlay_opacity }}" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+  </div>
+  <div class="hidden absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+    <div class="aspect-[1097/845] w-[68.5625rem] harmony__color-background-gradient-{{ section.settings.banner_color_scheme }} opacity-{{ section.settings.overlay_opacity }}" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+  </div>
+  {%- endif -%}
+  {%- if section.settings.banner_type == 'video' -%}
+    <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none object-cover">
+      <source src="{{ section.settings.vid_url }}" type="video/mp4"/>
+      <source src="{{ section.settings.vid_url }}" type="video/ogg">
+      Your browser does not support the video tag.
+    </video> 
+  {%- endif -%}
+  {% if section.settings.show_sale_badge %}
+    <div class="harmony__sale-badge hidden sale__alert md:flex absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] {% if section.settings.banner_type == 'video' %} z-20 {% endif %} px-2 py-1 harmony__color-background-{{ section.settings.color_scheme_sale_badge }} harmony__color-text-{{ section.settings.color_scheme_sale_badge }} texdt-[14px] text-normal gap-x-2 pr-3 rotate-0 md:rotate-90">
+      <span class="closebtn mx-1 flex text-[24px] text-normal harmony__color-icon-{{ section.settings.color_scheme_sale_badge }} leading-[20px] cursor-pointer transition ease-in-out delay-150" onclick="this.parentElement.style.display='none';">&times;</span> 
+      Sale! 30% Off
+    </div>
+  {% endif %}
+  <div class="harmony__hero-banner-content {% if section.settings.banner_type == 'video' %} absolute z-20 {% endif %} mx-auto max-w-7xl relative isolate px-4 sm:px-6 md:px-10 pt-14">
+    <div class="max-w-lg {% if section.settings.banner_type == 'video' %} py-20 {% else %} md:py-20 {% endif %}">
+      <div class="text-left">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+          {%-when 'sub_text_slide' -%}
+          <div class="hidden sm:mb-3 sm:flex sm:justify-left">
+            <div class="relative rounded-full text-[14px] leading-[19px] harmony__color-text-secondary-{{ section.settings.banner_color_scheme }}">
+                {{ block.settings.sub_text | escape }}
+            </div>
+          </div>
+          {%-when 'title' -%}
+          <h1 class="harmony__color-text-{{ section.settings.banner_color_scheme }} font-bold tracking-tight text-[42px] leading-[48px] lg:text-[90px] lg:leading-[81px]">{{ block.settings.banner_heading | escape }}</h1>
+          {%-when 'text' -%}
+          <p class="mt-6 text-[18px] leading-[22px] harmony__color-text-{{ section.settings.banner_color_scheme }}">{{ block.settings.banner_text | escape }}</p>
+          {%-when 'button' -%}
+          <div class="mt-10 flex items-center justify-start gap-x-6">
+            <a href="{{ block.settings.button_url }}" class="text-[17px] font-semibold leading-[13px] harmony__color-link-{{ section.settings.banner_color_scheme }} transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ block.settings.button_text }} <span class="ml-1.5 harmony__color-icon-{{ section.settings.banner_color_scheme }}" aria-hidden="true">→</span></a>
+          </div> 
+          {% endcase %}
+        {% endfor %}
+      </div>          
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% schema %}
+  {
+      "name": "Banner",
+      "class": "harmony_section-hero",
+      "disabled_on": {
+        "groups": ["header", "footer"]
+      },
+      "settings": [
+        {
+          "type": "header",
+          "content": "Section Color & Style"
+        },
+        {
+          "type": "color_scheme",
+          "id": "banner_color_scheme",
+          "label": "t:sections.announcement-bar.settings.color_scheme.label",
+          "default": "scheme-1"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_gradient",
+          "label": "Background Gradient?",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Overlay Opacity",
+          "default": 10
+        },
+        {
+          "type": "checkbox",
+          "id": "show_sale_badge",
+          "label": "Show Sale Badge",
+          "default": false
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme_sale_badge",
+          "label": "Badge Color",
+          "default": "scheme-1"
+        },
+        {
+          "type": "select",
+          "id": "banner_type",
+          "label": "Banner Type",
+          "options": [
+            {
+              "value": "video",
+              "label": "Video"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "background",
+              "label": "Background"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "text",
+          "id": "vid_url",
+          "label": "Video url",
+          "default": "https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",
+          "info": "paste your video url/link here. Format: .mp4, .ogg"
+        }
+      ],
+      "blocks": [
+      {
+        "name": "Sub Text",
+        "type": "sub_text_slide",
+         "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "sub_text",
+            "label": "Sub Text",
+            "default": "eASY Skin Care Routine"
+          }
+        ]
+      },
+      {
+        "name": "Title",
+        "type": "title",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "banner_heading",
+            "label": "Banner Heading",
+            "default": "Your path to radiant skin."
+          }
+        ]
+      },
+      {
+        "name": "Text",
+        "type": "text",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "banner_text",
+            "label": "Banner Text",
+            "default": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+          }
+        ]
+      },
+      {
+        "name": "Button",
+        "type": "button",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Shop All"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner",
+        "category": "Harmony Sections"
+      }
+    ]
+  }
+  {% endschema %}
