@@ -11,100 +11,64 @@
         "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
       }
     },
-    "collection": {
+    "collection_nHVnxW": {
       "type": "collection",
+      "disabled": true,
       "settings": {
+        "collection_color_scheme": "",
+        "enable_gradient": false,
         "number_of_letters_in_title": 12,
-        "products_to_show": 9,
+        "products_to_show": 3,
         "products_per_row": "3",
         "show_price": true,
         "show_category": true,
-        "show_reviews": true,
+        "show_reviews": false,
         "enable_stock_badge": true,
         "enable_filter": true,
-        "enable_filter_drawer": false,
+        "enable_filter_drawer": true,
         "enable_sort": true,
         "offer_badge": true,
         "show_wishlist": true,
         "enable_quick_view": true,
         "mobile_layout": "carousel",
         "number_of_column": "1",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "product_featured_4hDda7": {
-      "type": "product_featured",
-      "blocks": {
-        "block_xpWfk4": {
-          "type": "block",
-          "settings": {
-            "collection": "gold"
-          }
-        },
-        "block_mGDwpD": {
-          "type": "block",
-          "settings": {
-            "collection": "bigger-collection"
-          }
-        }
-      },
-      "block_order": [
-        "block_xpWfk4",
-        "block_mGDwpD"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "heading": "Section Heading",
-        "show_heeading": true,
-        "enable_carousel": "grid",
-        "show_price": true,
-        "show_category": true,
-        "show_reviews": false,
-        "enable_stock_badge": true,
-        "offer_badge": true,
-        "show_wishlist": true,
-        "enable_quick_view": true,
-        "products_to_show": 3,
-        "products_per_row": 3,
-        "mobile_layout": "grid",
-        "number_of_column": "1",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "featured_collection_kPGc8N": {
-      "type": "featured-collection",
+    "sales_tCKwML": {
+      "type": "sales",
       "blocks": {
-        "block_TWitez": {
-          "type": "block",
+        "product_44UJrA": {
+          "type": "product",
           "settings": {
-            "collection": "gold"
+            "s_product": "bangle-bracelet"
           }
         },
-        "block_iqWYaX": {
-          "type": "block",
+        "product_94Q34F": {
+          "type": "product",
           "settings": {
-            "collection": "bigger-collection"
-          }
-        },
-        "block_xnwNdC": {
-          "type": "block",
-          "settings": {
-            "collection": "man"
+            "s_product": "bangle-bracelet-with-feathers"
           }
         }
       },
       "block_order": [
-        "block_TWitez",
-        "block_iqWYaX",
-        "block_xnwNdC"
+        "product_44UJrA",
+        "product_94Q34F"
       ],
-      "disabled": true,
       "settings": {
-        "fcoll_color_scheme": "",
-        "enable_gradient": false,
+        "color_scheme": "",
+        "countdown_position": "right",
+        "heading": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "end_date": "2024-12-31",
+        "end_time": "23:59:59",
+        "slider_navigation": "both",
+        "show_price": true,
+        "show_category": true,
+        "show_reviews": false,
+        "enable_sale_badge": true,
+        "border_color": "#626E5C",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -112,8 +76,7 @@
   },
   "order": [
     "page_header_XhKcji",
-    "collection",
-    "product_featured_4hDda7",
-    "featured_collection_kPGc8N"
+    "collection_nHVnxW",
+    "sales_tCKwML"
   ]
 }

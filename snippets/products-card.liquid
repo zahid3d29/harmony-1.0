@@ -1,92 +1,86 @@
-<div id="pd_{{ block.settings.collection.handle }}" class="productFeaturedTabcontent grid grid-cols-{{ section.settings.number_of_column }} gap-x-4 md:gap-x-6 gap-y-10 sm:grid-cols-{{ section.settings.number_of_column }} lg:grid-cols-{{ section.settings.products_per_row }}  xl:grid-cols-{{ section.settings.products_per_row }}  xl:gap-x-8" {% if forloop.index == 1 %}style="display:grid"{% endif %} >
-    {%- for product in block.settings.collection.products limit:  section.settings.products_to_show  -%}
-    <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-{{ settings.product_card_color_scheme }} {% endif %}" id="product__grid-wrapper">
-        <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-            {%- if section.settings.enable_stock_badge -%} 
-            {%- if product.available -%}
-            <span class="stock__status-sale harmony__color-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-10 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
-                Sale
+{% for product in collection.products %}
+    {% if collection.products.size > 0 %}
+        <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}" id="product__grid-wrapper">
+            <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
+                {%- if section.settings.enable_stock_badge -%} 
+                {%- if product.available -%}
+                <span class="badge__sale harmony__color-primary-button-label-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                    Sale
                 </span>
-            {%- else -%}
-                <span class="stock__status-sold-out harmony__color-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-10 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
-                Sold out
+                {%- else -%}
+                <span class="badge__sold-out harmony__color-secondary-button-label-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-background-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-border-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                    Sold out
                 </span>
-            {%- endif -%}
-            {% endif %}
-            <img src="{{ product.featured_media | image_url }}" alt="{{ product.title }}" class="h-full w-full object-cover object-center group-hover:opacity-75">
-            <div id="product__overlay" class="harmony__color-{{ settings.product_card_overlay_color_scheme }}">
+                {%- endif -%}
+                {% endif %}
+                
+                {% if product.featured_media %}
+                {{ product.featured_media | image_url: width: 407, height: 513 |  image_tag }}
+                {% else %}
+                <img src="{{ 'cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263' | asset_url }}" width="407" height="513" alt="{{ product.title }}">
+                {% endif %}
+                
+                <div id="product__overlay" class="harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }}">
                 <div class="flex h-full max-w-xl flex-col items-start justify-between">
                     {%- if section.settings.enable_quick_view -%}
-                    <div class="flex items-center justify-center harmony__color-{{ settings.product_card_overlay_color_scheme }} gap-x-4 text-xs">
-                        {%- if section.settings.offer_badge -%} <span class="sale-badge absolute z-50 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-{{ settings.product_card_overlay_color_scheme }} py-1 px-2 font-semibold">40% off</span>{% endif %}
-                        {%- if section.settings.show_wishlist -%}  
-                        <button class="absolute right-2 top-3 text-sm font-semibold h-[35px] w-[35px] block harmony__color-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1 pt-[5px]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
-                            </svg>
-                        <span class="sr-only  lg:ml-2 border border-transparent"></span>
-                        </button>
-                        {% endif %}
+                    <div class="flex items-center justify-center harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }} gap-x-4 text-xs">
+                    {%- if section.settings.offer_badge -%} <span class="badge__discount absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-primary-button-label-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_offer_badge_color_scheme }} py-1 px-2 font-semibold">40% off</span>{% endif %}
+                    {%- if section.settings.show_wishlist -%}  
+                    <button class="absolute right-2 top-1.5 text-sm font-semibold h-[35px] w-[35px] block  harmony__color-border-{{ settings.product_card_color_scheme }} rounded-full px-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 harmony__color-icon-{{ settings.product_card_color_scheme }}">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+                        </svg>
+                        <span class="sr-only lg:ml-2 border border-transparent"></span>
+                    </button>
+                    {% endif %}
                     </div>
                     {% endif %}
                     {%- if section.settings.enable_quick_view -%}
-                    <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-{{ settings.product_card_overlay_color_scheme }} px-4 py-4 mb-4 text-base font-medium">Quick View</button>
+                    <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-primary-button-label-{{ settings.collection_color_scheme }} harmony__color-primary-button-background-{{ settings.product_card_color_scheme }} harmony__color-primary-button-border-{{ settings.product_card_color_scheme }} px-4 py-4 mb-4 text-base font-medium">Quick View</button>
                     {% endif %}
                 </div>
+                </div>
+            </div>
+            <div class="product__info mt-4">
+                <table class="table-auto w-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}">
+                <tbody>
+                    <tr>
+                    {% if product.title %}
+                    <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} pr-2 py-2">
+                        <a href="{{ product.url }}" class="product__title block">
+                        <h3 class="product__title text-[16px] leading-[21px] font-medium">
+                        {{ product.title |  truncate: section.settings.number_of_letters_in_title }}
+                        </h3>
+                        </a>
+                    </td>
+                    {% endif %}
+                    {%- if section.settings.show_price -%}  
+                    <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-right pl-2">
+                        <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
+                    </td>
+                    {% endif %}
+                    </tr>
+                    <tr>
+                    {% for collection in product.collections limit: 1 %}
+                        {%- if section.settings.show_category and collection != blank -%}
+                        <td class="pr-2 py-2">
+                        <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
+                        </td>
+                        {% endif %}
+                    {% endfor %}
+                    {%- if section.settings.show_reviews -%}
+                    <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
+                        <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %}">
+                        {%  render 'rating-star' %}
+                        </div>
+                        <span class="sr-only">3.9 out of 5 stars</span>
+                        <span class="product__feedback-count ml-3 text-[13px] leading-[17px]">22</span>
+                    </td>
+                    {% endif %}
+                    </tr>
+                </tbody>
+                </table>
             </div>
         </div>
-        <div class="product__info mt-4">
-            <table class="table-auto w-full">
-            <tbody>
-                <tr>
-                <td class="border-b border-[#707070] pr-2 py-2">
-                    <a href="{{ product.url }}" class="product__title block">
-                        <h3 class="product__title text-[16px] leading-[21px] font-medium">
-                        {{ product.title }}
-                        </h3>
-                    </a>
-                </td>
-                <td class="border-b border-[#707070] text-right pl-2">
-                    {%- if section.settings.show_price -%}  
-                    <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
-                    {% endif %}
-                </td>
-                </tr>
-                <tr>
-                <td class="pr-2 py-2">
-                    {%- if section.settings.show_category -%}
-                    {% for collection in product.collections limit: 1 %}
-                        <div class="collection__name bg-transparent harmony__color-{{ section.settings.color_scheme }} text-[14px] leading-[19px] inline-block px-2 py-1.5 rounded-full collection-title">{{ collection.title }}</div>
-                    {% endfor %}
-                    {% endif %}
-                </td>
-                <td class="flex items-center justify-end text-right py-2 pl-2">
-                    {%- if section.settings.show_reviews -%}
-                    <div class="flex items-center justify-end text-[13px]">
-                        <svg class="w-3 flex-shrink-0" x-state:on="Active" x-state:off="Default" x-state-description="Active: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, Default: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="w-3 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="w-3 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class= w-3 flex-shrink-0 x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                        </svg>
-                        <svg class="text-gray-200 w-3 flex-shrink-0" x-state-description="undefined: &quot;harmony__color-{{ section.settings.color_scheme }}&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <span class="sr-only">3.9 out of 5 stars</span>
-                    <span class="product__feedback-count ml-3 text-[13px] leading-[17px] hover:text-gray-500">22</span>
-                    {% endif %}
-                </td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
-    </div>
-    {% endfor %}
-</div>
+    {% endif %}
+{% endfor %}
