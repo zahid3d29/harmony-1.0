@@ -194,8 +194,7 @@ module.exports = {
 
 
 
-All used font size in XD Design.
-
+{% comment %} All used font size in XD Design. {% endcomment %}
 font-size: 11px;
 font-size: 12px;
 font-size: 13px;
@@ -226,4 +225,17 @@ font-size: 90px;
 font-size: 95px;
 font-size: 142px;
 
-harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }}
+{% comment %} Color scheme for section  {% endcomment %}
+harmony__color-text-{{ section.settings.header_color_scheme }} 
+harmony__color-text-secondary{{ section.settings.header_color_scheme }} 
+harmony__color-background-{{ section.settings.header_color_scheme }} 
+harmony__color-border-{{ section.settings.header_color_scheme }}
+harmony__color-primary-button-background-{{ section.settings.header_color_scheme }}
+harmony__color-primary-button-label-{{ section.settings.header_color_scheme }}
+harmony__color-primary-button-border-{{ section.settings.header_color_scheme }}
+harmony__color-secondary-button-background-{{ section.settings.header_color_scheme }}
+harmony__color-secondary-button-label-{{ section.settings.header_color_scheme }}
+harmony__color-secondary-button-border-{{ section.settings.header_color_scheme }}
+harmony__color-border-{{ section.settings.header_color_scheme }}
+harmony__color-icon-{{ section.settings.header_color_scheme }}
+harmony__color-link-{{ section.settings.header_color_scheme }}

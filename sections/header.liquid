@@ -11,7 +11,8 @@
     }
   }
 {%- endstyle -%}
-<section id="harmony--{{ section.id }}" class="harmony__color-background-{{ section.settings.header_color_scheme }} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
+
+<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.header_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.header_color_scheme }} {% endif %} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
   <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
       <div class="flex lg:flex-1">
@@ -42,7 +43,7 @@
           <h2 class="sr-only fallback__logo text-lg leading-1 " id="slide-over-title">SWISS</h2>
         </a>
       </div>
-      {% comment %} Mobile offcanvas__menu-trigger hamburger Button  {% endcomment %}
+      {% comment %} Mobile offcanvas__menu-trigger hamburger Button {% endcomment %}
       <div class="offcanvas__menu-trigger flex lg:hidden">
         <button type="button" class="inline-flex items-center justify-center rounded-md " onclick="openNav()">
           <span class="sr-only">Open main menu</span>
@@ -58,10 +59,10 @@
           </svg>
         </button>
       </div>
-      {% comment %} header Main navigation for large screen  {% endcomment %}
+      {% comment %} header Main navigation for large screen {% endcomment %}
       <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] ">
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
-          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }}  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {% for main_link in linklists[section.settings.main_menu].links %}
               {% if main_link.links.size > 0 %}
                 <div class="dropdown_menu">
@@ -175,7 +176,7 @@
           </ul>
         </div>
       </div>
-      {% comment %} (snippets) Desktop right side Icons  {% endcomment %}
+      {% comment %} (snippets) Desktop right side Icons {% endcomment %}
       <div class="header__icons hidden lg:flex lg:flex-1 lg:justify-end">
         {% if section.settings.search %}
           <a href="" class="flex items-center w-[40px] p-2  hover:text-gray-500">
@@ -229,119 +230,137 @@
 
 {% schema %}
 {
-    "name": "Header",
-    "class": "harmony-header",
-    "enabled_on": {
-      "groups": ["header"]
+  "name": "Header",
+  "class": "harmony-header",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
     },
-    "settings": [
-      {
-        "type": "header",
-        "content": "Header"
-      },
-      {
-        "type": "color_scheme",
-        "id": "header_color_scheme",
-        "label": "Color Scheme",
-        "default": "scheme-2"
-      },
-      {
-        "type":"image_picker",
-        "label":"Logo",
-        "id":"logo"
-      }, 
-      {
-        "type": "checkbox",
-        "label":"Search Icon",
-        "id":"search"
-      },
-      {
-        "type": "checkbox",
-        "label":"Cart Icon",
-        "id":"cart"
-      },
-      {
-        "type": "checkbox",
-        "label":"Profile Icon",
-        "id":"Profile"
-      },
-      {
-        "type": "header",
-        "content": "Mega Menu"
-      },
-      {
-        "type": "color_scheme",
-        "id": "mega_menu_color_scheme",
-        "label": "Color Scheme",
-        "default": "scheme-2"
-      },
-      {
-        "type":"link_list",
-        "label":"Main menu",
-        "id":"main_menu"
-      },
-      {
-        "type": "text",
-        "label":"Mega Menu",
-        "id":"mega_label",
-        "info": "Write the nav item name that you want to show mega-menu"
-      },
-      {
-        "type": "header",
-        "content": "Mobile Drawer"
-      },
-      {
-        "type": "color_scheme",
-        "id": "mobile_offcanvas_color_scheme",
-        "label": "Color Scheme",
-        "default": "scheme-2"
-      },
-      {
-        "type": "image_picker",
-        "label":"Mobile Drawer Background",
-        "id":"mob_bg_img"
-      },
-      {
-        "type":"link_list",
-        "label":"Mobile Secondary menu",
-        "id":"mob_s_menu"
-      },
-      {
-        "type": "checkbox",
-        "label":"News letter",
-        "id":"mob_newsletter"
-      },
-      {
-        "type": "checkbox",
-        "label":"Social Icons",
-        "id":"mob_social"
-      },
-      {
-        "type": "header",
-        "content": "Section padding"
-      },
-      {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "Padding Top",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "Padding Bottom",
-        "default": 0
-      }
-    ],
-   "blocks": [
+    {
+      "type": "color_scheme",
+      "id": "header_color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gradient",
+      "label": "Background Gradient?",
+      "default": false
+    },
+    {
+      "type":"image_picker",
+      "label":"Logo",
+      "id":"logo"
+    }, 
+    {
+      "type": "checkbox",
+      "label":"Search Icon",
+      "id":"search"
+    },
+    {
+      "type": "checkbox",
+      "label":"Cart Icon",
+      "id":"cart"
+    },
+    {
+      "type": "checkbox",
+      "label":"Profile Icon",
+      "id":"Profile"
+    },
+    {
+      "type": "header",
+      "content": "Mega Menu"
+    },
+    {
+      "type": "color_scheme",
+      "id": "mega_menu_color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gradient_mega-menu",
+      "label": "Background Gradient?",
+      "default": false
+    },
+    {
+      "type":"link_list",
+      "label":"Main menu",
+      "id":"main_menu"
+    },
+    {
+      "type": "text",
+      "label":"Mega Menu",
+      "id":"mega_label",
+      "info": "Write the nav item name that you want to show mega-menu"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Drawer"
+    },
+    {
+      "type": "color_scheme",
+      "id": "mobile_offcanvas_color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-2"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gradient_offcanvas",
+      "label": "Background Gradient?",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "label":"Mobile Drawer Background",
+      "id":"mob_bg_img"
+    },
+    {
+      "type":"link_list",
+      "label":"Mobile Secondary menu",
+      "id":"mob_s_menu"
+    },
+    {
+      "type": "checkbox",
+      "label":"News letter",
+      "id":"mob_newsletter"
+    },
+    {
+      "type": "checkbox",
+      "label":"Social Icons",
+      "id":"mob_social"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
     {
       "type": "collection_list",
       "name": "Collection List",

@@ -6,7 +6,6 @@
   }
   .mega_menu {
     visibility: hidden;
-    /* visibility: visible;  */
     height: auto;
     top: 4%;
     right: 0;
@@ -21,10 +20,10 @@
   
 
 
-<div class="mega__menu-wrapper hidden lg:block relative mega_menu harmony__color-text-{{ section.settings.mega_menu_color_scheme }} harmony__color-background-{{ section.settings.mega_menu_color_scheme }}">
+<div class="mega__menu-wrapper hidden lg:block relative mega_menu harmony__color-text-{{ section.settings.mega_menu_color_scheme }} {% if section.settings.enable_gradient_mega-menu %} harmony__color-background-gradient-{{ section.settings.mega_menu_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mega_menu_color_scheme }} {% endif %}">
   <nav class="mega__menu-nav mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex">
-      <div class="absolute inset-x-0 top-full mega_menu harmony__color-text-{{ section.settings.mega_menu_color_scheme }} harmony__color-background-{{ section.settings.mega_menu_color_scheme }}">
+      <div class="absolute inset-x-0 top-full mega_menu harmony__color-text-{{ section.settings.mega_menu_color_scheme }} {% if section.settings.enable_gradient_mega-menu %} harmony__color-background-gradient-{{ section.settings.mega_menu_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mega_menu_color_scheme }} {% endif %}">
         <div class="absolute inset-0 top-1/2 shadow-md" aria-hidden="true"></div>
         <div class="relative">
           <div class="mx-auto max-w-screen-2xl px-6 md:px-10">
@@ -195,8 +194,8 @@
                         <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                           </span>
                         </li>
@@ -204,8 +203,8 @@
                         <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav_2 | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav_2 }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                           </span>
                         </li>
@@ -213,8 +212,8 @@
                         <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav_3 | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav_3 }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                           </span>
                         </li>
@@ -222,8 +221,8 @@
                         <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_nav | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                           </span>
                         </li>
@@ -231,8 +230,8 @@
                         <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_nav_2 | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav_2 }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                           </span>
                         </li>
@@ -240,8 +239,8 @@
                         <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_nav_3 | replace: ' ', '' }}')">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_nav_3 }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
                             </svg>
                           </span>
                         </li>

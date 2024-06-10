@@ -42,7 +42,7 @@
         "overlay_opacity": 83,
         "show_sale_badge": false,
         "color_scheme_sale_badge": "scheme-2",
-        "banner_type": "background",
+        "banner_type": "image",
         "banner_image": "shopify:\/\/shop_images\/article-image.png",
         "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
       }
@@ -50,53 +50,100 @@
     "gdpr_KGmQiU": {
       "type": "GDPR",
       "settings": {
-        "gdpr_color_scheme": "scheme-2",
-        "enable_gradient": false,
+        "gdpr_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "enable_gradient": true,
         "content": "By browsing this website, you consent to our Privacy Policy.",
         "link_text": "<strong>Accept Cookies<\/strong>",
         "link": ""
       }
     },
-    "hero_banner_h7fkYd": {
-      "type": "hero-banner",
+    "featured_collection_pjcRRC": {
+      "type": "featured-collection",
       "blocks": {
-        "sub_text_slide_wj84Lf": {
-          "type": "sub_text_slide",
+        "block_JpmiNa": {
+          "type": "block",
           "settings": {
-            "sub_text": "eASY Skin Care Routine"
+            "collection": "gold"
           }
         },
-        "title_Gz4qBy": {
-          "type": "title",
+        "block_a3dbAE": {
+          "type": "block",
           "settings": {
-            "banner_heading": "Your path to radiant skin."
+            "collection": "bigger-collection"
           }
         },
-        "text_7ReNzb": {
-          "type": "text",
+        "block_JaRjPR": {
+          "type": "block",
           "settings": {
-            "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
-          }
-        },
-        "button_xPWC4G": {
-          "type": "button",
-          "settings": {
-            "button_text": "Shop All",
-            "button_url": "shopify:\/\/collections"
+            "collection": "big-collection"
           }
         }
       },
       "block_order": [
-        "sub_text_slide_wj84Lf",
-        "title_Gz4qBy",
-        "text_7ReNzb",
-        "button_xPWC4G"
+        "block_JpmiNa",
+        "block_a3dbAE",
+        "block_JaRjPR"
       ],
       "disabled": true,
       "settings": {
-        "color_scheme": "scheme-76cdf123-1940-4de0-a1a4-515fc3d99f61",
-        "overlay_opacity": 28,
-        "show_sale_badge": true
+        "fcoll_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "enable_gradient": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "product_featured_QpwzYH": {
+      "type": "product_featured",
+      "blocks": {
+        "block_KBYCx4": {
+          "type": "block",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "block_VdhNyi": {
+          "type": "block",
+          "settings": {
+            "collection": "big-collection"
+          }
+        },
+        "block_wBKtG9": {
+          "type": "block",
+          "settings": {
+            "collection": "man"
+          }
+        },
+        "block_kTB8Ma": {
+          "type": "block",
+          "settings": {
+            "collection": "jwellary"
+          }
+        }
+      },
+      "block_order": [
+        "block_KBYCx4",
+        "block_VdhNyi",
+        "block_wBKtG9",
+        "block_kTB8Ma"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "enable_carousel": "grid",
+        "show_price": true,
+        "show_category": true,
+        "show_reviews": true,
+        "enable_stock_badge": true,
+        "offer_badge": true,
+        "show_wishlist": true,
+        "enable_quick_view": true,
+        "products_to_show": 3,
+        "products_per_row": 3,
+        "mobile_layout": "grid",
+        "number_of_column": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "product_how_use_Wdtk6A": {
@@ -135,7 +182,8 @@
   "order": [
     "banner_ktNWgn",
     "gdpr_KGmQiU",
-    "hero_banner_h7fkYd",
+    "featured_collection_pjcRRC",
+    "product_featured_QpwzYH",
     "product_how_use_Wdtk6A"
   ]
 }

@@ -26,8 +26,6 @@
   background: rgb(131, 131, 131);
 }
 
-
-
 /* Apply Directive  */
 @layer base {
   /* h1 {
@@ -45,7 +43,10 @@
   .harmony__content-text-lg {
     @apply text-[18px] leading-[24px] font-semibold;
   }
+
 }
+
+
 
 @layer utilities {
   /* .filter-none {

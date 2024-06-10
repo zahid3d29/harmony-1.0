@@ -1,19 +1,25 @@
 <style>
-
-    /* Create an active/current "featured__collection-tab button" class */
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
     section#harmony--{{ section.id }} .featured__collection-tab button.active {
         padding-left: 60px;
-        border-bottom: 1px solid #e6e6e6;
         transition: 0.5s;
         opacity: 1;
     }
-    section#harmony--{{ section.id }} .featured__collection-tab button.active::before {
+    #harmony--{{ section.id }} .featured__collection-tab button.active::before {
         content: "\2212";
-        font-size: 60px;
+        font-size: 50px;
         font-weight: 100;
-        line-height: 1.8;
-        color: #e6e6e6;
+        line-height: 1;
         margin-left: -17px;
+    }
+
+    @media only screen and ( max-width: 1024px ){
+        #harmony--{{ section.id }} .featured__collection-tab button.active::before {
+            font-size: 36px;
+        }
     }
 
     @media only screen and ( max-width: 600px ){
@@ -21,24 +27,33 @@
             padding-left: 40px;
             transition: 0.5s;
         }
+        .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+        #harmony--{{ section.id }} .featured__collection-tab button.active::before {
+            font-size: 24px;
+        }
     }
 
 </style>
 
-<section id="harmony--{{ section.id }}" class="section__featured-collection harmony__color-{{ section.settings.color_scheme }}">
+
+<section id="harmony--{{ section.id }}" class="section__featured-collection {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.fcoll_color_scheme }} {% else %} harmony__color-background-{{ section.settings.fcoll_color_scheme }} {% endif %} section-{{ section.id }}-padding">
     <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-8 gap-y-5 px-6 py-5 sm:py-5 md:grid-cols-2 md:px-10">
         <div class="featured__collection-tab-wrapper flex flex-nowrap gap-x-0 gap-y-0 justify-start items-center">
             <div class="featured__collection-tab">
                 {% for block in section.blocks %}
-                    <button class="categoryLinks block mb-[25px] px-15 py-0 w-full border-b border-[#e6e6e6] outline-none text-left cursor-pointer text-[36px] leading-1 lg:text-[50px] lg:leading-[96px] opacity-30 font-semibold hover:harmony__color-{{ section.settings.color_scheme }} hover:border-b-2 hover:border-gray-300 transition ease-in-out delay-50" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
+                    <button class="categoryLinks block mb-[25px] px-15 py-0 w-full harmony__color-text-{{ section.settings.fcoll_color_scheme }} border-b harmony__color-border-{{ section.settings.fcoll_color_scheme }} outline-none text-left cursor-pointer text-[24px] leading-1 md:text-[36px] md:leading-1 lg:text-[50px] lg:leading-[96px] opacity-30 font-semibold hover:border-b-2 hover:harmony__color-text-{{ section.settings.fcoll_color_scheme }} transition ease-in-out delay-50" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
                 {% endfor %}
             </div>
         </div>
-        <div class="featured__collection-content flex flex-nowrap gap-x-0 gap-y-0 justify-start lg:justify-end items-center">
+        <div class="featured__collection-content flex flex-nowrap gap-x-0 gap-y-0 justify-center lg:justify-end items-center">
             {% for block in section.blocks %}
                 <div id="{{ block.settings.collection.handle }}" class="categoryContent grid grid-cols-2 grid-rows-2 gap-2 sm:gap-4 lg:gap-6">
                     {%- for product in block.settings.collection.products limit: 4 -%}
-                        <div class="bg-[url('{{ product.featured_media | image_url }}')] bg-scroll bg-center bg-no-repeat bg-contain border border-none outline-none w-[160px] h-[160px] lg:h-[240px] lg:w-[250px] rounded-lg bg-transparent animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower"></div>
+                        <a href="{{ product.url }}" class="product__title block bg-[url('{{ product.featured_media | image_url }}')] bg-scroll bg-center bg-no-repeat bg-contain border border-none outline-none w-[160px] h-[160px] lg:h-[240px] lg:w-[250px] rounded-lg bg-transparent animate__animated animate__fadeIn animate__sloweranimate__animated animate__fadeIn animate__slower">
+                        </a>
                     {% endfor %}
                 </div>
             {% endfor %}
@@ -46,16 +61,81 @@
     </div>
 </section>
 
+   
 
-{% comment %} schema settings color  {% endcomment %}
-{% for scheme in settings.color_schemes %}
-    {% style %} 
-      .harmony__color-{{ scheme.id }}{
-        background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-        color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-      }
-    {% endstyle %} 
-  {% endfor %}
+{% schema %}
+    {
+        "name": "Featured Collection",
+        "class": "harmony_section-featured-collection",
+        "disabled_on": {
+            "groups": ["header", "footer"]
+        },
+        "settings": [
+            {
+                "type": "header",
+                "content": "Section Style"
+            },
+            {
+                "type": "color_scheme",
+                "id": "fcoll_color_scheme",
+                "label": "Color scheme",
+                "default": "scheme-1"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_gradient",
+                "label": "Background Gradient?",
+                "default": false
+            },
+            {
+                "type": "header",
+                "content": "Section padding"
+            },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "Padding Top",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "Padding Bottom",
+                "default": 36
+            }
+    
+        ],
+        "blocks":[
+            {
+                "type":"block",
+                "name": "Collection",
+                "settings": [
+                    {
+                        "type": "collection",
+                        "id": "collection",
+                        "label": "Collection"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Featured Collection",
+                "category": "Harmony Sections"
+            }
+        ]
+    }
+{% endschema %}
+
+
 
 <script>
     function openCategory(evt, categoryName) {
@@ -74,73 +154,3 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultCatsOpen").dispatchEvent(new Event('mouseover'));
 </script>
-   
-
-{% schema %}
-{
-    "name": "Featured Collection",
-    "class": "harmony_section-featured-collection",
-    "disabled_on": {
-        "groups": ["header", "footer"]
-    },
-    "settings": [
-        {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading"
-        },
-        {
-            "type": "color_scheme",
-            "id": "color_scheme",
-            "label": "t:sections.announcement-bar.settings.color_scheme.label",
-            "default": "scheme-1"
-        },
-        {
-            "type": "header",
-            "content": "Section padding"
-        },
-        {
-            "type": "range",
-            "id": "padding_top",
-            "min": 0,
-            "max": 100,
-            "step": 4,
-            "unit": "px",
-            "label": "Padding Top",
-            "default": 36
-        },
-        {
-            "type": "range",
-            "id": "padding_bottom",
-            "min": 0,
-            "max": 100,
-            "step": 4,
-            "unit": "px",
-            "label": "Padding Bottom",
-            "default": 36
-        }
-   
-    ],
-    "blocks":[
-        {
-          "type":"block",
-          "name": "Collection",
-          "settings": [
-            {
-                "type": "collection",
-                "id": "collection",
-                "label": "Collection"
-            }
-          ]
-        }
-    ],
-    "presets": [
-        {
-            "name": "Featured Collection",
-            "category": "Harmony Sections"
-        }
-    ]
- }
-{% endschema %}
-
-{% comment %} signature: latest file  {% endcomment %}
