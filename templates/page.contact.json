@@ -1,12 +1,5 @@
 {
   "sections": {
-    "hero_banner_HJpAK3": {
-      "type": "hero-banner",
-      "settings": {
-        "show_sale_badge": false,
-        "banner_image": "shopify:\/\/shop_images\/newsletter-img.png"
-      }
-    },
     "page_header_qrFUeX": {
       "type": "page-header",
       "settings": {
@@ -33,7 +26,6 @@
     }
   },
   "order": [
-    "hero_banner_HJpAK3",
     "page_header_qrFUeX",
     "page_contact_form_Nrp7AE"
   ]

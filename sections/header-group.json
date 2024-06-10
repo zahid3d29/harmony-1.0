@@ -130,6 +130,7 @@
         "announcement_8rjFRA",
         "announcement_zdhQeC"
       ],
+      "disabled": true,
       "settings": {
         "announcement_color_scheme": "",
         "enable_gradient": true,

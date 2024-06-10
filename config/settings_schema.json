@@ -74,7 +74,7 @@
           },
           {
             "type": "header",
-            "content": "Additional"
+            "content": "Buttons"
           },
           {
             "type": "color",
@@ -110,6 +110,10 @@
             "id": "secondary_button_border",
             "label": "Secondary Button Border",
             "default": "#FFFFFF"
+          },
+          {
+            "type": "header",
+            "content": "Additionals"
           },
           {
             "type": "color",

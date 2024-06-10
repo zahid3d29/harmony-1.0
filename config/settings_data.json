@@ -11,15 +11,15 @@
     "social_dribble_link": "dribble.com",
     "social_github_link": "github.com",
     "social_linkedin_link": "linkedin.com",
-    "sale_badge_color_scheme": "section-scheme",
-    "sold_out_badge_color_scheme": "scheme-76cdf123-1940-4de0-a1a4-515fc3d99f61",
-    "sale_offer_badge_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+    "sale_badge_color_scheme": "scheme-2",
+    "sold_out_badge_color_scheme": "section-scheme",
+    "sale_offer_badge_color_scheme": "scheme-2",
     "product_badge_box_shadow": "shadow-lg",
     "product_card_style": "card",
     "product_card_padding": 10,
-    "product_card_color_scheme": "scheme-76cdf123-1940-4de0-a1a4-515fc3d99f61",
-    "product_card_overlay_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
-    "product_card_border_color": "#ff0000",
+    "product_card_color_scheme": "section-scheme",
+    "product_card_overlay_color_scheme": "scheme-2",
+    "product_card_border_color": "#0e1b4d",
     "product_card_border_thickness": 3,
     "product_card_border_opacity": 60,
     "product_card_corner_radius": 24,
@@ -39,19 +39,19 @@
     "color_schemes": {
       "section-scheme": {
         "settings": {
-          "text": "#0e1b4d",
+          "text": "#121212",
           "text_secondary": "#ffffff",
-          "background": "#ffd902",
+          "background": "#f3ffd1",
           "background_gradient": "linear-gradient(180deg, rgba(243, 255, 209, 1), rgba(252, 244, 164, 0) 100%)",
           "primary_button": "#000000",
           "on_primary_button": "#ffffff",
-          "primary_button_border": "#000000",
-          "secondary_button": "#0e1b4d",
-          "on_secondary_button": "#ffffff",
-          "secondary_button_border": "#ffffff",
-          "icons": "#000000",
-          "border": "#ff0000",
-          "links": "#121212"
+          "primary_button_border": "#ffffff",
+          "secondary_button": "#ffffff",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#121212",
+          "icons": "#121212",
+          "border": "#121212",
+          "links": "#ffd902"
         }
       },
       "scheme-2": {
@@ -60,15 +60,15 @@
           "text_secondary": "#ffffff",
           "background": "#d0baac",
           "background_gradient": "",
-          "primary_button": "#ffd902",
+          "primary_button": "#121212",
           "on_primary_button": "#ffffff",
-          "primary_button_border": "#ff0000",
-          "secondary_button": "",
+          "primary_button_border": "#121212",
+          "secondary_button": "#ffffff",
           "on_secondary_button": "#121212",
-          "secondary_button_border": "#ffffff",
-          "icons": "#ff0000",
-          "border": "#ff0000",
-          "links": "#121212"
+          "secondary_button_border": "#121212",
+          "icons": "#121212",
+          "border": "#121212",
+          "links": "#ffd902"
         }
       },
       "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250": {
@@ -124,7 +124,7 @@
       },
       "scheme-76cdf123-1940-4de0-a1a4-515fc3d99f61": {
         "settings": {
-          "text": "#000000",
+          "text": "#ffffff",
           "text_secondary": "#ffffff",
           "background": "#0e1b4d",
           "background_gradient": "linear-gradient(359deg, rgba(255, 0, 0, 1), rgba(252, 244, 164, 0) 100%)",

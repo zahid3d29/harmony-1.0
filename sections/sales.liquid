@@ -448,8 +448,7 @@
 }
 {% endschema %}
 
-{% comment %} schema settings color style  {% endcomment %}
-{% comment %} signature "latest"  {% endcomment %}
+
 {% for scheme in settings.color_schemes %}
   {% style %}
     .harmony__color-{{ scheme.id }}{
@@ -458,7 +457,7 @@
     }
   {% endstyle %}
 {% endfor %}
-{% comment %} signature: latest file  {% endcomment %}
+
 
 <script>
   var swiper = new Swiper(".mySwiper{{ section.id }}", {
@@ -468,11 +467,10 @@
       el: ".pagination",
       clickable: true,
     },
-          navigation: {
-        nextEl: ".next",
-        prevEl: ".prev",
-      },
-
+    navigation: {
+      nextEl: ".next",
+      prevEl: ".prev",
+    },
   });
 </script>
 <style>
