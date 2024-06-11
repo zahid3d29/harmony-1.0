@@ -1,18 +1,24 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero",
-      "settings": {
-      }
-    },
     "page-header": {
       "type": "page-header",
       "settings": {
+        "color_scheme": "",
+        "heading": "",
+        "show_heeading": true,
+        "page_title": "About us",
+        "page_desc": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.<\/p>"
+      }
+    },
+    "page_registration_fdBDdh": {
+      "type": "page-registration",
+      "settings": {
+        "banner_heading": "Easy Skin Care Routine"
       }
     }
   },
   "order": [
-    "hero",
-    "page-header"
+    "page-header",
+    "page_registration_fdBDdh"
   ]
 }
