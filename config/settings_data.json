@@ -138,6 +138,23 @@
           "border": "#ffffff",
           "links": "#121212"
         }
+      },
+      "scheme-d71d1394-c037-4b8e-8776-1ab3a2ff8b44": {
+        "settings": {
+          "text": "#121212",
+          "text_secondary": "#ffffff",
+          "background": "#fffaf4",
+          "background_gradient": "linear-gradient(180deg, rgba(255, 250, 244, 1), rgba(252, 244, 164, 0) 100%)",
+          "primary_button": "#000000",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#ffffff",
+          "secondary_button": "#ffffff",
+          "on_secondary_button": "#121212",
+          "secondary_button_border": "#121212",
+          "icons": "#121212",
+          "border": "#121212",
+          "links": "#0e1b4d"
+        }
       }
     }
   },

@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "banner_6WjWfW": {
+      "type": "banner",
+      "settings": {
+        "banner_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "enable_gradient": false,
+        "overlay_opacity": 60,
+        "show_sale_badge": true,
+        "color_scheme_sale_badge": "",
+        "banner_type": "image",
+        "banner_image": "shopify:\/\/shop_images\/BG_Img.png",
+        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+      }
+    },
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "heading": "Privacy & Policy",
+        "show_heeading": true,
+        "page_title": "Privacy",
+        "page_desc": "We value your privacy and security. Please read our privacy and policy agreement carefully. Send a message if you need help."
+      }
+    }
+  },
+  "order": [
+    "banner_6WjWfW",
+    "page-header"
+  ]
+}

@@ -3,22 +3,15 @@
     "page-header": {
       "type": "page-header",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
         "heading": "",
         "show_heeading": true,
         "page_title": "About us",
-        "page_desc": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.<\/p>"
-      }
-    },
-    "page_login_dHd3xR": {
-      "type": "page-login",
-      "settings": {
-        "banner_heading": "eASY Skin Care Routine"
+        "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
       }
     }
   },
   "order": [
-    "page-header",
-    "page_login_dHd3xR"
+    "page-header"
   ]
 }
