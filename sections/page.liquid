@@ -1,0 +1,41 @@
+<section id="harmony-{{ section.id }}">
+    <div class="max-w-5xl px-6 lg:px-8">
+        {{ section.settings.custom_content }}
+    </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "Custom content",
+        "class": "harmony_section-custom-content",
+        "settings": [
+            {
+                "type": "color_scheme",
+                "id": "gdpr_color_scheme",
+                "label": "t:sections.announcement-bar.settings.color_scheme.label",
+                "default": "scheme-1"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_gradient",
+                "label": "Background Gradient?",
+                "default": false
+            },
+            {
+                "type": "liquid",
+                "id": "custom_content",
+                "label": "Battery message",
+                "default": "{% if product.tags contains 'battery' %}This product can only be shipped by ground.{% else %}This product can be shipped by ground or air.{% endif %}"
+            }
+
+        ],
+        "presets": [
+            {
+                "name": "Custom content",
+                "category": "Harmony Sections"
+            }
+        ]
+    }
+{% endschema %}
+    

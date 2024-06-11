@@ -123,6 +123,7 @@
       "settings": {
         "header_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "enable_gradient": false,
+        "enable_transparent": true,
         "logo": "shopify:\/\/shop_images\/swiss-white.png",
         "search": true,
         "cart": true,

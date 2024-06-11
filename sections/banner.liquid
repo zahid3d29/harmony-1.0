@@ -18,7 +18,7 @@
     </video> 
   {%- endif -%}
   {% if section.settings.show_sale_badge %}
-    <div class="harmony__sale-badge hidden sale__alert md:flex absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] {% if section.settings.banner_type == 'video' %} z-20 {% endif %} px-2 py-1 harmony__color-background-{{ section.settings.color_scheme_sale_badge }} harmony__color-text-{{ section.settings.color_scheme_sale_badge }} texdt-[14px] text-normal gap-x-2 pr-3 rotate-0 md:rotate-90">
+    <div class="harmony__sale-badge hidden sale__alert md:flex absolute right-[1.5rem] md:right-[-3rem] top-[3rem] md:top-[7rem] lg:top-[15rem] {% if section.settings.banner_type == 'video' %} z-20 {% endif %} px-2 py-1 harmony__color-background-{{ section.settings.color_scheme_sale_badge }} harmony__color-text-{{ section.settings.color_scheme_sale_badge }} texdt-[14px] text-normal gap-x-2 pr-3 rotate-90">
       <span class="closebtn mx-1 flex text-[24px] text-normal harmony__color-icon-{{ section.settings.color_scheme_sale_badge }} leading-[20px] cursor-pointer transition ease-in-out delay-150" onclick="this.parentElement.style.display='none';">&times;</span> 
       Sale! 30% Off
     </div>

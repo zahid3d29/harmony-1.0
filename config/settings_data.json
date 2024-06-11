@@ -92,7 +92,7 @@
         "settings": {
           "text": "#ffffff",
           "text_secondary": "#ffffff",
-          "background": "#293423",
+          "background": "rgba(0,0,0,0)",
           "background_gradient": "",
           "primary_button": "#121212",
           "on_primary_button": "#ffffff",
