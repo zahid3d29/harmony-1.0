@@ -44,6 +44,10 @@
     border-width: {{ settings.product_card_border_thickness }}px;
     border-color: {{ settings.product_card_border_color }}{{ settings.product_card_border_opacity }};
   }
+  .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    transform: translateX(0%) !important;
+    width: 100% !important;
+  }
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -56,68 +60,71 @@
   }
 {%- endstyle -%}
 
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.product_featured_color_scheme }} {% else %} harmony__color-background-{{ section.settings.product_featured_color_scheme }} {% endif %} section-{{ section.id }}-padding">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex items-center lg:items-baseline justify-between mb-8">
-        <h2 class="product__featured-heading text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px]  font-semibold lg:max-w-3xl tracking-tight">{{ section.settings.heading }}</h2>
-        <div class="product__featured-slide flex items-center">
-          {%- if section.settings.desktop_layout == 'carousel' -%}
-          <button
-            class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3"
+      <h2 class="product__featured-heading text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px]  font-semibold lg:max-w-3xl tracking-tight">{{ section.settings.heading }}</h2>
+      <div class="product__featured-slide flex items-center">
+        {%- if section.settings.desktop_layout == 'carousel' -%}
+        <button
+          class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3"
+        >
+          <span
+            class="product_carousel-prev lg:mr-2 "
+            {% if section.settings.slider_navigation == 'dots' %}
+              style="display:none;"
+            {% endif %}
           >
-            <span
-              class="product_carousel-prev lg:mr-2 "
-              {% if section.settings.slider_navigation == 'dots' %}
-                style="display:none;"
-              {% endif %}
+            <a
+              class="prev relative inline-flex items-center rounded-full text-[17px] leading-[35px] mx-2 px-2 py-2 hover:ring-1 ring-inset ring-gray-300 bg-transparent hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0"
             >
-              <a
-                class="prev relative inline-flex items-center rounded-full text-[17px] leading-[35px]  px-2 py-2 hover: ring-1 ring-inset ring-gray-300 bg-transparent hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0"
-              >
-                <span class="sr-only">Previous</span>
-                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
-                </svg>
-              </a>
-            </span>
-            <div
-              class="pagination"
-              {% if section.settings.slider_navigation == 'arrows' %}
-                style="display:none;"
-              {% endif %}
-            ></div>
-            <span
-              class="product_carousel-next lg:ml-2 text-gray-700"
-              {% if section.settings.slider_navigation == 'dots' %}
-                style="display:none;"
-              {% endif %}
+              <span class="sr-only">Previous</span>
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </span>
+          <div
+            class="pagination hidden md:block w-[100%] harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }}"
+            {% if section.settings.slider_navigation == 'arrows' %}
+              style="display:none;"
+            {% endif %}
+          ></div>
+          <span
+            class="product_carousel-next lg:ml-2 harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} w-[100%]"
+            {% if section.settings.slider_navigation == 'dots' %}
+              style="display:none;"
+            {% endif %}
+          >
+            <a
+              class="next relative inline-flex items-center rounded-full mx-2 px-2 py-2 text-gray-700 hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] focus:z-20 focus:outline-offset-0"
             >
-              <a
-                class="next relative inline-flex items-center rounded-full px-2 py-2 text-gray-700 hover: bg-white hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] focus:z-20 focus:outline-offset-0"
-              >
-                <span class="sr-only">Next</span>
-                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
-                </svg>
-              </a>
-            </span>
-          </button>
-          {%- endif -%}
-        </div>
+              <span class="sr-only">Next</span>
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </span>
+        </button>
+        {%- endif -%}
+      </div>
     </div>
     <div class="mx-auto">
       <div class="productFeaturedTab overflow:hidden harmony__color-background-{{ section.settings.product_featured_color_scheme }} grid lg:border-t lg:border-b harmony__color-border-{{ section.settings.product_featured_color_scheme }}  mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-          {% for block in section.blocks %}
-              <button class="productFeaturedTablinks block text-[17px] leading-[35px] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 harmony__color-border-{{ section.settings.product_featured_color_scheme }} cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultOpen"{% endif %}>{{ block.settings.collection.title }}</button>
-          {% endfor %}
+        {% for block in section.blocks %}
+          <button class="productFeaturedTablinks block text-[17px] leading-[35px] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 harmony__color-border-{{ section.settings.product_featured_color_scheme }} cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')"  id="defaultOpen-{{ section.id }}">{{ block.settings.collection.title }}</button>
+        {% endfor %}
       </div>
 
       {% for block in section.blocks %}
-      <div id="pd_{{ block.settings.collection.handle }}" class="productFeaturedTabcontent {%- if section.settings.desktop_layout == 'grid' -%} grid grid-cols-{{ section.settings.number_of_column }} gap-x-4 md:gap-x-6 gap-y-10 sm:grid-cols-{{ section.settings.number_of_column }} lg:grid-cols-{{ section.settings.products_per_row }} xl:grid-cols-{{ section.settings.products_per_row }} xl:gap-x-8 {%- endif -%}">
-
+        {%- if section.settings.desktop_layout == 'grid' -%}
+        <div id="pd_{{ block.settings.collection.handle }}" class="productFeaturedTabcontent grid grid-cols-{{ section.settings.number_of_column }} gap-x-4 md:gap-x-6 gap-y-10 sm:grid-cols-{{ section.settings.number_of_column }} lg:grid-cols-{{ section.settings.products_per_row }} xl:grid-cols-{{ section.settings.products_per_row }} xl:gap-x-8">
+        {%- else -%}
+        <div id="pd_{{ block.settings.collection.handle }}" class="productFeaturedTabcontent">
+        {%- endif -%}
           {%- if section.settings.desktop_layout == 'carousel' -%}
             <div class="swiper mySwiper-{{ section.id }} w-[100%]">
               <div class="swiper-wrapper">
@@ -209,7 +216,7 @@
                 {% endfor %}
               </div>
             </div>
-          {%- else -%}
+          {%- elsif section.settings.desktop_layout == 'grid' -%}
             {%- for product in block.settings.collection.products limit:  section.settings.products_to_show  -%}
               <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}" id="product__grid-wrapper">
                 <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
@@ -253,60 +260,65 @@
                   </div>
                 </div>
                 <div class="product__info mt-4">
-                    <table class="table-auto w-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}">
+                  <table class="table-auto w-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}">
                     <tbody>
-                        <tr>
-                        {% if product.title %}
-                        <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} pr-2 py-2">
-                            <a href="{{ product.url }}" class="product__title block">
-                            <h3 class="product__title text-[16px] leading-[21px] font-medium">
-                            {{ product.title | truncate: section.settings.number_of_letters_in_title }}
-                            </h3>
-                            </a>
-                        </td>
-                        {% endif %}
-                        {%- if section.settings.show_price -%}  
-                        <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-right pl-2">
-                            <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
-                        </td>
-                        {% endif %}
-                        </tr>
-                        <tr>
-                        {% for collection in product.collections limit: 1 %}
-                            {%- if section.settings.show_category and collection != blank -%}
-                            <td class="pr-2 py-2">
-                            <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
-                            </td>
-                            {% endif %}
-                        {% endfor %}
-                        {%- if section.settings.show_reviews -%}
-                        <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
-                            <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %}">
-                            {%  render 'rating-star' %}
-                            </div>
-                            <span class="sr-only">3.9 out of 5 stars</span>
-                            <span class="product__feedback-count ml-3 text-[13px] leading-[17px]">22</span>
-                        </td>
-                        {% endif %}
-                        </tr>
+                      <tr>
+                      {% if product.title %}
+                      <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} pr-2 py-2">
+                          <a href="{{ product.url }}" class="product__title block">
+                          <h3 class="product__title text-[16px] leading-[21px] font-medium">
+                          {{ product.title | truncate: section.settings.number_of_letters_in_title }}
+                          </h3>
+                          </a>
+                      </td>
+                      {% endif %}
+                      {%- if section.settings.show_price -%}  
+                      <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-right pl-2">
+                          <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
+                      </td>
+                      {% endif %}
+                      </tr>
+                      <tr>
+                      {% for collection in product.collections limit: 1 %}
+                          {%- if section.settings.show_category and collection != blank -%}
+                          <td class="pr-2 py-2">
+                          <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
+                          </td>
+                          {% endif %}
+                      {% endfor %}
+                      {%- if section.settings.show_reviews -%}
+                      <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
+                          <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %}">
+                          {%  render 'rating-star' %}
+                          </div>
+                          <span class="sr-only">3.9 out of 5 stars</span>
+                          <span class="product__feedback-count ml-3 text-[13px] leading-[17px]">22</span>
+                      </td>
+                      {% endif %}
+                      </tr>
                     </tbody>
-                    </table>
+                  </table>
                 </div>
               </div>
             {%- endfor -%}
           {%- endif -%}
-
-      </div>
+        {%- if section.settings.desktop_layout == 'grid' -%}
+        </div>
+        {%- else -%}
+        </div>
+        {%- endif -%}
       {% endfor %}
+
     </div>        
   </div>
 </section>
 
 
+    
 
 
 <style>
-  span.swiper-pagination-bullet.swiper-pagination-bullet-active { background: black; }
+  span.swiper-pagination-bullet.swiper-pagination-bullet-active { harmony__color-text-{{ section.settings.product_featured_color_scheme }}; }
 </style>
 
 {% schema %}
@@ -369,7 +381,7 @@
         "type": "checkbox",
         "id": "show_reviews",
         "label": "Show Reviews",
-        "default": false
+        "default": true
       },
       {
         "type": "checkbox",
@@ -408,7 +420,7 @@
         "min": 2,
         "max": 12,
         "step": 1,
-        "default": 3
+        "default": 8
       },
       {
         "type": "range",
@@ -417,7 +429,7 @@
         "min": 2,
         "max": 4,
         "step": 1,
-        "default": 3
+        "default": 4
       },
       {
         "type": "select",
@@ -429,8 +441,8 @@
             "label": "Grid"
           },
           {
-            "value": "slider",
-            "label": "Slider"
+            "value": "carousel",
+            "label": "Carousel"
           }
         ],
         "default": "grid"
@@ -517,14 +529,14 @@
       document.getElementById(productFeaturedCatName).style.display = "grid";
       evt.currentTarget.className += " active";
   }
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+  // Get the element with id="defaultOpen-{{ section.id }}" and click on it
+  document.getElementById("defaultOpen-{{ section.id }}").onmouseover();
 </script>
 
 <script>
   var swiper = new Swiper(".mySwiper-{{ section.id }}", {
     slidesPerView: 4,
-    spaceBetween: 10,
+    spaceBetween: 20,
     breakpoints: {
       360: {
         slidesPerView: 1,
@@ -536,16 +548,17 @@
       },
       768: {
         slidesPerView: 3,
-        spaceBetween: 10,
+        spaceBetween: 20,
       },
       1024: {
         slidesPerView: 4,
-        spaceBetween: 10,
+        spaceBetween: 20,
       },
     },
     pagination: {
       el: ".pagination",
       clickable: true,
+      dynamicBullets: true,
     },
     navigation: {
       nextEl: ".next",

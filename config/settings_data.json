@@ -15,7 +15,7 @@
     "sold_out_badge_color_scheme": "section-scheme",
     "sale_offer_badge_color_scheme": "scheme-2",
     "product_badge_box_shadow": "shadow-lg",
-    "product_card_style": "card",
+    "product_card_style": "standard",
     "product_card_padding": 10,
     "product_card_color_scheme": "section-scheme",
     "product_card_overlay_color_scheme": "scheme-2",

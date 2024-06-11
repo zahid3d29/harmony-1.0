@@ -1,12 +1,13 @@
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "page_login_Nw9Vpn": {
+      "type": "page-login",
       "settings": {
+        "banner_heading": "eASY Skin Care Routine"
       }
     }
   },
   "order": [
-    "main"
+    "page_login_Nw9Vpn"
   ]
 }

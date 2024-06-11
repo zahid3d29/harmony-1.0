@@ -1,12 +1,13 @@
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "page_registration_GqcJda": {
+      "type": "page-registration",
       "settings": {
+        "banner_heading": "Easy Skin Care Routine"
       }
     }
   },
   "order": [
-    "main"
+    "page_registration_GqcJda"
   ]
 }
