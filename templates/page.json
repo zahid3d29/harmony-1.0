@@ -10,15 +10,15 @@
         "page_desc": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.<\/p>"
       }
     },
-    "page_registration_fdBDdh": {
-      "type": "page-registration",
+    "page_login_dHd3xR": {
+      "type": "page-login",
       "settings": {
-        "banner_heading": "Easy Skin Care Routine"
+        "banner_heading": "eASY Skin Care Routine"
       }
     }
   },
   "order": [
     "page-header",
-    "page_registration_fdBDdh"
+    "page_login_dHd3xR"
   ]
 }
