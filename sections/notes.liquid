@@ -243,4 +243,12 @@ harmony__color-link-{{ section.settings.header_color_scheme }}
 {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.collection_color_scheme }} {% endif %}
 
 
+  {{ settings.logo | image_url: width: '60' | image_tag }}
+
+
+  {% comment %} Using the placeholder_svg_tag filter
+  It’s really easy to use Shopify’s placeholder SVGs, since including them is a breeze with the placeholder_svg_tag filter.
   
+  Simply include the placeholder name, followed by the placeholder_svg_tag filter: {% endcomment %}
+  
+  {{ 'product-1' | placeholder_svg_tag }}

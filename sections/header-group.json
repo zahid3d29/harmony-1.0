@@ -131,6 +131,7 @@
         "main_menu": "main-menu",
         "mega_label": "Home",
         "mobile_offcanvas_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "enable_offcanvas": true,
         "enable_gradient_offcanvas": false,
         "mob_bg_img": "shopify:\/\/shop_images\/offcanvas-image.png",
         "mob_s_menu": "mobile-secondary",

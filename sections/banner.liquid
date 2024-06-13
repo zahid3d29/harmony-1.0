@@ -1,8 +1,17 @@
 <div class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.banner_color_scheme }} {% else %} harmony__color-background-{{ section.settings.banner_color_scheme }} {% endif %} relative isolate overflow-hidden h-[{{ section.settings.mobile_banner_height }}px] md:h-[{{ section.settings.banner_height }}px] {% if section.settings.enable_transparent %} mt-[-50px] {% endif %}">
   {% if section.settings.banner_type == 'image' %} 
-    <div class="gradient__bar-top block absolute z-[-1] inset-x-0 top-0 w-screen-2xl h-[{{ section.settings.top_gradient_bar_height }}px]" style="background: {{ section.settings.top_gradient_bar_color }};"></div>
-    <img src="{{ section.settings.banner_image | image_url  }}" class="absolute inset-0 -z-10 h-full w-full object-cover object-center md:object-center">
-    {% comment %} <img src="{{ section.settings.mobile_banner_image | image_url  }}" class="block md:hidden absolute inset-0 -z-10 h-full w-full object-cover object-center"> {% endcomment %}
+    <div class="gradient__bar-top block absolute z-[-1] inset-x-0 top-0 w-screen-2xl h-[{{ section.settings.top_gradient_bar_height }}px]" style="background: {{ section.settings.top_gradient_bar_color }};">
+    </div>
+    {%- if section.settings.banner_image -%}
+      {{ section.settings.banner_image | image_url: width: '1440' | image_tag: class: 'hidden md:block absolute inset-0 -z-10 h-full w-full object-cover object-center md:object-center' }}
+    {%- endif -%}
+
+    {%- if section.settings.mobile_banner_image -%}
+      {{ section.settings.mobile_banner_image | image_url: width: '767' | image_tag: class: 'block md:hidden absolute inset-0 -z-10 h-full w-full object-cover object-center md:object-center' }}
+    {%- else -%}
+      {{ section.settings.banner_image | image_url: width: '767' | image_tag: class: 'absolute inset-0 -z-10 h-full w-full object-cover object-center md:object-center' }}
+    {%- endif -%}
+
   {% endif %}
   {%- if section.settings.enable_gradient -%}
   <div class="{% if section.settings.banner_type == 'video' %} hidden {% else %} hidden sm:block {% endif %} sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:transform-gpu sm:blur-3xl" aria-hidden="true">
