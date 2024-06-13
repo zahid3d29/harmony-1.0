@@ -35,16 +35,22 @@
         "text_dzDEwb",
         "button_ERHiQM"
       ],
-      "disabled": true,
       "settings": {
         "banner_color_scheme": "",
         "enable_gradient": false,
+        "enable_transparent": true,
+        "top_gradient_bar_color": "linear-gradient(180deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
+        "top_gradient_bar_height": 120,
+        "bottom_gradient_bar_color": "linear-gradient(0deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
+        "bottom_gradient_bar_height": 170,
         "overlay_opacity": 83,
         "show_sale_badge": false,
         "color_scheme_sale_badge": "scheme-2",
+        "banner_height": 530,
         "banner_type": "image",
         "banner_image": "shopify:\/\/shop_images\/article-image.png",
-        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",
+        "mobile_banner_height": 300
       }
     },
     "gdpr_KGmQiU": {

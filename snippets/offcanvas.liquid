@@ -7,7 +7,7 @@
   }
 {% endstyle %}
 
-<section id="harmony--{{ section.id }}" class="offcanvas__mobile-nav hidden lg:hidden">
+<section class="offcanvas__mobile-nav hidden">
   <div
     class="header__mobile-nav offcanvas-nav relative z-50 harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %}"
     aria-labelledby="slide-over-title"
@@ -20,24 +20,19 @@
     ></div>
     <div class="fixed z-50 inset-0 overflow-hidden">
       <div class="absolute inset-0 overflow-hidden">
-        <div class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full">
-          <div class="pointer-events-auto w-screen max-w-md">
+        <div class="pointer-events-none fixed inset-y-0 left-0 flex">
+          <div class="drawer-nav-bar w-[100%]">
             <div class="flex h-full flex-col overflow-y-scroll harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %} shadow-xl">
               <div class="flex-1 overflow-y-auto px-8 py-8">
                 <div class="flex items-start justify-between harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %} border-b harmony__color-border-{{ section.settings.mobile_offcanvas_color_scheme }} pb-4">
                   {% comment %} Mobile offcanvas Store Logo {% endcomment %}
-                  {% if section.settings.logo != blank %}
-                    <a href="#" class="store__logo">
-                      <img
-                        class="mx-auto h-[30px]"
-                        src="{{ section.settings.logo | image_url }}"
-                        alt="store-logo"
-                      >
-
-                      {% comment %} Fallback Logo should be store name  {% endcomment %}
-                      <h2 class="sr-only fallback__logo text-lg leading-1" id="slide-over-title">
-                        {{ store.name }}
-                      </h2>
+                  {% if settings.logo != blank %}
+                    <a href="#" class="store__logo ml-1.5">
+                      {%- if settings.logo != blank -%}
+                        {{ settings.logo | image_url: width: '60' | image_tag }}
+                      {%- else -%}
+                        <h2 class="fallback__logo text-lg leading-1 harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }}">{{ shop.name }}</h2>
+                      {%- endif -%}
                     </a>
                   {% endif %}
                   {% comment %} Mobile offcanvas close button {% endcomment %}

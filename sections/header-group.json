@@ -123,7 +123,6 @@
       "settings": {
         "header_color_scheme": "scheme-2",
         "enable_gradient": false,
-        "logo": "shopify:\/\/shop_images\/swiss-white.png",
         "search": true,
         "cart": true,
         "Profile": true,
@@ -131,8 +130,8 @@
         "enable_gradient_mega-menu": false,
         "main_menu": "main-menu",
         "mega_label": "Home",
-        "mobile_offcanvas_color_scheme": "section-scheme",
-        "enable_gradient_offcanvas": true,
+        "mobile_offcanvas_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "enable_gradient_offcanvas": false,
         "mob_bg_img": "shopify:\/\/shop_images\/offcanvas-image.png",
         "mob_s_menu": "mobile-secondary",
         "mob_newsletter": true,

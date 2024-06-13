@@ -36,16 +36,16 @@
         </button>
 
         <a href="#" class="store__logo ml-1.5">
-          {%- if section.settings.logo != blank -%}
-            <img class="mx-auto h-[30px]" src="{{ section.settings.logo | img_url: '' }}" alt="{{ shop.name }}">
+          {%- if settings.logo != blank -%}
+            {{ settings.logo | image_url: width: '60' | image_tag }}
           {%- else -%}
-            <h2 class="fallback__logo text-lg leading-1">{{ shop.name }}</h2>
+            <h2 class="fallback__logo text-lg leading-1 harmony__color-text-{{ section.settings.header_color_scheme }}">{{ shop.name }}</h2>
           {%- endif -%}
         </a>
       </div>
       {% comment %} Mobile offcanvas__menu-trigger hamburger Button {% endcomment %}
-      <div class="offcanvas__menu-trigger flex lg:hidden">
-        <button type="button" class="inline-flex items-center justify-center rounded-md " onclick="openNav()">
+      <div class="offcanvas__menu-trigger flex item-center absolute right-5 lg:hidden">
+        <button type="button" class="inline-flex items-center justify-center rounded-md">
           <span class="sr-only">Open main menu</span>
           <svg
             class="h-6 w-6 harmony__color-icon-{{ section.settings.header_color_scheme }}"
@@ -55,7 +55,7 @@
             stroke="currentColor"
             aria-hidden="true"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
           </svg>
         </button>
       </div>
@@ -179,7 +179,7 @@
       {% comment %} (snippets) Desktop right side Icons {% endcomment %}
       <div class="header__icons hidden lg:flex lg:flex-1 lg:justify-end">
         {% if section.settings.search %}
-          <a href="" class="flex items-center w-[40px] p-2  hover:text-gray-500">
+          <a href="" class="flex items-center w-[40px] p-2  ">
             <span class="sr-only">Search</span>
             <svg
               class="h-6 w-6 harmony__color-icon-{{ section.settings.header_color_scheme }}"
@@ -196,7 +196,7 @@
         {% if section.settings.Profile %}
           <a
             href="/account"
-            class="flex w-[40px] group items-center p-2  hover:text-slate-500"
+            class="flex w-[40px] group items-center p-2  "
           >
             <span class="sr-only">Profile</span>
             <svg class="harmony__color-icon-{{ section.settings.header_color_scheme }}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -217,7 +217,7 @@
             >
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
             </svg>
-            <span class="hidden ml-2 text-[14px] leading-[19px] font-medium group-hover:text-gray-800">3</span>
+            <span class="hidden ml-2 text-[14px] leading-[19px] font-medium">3</span>
             <span class="sr-only">items in cart, view bag</span>
           </a>
         {% endif %}
@@ -252,11 +252,6 @@
       "label": "Background Gradient?",
       "default": false
     },
-    {
-      "type":"image_picker",
-      "label":"Logo",
-      "id":"logo"
-    }, 
     {
       "type": "checkbox",
       "label":"Search Icon",
@@ -483,6 +478,7 @@
 {% endschema %}
 
 
+
 <style>
   div#doubleDropdown {
     visibility: hidden;
@@ -497,3 +493,6 @@
     visibility: visible !important;
   }
 </style>
+
+
+
