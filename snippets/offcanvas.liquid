@@ -7,7 +7,7 @@
   }
 {% endstyle %}
 
-<section class="offcanvas__mobile-nav hidden">
+<section id="harmonyOffcanvas" class="offcanvas__mobile-nav">
   <div
     class="header__mobile-nav offcanvas-nav relative z-50 harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %}"
     aria-labelledby="slide-over-title"
@@ -16,15 +16,16 @@
   >
     {% comment %} Mobile offcanvas side background Image {% endcomment %}
     <div
-      class="fixed z-50 inset-0 bg-[url('{{ section.settings.mob_bg_img | image_url }}')] bg-no-repeat bg-center bg-cover bg-black bg-opacity-75 transition-opacity"
+      class="fixed z-50 inset-0 bg-[url('{{ section.settings.mob_bg_img | image_url }}')] bg-no-repeat bg-center bg-cover bg-black bg-opacity-75 transition-opacity {% if section.settings.enable_gradient_offcanvas %} ml-0 {% else %} lg:ml-96 {% endif %}"
     ></div>
     <div class="fixed z-50 inset-0 overflow-hidden">
       <div class="absolute inset-0 overflow-hidden">
-        <div class="pointer-events-none fixed inset-y-0 left-0 flex">
-          <div class="drawer-nav-bar w-[100%]">
-            <div class="flex h-full flex-col overflow-y-scroll harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %} shadow-xl">
+        <div class="fixed flex inset-y-0 left-0">
+          <div class="pointer-events-auto w-[100%]">
+            <div class="flex h-full flex-col overflow-y-scroll harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %} shadow-xl">
               <div class="flex-1 overflow-y-auto px-8 py-8">
-                <div class="flex items-start justify-between harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %} border-b harmony__color-border-{{ section.settings.mobile_offcanvas_color_scheme }} pb-4">
+
+                <div class="flex items-start justify-between harmony__color-text-{{ section.settings.mobile_offcanvas_color_scheme }} {% if section.settings.enable_gradient_offcanvas %} harmony__color-background-gradient-{{ section.settings.mobile_offcanvas_color_scheme }} {% else %} harmony__color-background-{{ section.settings.mobile_offcanvas_color_scheme }} {% endif %} border-b harmony__color-border-{{ section.settings.mobile_offcanvas_color_scheme }} pb-4">
                   {% comment %} Mobile offcanvas Store Logo {% endcomment %}
                   {% if settings.logo != blank %}
                     <a href="#" class="store__logo ml-1.5">
@@ -37,7 +38,7 @@
                   {% endif %}
                   {% comment %} Mobile offcanvas close button {% endcomment %}
                   <div class="offcanvas__close-button ml-3 flex h-7 items-center">
-                    <button type="button" class="offcanvas__close-btn relative -m-2 p-2 hover:text-gray-500">
+                    <button type="button" class="offcanvas__close-btn relative -m-2 p-2 hover:text-gray-500" onclick="toggleOffcanvas(false)">
                       <span class="absolute -inset-0.5"></span>
                       <span class="sr-only">Close panel</span>
                       <svg
@@ -52,7 +53,6 @@
                     </button>
                   </div>
                 </div>
-
                 {% comment %} Mobile offcanvas Main navigation {% endcomment %}
                 <div class="main__nav-items mt-[20px] ">
                   <div class="grid grid-cols-1 gap-y-10">
@@ -448,6 +448,7 @@
                     </div>
                   {% endif %}
                 </div>
+
               </div>
             </div>
           </div>

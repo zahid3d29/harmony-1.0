@@ -13,14 +13,15 @@
 {%- endstyle -%}
 
 <section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.header_color_scheme }} {% else %} harmony__color-background-{{ section.settings.header_color_scheme }} {% endif %} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
-  <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
+  <header id="header" class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between">
       <div class="flex lg:flex-1">
         {% comment %} mega__menu-trigger hamburger Button  {% endcomment %}
+        {%- if section.settings.enable_offcanvas -%}
         <button
           type="button"
-          class="hidden mega__menu-trigger lg:inline-flex items-center justify-center rounded-md pt-1  openbtn"
-          onclick="openNav()"
+          class="hidden mega__menu-trigger lg:inline-flex items-center justify-center rounded-md pt-1"
+          onclick="toggleOffcanvas(true)"
         >
           <span class="sr-only">Open</span>
           <svg
@@ -31,9 +32,10 @@
             stroke="currentColor"
             aria-hidden="true"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
           </svg>
         </button>
+        {%- endif -%}
 
         <a href="#" class="store__logo ml-1.5">
           {%- if settings.logo != blank -%}
@@ -45,7 +47,7 @@
       </div>
       {% comment %} Mobile offcanvas__menu-trigger hamburger Button {% endcomment %}
       <div class="offcanvas__menu-trigger flex item-center absolute right-5 lg:hidden">
-        <button type="button" class="inline-flex items-center justify-center rounded-md">
+        <button type="button" class="inline-flex items-center justify-center rounded-md"onclick="toggleOffcanvas(true)">
           <span class="sr-only">Open main menu</span>
           <svg
             class="h-6 w-6 harmony__color-icon-{{ section.settings.header_color_scheme }}"
@@ -238,7 +240,7 @@
   "settings": [
     {
       "type": "header",
-      "content": "Header"
+      "content": "Header Settings"
     },
     {
       "type": "color_scheme",
@@ -269,7 +271,7 @@
     },
     {
       "type": "header",
-      "content": "Mega Menu"
+      "content": "Mega Menu Nav"
     },
     {
       "type": "color_scheme",
@@ -296,7 +298,7 @@
     },
     {
       "type": "header",
-      "content": "Mobile Drawer"
+      "content": "Offcanvas Menu Nav"
     },
     {
       "type": "color_scheme",
@@ -306,13 +308,19 @@
     },
     {
       "type": "checkbox",
+      "id": "enable_offcanvas",
+      "label": "Enable Offcanvas?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
       "id": "enable_gradient_offcanvas",
       "label": "Background Gradient?",
       "default": false
     },
     {
       "type": "image_picker",
-      "label":"Mobile Drawer Background",
+      "label":"Offcanvas Background",
       "id":"mob_bg_img"
     },
     {
@@ -492,7 +500,24 @@
   .double_drop:hover .nav__sub__menu-child {
     visibility: visible !important;
   }
+  .offcanvas__mobile-nav {
+    display: none;
+  }
 </style>
 
 
-
+{% comment %} Offcanvas nav bar script  {% endcomment %}
+<script>
+  function toggleOffcanvas(isOpen) {
+    const offcanvas = document.getElementById("harmonyOffcanvas");
+    const header = document.getElementById("header");
+    
+    if (isOpen) {
+      offcanvas.style.display = "block";
+      header.style.display = "none";
+    } else {
+      offcanvas.style.display = "none";
+      header.style.display = "block";
+    }
+  }
+</script>
