@@ -2,33 +2,81 @@
   "sections": {
     "banner_6WjWfW": {
       "type": "banner",
+      "blocks": {
+        "sub_text_slide_bkdEhw": {
+          "type": "sub_text_slide",
+          "disabled": true,
+          "settings": {
+            "sub_text": "eASY Skin Care Routine"
+          }
+        },
+        "title_hzY6pF": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "banner_heading": "Your path to radiant skin."
+          }
+        },
+        "text_rEnyC9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
+          }
+        },
+        "button_me34mV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_text": "Shop All",
+            "button_url": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "sub_text_slide_bkdEhw",
+        "title_hzY6pF",
+        "text_rEnyC9",
+        "button_me34mV"
+      ],
       "settings": {
-        "banner_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "banner_color_scheme": "scheme-2",
         "enable_gradient": false,
+        "enable_transparent": true,
+        "top_gradient_bar_color": "linear-gradient(180deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
+        "top_gradient_bar_height": 120,
+        "bottom_gradient_bar_color": "linear-gradient(0deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
+        "bottom_gradient_bar_height": 200,
         "overlay_opacity": 60,
         "show_sale_badge": true,
-        "color_scheme_sale_badge": "",
+        "color_scheme_sale_badge": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "banner_height": 500,
         "banner_type": "image",
-        "banner_image": "shopify:\/\/shop_images\/BG_Img.png",
-        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4"
+        "banner_image": "shopify:\/\/shop_images\/abut-banner-bg.png",
+        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",
+        "mobile_banner_height": 300
       }
     },
     "page-header": {
       "type": "page-header",
       "settings": {
         "color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "enable_gradient": false,
+        "gradient_bar": true,
         "heading": "Privacy & Policy",
-        "show_heeading": true,
-        "page_title": "Privacy",
-        "page_desc": "We value your privacy and security. Please read our privacy and policy agreement carefully. Send a message if you need help."
+        "caption": "About",
+        "short_desc": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.<\/p>",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "page_qJrWWa": {
       "type": "page",
       "settings": {
-        "gdpr_color_scheme": "",
+        "page_color_scheme": "",
         "enable_gradient": false,
-        "custom_content": "Swiss (“us”, “we”, or “our”) operates swiss.com (the “Site”). This page informs you of our policies regarding the collection, use, and disclosure of Personal Information we receive from users of the Site.\n<br><br>\nInformation Collection and Use\n<br><br>\nWhile using our Site, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your name, email address, postal address, and phone number (“Personal Information”).\n<br><br>\nLog Data\n<br><br>\nLike many site operators, we collect information that your browser sends whenever you visit our Site (“Log Data”). This Log Data may include information such as your computer’s Internet Protocol (“IP”) address, browser type, browser version, the pages of our Site that you visit, the time and date of your visit, the time spent on those pages, and other statistics.\n<br><br>\nCookies\n<br><br>\nCookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer’s hard drive.\n<br><br>\nLike many sites, we use \"cookies\" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Site.\n<br><br>\nSecurity\n<br><br>\nThe security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.\n<br><br>\nChanges to This Privacy Policy\n<br><br>\nThis Privacy Policy is effective as of [Date] and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.\n<br><br>\nWe reserve the right to update or change our Privacy Policy at any time, and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.\n<br><br>\nIf we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us or by placing a prominent notice on our website.\n<br><br>\nContact Us\n<br><br>\nIf you have any questions about this Privacy Policy, please send a message."
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },

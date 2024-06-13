@@ -16,8 +16,11 @@
   .mega_menu__link:hover .mega_menu {
     visibility:visible;
   }
+  .tablinksActive{
+    text-decoration: underline;
+  }
 {% endstyle %}
-  
+
 
 
 <div class="mega__menu-wrapper hidden lg:block relative mega_menu harmony__color-text-{{ section.settings.mega_menu_color_scheme }} {% if section.settings.enable_gradient_mega-menu %} harmony__color-background-gradient-{{ section.settings.mega_menu_color_scheme   }} {% else %} harmony__color-background-{{ section.settings.mega_menu_color_scheme }} {% endif %}">
@@ -191,7 +194,7 @@
                     {% for block in section.blocks %}
                       {% case block.type %}
                         {% when 'collection_list' %}
-                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav | replace: ' ', '' }}')">
+                        <li class="tablinks flex group" onmouseover="openContent(event, '{{ block.settings.collection_list_nav | replace: ' ', '' }}')" id="defaultOpen-{{ section.id }}">
                           <a href="#" class="hover:opacity-70 hover:underline">{{ block.settings.collection_list_nav }}</a>
                           <span class="hidden group-hover:flex justify-center items-center transition ease-in-out delay-150 ml-8">
                             <svg class="h-6 w-6 harmony__color-icon-{{ section.settings.mega_menu_color_scheme }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -268,11 +271,13 @@
     }
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(" tablinksActive", "");
     }
     document.getElementById(navName).style.display = "flex";
-    evt.currentTarget.className += " active";
+    evt.currentTarget.className += " tablinksActive";
   }
+  // Get the element with id="defaultOpen-{{ section.id }}" and click on it
+  document.getElementById("defaultOpen-{{ section.id }}").onmouseover();
 </script>
 
 

@@ -13,7 +13,7 @@
     "social_linkedin_link": "linkedin.com",
     "sale_badge_color_scheme": "scheme-2",
     "sold_out_badge_color_scheme": "section-scheme",
-    "sale_offer_badge_color_scheme": "scheme-2",
+    "sale_offer_badge_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
     "product_badge_box_shadow": "shadow-lg",
     "product_card_style": "standard",
     "product_card_padding": 10,
@@ -41,8 +41,8 @@
         "settings": {
           "text": "#121212",
           "text_secondary": "#ffffff",
-          "background": "#f3ffd1",
-          "background_gradient": "linear-gradient(180deg, rgba(243, 255, 209, 1), rgba(252, 244, 164, 0) 100%)",
+          "background": "#d0baac",
+          "background_gradient": "",
           "primary_button": "#000000",
           "on_primary_button": "#ffffff",
           "primary_button_border": "#ffffff",
@@ -51,44 +51,10 @@
           "secondary_button_border": "#121212",
           "icons": "#121212",
           "border": "#121212",
-          "links": "#ffd902"
+          "links": "#eefd8d"
         }
       },
       "scheme-2": {
-        "settings": {
-          "text": "#000000",
-          "text_secondary": "#ffffff",
-          "background": "#d0baac",
-          "background_gradient": "",
-          "primary_button": "#121212",
-          "on_primary_button": "#ffffff",
-          "primary_button_border": "#121212",
-          "secondary_button": "#ffffff",
-          "on_secondary_button": "#121212",
-          "secondary_button_border": "#121212",
-          "icons": "#121212",
-          "border": "#121212",
-          "links": "#ffd902"
-        }
-      },
-      "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250": {
-        "settings": {
-          "text": "#0e1b4d",
-          "text_secondary": "#ffffff",
-          "background": "#ffd902",
-          "background_gradient": "linear-gradient(320deg, rgba(56, 78, 197, 1) 16%, rgba(203, 68, 194, 1) 52%, rgba(255, 201, 104, 1) 87%)",
-          "primary_button": "#121212",
-          "on_primary_button": "#ffffff",
-          "primary_button_border": "#121212",
-          "secondary_button": "",
-          "on_secondary_button": "#121212",
-          "secondary_button_border": "#ffffff",
-          "icons": "#0e1b4d",
-          "border": "#ff0000",
-          "links": "#121212"
-        }
-      },
-      "scheme-85436d7a-8766-4d97-a6df-212047299535": {
         "settings": {
           "text": "#ffffff",
           "text_secondary": "#ffffff",
@@ -96,13 +62,47 @@
           "background_gradient": "",
           "primary_button": "#121212",
           "on_primary_button": "#ffffff",
+          "primary_button_border": "#ffffff",
+          "secondary_button": "#121212",
+          "on_secondary_button": "#ffffff",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "border": "#fffaf4",
+          "links": "#eefd8d"
+        }
+      },
+      "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250": {
+        "settings": {
+          "text": "#ffffff",
+          "text_secondary": "#ffffff",
+          "background": "#304834",
+          "background_gradient": "",
+          "primary_button": "rgba(0,0,0,0)",
+          "on_primary_button": "#ffffff",
+          "primary_button_border": "#ffffff",
+          "secondary_button": "",
+          "on_secondary_button": "#ffffff",
+          "secondary_button_border": "#ffffff",
+          "icons": "#ffffff",
+          "border": "#fffaf4",
+          "links": "#eefd8d"
+        }
+      },
+      "scheme-85436d7a-8766-4d97-a6df-212047299535": {
+        "settings": {
+          "text": "#121212",
+          "text_secondary": "#ffffff",
+          "background": "#f7f5f0",
+          "background_gradient": "",
+          "primary_button": "#121212",
+          "on_primary_button": "#ffffff",
           "primary_button_border": "#121212",
           "secondary_button": "",
           "on_secondary_button": "#121212",
           "secondary_button_border": "#ffffff",
-          "icons": "#ffffff",
-          "border": "#ffd902",
-          "links": "#121212"
+          "icons": "#121212",
+          "border": "#707070",
+          "links": "#eefd8d"
         }
       },
       "scheme-2b806c43-d5e0-4efc-a299-43249867c136": {

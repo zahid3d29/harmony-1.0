@@ -12,9 +12,9 @@
   }
 {%- endstyle -%}
 
-<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.header_color_scheme }} {% else %} harmony__color-background-{{ section.settings.header_color_scheme }} {% endif %} {% if section.settings.enable_transparent %} mb-[-50px] {% endif %} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
+<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.header_color_scheme }} {% else %} harmony__color-background-{{ section.settings.header_color_scheme }} {% endif %} min-h-[50px] max-h-[50px] section-{{ section.id }}-padding">
   <header class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-4 md:px-10 py-1.5">
-    <nav class="harmony__header-nav flex items-center justify-between" aria-label="Global">
+    <nav class="harmony__header-nav flex items-center justify-between">
       <div class="flex lg:flex-1">
         {% comment %} mega__menu-trigger hamburger Button  {% endcomment %}
         <button
@@ -36,11 +36,11 @@
         </button>
 
         <a href="#" class="store__logo ml-1.5">
-          {% if section.settings.logo != blank %}
+          {%- if section.settings.logo != blank -%}
             <img class="mx-auto h-[30px]" src="{{ section.settings.logo | img_url: '' }}" alt="{{ shop.name }}">
-          {% endif %}
-          {% comment %} Fallback Logo should be store name  {% endcomment %}
-          <h2 class="sr-only fallback__logo text-lg leading-1 " id="slide-over-title">SWISS</h2>
+          {%- else -%}
+            <h2 class="fallback__logo text-lg leading-1">{{ shop.name }}</h2>
+          {%- endif -%}
         </a>
       </div>
       {% comment %} Mobile offcanvas__menu-trigger hamburger Button {% endcomment %}
@@ -60,9 +60,9 @@
         </button>
       </div>
       {% comment %} header Main navigation for large screen {% endcomment %}
-      <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px] ">
+      <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px]">
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
-          <ul class="main__nav-list flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul class="main__nav-list hidden lg:flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {% for main_link in linklists[section.settings.main_menu].links %}
               {% if main_link.links.size > 0 %}
                 <div class="dropdown_menu">
@@ -253,13 +253,6 @@
       "default": false
     },
     {
-      "type": "checkbox",
-      "id": "enable_transparent",
-      "label": "Transparent header?",
-      "default": true,
-      "info": "Header will be over the bottom banner or section with transparent background."
-    },
-    {
       "type":"image_picker",
       "label":"Logo",
       "id":"logo"
@@ -441,7 +434,6 @@
           "id": "collection",
           "label": "Collection"
         }
-
       ]
     },
     {

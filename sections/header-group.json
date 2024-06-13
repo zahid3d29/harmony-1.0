@@ -33,7 +33,7 @@
         "announcement_zdhQeC"
       ],
       "settings": {
-        "announcement_color_scheme": "scheme-2",
+        "announcement_color_scheme": "section-scheme",
         "enable_gradient": false,
         "show_social": true,
         "auto_slide": false,
@@ -121,14 +121,13 @@
         "collection_3_6DB9ME"
       ],
       "settings": {
-        "header_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
+        "header_color_scheme": "scheme-2",
         "enable_gradient": false,
-        "enable_transparent": true,
         "logo": "shopify:\/\/shop_images\/swiss-white.png",
         "search": true,
         "cart": true,
         "Profile": true,
-        "mega_menu_color_scheme": "section-scheme",
+        "mega_menu_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "enable_gradient_mega-menu": false,
         "main_menu": "main-menu",
         "mega_label": "Home",

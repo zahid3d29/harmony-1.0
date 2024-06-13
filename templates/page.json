@@ -1,17 +1,14 @@
 {
   "sections": {
-    "page-header": {
-      "type": "page-header",
+    "main": {
+      "type": "page",
       "settings": {
-        "color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
-        "heading": "",
-        "show_heeading": true,
-        "page_title": "About us",
-        "page_desc": "We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss."
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "page-header"
+    "main"
   ]
 }
