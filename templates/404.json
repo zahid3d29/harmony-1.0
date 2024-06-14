@@ -36,28 +36,30 @@
         "button_ERHiQM"
       ],
       "settings": {
-        "banner_color_scheme": "",
+        "banner_color_scheme": "scheme-2",
         "enable_gradient": false,
         "enable_transparent": true,
         "top_gradient_bar_color": "linear-gradient(180deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
-        "top_gradient_bar_height": 120,
+        "top_gradient_bar_height": 155,
         "bottom_gradient_bar_color": "linear-gradient(0deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
-        "bottom_gradient_bar_height": 170,
+        "bottom_gradient_bar_height": 300,
         "overlay_opacity": 83,
-        "show_sale_badge": false,
-        "color_scheme_sale_badge": "scheme-2",
-        "banner_height": 530,
+        "show_sale_badge": true,
+        "discount_badge": "50% Sale On",
+        "discount_badge-url": "",
+        "banner_height": 650,
         "banner_type": "image",
-        "banner_image": "shopify:\/\/shop_images\/article-image.png",
+        "banner_image": "shopify:\/\/shop_images\/home-banner.png",
         "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",
-        "mobile_banner_height": 300
+        "mobile_banner_image": "shopify:\/\/shop_images\/Image_3.png",
+        "mobile_banner_height": 400
       }
     },
     "gdpr_KGmQiU": {
       "type": "GDPR",
       "settings": {
-        "gdpr_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
-        "enable_gradient": true,
+        "gdpr_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
+        "enable_gradient": false,
         "content": "By browsing this website, you consent to our Privacy Policy.",
         "link_text": "<strong>Accept Cookies<\/strong>",
         "link": ""
@@ -98,7 +100,7 @@
         "block_kTB8Ma"
       ],
       "settings": {
-        "product_featured_color_scheme": "",
+        "product_featured_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
         "enable_gradient": false,
         "heading": "Section Heading",
         "show_heeading": true,
@@ -111,8 +113,9 @@
         "show_wishlist": true,
         "enable_quick_view": true,
         "number_of_letters_in_title": 12,
-        "products_to_show": 3,
-        "products_per_row": 3,
+        "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}",
+        "products_to_show": 8,
+        "products_per_row": 4,
         "mobile_layout": "grid",
         "number_of_column": "1",
         "padding_top": 36,

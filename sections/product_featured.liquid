@@ -42,18 +42,18 @@
     padding: {{ settings.product_card_horizontal_offset }}px {{ settings.product_card_vertical_offset }}px;
     border-radius: {{ settings.product_card_corner_radius }}px;
     border-width: {{ settings.product_card_border_thickness }}px;
-    border-color: {{ settings.product_card_border_color }}{{ settings.product_card_border_opacity }};
+    /* border-color: {{ settings.product_card_border_color }}{{ settings.product_card_border_opacity }}; */
   }
   .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     transform: translateX(0%) !important;
     width: 100% !important;
   }
-  .section-{{ section.id }}-padding {
+  .harmony--{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
   @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
+    .harmony--{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
@@ -63,10 +63,10 @@
 <!-- Link Swiper's CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.product_featured_color_scheme }} {% else %} harmony__color-background-{{ section.settings.product_featured_color_scheme }} {% endif %} section-{{ section.id }}-padding">
+<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.product_featured_color_scheme }} {% else %} harmony__color-background-{{ section.settings.product_featured_color_scheme }} {% endif %} harmony--{{ section.id }}-padding">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex items-center lg:items-baseline justify-between mb-8">
-      <h2 class="product__featured-heading text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px]  font-semibold lg:max-w-3xl tracking-tight">{{ section.settings.heading }}</h2>
+      <h2 class="product__featured-heading text-[27px] leading-[36px] harmony__color-text-{{ section.settings.product_featured_color_scheme }} lg:text-[50px] lg:leading-[56px] font-semibold lg:max-w-3xl tracking-tight">{{ section.settings.heading }}</h2>
       <div class="product__featured-slide flex items-center">
         {%- if section.settings.desktop_layout == 'carousel' -%}
         <button
@@ -79,31 +79,31 @@
             {% endif %}
           >
             <a
-              class="prev relative inline-flex items-center rounded-full text-[17px] leading-[35px] mx-2 px-2 py-2 hover:ring-1 ring-inset ring-gray-300 bg-transparent hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0"
+              class="prev relative inline-flex items-center rounded-full text-[17px] leading-[35px] mx-2 px-2 py-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} harmony__color-primary-button-background-{{ section.settings.product_featured_color_scheme }} hover:harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} focus:harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} ring-1 ring-current focus:ring-2 hover:ring-2 harmony__color-primary-button-border-{{ section.settings.product_featured_color_scheme }} focus:z-20 focus:outline-offset-0"
             >
               <span class="sr-only">Previous</span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.product_featured_color_scheme }}" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
               </svg>
             </a>
           </span>
           <div
-            class="pagination hidden md:block w-[100%] harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }}"
+            class="pagination hidden md:block w-[100%] harmony__color-primary_button-{{ section.settings.product_featured_color_scheme }} harmony__color-on_primary_button-{{ section.settings.product_featured_color_scheme }} harmony__color-primary_button_border-{{ section.settings.product_featured_color_scheme }}"
             {% if section.settings.slider_navigation == 'arrows' %}
               style="display:none;"
             {% endif %}
           ></div>
           <span
-            class="product_carousel-next lg:ml-2 harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} w-[100%]"
+            class="product_carousel-next lg:ml-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} w-[100%]"
             {% if section.settings.slider_navigation == 'dots' %}
               style="display:none;"
             {% endif %}
           >
             <a
-              class="next relative inline-flex items-center rounded-full mx-2 px-2 py-2 text-gray-700 hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] focus:z-20 focus:outline-offset-0"
+              class="next relative inline-flex items-center rounded-full mx-2 px-2 py-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} hover:harmony__color-primary-button-background-{{ section.settings.product_featured_color_scheme }} ring-1 ring-current focus:ring-2 hover:ring-2 harmony__color-secondary-button-border-{{ section.settings.product_featured_color_scheme }} focus:z-20 focus:outline-offset-0"
             >
               <span class="sr-only">Next</span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.product_featured_color_scheme }}" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
               </svg>
             </a>
@@ -113,9 +113,9 @@
       </div>
     </div>
     <div class="mx-auto">
-      <div class="productFeaturedTab overflow:hidden harmony__color-background-{{ section.settings.product_featured_color_scheme }} grid lg:border-t lg:border-b harmony__color-border-{{ section.settings.product_featured_color_scheme }}  mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+      <div class="productFeaturedTab overflow:hidden grid lg:border-t lg:border-b harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
         {% for block in section.blocks %}
-          <button class="productFeaturedTablinks block text-[17px] leading-[35px] h-[4rem] my-1 lg:my-0 bg-transparent outline-none lg:last:border-r-0 border-t border-b lg:border-r lg:border-b-0 harmony__color-border-{{ section.settings.product_featured_color_scheme }} cursor-pointer transition duration-300 hover:border-b-2 hover:border-b-[#707070] {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')"  id="defaultOpen-{{ section.id }}">{{ block.settings.collection.title }}</button>
+          <button class="productFeaturedTablinks block text-[17px] leading-[35px] h-[4rem] my-1 lg:my-0 outline-none lg:last:border-r-0  lg:border-r lg:border-b-0 cursor-pointer transition duration-300 hover:border-b-2 harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')"  id="defaultOpen-{{ section.id }}">{{ block.settings.collection.title }}</button>
         {% endfor %}
       </div>
 
@@ -130,27 +130,27 @@
               <div class="swiper-wrapper">
                 {%- for product in block.settings.collection.products  -%}
                 <div class="swiper-slide">
-                  <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}" id="product__grid-wrapper">
+                  <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} {% endif %} group" id="product__grid-wrapper">
                     <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
-                        {%- if section.settings.enable_stock_badge -%} 
-                        {%- if product.available -%}
-                        <span class="badge__sale harmony__color-primary-button-label-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
-                            Sale
-                        </span>
-                        {%- else -%}
-                        <span class="badge__sold-out harmony__color-secondary-button-label-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-background-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-border-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
-                            Sold out
-                        </span>
-                        {%- endif -%}
-                        {% endif %}
-                        
-                        {% if product.featured_media %}
-                          {{ product.featured_media | image_url: width: 407, height: 513 |  image_tag }}
-                        {% else %}
-                        <img src="{{ 'cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263' | asset_url }}" width="407" height="513" alt="{{ product.title }}">
-                        {% endif %}
-                        
-                        <div id="product__overlay" class="harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }}">
+                      {%- if section.settings.enable_stock_badge -%} 
+                      {%- if product.available -%}
+                      <span class="badge__sale harmony__color-primary-button-label-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                          Sale
+                      </span>
+                      {%- else -%}
+                      <span class="badge__sold-out harmony__color-secondary-button-label-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-background-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-border-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[90px] max-h-[25px] z-20 items-center ml-2 mt-2 px-2 pb-1 text-center text-[14px]">
+                          Sold out
+                      </span>
+                      {%- endif -%}
+                      {% endif %}
+                      
+                      {% if product.featured_media %}
+                        {{ product.featured_media | image_url: width: 407, height: 513 |  image_tag }}
+                      {% else %}
+                      <img src="{{ 'cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263' | asset_url }}" width="407" height="513" alt="{{ product.title }}">
+                      {% endif %}
+                      
+                      <div id="product__overlay" class="harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }}">
                         <div class="flex h-full max-w-xl flex-col items-start justify-between">
                             {%- if section.settings.enable_quick_view -%}
                             <div class="flex items-center justify-center harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }} gap-x-4 text-xs">
@@ -169,47 +169,47 @@
                             <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-primary-button-label-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-background-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-border-{{ settings.product_card_overlay_color_scheme }} px-4 py-4 mb-4 text-base font-medium">Quick View</button>
                             {% endif %}
                         </div>
-                        </div>
+                      </div>
                     </div>
                     <div class="product__info mt-4">
-                        <table class="table-auto w-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}">
-                        <tbody>
-                            <tr>
-                            {% if product.title %}
-                            <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} pr-2 py-2">
-                                <a href="{{ product.url }}" class="product__title block">
-                                <h3 class="product__title text-[16px] leading-[21px] font-medium">
-                                {{ product.title | truncate: section.settings.number_of_letters_in_title }}
-                                </h3>
-                                </a>
-                            </td>
-                            {% endif %}
-                            {%- if section.settings.show_price -%}  
-                            <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-right pl-2">
-                                <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
-                            </td>
-                            {% endif %}
-                            </tr>
-                            <tr>
-                            {% for collection in product.collections limit: 1 %}
-                                {%- if section.settings.show_category and collection != blank -%}
-                                <td class="pr-2 py-2">
-                                <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
-                                </td>
-                                {% endif %}
-                            {% endfor %}
-                            {%- if section.settings.show_reviews -%}
-                            <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
-                                <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %}">
-                                {%  render 'rating-star' %}
-                                </div>
-                                <span class="sr-only">3.9 out of 5 stars</span>
-                                <span class="product__feedback-count ml-3 text-[13px] leading-[17px]">22</span>
-                            </td>
-                            {% endif %}
-                            </tr>
-                        </tbody>
-                        </table>
+                      <table class="table-auto w-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}">
+                      <tbody>
+                          <tr>
+                          {% if product.title %}
+                          <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} pr-2 py-2">
+                              <a href="{{ product.url }}" class="product__title block">
+                              <h3 class="product__title text-[16px] leading-[21px] font-medium">
+                              {{ product.title | truncate: section.settings.number_of_letters_in_title }}
+                              </h3>
+                              </a>
+                          </td>
+                          {% endif %}
+                          {%- if section.settings.show_price -%}  
+                          <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} text-right pl-2">
+                              <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
+                          </td>
+                          {% endif %}
+                          </tr>
+                          <tr>
+                          {% for collection in product.collections limit: 1 %}
+                              {%- if section.settings.show_category and collection != blank -%}
+                              <td class="pr-2 py-2">
+                              <a href="{{ collection.url }}" class="collection__name text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ collection.title |  truncate: 10}}</a>
+                              </td>
+                              {% endif %}
+                          {% endfor %}
+                          {%- if section.settings.show_reviews -%}
+                          <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
+                              <div class="flex items-center justify-end text-[13px] leading-[18px]">
+                              {%  render 'rating-star' %}
+                              </div>
+                              <span class="sr-only">3.9 out of 5 stars</span>
+                              <span class="product__feedback-count ml-3 text-[13px] leading-[17px] {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ product.metafields.custom.zhd_product_option_length_13.value }}</span>
+                          </td>
+                          {% endif %}
+                          </tr>
+                      </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@
             </div>
           {%- elsif section.settings.desktop_layout == 'grid' -%}
             {%- for product in block.settings.collection.products limit:  section.settings.products_to_show  -%}
-              <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card {% endif %} group {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}" id="product__grid-wrapper">
+              <div class="product__grid-wrapper group {% if settings.product_card_style == 'card' %} product__grid-card harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %}" id="product__grid-wrapper">
                 <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
                   {%- if section.settings.enable_stock_badge -%} 
                     {%- if product.available -%}
@@ -264,7 +264,7 @@
                     <tbody>
                       <tr>
                       {% if product.title %}
-                      <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} pr-2 py-2">
+                      <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-primary-button-border-{{ section.settings.product_featured_color_scheme }} {% endif %} pr-2 py-2">
                           <a href="{{ product.url }}" class="product__title block">
                           <h3 class="product__title text-[16px] leading-[21px] font-medium">
                           {{ product.title | truncate: section.settings.number_of_letters_in_title }}
@@ -273,7 +273,7 @@
                       </td>
                       {% endif %}
                       {%- if section.settings.show_price -%}  
-                      <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-right pl-2">
+                      <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-primary-button-border-{{ section.settings.product_featured_color_scheme }} {% endif %} text-right pl-2">
                           <h4 class="product__price text-[13px] leading-[17px] text-right">{{ product.price | money }}</h4>
                       </td>
                       {% endif %}
@@ -288,11 +288,11 @@
                       {% endfor %}
                       {%- if section.settings.show_reviews -%}
                       <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
-                          <div class="flex items-center justify-end text-[13px] leading-[18px] bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %}">
-                          {%  render 'rating-star' %}
+                          <div class="flex items-center justify-end text-[13px] leading-[18px]">
+                          {% render 'rating-star' %}
                           </div>
                           <span class="sr-only">3.9 out of 5 stars</span>
-                          <span class="product__feedback-count ml-3 text-[13px] leading-[17px]">22</span>
+                          <span class="product__feedback-count ml-3 text-[13px] leading-[17px] {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ product.metafields.custom.zhd_product_option_length_13.value }}</span>
                       </td>
                       {% endif %}
                       </tr>
@@ -329,7 +329,7 @@
         "type": "color_scheme",
         "id": "product_featured_color_scheme",
         "label": "Section Color Scheme",
-        "default": "scheme-1"
+        "default": "scheme-2"
       },
       {
         "type": "checkbox",
@@ -412,6 +412,13 @@
         "id": "number_of_letters_in_title",
         "label": "Number of letters in Title",
         "default": 12
+      },
+      {
+        "type": "liquid",
+        "id": "product_rating_count",
+        "label": "Product Ratings",
+        "default": "{{ product.metafields.custom.zhd_product_option_length_13.value }}",
+        "info": "Place your product rating metafield liquid code here"
       },
       {
         "type": "range",

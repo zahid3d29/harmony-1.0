@@ -1,0 +1,52 @@
+{%- style -%}
+    .harmony--{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    @media screen and (min-width: 750px) {
+        .harmony--{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{%- endstyle -%}
+
+<section id="harmony-{{ section.id }}" class="harmony--{{ section.id }}-padding">
+    <div class="gradient__bar inset-x-0 inset-y-0 w-screen-2xl h-[{{ section.settings.gradient_bar_height }}px]" style="background: {{ section.settings.gradient_bar_color }};"></div>
+</section>
+
+{% schema %}
+{
+    "name": "Gradient bar",
+    "class": "harmony_section-page",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "settings": [
+        {
+            "type": "color_background",
+            "id": "gradient_bar_color",
+            "label": "Gradient Bar Color",
+            "default": "linear-gradient(180deg, rgba(243, 255, 209, 1), rgba(252, 244, 164, 0) 100%)"
+        },
+        {
+            "type": "range",
+            "id": "gradient_bar_height",
+            "min": 0,
+            "max": 300,
+            "step": 5,
+            "unit": "px",
+            "label": "Top Gradient bar height",
+            "default": 50
+        }
+
+    ],
+    "presets": [
+        {
+            "name": "Gradient bar",
+            "category": "Harmony Sections"
+        }
+    ]
+}
+{% endschema %}
+        

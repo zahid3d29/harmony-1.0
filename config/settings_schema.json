@@ -352,15 +352,15 @@
         "options": [
           {
             "value": "shadow-lg",
-            "label": "Shadow lg"
+            "label": "High"
           },
           {
             "value": "shadow-md",
-            "label": "Shadow md"
+            "label": "Sandard"
           },
           {
             "value": "shadow",
-            "label": "Shadow"
+            "label": "Low"
           }
         ],
         "default": "shadow",

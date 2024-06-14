@@ -1,11 +1,11 @@
 <section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.gdpr_color_scheme }} {% else %} harmony__color-background-{{ section.settings.gdpr_color_scheme }} {% endif %}">
     <div class="relative max-w-screen-2xl isolate flex justify-center md:justify-start items-center md:items-left overflow-hidden mx-auto px-6 md:px-10 py-2.5">
         <div class="flex justify-end">
-            <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
-            <span class="sr-only">Dismiss</span>
-            <svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-            </svg>
+            <button type="button" class="pr-2">
+                <span class="sr-only">Dismiss</span>
+                <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.gdpr_color_scheme }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                </svg>
             </button>
         </div>
         <div class="flex flex-wrap items-center text-center md:text-left justify-center md:justify-left gap-x-4 gap-y-2">
@@ -19,49 +19,49 @@
 
 
 {% schema %}
-    {
-        "name": "GDPR",
-        "class": "harmony_section-gdpr",
-        "disabled_on": {
-            "groups": ["header", "footer"]
+{
+    "name": "GDPR",
+    "class": "harmony_section-gdpr",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "settings": [
+        {
+            "type": "color_scheme",
+            "id": "gdpr_color_scheme",
+            "label": "t:sections.announcement-bar.settings.color_scheme.label",
+            "default": "scheme-1"
         },
-        "settings": [
-            {
-                "type": "color_scheme",
-                "id": "gdpr_color_scheme",
-                "label": "t:sections.announcement-bar.settings.color_scheme.label",
-                "default": "scheme-1"
-            },
-            {
-                "type": "checkbox",
-                "id": "enable_gradient",
-                "label": "Background Gradient?",
-                "default": false
-            },
-            {
-                "type": "inline_richtext",
-                "id": "content",
-                "label": "Heading",
-                "default": "By browsing this website, you consent to our Privacy Policy."
-            },
-            {
-                "type": "inline_richtext",
-                "id": "link_text",
-                "label": "Link Text",
-                "default": "Accept Cookies"
-            },
-            {
-                "type": "url",
-                "id": "link",
-                "label": "Link"
-            }
-        ],
-        "presets": [
-            {
-                "name": "GDPR",
-                "category": "Harmony Sections"
-            }
-        ]
-    }
+        {
+            "type": "checkbox",
+            "id": "enable_gradient",
+            "label": "Background Gradient?",
+            "default": false
+        },
+        {
+            "type": "inline_richtext",
+            "id": "content",
+            "label": "Heading",
+            "default": "By browsing this website, you consent to our Privacy Policy."
+        },
+        {
+            "type": "inline_richtext",
+            "id": "link_text",
+            "label": "Link Text",
+            "default": "Accept Cookies"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "GDPR",
+            "category": "Harmony Sections"
+        }
+    ]
+}
 {% endschema %}
     

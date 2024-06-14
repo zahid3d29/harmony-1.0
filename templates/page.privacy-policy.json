@@ -49,7 +49,6 @@
         "bottom_gradient_bar_height": 200,
         "overlay_opacity": 60,
         "show_sale_badge": true,
-        "color_scheme_sale_badge": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "banner_height": 500,
         "banner_type": "image",
         "banner_image": "shopify:\/\/shop_images\/BG_Img.png",

@@ -1,16 +1,32 @@
+<link rel="stylesheet" href="{{ 'swiper_bundle.min.css' | asset_url }}">
+
+
 {%- style -%}
-#currency {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  background-image: none;
-}
-.swiper-button-next svg, .swiper-button-prev svg {
-  width: 15px !important;
-  height: 15px !important;
-}
+  #currency {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+  }
+  .swiper-button-next svg, .swiper-button-prev svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  /* Swiper slider style  */
+  .announcement__slider .swiper {
+    width: 100%;
+    max-height: 50px;
+  }
+  .mySwiper-{{ section.id }} .swiper-button-next:after, .mySwiper-{{ section.id }} .swiper-button-prev:after {
+    content: '';
+  }
+  .mySwiper-{{ section.id }} .swiper-button-prev:after, .mySwiper-{{ section.id }} .swiper-button-next:after {
+    content: '';
+  }
 {% endstyle %}
+
 
 <section id="harmony--{{ section.id }}" class="section__announcement-bar harmony__color-text-{{ section.settings.announcement_color_scheme }} {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.announcement_color_scheme }} {% else %} harmony__color-background-{{ section.settings.announcement_color_scheme }} {% endif %}">
   <div class="announcement__bar-main mx-auto max-w-screen-2xl px-4 md:px-10">
@@ -83,8 +99,8 @@
           </div>
         </div>
       </div>
-      <div class="relative flex items-center justify-center gap-x-4 md:col-span-2 order-3 sm:order-2">
-        <div class="announcement__text swiper announcementSwiper relative inline-flex items-center">
+      <div class="announcement__slider relative flex items-center justify-center gap-x-4 md:col-span-2 order-3 sm:order-2">
+        <div class="announcement__text swiper mySwiper-{{ section.id }} relative inline-flex items-center">
           <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
               {%- if block.settings.announcement_link -%}
@@ -180,6 +196,22 @@
       "default": false
     },
     {
+      "type": "select",
+      "id": "direction_slide",
+      "label": "Slide Direction",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        }
+      ],
+      "default": "vertical"
+    },
+    {
       "type": "header",
       "content": "t:sections.announcement-bar.settings.header__3.content",
       "info": "t:sections.announcement-bar.settings.header__3.info"
@@ -261,34 +293,23 @@
   
 
 
-<link rel="stylesheet" href="{{ 'swiper_bundle.min.css' | asset_url }}">
-<style>
-  .swiper {
-    width: 100%;
-    max-height: 50px;
-  }
-  .announcementSwiper .swiper-button-next:after, .announcementSwiper .swiper-button-prev:after {
-    content: '';
-  }
-  .announcementSwiper .swiper-button-prev:after, .announcementSwiper .swiper-button-next:after {
-    content: '';
-  }
-</style>
 
 {%- assign loopSlide = section.settings.slide_loop -%}
 {%- assign autoSlide = section.settings.auto_slide -%}
+{%- assign directionSlide = section.settings.direction_slide -%}
 
 <script>
   var slideLoop = {{ loopSlide }};
   var autoPlaySlide = {{ autoSlide }};
-  var swiper = new Swiper(".announcementSwiper", {
-    direction: "vertical",
+  var slideDirection = {{ directionSlide }};
+  var swiper = new Swiper(".mySwiper-{{ section.id }}", {
+    direction: slideDirection,
     autoplay: autoPlaySlide,
-    effect: 'slide',
+    effect: slide,
     loop: slideLoop,
     navigation: {
-      nextEl: ".announcementSwiper .swiper-button-next",
-      prevEl: ".announcementSwiper .swiper-button-prev",
+      nextEl: ".mySwiper-{{ section.id }} .swiper-button-next",
+      prevEl: ".mySwiper-{{ section.id }} .swiper-button-prev",
     },
   });
 </script>

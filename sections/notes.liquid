@@ -252,3 +252,9 @@ harmony__color-link-{{ section.settings.header_color_scheme }}
   Simply include the placeholder name, followed by the placeholder_svg_tag filter: {% endcomment %}
   
   {{ 'product-1' | placeholder_svg_tag }}
+
+  <div class="productFeaturedTab overflow:hidden grid lg:border-t lg:border-b {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+    {% for block in section.blocks %}
+      <button class="productFeaturedTablinks block text-[17px] leading-[35px] h-[4rem] my-1 lg:my-0 outline-none lg:last:border-r-0  lg:border-r lg:border-b-0 cursor-pointer transition duration-300 hover:border-b-2 {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')"  id="defaultOpen-{{ section.id }}">{{ block.settings.collection.title }}</button>
+    {% endfor %}
+  </div>
