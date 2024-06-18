@@ -1,25 +1,31 @@
-<section id="harmony--{{ section.id }}" class="harmony__color-{{ section.settings.color_scheme }}">
-  <div class="footer__top py-[36px] border-b">
+{% style %}
+  .harmony--{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .harmony--{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<section id="harmony--{{ section.id }}" class="harmony__color-text-{{ section.settings.footerbenifits_color_scheme }} {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.footerbenifits_color_scheme }} {% else %} harmony__color-background-{{ section.settings.footerbenifits_color_scheme }} {% endif %} harmony--{{ section.id }}-padding">
+  <div class="footer__top py-[36px] border-b harmony__color-border-{{ section.settings.footerbenifits_color_scheme }}">
     <div class="mx-auto max-w-7xl px-6 md:px-10">
-      <div class="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 lg:gap-y-16 ">
+      <div class="grid text-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 lg:gap-y-16">
         {% for block in section.blocks %}
           {% if 'icon-text' %}
             <div class="relative flex items-center gap-x-4">
               {% if block.settings.icon != blank %}
-                <img
-                  src="{{ block.settings.icon | img_url: '' }}"
-                  alt="{{ block.settings.text | replace: " ", "-" }}"
-                  class="h-[24px] w-[35px] object-contain"
-                >
+                {{ block.settings.icon | image_url: width: '35' |  image_tag: class: 'h-[24px] w-[35px] object-contain' }}
               {% else %}
-                <img
-                  src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263"
-                  alt="{{ block.settings.text | replace: " ", "-" }}"
-                  class="h-[24px] w-[35px] object-contain"
-                >
+                {{ 'image' | placeholder_svg_tag: 'w-50' }}
               {% endif %}
               {% if block.settings.text != blank %}
-                <div class="text-[14px] leading-[19px] text-left max-w-40">
+                <div class="{% if section.settings.section_font_size == 'theme_default'  %} harmony__footerbenifits-text {% elsif section.settings.section_font_size == 'lg' %} text-lg leading-1 font-semibold {% endif %} text-left max-w-40">
                   {{ block.settings.text }}
                 </div>
               {% endif %}
@@ -30,6 +36,9 @@
     </div>
   </div>
 </section>
+
+
+
 {% schema %}
 {
   "name": "Footer Benifits",
@@ -40,9 +49,39 @@
   "settings": [
     {
       "type": "color_scheme",
-      "id": "color_scheme",
+      "id": "footerbenifits_color_scheme",
       "label": "Color Scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gradient",
+      "label": "Background Gradient?",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_font_size",
+      "label": "Fon Size",
+      "options": [
+        {
+          "value": "theme_default",
+          "label": "Default"
+        },
+        {
+          "value": "sm",
+          "label": "Small"
+        },
+        {
+          "value": "md",
+          "label": "Medium"
+        },
+        {
+          "value": "lg",
+          "label": "Large"
+        }
+      ],
+      "default": "theme_default"
     },
     {
       "type": "header",

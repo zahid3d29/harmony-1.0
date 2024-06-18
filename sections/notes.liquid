@@ -127,7 +127,6 @@ Badge color Scheme: harmony__color-{{ settings.badge_color_scheme }}
 #F3FFD1
 0.00%
 RGBA(252,244,164,0 )
-
 {% comment %} Header Font and color settings  {% endcomment %}
 
 // tailwind.config.js
@@ -158,45 +157,16 @@ module.exports = {
 }
 
 
-/* styles.css or any other CSS file where you configure your Tailwind custom classes */
-.header-main-navigation-text {
-  @apply font-neuzeit-book text-16 leading-22 text-center tracking-extra-wide text-custom-faf2dc;
-}
 
-.mega-menu-nav-desktop {
-  @apply font-neuzeit-office text-26 leading-41 text-left tracking-negative-wide text-custom-000000;
-}
+theme name prefix harmony__
 
-.mega-menu-collection-name {
-  @apply font-neuzeit-book text-16 text-left tracking-medium-wide text-custom-000000;
-}
-
-.mega-menu-collection-product-counr {
-  @apply font-roboto-mono text-16 text-right tracking-roboto-wide text-custom-000000;
-}
-
-.mega-menu-collection-product-description {
-  @apply font-neue-haas text-14 leading-19 text-left tracking-extra-wide text-custom-000000;
-}
-
-.offcanvas-nav-mega-menu-item {
-  @apply font-neuzeit-office text-32 leading-41 text-left tracking-negative-wide text-custom-f7f4ed;
-}
-
-.offcanvas-main-menu-nav-item {
-  @apply border border-transparent font-neue-haas text-14 leading-39 text-left tracking-extra-wide text-custom-f7f4ed;
-}
-
-.offcanvas-newsletter-placholeder {
-  @apply opacity-25 border border-transparent font-neue-haas text-12 leading-16 text-left tracking-extra-wide text-custom-fffaf4;
-}
-
-
-
+section name = footerbenifits_color_scheme
+text-[11px] leading-1 font-normal
+text-[12px] leading-1 font-normal
 
 {% comment %} All used font size in XD Design. {% endcomment %}
-font-size: 11px;
-font-size: 12px;
+text-[11px] leading-1 font-normal
+text-[12px] leading-1 font-normal
 font-size: 13px;
 font-size: 14px;
 font-size: 15px;
@@ -243,18 +213,16 @@ harmony__color-link-{{ section.settings.header_color_scheme }}
 {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.collection_color_scheme }} {% endif %}
 
 
-  {{ settings.logo | image_url: width: '60' | image_tag }}
+{{ settings.logo | image_url: width: '60' | image_tag }}
 
 
-  {% comment %} Using the placeholder_svg_tag filter
-  It’s really easy to use Shopify’s placeholder SVGs, since including them is a breeze with the placeholder_svg_tag filter.
-  
-  Simply include the placeholder name, followed by the placeholder_svg_tag filter: {% endcomment %}
-  
-  {{ 'product-1' | placeholder_svg_tag }}
+{% comment %} Using the placeholder_svg_tag filter
+It’s really easy to use Shopify’s placeholder SVGs, since including them is a breeze with the placeholder_svg_tag filter.
 
-  <div class="productFeaturedTab overflow:hidden grid lg:border-t lg:border-b {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} mb-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
-    {% for block in section.blocks %}
-      <button class="productFeaturedTablinks block text-[17px] leading-[35px] h-[4rem] my-1 lg:my-0 outline-none lg:last:border-r-0  lg:border-r lg:border-b-0 cursor-pointer transition duration-300 hover:border-b-2 {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} {% if forloop.index == 1 %}active{% endif %}" onmouseover="openFtCats(event, 'pd_{{ block.settings.collection.handle }}')"  id="defaultOpen-{{ section.id }}">{{ block.settings.collection.title }}</button>
-    {% endfor %}
-  </div>
+Simply include the placeholder name, followed by the placeholder_svg_tag filter: {% endcomment %}
+{% if block.settings.icon != blank %}
+  {{ block.settings.icon | image_url: width: '35' | image_tag: class: 'h-[24px] w-[35px] object-contain' }}
+{% else %}
+  {{ 'image' | placeholder_svg_tag: 'w-50' }}
+{% endif %}
+

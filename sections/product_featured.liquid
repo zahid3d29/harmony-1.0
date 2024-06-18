@@ -282,17 +282,17 @@
                       {% for collection in product.collections limit: 1 %}
                           {%- if section.settings.show_category and collection != blank -%}
                           <td class="pr-2 py-2">
-                          <a href="{{ collection.url }}" class="collection__name bg-transparent {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
+                          <a href="{{ collection.url }}" class="collection__name {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} text-[14px] leading-[19px] inline-block px-2 py-1.5 border rounded-full collection-title">{{ collection.title |  truncate: 10}}</a>
                           </td>
                           {% endif %}
                       {% endfor %}
                       {%- if section.settings.show_reviews -%}
                       <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
-                          <div class="flex items-center justify-end text-[13px] leading-[18px]">
+                        <div class="flex items-center justify-end text-[13px] leading-[18px]">
                           {% render 'rating-star' %}
-                          </div>
-                          <span class="sr-only">3.9 out of 5 stars</span>
-                          <span class="product__feedback-count ml-3 text-[13px] leading-[17px] {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ product.metafields.custom.zhd_product_option_length_13.value }}</span>
+                        </div>
+                        <span class="sr-only">3.9 out of 5 stars</span>
+                        <span class="product__feedback-count ml-3 text-[13px] leading-[17px] {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ product.metafields.custom.zhd_product_option_length_13.value }}</span>
                       </td>
                       {% endif %}
                       </tr>
@@ -303,7 +303,7 @@
             {%- endfor -%}
           {%- endif -%}
         {%- if section.settings.desktop_layout == 'grid' -%}
-        </div>
+          </div>
         {%- else -%}
         </div>
         {%- endif -%}

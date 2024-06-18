@@ -35,6 +35,7 @@
         "text_dzDEwb",
         "button_ERHiQM"
       ],
+      "disabled": true,
       "settings": {
         "banner_color_scheme": "scheme-2",
         "enable_gradient": false,
@@ -99,6 +100,7 @@
         "block_wBKtG9",
         "block_kTB8Ma"
       ],
+      "disabled": true,
       "settings": {
         "product_featured_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
         "enable_gradient": false,
