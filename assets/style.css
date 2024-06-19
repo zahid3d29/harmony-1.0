@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -24,8 +22,24 @@
   background: rgb(131, 131, 131);
 }
 
-/* styles.css */
-.harmony__footerbenifits {
-  @apply text-[14px] leading-[19px] font-normal;
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
 }
 
+@layer components {
+  .harmony__footerbenifits {
+    @apply text-[14px] leading-[19px] font-semibold;
+  }
+}
+
+@layer utilities {
+  /* .filter-none {
+    filter: none;
+  } */
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+  
+}

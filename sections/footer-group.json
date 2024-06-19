@@ -1,44 +1,53 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "Footer",
   "type": "footer",
   "sections": {
-    "footer_benifits_biW7Kz": {
-      "type": "footer_benifits",
+    "footer_benifits_ybnh6e": {
+      "type": "footer-benifits",
       "blocks": {
-        "icon_text_AH6PeH": {
-          "type": "icon_text",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Path_141862.png",
-            "text": "Free Delivery Free Shipping for all orders"
-          }
-        },
-        "icon_text_mrtdqt": {
+        "icon_text_DgFf7a": {
           "type": "icon_text",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Path_141864.png",
-            "text": "Secure Payments 256-Bit Protection"
+            "text": "Be the first to know about promotions and skincare tips."
           }
         },
-        "icon_text_NP7kHL": {
+        "icon_text_RNK46N": {
           "type": "icon_text",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/Path_141865.png",
-            "text": "Discount Coupons Enjoy Huge Promotions"
+            "icon": "shopify:\/\/shop_images\/Path_141862.png",
+            "text": "Secure payment evryway"
           }
         },
-        "icon_text_jLGqem": {
+        "icon_text_3PjTKW": {
           "type": "icon_text",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Path_141863.png",
-            "text": "Easy Returns Free returns. No hassle."
+            "text": "Be the first to know about promotions and skincare tips."
+          }
+        },
+        "icon_text_hpw9ad": {
+          "type": "icon_text",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Path_141865.png",
+            "text": "Be the first to know about promotions and skincare tips."
           }
         }
       },
       "block_order": [
-        "icon_text_AH6PeH",
-        "icon_text_mrtdqt",
-        "icon_text_NP7kHL",
-        "icon_text_jLGqem"
+        "icon_text_DgFf7a",
+        "icon_text_RNK46N",
+        "icon_text_3PjTKW",
+        "icon_text_hpw9ad"
       ],
       "settings": {
         "footerbenifits_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
@@ -100,7 +109,7 @@
     }
   },
   "order": [
-    "footer_benifits_biW7Kz",
+    "footer_benifits_ybnh6e",
     "footer_7wTxV3"
   ]
 }
