@@ -12,20 +12,20 @@
     "banner_ktNWgn": {
       "type": "banner",
       "blocks": {
-        "sub_text_slide_9xxCiB": {
-          "type": "sub_text_slide",
+        "sub_heading_gbNPQU": {
+          "type": "sub_heading",
           "settings": {
-            "sub_text": "eASY Skin Care Routine"
+            "sub_heading": "eASY Skin Care Routine"
           }
         },
-        "title_KBPm6b": {
-          "type": "title",
+        "heading_Q6QqRY": {
+          "type": "heading",
           "settings": {
             "banner_heading": "Your path to radiant skin."
           }
         },
-        "text_dzDEwb": {
-          "type": "text",
+        "content_Nfem4L": {
+          "type": "content",
           "settings": {
             "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
           }
@@ -39,12 +39,11 @@
         }
       },
       "block_order": [
-        "sub_text_slide_9xxCiB",
-        "title_KBPm6b",
-        "text_dzDEwb",
+        "sub_heading_gbNPQU",
+        "heading_Q6QqRY",
+        "content_Nfem4L",
         "button_ERHiQM"
       ],
-      "disabled": true,
       "settings": {
         "banner_color_scheme": "scheme-2",
         "enable_gradient": false,
@@ -57,7 +56,7 @@
         "show_sale_badge": true,
         "discount_badge": "50% Sale On",
         "discount_badge-url": "",
-        "banner_height": 650,
+        "banner_height": 750,
         "banner_type": "image",
         "banner_image": "shopify:\/\/shop_images\/home-banner.png",
         "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",

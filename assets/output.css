@@ -593,6 +593,23 @@ h1 {
   }
 }
 
+/* Announcement Bar Section Font Size */
+
+.harmony__announcement-bar-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__announcement-bar-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__announcement-bar-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 /* Header Nav Font Size */
 
 .harmony__header-sm {
@@ -710,6 +727,116 @@ h1 {
 .harmony__offcanvas_product_desc-lg {
   font-size: 16px;
   line-height: 24px;
+}
+
+/* Banner Heading Section Font Size */
+
+.harmony__banner-sm {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+@media (min-width: 768px) {
+  .harmony__banner-sm {
+    font-size: 52px;
+    line-height: 58px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__banner-sm {
+    font-size: 72px;
+    line-height: 82px;
+  }
+}
+
+.harmony__banner-theme-default {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+@media (min-width: 768px) {
+  .harmony__banner-theme-default {
+    font-size: 62px;
+    line-height: 68px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__banner-theme-default {
+    font-size: 90px;
+    line-height: 92px;
+  }
+}
+
+.harmony__banner-lg {
+  font-size: 52px;
+  line-height: 58px;
+}
+
+@media (min-width: 768px) {
+  .harmony__banner-lg {
+    font-size: 72px;
+    line-height: 78px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__banner-lg {
+    font-size: 96px;
+    line-height: 100px;
+  }
+}
+
+/* Banner Sub-heading Section Font Size */
+
+.harmony__banner-subheading-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__banner-subheading-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__banner-subheading-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Banner Content Section Font Size */
+
+.harmony__banner-content-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__banner-content-theme-default {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.harmony__banner-content-lg {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Banner Button Section Font Size */
+
+.harmony__banner-btn-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__banner-btn-theme-default {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.harmony__banner-btn-lg {
+  font-size: 20px;
+  line-height: 28px;
 }
 
 /* GDPR Section Font Size */
@@ -1280,6 +1407,10 @@ h1 {
 
 .mt-\[14px\] {
   margin-top: 14px;
+}
+
+.mt-\[15px\] {
+  margin-top: 15px;
 }
 
 .mt-\[16px\] {
@@ -3141,10 +3272,6 @@ h1 {
   font-size: 37px;
 }
 
-.text-\[42px\] {
-  font-size: 42px;
-}
-
 .text-\[45px\] {
   font-size: 45px;
 }
@@ -3304,10 +3431,6 @@ h1 {
 
 .leading-\[47px\] {
   line-height: 47px;
-}
-
-.leading-\[48px\] {
-  line-height: 48px;
 }
 
 .leading-\[56px\] {
@@ -5225,10 +5348,6 @@ h1 {
     font-size: 80px;
   }
 
-  .lg\:text-\[90px\] {
-    font-size: 90px;
-  }
-
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -5269,10 +5388,6 @@ h1 {
 
   .lg\:leading-\[73px\] {
     line-height: 73px;
-  }
-
-  .lg\:leading-\[81px\] {
-    line-height: 81px;
   }
 
   .lg\:leading-\[96px\] {

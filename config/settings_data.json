@@ -11,8 +11,9 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/swiss-white.png",
     "type_header_font": "fette_gotisch_n4",
+    "heading_font_size": "lg",
     "type_body_font": "alfie_n4",
-    "body_font_size": "theme_default",
+    "body_font_size": "sm",
     "social_twitter_link": "x.com",
     "social_facebook_link": "facebook.com",
     "social_instagram_link": "https:\/\/www.instagram.com\/",

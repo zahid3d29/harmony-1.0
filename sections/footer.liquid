@@ -102,7 +102,7 @@
                         <ul
                           role="list"
                           aria-labelledby="Accessories-heading"
-                          class="space-y-6 sm:space-y-4 {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal mt-[33px]"
+                          class="space-y-6 sm:space-y-4 {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal mt-[15px]"
                         >
                           {% for link in block.settings.menu.links %}
                             <li class="flex">
@@ -124,11 +124,11 @@
                   >
                     Contact
                   </label>
-                  <div aria-hidden="true" class="{% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal mt-[33px]">
+                  <div aria-hidden="true" class="{% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal mt-[15px]">
                     <address>{{ block.settings.address }}</address>
                   </div>
                   {% if block.settings.contact_label != blank %}
-                    <label class="block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal opacity-50 hover:opacity-100 mt-[33px]">
+                    <label class="block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal opacity-50 hover:opacity-100 mt-[15px]">
                       Need help?
                     </label>
                     <a href="#" class="block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal hover:opacity-50">

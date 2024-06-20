@@ -30,6 +30,17 @@
 
 @layer components {
 
+  /* Announcement Bar Section Font Size */
+  .harmony__announcement-bar-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__announcement-bar-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__announcement-bar-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
   /* Header Nav Font Size */
   .harmony__header-sm {
     @apply text-[14px] leading-[20px];
@@ -105,6 +116,51 @@
   }
   .harmony__offcanvas_product_desc-lg {
     @apply text-[16px] leading-[24px];
+  }
+
+
+  /* Banner Heading Section Font Size */
+  .harmony__banner-sm {
+    @apply text-[32px] leading-[38px] md:text-[52px] md:leading-[58px] lg:text-[72px] lg:leading-[82px];
+  }
+  .harmony__banner-theme-default {
+    @apply text-[42px] leading-[48px] md:text-[62px] md:leading-[68px] lg:text-[90px] lg:leading-[92px];
+  }
+  .harmony__banner-lg {
+    @apply text-[52px] leading-[58px] md:text-[72px] md:leading-[78px] lg:text-[96px] lg:leading-[100px];
+  }
+
+  /* Banner Sub-heading Section Font Size */
+  .harmony__banner-subheading-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__banner-subheading-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__banner-subheading-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  /* Banner Content Section Font Size */
+  .harmony__banner-content-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__banner-content-theme-default {
+    @apply text-[18px] leading-[28px];
+  }
+  .harmony__banner-content-lg {
+    @apply text-[20px] leading-[28px];
+  }
+  
+  /* Banner Button Section Font Size */
+  .harmony__banner-btn-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__banner-btn-theme-default {
+    @apply text-[17px] leading-[26px];
+  }
+  .harmony__banner-btn-lg {
+    @apply text-[20px] leading-[28px];
   }
 
   /* GDPR Section Font Size */

@@ -41,7 +41,7 @@
                     <div class="relative">
                       <button
                         type="button"
-                        class="flex justify-between gap-x-1 items-center w-full border-0 bg-transparent py-1.5 sm:max-w-xs text-[14px] leading-[19px] font-normal"
+                        class="flex justify-between gap-x-1 items-center w-full border-0 bg-transparent py-1.5 sm:max-w-xs {% if settings.body_font_size == 'sm' %}harmony__announcement-bar-sm{% elsif settings.body_font_size == 'lg' %}harmony__announcement-bar-lg{% else %}harmony__announcement-bar-theme-default{% endif %}"
                       >
                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px] harmony__color-icon-{{ section.settings.announcement_color_scheme }}">
                           <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
@@ -56,7 +56,7 @@
                       >
                         {% for language in localization.available_languages %}
                           <li
-                            class="block py-2 px-4 text-[14px] leading-[19px] hover:bg-gray-100 hover:text-gray-900"
+                            class="block py-2 px-4 {% if settings.body_font_size == 'sm' %}harmony__announcement-bar-sm{% elsif settings.body_font_size == 'lg' %}harmony__announcement-bar-lg{% else %}harmony__announcement-bar-theme-default{% endif %} hover:bg-gray-100 hover:text-gray-900"
                             tabindex="-1"
                           >
                             <a
@@ -83,7 +83,7 @@
           <div class="announcement__country mt-0">
             {%- if section.settings.enable_country_selector -%}
             <div class="relative inline-block">
-              <select id="currency" name="currency" autocomplete="currency-name" class="custom-select block w-md border-0 bg-transparent pl-2 pr-8 py-[4px] text-[12px] leading[19px] font-normal ring-0 ring-inset focus:ring-2 focus:ring-inset focus:ring-transparent sm:max-w-xs">
+              <select id="currency" name="currency" autocomplete="currency-name" class="custom-select block w-md border-0 bg-transparent pl-2 pr-8 py-[4px] {% if settings.body_font_size == 'sm' %}harmony__announcement-bar-sm{% elsif settings.body_font_size == 'lg' %}harmony__announcement-bar-lg{% else %}harmony__announcement-bar-theme-default{% endif %} ring-0 ring-inset focus:ring-2 focus:ring-inset focus:ring-transparent sm:max-w-xs">
                 <option class="harmony__color-text-{{ section.settings.announcement_color_scheme }} harmony__color-background-{{ section.settings.announcement_color_scheme }}">USD</option>
                 <option class="harmony__color-text-{{ section.settings.announcement_color_scheme }} harmony__color-background-{{ section.settings.announcement_color_scheme }}">BGP</option>
                 <option class="harmony__color-text-{{ section.settings.announcement_color_scheme }} harmony__color-background-{{ section.settings.announcement_color_scheme }}">TK</option>
@@ -103,11 +103,11 @@
           <div class="swiper-wrapper">
             {%- for block in section.blocks -%}
               {%- if block.settings.announcement_link -%}
-                <a href="{{ block.settings.announcement_link }}" target="_blank" class="swiper-slide py-3">
+                <a href="{{ block.settings.announcement_link }}" target="_blank" class="swiper-slide py-3 {% if settings.body_font_size == 'sm' %}harmony__announcement-bar-sm{% elsif settings.body_font_size == 'lg' %}harmony__announcement-bar-lg{% else %}harmony__announcement-bar-theme-default{% endif %}">
                   {{ block.settings.text }}
                 </a>
               {%- else -%}
-                <div class="swiper-slide py-3">
+                <div class="swiper-slide py-3 {% if settings.body_font_size == 'sm' %}harmony__announcement-bar-sm{% elsif settings.body_font_size == 'lg' %}harmony__announcement-bar-lg{% else %}harmony__announcement-bar-theme-default{% endif %}">
                   {{ block.settings.text }}
                 </div>
               {%- endif -%}
@@ -132,7 +132,7 @@
         <svg class="h-[16px] w-[16px] harmony__color-icon-{{ section.settings.announcement_color_scheme }}" preserveAspectRatio="xMidYMid" version="1.1" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
           <path d="m128 23.064c34.178 0 38.226 0.13007 51.723 0.74589 12.48 0.56958 19.257 2.6548 23.768 4.4072 5.9742 2.322 10.239 5.0962 14.718 9.5751s7.2531 8.7433 9.5746 14.718c1.7529 4.5109 3.8382 11.288 4.4077 23.768 0.61581 13.498 0.74589 17.546 0.74589 51.723 0 34.178-0.13007 38.226-0.74589 51.723-0.56958 12.48-2.6548 19.257-4.4077 23.768-2.3215 5.9742-5.0957 10.239-9.5746 14.718s-8.7433 7.2531-14.718 9.5746c-4.5109 1.7529-11.288 3.8382-23.768 4.4077-13.495 0.61581-17.543 0.74589-51.723 0.74589-34.18 0-38.228-0.13007-51.723-0.74589-12.48-0.56958-19.257-2.6548-23.768-4.4077-5.9747-2.3215-10.239-5.0957-14.718-9.5746s-7.2531-8.7433-9.5746-14.718c-1.7529-4.5109-3.8382-11.288-4.4077-23.768-0.61581-13.498-0.74589-17.546-0.74589-51.723 0-34.178 0.13007-38.226 0.74589-51.723 0.56958-12.48 2.6548-19.257 4.4077-23.768 2.3215-5.9742 5.0957-10.239 9.5746-14.718s8.7433-7.2531 14.718-9.5751c4.5104-1.7524 11.288-3.8377 23.767-4.4072 13.498-0.61581 17.546-0.74589 51.723-0.74589m0-23.064c-34.763 0-39.121 0.14735-52.774 0.77027-13.625 0.62191-22.929 2.7854-31.071 5.9498-8.4171 3.2711-15.555 7.6479-22.671 14.764s-11.493 14.254-14.764 22.671c-3.1644 8.1423-5.3279 17.447-5.9498 31.071-0.62293 13.652-0.76977 18.011-0.76977 52.774 0 34.763 0.14684 39.122 0.76977 52.774 0.62191 13.625 2.7854 22.929 5.9498 31.071 3.2711 8.4166 7.6479 15.555 14.764 22.671s14.254 11.493 22.671 14.764c8.1423 3.1644 17.447 5.3279 31.071 5.9498 13.653 0.62293 18.011 0.76977 52.774 0.76977 34.763 0 39.122-0.14684 52.774-0.76977 13.625-0.62191 22.929-2.7854 31.071-5.9498 8.4171-3.2711 15.555-7.6479 22.671-14.764s11.493-14.254 14.764-22.671c3.1644-8.1423 5.3279-17.447 5.9498-31.071 0.62293-13.652 0.77028-18.011 0.77028-52.774 0-34.763-0.14735-39.122-0.77028-52.774-0.62191-13.625-2.7854-22.929-5.9498-31.071-3.2711-8.4171-7.6479-15.555-14.764-22.671s-14.254-11.493-22.671-14.764c-8.1423-3.1644-17.447-5.3279-31.071-5.9498-13.652-0.62293-18.011-0.77027-52.774-0.77027zm0 62.27c-36.301 0-65.73 29.428-65.73 65.73s29.428 65.73 65.73 65.73 65.73-29.428 65.73-65.73-29.428-65.73-65.73-65.73zm0 108.4c-23.564 0-42.667-19.103-42.667-42.667s19.103-42.667 42.667-42.667 42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667zm83.687-110.99c0 8.4832-6.8766 15.36-15.36 15.36s-15.36-6.8771-15.36-15.36 6.8771-15.36 15.36-15.36 15.36 6.8766 15.36 15.36z"/></svg>
           <a class="hover:underline" href="{{ settings.social_instagram_link }}" target="_blank">
-            <div class="text-[14px] leading[19px] font-normal">Follow us on IG</div>
+            <div class="{% if settings.body_font_size == 'sm' %}harmony__announcement-bar-sm{% elsif settings.body_font_size == 'lg' %}harmony__announcement-bar-lg{% else %}harmony__announcement-bar-theme-default{% endif %}">Follow us on IG</div>
           </a>
         {% endif %}
       </div>

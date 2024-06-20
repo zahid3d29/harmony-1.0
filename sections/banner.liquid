@@ -39,19 +39,19 @@
       <div class="text-left">
         {% for block in section.blocks %}
           {%- case block.type -%}
-          {%-when 'sub_text_slide' -%}
+          {%-when 'sub_heading' -%}
           <div class="hidden sm:mb-3 sm:flex sm:justify-left">
-            <div class="relative rounded-full text-[14px] leading-[19px] harmony__color-text-secondary-{{ section.settings.banner_color_scheme }}">
-                {{ block.settings.sub_text | escape }}
-            </div>
+            <h4 class="relative rounded-full {% if settings.heading_font_size == 'sm' %}harmony__banner-subheading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__banner-subheading-lg{% else %}harmony__banner-subheading-theme-default{% endif %} harmony__color-text-secondary-{{ section.settings.banner_color_scheme }}">
+              {{ block.settings.sub_heading | escape }}
+            </h4>
           </div>
-          {%-when 'title' -%}
-          <h1 class="harmony__color-text-{{ section.settings.banner_color_scheme }} font-bold tracking-tight text-[42px] leading-[48px] lg:text-[90px] lg:leading-[81px]">{{ block.settings.banner_heading | escape }}</h1>
-          {%-when 'text' -%}
-          <p class="mt-6 text-[18px] leading-[22px] harmony__color-text-{{ section.settings.banner_color_scheme }}">{{ block.settings.banner_text | escape }}</p>
+          {%-when 'heading' -%}
+          <h1 class="harmony__color-text-{{ section.settings.banner_color_scheme }} tracking-tight {% if settings.heading_font_size == 'sm' %}harmony__banner-sm{% elsif settings.heading_font_size == 'lg' %}harmony__banner-lg{% else %}harmony__banner-theme-default{% endif %}">{{ block.settings.banner_heading | escape }}</h1>
+          {%-when 'content' -%}
+          <dd class="mt-6 {% if settings.body_font_size == 'sm' %}harmony__banner-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__banner-content-lg{% else %}harmony__banner-content-theme-default{% endif %} harmony__color-text-{{ section.settings.banner_color_scheme }}">{{ block.settings.banner_text | escape }}</dd>
           {%-when 'button' -%}
           <div class="mt-10 flex items-center justify-start gap-x-6">
-            <a href="{{ block.settings.button_url }}" class="text-[17px] font-semibold leading-[13px] harmony__color-link-{{ section.settings.banner_color_scheme }} transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ block.settings.button_text }} <span class="ml-1.5 harmony__color-icon-{{ section.settings.banner_color_scheme }}" aria-hidden="true">→</span></a>
+            <a href="{{ block.settings.button_url }}" class="{% if settings.body_font_size == 'sm' %}harmony__banner-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__banner-btn-lg{% else %}harmony__banner-btn-theme-default{% endif %} harmony__color-link-{{ section.settings.banner_color_scheme }} transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 duration-300">{{ block.settings.button_text }} <span class="ml-1.5 harmony__color-icon-{{ section.settings.banner_color_scheme }}" aria-hidden="true">→</span></a>
           </div> 
           {% endcase %}
         {% endfor %}
@@ -224,21 +224,21 @@
       ],
       "blocks": [
       {
-        "name": "Sub Text",
-        "type": "sub_text_slide",
+        "name": "Sub Heading",
+        "type": "sub_heading",
          "limit": 1,
         "settings": [
           {
             "type": "text",
-            "id": "sub_text",
-            "label": "Sub Text",
+            "id": "sub_heading",
+            "label": "Sub Heading",
             "default": "eASY Skin Care Routine"
           }
         ]
       },
       {
-        "name": "Title",
-        "type": "title",
+        "name": "Heading",
+        "type": "heading",
         "limit": 1,
         "settings": [
           {
@@ -250,8 +250,8 @@
         ]
       },
       {
-        "name": "Text",
-        "type": "text",
+        "name": "Content",
+        "type": "content",
         "limit": 1,
         "settings": [
           {
