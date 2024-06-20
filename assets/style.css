@@ -29,17 +29,123 @@
 }
 
 @layer components {
-  .harmony__footerbenifits {
-    @apply text-[14px] leading-[19px] font-semibold;
+
+  /* Header Nav Font Size */
+  .harmony__header-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__header-theme-default {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__header-lg {
+    @apply text-[18px] leading-[28px];
+  }
+
+  /* Mega-menu Nav Font Size */
+  .harmony__megamenu_nav-sm {
+    @apply text-[20px] leading-[28px];
+  }
+  .harmony__megamenu_nav-theme-default {
+    @apply text-[26px] leading-[34px];
+  }
+  .harmony__megamenu_nav-lg {
+    @apply text-[30px] leading-[36px];
+  }
+
+  /* Mega-menu product info. Font Size */
+  .harmony__megamenu_product_info-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__megamenu_product_info-theme-default {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__megamenu_product_info-lg {
+    @apply text-[18px] leading-[28px];
+  }
+
+  /* Mega-menu product desc. Font Size */
+  .harmony__megamenu_product_desc-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__megamenu_product_desc-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__megamenu_product_desc-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  /* Offcanvas Nav Font Size */
+  .harmony__offcanvas_nav-sm {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__offcanvas_nav-theme-default {
+    @apply text-[18px] leading-[28px];
+  }
+  .harmony__offcanvas_nav-lg {
+    @apply text-[20px] leading-[28px];
+  }
+
+  /* Offcanvas product info. Font Size */
+  .harmony__offcanvas_product_info-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__offcanvas_product_info-theme-default {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__offcanvas_product_info-lg {
+    @apply text-[18px] leading-[28px];
+  }
+
+  /* Offcanvas product desc. Font Size */
+  .harmony__offcanvas_product_desc-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__offcanvas_product_desc-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__offcanvas_product_desc-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  /* GDPR Section Font Size */
+  .harmony__gdpr-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__gdpr-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__gdpr-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  /* Footer Benefits Font Size */
+  .harmony__footerbenifits-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__footerbenifits-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__footerbenifits-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  /* Footer Font Size */
+  .harmony__footer-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__footer-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__footer-lg {
+    @apply text-[16px] leading-[24px];
   }
 }
 
 @layer utilities {
-  /* .filter-none {
+  .filter-none {
     filter: none;
-  } */
+  }
   .filter-grayscale {
     filter: grayscale(100%);
   }
-  
 }
