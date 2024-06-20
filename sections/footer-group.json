@@ -52,7 +52,6 @@
       "settings": {
         "footerbenifits_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "enable_gradient": false,
-        "section_font_size": "theme_default",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -71,7 +70,7 @@
         "brand_eCFMz9": {
           "type": "brand",
           "settings": {
-            "text": "<p>290 Maryam Springs Courbevoie, NYC +1 283 879 90<\/p>",
+            "address": "<p>290 Maryam Springs Courbevoie, NYC +1 283 879 90<\/p>",
             "contact_label": "Send a message",
             "url": "shopify:\/\/pages\/contact"
           }

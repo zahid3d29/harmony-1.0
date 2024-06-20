@@ -1,11 +1,18 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "logo": "shopify:\/\/shop_images\/swiss-white.png",
-    "use_font": "theme",
     "type_header_font": "fette_gotisch_n4",
-    "heading_font_scale": 16,
-    "type_body_font": "fette_gotisch_n4",
-    "body_font_scale": 14,
+    "type_body_font": "alfie_n4",
+    "body_font_size": "theme_default",
     "social_twitter_link": "x.com",
     "social_facebook_link": "facebook.com",
     "social_instagram_link": "https:\/\/www.instagram.com\/",
@@ -30,6 +37,9 @@
     "product_card_shadow_spread": 10,
     "product_card_shadow_horizontal_offset": 0,
     "product_card_shadow_vertical_offset": 0,
+    "use_font": "theme",
+    "heading_font_scale": 16,
+    "body_font_scale": 14,
     "heading_font_wieght": "400",
     "product_card_horizontal_offset": 19,
     "product_card_vertical_offset": 14,
@@ -78,10 +88,10 @@
           "text": "#ffffff",
           "text_secondary": "#ffffff",
           "background": "#304834",
-          "background_gradient": "",
+          "background_gradient": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(168, 255, 251, 1) 100%)",
           "primary_button": "#304834",
           "on_primary_button": "#ffffff",
-          "primary_button_border": "#ff0000",
+          "primary_button_border": "#707070",
           "secondary_button": "",
           "on_secondary_button": "#ffffff",
           "secondary_button_border": "#ffffff",
@@ -115,13 +125,13 @@
           "background_gradient": "",
           "primary_button": "#ffffff",
           "on_primary_button": "#ffffff",
-          "primary_button_border": "#ff0000",
+          "primary_button_border": "#707070",
           "secondary_button": "#ffffff",
           "on_secondary_button": "#121212",
-          "secondary_button_border": "#ff0000",
-          "icons": "#ff0000",
-          "border": "#e2dbcc",
-          "links": "#0e1b4d"
+          "secondary_button_border": "#707070",
+          "icons": "#0e1b4d",
+          "border": "#707070",
+          "links": "#eefd8d"
         }
       },
       "scheme-76cdf123-1940-4de0-a1a4-515fc3d99f61": {

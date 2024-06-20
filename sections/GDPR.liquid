@@ -9,10 +9,10 @@
             </button>
         </div>
         <div class="flex flex-wrap items-center text-center md:text-left justify-center md:justify-left gap-x-4 gap-y-2">
-            <div class="text-[12px] leading-[16px] harmony__color-text-{{ section.settings.gdpr_color_scheme }} justify-center md:justify-start">
+            <div class="{% if settings.body_font_size == 'sm' %}harmony__gdpr-sm{% elsif settings.body_font_size == 'lg' %}harmony__gdpr-lg{% else %}harmony__gdpr-theme-default{% endif %} harmony__color-text-{{ section.settings.gdpr_color_scheme }} justify-center md:justify-start">
                 {{ section.settings.content }}
             </div>
-            <a href="{{ section.settings.link }}" class="flex-none text-[12px] leading-[16px] harmony__color-link-{{ section.settings.gdpr_color_scheme }} font-semibold">{{ section.settings.link_text }}</a>
+            <a href="{{ section.settings.link }}" class="flex-none {% if settings.body_font_size == 'sm' %}harmony__gdpr-sm{% elsif settings.body_font_size == 'lg' %}harmony__gdpr-lg{% else %}harmony__gdpr-theme-default{% endif %} harmony__color-link-{{ section.settings.gdpr_color_scheme }}">{{ section.settings.link_text }}</a>
         </div>
     </div>
 </section>

@@ -24,15 +24,15 @@
               <div class="footer__about grid grid-cols-1 w-full lg:w-1/2 gap-x-8">
                 <div class="group relative text-base sm:text-[14px]">
                   <div class="subscription">
-                    <h4
+                    <label
                       id="footer__label"
-                      class="inline-block text-[14px] leading-[19px] font-normal border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-4 py-1 mb-3"
+                      class="inline-block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-4 py-1 mb-3"
                     >
                       {{ block.settings.heading }}
-                    </h4>
-                    <div aria-hidden="true" class="text-[14px] leading-[19px] font-normal  my-4">
+                    </label>
+                    <dd aria-hidden="true" class="{% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal my-4">
                       {{ block.settings.text }}
-                    </div>
+                    </dd>
                     <div class="mt-6 flex max-w-md gap-x-1">
                       <label for="email-address" class="sr-only px-0">Email address</label>
                       <input
@@ -41,7 +41,7 @@
                         type="email"
                         autocomplete="email"
                         required="required"
-                        class="min-w-0 flex-auto border-0 border-b harmony__color-border-{{ section.settings.footer_color_scheme }} bg-transparent px-0 py-2 focus:ring-0 focus:harmony__color-border-{{ section.settings.footer_color_scheme }} focus:outline-none focus:border-b-1 text-[14px] leading-[19px] font-normal opacity-50" placeholder="Enter your email address">
+                        class="min-w-0 flex-auto border-0 border-b harmony__color-border-{{ section.settings.footer_color_scheme }} bg-transparent px-0 py-2 focus:ring-0 focus:harmony__color-border-{{ section.settings.footer_color_scheme }} focus:outline-none focus:border-b-1 {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal opacity-50" placeholder="Enter your email address">
                       <button type="submit" class="flex-none">
                         <span class="border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-[6px] py-[5px] transition">→</span>
                       </button>
@@ -93,16 +93,16 @@
               {% when 'menu' %}
                 <div class="footer__links">
                   <div class="footer__title group">
-                    <h4 id="footer__label"
-                      class="inline-block text-[14px] leading-[19px] font-normal border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-4 py-1 mb-3">
+                    <label id="footer__label"
+                      class="inline-block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-4 py-1 mb-3">
                       {{ block.settings.title }}
-                    </h4>
-                    <div aria-hidden="true" class="text-[14px] leading-[19px] font-normal my-4">
+                    </label>
+                    <div aria-hidden="true" class="my-4">
                       <nav class="list-none">
                         <ul
                           role="list"
                           aria-labelledby="Accessories-heading"
-                          class="space-y-6 sm:space-y-4 text-[14px] leading-[19px] font-normal mt-[33px]"
+                          class="space-y-6 sm:space-y-4 {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal mt-[33px]"
                         >
                           {% for link in block.settings.menu.links %}
                             <li class="flex">
@@ -118,20 +118,20 @@
                 </div>
               {% when 'brand' %}
                 <div class="footer__column">
-                  <h4
+                  <label
                     id="footer__label"
-                    class="inline-block text-[14px] leading-[19px] font-normal border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-4 py-1"
+                    class="inline-block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal border rounded-full harmony__color-text-{{ section.settings.footer_color_scheme }} harmony__color-background-{{ section.settings.footer_color_scheme }} harmony__color-border-{{ section.settings.footer_color_scheme }} px-4 py-1"
                   >
                     Contact
-                  </h4>
-                  <div aria-hidden="true" class="text-[14px] leading-[22px] font-normal  mt-[33px]">
-                    {{ block.settings.text }}
+                  </label>
+                  <div aria-hidden="true" class="{% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal mt-[33px]">
+                    <address>{{ block.settings.address }}</address>
                   </div>
                   {% if block.settings.contact_label != blank %}
-                    <h4 class="block text-[14px] leading-[19px] font-normal  opacity-50 hover:opacity-100 mt-[33px]">
+                    <label class="block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal opacity-50 hover:opacity-100 mt-[33px]">
                       Need help?
-                    </h4>
-                    <a href="#" class="block text-[14px] leading-[19px] font-normal  hover:opacity-50">
+                    </label>
+                    <a href="#" class="block {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal hover:opacity-50">
                       {{ block.settings.contact_label }}
                     </a>
                   {% endif %}
@@ -148,16 +148,15 @@
         <div class="footer__lang-currency relative flex items-center justify-center lg:justify-start gap-x-4">
           <div class="grid grid-cols-2 gap-x-2 lg:grid-cols-2">
             {% if section.settings.language_c %}
-              <div class="language__selection mt-2">
+              <div class="mt-2">
                 <select
                   id="country"
                   name="country"
                   autocomplete="country-name"
-                  class="block w-full border-0 bg-transparent py-1.5 text-[14px] leading-[19px] font-normal  ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs"
-                >
-                  <option class="harmony__color-{{ section.settings.color_scheme }}">English</option>
-                  <option class="harmony__color-{{ section.settings.color_scheme }}">Canada</option>
-                  <option class="harmony__color-{{ section.settings.color_scheme }}">Mexico</option>
+                  class="language__selection block w-full border-0 bg-transparent py-1.5 {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs">
+                  <option class="harmony__color-{{ section.settings.footer_color_scheme }}">English</option>
+                  <option class="harmony__color-{{ section.settings.footer_color_scheme }}">Canada</option>
+                  <option class="harmony__color-{{ section.settings.footer_color_scheme }}">Mexico</option>
                 </select>
               </div>
             {% endif %}
@@ -167,11 +166,10 @@
                   id="currency"
                   name="currency"
                   autocomplete="currency-name"
-                  class="currency__selection block w-md border-0 bg-transparent py-1.5 text-[14px] leading-[19px] font-normal  ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs"
-                >
-                  <option class="bg-black">USD</option>
-                  <option class="harmony__color-{{ section.settings.color_scheme }}">BGP</option>
-                  <option class="harmony__color-{{ section.settings.color_scheme }}">TK</option>
+                  class="currency__selection block w-full border-0 bg-transparent py-1.5 {% if settings.body_font_size == 'sm' %}harmony__footer-sm{% elsif settings.body_font_size == 'lg' %}harmony__footer-lg{% else %}harmony__footer-theme-default{% endif %} font-normal ring-0 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:max-w-xs">
+                  <option class="harmony__color-{{ section.settings.footer_color_scheme }}">USD</option>
+                  <option class="harmony__color-{{ section.settings.footer_color_scheme }}">BGP</option>
+                  <option class="harmony__color-{{ section.settings.footer_color_scheme }}">TK</option>
                 </select>
               </div>
             {% endif %}
@@ -390,8 +388,9 @@
       "settings":[
         {
           "type":"richtext",
-          "id":"text",
-          "label":"Text"
+          "id":"address",
+          "label":"Text",
+          "default": "<p>290 Maryam Springs Courbevoie, NYC +1 283 879 90</p>"
         },
         {
           "type":"text",

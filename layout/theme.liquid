@@ -22,12 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
-    
-    {% comment %} We check if its a system font, or a web-safe font {% endcomment %}
-    {% unless settings.type_header_font.system? and settings.type_body_font.system? %}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {% endunless %}
-
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
@@ -38,8 +32,14 @@
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
 
     {% style %}
+
       {% for scheme in settings.color_schemes %}
         .harmony__color-background-gradient-{{ scheme.id }}{
           background: {{ scheme.settings.background_gradient }};
@@ -83,32 +83,32 @@
         }
       {% endfor %}
 
-      :root {
-        --font-body-family: {{ settings.type_body_font | font_face: font_display: 'swap' }}, {{ settings.type_body_font.fallback_families }};
-        --font-body-scale: {{ settings.body_font_scale  }}px;
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+      {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
-        --font-heading-family: {{ settings.type_header_font | font_face: font_display: 'swap' }}, {{ settings.type_header_font.fallback_families }};
-        --font-heading-scale: {{ settings.heading_font_scale }}px;
+
+      :root {
+
+        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-style: {{ settings.type_body_font.style }};
+        --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+
+        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-style: {{ settings.type_header_font.style }};
+        --font-heading-weight: {{ settings.type_header_font.weight }};
       }
 
-      {%- if settings.use_font == 'system' -%}
-        h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl{
-          font-family: var(--font-heading-family);
-          font-style: var(--font-heading-style);
-          font-weight: var(--font-heading-weight);
-          font-size: var(--font-heading-scale);
-        }
-        p, a, button, input, optgroup, select, textarea {
-          font-family: var(--font-body-family);
-        }
-      {% else %}
-        h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl{
-          font-family: "NeuzeitS Book" !important;
-        }
-        p, a, button, input, optgroup, select, textarea {
-          font-family: "Neue Haas Unica W1G" !important;
-        }
-      {%- endif -%}
+      div, p, a, button, input, optgroup, select, textarea, label, dd, li, ul, .text-sm, .text-base {
+        font-family: var(--font-body-family);
+      }
+
+      h1,h2,h3,h4,h5,h6,.text-lg,.text-xl,.text-2xl,.text-3xl {
+        font-family: var(--font-heading-family);
+      }
 
       .cart__update-loader {
         opacity: 1;

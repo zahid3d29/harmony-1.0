@@ -226,3 +226,23 @@ Simply include the placeholder name, followed by the placeholder_svg_tag filter:
   {{ 'image' | placeholder_svg_tag: 'w-50' }}
 {% endif %}
 
+
+.harmony__footerbenifits-base {
+  @apply text-[14px] leading-[20px] font-normal;
+}
+.harmony__footerbenifits-small {
+  @apply text-[12px] leading-[16px] font-normal;
+}
+.harmony__footerbenifits-large {
+  @apply text-[16px] leading-[24px] font-normal;
+}
+
+
+{% if settings.body_font_size == 'sm' %}harmony__gdpr-sm{% elsif settings.body_font_size == 'lg' %}harmony__gdpr-lg{% else %}harmony__gdpr-theme-default{% endif %}
+
+{% if settings.body_font_size == 'sm' %}harmony__offcanvas_product_info-sm{% elsif settings.body_font_size == 'lg' %}harmony__offcanvas_product_info-lg{% else %}harmony__offcanvas_product_info-theme-default{% endif %}
+
+{% if settings.body_font_size == 'sm' %}harmony__megamenu_product_desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__megamenu_product_desc-lg{% else %}harmony__offcanvas_product_desc-theme-default{% endif %}
+
+
+  npx tailwindcss -i ./assets/style.css -o ./assets/output.css --watch

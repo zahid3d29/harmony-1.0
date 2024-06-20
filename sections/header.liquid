@@ -1,11 +1,11 @@
 {%- style -%}
-  .section-{{ section.id }}-padding {
+  .harmony--{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
   @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
+    .harmony--{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
@@ -62,9 +62,9 @@
         </button>
       </div>
       {% comment %} header Main navigation for large screen {% endcomment %}
-      <div class="header__main-nav lg:flex lg:gap-x-12 text-[16px] font-semibold leading-[22px]">
+      <div class="header__main-nav lg:flex lg:gap-x-12 {% if settings.body_font_size == 'sm' %}harmony__header-sm{% elsif settings.body_font_size == 'lg' %}harmony__header-lg{% else %}harmony__header-theme-default{% endif %}">
         <div class="w-full md:block md:w-auto" id="navbar-multi-level">
-          <ul class="main__nav-list hidden lg:flex flex-col font-medium p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul class="main__nav-list hidden lg:flex flex-col p-4 md:p-0 mt-4 harmony__color-text-{{ section.settings.header_color_scheme }} border harmony__color-border-{{ section.settings.header_color_scheme }} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {% for main_link in linklists[section.settings.main_menu].links %}
               {% if main_link.links.size > 0 %}
                 <div class="dropdown_menu">
@@ -89,9 +89,9 @@
                     <!-- Nav first level Dropdown sub-nav-menu -->
                     <div
                       id="dropdownNavbar"
-                      class="nav__sub-menu absolute z-10 font-normal divide-y divide-gray-100  shadow w-44"
+                      class="nav__sub-menu absolute z-10 divide-y divide-gray-100  shadow w-44"
                     >
-                      <ul class="py-2 text-[14px] leading-[19px] harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }}" aria-labelledby="dropdownLargeButton">
+                      <ul class="py-2 {% if settings.body_font_size == 'sm' %}harmony__header-sm{% elsif settings.body_font_size == 'lg' %}harmony__header-lg{% else %}harmony__header-theme-default{% endif %} harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }}" aria-labelledby="dropdownLargeButton">
                         {% for child_link in main_link.links %}
                           {% if child_link.links.size > 0 %}
                             <li aria-labelledby="dropdownNavbarLink" class="double_drop">
@@ -118,7 +118,7 @@
                                 class="nav__sub__menu-child absolute left-[180px] top-12 z-10 divide-y divide-gray-100 shadow w-44"
                               >
                                 <ul
-                                  class="nav__sub-menu-child py-2 text-[14px] leading-[19px] harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }}"
+                                  class="nav__sub-menu-child py-2 {% if settings.body_font_size == 'sm' %}harmony__header-sm{% elsif settings.body_font_size == 'lg' %}harmony__header-lg{% else %}harmony__header-theme-default{% endif %} harmony__color-text-{{ section.settings.header_color_scheme }} harmony__color-background-{{ section.settings.header_color_scheme }}"
                                   aria-labelledby="doubleDropdownButton"
                                 >
                                   {% for grand_child in child_link.links %}
@@ -219,7 +219,7 @@
             >
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"></path>
             </svg>
-            <span class="hidden ml-2 text-[14px] leading-[19px] font-medium">3</span>
+            <span class="cart__count ml-2 {% if settings.body_font_size == 'sm' %}harmony__header-sm{% elsif settings.body_font_size == 'lg' %}harmony__header-lg{% else %}harmony__header-theme-default{% endif %}">3</span>
             <span class="sr-only">items in cart, view bag</span>
           </a>
         {% endif %}

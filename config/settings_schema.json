@@ -33,7 +33,7 @@
       }
     ]
   },
-  {
+  { 
     "name": "Color Scheme",
     "settings": [
       {
@@ -150,6 +150,7 @@
           "links": "links"
         }
       }
+      
     ]
   },
   {
@@ -160,40 +161,35 @@
         "content": "Use typography to present your design and content as clearly and efficiently as possible."
       },
       {
-        "type": "select",
-        "id": "use_font",
-        "label": "Use font?",
-        "options": [
-          {
-            "value": "system",
-            "label": "System"
-          },
-          {
-            "value": "theme",
-            "label": "Theme"
-          }
-        ]
-      },
-      {
         "type": "header",
         "content": "Headings"
       },
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "inter_n7",
+        "default": "serif",
         "label": "Font",
         "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
       },
       {
-        "type": "range",
-        "id": "heading_font_scale",
-        "min": 14,
-        "max": 128,
-        "step": 2,
-        "unit": "px",
-        "label": "Heading Font Size",
-        "default": 16
+        "type": "select",
+        "id": "heading_font_size",
+        "label": "Font Size",
+        "options": [
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "theme_default",
+            "label": "Theme Default"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          }
+        ],
+        "default": "theme_default"
       },
       {
         "type": "header",
@@ -202,20 +198,30 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "inter_n4",
+        "default": "serif",
         "label": "Font",
         "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
       },
       {
-        "type": "range",
-        "id": "body_font_scale",
-        "min": 10,
-        "max": 90,
-        "step": 1,
-        "unit": "px",
-        "label": "Body Font Size",
-        "default": 14
-      }
+        "type": "select",
+        "id": "body_font_size",
+        "label": "Font Size",
+        "options": [
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "theme_default",
+            "label": "Theme Default"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          }
+        ],
+        "default": "theme_default"
+      },
     ]
   },
   {
