@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="{{ 'swiper_bundle.min.css' | asset_url }}">
 
+<link rel="stylesheet" href="{{ 'swiper_bundle.min.css' | asset_url }}">
 
 {%- style -%}
   #currency {
@@ -9,7 +9,8 @@
     background-color: transparent;
     background-image: none;
   }
-  .swiper-button-next svg, .swiper-button-prev svg {
+  .swiper-button-next svg, 
+  .swiper-button-prev svg {
     width: 15px !important;
     height: 15px !important;
   }
@@ -19,13 +20,14 @@
     width: 100%;
     max-height: 50px;
   }
-  .mySwiper-{{ section.id }} .swiper-button-next:after, .mySwiper-{{ section.id }} .swiper-button-prev:after {
+  .mySwiper-{{ section.id }} .swiper-button-next:after, .mySwiper-{{ section.id }} .swiper-button-next:after {
     content: '';
   }
-  .mySwiper-{{ section.id }} .swiper-button-prev:after, .mySwiper-{{ section.id }} .swiper-button-next:after {
+  .mySwiper-{{ section.id }} .swiper-button-prev:after, .mySwiper-{{ section.id }} .swiper-button-prev:after {
     content: '';
   }
 {% endstyle %}
+
 
 
 <section id="harmony--{{ section.id }}" class="section__announcement-bar harmony__color-text-{{ section.settings.announcement_color_scheme }} {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.announcement_color_scheme }} {% else %} harmony__color-background-{{ section.settings.announcement_color_scheme }} {% endif %}">
@@ -113,13 +115,13 @@
               {%- endif -%}
             {%- endfor -%} 
           </div>
-          <button class="swiper-button-prev relative inline-flex items-center">
+          <button class="next relative inline-flex items-center">
             <span class="sr-only">Previews</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[9px] h-[9px] harmony__color-icon-{{ section.settings.announcement_color_scheme }}">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
           </button> 
-          <button class="swiper-button-next relative inline-flex items-center">
+          <button class="next relative inline-flex items-center">
             <span class="sr-only">Next</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[9px] h-[9px] harmony__color-icon-{{ section.settings.announcement_color_scheme }}">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
@@ -143,168 +145,167 @@
 
 
 {% schema %}
-{
-  "name": "t:sections.announcement-bar.name",
-  "max_blocks": 3,
-  "class": "harmony_section-announcement-bar",
-  "enabled_on": {
-    "groups": ["header"]
-  },
-  "settings": [
-    {
-      "type": "header",
-      "content": "Section Color & Style"
+  {
+    "name": "t:sections.announcement-bar.name",
+    "max_blocks": 3,
+    "class": "harmony_section-announcement-bar",
+    "enabled_on": {
+      "groups": ["header"]
     },
-    {
-      "type": "color_scheme",
-      "id": "announcement_color_scheme",
-      "label": "t:sections.announcement-bar.settings.color_scheme.label",
-      "default": "scheme-1"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_gradient",
-      "label": "Background Gradient?",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__1.content",
-      "info": "t:sections.announcement-bar.settings.header__1.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_social",
-      "default": true,
-      "label": "t:sections.announcement-bar.settings.show_social.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__2.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "auto_slide",
-      "label": "t:sections.announcement-bar.settings.auto_slide.label",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "slide_loop",
-      "label": "t:sections.announcement-bar.settings.slide_loop.label",
-      "default": false
-    },
-    {
-      "type": "select",
-      "id": "direction_slide",
-      "label": "Slide Direction",
-      "options": [
-        {
-          "value": "vertical",
-          "label": "Vertical"
-        },
-        {
-          "value": "horizontal",
-          "label": "Horizontal"
-        }
-      ],
-      "default": "vertical"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__3.content",
-      "info": "t:sections.announcement-bar.settings.header__3.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": true,
-      "label": "t:sections.announcement-bar.settings.enable_country_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.announcement-bar.settings.header__4.content",
-      "info": "t:sections.announcement-bar.settings.header__4.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": true,
-      "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "Section padding"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.announcement-bar.settings.padding_top.label",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.announcement-bar.settings.padding_bottom.label",
-      "default": 36
-    }
-  ],
-  "blocks": [
-    {
-      "type": "announcement",
-      "name": "t:sections.announcement-bar.blocks.announcement.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "text",
-          "default": "Welcome to our store",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label",
-          "info": "You can use html tag here. ex: &nbsp, <strong>, <strike></strike> etc"
-        },
-        {
-          "type": "url",
-          "id": "announcement_link",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.announcement-bar.name",
-      "blocks": [
-        {
-          "type": "announcement"
-        }
-      ]
-    }
-  ]
-}
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Color & Style"
+      },
+      {
+        "type": "color_scheme",
+        "id": "announcement_color_scheme",
+        "label": "t:sections.announcement-bar.settings.color_scheme.label",
+        "default": "scheme-1"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gradient",
+        "label": "Background Gradient?",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:sections.announcement-bar.settings.header__1.content",
+        "info": "t:sections.announcement-bar.settings.header__1.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_social",
+        "default": true,
+        "label": "t:sections.announcement-bar.settings.show_social.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.announcement-bar.settings.header__2.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "auto_slide",
+        "label": "t:sections.announcement-bar.settings.auto_slide.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_loop",
+        "label": "t:sections.announcement-bar.settings.slide_loop.label",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "direction_slide",
+        "label": "Slide Direction",
+        "options": [
+          {
+            "value": "vertical",
+            "label": "Vertical"
+          },
+          {
+            "value": "horizontal",
+            "label": "Horizontal"
+          }
+        ],
+        "default": "vertical"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.announcement-bar.settings.header__3.content",
+        "info": "t:sections.announcement-bar.settings.header__3.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_country_selector",
+        "default": true,
+        "label": "t:sections.announcement-bar.settings.enable_country_selector.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.announcement-bar.settings.header__4.content",
+        "info": "t:sections.announcement-bar.settings.header__4.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_language_selector",
+        "default": true,
+        "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
+      },
+      {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.announcement-bar.settings.padding_top.label",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.announcement-bar.settings.padding_bottom.label",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "t:sections.announcement-bar.blocks.announcement.name",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "text",
+            "default": "Welcome to our store",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label",
+            "info": "You can use html tag here. ex: &nbsp, <strong>, <strike></strike> etc"
+          },
+          {
+            "type": "url",
+            "id": "announcement_link",
+            "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.announcement-bar.name",
+        "blocks": [
+          {
+            "type": "announcement"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
   
-
-
 
 {%- assign loopSlide = section.settings.slide_loop -%}
 {%- assign autoSlide = section.settings.auto_slide -%}
 {%- assign directionSlide = section.settings.direction_slide -%}
 
 <script>
-  var slideLoop = {{ loopSlide }};
-  var autoPlaySlide = {{ autoSlide }};
-  var slideDirection = {{ directionSlide }}; 
+  var slideLoop = {{ loopSlide | json }};
+  var autoPlaySlide = {{ autoSlide | json }};
+  var slideDirection = "{{ directionSlide }}"; 
+
   var swiper = new Swiper(".mySwiper-{{ section.id }}", {
     direction: slideDirection,
-    autoplay: autoPlaySlide,
-    effect: slide,
+    autoplay: autoPlaySlide ? { delay: 3000 } : false,
+    effect: 'slide',
     loop: slideLoop,
     navigation: {
       nextEl: ".mySwiper-{{ section.id }} .swiper-button-next",

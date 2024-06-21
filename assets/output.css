@@ -839,6 +839,99 @@ h1 {
   line-height: 28px;
 }
 
+/* Page header Section Font Size */
+
+.harmony__page-header-heading-sm {
+  font-size: 27px;
+  line-height: 33px;
+}
+
+@media (min-width: 768px) {
+  .harmony__page-header-heading-sm {
+    font-size: 37px;
+    line-height: 43px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__page-header-heading-sm {
+    font-size: 47px;
+    line-height: 53px;
+  }
+}
+
+.harmony__page-header-heading-theme-default {
+  font-size: 37px;
+  line-height: 43px;
+}
+
+@media (min-width: 768px) {
+  .harmony__page-header-heading-theme-default {
+    font-size: 47px;
+    line-height: 53px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__page-header-heading-theme-default {
+    font-size: 67px;
+    line-height: 73px;
+  }
+}
+
+.harmony__page-header-heading-lg {
+  font-size: 47px;
+  line-height: 53px;
+}
+
+@media (min-width: 768px) {
+  .harmony__page-header-heading-lg {
+    font-size: 57px;
+    line-height: 63px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__page-header-heading-lg {
+    font-size: 77px;
+    line-height: 83px;
+  }
+}
+
+/* Page header Caption Section Font Size */
+
+.harmony__page-header-caption-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__page-header-caption-theme-default {
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.harmony__page-header-caption-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Page header description Section Font Size */
+
+.harmony__page-header-desc-sm {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.harmony__page-header-desc-theme-default {
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.harmony__page-header-desc-lg {
+  font-size: 24px;
+  line-height: 28px;
+}
+
 /* GDPR Section Font Size */
 
 .harmony__gdpr-sm {
@@ -854,6 +947,65 @@ h1 {
 .harmony__gdpr-lg {
   font-size: 16px;
   line-height: 24px;
+}
+
+/* Featured Collection Section Font Size */
+
+.harmony__featured-collection-sm {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@media (min-width: 768px) {
+  .harmony__featured-collection-sm {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__featured-collection-sm {
+    font-size: 42px;
+    line-height: 48px;
+  }
+}
+
+.harmony__featured-collection-theme-default {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@media (min-width: 768px) {
+  .harmony__featured-collection-theme-default {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__featured-collection-theme-default {
+    font-size: 50px;
+    line-height: 68px;
+  }
+}
+
+.harmony__featured-collection-lg {
+  font-size: 32px;
+  line-height: 42px;
+}
+
+@media (min-width: 768px) {
+  .harmony__featured-collection-lg {
+    font-size: 48px;
+    line-height: 62px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__featured-collection-lg {
+    font-size: 62px;
+    line-height: 72px;
+  }
 }
 
 /* Footer Benefits Font Size */
@@ -3268,10 +3420,6 @@ h1 {
   font-size: 35px;
 }
 
-.text-\[37px\] {
-  font-size: 37px;
-}
-
 .text-\[45px\] {
   font-size: 45px;
 }
@@ -3295,8 +3443,8 @@ h1 {
 }
 
 .text-sm {
-  font-size: var(--font-size-sm);
-  line-height: 1.428;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl {
@@ -3419,10 +3567,6 @@ h1 {
 
 .leading-\[41px\] {
   line-height: 41px;
-}
-
-.leading-\[43px\] {
-  line-height: 43px;
 }
 
 .leading-\[46px\] {
@@ -4365,8 +4509,8 @@ h1 {
   }
 
   .sm\:text-sm {
-    font-size: var(--font-size-sm);
-    line-height: 1.428;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .sm\:leading-6 {
@@ -4761,20 +4905,12 @@ h1 {
     font-size: 36px;
   }
 
-  .md\:text-\[47px\] {
-    font-size: 47px;
-  }
-
   .md\:leading-\[40px\] {
     line-height: 40px;
   }
 
   .md\:leading-\[42px\] {
     line-height: 42px;
-  }
-
-  .md\:leading-\[53px\] {
-    line-height: 53px;
   }
 
   .md\:hover\:bg-transparent:hover {
@@ -5340,10 +5476,6 @@ h1 {
     font-size: 60px;
   }
 
-  .lg\:text-\[67px\] {
-    font-size: 67px;
-  }
-
   .lg\:text-\[80px\] {
     font-size: 80px;
   }
@@ -5384,10 +5516,6 @@ h1 {
 
   .lg\:leading-\[70px\] {
     line-height: 70px;
-  }
-
-  .lg\:leading-\[73px\] {
-    line-height: 73px;
   }
 
   .lg\:leading-\[96px\] {

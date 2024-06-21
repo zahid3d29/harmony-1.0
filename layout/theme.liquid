@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="harmony">
     <link rel="canonical" href="{{ canonical_url }}">
+
     {% if settings.favicon != blank %}
       <link fetchpriority="low" rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" sizes="32x32">
     {% endif %}
@@ -13,21 +14,22 @@
     <meta name="description" content="{{ page_description | default: shop.name | escape }}">
     <link rel="preconnect" href="//fonts.googleapis.com">
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
-    <link href="//fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=Neue+Haas+Unica+W1G" rel="stylesheet">
-    <link href="//db.onlinewebfonts.com/c/c10b8c44adcd28d073240edf9ebf72af?family=NeuzeitS+Book" rel="stylesheet">
+    {% comment %} <link href="//fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="//db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=Neue+Haas+Unica+W1G" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="//db.onlinewebfonts.com/c/c10b8c44adcd28d073240edf9ebf72af?family=NeuzeitS+Book" rel="stylesheet"> {% endcomment %}
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
     {% comment %} External CSS files  {% endcomment %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js')
       window.addEventListener('load', () => document.documentElement.classList.add('ready'))
     </script>
 
- 
+
+
     <link rel="stylesheet" href="{{ 'output.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
     <script src="//cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -89,9 +91,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
-
       :root {
-
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
@@ -126,7 +126,7 @@
         display: inline-block;
         width: 15px; 
         height: 15px; 
-        background-image: url(https://cdn.shopify.com/s/files/1/0586/2499/9582/files/Spinning_arrows.gif?v=1716187034);
+        background-image: url(//cdn.shopify.com/s/files/1/0586/2499/9582/files/Spinning_arrows.gif?v=1716187034);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -142,6 +142,7 @@
 
     <script type="module"> import '{{ "liquid-ajax-cart" | asset_url }}';</script>
     <script src="{{ 'swiper_bundle.min.js' | asset_url }}"></script>
+    
 
     {{ content_for_header }}
 

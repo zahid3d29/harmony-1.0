@@ -1,14 +1,15 @@
 <style>
-    .section-{{ section.id }}-padding {
+    .harmony--{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
         padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
-    section#harmony--{{ section.id }} .featured__collection-tab button.active {
+    #harmony--{{ section.id }} .featured__collection-tab h2.active {
         padding-left: 60px;
         transition: 0.5s;
         opacity: 1;
     }
-    #harmony--{{ section.id }} .featured__collection-tab button.active::before {
+
+    #harmony--{{ section.id }} .featured__collection-tab h2.active::before {
         content: "\2212";
         font-size: 50px;
         font-weight: 100;
@@ -17,21 +18,21 @@
     }
 
     @media only screen and ( max-width: 1024px ){
-        #harmony--{{ section.id }} .featured__collection-tab button.active::before {
+        #harmony--{{ section.id }} .featured__collection-tab h2.active::before {
             font-size: 36px;
         }
     }
 
     @media only screen and ( max-width: 600px ){
-        section#harmony--{{ section.id }} .featured__collection-tab button.active {
+        #harmony--{{ section.id }} .featured__collection-tab h2.active {
             padding-left: 40px;
             transition: 0.5s;
         }
-        .section-{{ section.id }}-padding {
+        .harmony--{{ section.id }}-padding {
             padding-top: {{ section.settings.padding_top }}px;
             padding-bottom: {{ section.settings.padding_bottom }}px;
         }
-        #harmony--{{ section.id }} .featured__collection-tab button.active::before {
+        #harmony--{{ section.id }} .featured__collection-tab h2.active::before {
             font-size: 24px;
         }
     }
@@ -39,12 +40,13 @@
 </style>
 
 
-<section id="harmony--{{ section.id }}" class="section__featured-collection {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.fcoll_color_scheme }} {% else %} harmony__color-background-{{ section.settings.fcoll_color_scheme }} {% endif %} section-{{ section.id }}-padding">
+
+<section id="harmony--{{ section.id }}" class="section__featured-collection {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.fcoll_color_scheme }} {% else %} harmony__color-background-{{ section.settings.fcoll_color_scheme }} {% endif %} harmony--{{ section.id }}-padding">
     <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-x-8 gap-y-5 px-6 py-5 sm:py-5 md:grid-cols-2 md:px-10">
         <div class="featured__collection-tab-wrapper flex flex-nowrap gap-x-0 gap-y-0 justify-start items-center">
             <div class="featured__collection-tab">
                 {% for block in section.blocks %}
-                    <button class="categoryLinks block mb-[25px] px-15 py-0 w-full harmony__color-text-{{ section.settings.fcoll_color_scheme }} border-b harmony__color-border-{{ section.settings.fcoll_color_scheme }} outline-none text-left cursor-pointer text-[24px] leading-1 md:text-[36px] md:leading-1 lg:text-[50px] lg:leading-[96px] opacity-30 font-semibold hover:border-b-2 hover:harmony__color-text-{{ section.settings.fcoll_color_scheme }} transition ease-in-out delay-50" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultCatsOpen"{% endif %}>{{ block.settings.collection.title }}</button>
+                    <h2 class="categoryLinks block mb-[25px] px-15 py-0 w-full harmony__color-text-{{ section.settings.fcoll_color_scheme }} border-b harmony__color-border-{{ section.settings.fcoll_color_scheme }} outline-none text-left cursor-pointer {% if settings.heading_font_size == 'sm' %}harmony__featured-collection-sm{% elsif settings.heading_font_size == 'lg' %}harmony__featured-collection-lg{% else %}harmony__featured-collection-theme-default{% endif %} opacity-30 hover:border-b-2 hover:harmony__color-text-{{ section.settings.fcoll_color_scheme }} transition ease-in-out delay-50" onmouseover="openCategory(event, '{{ block.settings.collection.handle }}')" {% if forloop.index == 1 %} id="defaultOpen-{{ section.id }}"{% endif %}>{{ block.settings.collection.title }}</h2>
                 {% endfor %}
             </div>
         </div>
@@ -64,75 +66,76 @@
    
 
 {% schema %}
-    {
-        "name": "Featured Collection",
-        "class": "harmony_section-featured-collection",
-        "disabled_on": {
-            "groups": ["header", "footer"]
+{
+    "name": "Featured Collection",
+    "class": "harmony_section-featured-collection",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section Style"
         },
-        "settings": [
-            {
-                "type": "header",
-                "content": "Section Style"
-            },
-            {
-                "type": "color_scheme",
-                "id": "fcoll_color_scheme",
-                "label": "Color scheme",
-                "default": "scheme-1"
-            },
-            {
-                "type": "checkbox",
-                "id": "enable_gradient",
-                "label": "Background Gradient?",
-                "default": false
-            },
-            {
-                "type": "header",
-                "content": "Section padding"
-            },
-            {
-                "type": "range",
-                "id": "padding_top",
-                "min": 0,
-                "max": 100,
-                "step": 4,
-                "unit": "px",
-                "label": "Padding Top",
-                "default": 36
-            },
-            {
-                "type": "range",
-                "id": "padding_bottom",
-                "min": 0,
-                "max": 100,
-                "step": 4,
-                "unit": "px",
-                "label": "Padding Bottom",
-                "default": 36
-            }
-    
-        ],
-        "blocks":[
-            {
-                "type":"block",
-                "name": "Collection",
-                "settings": [
-                    {
-                        "type": "collection",
-                        "id": "collection",
-                        "label": "Collection"
-                    }
-                ]
-            }
-        ],
-        "presets": [
-            {
-                "name": "Featured Collection",
-                "category": "Harmony Sections"
-            }
-        ]
-    }
+        {
+            "type": "color_scheme",
+            "id": "fcoll_color_scheme",
+            "label": "Color scheme",
+            "default": "scheme-1"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_gradient",
+            "label": "Background Gradient?",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Top",
+            "default": 36
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Padding Bottom",
+            "default": 36
+        }
+
+    ],
+    "blocks":[
+        {
+            "type":"block",
+            "name": "Collection",
+            "limit": 5,
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Featured Collection",
+            "category": "Harmony Sections"
+        }
+    ]
+}
 {% endschema %}
 
 
@@ -151,6 +154,6 @@
         document.getElementById(categoryName).style.display = "grid";
         evt.currentTarget.className += " active";
     }
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultCatsOpen").dispatchEvent(new Event('mouseover'));
+    // Get the element with id="defaultOpen-{{ section.id }}" and click on it
+    document.getElementById("defaultOpen-{{ section.id }}").onmouseover();
 </script>

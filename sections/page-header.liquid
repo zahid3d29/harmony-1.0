@@ -14,43 +14,43 @@
 <section id="harmony--{{ section.id }}" class="section__page-header harmony__color-text-{{ section.settings.color_scheme }} harmony__color-background-{{ section.settings.color_scheme }}">
     <div class="page__header flex flex-col md:flex-row max-w-7xl mx-auto items-start justify-start md:justify-between harmony--{{ section.id }}-padding px-6 lg:px-8">
         {%- if section.settings.heading != blank -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 {{ section.settings.heading }}
             </h1>
         {%- elsif template.name contains 'product' -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 {{ product.title }}
             </h1>
         {%- elsif template.name contains 'collection' -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 {{ collection.title }}
             </h1>
         {%- elsif template.name contains 'blog' -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 {{ blog.title }}
             </h1>
         {%- elsif template.name contains 'article' -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 {{ article.title }}
             </h1>
         {%- elsif template.name contains 'page' -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 {{ page.title }}
             </h1>
         {%- else -%}
-            <h1 class="page__heading text-[37px] leading-[43px] md:text-[47px] md:leading-[53px] lg:text-[67px] lg:leading-[73px] font-normal max-w-md tracking-tight mb-6 md:mb-0">
+            <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
                 Page Heading not set yet!
             </h1>
         {%- endif -%}
         <div class="flex items-center justify-start md:justify-end">
             <div class="max-w-sm lg:px-8">
                 {%- if section.settings.caption != blank -%}
-                <span class="page__title inline text-[14px] leading-[19px] font-normal border rounded-full px-2 py-2">{{ section.settings.caption }}</span>
+                    <label class="page__title inline {% if settings.body_font_size == 'sm' %}harmony__page-header-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-caption-lg{% else %}harmony__page-header-caption-theme-default{% endif %} font-normal border rounded-full px-2 py-2">{{ section.settings.caption }}</label>
                 {%- endif -%}
                 {%- if section.settings.short_desc != blank -%}
-                <div class="page__description text-[20px] leading-[22px] font-normal mt-[20px]">
-                    {{ section.settings.short_desc }}
-                </div>
+                    <dd class="page__description {% if settings.body_font_size == 'sm' %}harmony__page-header-desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-desc-lg{% else %}harmony__page-header-desc-theme-default{% endif %} font-normal mt-[20px]">
+                        {{ section.settings.short_desc }}
+                    </dd>
                 {%- endif -%}
             </div>
         </div>

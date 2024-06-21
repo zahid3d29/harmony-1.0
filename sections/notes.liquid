@@ -238,11 +238,12 @@ Simply include the placeholder name, followed by the placeholder_svg_tag filter:
 }
 
 
-{% if settings.body_font_size == 'sm' %}harmony__banner-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__banner-btn-lg{% else %}harmony__banner-btn-theme-default{% endif %}
+{% if settings.heading_font_size == 'sm' %}harmony__page-header-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-lg{% else %}harmony__page-header-theme-default{% endif %}
 
-{% if settings.body_font_size == 'sm' %}harmony__offcanvas_product_info-sm{% elsif settings.body_font_size == 'lg' %}harmony__offcanvas_product_info-lg{% else %}harmony__offcanvas_product_info-theme-default{% endif %}
+{% if settings.body_font_size == 'sm' %}harmony__page-header-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-caption-lg{% else %}harmony__page-header-caption-theme-default{% endif %}
 
-{% if settings.body_font_size == 'sm' %}harmony__megamenu_product_desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__megamenu_product_desc-lg{% else %}harmony__offcanvas_product_desc-theme-default{% endif %}
+{% if settings.body_font_size == 'sm' %}harmony__page-header-desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-desc-lg{% else %}harmony__page-header-desc-theme-default{% endif %}
 
+  text-[24px] leading-1 md:text-[36px] md:leading-1 lg:text-[50px] lg:leading-[96px]
 
-  npx tailwindcss -i ./assets/style.css -o ./assets/output.css --watch
+npx tailwindcss -i ./assets/style.css -o ./assets/output.css --watch

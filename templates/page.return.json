@@ -1,29 +1,17 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "banner_6WjWfW": {
       "type": "banner",
       "blocks": {
-        "sub_text_slide_bkdEhw": {
-          "type": "sub_text_slide",
-          "disabled": true,
-          "settings": {
-            "sub_text": "eASY Skin Care Routine"
-          }
-        },
-        "title_hzY6pF": {
-          "type": "title",
-          "disabled": true,
-          "settings": {
-            "banner_heading": "Your path to radiant skin."
-          }
-        },
-        "text_rEnyC9": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "banner_text": "We harness the power of nature with carefully selected botanical extracts and essential oils, free from harsh chemicals."
-          }
-        },
         "button_me34mV": {
           "type": "button",
           "disabled": true,
@@ -31,13 +19,17 @@
             "button_text": "Shop All",
             "button_url": "shopify:\/\/collections\/all"
           }
+        },
+        "heading_FPJe3K": {
+          "type": "heading",
+          "settings": {
+            "banner_heading": "Privacy & Policy"
+          }
         }
       },
       "block_order": [
-        "sub_text_slide_bkdEhw",
-        "title_hzY6pF",
-        "text_rEnyC9",
-        "button_me34mV"
+        "button_me34mV",
+        "heading_FPJe3K"
       ],
       "settings": {
         "banner_color_scheme": "scheme-2",
@@ -49,7 +41,8 @@
         "bottom_gradient_bar_height": 200,
         "overlay_opacity": 60,
         "show_sale_badge": true,
-        "color_scheme_sale_badge": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "discount_badge": "50% Sale On",
+        "discount_badge-url": "",
         "banner_height": 500,
         "banner_type": "image",
         "banner_image": "shopify:\/\/shop_images\/BG_Img.png",
