@@ -140,8 +140,8 @@
       {{ cart | json }}
     </script>
 
-    <script type="module"> import '{{ "liquid-ajax-cart" | asset_url }}';</script>
     <script src="{{ 'swiper_bundle.min.js' | asset_url }}"></script>
+    <script type="module"> import '{{ "liquid-ajax-cart" | asset_url }}';</script>
     
 
     {{ content_for_header }}

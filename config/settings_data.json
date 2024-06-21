@@ -11,7 +11,7 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/swiss-white.png",
     "type_header_font": "caslon_bold_n4",
-    "heading_font_size": "sm",
+    "heading_font_size": "theme_default",
     "type_body_font": "alfie_n4",
     "body_font_size": "lg",
     "social_twitter_link": "x.com",

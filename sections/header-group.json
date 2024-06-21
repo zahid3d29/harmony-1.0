@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "name": "Header",
   "type": "header",
@@ -5,39 +14,32 @@
     "announcement_bar_F7p9Ce": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_mayTek": {
+        "announcement_LaYEge": {
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
             "announcement_link": ""
           }
         },
-        "announcement_8rjFRA": {
+        "announcement_qdbgD3": {
           "type": "announcement",
           "settings": {
             "text": "Free shipping worldwide",
             "announcement_link": ""
           }
-        },
-        "announcement_zdhQeC": {
-          "type": "announcement",
-          "settings": {
-            "text": "50% off for the first order",
-            "announcement_link": "shopify:\/\/collections\/all"
-          }
         }
       },
       "block_order": [
-        "announcement_mayTek",
-        "announcement_8rjFRA",
-        "announcement_zdhQeC"
+        "announcement_LaYEge",
+        "announcement_qdbgD3"
       ],
       "settings": {
         "announcement_color_scheme": "section-scheme",
         "enable_gradient": false,
         "show_social": true,
-        "auto_slide": false,
+        "auto_slide": true,
         "slide_loop": true,
+        "direction_slide": "vertical",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "padding_top": 36,
