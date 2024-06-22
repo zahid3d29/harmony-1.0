@@ -140,12 +140,26 @@
       "settings": {
         "heading": "How to use?"
       }
+    },
+    "reveal_rzUBbJ": {
+      "type": "reveal",
+      "settings": {
+        "color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "color_scheme_enable": false,
+        "colored_txt": "#626E5C",
+        "border_color": "#626E5C",
+        "heading_size": "standard",
+        "heading": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "banner_ktNWgn",
     "gdpr_KGmQiU",
     "featured_collection_pjcRRC",
-    "product_how_use_Wdtk6A"
+    "product_how_use_Wdtk6A",
+    "reveal_rzUBbJ"
   ]
 }
