@@ -49,6 +49,7 @@
         "icon_text_3PjTKW",
         "icon_text_hpw9ad"
       ],
+      "disabled": true,
       "settings": {
         "footerbenifits_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "enable_gradient": false,
@@ -96,9 +97,11 @@
         "menu_tKydTR",
         "menu_VndjtM"
       ],
+      "disabled": true,
       "settings": {
         "footer_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "enable_gradient": false,
+        "show_border": false,
         "language_c": true,
         "currency_c": true,
         "payment_i": true,

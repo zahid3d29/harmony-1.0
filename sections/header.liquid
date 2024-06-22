@@ -16,11 +16,10 @@
   <header id="header" class="harmony__header mx-auto max-w-screen-2xl absolute inset-x-0 z-20 px-2 md:px-10 py-1.5">
     <nav class="harmony__header-nav flex items-center justify-between">
       <div class="flex lg:flex-1">
-        {% comment %} mega__menu-trigger hamburger Button  {% endcomment %}
         {%- if section.settings.enable_offcanvas -%}
         <button
           type="button"
-          class="hidden mega__menu-trigger lg:inline-flex items-center justify-center rounded-md pt-1"
+          class="hidden mega__menu-trigger lg:inline-flex items-center justify-center rounded-md"
           onclick="toggleOffcanvas(true)"
         >
           <span class="sr-only">Open</span>

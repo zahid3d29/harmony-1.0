@@ -1,5 +1,19 @@
-<section id="harmony--{{ section.id }}" class="bg-scroll  harmony__color-{{ section.settings.color_scheme }}  bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-bg.png?v=1713536456')] bg-cover bg-no-repeat bg-center">
-    <div class="overflow-hidden relative py-24">
+{%- style -%}
+    .harmony--{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+@media screen and (min-width: 750px) {
+    .harmony--{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%- endstyle -%}
+
+
+<section id="harmony--{{ section.id }}" class="section__page-header bg-scroll harmony__color-{{ section.settings.color_scheme }}  bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-bg.png?v=1713536456')] bg-cover bg-no-repeat bg-center">
+    <div class="overflow-hidden relative harmony--{{ section.id }}-padding">
         <div class="mx-auto max-w-7xl px-6 md:px-10">
             <div class="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-4">
                 <div class="col-img justify-end align-bottom content-end relative xl:top-[22rem] xl:left-[-6rem] lg:opacity-50 xl:opacity-100 lg:top-[23rem] lg:left-[-5rem] md:absolute md:top-[-2rem] md:left-0">
@@ -7,8 +21,8 @@
                 </div>
                 <div class="lg:pr-8 lg:pt-4 col-span-3">
                     <div class="lg:w-full">
-                        <h4 class="label inline-block text-[14px] leading-[19px] font-semibold border border-[{{ section.settings.border_color }}] rounded-full mb-[30px] px-2 py-2">Deploy faster</h4>
-                        <h2 class="reveal_colored_text text-[{{ section.settings.colored_txt }}] xl:min-w-[63rem] xl:text-[80px] xl:leading-[90px] lg:min-w-[54rem] lg:text-[60px] lg:leading-[70px] md:min-w-[40rem] md:text-[32px] md:leading-[40px] font-semibold tracking-tight text-4xl">
+                        <label class="label inline-block text-[14px] leading-[19px] font-semibold border border-[{{ section.settings.border_color }}] rounded-full mb-[30px] px-2 py-2">Deploy faster</label>
+                        <h2 class="reveal_colored_text text-[{{ section.settings.colored_txt }}] xl:min-w-[63rem] xl:text-[95px] xl:leading-[90px] lg:min-w-[54rem] lg:text-[60px] lg:leading-[70px] md:min-w-[40rem] md:text-[32px] md:leading-[40px] font-semibold tracking-tight text-4xl">
                         <span class="harmony__color-{{ section.settings.color_scheme }}"> We invite you to explore our range of pro</span>ducts, discover your personalized skincare routine, and embark on a journey to radiant, healthy skin.
                         </h2>
                     </div>
@@ -18,7 +32,7 @@
                 </div>
             </div>
             <div class="reveal__description mt-10">
-                <div class="text-base text-[#b1c4a6] max-w-xl">It was so easy to use! My friends have been asking me what I've been doing differently because my complextion has never looked better . Thank you. Swiss, for giving me the con</div>
+                <dd class="text-base text-[#b1c4a6] max-w-xl">It was so easy to use! My friends have been asking me what I've been doing differently because my complextion has never looked better . Thank you. Swiss, for giving me the con</dd>
             </div>
         </div>
     </div>

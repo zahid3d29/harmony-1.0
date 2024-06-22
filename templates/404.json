@@ -44,6 +44,7 @@
         "content_Nfem4L",
         "button_ERHiQM"
       ],
+      "disabled": true,
       "settings": {
         "banner_color_scheme": "scheme-2",
         "enable_gradient": false,
@@ -66,6 +67,7 @@
     },
     "gdpr_KGmQiU": {
       "type": "GDPR",
+      "disabled": true,
       "settings": {
         "gdpr_color_scheme": "scheme-85436d7a-8766-4d97-a6df-212047299535",
         "enable_gradient": false,
@@ -141,14 +143,14 @@
         "heading": "How to use?"
       }
     },
-    "reveal_rzUBbJ": {
+    "reveal_WzKetq": {
       "type": "reveal",
       "settings": {
-        "color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
-        "color_scheme_enable": false,
+        "color_scheme": "",
+        "color_scheme_enable": true,
         "colored_txt": "#626E5C",
-        "border_color": "#626E5C",
-        "heading_size": "standard",
+        "border_color": "#707070",
+        "heading_size": "small",
         "heading": "",
         "padding_top": 36,
         "padding_bottom": 36
@@ -160,6 +162,6 @@
     "gdpr_KGmQiU",
     "featured_collection_pjcRRC",
     "product_how_use_Wdtk6A",
-    "reveal_rzUBbJ"
+    "reveal_WzKetq"
   ]
 }

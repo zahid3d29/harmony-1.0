@@ -13,9 +13,9 @@
 
 <footer
   id="harmony--{{ section.id }}"
-  class="section__footer harmony__color-text-{{ section.settings.footer_color_scheme }} {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.footer_color_scheme }} {% else %} harmony__color-background-{{ section.settings.footer_color_scheme }} {% endif %} harmony--{{ section.id }}-padding"
+  class="section__footer harmony__color-text-{{ section.settings.footer_color_scheme }} {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.footer_color_scheme }} {% else %} harmony__color-background-{{ section.settings.footer_color_scheme }} {% endif %}"
 >
-  <div class="footer__main relative">
+  <div class="footer__main relative {% if section.settings.show_border %} border-b border-t {% endif %} harmony__color-border-{{ section.settings.footer_color_scheme }} harmony--{{ section.id }}-padding">
     <div class="mx-auto max-w-7xl px-6 md:px-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5  section-padding{{ section.id }}">
         {% for block in section.blocks %}
@@ -142,7 +142,7 @@
       </div>
     </div>
   </div>
-  <div class="footer__payment py-[40px] border-t harmony__color-border-{{ section.settings.footer_color_scheme }}">
+  <div class="footer__payment py-8">
     <div class="mx-auto max-w-7xl px-6 md:px-10">
       <dl class="grid grid-cols-1 gap-x-4 lg:gap-x-8 gap-y-6 lg:gap-y-16 text-center lg:grid-cols-2">
         <div class="footer__lang-currency relative flex items-center justify-center lg:justify-start gap-x-4">
@@ -286,6 +286,12 @@
       "default": false
     },
     {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show Border?",
+      "default": false
+    },
+    {
       "type":"checkbox",
       "id":"language_c",
       "label":"Language Converter",
@@ -315,7 +321,7 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Top",
-      "default": 36
+      "default": 16
     },
     {
       "type": "range",
@@ -325,7 +331,7 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Bottom",
-      "default": 36
+      "default": 16
     }
   ],
   "blocks":[
