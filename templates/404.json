@@ -145,10 +145,40 @@
     },
     "reveal_WzKetq": {
       "type": "reveal",
+      "disabled": true,
       "settings": {
-        "heading_size": "small",
+        "reveal_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "enable_gradient": false,
+        "enable_bg_pattern": false,
+        "bg_pattern": "shopify:\/\/shop_images\/reveal-bg.png",
+        "img_left": "shopify:\/\/shop_images\/reveal-left-img.png",
+        "img_right": "shopify:\/\/shop_images\/reveal-img-right.png",
+        "heading_part_one": "We invite you to explore our range of pro",
+        "heading_part_two": "ducts, discover your personalized skincare routine, and embark on a journey to radiant, healthy skin.",
+        "desc": "It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!",
         "padding_top": 72,
         "padding_bottom": 72
+      }
+    },
+    "focal_9bQdFB": {
+      "type": "focal",
+      "blocks": {
+        "bullet_rbAeN3": {
+          "type": "bullet",
+          "settings": {
+            "svg": "",
+            "alt": "Bullet Point"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_rbAeN3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/cheerful-half-naked-_1.png",
+        "image_position": "right",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -157,6 +187,7 @@
     "gdpr_KGmQiU",
     "featured_collection_pjcRRC",
     "product_how_use_Wdtk6A",
-    "reveal_WzKetq"
+    "reveal_WzKetq",
+    "focal_9bQdFB"
   ]
 }

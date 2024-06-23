@@ -223,7 +223,7 @@ Simply include the placeholder name, followed by the placeholder_svg_tag filter:
 {% if block.settings.icon != blank %}
   {{ block.settings.icon | image_url: width: '35' | image_tag: class: 'h-[24px] w-[35px] object-contain' }}
 {% else %}
-  
+  {{ 'image' | placeholder_svg_tag: 'w-50' }}
 {% endif %}
 
 

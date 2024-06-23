@@ -63,7 +63,7 @@
 
 {% schema %}
 {
-    "name": "reveal",
+    "name": "Reveal",
     "settings": [
         {
             "type": "color_scheme",
@@ -145,22 +145,9 @@
     ],
     "presets": [
         {
-            "name": "reveal",
+            "name": "Reveal",
             "category": "Harmony Sections"
         }
     ]
 }
 {% endschema %}
-
-{% comment %} schema settings color style  {% endcomment %}
-{% if section.settings.color_scheme_enable %}
-{% for scheme in settings.color_schemes %}
-    {% style %} 
-        .harmony__color-{{ scheme.id }}{
-            background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-            color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-        }
-    {% endstyle %} 
-{% endfor %}
-{% endif %}
-{% comment %} signature: latest file  {% endcomment %}
