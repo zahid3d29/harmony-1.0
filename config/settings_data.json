@@ -10,10 +10,10 @@
 {
   "current": {
     "logo": "shopify:\/\/shop_images\/swiss-white.png",
-    "type_header_font": "caslon_bold_n4",
+    "type_header_font": "mono",
     "heading_font_size": "theme_default",
     "type_body_font": "alfie_n4",
-    "body_font_size": "lg",
+    "body_font_size": "theme_default",
     "social_twitter_link": "x.com",
     "social_facebook_link": "facebook.com",
     "social_instagram_link": "https:\/\/www.instagram.com\/",
@@ -87,7 +87,7 @@
       "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250": {
         "settings": {
           "text": "#ffffff",
-          "text_secondary": "#ffffff",
+          "text_secondary": "#eefd8d",
           "background": "#304834",
           "background_gradient": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(168, 255, 251, 1) 100%)",
           "primary_button": "#304834",
@@ -97,7 +97,7 @@
           "on_secondary_button": "#ffffff",
           "secondary_button_border": "#ffffff",
           "icons": "#ffffff",
-          "border": "#707070",
+          "border": "#ffffff",
           "links": "#eefd8d"
         }
       },

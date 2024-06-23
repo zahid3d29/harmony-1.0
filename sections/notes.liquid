@@ -223,7 +223,7 @@ Simply include the placeholder name, followed by the placeholder_svg_tag filter:
 {% if block.settings.icon != blank %}
   {{ block.settings.icon | image_url: width: '35' | image_tag: class: 'h-[24px] w-[35px] object-contain' }}
 {% else %}
-  {{ 'image' | placeholder_svg_tag: 'w-50' }}
+  
 {% endif %}
 
 
@@ -238,11 +238,9 @@ Simply include the placeholder name, followed by the placeholder_svg_tag filter:
 }
 
 
-{% if settings.heading_font_size == 'sm' %}harmony__page-header-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-lg{% else %}harmony__page-header-theme-default{% endif %}
+{% if settings.heading_font_size == 'sm' %}harmony__reveal-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__reveal-heading-lg{% else %}harmony__reveal-heading-theme-default{% endif %}
 
-{% if settings.body_font_size == 'sm' %}harmony__page-header-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-caption-lg{% else %}harmony__page-header-caption-theme-default{% endif %}
-
-{% if settings.body_font_size == 'sm' %}harmony__page-header-desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-desc-lg{% else %}harmony__page-header-desc-theme-default{% endif %}
+{% if settings.body_font_size == 'sm' %}harmony__reveal-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__reveal-label-lg{% else %}harmony__reveal-label-theme-default{% endif %}
 
   text-[24px] leading-1 md:text-[36px] md:leading-1 lg:text-[50px] lg:leading-[96px]
 

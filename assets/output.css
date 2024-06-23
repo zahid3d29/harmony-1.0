@@ -808,8 +808,8 @@ h1 {
 /* Banner Content Section Font Size */
 
 .harmony__banner-content-sm {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .harmony__banner-content-theme-default {
@@ -1005,6 +1005,141 @@ h1 {
   .harmony__featured-collection-lg {
     font-size: 62px;
     line-height: 72px;
+  }
+}
+
+/* Banner Sub-heading Section Font Size */
+
+.harmony__reveal-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__reveal-label-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__reveal-label-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Reveal section description Font Size */
+
+.harmony__reveal-desc-sm {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.harmony__reveal-desc-theme-default {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.harmony__reveal-desc-lg {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Banner Heading Section Font Size */
+
+.harmony__reveal-heading-sm {
+  font-size: 31px;
+  line-height: 30px;
+}
+
+@media (min-width: 640px) {
+  .harmony__reveal-heading-sm {
+    font-size: 39px;
+    line-height: 37px;
+  }
+}
+
+@media (min-width: 768px) {
+  .harmony__reveal-heading-sm {
+    font-size: 49px;
+    line-height: 46px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__reveal-heading-sm {
+    font-size: 61px;
+    line-height: 58px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .harmony__reveal-heading-sm {
+    font-size: 76px;
+    line-height: 72px;
+  }
+}
+
+.harmony__reveal-heading-theme-default {
+  font-size: 39px;
+  line-height: 37px;
+}
+
+@media (min-width: 640px) {
+  .harmony__reveal-heading-theme-default {
+    font-size: 49px;
+    line-height: 46px;
+  }
+}
+
+@media (min-width: 768px) {
+  .harmony__reveal-heading-theme-default {
+    font-size: 61px;
+    line-height: 58px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__reveal-heading-theme-default {
+    font-size: 76px;
+    line-height: 72px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .harmony__reveal-heading-theme-default {
+    font-size: 95px;
+    line-height: 90px;
+  }
+}
+
+.harmony__reveal-heading-lg {
+  font-size: 47px;
+  line-height: 45px;
+}
+
+@media (min-width: 640px) {
+  .harmony__reveal-heading-lg {
+    font-size: 61px;
+    line-height: 58px;
+  }
+}
+
+@media (min-width: 768px) {
+  .harmony__reveal-heading-lg {
+    font-size: 76px;
+    line-height: 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__reveal-heading-lg {
+    font-size: 95px;
+    line-height: 90px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .harmony__reveal-heading-lg {
+    font-size: 114px;
+    line-height: 108px;
   }
 }
 
@@ -2879,10 +3014,6 @@ h1 {
   background-image: url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830');
 }
 
-.bg-\[url\(\'https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0586\/2499\/9582\/files\/reveal-bg\.png\?v\=1713536456\'\)\] {
-  background-image: url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/reveal-bg.png?v=1713536456');
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -2954,6 +3085,11 @@ h1 {
 .object-center {
   -o-object-position: center;
      object-position: center;
+}
+
+.object-right {
+  -o-object-position: right;
+     object-position: right;
 }
 
 .p-0 {
@@ -3160,16 +3296,6 @@ h1 {
 .py-\[2px\] {
   padding-top: 2px;
   padding-bottom: 2px;
-}
-
-.py-\[36px\] {
-  padding-top: 36px;
-  padding-bottom: 36px;
-}
-
-.py-\[40px\] {
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .py-\[43px\] {
@@ -3457,6 +3583,10 @@ h1 {
   line-height: 1rem;
 }
 
+.text-\[39px\] {
+  font-size: 39px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3589,6 +3719,10 @@ h1 {
   line-height: 1;
 }
 
+.leading-\[37px\] {
+  line-height: 37px;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
@@ -3625,11 +3759,6 @@ h1 {
 .text-\[\#aeb4af\] {
   --tw-text-opacity: 1;
   color: rgb(174 180 175 / var(--tw-text-opacity));
-}
-
-.text-\[\#b1c4a6\] {
-  --tw-text-opacity: 1;
-  color: rgb(177 196 166 / var(--tw-text-opacity));
 }
 
 .text-\[\#f7f4ed\] {
@@ -4513,8 +4642,16 @@ h1 {
     line-height: 1.25rem;
   }
 
+  .sm\:text-\[49px\] {
+    font-size: 49px;
+  }
+
   .sm\:leading-6 {
     line-height: 1.5rem;
+  }
+
+  .sm\:leading-\[46px\] {
+    line-height: 46px;
   }
 
   .sm\:text-gray-900 {
@@ -4667,16 +4804,12 @@ h1 {
     width: 138px;
   }
 
-  .md\:w-\[150px\] {
-    width: 150px;
-  }
-
   .md\:w-\[15rem\] {
     width: 15rem;
   }
 
-  .md\:w-\[160px\] {
-    width: 160px;
+  .md\:w-\[200px\] {
+    width: 200px;
   }
 
   .md\:w-\[400px\] {
@@ -4897,20 +5030,24 @@ h1 {
     line-height: 2.5rem;
   }
 
-  .md\:text-\[32px\] {
-    font-size: 32px;
-  }
-
   .md\:text-\[36px\] {
     font-size: 36px;
   }
 
-  .md\:leading-\[40px\] {
-    line-height: 40px;
+  .md\:text-\[61px\] {
+    font-size: 61px;
   }
 
   .md\:leading-\[42px\] {
     line-height: 42px;
+  }
+
+  .md\:leading-\[58px\] {
+    line-height: 58px;
+  }
+
+  .md\:opacity-50 {
+    opacity: 0.5;
   }
 
   .md\:hover\:bg-transparent:hover {
@@ -5084,14 +5221,6 @@ h1 {
 
   .lg\:w-\[20rem\] {
     width: 20rem;
-  }
-
-  .lg\:w-\[230px\] {
-    width: 230px;
-  }
-
-  .lg\:w-\[240px\] {
-    width: 240px;
   }
 
   .lg\:w-\[250px\] {
@@ -5472,10 +5601,6 @@ h1 {
     font-size: 52px;
   }
 
-  .lg\:text-\[60px\] {
-    font-size: 60px;
-  }
-
   .lg\:text-\[80px\] {
     font-size: 80px;
   }
@@ -5488,6 +5613,10 @@ h1 {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-\[76px\] {
+    font-size: 76px;
   }
 
   .lg\:leading-\[140px\] {
@@ -5514,12 +5643,12 @@ h1 {
     line-height: 61px;
   }
 
-  .lg\:leading-\[70px\] {
-    line-height: 70px;
-  }
-
   .lg\:leading-\[96px\] {
     line-height: 96px;
+  }
+
+  .lg\:leading-\[72px\] {
+    line-height: 72px;
   }
 
   .lg\:opacity-50 {
@@ -5565,8 +5694,8 @@ h1 {
          column-gap: 2rem;
   }
 
-  .xl\:text-\[80px\] {
-    font-size: 80px;
+  .xl\:text-\[95px\] {
+    font-size: 95px;
   }
 
   .xl\:leading-\[90px\] {
@@ -5579,8 +5708,8 @@ h1 {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:w-\[250px\] {
-    width: 250px;
+  .\32xl\:opacity-100 {
+    opacity: 1;
   }
 }
 

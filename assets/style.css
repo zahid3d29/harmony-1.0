@@ -143,7 +143,7 @@
 
   /* Banner Content Section Font Size */
   .harmony__banner-content-sm {
-    @apply text-[14px] leading-[20px];
+    @apply text-[16px] leading-[24px];
   }
   .harmony__banner-content-theme-default {
     @apply text-[18px] leading-[28px];
@@ -217,6 +217,43 @@
   .harmony__featured-collection-lg {
     @apply text-[32px] leading-[42px] md:text-[48px] md:leading-[62px] lg:text-[62px] lg:leading-[72px];
   }
+
+  /* Banner Sub-heading Section Font Size */
+  .harmony__reveal-label-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__reveal-label-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__reveal-label-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  
+  /* Reveal section description Font Size */
+  .harmony__reveal-desc-sm {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__reveal-desc-theme-default {
+    @apply text-[18px] leading-[28px];
+  }
+  .harmony__reveal-desc-lg {
+    @apply text-[20px] leading-[28px];
+  }
+
+  /* Banner Heading Section Font Size */
+  .harmony__reveal-heading-sm {
+    @apply text-[31px] leading-[30px] sm:text-[39px] sm:leading-[37px] md:text-[49px] md:leading-[46px] lg:text-[61px] lg:leading-[58px] xl:text-[76px] xl:leading-[72px];
+  }
+  
+  .harmony__reveal-heading-theme-default {
+    @apply text-[39px] leading-[37px] sm:text-[49px] sm:leading-[46px] md:text-[61px] md:leading-[58px] lg:text-[76px] lg:leading-[72px] xl:text-[95px] xl:leading-[90px];
+  }
+  
+  .harmony__reveal-heading-lg {
+    @apply text-[47px] leading-[45px] sm:text-[61px] sm:leading-[58px] md:text-[76px] md:leading-[72px] lg:text-[95px] lg:leading-[90px] xl:text-[114px] xl:leading-[108px];
+  }
+  
 
   /* Footer Benefits Font Size */
   .harmony__footerbenifits-sm {

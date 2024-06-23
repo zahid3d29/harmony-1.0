@@ -11,7 +11,7 @@
 }
 {%- endstyle -%}
 
-<section id="harmony--{{ section.id }}" class="section__page-header harmony__color-text-{{ section.settings.color_scheme }} harmony__color-background-{{ section.settings.color_scheme }}">
+<section id="harmony--{{ section.id }}" class="section__page-header harmony__color-text-{{ section.settings.page_header_color_scheme }} harmony__color-background-{{ section.settings.page_header_color_scheme }}">
     <div class="page__header flex flex-col md:flex-row max-w-7xl mx-auto items-start justify-start md:justify-between harmony--{{ section.id }}-padding px-6 lg:px-8">
         {%- if section.settings.heading != blank -%}
             <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">
@@ -66,7 +66,7 @@
         "settings": [
             {
                 "type": "color_scheme",
-                "id": "color_scheme",
+                "id": "page_header_color_scheme",
                 "label": "Color Scheme"
             },
             {
