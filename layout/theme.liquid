@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
     {% comment %} External CSS files  {% endcomment %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     
@@ -74,7 +75,7 @@
           border-color: rgb({{ scheme.settings.secondary_button_border.red }},{{ scheme.settings.secondary_button_border.green }},{{ scheme.settings.secondary_button_border.blue }});
         }
         .harmony__color-border-{{ scheme.id }}{
-          border-color: rgb({{ scheme.settings.border.red }},{{ scheme.settings.border.green }},{{ scheme.settings.border.blue }}) !important;
+          border-color: rgba({{ scheme.settings.border.red }}, {{ scheme.settings.border.green }}, {{ scheme.settings.border.blue }}, 0.3) !important;
         }
         .harmony__color-icon-{{ scheme.id }}{
           color: rgb({{ scheme.settings.icons.red }},{{ scheme.settings.icons.green }},{{ scheme.settings.icons.blue }});
@@ -140,6 +141,7 @@
       {{ cart | json }}
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="{{ 'swiper_bundle.min.js' | asset_url }}"></script>
     <script type="module"> import '{{ "liquid-ajax-cart" | asset_url }}';</script>
     

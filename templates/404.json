@@ -111,38 +111,6 @@
         "padding_bottom": 40
       }
     },
-    "product_how_use_Wdtk6A": {
-      "type": "product-how-use",
-      "blocks": {
-        "usage_iFnyfm": {
-          "type": "usage",
-          "settings": {
-            "text": "Clean your"
-          }
-        },
-        "usage_iQNm6w": {
-          "type": "usage",
-          "settings": {
-            "text": "Wait for it to be absorbed wAIT FOR 2 MINUTES"
-          }
-        },
-        "usage_6k9cKY": {
-          "type": "usage",
-          "settings": {
-            "text": "hAVE A QUESTION? chECK OUT faq."
-          }
-        }
-      },
-      "block_order": [
-        "usage_iFnyfm",
-        "usage_iQNm6w",
-        "usage_6k9cKY"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "How to use?"
-      }
-    },
     "reveal_WzKetq": {
       "type": "reveal",
       "disabled": true,
@@ -166,17 +134,140 @@
         "bullet_rbAeN3": {
           "type": "bullet",
           "settings": {
-            "svg": "",
-            "alt": "Bullet Point"
+            "list_icons": "circlecheck",
+            "list_icon_custom": "",
+            "list_text": "Natural Ingredients"
+          }
+        },
+        "bullet_gL7XaQ": {
+          "type": "bullet",
+          "settings": {
+            "list_icons": "circlenot",
+            "list_icon_custom": "",
+            "list_text": "No Parabéns"
+          }
+        },
+        "bullet_PNgAX9": {
+          "type": "bullet",
+          "settings": {
+            "list_icons": "circlecheck",
+            "list_icon_custom": "",
+            "list_text": "Vitamin C"
+          }
+        },
+        "bullet_e69hMQ": {
+          "type": "bullet",
+          "settings": {
+            "list_icons": "circlenot",
+            "list_icon_custom": "",
+            "list_text": "No Sodium"
+          }
+        },
+        "bullet_hpgBMP": {
+          "type": "bullet",
+          "settings": {
+            "list_icons": "circlecheck",
+            "list_icon_custom": "",
+            "list_text": "Peptides"
+          }
+        },
+        "bullet_4kk4Xp": {
+          "type": "bullet",
+          "settings": {
+            "list_icons": "circlenot",
+            "list_icon_custom": "",
+            "list_text": "No Retionol"
           }
         }
       },
       "block_order": [
-        "bullet_rbAeN3"
+        "bullet_rbAeN3",
+        "bullet_gL7XaQ",
+        "bullet_PNgAX9",
+        "bullet_e69hMQ",
+        "bullet_hpgBMP",
+        "bullet_4kk4Xp"
       ],
+      "disabled": true,
       "settings": {
+        "focal_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "enable_gradient": false,
+        "caption": "Happy Customer",
+        "heading": "Delivering the highest quality products.",
+        "desc": "<p>Swiss was born from a passion for skincare and a belief in the transformative power of self-care. Founded by Daniel Moss in 1981, our brand has grown from a small idea to a thriving skincare community.<\/p>",
         "image": "shopify:\/\/shop_images\/cheerful-half-naked-_1.png",
         "image_position": "right",
+        "focal_1_bg": "#eefd8d",
+        "focal_txt_1": "<p>I am the text for focal point. you can explain me using this text here.<\/p>",
+        "focal_1_size": 8,
+        "focal_1_position_top": 51,
+        "focal_1_position_left": 10,
+        "focal_2_bg": "#304834",
+        "focal_txt_2": "<p>I am the text for focal point. you can explain me using this text here.<\/p>",
+        "focal_2_size": 8,
+        "focal_2_position_top": 44,
+        "focal_2_position_left": 48,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "focal_1_position_top_mob": 30,
+        "focal_1_position_left_mob": 30,
+        "focal_2_position_top_mob": 30,
+        "focal_2_position_left_mob": 30
+      }
+    },
+    "product_featured_XBiUhG": {
+      "type": "product-featured",
+      "blocks": {
+        "block_CWpBdE": {
+          "type": "block",
+          "settings": {
+            "collection": "gold"
+          }
+        },
+        "block_DDGd6B": {
+          "type": "block",
+          "settings": {
+            "collection": "cream"
+          }
+        },
+        "block_N87qfa": {
+          "type": "block",
+          "settings": {
+            "collection": "jwellary"
+          }
+        },
+        "block_FFMEYp": {
+          "type": "block",
+          "settings": {
+            "collection": "big-collection"
+          }
+        }
+      },
+      "block_order": [
+        "block_CWpBdE",
+        "block_DDGd6B",
+        "block_N87qfa",
+        "block_FFMEYp"
+      ],
+      "settings": {
+        "product_featured_color_scheme": "",
+        "enable_gradient": false,
+        "heading": "Section Heading",
+        "show_heeading": true,
+        "desktop_layout": "grid",
+        "show_price": true,
+        "show_category": true,
+        "show_reviews": true,
+        "enable_stock_badge": true,
+        "offer_badge": true,
+        "show_wishlist": true,
+        "enable_quick_view": true,
+        "number_of_letters_in_title": 12,
+        "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}",
+        "products_to_show": 8,
+        "products_per_row": 4,
+        "mobile_layout": "grid",
+        "number_of_column": "1",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -186,8 +277,8 @@
     "banner_ktNWgn",
     "gdpr_KGmQiU",
     "featured_collection_pjcRRC",
-    "product_how_use_Wdtk6A",
     "reveal_WzKetq",
-    "focal_9bQdFB"
+    "focal_9bQdFB",
+    "product_featured_XBiUhG"
   ]
 }

@@ -13,30 +13,48 @@
   {%- endstyle -%}
 
   <section id="hermony--{{ section.id }}" class="section__focal {% if section.settings.enable_gradient %}harmony__color-background-gradient-{{ section.settings.focal_color_scheme }}{% else %}harmony__color-background-{{ section.settings.focal_color_scheme }}{% endif %}">
-    <div class="overflow-hidden section-{{ section.id }}-padding">
+    <div class="overflow-hidden hermony--{{ section.id }}-padding">
       <div class="mx-auto max-w-7xl px-6 md:px-10">
-        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 {% if section.settings.image_position == 'left' %} flex-row-reverse {% endif %}">
+        <div class="mx-auto justify-center items-center max-w-2xl grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div class="focal__content lg:pr-8 lg:pt-4">
             <div class="lg:max-w-lg">
               {% if section.settings.caption != blank %}
-                <span class="label inline text-[14px] leading-[19px]  font-normal border border-[{{ section.settings.border_color }}] rounded-full px-2 py-22"> {{ section.settings.caption }}
-                </span>
+                <label class="label inline harmony__color-text-{{ section.settings.focal_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__focal-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__focal-content-lg{% else %}harmony__focal-content-theme-default{% endif %} border harmony__color-border-{{ section.settings.focal_color_scheme }} rounded-full px-2 py-22"> {{ section.settings.caption }}
+                </label>
               {% endif %}                        
-              {% if section.settings.title != blank %}
-                <h2 class="heading text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px] font-semibold  mt-[22px] tracking-tight">{{ section.settings.title }}</h2> 
+              {% if section.settings.heading != blank %}
+                <h2 class="focal__heading harmony__color-text-{{ section.settings.focal_color_scheme }} {% if settings.heading_font_size == 'sm' %}harmony__focal-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__focal-heading-lg{% else %}harmony__focal-heading-theme-default{% endif %} tracking-tight mt-[22px]">{{ section.settings.heading | escape }}</h2> 
               {% endif %}   
-              <div class="content text-[14px] leading-[19px] font-normal mt-[26px]">{{ section.settings.desc }}</div>
+              {% if section.settings.desc != blank %}
+                <dd class="content harmony__color-text-{{ section.settings.focal_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__focal-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__focal-content-lg{% else %}harmony__focal-content-theme-default{% endif %} mt-[26px]">{{ section.settings.desc }}</dd>
+              {% endif %}
               <dl class="content__list max-w-xl lg:max-w-none mt-[19px]">
                 <div class="grid grid-cols-2 gap-4 gap-y-3">
-                  {% for block in section.blocks %}
+                 {% for block in section.blocks %}
                     {% if 'bullet' %}
-                    <div class="relative pl-9">
-                        <dt class="inline-block pt-[3px] text-[14px] leading-[19px] font-normal">
-                          {% if block.settings.svg != blank %}
-                              {{ block.settings.svg }}
+                    <div class="group relative flex gap-x-4">
+                      <dt class="list_icon inline-block harmony__color-icon-{{ section.settings.focal_color_scheme }}">
+                        {% if block.settings.list_icon_custom != blank %}
+                          {{ block.settings.list_icon_custom }}
+                        {% else %}
+                          {% if block.settings.list_icons == 'check'  %}
+                            {% render 'icon-check' %}
+                          {% elsif block.settings.list_icons == 'chieldcheck'  %}
+                            {% render 'icon-shield-check' %}
+                          {% elsif block.settings.list_icons == 'circlenot'  %}
+                            {% render 'icon-circle-not' %}
+                          {% elsif block.settings.list_icons == 'circleinfo'  %}
+                            {% render 'icon-circle-info' %}
+                          {% elsif block.settings.list_icons == 'circlecheck'  %}
+                            {% render 'icon-circle-check' %}
+                          {% elsif block.settings.list_icons == 'circlestop'  %}
+                            {% render 'icon-circle-stop' %}
+                          {% else  %}
+                            {% render 'icon-circle-arrow-right' %}
                           {% endif %}
-                          {{ block.settings.alt }}
-                        </dt>
+                        {% endif %}
+                      </dt>
+                      <dd class="list_text harmony__color-text-{{ section.settings.focal_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__focal-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__focal-content-lg{% else %}harmony__focal-content-theme-default{% endif %}">{{ block.settings.list_text }}</dd>
                     </div>
                     {% endif %}
                   {% endfor %}
@@ -44,11 +62,22 @@
               </dl>
             </div>
           </div>
-          <div class="focal__image w-100 h-100 relative">
-              <span class="focal__point-1 bg-blue-600 animate-ping absolute top-[7rem] left-[10rem] lg:top-[15rem] lg:left-[8rem] h-5 w-5 border-2-white rounded-full"></span>
-              {% comment %} <img src="{{   section.settings.image |img_url : 'master' }}" alt="Product screenshot" class="transition ease-in-out delay-150 hover:-translate-y-1 object-cover h-100 w-1000"> {% endcomment %}
+          <div class="focal__image w-100 h-100 relative {% if section.settings.image_position == 'left' %} order-first {% else %} order-first lg:order-last {% endif %}">
+            <span data-tooltip-target="tooltip-animation-2" class="focal__point-1 z-10 bg-[{{ section.settings.focal_1_bg }}] absolute top-[{{ section.settings.focal_1_position_top_mob }}%] left-[{{ section.settings.focal_1_position_left_mob }}%] lg:top-[{{ section.settings.focal_1_position_top }}%] lg:left-[{{ section.settings.focal_1_position_left }}%] h-{{ section.settings.focal_1_size }} w-{{ section.settings.focal_1_size }} border rounded-full"></span>
+            <dd id="tooltip-animation-2" role="tooltip" class="absolute z-10 invisible max-w-[200px] inline-block harmony__color-primary-button-label-{{ section.settings.focal_color_scheme }} harmony__color-primary-button-background-{{ section.settings.focal_color_scheme }} harmony__color-primary-button-border-{{ section.settings.focal_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__focal-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__focal-content-lg{% else %}harmony__focal-content-theme-default{% endif %} px-3 py-2 transition-opacity duration-300 rounded-lg shadow-sm opacity-0 tooltip">
+              {{ section.settings.focal_txt_1 }}
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </dd>
+            {% if section.settings.image != blank %}
               {{ section.settings.image | image_url: width: '500', height: '500' | image_tag: class: 'transition ease-in-out delay-150 hover:-translate-y-1 object-cover' }}
-              <span class="focal__point-2 bg-red-600 animate-ping absolute top-[8rem] right-[16rem] lg:top-[14rem] lg:right-[16rem] h-5 w-5 border-2-white rounded-full"></span>
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'w-50 h-50 transition ease-in-out delay-150 hover:-translate-y-1 object-cover' }}
+            {% endif %}
+            <span data-tooltip-target="tooltip-animation-1" class="focal__point-2 z-10 bg-[{{ section.settings.focal_2_bg }}] absolute top-[{{ section.settings.focal_2_position_top_mob }}%] left-[{{ section.settings.focal_2_position_left_mob }}%] lg:top-[{{ section.settings.focal_2_position_top }}%] lg:left-[{{ section.settings.focal_2_position_left }}%] h-{{ section.settings.focal_2_size }} w-{{ section.settings.focal_2_size }} border rounded-full"></span>
+            <dd id="tooltip-animation-1" role="tooltip" class="absolute z-10 invisible max-w-[200px] inline-block harmony__color-secondary-button-label-{{ section.settings.focal_color_scheme }} harmony__color-secondary-button-background-{{ section.settings.focal_color_scheme }} harmony__color-secondary-button-border-{{ section.settings.focal_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__focal-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__focal-content-lg{% else %}harmony__focal-content-theme-default{% endif %} px-3 py-2 transition-opacity duration-300 rounded-lg shadow-sm opacity-0 tooltip">
+              {{ section.settings.focal_txt_2 }}
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </dd>
           </div>
         </div>
       </div>
@@ -118,6 +147,94 @@
       },
       {
         "type": "header",
+        "content": "Image Focal Point"
+      },
+      {
+        "type": "color",
+        "id": "focal_1_bg",
+        "label": "Focal 1 Color",
+        "default": "#fefefe"
+      },
+      {
+        "type":"textarea",
+        "id":"focal_txt_1",
+        "label":"Tooltip Text",
+        "default": "<p>I am the text for focal point. you can explain me using this text here.</p>"
+      },
+      {
+        "type": "range",
+        "id": "focal_1_size",
+        "min": 5,
+        "max": 30,
+        "step": 1,
+        "unit": "ren",
+        "label": "Focal 1 Size",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "focal_1_position_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 1 position top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "focal_1_position_left",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 1 position left",
+        "default": 30
+      },
+      {
+        "type": "color",
+        "id": "focal_2_bg",
+        "label": "Focal 2 Color",
+        "default": "#fefefe"
+      },
+      {
+        "type":"textarea",
+        "id":"focal_txt_2",
+        "label":"Tooltip Text",
+        "default": "<p>I am the text for focal point. you can explain me using this text here.</p>"
+      },
+      {
+        "type": "range",
+        "id": "focal_2_size",
+        "min": 5,
+        "max": 30,
+        "step": 1,
+        "unit": "rem",
+        "label": "Focal 2 Size",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "focal_2_position_top",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 2 position top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "focal_2_position_left",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 1 position left",
+        "default": 30
+      },
+      {
+        "type": "header",
         "content": "Section padding"
       },
       {
@@ -139,22 +256,104 @@
         "unit": "px",
         "label": "Padding Bottom",
         "default": 36
+      },
+      {
+        "type": "header",
+        "content": "Mobile Specific"
+      },
+      {
+        "type": "range",
+        "id": "focal_1_position_top_mob",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 1 position top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "focal_1_position_left_mob",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 1 position left",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "focal_2_position_top_mob",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 2 position top",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "focal_2_position_left_mob",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Focal 2 position left",
+        "default": 30
       }
     ],
     "blocks": [
       {
         "type":"bullet",
         "name": "bulet points",
+        "limit": 8,
         "settings": [
           {
+            "type": "select",
+            "id": "list_icons",
+            "label": "List Icon",
+            "options": [
+              {
+                "value": "check",
+                "label": "Check"
+              },
+              {
+                "value": "chieldcheck",
+                "label": "Shield Check"
+              },
+              {
+                "value": "circlenot",
+                "label": "Circle Not"
+              },
+              {
+                "value": "circleinfo",
+                "label": "Circle Info"
+              },
+              {
+                "value": "circlecheck",
+                "label": "Circle Check"
+              },
+              {
+                "value": "circlestop",
+                "label": "Circle Stop"
+              },
+              {
+                "value": "circlearrowright",
+                "label": "Circle Arrow Right"
+              }
+            ],
+            "default": "check",
+            "info": "Select list Icon from the dropdown"
+          },
+          {
             "type": "textarea",
-            "id": "svg",
-            "label": "SVG",
-            "info": "Add code for SVG"
+            "id": "list_icon_custom",
+            "label": "Custom SVG Icon",
+            "info": "Add code for Custom SVG Icon"
           },
           {
             "type": "text",
-            "id": "alt",
+            "id": "list_text",
             "label": "Text",
             "default": "Bullet Point"
           }
@@ -170,15 +369,3 @@
   }
   {% endschema %}
   
-  
-  {% comment %} schema settings color style  {% endcomment %}
-  {% for scheme in settings.color_schemes %}
-      {% style %} 
-          .harmony__color-{{ scheme.id }}{
-              background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-              color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
-          }
-      {% endstyle %} 
-  {% endfor %}
-  
-  {% comment %} signature: latest file  {% endcomment %}
