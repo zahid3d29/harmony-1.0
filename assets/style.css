@@ -35,7 +35,7 @@
     @apply text-[12px] leading-[16px];
   }
   .harmony__badge-theme-default {
-    @apply text-[14px] leading-[20px];
+    @apply text-[14px] leading-[25px];
   }
   .harmony__badge-lg {
     @apply text-[16px] leading-[24px];

@@ -602,7 +602,7 @@ h1 {
 
 .harmony__badge-theme-default {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 25px;
 }
 
 .harmony__badge-lg {
@@ -2424,6 +2424,10 @@ h1 {
   min-width: 100%;
 }
 
+.min-w-\[90px\] {
+  min-width: 90px;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -2510,6 +2514,10 @@ h1 {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-\[120px\] {
+  max-width: 120px;
 }
 
 .flex-1 {

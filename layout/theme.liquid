@@ -63,7 +63,7 @@
           color: rgb({{ scheme.settings.on_primary_button.red }},{{ scheme.settings.on_primary_button.green }},{{ scheme.settings.on_primary_button.blue }});
         }
         .harmony__color-primary-button-border-{{ scheme.id }}{
-          border-color: rgb({{ scheme.settings.primary_button_border.red }},{{ scheme.settings.primary_button_border.green }},{{ scheme.settings.primary_button_border.blue }});
+          border-color: rgba({{ scheme.settings.primary_button_border.red }}, {{ scheme.settings.primary_button_border.green }}, {{ scheme.settings.primary_button_border.blue }}, 0.2) !important;
         }
         .harmony__color-secondary-button-background-{{ scheme.id }}{
           background: rgb({{ scheme.settings.secondary_button.red }},{{ scheme.settings.secondary_button.green }},{{ scheme.settings.secondary_button.blue }});
@@ -72,10 +72,10 @@
           color: rgb({{ scheme.settings.on_secondary_button.red }},{{ scheme.settings.on_secondary_button.green }},{{ scheme.settings.on_secondary_button.blue }});
         }
         .harmony__color-secondary-button-border-{{ scheme.id }}{
-          border-color: rgb({{ scheme.settings.secondary_button_border.red }},{{ scheme.settings.secondary_button_border.green }},{{ scheme.settings.secondary_button_border.blue }});
+          border-color: rgba({{ scheme.settings.secondary_button_border.red }}, {{ scheme.settings.secondary_button_border.green }}, {{ scheme.settings.secondary_button_border.blue }}, 0.2) !important;
         }
         .harmony__color-border-{{ scheme.id }}{
-          border-color: rgba({{ scheme.settings.border.red }}, {{ scheme.settings.border.green }}, {{ scheme.settings.border.blue }}, 0.3) !important;
+          border-color: rgba({{ scheme.settings.border.red }}, {{ scheme.settings.border.green }}, {{ scheme.settings.border.blue }}, 0.2) !important;
         }
         .harmony__color-icon-{{ scheme.id }}{
           color: rgb({{ scheme.settings.icons.red }},{{ scheme.settings.icons.green }},{{ scheme.settings.icons.blue }});
