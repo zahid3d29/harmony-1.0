@@ -10,9 +10,9 @@
 {
   "current": {
     "logo": "shopify:\/\/shop_images\/swiss-white.png",
-    "type_header_font": "mono",
+    "type_header_font": "sans-serif",
     "heading_font_size": "theme_default",
-    "type_body_font": "alfie_n4",
+    "type_body_font": "mono",
     "body_font_size": "theme_default",
     "social_twitter_link": "x.com",
     "social_facebook_link": "facebook.com",
