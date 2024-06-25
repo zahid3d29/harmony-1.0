@@ -1363,6 +1363,337 @@ h1 {
   line-height: 20px;
 }
 
+/* Sales Section Product Title Font Size */
+
+.harmony__sales-prodTitle-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__sales-prodTitle-theme-default {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.harmony__sales-prodTitle-lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Sales Section description Font Size */
+
+.harmony__sales-desc-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__sales-desc-theme-default {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.harmony__sales-desc-lg {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Sales Section marquee Font Size */
+
+.harmony__sales-marquee-sm {
+  font-size: 20px;
+  line-height: 15.25px;
+}
+
+@media (min-width: 768px) {
+  .harmony__sales-marquee-sm {
+    font-size: 30px;
+    line-height: 22.875px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__sales-marquee-sm {
+    font-size: 40px;
+    line-height: 30.5px;
+  }
+}
+
+.harmony__sales-marquee-sm {
+  /* 50% of the default size */
+}
+
+.harmony__sales-marquee-theme-default {
+  font-size: 40px;
+  line-height: 30.5px;
+}
+
+@media (min-width: 768px) {
+  .harmony__sales-marquee-theme-default {
+    font-size: 60px;
+    line-height: 45.75px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__sales-marquee-theme-default {
+    font-size: 80px;
+    line-height: 61px;
+  }
+}
+
+.harmony__sales-marquee-lg {
+  font-size: 50px;
+  line-height: 38.125px;
+}
+
+@media (min-width: 768px) {
+  .harmony__sales-marquee-lg {
+    font-size: 75px;
+    line-height: 57.1875px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__sales-marquee-lg {
+    font-size: 100px;
+    line-height: 76.25px;
+  }
+}
+
+.harmony__sales-marquee-lg {
+  /* 125% of the default size */
+}
+
+/* Sales Section timer Font Size */
+
+.harmony__sales-countdown-time-sm {
+  font-size: 26px;
+  line-height: 22.5px;
+}
+
+@media (min-width: 768px) {
+  .harmony__sales-countdown-time-sm {
+    font-size: 32.5px;
+    line-height: 28.125px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__sales-countdown-time-sm {
+    font-size: 39px;
+    line-height: 33.75px;
+  }
+}
+
+.harmony__sales-countdown-time-sm {
+  /* 75% of the default size */
+}
+
+.harmony__sales-countdown-time-theme-default {
+  font-size: 35px;
+  line-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .harmony__sales-countdown-time-theme-default {
+    font-size: 43.5px;
+    line-height: 37.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__sales-countdown-time-theme-default {
+    font-size: 52px;
+    line-height: 45px;
+  }
+}
+
+.harmony__sales-countdown-time-lg {
+  font-size: 43.5px;
+  line-height: 37.5px;
+}
+
+@media (min-width: 768px) {
+  .harmony__sales-countdown-time-lg {
+    font-size: 54.25px;
+    line-height: 46.875px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__sales-countdown-time-lg {
+    font-size: 65px;
+    line-height: 56.25px;
+  }
+}
+
+.harmony__sales-countdown-time-lg {
+  /* 125% of the default size */
+}
+
+/* Sales Section timer label Font Size */
+
+.harmony__sales-countdown-time-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__sales-countdown-time-label-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__sales-countdown-time-label-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* sales Section category/caption label Font Size */
+
+.harmony__sales-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__sales-label-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__sales-label-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* sales Section price/feedback Font Size */
+
+.harmony__sales-priceFeedback-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__sales-priceFeedback-theme-default {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.harmony__sales-priceFeedback-lg {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* FAQ Section Heading Font Size */
+
+.harmony__faq-heading-sm {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@media (min-width: 768px) {
+  .harmony__faq-heading-sm {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__faq-heading-sm {
+    font-size: 42px;
+    line-height: 48px;
+  }
+}
+
+.harmony__faq-heading-theme-default {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@media (min-width: 768px) {
+  .harmony__faq-heading-theme-default {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__faq-heading-theme-default {
+    font-size: 50px;
+    line-height: 68px;
+  }
+}
+
+.harmony__faq-heading-lg {
+  font-size: 32px;
+  line-height: 42px;
+}
+
+@media (min-width: 768px) {
+  .harmony__faq-heading-lg {
+    font-size: 48px;
+    line-height: 62px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .harmony__faq-heading-lg {
+    font-size: 62px;
+    line-height: 72px;
+  }
+}
+
+/* FAQ Section button Font Size */
+
+.harmony__faq-btn-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__faq-btn-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__faq-btn-lg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* FAQ Section Title Font Size */
+
+.harmony__faq-title-sm {
+  font-size: 15px;
+  line-height: 19.5px;
+  /* 75% of the default size */
+}
+
+.harmony__faq-title-theme-default {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.harmony__faq-title-lg {
+  font-size: 25px;
+  line-height: 32.5px;
+  /* 125% of the default size */
+}
+
+/* FAQ Section Content Font Size */
+
+.harmony__faq-content-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__faq-content-theme-default {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.harmony__faq-content-lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+
 /* Footer Benefits Font Size */
 
 .harmony__footerbenifits-sm {
@@ -2172,6 +2503,10 @@ h1 {
   height: 4rem;
 }
 
+.h-\[513px\] {
+  height: 513px;
+}
+
 .h-\[536px\] {
   height: 536px;
 }
@@ -2194,10 +2529,6 @@ h1 {
 
 .max-h-12 {
   max-height: 3rem;
-}
-
-.max-h-\[21px\] {
-  max-height: 21px;
 }
 
 .max-h-\[25px\] {
@@ -2272,10 +2603,6 @@ h1 {
   width: 0.625rem;
 }
 
-.w-2\/5 {
-  width: 40%;
-}
-
 .w-24 {
   width: 6rem;
 }
@@ -2290,10 +2617,6 @@ h1 {
 
 .w-4 {
   width: 1rem;
-}
-
-.w-4\/5 {
-  width: 80%;
 }
 
 .w-40 {
@@ -2368,6 +2691,10 @@ h1 {
   width: 3rem;
 }
 
+.w-\[407px\] {
+  width: 407px;
+}
+
 .w-\[40px\] {
   width: 40px;
 }
@@ -2420,12 +2747,12 @@ h1 {
   min-width: 30px;
 }
 
-.min-w-full {
-  min-width: 100%;
-}
-
 .min-w-\[90px\] {
   min-width: 90px;
+}
+
+.min-w-full {
+  min-width: 100%;
 }
 
 .max-w-2xl {
@@ -2442,6 +2769,10 @@ h1 {
 
 .max-w-\[104px\] {
   max-width: 104px;
+}
+
+.max-w-\[120px\] {
+  max-width: 120px;
 }
 
 .max-w-\[17rem\] {
@@ -2516,10 +2847,6 @@ h1 {
   max-width: 20rem;
 }
 
-.max-w-\[120px\] {
-  max-width: 120px;
-}
-
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2575,8 +2902,8 @@ h1 {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-\[1850\%\] {
-  --tw-translate-y: 1850%;
+.translate-y-\[50\%\] {
+  --tw-translate-y: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3070,11 +3397,6 @@ h1 {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-b-\[\#eee\] {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(238 238 238 / var(--tw-border-opacity));
-}
-
 .border-b-gray-200 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -3087,11 +3409,6 @@ h1 {
 .bg-\[\#373738\] {
   --tw-bg-opacity: 1;
   background-color: rgb(55 55 56 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#532C2C\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(83 44 44 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#D0BAAC\] {
@@ -3127,10 +3444,6 @@ h1 {
 .bg-\[rgb\(46\2c 69\2c 50\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(46 69 50 / var(--tw-bg-opacity));
-}
-
-.bg-\[transparent\] {
-  background-color: transparent;
 }
 
 .bg-black {
@@ -3378,11 +3691,6 @@ h1 {
   padding-bottom: 0px;
 }
 
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -3530,16 +3838,8 @@ h1 {
   padding-bottom: 3rem;
 }
 
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-
 .pb-24 {
   padding-bottom: 6rem;
-}
-
-.pb-3 {
-  padding-bottom: 0.75rem;
 }
 
 .pb-4 {
@@ -3658,11 +3958,6 @@ h1 {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .text-\[11px\] {
@@ -3975,11 +4270,6 @@ h1 {
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
-}
-
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -4155,10 +4445,6 @@ h1 {
   --tw-ring-inset: inset;
 }
 
-.ring-\[\#7070704d\] {
-  --tw-ring-color: #7070704d;
-}
-
 .ring-black {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
@@ -4181,10 +4467,6 @@ h1 {
 .ring-gray-900 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(17 24 39 / var(--tw-ring-opacity));
-}
-
-.ring-green-600\/20 {
-  --tw-ring-color: rgb(22 163 74 / 0.2);
 }
 
 .ring-transparent {
@@ -4320,15 +4602,6 @@ h1 {
   border-bottom-color: rgb(112 112 112 / var(--tw-border-opacity));
 }
 
-.hover\:bg-\[\#373738\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 55 56 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#7070704d\]:hover {
-  background-color: #7070704d;
-}
-
 .hover\:bg-\[\#FFFAF4\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 250 244 / var(--tw-bg-opacity));
@@ -4375,11 +4648,6 @@ h1 {
 
 .hover\:text-\[\#000000ad\]:hover {
   color: #000000ad;
-}
-
-.hover\:text-\[\#ffffff\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-black:hover {
@@ -5438,8 +5706,8 @@ h1 {
     flex-basis: 100%;
   }
 
-  .lg\:translate-y-\[380\%\] {
-    --tw-translate-y: 380%;
+  .lg\:translate-y-\[450\%\] {
+    --tw-translate-y: 450%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
@@ -5572,10 +5840,6 @@ h1 {
   .lg\:border-gray-200 {
     --tw-border-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  }
-
-  .lg\:bg-transparent {
-    background-color: transparent;
   }
 
   .lg\:bg-gradient-to-l {
@@ -5752,14 +6016,6 @@ h1 {
     font-size: 50px;
   }
 
-  .lg\:text-\[52px\] {
-    font-size: 52px;
-  }
-
-  .lg\:text-\[80px\] {
-    font-size: 80px;
-  }
-
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -5778,20 +6034,12 @@ h1 {
     line-height: 26px;
   }
 
-  .lg\:leading-\[45px\] {
-    line-height: 45px;
-  }
-
   .lg\:leading-\[47px\] {
     line-height: 47px;
   }
 
   .lg\:leading-\[56px\] {
     line-height: 56px;
-  }
-
-  .lg\:leading-\[61px\] {
-    line-height: 61px;
   }
 
   .lg\:opacity-50 {

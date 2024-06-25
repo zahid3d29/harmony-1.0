@@ -1,9 +1,12 @@
-<style>
+{% style  %}
   .grid-rtl{
     direction:rtl;
   }
-</style>
-<section id="harmony--{{ section.id }}" class="section__sale harmony__color-{{ section.settings.color_scheme }}">
+  span.swiper-pagination-bullet.swiper-pagination-bullet-active { 
+    background: {{ section.settings.active_pagi_color }} ; 
+  }
+{% endstyle %}
+<section id="harmony--{{ section.id }}" class="section__sale harmony__color-background-{{ section.settings.sales_color_scheme }}">
   <div class="grid grid-cols-1 lg:grid-cols-2 relative pt-12 lg:py-0 {% if section.settings.countdown_position == 'left' %} grid-rtl{% endif %}">
     <div class="grid grid-cols-1 py-8 px-6 lg:pt-24 md:px-10">
       <div class="w-[100%]">
@@ -16,7 +19,7 @@
                   <a href="{{ sale_product.url }}" class="group relative">
                     <div class="relative h-auto w-full overflow-hidden aspect-h-2 aspect-w-2 sm:aspect-h-1 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
                       {% if section.settings.enable_sale_badge %}
-                        <span class="sale__badge inline max-w-[104px] max-h-[21px] z-10 items-center text-center bg-[#532C2C] absolute left-1 top-1 sm:left-3 sm:top-3 px-2 text-[14px] leading-[19px] font-normal text-[#ffffff] ring-1 ring-inset ring-green-600/20">
+                        <span class="sale__badge inline max-w-[104px] max-h-[25px] z-10 items-center text-center absolute left-1 top-1 sm:left-3 sm:top-3 px-2 {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-text-{{ settings.sale_offer_badge_color_scheme }} harmony__color-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-border-{{ settings.sale_offer_badge_color_scheme }} badge_corner_radius">
                           {% if sale_product.compare_at_price and sale_product.compare_at_price > sale_product.price %}
                             {% assign original_price = sale_product.compare_at_price %}
                             {% assign sale_price = sale_product.price %}
@@ -27,94 +30,66 @@
                               | round
                             %}
                           {% endif %}
-
                           sale {{ sale_percentage }}%
                         </span>
                       {%- endif %}
                       <div
-                        class="product_featured_img block bg-[url('{{ sale_product.featured_image | img_url: 'master' }}')] hover:bg-[url('{{ sale_product.media[1] | img_url: 'master' }}')] bg-cover bg-center bg-no-repeat"
-                      ></div>
+                      class="product_featured_img block bg-cover bg-center bg-no-repeat"
+                      style="background-image: url('{{ sale_product.featured_image | image_url: width: '500' }}');"
+                      onmouseover="this.style.backgroundImage='url({{ sale_product.media[1] | image_url: width: '500' }})'"
+                      onmouseout="this.style.backgroundImage='url({{ sale_product.featured_image | image_url: width: '500' }})'"
+                    ></div>
+                    
                     </div>
                     <div class="mt-4 flex justify-between">
-                      <div class="w-4/5">
-                        <a href="/products/gold-bird-necklace" class="block">
-                          <h3 class="product__title mt-2 mb-3 pb-2 text-[16px] leading-[21px]  font-medium border-b border-[#7070704d]">
-                            {{ sale_product.title }}
-                          </h3>
-                        </a>
-                        {%- if section.settings.show_category -%}
+                      <table class="table-auto w-full harmony__color-background-{{ section.settings.sales_color_scheme }}">
+                        <tbody>
+                          <tr>
+                          {% if sale_product.title %}
+                          <td class="border-b harmony__color-border-{{ section.settings.sales_color_scheme }} pr-2 py-2">
+                              <a href="{{ product.url }}" class="block">
+                                <h3 class="product__title harmony__color-text-{{ section.settings.sales_color_scheme }} {% if settings.heading_font_size == 'sm' %}harmony__sales-prodTitle-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-prodTitle-lg{% else %}harmony__sales-prodTitle-theme-default{% endif %}">
+                                {{ sale_product.title | truncate: section.settings.number_of_letters_in_title }}
+                                </h3>
+                              </a>
+                          </td>
+                          {% endif %}
+                          {%- if section.settings.show_price -%}  
+                          <td class="border-b harmony__color-border-{{ section.settings.sales_color_scheme }} harmony__color-text-{{ section.settings.sales_color_scheme }}  {% if settings.body_font_size == 'sm' %}harmony__sales-priceFeedback-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-priceFeedback-lg{% else %}harmony__sales-priceFeedback-theme-default{% endif %} pl-2">
+                            {% if section.settings.show_price %}
+                              <div class="product__price flex justify-end">
+                                {%- if sale_product.compare_at_price > 0 -%}
+                                <span class="compare_at_price line-through opacity-50">
+                                  {{- sale_product.compare_at_price | money_with_currency -}}
+                                </span>
+                                {%- endif -%}
+                                <span class="sale_price px-2">{{ sale_product.price | money_with_currency }}</span>
+                              </div>
+                            {%- endif %}
+                          </td>
+                          {% endif %}
+                          </tr>
+                          <hr>
+                          <tr>
                           {% for collection in sale_product.collections limit: 1 %}
-                            <div class="product__collection text-[14px] leading-[19px]  inline-block px-2 py-0.5 border border-black rounded-full collection-title">
-                              {{ collection.title }}
-                            </div>
+                            {%- if section.settings.show_category and collection != blank -%}
+                            <td class="pr-2 py-2">
+                              <a href="{{ collection.url }}" class="collection__name harmony__color-text-{{ section.settings.sales_color_scheme }} harmony__color-background-{{ section.settings.sales_color_scheme }} harmony__color-border-{{ section.settings.sales_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__sales-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-label-lg{% else %}harmony__sales-label-theme-default{% endif %} inline-block px-2 py-1.5 border rounded-full">{{ collection.title }}</a>
+                            </td>
+                            {% endif %}
                           {% endfor %}
-                        {% endif %}
-                      </div>
-                      <div class="w-2/5">
-                        <div class="product_price mt-2 mb-3 pb-3 text-[14px] leading-[19px]  text-right border-b border-[#7070704d]">
-                          {% if section.settings.show_price %}
-                            <span class="compare_at_price line-through text-gray-500">
-                              {{- sale_product.compare_at_price | money_with_currency -}}
-                            </span>
-                            <span class="price">{{ sale_product.price | money_with_currency }}</span>
-                          {%- endif %}
-                        </div>
-                        {% if section.settings.show_reviews %}
-                          <div class="product_rating flex items-center justify-end">
-                            <div class="flex items-center justify-end text-[13px]">
-                              <svg
-                                class=" w-5 flex-shrink-0"
-                                x-state:on="Active"
-                                x-state:off="Default"
-                                x-state-description="Active: &quot;&quot;, Default: &quot;text-gray-200&quot;"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                              </svg>
-                              <svg
-                                class=" w-5 flex-shrink-0"
-                                x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                              </svg>
-                              <svg
-                                class=" w-5 flex-shrink-0"
-                                x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                              </svg>
-                              <svg
-                                class=" w-5 flex-shrink-0"
-                                x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                              </svg>
-                              <svg
-                                class="text-gray-200 w-5 flex-shrink-0"
-                                x-state-description="undefined: &quot;&quot;, undefined: &quot;text-gray-200&quot;"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                              </svg>
+                          {%- if section.settings.show_reviews -%}
+                          <td class="flex items-center justify-end pl-2 text-right py-2">
+                            <div class="flex items-center justify-end {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %}">
+                              {% render 'rating-star' %}
                             </div>
                             <span class="sr-only">3.9 out of 5 stars</span>
-                            <span class="rating_count ml-3 text-[13px] leading-[17px]  hover:text-gray-500">22</span>
-                          </div>
-                        {% endif %}
-                      </div>
+                            <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">({{ block.settings.feedback_count }})</span>
+                          </td>
+                          {% endif %}
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </a>
                 </div>
@@ -124,10 +99,7 @@
         </div>
       </div>
       <div
-        class="product_carousel-control flex items-center justify-center my-4"
-        {% if section.settings.slider_navigation == 'none' %}
-          style="display:none;"
-        {% endif %}
+        class="product_carousel-control {% if section.settings.slider_navigation == 'none' %} hidden {% else %} flex {% endif %} items-center justify-center my-4"
       >
         <button
           class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3"
@@ -139,37 +111,28 @@
           aria-controls="headlessui-tabs-panel-8"
         >
           <span
-            class="product_carousel-prev lg:mr-2 "
-            {% if section.settings.slider_navigation == 'dots' %}
-              style="display:none;"
-            {% endif %}
+            class="product_carousel-prev {% if section.settings.slider_navigation == 'dots' %} hidden {% endif %} mr-2"
           >
             <a
-              class="prev relative inline-flex items-center rounded-full text-[17px] leading-[35px]  px-2 py-2 hover: ring-1 ring-inset ring-gray-300 bg-transparent hover:bg-[#7070704d] focus:z-20 focus:outline-offset-0"
+              class="prev-{{ section.id }} relative inline-flex items-center harmony__color-primary-button-background-{{ section.settings.sales_color_scheme }} border  harmony__color-primary-button-border-{{ section.settings.sales_color_scheme }} rounded-full px-2 py-2 ring-inset focus:z-20 focus:outline-offset-0"
             >
               <span class="sr-only">Previous</span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.sales_color_scheme }}" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd"></path>
               </svg>
             </a>
           </span>
           <div
-            class="pagination"
-            {% if section.settings.slider_navigation == 'arrows' %}
-              style="display:none;"
-            {% endif %}
+            class="pagination-{{ section.id }} {% if section.settings.slider_navigation == 'arrows' %} hidden {% endif %}"
           ></div>
           <span
-            class="product_carousel-next lg:ml-2 text-gray-700"
-            {% if section.settings.slider_navigation == 'dots' %}
-              style="display:none;"
-            {% endif %}
+            class="product_carousel-next {% if section.settings.slider_navigation == 'dots' %} hidden {% endif %} ml-2"
           >
             <a
-              class="next relative inline-flex items-center rounded-full px-2 py-2 text-gray-700 hover: bg-white hover:bg-gray-100 ring-1 ring-inset ring-[#7070704d] focus:z-20 focus:outline-offset-0"
+              class="next-{{ section.id }} relative harmony__color-secondary-button-background-{{ section.settings.sales_color_scheme }} border harmony__color-secondary-button-border-{{ section.settings.sales_color_scheme }} inline-flex items-center rounded-full px-2 py-2 focus:z-20 focus:outline-offset-0"
             >
               <span class="sr-only">Next</span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.sales_color_scheme }}" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"></path>
               </svg>
             </a>
@@ -181,7 +144,7 @@
     <div class="relative grid grid-cols-1 lg:grid-rows-2 grid-flow-col gap-4 px-8 py-16 h-full w-full bg-[url('https://cdn.shopify.com/s/files/1/0586/2499/9582/files/product-bg.png?v=1713031830')]  bg-cover">
       {% if section.settings.description != blank %}
         <div class="row-start-1 text-center px-[1rem] max-w-1xl lg:px-[6rem]">
-          <div class="sale_description text-[18px] leading-[22px] text-[#f7f4ed] font-normal">
+          <div class="sale_description {% if settings.body_font_size == 'sm' %}harmony__sales-desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-desc-lg{% else %}harmony__sales-desc-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">
             {{ section.settings.description }}
           </div>
         </div>
@@ -191,10 +154,10 @@
         <div class="mx-auto max-w-7xl px-6 md:px-10 md:py-8 lg:py-14">
           <dl class="grid grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
             <div class="countdown__day mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Days</dt>
+              <dt class="{% if settings.body_font_size == 'sm' %}harmony__sales-countdown-time-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-countdown-time-label-lg{% else %}harmony__sales-countdown-time-label-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">Days</dt>
               <dd
                 id="day"
-                class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200"
+                class="order-first {% if settings.heading_font_size == 'sm' %}harmony__sales-countdown-time-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-countdown-time-lg{% else %}harmony__sales-countdown-time-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.sales_color_scheme }}"
               >
                 {% assign day = section.settings.day %}
                 {% if day < 10 %}
@@ -204,10 +167,10 @@
               </dd>
             </div>
             <div class="countdown__hours mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Hours</dt>
+              <dt class="{% if settings.body_font_size == 'sm' %}harmony__sales-countdown-time-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-countdown-time-label-lg{% else %}harmony__sales-countdown-time-label-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">Hours</dt>
               <dd
                 id="hour"
-                class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200"
+                class="order-first {% if settings.heading_font_size == 'sm' %}harmony__sales-countdown-time-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-countdown-time-lg{% else %}harmony__sales-countdown-time-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.sales_color_scheme }}"
               >
                 {% assign hour = section.settings.hour %}
                 {% if hour < 10 %}
@@ -217,10 +180,10 @@
               </dd>
             </div>
             <div class="countdown__min mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Minutes</dt>
+              <dt class="{% if settings.body_font_size == 'sm' %}harmony__sales-countdown-time-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-countdown-time-label-lg{% else %}harmony__sales-countdown-time-label-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">Minutes</dt>
               <dd
                 id="min"
-                class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200"
+                class="order-first {% if settings.heading_font_size == 'sm' %}harmony__sales-countdown-time-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-countdown-time-lg{% else %}harmony__sales-countdown-time-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.sales_color_scheme }}"
               >
                 {% assign min = section.settings.min %}
                 {% if min < 10 %}
@@ -230,10 +193,10 @@
               </dd>
             </div>
             <div class="countdown__sec mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-[14px] leading-[22px] text-[#fffaf4] font-normal">Seconds</dt>
+              <dt class="{% if settings.body_font_size == 'sm' %}harmony__sales-countdown-time-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-countdown-time-label-lg{% else %}harmony__sales-countdown-time-label-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">Seconds</dt>
               <dd
                 id="sec"
-                class="order-first text-3xl lg:text-[52px] lg:leading-[45px] font-semibold tracking-tight text-gray-200"
+                class="order-first {% if settings.heading_font_size == 'sm' %}harmony__sales-countdown-time-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-countdown-time-lg{% else %}harmony__sales-countdown-time-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.sales_color_scheme }}"
               >
                 {% assign sec = section.settings.sec %}
                 {% if sec < 10 %}
@@ -246,7 +209,7 @@
         </div>
       </div>
       {% if section.settings.heading != blank %}
-        <marquee class="hidden md:flex z-10 marquee-text text-4xl lg:text-[80px] lg:leading-[61px] text-[#f7f4ed] font-bold bg-transparent lg:bg-transparent translate-y-[1850%] lg:translate-y-[380%] absolute right-0 font-700">
+        <marquee class="flex z-10 marquee-text {% if settings.heading_font_size == 'sm' %}harmony__sales-marquee-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-marquee-lg{% else %}harmony__sales-marquee-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }} bg-transparent translate-y-[50%] lg:translate-y-[450%] absolute right-0">
           &nbsp;{{ section.settings.heading }} &nbsp; {{ section.settings.heading }} &nbsp;
           {{ section.settings.heading }}
         </marquee>
@@ -254,42 +217,6 @@
     </div>
   </div>
 </section>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function initializeCountdown(endTime) {
-      function updateCountdown() {
-        var now = new Date().getTime();
-        var distance = endTime - now;
-
-        if (distance < 0) {
-          clearInterval(interval);
-          document.getElementById('countdown-timer').innerHTML = "EXPIRED";
-          return;
-        }
-
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById('countdown-timer').innerHTML =
-          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        document.getElementById('day').innerHTML =  days;
-        document.getElementById('hour').innerHTML =  hours ;
-        document.getElementById('min').innerHTML =   minutes ;
-        document.getElementById('sec').innerHTML =  seconds;
-      }
-
-      var interval = setInterval(updateCountdown, 1000);
-      updateCountdown();
-    }
-
-    var endDate = '{{ section.settings.end_date }}';
-    var endTime = '{{ section.settings.end_time }}';
-    var endDateTime = new Date(endDate + 'T' + endTime + 'Z').getTime();
-    initializeCountdown(endDateTime);
-  });
-</script>
 
 {% schema %}
 {
@@ -297,7 +224,7 @@
   "settings": [
     {
       "type": "color_scheme",
-      "id": "color_scheme",
+      "id": "sales_color_scheme",
       "label": "Harmony Color Scheme",
       "default": "scheme-1"
     },
@@ -346,7 +273,7 @@
       "content": "Product Card"
 
     },
-        {
+    {
       "type": "select",
       "id": "slider_navigation",
       "label": "Slider Navigation",
@@ -371,6 +298,18 @@
       "default": "both"
     },
     {
+      "type": "color",
+      "id": "active_pagi_color",
+      "label": "Pagination Active Color",
+      "default": "#626E5C"
+    },
+    {
+      "type": "number",
+      "id": "number_of_letters_in_title",
+      "label": "Number of letters in Title",
+      "default": 12
+    },
+    {
       "type": "checkbox",
       "id": "show_price",
       "label": "Show Price",
@@ -388,18 +327,11 @@
       "label": "Show Reviews",
       "default": false
     },
-
     {
       "type": "checkbox",
       "id": "enable_sale_badge",
       "label": "Enable Sale Badge",
       "default": true
-    },
-    {
-      "type": "color",
-      "id": "border_color",
-      "label": "Border Color",
-      "default": "#626E5C"
     },
     {
       "type": "header",
@@ -435,6 +367,13 @@
           "type":"product",
           "label":"Product",
           "id":"s_product"
+        },
+        {
+          "type": "liquid",
+          "id": "product_rating_count",
+          "label": "Product Ratings",
+          "default": "{{ product.metafields.custom.zhd_product_option_length_13.value }}",
+          "info": "Place your product rating metafield liquid code here"
         }
       ]
     }
@@ -449,14 +388,42 @@
 {% endschema %}
 
 
-{% for scheme in settings.color_schemes %}
-  {% style %}
-    .harmony__color-{{ scheme.id }}{
-      background: rgb({{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }});
-      color: rgb({{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }});
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function initializeCountdown(endTime) {
+      function updateCountdown() {
+        var now = new Date().getTime();
+        var distance = endTime - now;
+
+        if (distance < 0) {
+          clearInterval(interval);
+          document.getElementById('countdown-timer').innerHTML = "EXPIRED";
+          return;
+        }
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown-timer').innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        document.getElementById('day').innerHTML =  days;
+        document.getElementById('hour').innerHTML =  hours ;
+        document.getElementById('min').innerHTML =   minutes ;
+        document.getElementById('sec').innerHTML =  seconds;
+      }
+
+      var interval = setInterval(updateCountdown, 1000);
+      updateCountdown();
     }
-  {% endstyle %}
-{% endfor %}
+
+    var endDate = '{{ section.settings.end_date }}';
+    var endTime = '{{ section.settings.end_time }}';
+    var endDateTime = new Date(endDate + 'T' + endTime + 'Z').getTime();
+    initializeCountdown(endDateTime);
+  });
+</script>
 
 
 <script>
@@ -464,15 +431,13 @@
     slidesPerView: 1,
     spaceBetween: 5,
     pagination: {
-      el: ".pagination",
+      el: ".pagination-{{ section.id }}",
       clickable: true,
     },
     navigation: {
-      nextEl: ".next",
-      prevEl: ".prev",
+      nextEl: ".next-{{ section.id }}",
+      prevEl: ".prev-{{ section.id }}",
     },
   });
 </script>
-<style>
-  span.swiper-pagination-bullet.swiper-pagination-bullet-active { background: black; }
-</style>
+

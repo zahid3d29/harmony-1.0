@@ -338,7 +338,127 @@
   .harmony__productFT-priceFeedback-lg {
     @apply text-[14px] leading-[20px];
   }
-   
+
+  /* Sales Section Product Title Font Size */
+  .harmony__sales-prodTitle-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__sales-prodTitle-theme-default {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__sales-prodTitle-lg {
+    @apply text-[18px] leading-[28px];
+  }  
+  /* Sales Section description Font Size */
+  .harmony__sales-desc-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__sales-desc-theme-default {
+    @apply text-[17px] leading-[26px];
+  }
+  .harmony__sales-desc-lg {
+    @apply text-[20px] leading-[28px];
+  }
+
+  /* Sales Section marquee Font Size */
+  .harmony__sales-marquee-sm {
+    @apply text-[20px] leading-[15.25px] md:text-[30px] md:leading-[22.875px] lg:text-[40px] lg:leading-[30.5px]; /* 50% of the default size */
+  }
+  .harmony__sales-marquee-theme-default {
+    @apply text-[40px] leading-[30.5px] md:text-[60px] md:leading-[45.75px] lg:text-[80px] lg:leading-[61px];
+  }
+  .harmony__sales-marquee-lg {
+    @apply text-[50px] leading-[38.125px] md:text-[75px] md:leading-[57.1875px] lg:text-[100px] lg:leading-[76.25px]; /* 125% of the default size */
+  }
+
+  /* Sales Section timer Font Size */
+  .harmony__sales-countdown-time-sm {
+    @apply text-[26px] leading-[22.5px] md:text-[32.5px] md:leading-[28.125px] lg:text-[39px] lg:leading-[33.75px]; /* 75% of the default size */
+  }
+  .harmony__sales-countdown-time-theme-default {
+    @apply text-[35px] leading-[30px] md:text-[43.5px] md:leading-[37.5px] lg:text-[52px] lg:leading-[45px];
+  }
+  .harmony__sales-countdown-time-lg {
+    @apply text-[43.5px] leading-[37.5px] md:text-[54.25px] md:leading-[46.875px] lg:text-[65px] lg:leading-[56.25px]; /* 125% of the default size */
+  }
+
+  /* Sales Section timer label Font Size */
+  .harmony__sales-countdown-time-label-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__sales-countdown-time-label-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__sales-countdown-time-label-lg {
+    @apply text-[16px] leading-[24px];
+  }
+
+  /* sales Section category/caption label Font Size */
+  .harmony__sales-label-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__sales-label-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__sales-label-lg {
+    @apply text-[16px] leading-[24px];
+  }  
+
+  /* sales Section price/feedback Font Size */
+  .harmony__sales-priceFeedback-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__sales-priceFeedback-theme-default {
+    @apply text-[13px] leading-[17px];
+  }
+  .harmony__sales-priceFeedback-lg {
+    @apply text-[14px] leading-[20px];
+  }
+
+  /* FAQ Section Heading Font Size */
+  .harmony__faq-heading-sm {
+    @apply text-[20px] leading-[28px] md:text-[32px] md:leading-[38px] lg:text-[42px] lg:leading-[48px];
+  }
+  .harmony__faq-heading-theme-default {
+    @apply text-[24px] leading-[32px] md:text-[36px] md:leading-[42px] lg:text-[50px] lg:leading-[68px];
+  }
+  .harmony__faq-heading-lg {
+    @apply text-[32px] leading-[42px] md:text-[48px] md:leading-[62px] lg:text-[62px] lg:leading-[72px];
+  }
+
+  /* FAQ Section button Font Size */
+  .harmony__faq-btn-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__faq-btn-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__faq-btn-lg {
+    @apply text-[16px] leading-[24px];
+  }   
+
+  /* FAQ Section Title Font Size */
+  .harmony__faq-title-sm {
+    @apply text-[15px] leading-[19.5px]; /* 75% of the default size */
+  }
+  .harmony__faq-title-theme-default {
+    @apply text-[20px] leading-[26px];
+  }
+  .harmony__faq-title-lg {
+    @apply text-[25px] leading-[32.5px]; /* 125% of the default size */
+  }
+
+  /* FAQ Section Content Font Size */
+  .harmony__faq-content-sm {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__faq-content-theme-default {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__faq-content-lg {
+    @apply text-[18px] leading-[28px];
+  }  
+
   /* Footer Benefits Font Size */
   .harmony__footerbenifits-sm {
     @apply text-[12px] leading-[16px];
@@ -363,6 +483,7 @@
 }
 
  
+
 @layer utilities {
   .filter-none {
     filter: none;

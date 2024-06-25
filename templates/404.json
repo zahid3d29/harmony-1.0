@@ -112,11 +112,13 @@
       ],
       "disabled": true,
       "settings": {
-        "product_featured_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "product_featured_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "enable_gradient": false,
         "heading": "Section Heading",
         "show_heeading": true,
         "desktop_layout": "grid",
+        "slider_navigation": "both",
+        "active_pagi_color": "#ffffff",
         "show_price": true,
         "show_category": true,
         "show_reviews": true,
@@ -125,7 +127,7 @@
         "show_wishlist": true,
         "enable_quick_view": true,
         "number_of_letters_in_title": 12,
-        "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}",
+        "product_rating_count": "{{ localization.market.metafields.custom.feedback_count.value }}",
         "products_to_show": 8,
         "products_per_row": 3,
         "mobile_layout": "grid",
@@ -273,10 +275,128 @@
         "focal_2_position_left_mob": 30
       }
     },
-    "faq_yMp8dd": {
-      "type": "faq",
+    "sales_Qa4cTi": {
+      "type": "sales",
+      "blocks": {
+        "product_iKqxar": {
+          "type": "product",
+          "settings": {
+            "s_product": "chain-bracelet",
+            "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}"
+          }
+        },
+        "product_8c4ijP": {
+          "type": "product",
+          "settings": {
+            "s_product": "leather-anchor",
+            "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}"
+          }
+        },
+        "product_7HYyxT": {
+          "type": "product",
+          "settings": {
+            "s_product": "bangle-bracelet",
+            "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}"
+          }
+        },
+        "product_zyFNcH": {
+          "type": "product",
+          "settings": {
+            "s_product": "bangle-bracelet-with-feathers",
+            "product_rating_count": "{{ product.metafields.custom.zhd_product_option_length_13.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "product_iKqxar",
+        "product_8c4ijP",
+        "product_7HYyxT",
+        "product_zyFNcH"
+      ],
+      "disabled": true,
       "settings": {
-        "heading": ""
+        "sales_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "countdown_position": "right",
+        "heading": "Up to 50% Sale On!",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "end_date": "2024-06-31",
+        "end_time": "23:59:59",
+        "slider_navigation": "arrows",
+        "active_pagi_color": "#0e1b4d",
+        "number_of_letters_in_title": 12,
+        "show_price": true,
+        "show_category": true,
+        "show_reviews": true,
+        "enable_sale_badge": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq_VD6dqP": {
+      "type": "faq",
+      "blocks": {
+        "faqtab_Lttp3N": {
+          "type": "faqtab",
+          "settings": {
+            "tab_label": "Purchase",
+            "qtn_1": "Question 1 Location",
+            "ans_1": "Answer 1 Location",
+            "qtn_2": "Are your products suitable for all skin types?",
+            "ans_2": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_3": "Are your products suitable for all skin types?",
+            "ans_3": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_4": "",
+            "ans_4": "",
+            "qtn_5": "",
+            "ans_5": ""
+          }
+        },
+        "faqtab_wc8nWY": {
+          "type": "faqtab",
+          "settings": {
+            "tab_label": "Shipping",
+            "qtn_1": "Question 1 Shipping",
+            "ans_1": "Answer 1 Shipping",
+            "qtn_2": "Are your products suitable for all skin types?",
+            "ans_2": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_3": "Are your products suitable for all skin types?",
+            "ans_3": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_4": "",
+            "ans_4": "",
+            "qtn_5": "",
+            "ans_5": ""
+          }
+        },
+        "faqtab_gBjzAB": {
+          "type": "faqtab",
+          "settings": {
+            "tab_label": "Policy",
+            "qtn_1": "Are your products suitable for all skin types?",
+            "ans_1": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_2": "Are your products suitable for all skin types?",
+            "ans_2": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_3": "Are your products suitable for all skin types?",
+            "ans_3": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>",
+            "qtn_4": "",
+            "ans_4": "",
+            "qtn_5": "",
+            "ans_5": ""
+          }
+        }
+      },
+      "block_order": [
+        "faqtab_Lttp3N",
+        "faqtab_wc8nWY",
+        "faqtab_gBjzAB"
+      ],
+      "settings": {
+        "faq_color_scheme": "",
+        "enable_gradient": false,
+        "active_tab_color": "#f5c911",
+        "heading": "",
+        "qtn_txt": "Still have a question?",
+        "btn_txt": "Send private message",
+        "btn_url": ""
       }
     }
   },
@@ -287,6 +407,7 @@
     "featured_collection_pjcRRC",
     "reveal_WzKetq",
     "focal_9bQdFB",
-    "faq_yMp8dd"
+    "sales_Qa4cTi",
+    "faq_VD6dqP"
   ]
 }

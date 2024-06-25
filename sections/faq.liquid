@@ -1,147 +1,238 @@
-<style>
+{% style %}
     /* Create an faqTabActive/current faq__tablink class */
-    .faq__tab button.faqTabActive {
-        background-color: #373738;
-        color: #fff;
+    section#harmony--{{ section.id }} .faq__tab button.faqTabActive {
+        background-color: {{ section.settings.active_tab_color  }};
+        /* color: #fff; */
     }
 
     /* Style the faq__tab content */
-    .faq__tabcontent {
+    section#harmony--{{ section.id }} .faq__tabcontent {
         display: none;
     }
 
-    .faqAccordion:after {
+    section#harmony--{{ section.id }} .faqAccordion:after {
         content: '\002B';
         color: #777;
         font-weight: bold;
         float: right;
         margin-left: 5px;
     }
-    .accTabActive:after {
+    section#harmony--{{ section.id }} .accTabActive:after {
         content: "\2212";
     }
-    .faqPanel {
+    section#harmony--{{ section.id }} .faqPanel {
         max-height: 0;
         transition: max-height 0.2s ease-out;
     }
-</style>
+{% endstyle %}
 
-<section id="harmony--{{ section.id }}" class="bg-[#FFFAF4]">
-    <div class="py-10 md:py-24">
-        <div class="mx-auto max-w-7xl px-6 md:px-10">
-          <div class="mx-auto grid grid-cols-3">
-            <div class="heading text-center md:text-left content-center col-span-3 md:col-span-1">
-                <h2 class="tracking-tight text-[27px] leading-[36px] lg:text-[50px] lg:leading-[56px] text-[#000000] font-semibold">Read FAQ's</h2>
-            </div>
-            <div class="faq__tab flex overflow-hidden justify-center md:justify-end md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
-                <button class="faq__tablinks bg-[transparent] hover:bg-[#373738] border-0 outline-0 cursor-pointer rounded-full px-[20px] py-[5px] transition duration-30 ease-in-out text-[14px] leading-[16px] text-[#000000] hover:text-[#ffffff] font-semibold" onclick="openFaq(event, 'Shipping')" id="faqTabDefaultOpen">Shipping</button>
-                <button class="faq__tablinks bg-[transparent] hover:bg-[#373738] border-0 outline-0 cursor-pointer rounded-full px-[20px] py-[5px] transition duration-30 ease-in-out text-[14px] leading-[16px] text-[#000000] hover:text-[#ffffff] font-semibold" onclick="openFaq(event, 'Payment')">Payment</button>
-                <button class="faq__tablinks bg-[transparent] hover:bg-[#373738] border-0 outline-0 cursor-pointer rounded-full px-[20px] py-[5px] transition duration-30 ease-in-out text-[14px] leading-[16px] text-[#000000] hover:text-[#ffffff] font-semibold" onclick="openFaq(event, 'Pre-Sale')">Pre-Sale</button>
-            </div>
-          </div>
-          <div class="mx-auto mt-0 md:mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-2 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
-            <div class="faq-faqAccordion min-h-[25rem]">
-                <div id="Shipping" class="faq__tabcontent px-[6px] py-[0] animate__animated animate__fadeIn animate__slower">
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                    
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                    
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
 
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">What is your return policy?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                </div>
-
-                <div id="Payment" class="faq__tabcontent px-[6px] py-[0] animate__animated animate__fadeIn animate__slower">
-
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">What is your return policy?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">Can I contact your customer support for additional assistance?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">How can I stay updated on your latest products and promotions?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                </div>
-
-                <div id="Pre-Sale" class="faq__tabcontent px-[6px] py-[0] animate__animated animate__fadeIn animate__slower">
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">Are your products suitable for all skin types?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                    
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">How do I know which products are right for my skin?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                    
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">Can I use your products if I have a specific skin concern, like acne or fine lines?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-
-                    <button class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b border-b-[#eee] text-left outline-0 transition duration-40 ease-in-out text-[14px] leading-[19px] lg:text-[20px] lg:leading-[26px] text-[#000000] font-semibold bg-[#FFFAF4] hover:text-[#000000ad] hover:bg-[#FFFAF4]">What is your return policy?</button>
-                    <div class="faqPanel pr-[10px] bg-[#FFFAF4] overflow-hidden">
-                      <div class="block py-3 text-[16px] leading-[21px] text-[#000000]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="send__msg mx-auto text-[14px] leading-[19px] text-[#000000] inline-block text-center border border-gray-300 rounded-full px-3 py-2">
-                <p>Still have a question? <a href="#" class="underline">Send private message</a></p>
-            </div>
-          </div>
+<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.faq_color_scheme }} {% else %} harmony__color-background-{{ section.settings.faq_color_scheme }} {% endif %}">
+  <div class="py-10 md:py-24">
+    <div class="mx-auto max-w-7xl px-6 md:px-10">
+      <div class="mx-auto grid grid-cols-3">
+        <div class="heading text-center md:text-left content-center col-span-3 md:col-span-1">
+            <h2 class="tracking-tight {% if settings.heading_font_size == 'sm' %}harmony__faq-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-heading-lg{% else %}harmony__faq-heading-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }} font-semibold">Read FAQ's</h2>
         </div>
+        <div class="faq__tab flex overflow-hidden justify-center md:justify-end md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
+          {%- for block in section.blocks -%}
+          <button class="faq__tablinks harmony__color-primary-button-background-{{ section.settings.faq_color_scheme }} harmony__color-primary-button-label-{{ section.settings.faq_color_scheme }} harmony__color-primary-button-border-{{ section.settings.faq_color_scheme }} hover:bg-[{{ section.settings.active_tab_color }}] border-0 outline-0 cursor-pointer rounded-full px-[20px] py-[5px] transition duration-30 ease-in-out {% if settings.body_font_size == 'sm' %}harmony__faq-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-btn-lg{% else %}harmony__faq-btn-theme-default{% endif %}" onclick="openFaq(event, '{{ block.settings.tab_label | replace: ' ', '-' }}')" id="faqTabDefaultOpen">{{ block.settings.tab_label | escape }}</button>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="mx-auto mt-0 md:mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-2 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
+        <div class="faq-faqAccordion min-h-[25rem]">
+          {%- for block in section.blocks -%}
+            <div id="{{ block.settings.tab_label | replace: " ", "-" }}" class="faq__tabcontent px-[6px] py-[0] animate__animated animate__fadeIn animate__slower">
+              {%- if block.settings.qtn_1 != blank -%}
+                <h4 class="faqAccordion cursor-pointer px-[0] py-[18px] w-full border-b harmony__color-text-{{ section.settings.faq_color_scheme }} harmony__color-border-{{ section.settings.faq_color_scheme }} text-left outline-0 transition duration-40 ease-in-out {% if settings.heading_font_size == 'sm' %}harmony__faq-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-title-lg{% else %}harmony__faq-title-theme-default{% endif %}">{{ block.settings.qtn_1 }}</h4>
+              {%- endif -%}
+              {%- if block.settings.ans_1 != blank -%}
+                <div class="faqPanel pr-[10px] overflow-hidden">
+                  <dd class="block py-3 {% if settings.body_font_size == 'sm' %}harmony__faq-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-content-lg{% else %}harmony__faq-content-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }}">{{ block.settings.ans_1 }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if block.settings.qtn_2 != blank -%}
+                <h4 class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b harmony__color-text-{{ section.settings.faq_color_scheme }} harmony__color-border-{{ section.settings.faq_color_scheme }} text-left outline-0 transition duration-40 ease-in-out {% if settings.heading_font_size == 'sm' %}harmony__faq-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-title-lg{% else %}harmony__faq-title-theme-default{% endif %}">{{ block.settings.qtn_2 }}</h4>
+              {%- endif -%}
+              {%- if block.settings.ans_2 != blank -%}
+                <div class="faqPanel pr-[10px] overflow-hidden">
+                  <dd class="block py-3 {% if settings.body_font_size == 'sm' %}harmony__faq-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-content-lg{% else %}harmony__faq-content-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }}">{{ block.settings.ans_2 }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if block.settings.qtn_3 != blank -%}
+                <h4 class="faqAccordion cursor-pointer px-[0] py-[18px] w-full border-b harmony__color-text-{{ section.settings.faq_color_scheme }} harmony__color-border-{{ section.settings.faq_color_scheme }} text-left outline-0 transition duration-40 ease-in-out {% if settings.heading_font_size == 'sm' %}harmony__faq-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-title-lg{% else %}harmony__faq-title-theme-default{% endif %}">{{ block.settings.qtn_3 }}</h4>
+              {%- endif -%}
+              {%- if block.settings.ans_3 != blank -%}
+                <div class="faqPanel pr-[10px] overflow-hidden">
+                  <dd class="block py-3 {% if settings.body_font_size == 'sm' %}harmony__faq-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-content-lg{% else %}harmony__faq-content-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }}">{{ block.settings.ans_3 }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if block.settings.qtn_4 != blank -%}
+                <h4 class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b harmony__color-text-{{ section.settings.faq_color_scheme }} harmony__color-border-{{ section.settings.faq_color_scheme }} text-left outline-0 transition duration-40 ease-in-out {% if settings.heading_font_size == 'sm' %}harmony__faq-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-title-lg{% else %}harmony__faq-title-theme-default{% endif %}">{{ block.settings.qtn_4 }}</h4>
+              {%- endif -%}
+              {%- if block.settings.ans_4 != blank -%}
+                <div class="faqPanel pr-[10px] overflow-hidden">
+                  <dd class="block py-3 {% if settings.body_font_size == 'sm' %}harmony__faq-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-content-lg{% else %}harmony__faq-content-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }}">{{ block.settings.ans_4 }}</dd>
+                </div>
+              {%- endif -%}
+              {%- if block.settings.qtn_5 != blank -%}
+                <h4 class="faqAccordion cursor-pointer px-[0] py-[18px] w-full  border-b harmony__color-text-{{ section.settings.faq_color_scheme }} harmony__color-border-{{ section.settings.faq_color_scheme }} text-left outline-0 transition duration-40 ease-in-out {% if settings.heading_font_size == 'sm' %}harmony__faq-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-title-lg{% else %}harmony__faq-title-theme-default{% endif %}">{{ block.settings.qtn_5 }}</h4>
+              {%- endif -%}
+              {%- if block.settings.ans_5 != blank -%}
+                <div class="faqPanel pr-[10px] overflow-hidden">
+                  <dd class="block py-3 {% if settings.body_font_size == 'sm' %}harmony__faq-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-content-lg{% else %}harmony__faq-content-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }}">{{ block.settings.ans_5 }}</dd>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}  
+        </div>
+        <div class="send__msg mx-auto {% if settings.body_font_size == 'sm' %}harmony__faq-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-btn-lg{% else %}harmony__faq-btn-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }} inline-block text-center border harmony__color-border-{{ section.settings.faq_color_scheme }} rounded-full px-3 py-2">
+          <p>{{ section.settings.qtn_txt | escape }} <a href="{{ section.settings.btn_url }}" class="underline">{{ section.settings.btn_txt }}</a></p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
 {% schema %}
 {
-    "name": "FAQ",
-    "class": "harmony_section-faq",
-    "disabled_on": {
-      "groups": ["header", "footer"]
+  "name": "FAQ",
+  "class": "harmony_section-faq",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "faq_color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
     },
-    "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_gradient",
+      "label": "Background Gradient?",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "active_tab_color",
+      "label": "Active Tab Color",
+      "default": "#626E5C"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Read FAQ"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "qtn_txt",
+      "label": "Question Text",
+      "default": "Still have a question?"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "btn_txt",
+      "label": "Button",
+      "default": "Send private message"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button Link"
+    }
+
+  ],
+  "blocks": [
+    {
+      "type": "faqtab",
+      "name": "Faq Tab",
+      "limit": 5,
+      "settings": [
         {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading"
-        }
-    ],
-    "presets": [
+          "type": "inline_richtext",
+          "id": "tab_label",
+          "default": "Shipping",
+          "label": "Tab label"
+        },
         {
-            "name": "FAQ",
-            "category": "Harmony Sections"
+          "type": "header",
+          "content": "Tab Content"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "qtn_1",
+          "label": "Question",
+          "default": "Are your products suitable for all skin types?"
+        },
+        {
+          "type": "textarea",
+          "id": "ans_1",
+          "label": "Answer",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "qtn_2",
+          "label": "Question",
+          "default": "Are your products suitable for all skin types?"
+        },
+        {
+          "type": "textarea",
+          "id": "ans_2",
+          "label": "Answer",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "qtn_3",
+          "label": "Question",
+          "default": "Are your products suitable for all skin types?"
+        },
+        {
+          "type": "textarea",
+          "id": "ans_3",
+          "label": "Answer",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "qtn_4",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "ans_4",
+          "label": "Answer"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "qtn_5",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "ans_5",
+          "label": "Answer"
         }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "category": "Harmony Sections",
+      "blocks": [
+        {
+          "type": "faqtab"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
 

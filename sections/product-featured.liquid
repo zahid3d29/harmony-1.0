@@ -29,10 +29,6 @@
   #product__grid-wrapper:hover #product__overlay{
     height: 100%;
   }
-  /* schema settings Badge Corner Radius  */
-  .badge_corner_radius{
-    border-radius: {{ settings.badge_corner_radius }}px;
-  }
   .product__grid-card {
     padding: {{ settings.product_card_horizontal_offset }}px {{ settings.product_card_vertical_offset }}px;
     border-radius: {{ settings.product_card_corner_radius }}px;
@@ -40,14 +36,13 @@
   }
   .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     transform: translateX(0%) !important;
-    width: 100% !important;
   }
   .harmony--{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
   span.swiper-pagination-bullet.swiper-pagination-bullet-active { 
-    harmony__color-icon-{{ section.settings.product_featured_color_scheme }}; 
+    background: {{ section.settings.active_pagi_color }} ; 
   }
   @media screen and (min-width: 750px) {
     .harmony--{{ section.id }}-padding {
@@ -64,19 +59,16 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 harmony--{{ section.id }}-padding">
     <div class="flex items-center lg:items-baseline justify-between mb-8">
       <h2 class="product__featured-heading {% if settings.heading_font_size == 'sm' %}harmony__productFT-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-heading-lg{% else %}harmony__productFT-heading-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.product_featured_color_scheme }} lg:max-w-3xl">{{ section.settings.heading }}</h2>
-      <div class="product__featured-slide flex items-center">
+      <div class="product_carousel-control {% if section.settings.slider_navigation == 'none' %} hidden {% else %} flex {% endif %} items-center">
         {%- if section.settings.desktop_layout == 'carousel' -%}
         <button
           class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3"
         >
           <span
-            class="product_carousel-prev lg:mr-2 "
-            {% if section.settings.slider_navigation == 'dots' %}
-              style="display:none;"
-            {% endif %}
+            class="product_carousel-prev {% if section.settings.slider_navigation == 'dots' %} hidden {% endif %} lg:mr-2"
           >
             <a
-              class="prev relative inline-flex items-center rounded-full {% if settings.body_font_size == 'sm' %}harmony__productFT-tab-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-tab-lg{% else %}harmony__productFT-tab-theme-default{% endif %} mx-2 px-2 py-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} harmony__color-primary-button-background-{{ section.settings.product_featured_color_scheme }} hover:harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} focus:harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} ring-1 ring-current focus:ring-2 hover:ring-2 harmony__color-primary-button-border-{{ section.settings.product_featured_color_scheme }} focus:z-20 focus:outline-offset-0"
+              class="prev-{{ section.id }} relative inline-flex items-center rounded-full {% if settings.body_font_size == 'sm' %}harmony__productFT-tab-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-tab-lg{% else %}harmony__productFT-tab-theme-default{% endif %} mx-2 px-2 py-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} harmony__color-primary-button-background-{{ section.settings.product_featured_color_scheme }} hover:harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} focus:harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} ring-1 ring-current focus:ring-2 hover:ring-2 harmony__color-primary-button-border-{{ section.settings.product_featured_color_scheme }} focus:z-20 focus:outline-offset-0"
             >
               <span class="sr-only">Previous</span>
               <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.product_featured_color_scheme }}" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -85,19 +77,13 @@
             </a>
           </span>
           <div
-            class="pagination hidden md:block w-[100%] harmony__color-primary_button-{{ section.settings.product_featured_color_scheme }} harmony__color-on_primary_button-{{ section.settings.product_featured_color_scheme }} harmony__color-primary_button_border-{{ section.settings.product_featured_color_scheme }}"
-            {% if section.settings.slider_navigation == 'arrows' %}
-              style="display:none;"
-            {% endif %}
+            class="pagination-{{ section.id }} {% if section.settings.slider_navigation == 'arrows' %} hidden {% else %} md:block {% endif %} w-[100%] harmony__color-primary_button-{{ section.settings.product_featured_color_scheme }} harmony__color-on_primary_button-{{ section.settings.product_featured_color_scheme }} harmony__color-primary_button_border-{{ section.settings.product_featured_color_scheme }}"
           ></div>
           <span
-            class="product_carousel-next lg:ml-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} w-[100%]"
-            {% if section.settings.slider_navigation == 'dots' %}
-              style="display:none;"
-            {% endif %}
+            class="product_carousel-next {% if section.settings.slider_navigation == 'dots' %} hidden {% endif %} lg:ml-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }}"
           >
             <a
-              class="next relative inline-flex items-center rounded-full mx-2 px-2 py-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} hover:harmony__color-primary-button-background-{{ section.settings.product_featured_color_scheme }} ring-1 ring-current focus:ring-2 hover:ring-2 harmony__color-secondary-button-border-{{ section.settings.product_featured_color_scheme }} focus:z-20 focus:outline-offset-0"
+              class="next-{{ section.id }} relative inline-flex items-center rounded-full mx-2 px-2 py-2 harmony__color-icon-{{ section.settings.product_featured_color_scheme }} harmony__color-secondary-button-background-{{ section.settings.product_featured_color_scheme }} hover:harmony__color-primary-button-background-{{ section.settings.product_featured_color_scheme }} ring-1 ring-current focus:ring-2 hover:ring-2 harmony__color-secondary-button-border-{{ section.settings.product_featured_color_scheme }} focus:z-20 focus:outline-offset-0"
             >
               <span class="sr-only">Next</span>
               <svg class="h-5 w-5 harmony__color-icon-{{ section.settings.product_featured_color_scheme }}" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -130,81 +116,81 @@
                   <div class="product__grid-wrapper {% if settings.product_card_style == 'card' %} product__grid-card harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} {% endif %} group" id="product__grid-wrapper">
                     <div class="product__media relative aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7 z-1">
                       {%- if section.settings.enable_stock_badge -%} 
-                      {%- if product.available -%}
-                      <span class="badge__sale item-center text-center {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-primary-button-label-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[120px] max-h-[25px] z-10 ml-2 mt-2 px-2 pb-1">
-                          Sale
-                      </span>
-                      {%- else -%}
-                      <span class="badge__sold-out item-center text-center {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-secondary-button-label-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-background-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-border-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[120px] max-h-[25px] z-10 ml-2 mt-2 px-2 pb-1">
-                        Out of stock
-                      </span>
-                      {%- endif -%}
+                        {%- if product.available -%}
+                          <span class="badge__sale item-center text-center {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-primary-button-label-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_badge_color_scheme }} badge_corner_radius inline max-w-[120px] max-h-[25px] z-10 ml-2 mt-2 px-2 pb-1">
+                              Sale
+                          </span>
+                          {%- else -%}
+                          <span class="badge__sold-out item-center text-center {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-secondary-button-label-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-background-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-border-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[120px] max-h-[25px] z-10 ml-2 mt-2 px-2 pb-1">
+                            Out of stock
+                          </span>
+                        {%- endif -%}
                       {% endif %}
                       
                       {% if product.featured_media %}
                         {{ product.featured_media | image_url: width: 407, height: 513 |  image_tag }}
                       {% else %}
-                      <img src="{{ 'cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263' | asset_url }}" width="407" height="513" alt="{{ product.title }}">
+                        {{ 'product-1' | placeholder_svg_tag: 'w-[407px] h-[513px]' }}
                       {% endif %}
                       
                       <div id="product__overlay" class="harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }}">
                         <div class="flex h-full max-w-xl flex-col items-start justify-between">
-                            {%- if section.settings.enable_quick_view -%}
-                            <div class="flex items-center justify-center harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }} gap-x-4">
-                            {%- if section.settings.offer_badge -%} <span class="badge__discount item-center text-center min-w-[90px] {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-primary-button-label-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_offer_badge_color_scheme }} max-h-[25px] px-2 pb-1">40% off</span>{% endif %}
-                            {%- if section.settings.show_wishlist -%}  
-                            <button class="absolute right-2 top-1.5 text-sm h-[35px] w-[35px] block harmony__color-border-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1 transition ease-in-out delay-150 hover:-translate-y-1">
+                          {%- if section.settings.enable_quick_view -%}
+                          <div class="flex items-center justify-center harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }} gap-x-4">
+                          {%- if section.settings.offer_badge -%} <span class="badge__discount item-center text-center min-w-[90px] {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-primary-button-label-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_offer_badge_color_scheme }} max-h-[25px] px-2 pb-1">40% off</span>{% endif %}
+                          {%- if section.settings.show_wishlist -%}  
+                            <button class="absolute right-2 top-1.5 text-sm h-[35px] w-[35px] block border harmony__color-border-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1 transition ease-in-out delay-150 hover:-translate-y-1">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 harmony__color-icon-{{ settings.product_card_overlay_color_scheme }}">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
                               </svg>
                               <span class="sr-only lg:ml-2 border border-transparent"></span>
                             </button>
-                            {% endif %}
-                            </div>
-                            {% endif %}
-                            {%- if section.settings.enable_quick_view -%}
-                            <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-primary-button-label-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-background-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-border-{{ settings.product_card_overlay_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__productFT-tab-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-tab-lg{% else %}harmony__productFT-tab-theme-default{% endif %} transition ease-in-out delay-150 hover:-translate-y-1 px-4 py-2 mb-4">Quick View</button>
-                            {% endif %}
+                          {% endif %}
+                          </div>
+                          {% endif %}
+                          {%- if section.settings.enable_quick_view -%}
+                            <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-primary-button-label-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-background-{{ settings.product_card_overlay_color_scheme }} border  harmony__color-primary-button-border-{{ settings.product_card_overlay_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__productFT-tab-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-tab-lg{% else %}harmony__productFT-tab-theme-default{% endif %} transition ease-in-out delay-150 hover:-translate-y-1 px-4 py-2 mb-4">Quick View</button>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
                     <div class="product__info mt-4">
                       <table class="table-auto w-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} {% endif %}">
                       <tbody>
-                          <tr>
-                          {% if product.title %}
-                          <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} pr-2 py-2">
-                              <a href="{{ product.url }}" class="product__title block">
-                              <h3 class="product__title {% if settings.heading_font_size == 'sm' %}harmony__productFT-prodTitle-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-prodTitle-lg{% else %}harmony__productFT-prodTitle-theme-default{% endif %}">
-                              {{ product.title | truncate: section.settings.number_of_letters_in_title }}
-                              </h3>
-                              </a>
-                          </td>
-                          {% endif %}
-                          {%- if section.settings.show_price -%}  
-                          <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} text-right pl-2">
-                              <h4 class="product__price {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} text-right">{{ product.price | money }}</h4>
-                          </td>
-                          {% endif %}
-                          </tr>
-                          <tr>
-                          {% for collection in product.collections limit: 1 %}
-                              {%- if section.settings.show_category and collection != blank -%}
-                              <td class="pr-2 py-2">
-                              <a href="{{ collection.url }}" class="collection__name {% if settings.body_font_size == 'sm' %}harmony__productFT-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-label-lg{% else %}harmony__productFT-label-theme-default{% endif %} inline-block px-2 py-1.5 border rounded-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ collection.title |  truncate: 10}}</a>
-                              </td>
-                              {% endif %}
-                          {% endfor %}
-                          {%- if section.settings.show_reviews -%}
-                          <td class="flex items-center {%- if section.settings.show_category != true or product.collections == blank -%} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
-                              <div class="flex items-center justify-end {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %}">
-                              {%  render 'rating-star' %}
-                              </div>
-                              <span class="sr-only">3.9 out of 5 stars</span>
-                              <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ product.metafields.custom.zhd_product_option_length_13.value }}</span>
-                          </td>
-                          {% endif %}
-                          </tr>
+                        <tr>
+                        {% if product.title %}
+                        <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} pr-2 py-2">
+                            <a href="{{ product.url }}" class="product__title block">
+                            <h3 class="product__title {% if settings.heading_font_size == 'sm' %}harmony__productFT-prodTitle-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-prodTitle-lg{% else %}harmony__productFT-prodTitle-theme-default{% endif %}">
+                            {{ product.title | truncate: section.settings.number_of_letters_in_title }}
+                            </h3>
+                            </a>
+                        </td>
+                        {% endif %}
+                        {%- if section.settings.show_price -%}  
+                        <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %} text-right pl-2">
+                            <h4 class="product__price {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} text-right">{{ product.price | money }}</h4>
+                        </td>
+                        {% endif %}
+                        </tr>
+                        <tr>
+                        {% for collection in product.collections limit: 1 %}
+                            {%- if section.settings.show_category and collection != blank -%}
+                            <td class="pr-2 py-2">
+                            <a href="{{ collection.url }}" class="collection__name {% if settings.body_font_size == 'sm' %}harmony__productFT-label-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-label-lg{% else %}harmony__productFT-label-theme-default{% endif %} inline-block px-2 py-1.5 border rounded-full {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} harmony__color-background-{{ settings.product_card_color_scheme }} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} harmony__color-background-{{ section.settings.product_featured_color_scheme }} harmony__color-border-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ collection.title |  truncate: 10}}</a>
+                            </td>
+                            {% endif %}
+                        {% endfor %}
+                        {%- if section.settings.show_reviews -%}
+                        <td class="flex items-center {% if section.settings.show_category != true or product.collections == blank %} justify-start  {% else %} justify-end pl-2 {% endif %} text-right py-2 ">
+                            <div class="flex items-center justify-end {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %}">
+                            {%  render 'rating-star' %}
+                            </div>
+                            <span class="sr-only">3.9 out of 5 stars</span>
+                            <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ section.settings.product_rating_count }}</span>
+                        </td>
+                        {% endif %}
+                        </tr>
                       </tbody>
                       </table>
                     </div>
@@ -232,27 +218,27 @@
                   {% if product.featured_media %}
                     {{ product.featured_media | image_url: width: 407, height: 513 |  image_tag }}
                   {% else %}
-                  <img src="{{ 'cdn.shopify.com/s/files/1/0586/2499/9582/files/placeholder-images-image_large_7f671d3f-3a3a-4dc7-9545-5aa9fe3f02a5.webp?v=1716098263' | asset_url }}" width="407" height="513" alt="{{ product.title }}">
+                  {{ 'product-1' | placeholder_svg_tag: 'w-[407px] h-[513px]' }}
                   {% endif %}
                   
                   <div id="product__overlay" class="harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }}">
                     <div class="flex h-full max-w-xl flex-col items-start justify-between">
-                        {%- if section.settings.enable_quick_view -%}
-                        <div class="flex items-center justify-center harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }} gap-x-4">
-                        {%- if section.settings.offer_badge -%} <span class="badge__discount item-center text-center min-w-[90px] {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-primary-button-label-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_offer_badge_color_scheme }} max-h-[25px] px-2 pb-1">40% off</span>{% endif %}
-                        {%- if section.settings.show_wishlist -%}  
-                        <button class="absolute right-2 top-1.5 text-sm h-[35px] w-[35px] block  harmony__color-border-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1 transition ease-in-out delay-150 hover:-translate-y-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 harmony__color-icon-{{ settings.product_card_overlay_color_scheme }}">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
-                          </svg>
-                          <span class="sr-only lg:ml-2 border border-transparent"></span>
-                        </button>
-                        {% endif %}
-                        </div>
-                        {% endif %}
-                        {%- if section.settings.enable_quick_view -%}
-                        <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-primary-button-label-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-background-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-border-{{ settings.product_card_overlay_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__productFT-tab-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-tab-lg{% else %}harmony__productFT-tab-theme-default{% endif %} transition ease-in-out delay-150 hover:-translate-y-1 px-4 py-2 mb-4">Quick View</button>
-                        {% endif %}
+                      {%- if section.settings.enable_quick_view -%}
+                      <div class="flex items-center justify-center harmony__color-text-{{ settings.product_card_overlay_color_scheme }} harmony__color-background-{{ settings.product_card_overlay_color_scheme }} gap-x-4">
+                      {%- if section.settings.offer_badge -%} <span class="badge__discount item-center text-center min-w-[90px] {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} absolute z-14 left-3 top-3 inline-block items-start badge_corner_radius harmony__color-primary-button-label-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-primary-button-border-{{ settings.sale_offer_badge_color_scheme }} max-h-[25px] px-2 pb-1">40% off</span>{% endif %}
+                      {%- if section.settings.show_wishlist -%}  
+                      <button class="absolute right-2 top-1.5 text-sm h-[35px] w-[35px] block border harmony__color-border-{{ settings.product_card_overlay_color_scheme }} rounded-full px-1 transition ease-in-out delay-150 hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 harmony__color-icon-{{ settings.product_card_overlay_color_scheme }}">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+                        </svg>
+                        <span class="sr-only lg:ml-2 border border-transparent"></span>
+                      </button>
+                      {% endif %}
+                      </div>
+                      {% endif %}
+                      {%- if section.settings.enable_quick_view -%}
+                      <button type="submit" class="mx-auto flex w-[85%] items-center justify-center harmony__color-primary-button-label-{{ settings.product_card_overlay_color_scheme }} harmony__color-primary-button-background-{{ settings.product_card_overlay_color_scheme }} border  harmony__color-primary-button-border-{{ settings.product_card_overlay_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__productFT-tab-sm{% elsif settings.body_font_size == 'lg' %}harmony__productFT-tab-lg{% else %}harmony__productFT-tab-theme-default{% endif %} transition ease-in-out delay-150 hover:-translate-y-1 px-4 py-2 mb-4">Quick View</button>
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -263,9 +249,9 @@
                       {% if product.title %}
                       <td class="border-b {% if settings.product_card_style == 'card' %} harmony__color-border-{{ settings.product_card_color_scheme }} {% else %} harmony__color-primary-button-border-{{ section.settings.product_featured_color_scheme }} {% endif %} pr-2 py-2">
                           <a href="{{ product.url }}" class="product__title block">
-                          <h3 class="product__title {% if settings.heading_font_size == 'sm' %}harmony__productFT-prodTitle-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-prodTitle-lg{% else %}harmony__productFT-prodTitle-theme-default{% endif %}">
-                          {{ product.title | truncate: section.settings.number_of_letters_in_title }}
-                          </h3>
+                            <h3 class="product__title {% if settings.heading_font_size == 'sm' %}harmony__productFT-prodTitle-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-prodTitle-lg{% else %}harmony__productFT-prodTitle-theme-default{% endif %}">
+                            {{ product.title | truncate: section.settings.number_of_letters_in_title }}
+                            </h3>
                           </a>
                       </td>
                       {% endif %}
@@ -289,7 +275,7 @@
                           {% render 'rating-star' %}
                         </div>
                         <span class="sr-only">3.9 out of 5 stars</span>
-                        <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ product.metafields.custom.zhd_product_option_length_13.value }}</span>
+                        <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} {% if settings.product_card_style == 'card' %} harmony__color-text-{{ settings.product_card_color_scheme }} {% else %} harmony__color-text-{{ section.settings.product_featured_color_scheme }} {% endif %}">{{ section.settings.product_rating_count }}</span>
                       </td>
                       {% endif %}
                       </tr>
@@ -356,6 +342,36 @@
         "default": "grid"
       },
       {
+        "type": "select",
+        "id": "slider_navigation",
+        "label": "Slider Navigation",
+        "options": [
+          {
+            "value": "both",
+            "label": "Both"
+          },
+          {
+            "value": "dots",
+            "label": "Dots Only"
+          },
+          {
+            "value": "arrows",
+            "label": "Arrows Only"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ],
+        "default": "both"
+      },
+      {
+        "type": "color",
+        "id": "active_pagi_color",
+        "label": "Pagination Active Color",
+        "default": "#626E5C"
+      },
+      {
         "type": "checkbox",
         "id": "show_price",
         "label": "Show Price",
@@ -404,11 +420,10 @@
         "default": 12
       },
       {
-        "type": "liquid",
+        "type": "text",
         "id": "product_rating_count",
         "label": "Product Ratings",
-        "default": "{{ product.metafields.custom.zhd_product_option_length_13.value }}",
-        "info": "Place your product rating metafield liquid code here"
+        "info": "Select metafield from daynamic source at top right corner"
       },
       {
         "type": "range",
@@ -553,13 +568,13 @@
       },
     },
     pagination: {
-      el: ".pagination",
+      el: ".pagination-{{ section.id }}",
       clickable: true,
       dynamicBullets: true,
     },
     navigation: {
-      nextEl: ".next",
-      prevEl: ".prev",
+      nextEl: ".next-{{ section.id }}",
+      prevEl: ".prev-{{ section.id }}",
     },
   });
 </script>
