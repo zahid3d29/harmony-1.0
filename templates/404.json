@@ -110,6 +110,7 @@
         "block_N87qfa",
         "block_FFMEYp"
       ],
+      "disabled": true,
       "settings": {
         "product_featured_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
         "enable_gradient": false,
@@ -271,6 +272,12 @@
         "focal_2_position_top_mob": 30,
         "focal_2_position_left_mob": 30
       }
+    },
+    "faq_yMp8dd": {
+      "type": "faq",
+      "settings": {
+        "heading": ""
+      }
     }
   },
   "order": [
@@ -279,6 +286,7 @@
     "product_featured_XBiUhG",
     "featured_collection_pjcRRC",
     "reveal_WzKetq",
-    "focal_9bQdFB"
+    "focal_9bQdFB",
+    "faq_yMp8dd"
   ]
 }
