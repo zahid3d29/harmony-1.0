@@ -6,6 +6,8 @@
     background: {{ section.settings.active_pagi_color }} ; 
   }
 {% endstyle %}
+
+
 <section id="harmony--{{ section.id }}" class="section__sale harmony__color-background-{{ section.settings.sales_color_scheme }}">
   <div class="grid grid-cols-1 lg:grid-cols-2 relative pt-12 lg:py-0 {% if section.settings.countdown_position == 'left' %} grid-rtl{% endif %}">
     <div class="grid grid-cols-1 py-8 px-6 lg:pt-24 md:px-10">
@@ -18,7 +20,7 @@
                 <div class="product__col text-left swiper-slide">
                   <a href="{{ sale_product.url }}" class="group relative">
                     <div class="relative h-auto w-full overflow-hidden aspect-h-2 aspect-w-2 sm:aspect-h-1 lg:aspect-h-1 lg:aspect-w-2 group-hover:opacity-75 sm:h-64">
-                      {% if section.settings.enable_sale_badge %}
+                      {% if section.settings.enable_sale_badge and sale_product.available %}
                         <span class="sale__badge inline max-w-[104px] max-h-[25px] z-10 items-center text-center absolute left-1 top-1 sm:left-3 sm:top-3 px-2 {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-text-{{ settings.sale_offer_badge_color_scheme }} harmony__color-background-{{ settings.sale_offer_badge_color_scheme }} harmony__color-border-{{ settings.sale_offer_badge_color_scheme }} badge_corner_radius">
                           {% if sale_product.compare_at_price and sale_product.compare_at_price > sale_product.price %}
                             {% assign original_price = sale_product.compare_at_price %}
@@ -30,7 +32,11 @@
                               | round
                             %}
                           {% endif %}
-                          sale {{ sale_percentage }}%
+                          {{ settings.saleOffer_badge_txt  }} {{ sale_percentage }}%
+                        </span>
+                      {%- else -%}
+                        <span class="badge__sold-out item-center text-center {% if settings.body_font_size == 'sm' %}harmony__badge-sm{% elsif settings.body_font_size == 'lg' %}harmony__badge-lg{% else %}harmony__badge-theme-default{% endif %} harmony__color-secondary-button-label-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-background-{{ settings.sold_out_badge_color_scheme }} harmony__color-secondary-button-border-{{ settings.sold_out_badge_color_scheme }} badge_corner_radius inline max-w-[120px] max-h-[25px] z-10 ml-2 mt-2 px-2 pb-1">
+                          {{ settings.soldOut_badge_txt | escape }}
                         </span>
                       {%- endif %}
                       <div
@@ -45,29 +51,29 @@
                       <table class="table-auto w-full harmony__color-background-{{ section.settings.sales_color_scheme }}">
                         <tbody>
                           <tr>
-                          {% if sale_product.title %}
-                          <td class="border-b harmony__color-border-{{ section.settings.sales_color_scheme }} pr-2 py-2">
+                            {% if sale_product.title %}
+                            <td class="border-b harmony__color-border-{{ section.settings.sales_color_scheme }} pr-2 py-2">
                               <a href="{{ product.url }}" class="block">
                                 <h3 class="product__title harmony__color-text-{{ section.settings.sales_color_scheme }} {% if settings.heading_font_size == 'sm' %}harmony__sales-prodTitle-sm{% elsif settings.heading_font_size == 'lg' %}harmony__sales-prodTitle-lg{% else %}harmony__sales-prodTitle-theme-default{% endif %}">
-                                {{ sale_product.title | truncate: section.settings.number_of_letters_in_title }}
+                                  {{ sale_product.title | truncate: section.settings.number_of_letters_in_title }}
                                 </h3>
                               </a>
-                          </td>
-                          {% endif %}
-                          {%- if section.settings.show_price -%}  
-                          <td class="border-b harmony__color-border-{{ section.settings.sales_color_scheme }} harmony__color-text-{{ section.settings.sales_color_scheme }}  {% if settings.body_font_size == 'sm' %}harmony__sales-priceFeedback-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-priceFeedback-lg{% else %}harmony__sales-priceFeedback-theme-default{% endif %} pl-2">
-                            {% if section.settings.show_price %}
-                              <div class="product__price flex justify-end">
-                                {%- if sale_product.compare_at_price > 0 -%}
-                                <span class="compare_at_price line-through opacity-50">
-                                  {{- sale_product.compare_at_price | money_with_currency -}}
-                                </span>
-                                {%- endif -%}
-                                <span class="sale_price px-2">{{ sale_product.price | money_with_currency }}</span>
-                              </div>
-                            {%- endif %}
-                          </td>
-                          {% endif %}
+                            </td>
+                            {% endif %}
+                            {%- if section.settings.show_price -%}  
+                            <td class="border-b harmony__color-border-{{ section.settings.sales_color_scheme }} harmony__color-text-{{ section.settings.sales_color_scheme }}  {% if settings.body_font_size == 'sm' %}harmony__sales-priceFeedback-sm{% elsif settings.body_font_size == 'lg' %}harmony__sales-priceFeedback-lg{% else %}harmony__sales-priceFeedback-theme-default{% endif %} pl-2">
+                              {% if section.settings.show_price %}
+                                <div class="product__price flex justify-end">
+                                  {%- if sale_product.compare_at_price > 0 -%}
+                                  <span class="compare_at_price line-through opacity-50">
+                                    {{- sale_product.compare_at_price | money_with_currency -}}
+                                  </span>
+                                  {%- endif -%}
+                                  <span class="sale_price px-2">{{ sale_product.price | money_with_currency }}</span>
+                                </div>
+                              {%- endif %}
+                            </td>
+                            {% endif %}
                           </tr>
                           <hr>
                           <tr>
@@ -79,13 +85,13 @@
                             {% endif %}
                           {% endfor %}
                           {%- if section.settings.show_reviews -%}
-                          <td class="flex items-center justify-end pl-2 text-right py-2">
-                            <div class="flex items-center justify-end {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %}">
-                              {% render 'rating-star' %}
-                            </div>
-                            <span class="sr-only">3.9 out of 5 stars</span>
-                            <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">({{ block.settings.feedback_count }})</span>
-                          </td>
+                            <td class="flex items-center justify-end pl-2 text-right py-2">
+                              <div class="flex items-center justify-end {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %}">
+                                {% render 'rating-star' %}
+                              </div>
+                              <span class="sr-only">3.9 out of 5 stars</span>
+                              <span class="product__feedback-count ml-3 {% if settings.heading_font_size == 'sm' %}harmony__productFT-priceFeedback-sm{% elsif settings.heading_font_size == 'lg' %}harmony__productFT-priceFeedback-lg{% else %}harmony__productFT-priceFeedback-theme-default{% endif %} harmony__color-text-{{ section.settings.sales_color_scheme }}">({{ block.settings.feedback_count }})</span>
+                            </td>
                           {% endif %}
                           </tr>
                         </tbody>

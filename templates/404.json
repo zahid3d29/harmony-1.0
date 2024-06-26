@@ -114,7 +114,7 @@
       "settings": {
         "product_featured_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "enable_gradient": false,
-        "heading": "Section Heading",
+        "heading": "Product featured",
         "show_heeading": true,
         "desktop_layout": "grid",
         "slider_navigation": "both",
@@ -126,7 +126,7 @@
         "offer_badge": true,
         "show_wishlist": true,
         "enable_quick_view": true,
-        "number_of_letters_in_title": 12,
+        "number_of_letters_in_title": 15,
         "product_rating_count": "{{ localization.market.metafields.custom.feedback_count.value }}",
         "products_to_show": 8,
         "products_per_row": 3,
@@ -323,7 +323,7 @@
         "end_time": "23:59:59",
         "slider_navigation": "arrows",
         "active_pagi_color": "#0e1b4d",
-        "number_of_letters_in_title": 12,
+        "number_of_letters_in_title": 20,
         "show_price": true,
         "show_category": true,
         "show_reviews": true,
@@ -389,6 +389,7 @@
         "faqtab_wc8nWY",
         "faqtab_gBjzAB"
       ],
+      "disabled": true,
       "settings": {
         "faq_color_scheme": "",
         "enable_gradient": false,
@@ -396,6 +397,36 @@
         "heading": "",
         "qtn_txt": "Still have a question?",
         "btn_txt": "Send private message",
+        "btn_url": ""
+      }
+    },
+    "testimonials_jYDWJM": {
+      "type": "testimonials",
+      "blocks": {
+        "review_6LgTrP": {
+          "type": "review",
+          "settings": {
+            "review_heading": "Wonderful Experience",
+            "review_text": "The sizes are adjusted proportionally to maintain consistent scaling across different breakpoints (mobile, medium, large)."
+          }
+        },
+        "review_GFbPcr": {
+          "type": "review",
+          "settings": {
+            "review_heading": "Nice experience",
+            "review_text": "The sizes are adjusted proportionally to maintain consistent scaling across different breakpoints (mobile, medium, large)."
+          }
+        }
+      },
+      "block_order": [
+        "review_6LgTrP",
+        "review_GFbPcr"
+      ],
+      "settings": {
+        "rating": 4.9,
+        "verify": "From Verified Buyers",
+        "num_r": 5,
+        "btn_label": "Read more Testimonials",
         "btn_url": ""
       }
     }
@@ -408,6 +439,7 @@
     "reveal_WzKetq",
     "focal_9bQdFB",
     "sales_Qa4cTi",
-    "faq_VD6dqP"
+    "faq_VD6dqP",
+    "testimonials_jYDWJM"
   ]
 }

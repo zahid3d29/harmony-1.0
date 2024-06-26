@@ -45,10 +45,10 @@
         <div class="flex items-center justify-start md:justify-end">
             <div class="max-w-sm lg:px-8">
                 {%- if section.settings.caption != blank -%}
-                    <label class="page__caption inline {% if settings.body_font_size == 'sm' %}harmony__page-header-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-caption-lg{% else %}harmony__page-header-caption-theme-default{% endif %} font-normal border rounded-full px-2 py-2">{{ section.settings.caption }}</label>
+                    <label class="page__caption inline {% if settings.body_font_size == 'sm' %}harmony__page-header-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-caption-lg{% else %}harmony__page-header-caption-theme-default{% endif %} font-normal border rounded-full harmony__color-text-{{ section.settings.page_header_color_scheme }} harmony__color-border-{{ section.settings.page_header_color_scheme }} px-2 py-2">{{ section.settings.caption }}</label>
                 {%- endif -%}
                 {%- if section.settings.short_desc != blank -%}
-                    <dd class="page__description {% if settings.body_font_size == 'sm' %}harmony__page-header-desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-desc-lg{% else %}harmony__page-header-desc-theme-default{% endif %} font-normal mt-[20px]">
+                    <dd class="page__description {% if settings.body_font_size == 'sm' %}harmony__page-header-desc-sm{% elsif settings.body_font_size == 'lg' %}harmony__page-header-desc-lg{% else %}harmony__page-header-desc-theme-default{% endif %} font-normal harmony__color-text-{{ section.settings.page_header_color_scheme }} mt-[20px]">
                         {{ section.settings.short_desc }}
                     </dd>
                 {%- endif -%}

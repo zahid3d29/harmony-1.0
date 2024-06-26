@@ -335,10 +335,22 @@
         "default": 40
       },
       {
+        "type": "inline_richtext",
+        "id": "sale_badge_txt",
+        "label": "Sale Badge Text",
+        "default": "Sale"
+      },
+      {
         "type": "color_scheme",
         "id": "sale_badge_color_scheme",
         "label": "Sale Badge Color",
         "default": "scheme-2"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "soldOut_badge_txt",
+        "label": "Sold Out Badge Text",
+        "default": "Sold Out"
       },
       {
         "type": "color_scheme",
@@ -347,30 +359,16 @@
         "default": "scheme-1"
       },
       {
+        "type": "inline_richtext",
+        "id": "saleOffer_badge_txt",
+        "label": "Sold Out Badge Text",
+        "default": "Save"
+      },
+      {
         "type": "color_scheme",
         "id": "sale_offer_badge_color_scheme",
         "label": "Discount Badge Color",
         "default": "scheme-1"
-      },
-      {
-        "type": "select",
-        "id": "product_badge_box_shadow",
-        "options": [
-          {
-            "value": "shadow-lg",
-            "label": "High"
-          },
-          {
-            "value": "shadow-md",
-            "label": "Sandard"
-          },
-          {
-            "value": "shadow",
-            "label": "Low"
-          }
-        ],
-        "default": "shadow",
-        "label": "Shadow"
       }
     ]
   },
