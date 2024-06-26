@@ -60,7 +60,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__header-lg {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }
 
   /* Mega-menu Nav Font Size */
@@ -82,7 +82,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__megamenu_product_info-lg {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }
 
   /* Mega-menu product desc. Font Size */
@@ -101,7 +101,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__offcanvas_nav-theme-default {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }
   .harmony__offcanvas_nav-lg {
     @apply text-[20px] leading-[28px];
@@ -157,7 +157,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__banner-content-theme-default {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }
   .harmony__banner-content-lg {
     @apply text-[20px] leading-[28px];
@@ -246,7 +246,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__reveal-desc-theme-default {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }
   .harmony__reveal-desc-lg {
     @apply text-[20px] leading-[28px];
@@ -314,7 +314,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__productFT-prodTitle-lg {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }
   
   /* Product Featured Section category/caption label Font Size */
@@ -347,7 +347,7 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__sales-prodTitle-lg {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }  
   /* Sales Section description Font Size */
   .harmony__sales-desc-sm {
@@ -362,24 +362,24 @@
 
   /* Sales Section marquee Font Size */
   .harmony__sales-marquee-sm {
-    @apply text-[20px] leading-[15.25px] md:text-[30px] md:leading-[22.875px] lg:text-[40px] lg:leading-[30.5px]; /* 50% of the default size */
+    @apply text-[20px] leading-[15.25px] md:text-[30px] md:leading-[22.875px] lg:text-[40px] lg:leading-[30.5px]; 
   }
   .harmony__sales-marquee-theme-default {
     @apply text-[40px] leading-[30.5px] md:text-[60px] md:leading-[45.75px] lg:text-[80px] lg:leading-[61px];
   }
   .harmony__sales-marquee-lg {
-    @apply text-[50px] leading-[38.125px] md:text-[75px] md:leading-[57.1875px] lg:text-[100px] lg:leading-[76.25px]; /* 125% of the default size */
+    @apply text-[50px] leading-[38.125px] md:text-[75px] md:leading-[57.1875px] lg:text-[100px] lg:leading-[76.25px]; 
   }
 
   /* Sales Section timer Font Size */
   .harmony__sales-countdown-time-sm {
-    @apply text-[26px] leading-[22.5px] md:text-[32.5px] md:leading-[28.125px] lg:text-[39px] lg:leading-[33.75px]; /* 75% of the default size */
+    @apply text-[26px] leading-[22.5px] md:text-[32.5px] md:leading-[28.125px] lg:text-[39px] lg:leading-[33.75px]; 
   }
   .harmony__sales-countdown-time-theme-default {
     @apply text-[35px] leading-[30px] md:text-[43.5px] md:leading-[37.5px] lg:text-[52px] lg:leading-[45px];
   }
   .harmony__sales-countdown-time-lg {
-    @apply text-[43.5px] leading-[37.5px] md:text-[54.25px] md:leading-[46.875px] lg:text-[65px] lg:leading-[56.25px]; /* 125% of the default size */
+    @apply text-[43.5px] leading-[37.5px] md:text-[54.25px] md:leading-[46.875px] lg:text-[65px] lg:leading-[56.25px]; 
   }
 
   /* Sales Section timer label Font Size */
@@ -439,13 +439,13 @@
 
   /* FAQ Section Title Font Size */
   .harmony__faq-title-sm {
-    @apply text-[15px] leading-[19.5px]; /* 75% of the default size */
+    @apply text-[15px] leading-[19.5px]; 
   }
   .harmony__faq-title-theme-default {
     @apply text-[20px] leading-[26px];
   }
   .harmony__faq-title-lg {
-    @apply text-[25px] leading-[32.5px]; /* 125% of the default size */
+    @apply text-[25px] leading-[32.5px]; 
   }
 
   /* FAQ Section Content Font Size */
@@ -456,8 +456,53 @@
     @apply text-[16px] leading-[24px];
   }
   .harmony__faq-content-lg {
-    @apply text-[18px] leading-[28px];
+    @apply text-[18px] leading-[22px];
   }  
+
+  /* Testimonial Section Title Font Size */
+  .harmony__testimonial-title-sm {
+    @apply text-[20px] leading-[27px] lg:text-[25px] lg:leading-[34px]; 
+  }
+  .harmony__testimonial-title-theme-default {
+    @apply text-[27px] leading-[36px] lg:text-[37px] lg:leading-[56px];
+  }
+  .harmony__testimonial-title-lg {
+    @apply text-[34px] leading-[45px] lg:text-[45px] lg:leading-[68px]; 
+  }
+
+  /* Testimonial section content Font Size */
+  .harmony__testimonial-content-sm {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__testimonial-content-theme-default {
+    @apply text-[18px] leading-[22px];
+  }
+  .harmony__testimonial-content-lg {
+    @apply text-[20px] leading-[28px];
+  }
+
+  /* Testimonial section content Font Size */
+  .harmony__testimonial-author-btn-sm {
+    @apply text-[16px] leading-[24px];
+  }
+  .harmony__testimonial-author-btn-theme-default {
+    @apply text-[17px] leading-[22px];
+  }
+  .harmony__testimonial-author-btn-lg {
+    @apply text-[20px] leading-[28px];
+  }
+
+  /* Testimonial Section review text/caption label Font Size */
+  .harmony__testimonial-rev-caption-sm {
+    @apply text-[12px] leading-[16px];
+  }
+  .harmony__testimonial-rev-caption-theme-default {
+    @apply text-[14px] leading-[20px];
+  }
+  .harmony__testimonial-rev-caption-lg {
+    @apply text-[16px] leading-[24px];
+  }  
+
 
   /* Footer Benefits Font Size */
   .harmony__footerbenifits-sm {

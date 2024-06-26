@@ -1,5 +1,5 @@
 {% style %}
-    .outline-title {
+    /* .outline-title {
         text-shadow: 1px 1px 0 #959595, -1px -1px 0 #959595, 1px -1px 0 #959595, -1px 1px 0 #959595, 1px 1px 0 #959595;
     }
     .outline-title-top {
@@ -8,10 +8,64 @@
             1px -1px 0 #959595,
             -1px 1px 0 #959595,
             1px 1px 0 #959595;
-    }
+    } */
+
+    @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  padding: 0;
+  margin: 0;
+/*   overflow: hidden; */
+}
+
+.marquee {
+  width: 100%;
+  padding-top: 2em;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.marquee span {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #f3f7a8;
+  font-size: 140px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-left: -10%;
+  animation: marquee-animation 80s linear infinite;
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 {% endstyle %} 
 
-<section id="harmony--{{ section.id }}" class="bg-[#FFFAF4] relative py-8 lg:py-24">
+{% comment %} <section id="harmony--{{ section.id }}" class="bg-[#FFFAF4] relative py-8 lg:py-24">
     <div class="overlay-left block w-[20%] h-[100%] lg:bg-gradient-to-r from-[#00000024] absolute top-0 left-0 z-10"></div>
     <div class="outline-title-top text-[#f9f9f9] opacity-70 lg:mb-8 text-[70px] lg:text-[142px] lg:leading-[140px] font-bold text-center">
         <marquee direction="right" scrollamount="10"> 
@@ -29,10 +83,26 @@
         </marquee>
     </div>
     <div class="overlay-right block w-[20%] h-[100%] lg:bg-gradient-to-l from-[#00000024] absolute bottom-0 right-0 z-10"></div>
+</section> {% endcomment %}
+
+
+<section id="harmony--{{ section.id }}">
+
 </section>
-
-
-
+<div class="container">
+    <div class="marquee">
+      <span>
+        Creative. Technology. Media. Creative. Technology. Media. Creative.
+        Technology. Media. Creative. Technology. Media. Creative. Technology.
+        Media.
+      </span>
+    </div>
+    <div class="marquee" direction="right" scrollamount="10">
+        <span>
+          Creative. Technology. 
+        </span>
+      </div>
+</div>
 
 
 {% schema %}
@@ -49,11 +119,63 @@
             "label": "Heading"
         }
     ],
+    "blocks":[
+        {
+            "type":"primary-marquee",
+            "limit": 8,
+            "name":"Primary Marquee",
+            "settings": [
+                {
+                    "type":"inline_richtext",
+                    "id":"marquee_text",
+                    "label":"Marquee Content",
+                    "default": "Marquee Text"
+                }
+            ]
+        },
+        {
+            "type":"secondary-marquee",
+            "limit": 8,
+            "name":"Secondary Marquee",
+            "settings": [
+                {
+                    "type":"inline_richtext",
+                    "id":"marquee_text",
+                    "label":"Marquee Content",
+                    "default": "Marquee Text"
+                }
+            ]
+        }
+    ],
     "presets": [
         {
             "name": "Marquee",
-            "category": "Harmony Sections"
+            "category": "Harmony Sections",
+            "blocks": [
+                {
+                    "type": "primary-marquee"
+                },
+                {
+                    "type": "secondary-marquee"
+                }
+            ]
         }
     ]
 }
 {% endschema %}
+
+<script>
+    document.addEventListener("mousemove", parallax);
+
+function parallax(e) {
+  this.querySelectorAll(".layer").forEach((layer) => {
+    const speed = layer.getAttribute("data-speed");
+
+    const x = (window.innerWidth - e.pageX * speed) / 150;
+    const y = (window.innerHeight - e.pageY * speed) / 150;
+
+    layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+  });
+}
+
+</script>

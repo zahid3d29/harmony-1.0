@@ -238,47 +238,10 @@ Simply include the placeholder name, followed by the placeholder_svg_tag filter:
 }
 
 
-{% if settings.heading_font_size == 'sm' %}harmony__faq-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-title-lg{% else %}harmony__faq-title-theme-default{% endif %}
+{% if settings.heading_font_size == 'sm' %}harmony__testimonial-title-sm{% elsif settings.heading_font_size == 'lg' %}harmony__testimonial-title-lg{% else %}harmony__testimonial-title-theme-default{% endif %}
 
-{% if settings.body_font_size == 'sm' %}harmony__faq-content-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-content-lg{% else %}harmony__faq-content-theme-default{% endif %}
+{% if settings.body_font_size == 'sm' %}harmony__testimonial-author-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-author-btn-lg{% else %}harmony__testimonial-author-btn-theme-default{% endif %}
 
 
 npx tailwindcss -i ./assets/style.css -o ./assets/output.css --watch
-
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-    dataLayer.push({ ecommerce: null });
-    {% if first_time_accessed %}
-      dataLayer.push({
-        event: "purchase",
-        ecommerce: {
-            transaction_id: "{{ checkout.order_id }}",
-            value: {{ total_price | times: 0.01 }},
-            tax: {{ tax_price | times: 0.01 }},
-            shipping: {{ shipping_price | times: 0.01 }},
-            currency: "{{ checkout.order_id }}",
-            items: [
-            {% for line_item in line_items %}{
-              item_id: "{{ line_item.product_id }}",
-              item_name: "{{ line_item.title | remove: "'" | remove: '"' }}",
-              currency: "{{ checkout.order_id }}",
-              price: {{ line_item.final_price | times: 0.01 }},
-              quantity: {{ line_item.quantity }}
-            },
-            {% endfor %}
-          ]
-        }
-      });
-    {% endif %}
-</script>
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WSBSXGB');</script>
-  <!-- End Google Tag Manager -->
-
 

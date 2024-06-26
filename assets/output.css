@@ -641,7 +641,7 @@ h1 {
 
 .harmony__header-lg {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 /* Mega-menu Nav Font Size */
@@ -675,7 +675,7 @@ h1 {
 
 .harmony__megamenu_product_info-lg {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 /* Mega-menu product desc. Font Size */
@@ -704,7 +704,7 @@ h1 {
 
 .harmony__offcanvas_nav-theme-default {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 .harmony__offcanvas_nav-lg {
@@ -831,7 +831,7 @@ h1 {
 
 .harmony__banner-content-theme-default {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 .harmony__banner-content-lg {
@@ -1051,7 +1051,7 @@ h1 {
 
 .harmony__reveal-desc-theme-default {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 .harmony__reveal-desc-lg {
@@ -1326,7 +1326,7 @@ h1 {
 
 .harmony__productFT-prodTitle-lg {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 /* Product Featured Section category/caption label Font Size */
@@ -1377,7 +1377,7 @@ h1 {
 
 .harmony__sales-prodTitle-lg {
   font-size: 18px;
-  line-height: 28px;
+  line-height: 22px;
 }
 
 /* Sales Section description Font Size */
@@ -1418,10 +1418,6 @@ h1 {
   }
 }
 
-.harmony__sales-marquee-sm {
-  /* 50% of the default size */
-}
-
 .harmony__sales-marquee-theme-default {
   font-size: 40px;
   line-height: 30.5px;
@@ -1460,10 +1456,6 @@ h1 {
   }
 }
 
-.harmony__sales-marquee-lg {
-  /* 125% of the default size */
-}
-
 /* Sales Section timer Font Size */
 
 .harmony__sales-countdown-time-sm {
@@ -1483,10 +1475,6 @@ h1 {
     font-size: 39px;
     line-height: 33.75px;
   }
-}
-
-.harmony__sales-countdown-time-sm {
-  /* 75% of the default size */
 }
 
 .harmony__sales-countdown-time-theme-default {
@@ -1525,10 +1513,6 @@ h1 {
     font-size: 65px;
     line-height: 56.25px;
   }
-}
-
-.harmony__sales-countdown-time-lg {
-  /* 125% of the default size */
 }
 
 /* Sales Section timer label Font Size */
@@ -1663,7 +1647,6 @@ h1 {
 .harmony__faq-title-sm {
   font-size: 15px;
   line-height: 19.5px;
-  /* 75% of the default size */
 }
 
 .harmony__faq-title-theme-default {
@@ -1674,7 +1657,6 @@ h1 {
 .harmony__faq-title-lg {
   font-size: 25px;
   line-height: 32.5px;
-  /* 125% of the default size */
 }
 
 /* FAQ Section Content Font Size */
@@ -1691,7 +1673,96 @@ h1 {
 
 .harmony__faq-content-lg {
   font-size: 18px;
+  line-height: 22px;
+}
+
+/* Testimonial Section Title Font Size */
+
+.harmony__testimonial-title-sm {
+  font-size: 20px;
+  line-height: 27px;
+}
+
+@media (min-width: 1024px) {
+  .harmony__testimonial-title-sm {
+    font-size: 25px;
+    line-height: 34px;
+  }
+}
+
+.harmony__testimonial-title-theme-default {
+  font-size: 27px;
+  line-height: 36px;
+}
+
+@media (min-width: 1024px) {
+  .harmony__testimonial-title-theme-default {
+    font-size: 37px;
+    line-height: 56px;
+  }
+}
+
+.harmony__testimonial-title-lg {
+  font-size: 34px;
+  line-height: 45px;
+}
+
+@media (min-width: 1024px) {
+  .harmony__testimonial-title-lg {
+    font-size: 45px;
+    line-height: 68px;
+  }
+}
+
+/* Testimonial section content Font Size */
+
+.harmony__testimonial-content-sm {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.harmony__testimonial-content-theme-default {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.harmony__testimonial-content-lg {
+  font-size: 20px;
   line-height: 28px;
+}
+
+/* Testimonial section content Font Size */
+
+.harmony__testimonial-author-btn-sm {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.harmony__testimonial-author-btn-theme-default {
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.harmony__testimonial-author-btn-lg {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+/* Testimonial Section review text/caption label Font Size */
+
+.harmony__testimonial-rev-caption-sm {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.harmony__testimonial-rev-caption-theme-default {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.harmony__testimonial-rev-caption-lg {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 /* Footer Benefits Font Size */
@@ -2311,10 +2382,6 @@ h1 {
   margin-top: 46px;
 }
 
-.mt-\[50px\] {
-  margin-top: 50px;
-}
-
 .mt-\[58px\] {
   margin-top: 58px;
 }
@@ -2401,14 +2468,6 @@ h1 {
 .size-6 {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-.h-1 {
-  height: 0.25rem;
-}
-
-.h-1\.5 {
-  height: 0.375rem;
 }
 
 .h-10 {
@@ -2569,14 +2628,6 @@ h1 {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-1\.5 {
-  width: 0.375rem;
 }
 
 .w-1\/2 {
@@ -3354,11 +3405,6 @@ h1 {
   border-color: rgb(112 112 112 / var(--tw-border-opacity));
 }
 
-.border-\[\#aeb4af\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(174 180 175 / var(--tw-border-opacity));
-}
-
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -3441,11 +3487,6 @@ h1 {
   background-color: rgb(255 250 244 / var(--tw-bg-opacity));
 }
 
-.bg-\[rgb\(46\2c 69\2c 50\)\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(46 69 50 / var(--tw-bg-opacity));
-}
-
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -3459,11 +3500,6 @@ h1 {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
@@ -3769,11 +3805,6 @@ h1 {
 .py-\[0\.4375rem\] {
   padding-top: 0.4375rem;
   padding-bottom: 0.4375rem;
-}
-
-.py-\[0\.43rem\] {
-  padding-top: 0.43rem;
-  padding-bottom: 0.43rem;
 }
 
 .py-\[0\] {
@@ -4153,10 +4184,6 @@ h1 {
   line-height: 25px;
 }
 
-.leading-\[26px\] {
-  line-height: 26px;
-}
-
 .leading-\[29px\] {
   line-height: 29px;
 }
@@ -4167,10 +4194,6 @@ h1 {
 
 .leading-\[35px\] {
   line-height: 35px;
-}
-
-.leading-\[36px\] {
-  line-height: 36px;
 }
 
 .leading-\[41px\] {
@@ -4230,11 +4253,6 @@ h1 {
   color: rgb(255 250 244 / var(--tw-text-opacity));
 }
 
-.text-\[\#aeb4af\] {
-  --tw-text-opacity: 1;
-  color: rgb(174 180 175 / var(--tw-text-opacity));
-}
-
 .text-\[\#f7f4ed\] {
   --tw-text-opacity: 1;
   color: rgb(247 244 237 / var(--tw-text-opacity));
@@ -4243,16 +4261,6 @@ h1 {
 .text-\[\#f9f9f9\] {
   --tw-text-opacity: 1;
   color: rgb(249 249 249 / var(--tw-text-opacity));
-}
-
-.text-\[\#fffaf3\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 250 243 / var(--tw-text-opacity));
-}
-
-.text-\[\#fffaf4\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 250 244 / var(--tw-text-opacity));
 }
 
 .text-\[\#ffffff\] {
@@ -4318,11 +4326,6 @@ h1 {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.text-slate-700 {
-  --tw-text-opacity: 1;
-  color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -4630,10 +4633,6 @@ h1 {
 .hover\:bg-gray-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-transparent:hover {
-  background-color: transparent;
 }
 
 .hover\:text-\[\#000000\]:hover {
@@ -5539,11 +5538,6 @@ h1 {
     margin-right: 0px;
   }
 
-  .lg\:mx-2 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
   .lg\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5891,11 +5885,6 @@ h1 {
     padding-bottom: 3.5rem;
   }
 
-  .lg\:py-16 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
   .lg\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -5989,10 +5978,6 @@ h1 {
 
   .lg\:text-\[142px\] {
     font-size: 142px;
-  }
-
-  .lg\:text-\[37px\] {
-    font-size: 37px;
   }
 
   .lg\:text-\[45px\] {

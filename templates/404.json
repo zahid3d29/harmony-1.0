@@ -403,31 +403,57 @@
     "testimonials_jYDWJM": {
       "type": "testimonials",
       "blocks": {
-        "review_6LgTrP": {
-          "type": "review",
+        "testimonial_ew9FJ7": {
+          "type": "testimonial",
           "settings": {
-            "review_heading": "Wonderful Experience",
-            "review_text": "The sizes are adjusted proportionally to maintain consistent scaling across different breakpoints (mobile, medium, large)."
+            "testimonial_title": "what do they say about us",
+            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
+            "testimonial_author": "Alex S."
           }
         },
-        "review_GFbPcr": {
-          "type": "review",
+        "testimonial_Wmk4cz": {
+          "type": "testimonial",
           "settings": {
-            "review_heading": "Nice experience",
-            "review_text": "The sizes are adjusted proportionally to maintain consistent scaling across different breakpoints (mobile, medium, large)."
+            "testimonial_title": "what do they say about us",
+            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
+            "testimonial_author": "John Doe"
+          }
+        },
+        "testimonial_mqjPX7": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_title": "what do they say about us",
+            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
+            "testimonial_author": "Masud Rana"
           }
         }
       },
       "block_order": [
-        "review_6LgTrP",
-        "review_GFbPcr"
+        "testimonial_ew9FJ7",
+        "testimonial_Wmk4cz",
+        "testimonial_mqjPX7"
       ],
+      "disabled": true,
       "settings": {
+        "testimonial_color_scheme": "scheme-2",
+        "enable_gradient": false,
+        "testimonial_layout": "layout-2",
+        "testimonial_cover": "shopify:\/\/shop_images\/newsletter-img.png",
         "rating": 4.9,
         "verify": "From Verified Buyers",
         "num_r": 5,
         "btn_label": "Read more Testimonials",
-        "btn_url": ""
+        "btn_url": "",
+        "slider_navigation": "both",
+        "active_pagi_color": "#eefd8d",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "marquee_bAFma6": {
+      "type": "marquee",
+      "settings": {
+        "heading": ""
       }
     }
   },
@@ -440,6 +466,7 @@
     "focal_9bQdFB",
     "sales_Qa4cTi",
     "faq_VD6dqP",
-    "testimonials_jYDWJM"
+    "testimonials_jYDWJM",
+    "marquee_bAFma6"
   ]
 }

@@ -1,8 +1,8 @@
 {%- style -%}
-    .harmony--{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    }
+.harmony--{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
 @media screen and (min-width: 750px) {
     .harmony--{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -11,7 +11,7 @@
 }
 {%- endstyle -%}
 
-<section id="harmony--{{ section.id }}" class="section__page-header harmony__color-text-{{ section.settings.page_header_color_scheme }} harmony__color-background-{{ section.settings.page_header_color_scheme }}">
+<section id="harmony--{{ section.id }}" class="section__page-header harmony__color-text-{{ section.settings.page_header_color_scheme }} {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.page_header_color_scheme }} {% else %} harmony__color-background-{{ section.settings.page_header_color_scheme }} {% endif %}">
     <div class="page__header flex flex-col md:flex-row max-w-7xl mx-auto items-start justify-start md:justify-between harmony--{{ section.id }}-padding px-6 lg:px-8">
         {%- if section.settings.heading != blank -%}
             <h1 class="page__heading {% if settings.heading_font_size == 'sm' %}harmony__page-header-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__page-header-heading-lg{% else %}harmony__page-header-heading-theme-default{% endif %} font-normal max-w-md tracking-tight mb-6 md:mb-0">

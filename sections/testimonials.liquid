@@ -1,23 +1,36 @@
-<section id="harmony--{{ section.id }}">
-  <div class="bg-[rgb(46,69,50)] py-8 lg:py-16">
+{%- style -%}
+  .harmony--{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+@media screen and (min-width: 750px) {
+  .harmony--{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+}
+{%- endstyle -%}
+
+<section id="harmony--{{ section.id }}" class="section__testimonial {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.testimonial_color_scheme }} {% else %} harmony__color-background-{{ section.settings.testimonial_color_scheme }} {% endif %}">
+  <div class="harmony--{{ section.id }}-padding">
     <div class="mx-auto max-w-7xl px-6 md:px-10 grid grid-cols-1 lg:flex lg:items-center lg:justify-between">
       <div class="w-full lg:w-1/2">
         <div class="swiper mySwiper{{ section.id }} w-[100%]">
           <div class="swiper-wrapper">
           {% for block in section.blocks %}
-            {% if 'review' %}
+            {% if 'testimonial' %}
               <div class="swiper-slide">
-                <h2 class="text-[27px] leading-[36px] lg:text-[37px] lg:leading-[56px] font-bold tracking-tight text-[#fffaf3]">
-                  {{ block.settings.review_heading }}
+                <h2 class="testimonial__title {% if settings.heading_font_size == 'sm' %}harmony__testimonial-title-sm{% elsif settings.heading_font_size == 'lg' %}  harmony__testimonial-title-lg{% else %}harmony__testimonial-title-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.testimonial_color_scheme }}">
+                  {{ block.settings.testimonial_title }}
                 </h2>
-                <dd class="text-[18px] leading-[22px] text-[#aeb4af] mt-[19px]">
-                  {{ block.settings.review_text }}
+                <dd class="testimonial__content {% if settings.body_font_size == 'sm' %}harmony__testimonial-content-sm{% elsif settings.body_font_size == 'lg' %}  harmony__testimonial-content-lg{% else %}harmony__testimonial-content-theme-default{% endif %} harmony__color-text-{{ section.settings.testimonial_color_scheme }} mt-[19px]">
+                  {{ block.settings.testimonial_text }}
                 </dd>
-                <h4 class="author__name text-[17px] leading-[26px] text-[#aeb4af] font-bold mt-[19px]">
-                  {{ block.settings.review_author }}
+                <h4 class="testimonial__author-name harmony__color-text-{{ section.settings.testimonial_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__testimonial-author-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-author-btn-lg{% else %}harmony__testimonial-author-btn-theme-default{% endif %} mt-[19px]">
+                  {{ block.settings.testimonial_author }}
                 </h4>
                 {% if section.settings.verify != blank and section.settings.testimonial_layout == 'layout-2' %}
-                  <label class="testimonial__caption inline-block mt-6 {% if settings.body_font_size == 'sm' %}harmony__testimonial-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-caption-lg{% else %}harmony__testimonial-caption-theme-default{% endif %} font-normal border rounded-full px-2 py-2">
+                  <label class="testimonial__caption inline-block {% if settings.body_font_size == 'sm' %}harmony__testimonial-rev-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-rev-caption-lg{% else %}harmony__testimonial-rev-caption-theme-default{% endif %} harmony__color-text-{{ section.settings.testimonial_color_scheme }} harmony__color-border-{{ section.settings.testimonial_color_scheme }} mt-[18px] border rounded-full px-2 py-1.5">
                     {{ section.settings.verify }}
                   </label>
                 {% endif %}
@@ -26,7 +39,7 @@
           {% endfor %}
           </div>
         </div>
-        <div class="product_carousel-control {% if section.settings.slider_navigation == 'none' %} hidden {% else %} flex {% endif %} items-center justify-center my-4"
+        <div class="product_carousel-control {% if section.settings.slider_navigation == 'none' %} hidden {% else %} flex {% endif %} items-center justify-start my-4"
         >
           <button
             class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 lg:pr-3"
@@ -71,36 +84,40 @@
       <div class="w-full md:w-1/3 text-left lg:text-center py-6">
         {%- if section.settings.testimonial_layout == 'layout-1' -%}
           {% if section.settings.verify != blank %}
-            <span class="author__label inline-block text-[14px] leading-[19px] text-[#aeb4af] mt-[18px] font-normal border border-[#aeb4af] rounded-full px-2 py-1.5">
+            <label class="testimonial__caption inline-block {% if settings.body_font_size == 'sm' %}harmony__testimonial-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-caption-lg{% else %}harmony__testimonial-caption-theme-default{% endif %} harmony__color-text-{{ section.settings.testimonial_color_scheme }} harmony__color-border-{{ section.settings.testimonial_color_scheme }}  mt-[18px] border rounded-full px-2 py-1.5">
               {{ section.settings.verify }}
-            </span>
+            </label>
           {% endif %}
           <div class="flex justify-start lg:justify-center mt-[14px]">
             {% if section.settings.rating != 0 %}
               <div class="mr-3">
-                <p class="text-xl font-medium text-gray-100">
-                  <svg class="inline-flex text-gray-100 w-5 mt-[-11px] flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <p class="text-xl font-medium harmony__color-text-{{ section.settings.testimonial_color_scheme }}">
+                  <svg class="inline-flex harmony__color-icon-{{ section.settings.testimonial_color_scheme }} w-5 mt-[-11px] flex-shrink-0" x-state-description="undefined: &quot;text-gray-900&quot;, undefined: &quot;text-gray-200&quot;" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                     <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
                   </svg>
-                  <span class="text-[24px] leading-[29px] text-[#f7f4ed]">{{ section.settings.rating }}</span>
+                  <span class="text-[24px] leading-[29px] harmony__color-text-{{ section.settings.testimonial_color_scheme }}">{{ section.settings.rating }}</span>
                 </p>
               </div>
             {% endif %}
             {% if section.settings.num_r != blank and section.settings.num_r != 0 %}
               <div class="ml-1">
-                <p class="text-[14px] leading-[19px] text-[#f7f4ed] pt-1">Based on {{ section.settings.num_r }} Reviews</p>
+                <p class="{% if settings.body_font_size == 'sm' %}harmony__testimonial-rev-caption-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-rev-caption-lg{% else %}harmony__testimonial-rev-caption-theme-default{% endif %} harmony__color-text-{{ section.settings.testimonial_color_scheme }} pt-1">Based on {{ section.settings.num_r }} Reviews</p>
               </div>
             {% endif %}
           </div>
           {% if section.settings.btn_label != blank %}
-            <a href="{{ section.settings.btn_url }}" class="text-[17px] leading-[13px] text-[#fffaf4] font-semibold block px-0 lg:px-2 mt-[46px]">
-              {{- section.settings.btn_label -}}
+            <a href="{{ section.settings.btn_url }}" class="{% if settings.body_font_size == 'sm' %}harmony__testimonial-author-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-author-btn-lg{% else %}harmony__testimonial-author-btn-theme-default{% endif %} harmony__color-link-{{ section.settings.testimonial_color_scheme }} block px-0 lg:px-2 mt-[46px]">
+              {{ section.settings.btn_label }}
             </a>
           {% endif %}
         {%- endif -%}
         {% if section.settings.testimonial_layout == 'layout-2' %}
-          <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
-            <img src="https://cdn.shopify.com/s/files/1/0586/2499/9582/files/newsletter-img.png?v=1713693079" width="600px" height="auto" alt="image" class="object-cover object-center">
+          <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg harmony__color-background-{{ section.settings.testimonial_color_scheme }}">
+            {% if section.settings.testimonial_cover != blank %}
+              {{ section.settings.testimonial_cover | image_url: width: '600' | image_tag: class: 'h-auto object-cover object-center' }}
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'h-auto object-cover object-center' }}
+            {% endif %}
           </div> 
         {% endif %}
       </div>
@@ -111,11 +128,15 @@
 {% schema %}
 {
   "name": "Testimonial",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "color_scheme",
       "id": "testimonial_color_scheme",
-      "label": "Color Scheme"
+      "label": "Color Scheme",
+      "default": "scheme-1"
     },
     {
       "type": "checkbox",
@@ -138,6 +159,11 @@
         }
       ],
       "default": "layout-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "testimonial_cover",
+      "label": "Cover Image"
     },
     {
       "type": "range",
@@ -203,28 +229,52 @@
       "id": "active_pagi_color",
       "label": "Pagination Active Color",
       "default": "#626E5C"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
     }
   ],
   "blocks":[
     {
-      "type":"review",
-      "name":"Review",
+      "type":"testimonial",
+      "name":"Testimonial",
       "settings": [
         {
           "type":"inline_richtext",
-          "id":"review_heading",
-          "label":"Review Heading",
+          "id":"testimonial_title",
+          "label":"Testimonial Heading",
           "default": "what do they say about us"
         },
         {
           "type":"textarea",
-          "id":"review_text",
-          "label":"Review Text",
+          "id":"testimonial_text",
+          "label":"Testimonial Text",
           "default": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!</p>"
         },
         {
           "type":"inline_richtext",
-          "id":"review_author",
+          "id":"testimonial_author",
           "label":"Author",
           "default": "Alex S."
         }
@@ -234,7 +284,12 @@
   "presets": [
     {
       "name": "Testimonial",
-      "category": "Harmony Sections"
+      "category": "Harmony Sections",
+      "blocks": [
+        {
+          "type": "testimonial"
+        }
+      ]
     }
   ]
 }
