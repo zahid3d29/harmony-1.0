@@ -1,108 +1,55 @@
 {% style %}
-    /* .outline-title {
-        text-shadow: 1px 1px 0 #959595, -1px -1px 0 #959595, 1px -1px 0 #959595, -1px 1px 0 #959595, 1px 1px 0 #959595;
+    #harmony--{{ section.id }} {
+        padding: 2rem 0;
     }
-    .outline-title-top {
-        text-shadow:
-        -1px -1px 0 #959595,  
-            1px -1px 0 #959595,
-            -1px 1px 0 #959595,
-            1px 1px 0 #959595;
-    } */
+    #harmony--{{ section.id }} .swiper-container {
+        /* width: 100%;
+        height: 100%;
+        position: relative; */
+    }
+    #harmony--{{ section.id }} .swiper-wrapper{
+        -webkit-transition-timing-function:linear !important;    
+        transition-timing-function:linear !important; 
+    }
+    #harmony--{{ section.id }} .swiper-wrapper .swiper-slide {
+        width: auto;
+    }
 
-    @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: white;
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-  padding: 0;
-  margin: 0;
-/*   overflow: hidden; */
-}
-
-.marquee {
-  width: 100%;
-  padding-top: 2em;
-  margin: 0 auto;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.marquee span {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #f3f7a8;
-  font-size: 140px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding-left: -10%;
-  animation: marquee-animation 80s linear infinite;
-}
-
-@keyframes marquee-animation {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
-}
-
-
-
-
-
-
-
-
-
-
+    @keyframes line-slide {
+        0% {
+            background-position: -5% 0;
+        }
+        100% {
+            background-position: 100% 0;
+        }
+    }
 {% endstyle %} 
 
-{% comment %} <section id="harmony--{{ section.id }}" class="bg-[#FFFAF4] relative py-8 lg:py-24">
-    <div class="overlay-left block w-[20%] h-[100%] lg:bg-gradient-to-r from-[#00000024] absolute top-0 left-0 z-10"></div>
-    <div class="outline-title-top text-[#f9f9f9] opacity-70 lg:mb-8 text-[70px] lg:text-[142px] lg:leading-[140px] font-bold text-center">
-        <marquee direction="right" scrollamount="10"> 
-            No Chemicals <span class="inline-block mx-2">
-            <img class="w-[60px] lg:w-full" src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/not-circle.png?v=1713638870" alt="not-sign-img">
-            </span>No Paraben
-        </marquee>
+<section id="harmony--{{ section.id }}" class="section__marquee text-black relative py-8 lg:py-24">
+    <div class="swiper-container w-full h-full relative swiper--top-{{ section.id }}">
+        <div class="swiper-wrapper relative">
+            {%- for block in section.blocks -%}
+            {%- case block.type -%}
+            {%- when 'primary-marquee' -%}
+            <div class="swiper-slide primary-marquee-slide flex justify-center items-center relative overflow-hidden text-center text-[142px] leading-1 text-[#000000] border-b border-[#959595] px-[30px]">{{ block.settings.marquee_text }}</div>
+            {%- endcase -%}
+            {%- endfor -%}
+        </div>
     </div>
-    <div class="block w-full border border-[#707070]-400"></div>
-    <div class="outline-title-bottom text-[#303327] lg:mt-8 text-[70px] lg:text-[142px] lg:leading-[140px] font-semibold text-center">
-        <marquee direction="left" scrollamount="10">
-            Committed to <span class="inline-block mx-2">
-                <img class="w-[60px] lg:w-full" src="//cdn.shopify.com/s/files/1/0586/2499/9582/files/emoji.png?v=1713640687" alt="not-sign-img">
-            </span>Cruelty-free
-        </marquee>
+    <div class="swiper-container w-full h-full relative swiper--bottom-{{ section.id }}">
+        <div class="swiper-wrapper relative">
+            {%- for block in section.blocks -%}
+            {%- case block.type -%}
+            {%- when 'secondary-marquee' -%}
+            <div class="swiper-slide secondary-marquee-slide flex justify-center items-center relative overflow-hidden text-center text-[142px] leading-1 text-[#000000] border-b border-[#959595] px-[30px]">{{ block.settings.marquee_text }}</div>
+            {%- endcase -%}
+            {%- endfor -%} 
+        </div>
     </div>
-    <div class="overlay-right block w-[20%] h-[100%] lg:bg-gradient-to-l from-[#00000024] absolute bottom-0 right-0 z-10"></div>
-</section> {% endcomment %}
+</section> 
 
 
-<section id="harmony--{{ section.id }}">
 
-</section>
-<div class="container">
-    <div class="marquee">
-      <span>
-        Creative. Technology. Media. Creative. Technology. Media. Creative.
-        Technology. Media. Creative. Technology. Media. Creative. Technology.
-        Media.
-      </span>
-    </div>
-    <div class="marquee" direction="right" scrollamount="10">
-        <span>
-          Creative. Technology. 
-        </span>
-      </div>
-</div>
 
 
 {% schema %}
@@ -113,36 +60,65 @@ body {
         "groups": ["header", "footer"]
     },
     "settings": [
+
         {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading"
+            "type": "header",
+            "content": "Marquee Style"
+        },
+        {
+            "type": "font_picker",
+            "id": "type_header_font",
+            "default": "serif",
+            "label": "Font",
+            "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
+        },
+        {
+            "type": "select",
+            "id": "heading_font_size",
+            "label": "Font Size",
+            "options": [
+            {
+                "value": "sm",
+                "label": "Small"
+            },
+            {
+                "value": "theme_default",
+                "label": "Theme Default"
+            },
+            {
+                "value": "lg",
+                "label": "Large"
+            }
+            ],
+            "default": "theme_default"
         }
     ],
     "blocks":[
         {
             "type":"primary-marquee",
-            "limit": 8,
+            "limit": 10,
             "name":"Primary Marquee",
             "settings": [
                 {
                     "type":"inline_richtext",
                     "id":"marquee_text",
                     "label":"Marquee Content",
-                    "default": "Marquee Text"
+                    "default": "No Chemicals No Paraben 😊",
+                    "info": "You can use emoticon by copy/paste like 😂 😭 😚 😁 😊 😉 😍 ❤ 😘"
                 }
             ]
         },
         {
             "type":"secondary-marquee",
-            "limit": 8,
+            "limit": 10,
             "name":"Secondary Marquee",
             "settings": [
                 {
                     "type":"inline_richtext",
                     "id":"marquee_text",
                     "label":"Marquee Content",
-                    "default": "Marquee Text"
+                    "default": "Committed to Cruelty-free ❤",
+                    "info": "You can use emoticon by copy/paste like 😂 😭 😚 😁 😊 😉 😍 ❤ 😘"
                 }
             ]
         }
@@ -164,18 +140,33 @@ body {
 }
 {% endschema %}
 
+
+
 <script>
-    document.addEventListener("mousemove", parallax);
+    let SwiperTop = new Swiper('.swiper--top-{{ section.id }}', {
+        spaceBetween: 0,
+        centeredSlides: false,
+        speed: 6000,
+        autoplay: {
+            delay: 0,
+        },
+        loop: true,
+        slidesPerView:'auto',
+        allowTouchMove: false,
+        disableOnInteraction: true
+    });
 
-function parallax(e) {
-  this.querySelectorAll(".layer").forEach((layer) => {
-    const speed = layer.getAttribute("data-speed");
-
-    const x = (window.innerWidth - e.pageX * speed) / 150;
-    const y = (window.innerHeight - e.pageY * speed) / 150;
-
-    layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
-  });
-}
-
+    let SwiperBottom = new Swiper('.swiper--bottom-{{ section.id }}', {
+        spaceBetween: 0,
+        centeredSlides: false,
+        speed: 6000,
+        autoplay: {
+            delay: 0,
+            reverseDirection: true
+        },
+        loop: true,
+        slidesPerView:'auto',
+        allowTouchMove: false,
+        disableOnInteraction: true
+    });
 </script>
