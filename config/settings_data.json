@@ -87,19 +87,19 @@
       },
       "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250": {
         "settings": {
-          "text": "#ffffff",
-          "text_secondary": "#eefd8d",
-          "background": "#304834",
-          "background_gradient": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(168, 255, 251, 1) 100%)",
+          "text": "#f7f4ed",
+          "text_secondary": "#aeb4af",
+          "background": "#2e4532",
+          "background_gradient": "",
           "primary_button": "#ffffff",
           "on_primary_button": "#121212",
           "primary_button_border": "#707070",
           "secondary_button": "",
           "on_secondary_button": "#ffffff",
           "secondary_button_border": "#ffffff",
-          "icons": "#ffffff",
-          "border": "#ff0000",
-          "links": "#eefd8d"
+          "icons": "#fffaf3",
+          "border": "#f7f4ed",
+          "links": "#d0baac"
         }
       },
       "scheme-85436d7a-8766-4d97-a6df-212047299535": {

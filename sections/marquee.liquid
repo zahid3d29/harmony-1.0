@@ -15,6 +15,12 @@
         width: auto;
     }
 
+    h2.primary-marquee-slide,
+    h2.secondary-marquee-slide{
+        font-family: {{ section.settings.type_marquee_font.family }}, {{ section.settings.type_marquee_font.fallback_families }} !important;
+    }
+    
+
     @keyframes line-slide {
         0% {
             background-position: -5% 0;
@@ -31,7 +37,7 @@
             {%- for block in section.blocks -%}
             {%- case block.type -%}
             {%- when 'primary-marquee' -%}
-            <div class="swiper-slide primary-marquee-slide flex justify-center items-center relative overflow-hidden text-center text-[142px] leading-1 text-[#000000] border-b border-[#959595] px-[30px]">{{ block.settings.marquee_text }}</div>
+            <h2 class="swiper-slide primary-marquee-slide flex justify-center items-center relative overflow-hidden text-center text-[142px] leading-1 text-[#000000] border-b border-[#959595] px-[30px]">{{ block.settings.marquee_text }}</h2>
             {%- endcase -%}
             {%- endfor -%}
         </div>
@@ -41,7 +47,7 @@
             {%- for block in section.blocks -%}
             {%- case block.type -%}
             {%- when 'secondary-marquee' -%}
-            <div class="swiper-slide secondary-marquee-slide flex justify-center items-center relative overflow-hidden text-center text-[142px] leading-1 text-[#000000] border-b border-[#959595] px-[30px]">{{ block.settings.marquee_text }}</div>
+            <h2 class="swiper-slide secondary-marquee-slide flex justify-center items-center relative overflow-hidden text-center text-[142px] leading-1 text-[#000000] border-b border-[#959595] px-[30px]">{{ block.settings.marquee_text }}</h2>
             {%- endcase -%}
             {%- endfor -%} 
         </div>
@@ -60,14 +66,13 @@
         "groups": ["header", "footer"]
     },
     "settings": [
-
         {
             "type": "header",
             "content": "Marquee Style"
         },
         {
             "type": "font_picker",
-            "id": "type_header_font",
+            "id": "type_marquee_font",
             "default": "serif",
             "label": "Font",
             "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/en\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
@@ -77,18 +82,18 @@
             "id": "heading_font_size",
             "label": "Font Size",
             "options": [
-            {
-                "value": "sm",
-                "label": "Small"
-            },
-            {
-                "value": "theme_default",
-                "label": "Theme Default"
-            },
-            {
-                "value": "lg",
-                "label": "Large"
-            }
+                {
+                    "value": "sm",
+                    "label": "Small"
+                },
+                {
+                    "value": "theme_default",
+                    "label": "Theme Default"
+                },
+                {
+                    "value": "lg",
+                    "label": "Large"
+                }
             ],
             "default": "theme_default"
         }
@@ -133,6 +138,12 @@
                 },
                 {
                     "type": "secondary-marquee"
+                },
+                {
+                    "type": "primary-marquee"
+                },
+                {
+                    "type": "secondary-marquee"
                 }
             ]
         }
@@ -142,11 +153,12 @@
 
 
 
+
 <script>
     let SwiperTop = new Swiper('.swiper--top-{{ section.id }}', {
         spaceBetween: 0,
         centeredSlides: false,
-        speed: 6000,
+        speed: 15000,
         autoplay: {
             delay: 0,
         },
@@ -159,7 +171,7 @@
     let SwiperBottom = new Swiper('.swiper--bottom-{{ section.id }}', {
         spaceBetween: 0,
         centeredSlides: false,
-        speed: 6000,
+        speed: 15000,
         autoplay: {
             delay: 0,
             reverseDirection: true

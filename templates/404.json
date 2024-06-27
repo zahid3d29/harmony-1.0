@@ -65,6 +65,55 @@
         "mobile_banner_height": 400
       }
     },
+    "testimonials_jYDWJM": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_ew9FJ7": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_title": "what do they say about us",
+            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
+            "testimonial_author": "Alex S."
+          }
+        },
+        "testimonial_Wmk4cz": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_title": "what do they say about us",
+            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
+            "testimonial_author": "John Doe"
+          }
+        },
+        "testimonial_mqjPX7": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_title": "what do they say about us",
+            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
+            "testimonial_author": "Masud Rana"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_ew9FJ7",
+        "testimonial_Wmk4cz",
+        "testimonial_mqjPX7"
+      ],
+      "settings": {
+        "testimonial_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
+        "enable_gradient": false,
+        "testimonial_layout": "layout-2",
+        "testimonial_cover": "shopify:\/\/shop_images\/newsletter-img.png",
+        "rating": 4.9,
+        "verify": "From Verified Buyers",
+        "num_r": 5,
+        "btn_label": "Read more Testimonials",
+        "btn_url": "",
+        "slider_navigation": "both",
+        "active_pagi_color": "#eefd8d",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "gdpr_KGmQiU": {
       "type": "GDPR",
       "disabled": true,
@@ -400,59 +449,49 @@
         "btn_url": ""
       }
     },
-    "testimonials_jYDWJM": {
-      "type": "testimonials",
+    "marquee_tYKqAN": {
+      "type": "marquee",
       "blocks": {
-        "testimonial_ew9FJ7": {
-          "type": "testimonial",
+        "primary_marquee_NeEjC3": {
+          "type": "primary-marquee",
           "settings": {
-            "testimonial_title": "what do they say about us",
-            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
-            "testimonial_author": "Alex S."
+            "marquee_text": "No Chemicals No Paraben 😊"
           }
         },
-        "testimonial_Wmk4cz": {
-          "type": "testimonial",
+        "secondary_marquee_BXQadE": {
+          "type": "secondary-marquee",
           "settings": {
-            "testimonial_title": "what do they say about us",
-            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
-            "testimonial_author": "John Doe"
+            "marquee_text": "Committed to Cruelty-free ❤"
           }
         },
-        "testimonial_mqjPX7": {
-          "type": "testimonial",
+        "primary_marquee_B6TxXc": {
+          "type": "primary-marquee",
           "settings": {
-            "testimonial_title": "what do they say about us",
-            "testimonial_text": "<p>It was so easy to use! My friends have been asking me what I’ve been doing differently because my complexion has never looked better. Thank you, Swiss, for giving me the confidence to go makeup-free!<\/p>",
-            "testimonial_author": "Masud Rana"
+            "marquee_text": "No Chemicals No Paraben 😊"
+          }
+        },
+        "secondary_marquee_bxcrDJ": {
+          "type": "secondary-marquee",
+          "settings": {
+            "marquee_text": "Committed to Cruelty-free ❤"
           }
         }
       },
       "block_order": [
-        "testimonial_ew9FJ7",
-        "testimonial_Wmk4cz",
-        "testimonial_mqjPX7"
+        "primary_marquee_NeEjC3",
+        "secondary_marquee_BXQadE",
+        "primary_marquee_B6TxXc",
+        "secondary_marquee_bxcrDJ"
       ],
       "disabled": true,
       "settings": {
-        "testimonial_color_scheme": "scheme-2",
-        "enable_gradient": false,
-        "testimonial_layout": "layout-2",
-        "testimonial_cover": "shopify:\/\/shop_images\/newsletter-img.png",
-        "rating": 4.9,
-        "verify": "From Verified Buyers",
-        "num_r": 5,
-        "btn_label": "Read more Testimonials",
-        "btn_url": "",
-        "slider_navigation": "both",
-        "active_pagi_color": "#eefd8d",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading_font_size": "theme_default"
       }
     }
   },
   "order": [
     "banner_ktNWgn",
+    "testimonials_jYDWJM",
     "gdpr_KGmQiU",
     "product_featured_XBiUhG",
     "featured_collection_pjcRRC",
@@ -460,6 +499,6 @@
     "focal_9bQdFB",
     "sales_Qa4cTi",
     "faq_VD6dqP",
-    "testimonials_jYDWJM"
+    "marquee_tYKqAN"
   ]
 }

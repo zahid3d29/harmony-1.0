@@ -23,7 +23,7 @@
                 <h2 class="testimonial__title {% if settings.heading_font_size == 'sm' %}harmony__testimonial-title-sm{% elsif settings.heading_font_size == 'lg' %}  harmony__testimonial-title-lg{% else %}harmony__testimonial-title-theme-default{% endif %} tracking-tight harmony__color-text-{{ section.settings.testimonial_color_scheme }}">
                   {{ block.settings.testimonial_title }}
                 </h2>
-                <dd class="testimonial__content {% if settings.body_font_size == 'sm' %}harmony__testimonial-content-sm{% elsif settings.body_font_size == 'lg' %}  harmony__testimonial-content-lg{% else %}harmony__testimonial-content-theme-default{% endif %} harmony__color-text-{{ section.settings.testimonial_color_scheme }} mt-[19px]">
+                <dd class="testimonial__content {% if settings.body_font_size == 'sm' %}harmony__testimonial-content-sm{% elsif settings.body_font_size == 'lg' %}  harmony__testimonial-content-lg{% else %}harmony__testimonial-content-theme-default{% endif %} harmony__color-text-secondary-{{ section.settings.testimonial_color_scheme }} mt-[19px]">
                   {{ block.settings.testimonial_text }}
                 </dd>
                 <h4 class="testimonial__author-name harmony__color-text-{{ section.settings.testimonial_color_scheme }} {% if settings.body_font_size == 'sm' %}harmony__testimonial-author-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__testimonial-author-btn-lg{% else %}harmony__testimonial-author-btn-theme-default{% endif %} mt-[19px]">
