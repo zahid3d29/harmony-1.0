@@ -17,81 +17,29 @@
 
   <div class="steps-grid mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-6 gap-y-8 border-t border-gray-200 py-8 sm:py-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-      <div class="step flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center justify-between gap-x-3">
-          <number class="flex-none w-auto text-lg text-black font-semibold">1</number>
-          <border class="flex-none w-56 border border-black"></border>
-          <icon class="flex-none w-auto bg-black px-1 py-1 rounded-full border border-black"></icon>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-[21px] text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Clean your face
-            </a>
-          </h3>
-          <div class="mt-[22px] line-clamp-3 text-sm leading-6 text-gray-600">
-              Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.
-          </div>
-        </div>
-      </div>
 
-      <div class="step flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center justify-between gap-x-3">
-          <number class="flex-none w-auto text-lg text-black font-semibold">2</number>
-          <border class="flex-none w-56 border border-black"></border>
-          <icon class="flex-none w-auto bg-black px-1 py-1 rounded-full border border-black"></icon>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-[21px] text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Apply a small amount
-            </a>
-          </h3>
-          <div class="mt-[22px] line-clamp-3 text-sm leading-6 text-gray-600">
-              Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.
-          </div>
-        </div>
+    {%- for block in section.blocks -%}
+    <div class="step flex max-w-xl flex-col items-start justify-between">
+      <div class="flex items-center justify-between gap-x-3">
+        <number class="flex-none w-auto text-lg text-black font-semibold">{{ block.settings.step_nmbr }}</number>
+        <border class="flex-none w-56 border border-black"></border>
+        <icon class="flex-none w-auto bg-black px-1 py-1 rounded-full border border-black"></icon>
       </div>
+      <div class="group relative">
+        <h3 class="mt-[21px] text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+          <a href="#">
+            <span class="absolute inset-0"></span>
+            {{ block.settings.step_title | escape }}
+          </a>
+        </h3>
+        <dd class="mt-[22px] line-clamp-3 text-sm leading-6 text-gray-600">
+          {{ block.settings.step_nmbr | escape }}
+        </dd>
+      </div>
+    </div>
+    {%- endfor -%}
 
-      <div class="step flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center justify-between gap-x-3">
-          <number class="flex-none w-auto text-lg text-black font-semibold">3</number>
-          <border class="flex-none w-56 border border-black"></border>
-          <icon class="flex-none w-auto bg-black px-1 py-1 rounded-full border border-black"></icon>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-[21px] text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Gently massage the serum
-            </a>
-          </h3>
-          <div class="mt-[22px] line-clamp-3 text-sm leading-6 text-gray-600">
-              Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.
-          </div>
-        </div>
-      </div>
 
-      <div class="step flex max-w-xl flex-col items-start justify-between">
-        <div class="flex items-center justify-between gap-x-3">
-          <number class="flex-none w-auto text-lg text-black font-semibold">4</number>
-          <border class="flex-none w-56 border border-black"></border>
-          <icon class="flex-none w-auto bg-black px-1 py-1 rounded-full border border-black"></icon>
-        </div>
-        <div class="group relative">
-          <h3 class="mt-[21px] text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Use daily for the best results
-            </a>
-          </h3>
-          <div class="mt-[22px] line-clamp-3 text-sm leading-6 text-gray-600">
-              Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 

@@ -1,0 +1,107 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "banner_6WjWfW": {
+      "type": "banner",
+      "settings": {
+        "banner_color_scheme": "scheme-2",
+        "enable_gradient": false,
+        "enable_transparent": true,
+        "top_gradient_bar_color": "linear-gradient(180deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
+        "top_gradient_bar_height": 120,
+        "bottom_gradient_bar_color": "linear-gradient(0deg, rgba(18, 18, 18, 1), rgba(252, 244, 164, 0) 100%)",
+        "bottom_gradient_bar_height": 200,
+        "overlay_opacity": 60,
+        "show_sale_badge": true,
+        "discount_badge": "50% Sale On",
+        "discount_badge-url": "",
+        "banner_height": 500,
+        "banner_type": "image",
+        "banner_image": "shopify:\/\/shop_images\/BG_2.png",
+        "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",
+        "mobile_banner_height": 450
+      }
+    },
+    "gradient_bar_UnAxTy": {
+      "type": "gradient-bar",
+      "settings": {
+        "gradient_bar_color": "linear-gradient(180deg, rgba(243, 255, 209, 1), rgba(252, 244, 164, 0) 100%)",
+        "gradient_bar_height": 50
+      }
+    },
+    "page-header": {
+      "type": "page-header",
+      "settings": {
+        "page_header_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
+        "enable_gradient": false,
+        "heading": "How to use?",
+        "caption": "Easy to use",
+        "short_desc": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.<\/p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "how_to_use_X3gaVJ": {
+      "type": "how-to-use",
+      "blocks": {
+        "step_block_tqJGDH": {
+          "type": "step_block",
+          "settings": {
+            "step_nmbr": "1",
+            "step_title": "Clean Your Face",
+            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+          }
+        },
+        "step_block_9K7WYH": {
+          "type": "step_block",
+          "settings": {
+            "step_nmbr": "1",
+            "step_title": "Clean Your Face",
+            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+          }
+        },
+        "step_block_AmE3TN": {
+          "type": "step_block",
+          "settings": {
+            "step_nmbr": "1",
+            "step_title": "Clean Your Face",
+            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+          }
+        },
+        "step_block_HWapbk": {
+          "type": "step_block",
+          "settings": {
+            "step_nmbr": "1",
+            "step_title": "Clean Your Face",
+            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_block_tqJGDH",
+        "step_block_9K7WYH",
+        "step_block_AmE3TN",
+        "step_block_HWapbk"
+      ],
+      "settings": {
+        "howToUse_color_scheme": "",
+        "enable_gradient": false,
+        "heading": "Section Heading"
+      }
+    }
+  },
+  "order": [
+    "banner_6WjWfW",
+    "gradient_bar_UnAxTy",
+    "page-header",
+    "how_to_use_X3gaVJ"
+  ]
+}
