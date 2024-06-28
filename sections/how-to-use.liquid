@@ -124,30 +124,54 @@
         "id": "heading",
         "label": "Section Heading",
         "default": "Section Heading"
-      },
+      }
+    ],
+    "blocks": [
       {
-        "type": "checkbox",
-        "id": "show_heeading",
-        "label": "Show Heading",
-        "default": true
-      },
-      {
-        "type": "text",
-        "id": "page_title",
-        "label": "Page Title",
-        "default": "About us"
-      },
-      {
-        "type": "text",
-        "id": "page_desc",
-        "label": "Page Short Description",
-        "default": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.</p>"
+        "type": "step_block",
+        "name": "Step",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "step_nmbr",
+            "label": "Step Number",
+            "default": "1",
+            "info": "Input your step Number"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "step_title",
+            "label": "Title",
+            "default": "Clean Your Face"
+          },
+          {
+            "type": "textarea",
+            "id": "step_description",
+            "label": "Content",
+            "default": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.</p>"
+          }
+        ]
       }
     ],
     "presets": [
       {
         "name": "How to use",
-        "category": "Harmony Sections"
+        "category": "Harmony Sections",
+        "blocks": [
+          {
+            "type": "step_block"
+          },
+          {
+            "type": "step_block"
+          },
+          {
+            "type": "step_block"
+          },
+          {
+            "type": "step_block"
+          }
+        ]
       }
     ]
 }
