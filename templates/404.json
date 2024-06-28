@@ -101,7 +101,7 @@
       "settings": {
         "testimonial_color_scheme": "scheme-5a384936-a513-4eaf-9d3c-ec9fbccb9250",
         "enable_gradient": false,
-        "testimonial_layout": "layout-2",
+        "testimonial_layout": "layout-1",
         "testimonial_cover": "shopify:\/\/shop_images\/newsletter-img.png",
         "rating": 4.9,
         "verify": "From Verified Buyers",
@@ -109,7 +109,7 @@
         "btn_label": "Read more Testimonials",
         "btn_url": "",
         "slider_navigation": "both",
-        "active_pagi_color": "#eefd8d",
+        "active_pagi_color": "#fffaf4",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -485,6 +485,7 @@
       ],
       "disabled": true,
       "settings": {
+        "type_marquee_font": "beefcakes_i4",
         "heading_font_size": "theme_default"
       }
     }
