@@ -1,6 +1,20 @@
-<section id="harmony--{{ section.id }}" class="bg-[#fffaf4]">
 
-  {% comment %} Steps block  {% endcomment %}
+{% style %}
+  .harmony--{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .harmony--{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+
+<section id="harmony--{{ section.id }}" class="section__how-to-use {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.faq_color_scheme }} {% else %} harmony__color-background-{{ section.settings.faq_color_scheme }} {% endif %} harmony--{{ section.id }}-padding">
+
   <div class="steps-grid mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-6 gap-y-8 border-t border-gray-200 py-8 sm:py-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
       <div class="step flex max-w-xl flex-col items-start justify-between">
@@ -85,41 +99,56 @@
 
 
 
-
 {% schema %}
 {
-    "name": "Page How",
+    "name": "How to use",
+    "class": "harmony_section-how-to-use",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
     "settings": [
-        {
-            "type": "text",
-            "id": "heading",
-            "label": "Section Heading",
-            "default": "Section Heading"
-        },
-        {
-            "type": "checkbox",
-            "id": "show_heeading",
-            "label": "Show Heading",
-            "default": true
-        },
-        {
-            "type": "text",
-            "id": "page_title",
-            "label": "Page Title",
-            "default": "About us"
-        },
-        {
-            "type": "text",
-            "id": "page_desc",
-            "label": "Page Short Description",
-            "default": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.</p>"
-        }
+      {
+        "type": "color_scheme",
+        "id": "howToUse_color_scheme",
+        "label": "Color Scheme",
+        "default": "scheme-1"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gradient",
+        "label": "Background Gradient?",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Section Heading"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_heeading",
+        "label": "Show Heading",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "page_title",
+        "label": "Page Title",
+        "default": "About us"
+      },
+      {
+        "type": "text",
+        "id": "page_desc",
+        "label": "Page Short Description",
+        "default": "<p>We understand the importance of easy to use skincare products that feels comfortable. This is why we developed Swiss.</p>"
+      }
     ],
     "presets": [
-        {
-            "name": "Page How",
-            "category": "Harmony Sections"
-        }
+      {
+        "name": "How to use",
+        "category": "Harmony Sections"
+      }
     ]
 }
 {% endschema %}

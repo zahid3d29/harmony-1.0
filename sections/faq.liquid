@@ -1,33 +1,42 @@
 {% style %}
     /* Create an faqTabActive/current faq__tablink class */
     section#harmony--{{ section.id }} .faq__tab button.faqTabActive {
-        background-color: {{ section.settings.active_tab_color  }};
-        /* color: #fff; */
+      background-color: {{ section.settings.active_tab_color  }};
     }
 
     /* Style the faq__tab content */
     section#harmony--{{ section.id }} .faq__tabcontent {
-        display: none;
+      display: none;
     }
 
     section#harmony--{{ section.id }} .faqAccordion:after {
-        content: '\002B';
-        color: #777;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px;
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
     }
     section#harmony--{{ section.id }} .accTabActive:after {
-        content: "\2212";
+      content: "\2212";
     }
     section#harmony--{{ section.id }} .faqPanel {
-        max-height: 0;
-        transition: max-height 0.2s ease-out;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+    }
+    .harmony--{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    @media screen and (min-width: 750px) {
+      .harmony--{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
     }
 {% endstyle %}
 
-<section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.faq_color_scheme }} {% else %} harmony__color-background-{{ section.settings.faq_color_scheme }} {% endif %}">
-  <div class="py-10 md:py-24">
+<section id="harmony--{{ section.id }}" class="section__faq {% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.faq_color_scheme }} {% else %} harmony__color-background-{{ section.settings.faq_color_scheme }} {% endif %}">
+  <div class="harmony--{{ section.id }}-padding">
     <div class="mx-auto max-w-7xl px-6 md:px-10">
       <div class="mx-auto grid grid-cols-3">
         {%- if section.settings.heading != blank -%}
