@@ -26,17 +26,18 @@
     }
 {% endstyle %}
 
-
 <section id="harmony--{{ section.id }}" class="{% if section.settings.enable_gradient %} harmony__color-background-gradient-{{ section.settings.faq_color_scheme }} {% else %} harmony__color-background-{{ section.settings.faq_color_scheme }} {% endif %}">
   <div class="py-10 md:py-24">
     <div class="mx-auto max-w-7xl px-6 md:px-10">
       <div class="mx-auto grid grid-cols-3">
-        <div class="heading text-center md:text-left content-center col-span-3 md:col-span-1">
-            <h2 class="tracking-tight {% if settings.heading_font_size == 'sm' %}harmony__faq-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-heading-lg{% else %}harmony__faq-heading-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }} font-semibold">Read FAQ's</h2>
+        {%- if section.settings.heading != blank -%}
+        <div class="heading text-center md:text-left content-center {% if section.settings.heading != blank %} col-span-3 {% endif %} md:col-span-1">
+          <h2 class="tracking-tight {% if settings.heading_font_size == 'sm' %}harmony__faq-heading-sm{% elsif settings.heading_font_size == 'lg' %}harmony__faq-heading-lg{% else %}harmony__faq-heading-theme-default{% endif %} harmony__color-text-{{ section.settings.faq_color_scheme }} font-semibold">{{ section.settings.heading }}</h2>
         </div>
-        <div class="faq__tab flex overflow-hidden justify-center md:justify-end md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
+        {%- endif -%}
+        <div class="faq__tab flex overflow-hidden justify-center {% if section.settings.heading == blank %} col-span-3 md:justify-start {% else %} md:justify-end {% endif %}  md:py-6 space-x-5 col-span-3 md:col-span-2 mt-6 md:mt-0">
           {%- for block in section.blocks -%}
-          <button class="faq__tablinks harmony__color-primary-button-background-{{ section.settings.faq_color_scheme }} harmony__color-primary-button-label-{{ section.settings.faq_color_scheme }} harmony__color-primary-button-border-{{ section.settings.faq_color_scheme }} hover:bg-[{{ section.settings.active_tab_color }}] border-0 outline-0 cursor-pointer rounded-full px-[20px] py-[5px] transition duration-30 ease-in-out {% if settings.body_font_size == 'sm' %}harmony__faq-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-btn-lg{% else %}harmony__faq-btn-theme-default{% endif %}" onclick="openFaq(event, '{{ block.settings.tab_label | replace: ' ', '-' }}')" id="faqTabDefaultOpen">{{ block.settings.tab_label | escape }}</button>
+            <button class="faq__tablinks harmony__color-primary-button-background-{{ section.settings.faq_color_scheme }} harmony__color-primary-button-label-{{ section.settings.faq_color_scheme }} harmony__color-primary-button-border-{{ section.settings.faq_color_scheme }} hover:bg-[{{ section.settings.active_tab_color }}] border-0 outline-0 cursor-pointer rounded-full px-[20px] py-[5px] transition duration-30 ease-in-out {% if settings.body_font_size == 'sm' %}harmony__faq-btn-sm{% elsif settings.body_font_size == 'lg' %}harmony__faq-btn-lg{% else %}harmony__faq-btn-theme-default{% endif %}" onclick="openFaq(event, '{{ block.settings.tab_label | replace: ' ', '-' }}')" id="faqTabDefaultOpen">{{ block.settings.tab_label | escape }}</button>
           {%- endfor -%}
         </div>
       </div>
@@ -126,7 +127,7 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "Section Heading",
-      "default": "Read FAQ"
+      "default": "Read FAQ's"
     },
     {
       "type": "inline_richtext",
@@ -145,7 +146,6 @@
       "id": "btn_url",
       "label": "Button Link"
     }
-
   ],
   "blocks": [
     {

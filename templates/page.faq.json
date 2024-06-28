@@ -11,19 +11,6 @@
   "sections": {
     "banner_6WjWfW": {
       "type": "banner",
-      "blocks": {
-        "button_me34mV": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_text": "Shop All",
-            "button_url": "shopify:\/\/collections\/all"
-          }
-        }
-      },
-      "block_order": [
-        "button_me34mV"
-      ],
       "settings": {
         "banner_color_scheme": "scheme-2",
         "enable_gradient": false,
@@ -38,7 +25,7 @@
         "discount_badge-url": "",
         "banner_height": 500,
         "banner_type": "image",
-        "banner_image": "shopify:\/\/shop_images\/BG_Img.png",
+        "banner_image": "shopify:\/\/shop_images\/BG_Image.png",
         "vid_url": "https:\/\/assets.mixkit.co\/videos\/preview\/mixkit-set-of-plateaus-seen-from-the-heights-in-a-sunset-26070-large.mp4",
         "mobile_banner_height": 450
       }
@@ -132,8 +119,8 @@
       "settings": {
         "faq_color_scheme": "scheme-2b806c43-d5e0-4efc-a299-43249867c136",
         "enable_gradient": false,
-        "active_tab_color": "#626E5C",
-        "heading": "Read FAQ",
+        "active_tab_color": "#626e5c",
+        "heading": "Read FAQ's",
         "qtn_txt": "Still have a question?",
         "btn_txt": "Send private message",
         "btn_url": ""
