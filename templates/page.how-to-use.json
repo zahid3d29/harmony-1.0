@@ -57,31 +57,31 @@
           "settings": {
             "step_nmbr": "1",
             "step_title": "Clean Your Face",
-            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+            "step_description": "Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions."
           }
         },
         "step_block_9K7WYH": {
           "type": "step_block",
           "settings": {
-            "step_nmbr": "1",
+            "step_nmbr": "2",
             "step_title": "Clean Your Face",
-            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+            "step_description": "Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions."
           }
         },
         "step_block_AmE3TN": {
           "type": "step_block",
           "settings": {
-            "step_nmbr": "1",
+            "step_nmbr": "3",
             "step_title": "Clean Your Face",
-            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+            "step_description": "Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions."
           }
         },
         "step_block_HWapbk": {
           "type": "step_block",
           "settings": {
-            "step_nmbr": "1",
+            "step_nmbr": "4",
             "step_title": "Clean Your Face",
-            "step_description": "<p>Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions.<\/p>"
+            "step_description": "Allow the serum to absorb fully before applying additional skincare products. Gently massage the serum onto your face and neck using upward and outward motions."
           }
         }
       },
@@ -92,7 +92,7 @@
         "step_block_HWapbk"
       ],
       "settings": {
-        "howToUse_color_scheme": "",
+        "howToUse_color_scheme": "section-scheme",
         "enable_gradient": false,
         "heading": "Section Heading"
       }
